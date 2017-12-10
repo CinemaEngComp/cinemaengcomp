@@ -1,0 +1,292 @@
+<!--
+Barbara Monique Schumacher        RA:20423474
+Natalia Fernanda Milani de Moraes RA:20399454
+Rodrigo Cruz do Nascimento        RA:20391100
+Vinicius Araujo dos Santos        RA:20390456
+Willian Moraes do Nascimento      RA:20397664
+-->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context="com.engcomp.cinema.cinemaengcomp.Cadastro"
+    tools:layout_editor_absoluteX="7dp"
+    tools:layout_editor_absoluteY="43dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="43dp">
+
+        <!-- criando texto de visualizaçao -->
+        <TextView
+            android:id="@+id/Cadastro"
+            android:layout_width="370dp"
+            android:layout_height="39dp"
+            android:hint="@string/cadastro_perfil"
+            android:textAlignment="center"
+            android:textSize="27sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" />
+
+        <!-- criando editavel campo de nome -->
+        <EditText
+            android:id="@+id/cadastro_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:maxLength="50"
+            android:hint="@string/cadastro_nomecompleto"
+            android:inputType="textPersonName" />
+
+        <!-- criando editavel campo de cpf -->
+        <EditText
+            android:id="@+id/cadastro_cpf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/cadastro_cpf"
+            android:maxLength="14"
+            android:inputType="number" />
+
+        <!-- criando texto de visualizaçao -->
+        <TextView
+            android:id="@+id/cadastro_datnascimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:hint="@string/cadastro_datnascimento"
+            />
+
+        <!-- criando linha de tabela para ajustar campos -->
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- criando editavel campo de dia de nascimento -->
+            <EditText
+                android:id="@+id/cadastro_dia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="3"
+                android:maxLength="2"
+                android:textAlignment="center"
+                android:hint="@string/cadastro_dia"
+                android:inputType="date" />
+
+            <!-- criando texto de visualizaçao -->
+            <TextView
+                android:id="@+id/cadastro_barra1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="1"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:hint="@string/cadastro_barra1"
+                />
+
+            <!-- criando editavel campo de mes de nascimento -->
+            <EditText
+                android:id="@+id/cadastro_mes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="3"
+                android:maxLength="2"
+                android:textAlignment="center"
+                android:hint="@string/cadastro_mes"
+                android:inputType="date"/>
+
+            <!-- criando texto de visualizaçao -->
+            <TextView
+                android:id="@+id/cadastro_barra2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="1"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:hint="@string/cadastro_barra1"
+                />
+
+            <!-- criando editavel campo de ano de nascimento -->
+            <EditText
+                android:id="@+id/cadastro_ano"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:maxLength="4"
+                android:textAlignment="center"
+                android:hint="@string/cadastro_ano"
+                android:inputType="date" />
+
+        </TableRow>
+
+        <!-- criando grupo de radio buttons -->
+        <RadioGroup
+            android:id="@+id/cadastro_sexoopcao"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/cadastro_sexo"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cadastro_sexo"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <RadioButton android:id="@+id/radioButton_masculino"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cadastro_masculino"
+                android:textSize="15sp"/>
+
+            <RadioButton android:id="@+id/radioButton_feminino"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cadastro_feminino"
+                android:textSize="15sp"/>
+        </RadioGroup>
+
+        <!-- criando linha de tabela para ajustar campos -->
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- criando editavel campo de endereço -->
+            <EditText
+                android:id="@+id/cadastro_endereco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="12"
+                android:maxLength="80"
+                android:hint="@string/cadastro_endereco"
+                android:inputType="textPostalAddress" />
+
+            <!-- criando editavel campo de numero -->
+            <EditText
+                android:id="@+id/cadastro_numero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="5"
+                android:maxLength="5"
+                android:hint="@string/cadastro_numero"
+                android:inputType="textPostalAddress" />
+
+        </TableRow>
+
+        <!-- criando editavel campo de bairro -->
+        <EditText
+            android:id="@+id/cadastro_bairro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:maxLength="30"
+            android:hint="@string/cadastro_bairro"
+            android:inputType="textPostalAddress" />
+
+        <!-- criando linha de tabela para ajustar campos -->
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- criando editavel campo de cidade -->
+            <EditText
+                android:id="@+id/cadastro_cidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="8"
+                android:maxLength="40"
+                android:hint="@string/cadastro_cidade"
+                android:inputType="textPostalAddress" />
+
+            <!-- criando editavel campo de uf -->
+            <EditText
+                android:id="@+id/cadastro_uf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="2"
+                android:maxLength="2"
+                android:hint="@string/cadastro_uf"
+                android:inputType="textPostalAddress" />
+
+            <!-- criando editavel campo de cep -->
+            <EditText
+                android:id="@+id/cadastro_cep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:maxLength="9"
+                android:hint="@string/cadastro_cep"
+                android:inputType="number" />
+
+        </TableRow>
+
+        <!-- criando editavel campo de email -->
+        <EditText
+            android:id="@+id/cadastro_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/cadastro_email"
+            android:inputType="textEmailAddress"
+            android:maxLength="50" />
+
+        <!-- criando editavel campo de senha -->
+        <EditText
+            android:id="@+id/cadastro_senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:maxLength="10"
+            android:hint="@string/cadastro_senha"
+            android:inputType="textPassword" />
+
+        <!-- criando editavel campo de confirmaçao de senha -->
+        <EditText
+            android:id="@+id/cadastro_confirmarsenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:maxLength="10"
+            android:hint="@string/cadastro_confirmarsenha"
+            android:inputType="textPassword" />
+
+        <!-- criando linha de tabela para ajustar campos -->
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom">
+
+            <!-- criando botoes de voltar e finalizar cadastro -->
+            <Button
+                android:id="@+id/botao_voltarlogin"
+                style="?android:textAppearanceSmall"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:text="@string/btVoltarLogin"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/botao_finalizarcadastro"
+                style="?android:textAppearanceSmall"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:text="@string/btFinalizarCadastro"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+    </LinearLayout>
+
+</ScrollView>

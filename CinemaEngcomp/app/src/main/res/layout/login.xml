@@ -1,0 +1,85 @@
+<!--
+Barbara Monique Schumacher        RA:20423474
+Natalia Fernanda Milani de Moraes RA:20399454
+Rodrigo Cruz do Nascimento        RA:20391100
+Vinicius Araujo dos Santos        RA:20390456
+Willian Moraes do Nascimento      RA:20397664
+
+Layout criado e adaptado, atraves do codigo de exemplo extraido da referencia abaixo:
+
+SILVA, E. Login - Android Studio e MySQL. Disponível em: <https://www.youtube.com/playlist?list=PLssIKrX2yyQGjL81jrPx09c8IeMEUD1wB> Acesso em 29 de novembro de 2017.
+-->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context="com.engcomp.cinema.cinemaengcomp.Cadastro"
+    tools:layout_editor_absoluteX="7dp"
+    tools:layout_editor_absoluteY="43dp">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:layout_editor_absoluteX="7dp"
+    tools:layout_editor_absoluteY="43dp">
+
+            <!-- definindo propriedades da imagem -->
+            <ImageView
+                android:id="@+id/logoanhembi"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/logoanhembi"
+                tools:ignore="ContentDescription" />
+
+            <!-- criando campo de email -->
+            <AutoCompleteTextView
+                android:id="@+id/login_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_email"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                />
+
+            <!-- criando campo de senha -->
+            <EditText
+                android:id="@+id/login_senha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                 />
+
+
+            <!-- criando botoes de entrar e cadastro -->
+            <Button
+                android:id="@+id/botao_entrar"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/btEntrar"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/botao_cadastrar"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/btCadastro"
+                android:textStyle="bold" />
+
+
+</LinearLayout>
+
+</ScrollView>

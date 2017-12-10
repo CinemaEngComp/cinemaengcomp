@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Barbara Monique Schumacher        RA:20423474
+Natalia Fernanda Milani de Moraes RA:20399454
+Rodrigo Cruz do Nascimento        RA:20391100
+Vinicius Araujo dos Santos        RA:20390456
+Willian Moraes do Nascimento      RA:20397664
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.engcomp.cinema.cinemaengcomp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".Login"
+            android:label="@string/app_name">
+
+            <!-- comando para definir algumas caracteristicas da activity -->
+            <intent-filter>
+
+                <!-- comando que define o ponto principal do aplicativo -->
+                <action android:name="android.intent.action.MAIN" />
+                <!-- comando para o app aparecer no menu do sistema operacional Android -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Cadastro" />
+        <activity
+            android:name=".LeitorQRCode"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name=".Cartaz" />
+        <activity android:name=".Estreias" />
+        <activity android:name=".Lancamentos" />
+        <activity android:name=".SingleItemView" />
+        <activity android:name=".QuantIngresso" />
+        <activity android:name=".SelPoltronas" />
+        <activity android:name=".Pagamento" />
+        <activity android:name=".ListagemIngresso" />
+        <activity android:name=".ListagemIngressoIndividual" />
+        <activity android:name=".DadosConta" />
+        <activity
+            android:name=".MenuCliente"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+    </application>
+
+</manifest>

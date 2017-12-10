@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Barbara Monique Schumacher        RA:20423474
+Natalia Fernanda Milani de Moraes RA:20399454
+Rodrigo Cruz do Nascimento        RA:20391100
+Vinicius Araujo dos Santos        RA:20390456
+Willian Moraes do Nascimento      RA:20397664
+
+Layout criado e adaptado, atraves do codigo de exemplo extraido da referencia abaixo:
+
+ANDROIDBEGIN. Android JSON Parse Images and Texts Tutorial. Disponível em: <http://www.androidbegin.com/tutorial/android-json-parse-images-and-texts-tutorial/> Acesso em 05 de agosto de 2017.
+
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+
+            <TextView
+                android:id="@+id/nome_filmelabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/nome_filmelabel"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/nome_filme"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nome_filmelabel"
+                android:layout_marginTop="12sp"
+                android:textSize="22sp"
+                android:textStyle="italic" />
+
+            <ImageView
+                android:id="@+id/caminho"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="#000000"
+                android:contentDescription="@string/banner_filme"
+                android:padding="2dp" />
+
+</RelativeLayout>

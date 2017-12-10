@@ -1,0 +1,18 @@
+<!--
+Barbara Monique Schumacher        RA:20423474
+Natalia Fernanda Milani de Moraes RA:20399454
+Rodrigo Cruz do Nascimento        RA:20391100
+Vinicius Araujo dos Santos        RA:20390456
+Willian Moraes do Nascimento      RA:20397664
+-->
+
+<resources>
+    <color name="colorPrimary">#00AC8D</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colortela">#2E8B57</color>
+    <color name="fundoInicio">#164aca6a</color>
+    <color name="coringresso">#46e4cc16</color>
+    <color name="btDesbloquearPoltrona">#9853a339</color>
+
+</resources>

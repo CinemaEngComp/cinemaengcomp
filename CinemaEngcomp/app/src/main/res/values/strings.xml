@@ -1,0 +1,145 @@
+<!--
+Barbara Monique Schumacher        RA:20423474
+Natalia Fernanda Milani de Moraes RA:20399454
+Rodrigo Cruz do Nascimento        RA:20391100
+Vinicius Araujo dos Santos        RA:20390456
+Willian Moraes do Nascimento      RA:20397664
+-->
+
+<resources>
+
+    <string name="app_name">Cinema Engcomp</string>
+
+    <!-- Strings Login -->
+    <string name="btCadastro">Cadastrar</string>
+    <string name="btEntrar">Entrar</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Senha</string>
+
+    <!-- Strings Cadastro -->
+    <string name="cadastro_perfil">CADASTRO DE PERFIL</string>
+    <string name="cadastro_nomecompleto">Nome Completo</string>
+    <string name="cadastro_cpf">CPF</string>
+    <string name="cadastro_datnascimento">Data de Nascimento:</string>
+    <string name="cadastro_dia">Dia</string>
+    <string name="cadastro_mes">Mês</string>
+    <string name="cadastro_ano">Ano</string>
+    <string name="cadastro_sexo">Sexo:</string>
+    <string name="cadastro_barra1">/</string>
+    <string name="cadastro_barra2">/</string>
+    <string name="cadastro_masculino">Masculino</string>
+    <string name="cadastro_feminino">Feminino</string>
+    <string name="cadastro_endereco">Endereço</string>
+    <string name="cadastro_numero">Nº</string>
+    <string name="cadastro_bairro">Bairro</string>
+    <string name="cadastro_cidade">Cidade</string>
+    <string name="cadastro_uf">UF</string>
+    <string name="cadastro_cep">CEP</string>
+    <string name="cadastro_email">Email</string>
+    <string name="cadastro_senha">Senha</string>
+    <string name="cadastro_confirmarsenha">Confirmar Senha</string>
+    <string name="btFinalizarCadastro">Finalizar Cadastro</string>
+    <string name="btVoltarLogin">Voltar</string>
+
+    <!-- String Inicio -->
+    <string name="inicio_lancamentos">Próximos Lançamentos</string>
+    <string name="inicio_cartaz">Em Cartaz</string>
+    <string name="inicio_estreias">Estreias</string>
+
+    <string name="inicio_titulo">Selecione uma opção abaixo:</string>
+    <string name="btCartaz">Cartaz</string>
+    <string name="btEstreias">Estréias</string>
+    <string name="btLancamentos">Próximos Lançamentos</string>
+
+    <string name="dados_contas">Dados da Conta</string>
+    <string name="conta_nomecompleto">Nome: </string>
+    <string name="conta_cpf">CPF: </string>
+    <string name="conta_datnascimento">Data de Nascimento: </string>
+    <string name="conta_sexo">Sexo: </string>
+    <string name="conta_endereco">Endereço: </string>
+    <string name="conta_bairro">Bairro: </string>
+    <string name="conta_cidade">Cidade: </string>
+    <string name="conta_uf">UF: </string>
+    <string name="conta_cep">CEP: </string>
+    <string name="conta_email">E-mail: </string>
+    <string name="btnVoltarInicio">Voltar</string>
+
+    <!-- Campos para apresentar dados do filme -->
+    <string name="nome_filmelabel">"Filme : "</string>
+    <string name="genero_filmelabel">"Gênero : "</string>
+    <string name="duracao_filmelabel">"Duração : "</string>
+    <string name="classificacao_filmelabel">"Classificação : "</string>
+    <string name="sinopse_filmelabel">"Sinopse : "</string>
+    <string name="banner_filme">"Banner Filme"</string>
+    <string name="datas_disponiveis">"Datas Disponíveis"</string>
+
+    <string name="sessoes">"Sessões"</string>
+    <string name="btDia"></string>
+    <string name="btDia24"></string>
+    <string name="btDia48"></string>
+    <string name="btDia72"></string>
+
+
+    <!-- Campos do leitor qrcode -->
+    <string name="textViewNomeFilme">"Filme:"</string>
+    <string name="codigo_ingresso">"Ingresso:"</string>
+    <string name="textViewCadeira">"Cadeira: "</string>
+    <string name="textViewCodFilme">"Código Filme:"</string>
+    <string name="textViewSessao">"Horário Sessão: "</string>
+    <string name="textViewCPF">"CPF Cliente: "</string>
+    <string name="btLeitorQRcode">"LEITOR QR CODE "</string>
+    <string name="validador_ingresso">"LIBERAÇÃO DE INGRESSO"</string>
+    <string name="msg_default_status">""</string>
+
+    <string name="textViewQuantIng">"Escolha seus Ingressos"</string>
+    <string name="textViewInteira">"Inteira:"</string>
+    <string name="textViewEstudante">"Estudante:"</string>
+    <string name="textViewIdoso">"Idoso:"</string>
+    <string name="textViewTotalIngressos">"Total de Ingressos:"</string>
+    <string name="textViewValorTotalIngressos">"Valor total dos Ingressos:"</string>
+    <string name="title_activity_menu_cliente">MenuCliente</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="meus_ingressos">Meus Ingressos</string>
+    <string name="minha_conta">Minha Conta</string>
+    <string name="sair_aplicativo">Sair do Aplicativo</string>
+
+    <!-- tela qtd ingresso -->
+    <string name="sinal_menos">-</string>
+    <string name="sinal_mais">+</string>
+    <string name="botao_voltarsessao">Voltar</string>
+    <string name="botao_confirmaringresso">Confirmar Ingressos</string>
+
+    <!-- tela poltronas -->
+    <string name="assentos">Escolha seu assento:</string>
+    <string name="espaco"> </string>
+    <string name="n1">1</string>
+    <string name="n2">2</string>
+    <string name="n3">3</string>
+    <string name="n4">4</string>
+    <string name="n5">5</string>
+    <string name="n6">6</string>
+    <string name="n7">7</string>
+    <string name="n8">8</string>
+    <string name="n9">9</string>
+    <string name="n10">10</string>
+
+    <string name="escolha_assento">Escolha seu assento:</string>
+
+    <string name="cpf_cliente">CPF:</string>
+    <string name="codigo_ingressolabel">Ingresso:</string>
+    <string name="codigo_cadeira">Cadeira:</string>
+    <string name="codigo_sessao">Sessão:</string>
+    <string name="nome_filme">Filme:</string>
+    <string name="codigo_sala">Sala:</string>
+
+    <string name="btdestravarpoltrona">Destravar Poltrona</string>
+
+    <string name="bemVindo">Bem Vindo ao CinemaEngComp!</string>
+
+
+</resources>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Barbara Monique Schumacher        RA:20423474
+Natalia Fernanda Milani de Moraes RA:20399454
+Rodrigo Cruz do Nascimento        RA:20391100
+Vinicius Araujo dos Santos        RA:20390456
+Willian Moraes do Nascimento      RA:20397664
+
+Layout criado e adaptado, atraves do codigo de exemplo extraido da referencia abaixo:
+
+ANDROIDBEGIN. Android JSON Parse Images and Texts Tutorial. Disponível em: <http://www.androidbegin.com/tutorial/android-json-parse-images-and-texts-tutorial/> Acesso em 05 de agosto de 2017.
+
+-->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/caminho"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="#000000"
+            android:contentDescription="@string/banner_filme"
+            android:padding="2dp" />
+
+        <TextView
+            android:id="@+id/nome_filmelabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/nome_filmelabel"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nome_filme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="22sp"
+            android:textStyle="italic" />
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="0,1">
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/genero_filmelabel"
+                    android:padding="3dip"
+                    android:layout_marginTop="13dp"
+                    android:text="@string/genero_filmelabel"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/duracao_filmelabel"
+                    android:padding="3dip"
+                    android:layout_marginTop="13dp"
+                    android:text="@string/duracao_filmelabel"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/genero_filme"
+                    android:padding="3dip"
+                    android:layout_marginTop="13dp"
+                    android:textSize="22sp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/duracao_filme"
+                    android:padding="3dip"
+                    android:layout_marginTop="13dp"
+                    android:textSize="22sp"
+                    android:textStyle="italic" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/classificacao_filmelabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:text="@string/classificacao_filmelabel"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/classificacao_filme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="22sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/sinopse_filmelabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:text="@string/sinopse_filmelabel"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sinopse_filme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="22sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/datas_disponiveis"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:hint="@string/datas_disponiveis"
+            android:textAlignment="center"
+            android:layout_marginTop="12dp"
+            android:textSize="27sp"
+            android:textStyle="bold" />
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom">
+
+            <Button
+                android:id="@+id/botao_dia"
+                style="?android:textAppearanceSmall"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:text="@string/btDia"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/botao_dia_24"
+                style="?android:textAppearanceSmall"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:text="@string/btDia24"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/botao_dia_48"
+                style="?android:textAppearanceSmall"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:text="@string/btDia48"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/botao_dia_72"
+                style="?android:textAppearanceSmall"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:text="@string/btDia72"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+
+        <TextView
+            android:id="@+id/sessoes"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:hint="@string/sessoes"
+            android:textAlignment="center"
+            android:textSize="27sp"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom">
+
+            <Button
+                android:id="@+id/sessao_1"
+                style="?android:textAppearanceSmall"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/btDia"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/sessao_2"
+                style="?android:textAppearanceSmall"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/btDia24"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/sessao_3"
+                style="?android:textAppearanceSmall"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/btDia48"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/sessao_4"
+                style="?android:textAppearanceSmall"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/btDia72"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/sessao_5"
+                style="?android:textAppearanceSmall"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/btDia"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+        </TableRow>
+
+    </LinearLayout>
+</ScrollView>

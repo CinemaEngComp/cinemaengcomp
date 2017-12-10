@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Barbara Monique Schumacher        RA:20423474
+Natalia Fernanda Milani de Moraes RA:20399454
+Rodrigo Cruz do Nascimento        RA:20391100
+Vinicius Araujo dos Santos        RA:20390456
+Willian Moraes do Nascimento      RA:20397664
+-->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/minha_conta"
+            android:icon="@drawable/ic_minha_conta"
+            android:title="@string/minha_conta"/>
+
+        <item
+            android:id="@+id/meus_ingressos"
+            android:icon="@drawable/ic_meus_ingressos"
+            android:title="@string/meus_ingressos"/>
+
+
+
+        <item
+            android:id="@+id/sair_aplicativo"
+            android:icon="@drawable/ic_sair_aplicativo"
+            android:title="@string/sair_aplicativo"/>
+
+    </group>
+
+</menu>

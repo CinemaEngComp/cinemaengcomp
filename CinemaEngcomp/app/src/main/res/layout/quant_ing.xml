@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Barbara Monique Schumacher        RA:20423474
+Natalia Fernanda Milani de Moraes RA:20399454
+Rodrigo Cruz do Nascimento        RA:20391100
+Vinicius Araujo dos Santos        RA:20390456
+Willian Moraes do Nascimento      RA:20397664
+-->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/ingressos"
+        android:layout_width="fill_parent"
+        android:layout_height="39dp"
+        android:hint="@string/textViewQuantIng"
+        android:textAlignment="center"
+        android:textSize="27sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/espaco"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textviewinteira"
+        android:layout_width="fill_parent"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewInteira"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.02"
+        android:gravity="center_horizontal"
+        >
+
+        <Button
+            android:id="@+id/menos_inteira"
+            style="?android:textAppearanceSmall"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="@string/sinal_menos"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/quant_inteira"
+            android:layout_width="58dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:enabled="false"
+            android:textAlignment="center"
+            android:textSize="25sp"/>
+
+        <Button
+            android:id="@+id/mais_inteira"
+            style="?android:textAppearanceSmall"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="@string/sinal_mais"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+    </TableRow>
+
+    <TextView
+        android:id="@+id/textviewestudante"
+        android:layout_width="fill_parent"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewEstudante"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.02"
+        android:gravity="center_horizontal">
+
+
+        <Button
+            android:id="@+id/menos_estudante"
+            style="?android:textAppearanceSmall"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="@string/sinal_menos"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/quant_estudante"
+            android:layout_width="58dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:enabled="false"
+            android:textAlignment="center"
+            android:textSize="25sp"/>
+
+        <Button
+            android:id="@+id/mais_estudante"
+            style="?android:textAppearanceSmall"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="@string/sinal_mais"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+
+    </TableRow>
+
+
+    <TextView
+        android:id="@+id/textviewidoso"
+        android:layout_width="fill_parent"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewIdoso"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.02"
+        android:gravity="center_horizontal">
+
+
+        <Button
+            android:id="@+id/menos_idoso"
+            style="?android:textAppearanceSmall"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="@string/sinal_menos"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/quant_idoso"
+            android:layout_width="58dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:enabled="false"
+            android:textSize="25sp"
+            android:textAlignment="center"/>
+
+        <Button
+            android:id="@+id/mais_idoso"
+            style="?android:textAppearanceSmall"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="@string/sinal_mais"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TextView
+        android:id="@+id/espaco2"
+        android:layout_width="0dp"
+        android:layout_height="40dp" />
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textviewtotalingressos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textViewTotalIngressos"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/total_ingressos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textviewvalortotalingressos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewValorTotalIngressos"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/valor_totalingressos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+    </TableRow>
+
+    <TextView
+        android:id="@+id/espaco3"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom">
+
+        <Button
+            android:id="@+id/botao_voltarsessao"
+            style="?android:textAppearanceSmall"
+            android:layout_width="165dp"
+            android:layout_height="wrap_content"
+            android:text="@string/botao_voltarsessao"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/botao_confirmaringresso"
+        style="?android:textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/botao_confirmaringresso"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
+
+    </TableRow>
+
+</LinearLayout>
+</ScrollView>
