@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--conf
+<sample in_favorites="false">
+              <product version="1.0" edition="std"/>
+                     <modifications>
+                            <modified date="080606"/>
+                     </modifications>
+               </sample>
+ --> 
+<html>
+<head>
+	<title>Id-Index Interconnection</title>
+	<link rel="stylesheet" type="text/css" href="../../codebase/dhtmlxlayout.css">
+	<link rel="stylesheet" type="text/css" href="../../codebase/skins/dhtmlxlayout_dhx_blue.css">
+	<link rel="stylesheet" type="text/css" href="../../../dhtmlxWindows/codebase/dhtmlxwindows.css">
+	<link rel="stylesheet" type="text/css" href="../../../dhtmlxWindows/codebase/skins/dhtmlxwindows_dhx_blue.css">
+	<script src="../../codebase/dhtmlxcommon.js"></script>
+	<script src="../../codebase/dhtmlxlayout.js"></script>
+	<script src="../../../dhtmlxWindows/codebase/dhtmlxwindows.js"></script>
+</head>
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxlayout_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxLayout</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Id-Index Interconnection</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxLayout/index.shtml">dhtmlxLayout main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	<div id="parentId" style="position: relative; top: 20px; left: 20px; width: 600px; height: 400px;"></div>
+	<div id="srcDiv" style="position: relative; margin-top: 40px; left: 20px; width: 600px;">
+		Get ID by Index <select id="inds"></select> <input type="button" value="Get ID" onclick="getId();">
+		&nbsp;&nbsp;&nbsp;
+		Get Index by ID <select id="ids"></select> <input type="button" value="Get Index" onclick="getIndex();">
+	</div>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-comment">//</span><span class="hl-comment"> initialization of the layout</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">dhxLayout</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXLayoutObject</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">parentId</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-quotes">&quot;</span><span class="hl-string">5I</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    ...
+    </span><span class="hl-comment">//</span><span class="hl-comment"> getting index by id</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">index</span><span class="hl-code"> = </span><span class="hl-identifier">dhxLayout</span><span class="hl-code">.</span><span class="hl-identifier">getIndexById</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">a</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment"> getting id by index</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">id</span><span class="hl-code"> = </span><span class="hl-identifier">dhxLayout</span><span class="hl-code">.</span><span class="hl-identifier">getIdByIndex</span><span class="hl-brackets">(</span><span class="hl-number">0</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+<script>
+	var dhxLayout = new dhtmlXLayoutObject("parentId", "5I");
+	var ids = document.getElementById("ids");
+	var inds = document.getElementById("inds");
+	dhxLayout.forEachItem(function(item){
+		ids.options.add(new Option(item.getId(),item.getId()));
+		inds.options.add(new Option(item.getIndex(),item.getIndex()));
+	});
+	function getId() {
+		var ind = inds.options[inds.selectedIndex].value;
+		alert(dhxLayout.getIdByIndex(ind));
+	}
+	function getIndex() {
+		var id = ids.options[ids.selectedIndex].value;
+		alert(dhxLayout.getIndexById(id));
+	}
+</script>
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

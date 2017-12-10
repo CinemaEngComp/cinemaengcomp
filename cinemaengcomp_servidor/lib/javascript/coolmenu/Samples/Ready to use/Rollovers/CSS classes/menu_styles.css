@@ -1,0 +1,25 @@
+div {
+	font-family: Tahoma, Helvetica;
+}
+
+.clsCMOn, .clsCMOver, .clsCMOverBold, .clsCMOverItalic, .clsCMOverUnderline, .clsCMOverColored {
+	font-size: 12px;
+        padding: 2px 4px;
+	color: black;
+}
+
+.clsCMOverBold {
+	font-weight: bold;
+}
+
+.clsCMOverItalic {
+	font-style: italic;
+}
+
+.clsCMOverUnderline {
+	text-decoration: underline;
+}
+
+.clsCMOverColored {
+	color: red;
+}

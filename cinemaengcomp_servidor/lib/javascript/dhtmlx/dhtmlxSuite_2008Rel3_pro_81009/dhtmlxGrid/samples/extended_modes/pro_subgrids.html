@@ -1,0 +1,99 @@
+<!--conf
+<sample in_favorites="true">
+              <product version="1.5" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               <sampledescription><![CDATA[Starting from v.1.5 grid can contain independent subgrids in it. This possibility can be used to include nested data with entirely new structure into grid.]]></sampledescription></sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Grid with subgrid</title>
+	
+</head>
+
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxgrid_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxGrid</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Grid with subgrid</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxGrid/index.shtml">dhtmlxGrid main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	<p>You can set subrow and subgrid ("sub_row_grid" excell) for the grid cell.<br/>
+	Subrow's data can be set in xml ("sub_row" excell) or loaded from other file by ajax ("sub_row_ajax" excell).<br/>
+	Just try to open cell </p>
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid.css">
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid_skins.css">
+	
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxgrid.js"></script>
+	<script  src="../../codebase/dhtmlxgridcell.js"></script>	
+	<script  src="../../codebase/excells/dhtmlxgrid_excell_sub_row.js"></script>	
+	<table width="600px">
+		<tr>
+			<td>
+				<div id="gridbox" width="100%" height="500px" style="background-color:white;"></div>
+			</td>
+		</tr>
+		
+	</table>
+
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">setColTypes</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">sub_row,edtxt,ed,price,ch,co,ra,ro</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+ 
+--------------------------</span><span class="hl-identifier">XML</span><span class="hl-code">---------------------------
+&lt;?</span><span class="hl-identifier">xml</span><span class="hl-code"> </span><span class="hl-identifier">version</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">1.0</span><span class="hl-quotes">&quot;</span><span class="hl-code">?&gt;
+&lt;</span><span class="hl-identifier">rows</span><span class="hl-code">&gt;
+    &lt;</span><span class="hl-identifier">row</span><span class="hl-code"> </span><span class="hl-identifier">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">1</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">cell</span><span class="hl-code"> </span><span class="hl-identifier">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">sub_row_ajax</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">data</span><span class="hl-code">.</span><span class="hl-identifier">txt</span><span class="hl-code">&lt;/</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;</span><span class="hl-identifier">Loaded</span><span class="hl-code"> </span><span class="hl-identifier">by</span><span class="hl-code"> </span><span class="hl-identifier">ajax</span><span class="hl-code">&lt;/</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;
+        ...
+    &lt;/</span><span class="hl-identifier">row</span><span class="hl-code">&gt;
+    &lt;</span><span class="hl-identifier">row</span><span class="hl-code"> </span><span class="hl-identifier">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">2</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">cell</span><span class="hl-code"> </span><span class="hl-identifier">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">sub_row_grid</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">sub</span><span class="hl-code">.</span><span class="hl-identifier">xml</span><span class="hl-code">&lt;/</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">cell</span><span class="hl-code"> &gt;</span><span class="hl-identifier">Sub</span><span class="hl-code"> </span><span class="hl-identifier">grid</span><span class="hl-code"> </span><span class="hl-number">1</span><span class="hl-code">&lt;/</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;
+        ...
+    &lt;/</span><span class="hl-identifier">row</span><span class="hl-code">&gt;
+    &lt;</span><span class="hl-identifier">row</span><span class="hl-code"> </span><span class="hl-identifier">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">3</span><span class="hl-quotes">&quot;</span><span class="hl-code"> &gt;
+        &lt;</span><span class="hl-identifier">cell</span><span class="hl-code"> </span><span class="hl-identifier">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">sub_row_grid</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">sub</span><span class="hl-code">.</span><span class="hl-identifier">xml</span><span class="hl-code">&lt;/</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;</span><span class="hl-identifier">Sub</span><span class="hl-code"> </span><span class="hl-identifier">grid</span><span class="hl-code"> </span><span class="hl-number">2</span><span class="hl-code">&lt;/</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;
+        ...
+    &lt;/</span><span class="hl-identifier">row</span><span class="hl-code">&gt;
+    &lt;</span><span class="hl-identifier">row</span><span class="hl-code"> </span><span class="hl-identifier">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">4</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;</span><span class="hl-number">350</span><span class="hl-code">&lt;/</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;</span><span class="hl-identifier">The</span><span class="hl-code"> </span><span class="hl-identifier">Green</span><span class="hl-code"> </span><span class="hl-identifier">Mile</span><span class="hl-code">&lt;/</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;
+        ...
+    &lt;/</span><span class="hl-identifier">row</span><span class="hl-code">&gt;</span></pre></div></div>
+<script>
+
+
+
+	mygrid = new dhtmlXGridObject('gridbox');
+	mygrid.setImagePath("../../codebase/imgs/");
+	mygrid.setHeader("A,B,ed,Price,In Store,Shipping,Bestseller,Date of Publication");
+	mygrid.setInitWidths("50,150,100,80,80,80,80,200")
+	mygrid.setColAlign("right,left,left,right,center,left,center,center")
+	mygrid.setColTypes("sub_row,edtxt,ed,price,ch,co,ra,ro");
+	mygrid.init();
+	mygrid.setSkin("modern");
+	mygrid.loadXML("sgrid.xml");
+</script>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

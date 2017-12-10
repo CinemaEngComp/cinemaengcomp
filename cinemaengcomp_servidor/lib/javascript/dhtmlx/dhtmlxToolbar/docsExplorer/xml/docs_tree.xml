@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+		<tree id="0">
+			<item id="dhtmlxtoolbar" text="dhtmlxToolbar" im0="dhtmlxtoolbar_icon.gif" im1="dhtmlxtoolbar_icon.gif" im2="dhtmlxtoolbar_icon.gif">
+				<userdata name="url">
+					../dhtmlxToolbar/doc
+				</userdata>
+				<userdata name="thisurl">
+					../dhtmlxToolbar/doc/guide.html
+				</userdata>
+				<item text="Main Features" id="toolbar_mf">
+					<userdata name="url">guide.html</userdata>
+				</item>
+				<item text="Supported Browsers" id="toolbar_browsers">
+					<userdata name="url">guide.html</userdata>
+				</item>
+				<item text="Guide" id="toolbar_guide">
+					<userdata name="url">guide.html</userdata>
+					<item text="Initialize object on page" id="toolbar_init"></item>
+					<item text="Set Event Handler" id="toolbar_events"></item>
+					<item text="Adding buttons with Script" id="toolbar_addbuttons"></item>
+					<item text="Configuring with XML" id="toolbar_xml"></item>
+					<item text="Examples of buttons manipulation" id="toolbar_manip"></item>
+										
+				</item>
+				<item text="API Functions" id="toolbar_api">
+					<userdata name="url">alpha.html</userdata>
+	        	 	<item text="Object constructor" id="toolbar_api_obj">
+	    	       		<userdata name="url">objects.html</userdata>
+		         	</item>
+	        	 	<item text="Alphabeticaly sorted" id="toolbar_api_a">
+						<userdata name="url">alpha.html</userdata>
+					</item>
+					<item text="Grouped by Type" id="toolbar_api_t">
+						<userdata name="url">tgroup.html</userdata>
+					</item>
+					<item text="Grouped by Object" id="toolbar_api_o">
+						<userdata name="url">ogroup.html</userdata>
+					</item>
+					<item text="Events" id="toolbar_api_events">
+						<userdata name="url">events.html</userdata>
+					</item>
+				</item>
+			</item>
+			
+		</tree>

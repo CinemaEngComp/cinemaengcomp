@@ -1,0 +1,95 @@
+<!--conf
+<sample>
+              <product version="1.5" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               </sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Pivot tables</title>
+	
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid.css">
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid_skins.css">
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxgrid.js"></script>
+	<script  src="../../codebase/dhtmlxgridcell.js"></script>	
+	<script  src="../../codebase/ext/dhtmlxgrid_pivot.js"></script>
+</head>
+
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxgrid_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxGrid</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Pivot tables</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxGrid/index.shtml">dhtmlxGrid main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+
+<p>Pivot table allows to quickly create crosstabs. <br/>You can set it instead of the grid or separately and then choose fields and operation. </p>
+	<table width="600px">
+		<tr>
+			<td>
+				<div>
+					<input type="button" name="a1" value="show external pivot" onclick="mygrid.makePivot('gridboxP')">
+					<input type="button" name="a1" value="show pivot" onclick="mygrid.makePivot()">
+					<input type="button" name="a1" value="hide pivot" onclick="mygrid.hidePivot()">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div id="gridbox" width="100%" height="250px" style="background-color:white;"></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div>
+					<input type="button" name="a1" value="limited field set" onclick="mygrid.makePivot('gridboxP',{column_list:[null,'Title','Author','Money']})">
+					<input type="button" name="a1" value="predefined set" onclick="mygrid.makePivot('gridboxP',{x:1,y:2,value:3,action:0})">
+					<input type="button" name="a1" value="predefined set + readonly" onclick="mygrid.makePivot('gridboxP',{x:1,y:2,value:3,action:0,readonly:true})">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div id="gridboxP" style=" width:100%; height:250px; background-color:white; background-color:silver;"></div>
+			</td>
+		</tr>
+	</table>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">makePivot</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;  </span><span class="hl-comment">//</span><span class="hl-comment">create pivot</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">makePivot</span><span class="hl-brackets">(</span><span class="hl-quotes">'</span><span class="hl-string">gridboxP</span><span class="hl-quotes">'</span><span class="hl-brackets">)</span><span class="hl-code">;  </span><span class="hl-comment">//</span><span class="hl-comment">create pivot in external container</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">hidePivot</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;  </span><span class="hl-comment">//</span><span class="hl-comment">hide pivot</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">makePivot</span><span class="hl-brackets">(</span><span class="hl-code">,</span><span class="hl-brackets">{</span><span class="hl-identifier">column_list</span><span class="hl-code">:</span><span class="hl-brackets">[</span><span class="hl-reserved">null</span><span class="hl-code">,</span><span class="hl-quotes">'</span><span class="hl-string">Title</span><span class="hl-quotes">'</span><span class="hl-code">,</span><span class="hl-quotes">'</span><span class="hl-string">Author</span><span class="hl-quotes">'</span><span class="hl-code">,</span><span class="hl-quotes">'</span><span class="hl-string">Money</span><span class="hl-quotes">'</span><span class="hl-brackets">]</span><span class="hl-brackets">}</span><span class="hl-brackets">)</span><span class="hl-code">; </span><span class="hl-comment">//</span><span class="hl-comment">pivot with limited set    </span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">pivot where action (1st in list) by value (4th column) is calculated between second and third columns </span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">makePivot</span><span class="hl-brackets">(</span><span class="hl-quotes">'</span><span class="hl-string">gridboxP</span><span class="hl-quotes">'</span><span class="hl-code">,</span><span class="hl-brackets">{</span><span class="hl-identifier">x</span><span class="hl-code">:</span><span class="hl-number">1</span><span class="hl-code">,</span><span class="hl-identifier">y</span><span class="hl-code">:</span><span class="hl-number">2</span><span class="hl-code">,</span><span class="hl-identifier">value</span><span class="hl-code">:</span><span class="hl-number">3</span><span class="hl-code">,</span><span class="hl-identifier">action</span><span class="hl-code">:</span><span class="hl-number">0</span><span class="hl-brackets">}</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></div>
+<script>
+	mygrid = new dhtmlXGridObject('gridbox');
+	mygrid.setImagePath("../../codebase/imgs/");
+	mygrid.setHeader("Sales,Book Title,Author,Price,In Store,Shipping,Bestseller,Date of Publication");
+	mygrid.setInitWidths("50,150,100,80,80,80,80,200")
+	mygrid.setColAlign("right,left,left,right,center,left,center,center")
+	mygrid.setColTypes("dyn,edtxt,ed,price,ch,co,ra,ro");
+	mygrid.init();
+	mygrid.setSkin("modern")
+	mygrid.loadXML("100.xml");
+</script>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

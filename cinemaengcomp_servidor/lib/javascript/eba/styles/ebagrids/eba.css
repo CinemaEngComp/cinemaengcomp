@@ -1,0 +1,320 @@
+eba\:gridlist {
+	BORDER-TOP: #CCCCCC 1px solid; 
+	BORDER-RIGHT: #CCCCCC 1px solid;
+	BORDER-BOTTOM: #CCCCCC 1px solid; 
+	BORDER-LEFT: #CCCCCC 1px solid; 
+	CURSOR: default; 
+	DISPLAY: block; 
+	FONT: 11px Tahoma,Verdana,Arial; 
+	HEIGHT: 100%;
+	OVERFLOW: hidden; 
+	WIDTH: 100%
+}
+.gridlistsummary {
+	background-color: #EBEADB;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 21px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 1px; 
+	PADDING-LEFT: 0px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+.gridlistsummarycell {
+	COLOR:#999999;
+	BORDER: 0px solid black;
+	PADDING-TOP: 2px;
+	TEXT-ALIGN: right;
+	font-weight: bold;
+}
+
+.gridlistsummarydeadspace {
+	background-color: #EBEADB;
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 21px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 2px; 
+	PADDING-LEFT: 4px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+.gridlistchk {
+	DISPLAY: none; 
+	POSITION: absolute; 
+	TOP: 0px; 
+	Z-INDEX: 10; 
+}
+.gridlistinput {
+	BORDER-TOP: 1pt solid;
+	BORDER-RIGHT: 1pt solid; 
+	BORDER-BOTTOM: 1pt solid; 
+	BORDER-LEFT: 1pt solid; 
+	DISPLAY: none; 
+	FONT: 11px Tahoma,Verdana,Arial; 
+	HEIGHT: 16px;
+	OVERFLOW: hidden; 
+	PADDING-TOP: 0px; 
+	POSITION: absolute; 
+	TOP: -1px;
+	WIDTH: 100%; 
+	Z-INDEX: 10; 
+}
+.lookupdropdown
+{
+	font: 11px Verdana,Tahoma,Arial;
+	color: black;
+}
+
+.checkboxchecked 
+{
+	background-image: url(checked.gif);
+	background-repeat: no-repeat;
+	width: 17px;	
+	height: 15px;	
+
+}
+.checkboxunchecked 
+{
+	background-image: url(unchecked.gif);
+	background-repeat: no-repeat;
+	width: 17px;
+	height: 15px;	
+	
+}
+
+.gridlistselect {
+	BORDER-TOP: 1pt solid; 
+	BORDER-RIGHT: 1pt solid; 
+	BORDER-BOTTOM: 1pt solid; 
+	BORDER-LEFT: 1pt solid; 
+	DISPLAY: none; 
+	FONT: 11px Tahoma,Verdana,Arial; 
+	HEIGHT: 16px;
+	OVERFLOW: hidden; 
+	PADDING-TOP: 0px;
+	POSITION: absolute; 
+	TOP: -1px;  
+	Z-INDEX: 10; 
+}
+.gridlistheading {
+	background:url(gb.gif);
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 4px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+.gridlistheadingascending {
+	background:url(gbup.gif);
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 4px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+.gridlistheadingdescending {
+	background:url(gbdown.gif);
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 4px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+.gridlistheading_over {
+	background:url(gb_highlight.gif);
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 4px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+.gridlistheading_pressed {
+	background:url(gb_pressed.gif);
+	background-position: right bottom;
+	BORDER-TOP: 0px solid #FFFFFF; 
+	BORDER-RIGHT: 1px solid #A5A597; 
+	BORDER-BOTTOM: 0px solid #A5A597; 
+	BORDER-LEFT: 1px solid #A5A597; 	
+	
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 6px; 
+	PADDING-LEFT: 5px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+
+.gridlistheadingascending_pressed {
+	background:url(gb_pressed.gif);
+	background-position: right bottom;
+	BORDER-TOP: 0px solid #FFFFFF; 
+	BORDER-RIGHT: 1px solid #A5A597; 
+	BORDER-BOTTOM: 0px solid #A5A597; 
+	BORDER-LEFT: 1px solid #A5A597; 	
+	
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 6px; 
+	PADDING-LEFT: 5px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+.gridlistheadingdescending_pressed {
+	background:url(gb_pressed.gif);
+	background-position: right bottom;
+	BORDER-TOP: 0px solid #FFFFFF; 
+	BORDER-RIGHT: 1px solid #A5A597; 
+	BORDER-BOTTOM: 0px solid #A5A597; 
+	BORDER-LEFT: 1px solid #A5A597; 	
+	
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 6px; 
+	PADDING-LEFT: 5px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+
+.gridlistheadingascending_over {
+	background:url(gbup_highlight.gif);
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 4px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+.gridlistheadingdescending_over {
+	background:url(gbdown_highlight.gif);
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 4px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+.gridlistheadingdeadspace {
+	background:url(gb_deadspace.gif);
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 4px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+.toolbar 
+{
+	height: 21px;
+	background-color: #e8e8da;	
+	padding-top:3px;
+	padding-bottom:1px;
+}
+.toolbar A:hover
+{
+	border-right: #999999 1px solid;
+	border-top: #999999 1px solid;
+	border-left: #999999 1px solid;
+	cursor: hand;
+	border-bottom: #999999 1px solid;
+
+}
+.toolbar SPAN 
+{
+	width:23;
+	height:21;
+}
+.gridlistnavbar
+{
+	background-position: left top;
+	background-image: url(toolbar.gif);
+	background-repeat: no-repeat;
+	
+	overflow: hidden;
+}
+.gridlistpagingnavbar { 
+	background-position:top right;
+	BACKGROUND-IMAGE: url(toolbar_paging.gif); 
+	background-repeat:no-repeat ;
+	overflow: hidden;
+	
+}
+
+.gridlistlookup
+{
+	FONT: 11px Tahoma,Verdana,Arial;
+}
+.gridlistindicator 
+{
+	background-color:#C0C0C0;
+	width:20;
+	border:1pt outset;
+}

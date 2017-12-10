@@ -1,0 +1,787 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+           
+ 
+ <head>
+ <style type="text/css"> /* <![CDATA[ */
+ @import "/branding/css/tigris.css";
+ @import "/branding/css/inst.css";
+ /* ]]> */</style>
+ <link rel="stylesheet" type="text/css" href="/branding/css/print.css" media="print" />
+ <script src="/branding/scripts/tigris.js" type="text/javascript"></script>
+  
+             
+ 
+  <script src="/branding/scripts/alm.js" type="text/javascript"></script>
+ <style type="text/css">
+    /* <![CDATA[ */
+    @import "/branding/css/alm.css";
+   /* ]]> */
+ </style>
+ 
+ 
+                                                 <title>
+        subversion:        What Needs Doing?
+    </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta http-equiv="Content-Style-Type" content="text/css" />
+ <meta name="version" content="4.1.5.99.4" />
+ <meta name="keywords" content="Defect Tracking, Issue Tracking, Version Control, Configuration Management, Software Configuration Management, SCM, CM, Revision Control, Software Engineering, Unit Testing, Outsourcing, Collaboration, Open Source, Software Development, Collaborative Software Development, Enterprise, Java, Web Services" />   
+<meta name="description" content="CollabNet, Facilitating Collaborative Software Development" /> <meta name="description" content="Open source software engineering" />
+
+ 
+<style type="text/css"> /* <![CDATA[ */
+  @import "tigris-branding/css/tigris.css";
+  @import "tigris-branding/css/inst.css";
+  /* ]]> */</style>
+<link rel="stylesheet" type="text/css" media="print"
+  href="tigris-branding/css/print.css"/>
+<script type="text/javascript" src="tigris-branding/scripts/tigris.js"></script>
+
+
+</head>
+ 
+ 
+<body  class="composite">
+ 
+ 
+ <div id="collabnet">
+ <div id="login"> 
+     <div>
+     <a href="http://www.tigris.org/servlets/TLogin">Login</a>       |    <a href="http://www.tigris.org/servlets/Join">Register</a>     </div>
+ </div>
+ <a href="http://www.collab.net/special/clickpbc0502.html" id="cnlogo">
+<span class="alt">CollabNet Enterprise Edition</span></a>
+</div>
+ 
+ 
+ 
+ 
+ <!--
+<div id="banner">
+  <div><a href="http://www.tigris.org/" title="Tigris.org:Defect Tracking,Issue Tracking,Version Control,Software Configuration Management,SCM,CM,Revision Control,Unit Testing,Software Engineering,Document Templates,Outsourcing,Collaboration,Open Source,Development,Enterprise,Java,Web Services"><img src="/branding/images/tigris_logo.gif" alt="Tigris.org" id="tigrislogo" width="303" height="31" border="0" /></a></div>
+</div>
+--> 
+ 
+ 
+ 
+ 
+<div id="banner">
+ <table width="100%" id="bannertable" cellpadding="0" cellspacing="0">
+   <tr>
+    <td rowspan="2" style="width: 50px;">
+    <a href="http://www.tigris.org/" title="Tigris.org:Defect
+Tracking,Issue Tracking,Version Control,Software Configuration
+Management,SCM,CM,Revision Control,Unit Testing,Software
+Engineering,Document Templates,Outsourcing,Collaboration,Open
+Source,Development,Enterprise,Java,Web Services">
+<img src="/branding/images/logo.gif" alt="Tigris.org" id="tigrislogo" height="48" width="48" /></a>
+    </td>
+    <td style="min-width: 300px;" id="tigrisheading">
+     <div>Tigris.org</div>
+      <div class="smaller">Open Source Software Engineering Tools</div>
+    </td>
+    <td rowspan="2" style="width: 300px;" id="collabnote">
+      <table cellpadding="0" cellspacing="0">
+       <tr>
+        <th>
+         <div class="floatleft" style="padding-left: 77px; padding-right:0px;">
+         <a href="http://www.collab.net"><img src="/branding/images/pixel.gif" width="45" height="15" alt="A message from CollabNet, the Tigris host:" title="A message from CollabNet" /></a>
+         </div>
+         <div class="right">
+         <a href="http://www.collab.net/products/subversion/services.html" style="padding-right: 0px;"><img src="/branding/images/pixel.gif" width="90" height="15" alt="Subversion services" title="Subversion services" /></a>
+         </div>
+        </th>
+       </tr>
+       <tr>
+        <td>
+        <a href="http://www.collab.net/submerged"><img src="/branding/images/whatsnew.jpg" width="300" height="45" class="collabnoteimage" alt="What's new in Subversion 1.4" title="What's new in Subversion 1.4" /></a>
+       </td>
+      </tr>
+     </table>    
+    </td>
+   </tr>
+   <tr>
+<td style="padding: 0;">
+<div id="toptabs">
+<table cellpadding="4" cellspacing="0" border="0" class="tabs"><tr>
+
+
+<td>   <a href="http://www.tigris.org/servlets/StartPage">My pages</a> </td>
+
+<th>   <a href="http://www.tigris.org/servlets/ProjectList">Projects</a> </th>
+
+  <td>   <a href="http://www.tigris.org/servlets/DomainHome">Community</a> </td>
+
+
+</tr></table>
+</div>
+</td>
+
+</tr>
+</table>
+</div>
+
+  
+ 
+ <div id="breadcrumbs">
+   <a href="http://www.tigris.org/servlets/ProjectList">Projects</a>     >
+     
+
+   <strong>   <a href="http://subversion.tigris.org/"
+     >subversion</a>
+   </strong>  </div>
+ 
+ 
+ 
+ 
+<table border="0" cellspacing="0" cellpadding="4" width="100%" id="main">
+<tr>
+<td id="navcol">
+ 
+ 
+ 
+
+
+  <dl id="projecttools" class="navgroup">
+  <dt>Project tools</dt>
+  <dd>
+   <ul>
+    <li>   <a href="http://subversion.tigris.org/servlets/ProjectHome">Project home</a> </li>
+         </ul>
+   </dd>
+   <dd>
+   <!-- Begin Left Navigation Bar Override -->
+
+<!-- This file overrides the left navigation bar on
+     subversion.tigris.org, a feature specific to the CEE branding on
+     tigris.org.  See www/overrides/ in the "look" project for
+     details. -->
+
+<div><a href="/project_packages.html">Downloads</a></div>
+<div><a href="/faq.html">FAQ</a></div>
+<div><a href="/project_license.html">License</a></div>
+
+</dd><dd>
+
+<div><a href="/servlets/ProjectMemberList">Membership</a></div>
+
+</dd><dd>
+
+<div><a href="/servlets/ProjectNewsList">Announcements</a></div>
+<div><a href="/servlets/ProjectMailingListList">Mailing lists</a></div>
+<!-- After the web site, the mailing lists are the part of the project
+     people will spend the most time in, therefore putting the
+     etiquette link somewhere prominent (like here) is probably
+     worthwhile. -->
+<div><a href="/mailing-list-guidelines.html">Mailing list etiquette</a></div>
+
+</dd><dd>
+
+<div><a href="/project_development.html">Development</a></div>
+<div><a href="/roadmap.html">Road map</a></div>
+<div><a href="/project_issues.html">Issue tracker</a></div>
+<div><a href="/project_tasks.html">Task List</a></div>
+
+</dd><dd>
+
+<div><a href="http://svnbook.org">Subversion Book</a></div>
+<div><a href="/servlets/ProjectDocumentList">Documents &amp; files</a></div>
+<div><a href="/tools_contrib.html">Tools &amp; Contrib</a></div>
+<div><a href="http://svn.collab.net/viewcvs/svn/">Version control</a></div>
+
+</dd><dd>
+
+<div><a href="/links.html">Links</a></div>
+<div><a href="/testimonials.html">Testimonials</a></div>
+<!-- Right now, everyone we know about who offers commercial support
+     is listed in the referenced URL.  If there are ever support
+     sources not included there, then we can expand this to a page. -->
+<div><a href="/commercial-support.html">Commercial support</a></div>
+
+</dd><dd>
+
+<div><a href="/security.html">Security</a></div>
+
+<!-- End Left Navigation Bar Override -->
+
+   </dd> 
+      
+ </dl>
+   
+             
+ 
+  
+ 
+                                                
+
+
+
+
+<form action="http://subversion.tigris.org/servlets/Search" method="get">
+ <dl id="searchbox" class="navgroup">
+  
+      <dt>Search</dt>
+  <dd>
+   <div>
+       <select name="scope">
+           <option value="project" selected="selected">This project</option>
+               <option value="domain" >All projects</option>
+    </select>
+      </div>
+   <div>
+    <input type="hidden" name="resultsPerPage" value="40" /> 
+    <input type="text" name="query" size="10" /> 
+    <input type="submit" name="Button" value="Go" />
+   </div>
+   <div>
+       <a href="http://subversion.tigris.org/servlets/Search?mode=advanced">Advanced search</a>    </div>
+  </dd>
+
+ </dl>
+</form>
+
+
+<div style="padding: 6px; padding-left: 20px;">
+ <a href="http://www.collab.net/special/clickpbc0502.html" onclick="return launch(this.href, 1)"><img src="/branding/images/poweredby_036.gif" alt="This site is Powered by CollabNet." id="poweredbycollabnet" width="102" height="38" /></a>
+</div>
+<dl id="helptext" class="navgroup">
+ <dt>How do I...</dt>
+ <dd>
+  <ul>
+     
+   <li> <a href="http://www.collab.net/rn/" onclick="return launch(this.href, 1)" 
+ title="Note: link may open in new window" class="helplink">
+ 
+ Get release notes for CollabNet 4.1.5?</a>
+</li>
+   <li><a href="http://subversion.tigris.org/nonav/servlets/HelpTOC" onclick="return launch(this.href, 1)" 
+title="Note: link may open in new window" class="helplink">Get help?</a></li>
+  </ul>
+ </dd>
+</dl>
+
+<div id="mainhighlights">        
+
+<table border="0" cellspacing="0" cellpadding="3"  width="100%">
+ <tr>
+  <th>Category</th>
+  <th>Featured projects</th>
+ </tr>
+ <tr>
+  <td><a href="http://scm.tigris.org/">scm</a></td>
+  <td><a href="http://subversion.tigris.org/" title="open source version control">Subversion</a>, 
+<a href="http://subclipse.tigris.org/" title="Subversion Eclipse integration">Subclipse</a>,
+<a href="http://tortoisesvn.tigris.org/" title="Subversion client">TortoiseSVN</a>,
+<a href="http://rapidsvn.tigris.org/" title="Subversion client">RapidSVN</a>
+  </td>
+ </tr>
+ <tr>
+  <td><a href="http://issuetrack.tigris.org/">issuetrack</a></td>
+  <td><a href="http://scarab.tigris.org/" title="customizable software defect tracking system">Scarab</a></td>
+ </tr>
+ <tr>
+  <td><a href="http://requirements.tigris.org/">requirements</a></td>
+  <td><a href="http://xmlbasedsrs.tigris.org/">xmlbasedsrs</a></td>
+ </tr>
+ <tr>
+  <td><a href="http://design.tigris.org/">design</a></td>
+  <td><a href="http://argouml.tigris.org/" title="Free UML tool, use cases, uml tutorials">ArgoUML</a></td>
+ </tr>
+ <tr>
+  <td><a href="http://techcomm.tigris.org/">techcomm</a></td>
+  <td><a href="http://subetha.tigris.org/" title="Mailing list manager">SubEtha</a>, 
+  <a href="http://eyebrowse.tigris.org/" title="Mailing list archive tool">eyebrowse</a>, 
+<a href="http://midgard.tigris.org/">midgard</a>,
+<a href="http://cowiki.tigris.org/">cowiki</a></td>
+ </tr>
+ <tr>
+  <td><a href="http://construction.tigris.org/">construction</a></td>
+  <td><a href="http://antelope.tigris.org/" title="Ant GUI">antelope</a>,
+  <a href="http://scons.tigris.org/" title="cross-platform build tool">scons</a>,
+  <a href="http://frameworx.tigris.org/">frameworx</a>,
+  <a href="http://build-interceptor.tigris.org/">build-interceptor</a>,
+  <a href="http://propel.tigris.org/">propel</a>,
+  <a href="http://phing.tigris.org/">phing</a>
+  </td>
+ </tr>
+ <tr>
+  <td><a href="http://testing.tigris.org/" title="tools for quality software">testing</a></td>
+  <td><a href="http://maxq.tigris.org/" title="record and playback web automated testing tool">maxq</a>, 
+<a href="http://aut.tigris.org/" title="advanced unit testing">aut</a>
+  </td>
+ </tr>
+ <tr>
+  <td><a href="http://deployment.tigris.org/">deployment</a></td>
+  <td><a href="http://current.tigris.org/">current</a></td>
+ </tr>
+ <tr>
+  <td><a href="http://process.tigris.org/" title="software development process, extreme programming">process</a></td>
+  <td><a href="http://readyset.tigris.org/" 
+title="Use case template, example test plans, software requirements specification templates, sample project plan template">ReadySET</a></td>
+ </tr>
+ <tr>
+  <td><a href="http://libraries.tigris.org/" title="software reuse, web services">libraries</a></td>
+  <td><a href="http://gef.tigris.org/" title="Graphical diagram editing">GEF</a>, 
+<a href="http://axion.tigris.org/" title="Relational database">Axion</a>, 
+<a href="http://style.tigris.org/" title="Reusable CSS stylesheets">Style</a>,
+<a href="http://sstree.tigris.org/" title="Super-simple trees in HTML, CSS, and javascript">SSTree</a>
+ </td>
+ </tr>
+ <tr>
+  <td><a href="http://profession.tigris.org/">profession</a></td>
+  <td><a href="http://readings.tigris.org/">readings</a>, 
+<a href="http://spin.tigris.org/" title="Software process improvement networks">spin</a></td>
+ </tr>
+ <tr>
+  <td><a href="http://students.tigris.org/">students</a></td>
+  <td><a href="http://elmuth.tigris.org/">elmuth</a>, <a href="http://ankhsvn.tigris.org/">ankhsvn</a></td>
+ </tr>
+ <tr>
+  <td colspan="2" style="text-align:center">Over 500 <a style="text-decoration:underline;" 
+  href="http://www.tigris.org/servlets/ProjectList">more tools...</a></td>
+ </tr>
+</table>
+
+</div>
+
+<!--
+<br/>
+<div id="subnewsletter" class="toolgroup">
+<div class="label"><strong>Tigris.org Newsletter</strong></div>
+<div class="body">
+ Get the latest news and feature articles.
+ <div><a style="color: blue;"
+ href="http://www.tigris.org/newsletter/">Newsletter info</a></div>
+ <div><a style="color: blue;" title="ArgoUML; Adoptable SPI"
+ href="http://www.tigris.org/newsletter/newsletter-2004-06.html">Jun 2004 issue</a></div>
+</div></div>
+-->
+ 
+ 
+<div class="strut">&nbsp;</div>
+</td>
+<td id="midcol">
+ 
+  <div id="bodycol">
+ 
+ 
+ 
+
+        
+                 
+           
+  
+
+ 
+ 
+
+
+<div class="app">
+
+<h1 style="text-align: center;">What Needs Doing?</h1>
+
+<p>There are a lot of different things you can do to help Subversion.
+Not all involve coding; there are plenty of non-programming roles for
+eager volunteers.</p>
+
+<p>Below are some of the needs we've identified, but please don't take
+these as gospel!  New volunteers bring fresh viewpoints, and one of
+the most important things you can do is point out a need we hadn't
+recognized before&nbsp;&mdash;&nbsp;and then fill it.</p>
+
+<!-- ============================================================= -->
+<div class="h2" id="summer-of-code" title="summer-of-code">
+<h2>Summer of Code Tasks</h2>
+
+<p>These are the ideas that the Subversion developers have for Summer
+of Code applicants.  As the above states, don't take these as
+gospel!  We welcome discussion on creative proposals.</p>
+
+<p>However, please don't select tasks in the other sections of this
+page as your proposal, as these are either not the right size for the
+Summer of Code, or are downright not coding tasks, and therefore not
+eligible in any case.</p>
+
+<p>You should also read the <a href="hacking.html">Hacker's Guide to
+Subversion</a> before starting out on a proposal. Don't hesitate to
+ask for details or start discussing one of these tasks on the <a
+href="mailto:dev@subversion.tigris.org">dev@subversion.tigris.org</a>
+mailing list (see <a
+href="http://subversion.tigris.org/servlets/ProjectMailingListList"
+>here</a> for subscription information).</p>
+
+<div class="h3" id="ra_svn_authn" title="ra_svn_authn">
+<h3><a href="http://subversion.tigris.org/issues/show_bug.cgi?id=1144"
+>Issue&nbsp;#1144</a>: Add full SASL authentication support to ra_svn
+(svn://)</h3>
+
+<p>Right now ra_svn only supports the ANONYMOUS, CRAM-MD5 and EXTERNAL
+authentication mechanisms.  This is enough to be useful, but
+integrating a full-featured SASL library would give users a multitude
+of other options: passwords at various levels of security, Kerberos,
+one-time passwords, etc..  The protocol is already designed to support
+SASL, so the task requires selecting a SASL library and implementing
+support for it on both the client and server side.</p> </div>
+
+<div class="h3" id="text-bases" title="text-bases">
+<h3><a href="http://subversion.tigris.org/issues/show_bug.cgi?id=525"
+>Issue&nbsp;#525</a>
+and <a href="http://subversion.tigris.org/issues/show_bug.cgi?id=908"
+>Issue&nbsp;#908</a>: Optional or compressed text base storage</h3>
+
+<p>Subversion stores locally a pristine copy of the base revision
+(i.e., the unmodified checked-out revision) of each file in the
+working copy.  These pristine copies are known as "text bases".  This
+is great for doing offline diffs, and for transmitting deltas back to
+the server when committing.  But it's a bit of a space penalty on the
+client side, and it would be nice to offer users the option to turn it
+off sometimes, or failing that, to compress the text bases.</p>
+
+<p>This task is somewhat larger than the others (though still
+perfectly feasible), and should ideally be taken on by someone with
+previous experience in Subversion development.</p>
+
+</div>
+
+<div class="h3" id="python-bindings" title="python-bindings">
+<h3><a href="http://subversion.tigris.org/issues/show_bug.cgi?id=2342"
+>Issue&nbsp;#2342</a>: Improving the Python bindings</h3>
+
+<p>The Subversion Python bindings are currently incomplete in the
+functionality that they expose (for one example see the above issue).
+Furthermore, the Python bindings are currently extremely unpythonic in
+their structure, and could do with a layer of python code to make them
+so.  The bindings should first be brought up to date and all
+functionnalities completely implemented, and second be wrapped in a
+set of Python classes implementing an interface more friendly to
+python developers.</p>
+
+</div>
+
+
+<div class="h3" id="svnserve-logging" title="svnserve-logging">
+<h3><a href="http://subversion.tigris.org/issues/show_bug.cgi?id=2409"
+>Issue&nbsp;#2409</a>: Operation and error logging for svnserve</h3>
+
+<p>Subversion 1.3.0 added support for operational logging in
+mod_dav_svn.  That is, logging what actual client-side operations are
+performed on a repository, rather than just logging the endless flow
+of WebDAV requests.  Support for this kind of logging, as well as
+error logging, needs to be added to the standalone svnserve daemon.
+This requires some work in the APR library, which would provide the
+actual logging facility.</p>
+
+</div>
+
+<div class="h3" id="nonrecursive-checkouts" title="nonrecursive-checkouts">
+<h3><a href="http://subversion.tigris.org/issues/show_bug.cgi?id=695"
+>Issue&nbsp;#695</a>: Fix nonrecursive checkouts</h3>
+
+<p>It is possible to do a nonrecursive checkout in Subversion, using
+the -N option to the checkout command.  However, the working copy has
+no proper knowledge of "I don't want this particular item", so many
+operations behave extremely strangely in the presence of a
+nonrecursive working copy.  The working copy should be taught about
+nonrecursive checkouts, so that it is possible to work with them on a
+day-to-day basis.</p>
+
+<p>This task is somewhat larger than the others (though still
+perfectly feasible), and should ideally be taken on by someone with
+previous experience in Subversion development.</p>
+
+</div>
+
+
+<div class="h3" id="dav-performance-analysis" title="dav-performance-analysis">
+<h3>Performance analysis tool for mod_dav_svn</h3>
+
+<p>In order to drive future development, we would like to know just
+how much a Subversion mod_dav_svn server can be pushed, and what
+capacity administrators can expect when deploying their Subversion servers.
+One option is to use the <a href="http://httpd.apache.org/test/flood/"
+>Apache Flood</a> load tester.  Test profiles will need to be written to
+simulate usual repository use across multiple users.  Then, load testing
+needs to be conducted with the help of various profiling tools
+(<a href="http://oprofile.sourceforge.net/">oprofile</a>,
+<a href="http://www.opensolaris.org/os/community/dtrace/">dtrace</a>...)
+to identify the current limits and bottlenecks of Subversion.  Bottlenecks
+may be in <a href="http://httpd.apache.org/">Apache HTTP Server</a>,
+<a href="http://apr.apache.org/">APR</a>, mod_dav_svn (Subversion's Apache
+module), our repository backends (FSFS or BDB), or even the underlying
+operating system.</p>
+
+<p>The final output of this task should be pretty graphs, explanations
+behind the graphs, tuning recommendations, and proposals to improve the
+performance of Subversion.  Time permitting, some or all of these proposals
+would be fleshed out and implemented.</p>
+
+</div>
+
+
+<div class="h3" id="svn-augmented-diff" title="svn-augmented-diff">
+<h3>An augmented diff representation</h3>
+
+<p>Currently, 'svn diff' outputs a patch in the so-called "Unified
+diff" format.  The problem is, this format is fairly old, and as such
+can represent only textual differences between files.  It does not
+represent structural changes to the directory tree, nor can it
+encompass changes to various metadata, the kind used extremely
+frequently by Subversion.</p>
+
+<p>Propose a solution for augmenting the standard unified diff format
+with extra "garbage" chunks of data, that will be ignored by a unified
+diff parser, but that can carry extra information about whatever we
+want.  Then, implement that solution in 'svn diff', and a new
+subcommand ('svn patch' ?) that would do the opposite of 'svn diff'
+with rich diff data.</p>
+
+<p>Note that <a href="http://svk.elixus.org">SVK</a> posesses such a
+rich unified diff format.  It may or may not be desirable to reuse the
+same kind of representation; that decision is part of the task!</p>
+
+<p>Also, note that recently <a
+href="http://svn.red-bean.com/repos/sussman/software/subversion/svnpatch/trunk/">some
+code from the Dawn of Days</a> of the Subversion project has been
+revived.  It implements an XML (de)serializer for editor drive data,
+which means it can spit out an XML representation of a set of changes,
+and can take that XML representation and use it to "patch" a pristine
+set of files.  The other existing (de)serializer today is the one that
+is commonly known as the "dumpfile" format. These two existing
+implementations need to be taken into account during the analysis and
+design phase.</p>
+
+</div>
+
+
+</div>
+
+<!-- ============================================================= -->
+<div class="h2" id="information-management" title="information-management">
+<h2>Information Management Tasks</h2>
+
+<p>These are non-coding tasks, so if you arrived here from the <a
+href="http://code.google.com/summerofcode.html">Google Summer of Code</a>
+pages, please see the above section.</p>
+
+<div class="h3" id="issue-management" title="issue-management">
+<h3>Issue Management</h3>
+
+<p>Do we need an Issue Manager?  Maybe...</p>
+
+<p>The Subversion <a
+href="http://subversion.tigris.org/project_issues.html">bug
+database</a> has been managed in a rather ad hoc fashion thus far.
+Periodically we make sweeps over all outstanding issues and try to
+prioritize them, organize them into scheduled milestones, note
+dependencies between issues, etc.  These methods have been moderately
+successful up till now, but they are not scaling well as the number of
+issues grows.  Since issue growth is proportional to user base growth,
+the issue tracker is becoming a victim of Subversion's success.  We
+need to find new ways of managing our issues, ways that do not involve
+making O(N) sweeps over the entire list of open issues at regular
+intervals.</p>
+
+<p>While we have some semi-formalized management roles (patch manager,
+release manager, etc), we have never had an issue manager.  It might
+be time to get one, though.  It's not yet clear whether the problem is
+mainly one of attention, or of algorithm, or both, but having someone
+dedicated to managing the issues database couldn't hurt.  One thing
+such a person could do would be to go through the list of outstanding
+issues, figure out which ones are likely to be <a
+href="#bite-sized">bite-sized tasks</a>, and mark them as such, so
+that other volunteers have an easier time choosing things to work on.
+We've already marked various issues as bite-sized, but we haven't done
+so consistently as new issues come in.  This means there are a lot of
+potential entry points to the project going unnoticed.  Want to help
+us solve that?</p>
+
+<p>Creative ideas welcome!  If you'd like to help with this, please <a
+href="http://subversion.tigris.org/servlets/ProjectMailingListList"
+>subscribe</a> to the <a
+href="mailto:dev@subversion.tigris.org">dev@subversion.tigris.org</a>
+mailing list and post your thoughts.</p>
+
+</div>
+
+<div class="h3" id="faq-management" title="faq-management">
+<h3>FAQ Management</h3>
+
+<p>We need a FAQ manager.  A FAQ manager is someone who stays
+subscribed to the <a
+href="mailto:users@subversion.tigris.org">users@subversion.tigris.org</a>
+and <a href="mailto:dev@subversion.tigris.org"
+>dev@subversion.tigris.org</a> mailing lists, watches for common
+questions or addenda to existing questions, and slowly adjusts the
+Subversion <a href="faq.html">FAQ</a> in response to the problems
+users are having "in the wild".  This is also a great way to get
+familiar with Subversion usage patterns and common problems.  If you
+use or administrate Subversion anyway, helping to manage the FAQ is a
+great way to expand your troubleshooting skills.</p>
+
+<p>Again, creative ideas are most welcome.  Please post to the <a
+href="mailto:dev@subversion.tigris.org">dev@subversion.tigris.org</a>
+mailing list if you're interested in this.</p>
+
+</div>
+
+</div>
+
+<!-- ============================================================= -->
+<div class="h2" id="bite-sized" title="bite-sized">
+<h2>Bite-Sized Coding Tasks</h2>
+
+<p>The Subversion bug database contains many issues classified as
+"bite-sized" tasks&nbsp;&mdash;&nbsp;tasks that are well-defined and
+self-contained, and thus suitable for a volunteer looking to get
+involved with the project.  You <i>don't</i> need broad or detailed
+knowledge of Subversion's design to take on one of these, just a
+pretty good idea of how things generally work, and familiarity with
+the coding guidelines in the
+<a href="hacking.html">Hacker's Guide to Subversion</a>.  Many tasks
+are things a volunteer could pick off in a spare week or two, and
+they're a great way to start learning your way around the Subversion
+code.</p>
+
+<p> If you start one of these tasks, please notify the other
+developers by marking the issue as "STARTED" in the issue tracker,
+then mail <a
+href="mailto:dev@subversion.tigris.org">dev@subversion.tigris.org</a>
+(<a
+href="http://subversion.tigris.org/servlets/ProjectMailingListList"
+>subscribe</a> to that list too) with questions.  Don't be shy, it's a
+very civil mailing list.</p>
+
+<p>When you're ready to send in a patch, see the <a
+href="http://subversion.tigris.org/mailing-list-guidelines.html#patches"
+>patch posting guidelines</a>.  Don't be discouraged if your patch
+goes through several iterations of review by other developers; this is
+normal.</p>
+
+<p>Here is the <a
+href="http://subversion.tigris.org/issues/buglist.cgi?component=subversion&amp;issue_status=UNCONFIRMED&amp;issue_status=NEW&amp;issue_status=STARTED&amp;issue_status=REOPENED&amp;keywords=bite-sized&amp;cmdtype=doit"
+>list of all bite-sized tasks</a>.</p>
+
+</div>
+
+<!-- ============================================================= -->
+<div class="h2" id="larger-tasks" title="larger-tasks">
+<h2>Larger (But Not Necessarily Huge) Coding Tasks</h2>
+
+<p>The tasks listed below are bigger than bite-sized, but probably
+don't require new research to solve.  In other words, most of them are
+a <a href="http://www.catb.org/~esr/jargon/html/S/SMOP.html">Simple
+Matter Of Programming</a>.  You'd need to either be, or be willing to
+become, familiar with Subversion's internals to solve one of
+these.</p>
+
+<p>As with the <a href="#bite-sized">bite-sized tasks</a>, please read
+the
+<a href="hacking.html">Hacker's Guide to Subversion</a> and don't
+hesitate to ask questions on the
+<a href="mailto:users@subversion.tigris.org">users@subversion.tigris.org</a>
+and
+<a href="mailto:dev@subversion.tigris.org">dev@subversion.tigris.org</a>
+mailing lists (see <a
+href="http://subversion.tigris.org/servlets/ProjectMailingListList"
+>here</a> for subscription information).  Before posting any patches,
+see the <a
+href="http://subversion.tigris.org/mailing-list-guidelines.html#patches"
+>patch posting guidelines</a>.</p>
+
+<p>For <a href="project_status.html#upcoming">groups of tasks tied to
+specific releases</a>, peruse the <a href="project_status.html">status
+page</a>.  For a longer-term view of Subversion's vision, see the <a
+href="roadmap.html">road map</a>.</p>
+
+<div class="h3" id="error-messages" title="error-messages">
+<h3><a href="http://subversion.tigris.org/issues/show_bug.cgi?id=1254"
+>Issue&nbsp;#1254</a>, etc: Improve error messages</h3>
+
+<p>Too many of Subversion's error messages are terse or confusing.
+Many instances are recorded in
+<a href="http://subversion.tigris.org/issues/show_bug.cgi?id=1254"
+>issue&nbsp;#1254</a>, but see also issues
+<a href="http://subversion.tigris.org/issues/show_bug.cgi?id=2302"
+>#2302</a>,
+<a href="http://subversion.tigris.org/issues/show_bug.cgi?id=2295"
+>#2295</a>, and
+<a href="http://subversion.tigris.org/issues/show_bug.cgi?id=2275"
+>#2275</a>.</p>
+
+</div>
+
+</div>
+
+<!-- ============================================================= -->
+<div class="h2" id="bindings" title="bindings">
+<h2>Improved Bindings to Other Languages</h2>
+
+<p>One of Subversion's strengths is that it offers a rich set of
+"binding surfaces": well-documented APIs that are available not only
+in C (Subversion's native language) but in other programming languages
+as well (see the <a
+ href="links.html#lang_bindings">complete list</a>).</p>
+
+<p>Some of these language bindings are maintained via <a
+href="http://www.swig.org/">SWIG</a>, a tool that partially automates
+the process of generating bindings, while others are maintained by
+hand.  Many of the bindings do not have complete coverage yet, or have
+interface problems where they do have coverage.  So even though
+they're used in many production systems, there's still plenty of work
+to do.  Specifically:</p>
+
+<ul>
+
+<li><p>The <a
+href="http://svn.collab.net/repos/svn/trunk/subversion/bindings/swig/python/"
+>SWIG/Python bindings</a> are in pretty good shape, but their coverage
+is not yet complete.  Help is welcome.</p></li>
+
+<li><p>Our <a
+href="http://svn.collab.net/repos/svn/trunk/subversion/bindings/java/javahl/"
+>Java</a>, <a
+href="http://svn.collab.net/repos/svn/trunk/subversion/bindings/swig/perl/"
+>SWIG/Perl</a>, and <a
+href="http://svn.collab.net/repos/svn/trunk/subversion/bindings/swig/ruby/"
+>SWIG/Ruby</a> bindings are in pretty good shape, but maybe there are
+other languages you'd like to call Subversion APIs from?  Lisp/Scheme?
+Feel free to start a new bindings project, if you don't see what you
+need here.</p></li>
+
+</ul>
+
+</div>
+
+<!-- ============================================================= -->
+<div class="h2" id="all-issues" title="all-issues">
+<h2>All Open Issues</h2>
+
+<p>You want to see the complete list of open bugs, in all its glory?
+Don't say we didn't <a
+href="http://subversion.tigris.org/issues/buglist.cgi?component=subversion&amp;issue_status=UNCONFIRMED&amp;issue_status=NEW&amp;issue_status=STARTED&amp;issue_status=REOPENED&amp;order=issues.target_milestone%2C%20issues.priority%2C%20issues.issue_type">warn you...</a></p>
+
+</div>
+
+</div>
+
+</div>
+</td>
+</tr>
+</table>
+ 
+ 
+ <div id="footer">
+    <a href="http://www.tigris.org/nonav/DomainFAQ"  onclick="return launch(this.href, 1)" title="Note: link may open in new window" class="helplink">Site FAQ</a> |
+<a href="http://www.tigris.org/nonav/DomainFeedback"  onclick="return launch(this.href, 1)" title="Note: link may open in new window" class="helplink">Feedback</a> |
+<a href="http://www.tigris.org/nonav/servlets/LegalNotices?type=TermsOfService" onclick="return launch(this.href, 1)" title="Note: link may open in new window" class="helplink">Terms of service</a> | 
+<a href="http://www.tigris.org/nonav/servlets/LegalNotices?type=PrivacyPolicy" onclick="return launch(this.href, 1)" title="Note: link may open in new window" class="helplink">Privacy policy</a> | 
+<a href="http://www.collab.net/developers/tools/" onclick="return launch(this.href, 1)" title="Note: link may open in new window">Developer tools</a> 
+   
+   <p>&#169; 2006 CollabNet. CollabNet is a registered trademark of CollabNet, Inc.</p>
+   
+ </div>
+ 
+ 
+</body>
+</html>

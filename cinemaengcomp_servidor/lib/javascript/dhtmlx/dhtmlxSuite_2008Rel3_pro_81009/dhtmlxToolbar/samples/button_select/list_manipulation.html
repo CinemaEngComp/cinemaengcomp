@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<!--conf
+<sample>
+              <product version="1.0" edition="std"/>
+                     <modifications>
+                            <modified date="080403"/>
+                     </modifications>
+               </sample>
+ -->
+<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html>
+<head>
+	<title>Button Select Listed Option Manipulation</title>
+	<script type="text/javascript" src="../../codebase/dhtmlxcommon.js"></script>
+	<script type="text/javascript" src="../../codebase/dhtmlxtoolbar.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../codebase/skins/dhtmlxtoolbar_dhx_blue.css"></link>
+</head>
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxtoolbar_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxToolbar</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Button Select Listed Option Manipulation</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxToolbar/index.shtml">dhtmlxToolbar main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+<div id="toolbarObj"></div>
+<div style="margin-top: 20px;">
+	<select id="sel2"></select>
+	<input type="button" value="Show" onclick="show();">
+	<input type="button" value="Hide" onclick="hide();">
+	<input type="button" value="Is Visible" onclick="isVisible();">
+</div>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">webBar</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXToolbarObject</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">toolbarObj</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    ...
+    </span><span class="hl-comment">//</span><span class="hl-comment"> showing a listed option</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">webBar</span><span class="hl-code">.</span><span class="hl-identifier">showListOption</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-code">, </span><span class="hl-identifier">optionId</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment"> hiding a listed option</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">webBar</span><span class="hl-code">.</span><span class="hl-identifier">hideListOption</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-code">, </span><span class="hl-identifier">optionId</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment"> is a listed option visible</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">isVisible</span><span class="hl-code"> = </span><span class="hl-identifier">webBar</span><span class="hl-code">.</span><span class="hl-identifier">isListOptionVisible</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-code">, </span><span class="hl-identifier">optionId</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+<script>
+	var sel2 = document.getElementById("sel2");
+	var webBar = new dhtmlXToolbarObject("toolbarObj");
+	webBar.setIconsPath("../images/");
+	webBar.loadXML("../common/dhxtoolbar_buttonselect.xml?etc="+new Date().getTime(), updateList);
+	function getId() {
+		var id = sel2.options[sel2.selectedIndex].value;
+		return id.split(";");
+	}
+	function show() {
+		var id = getId();
+		webBar.showListOption(id[0], id[1]);
+	}
+	function hide() {
+		var id = getId();
+		webBar.hideListOption(id[0], id[1]);
+	}
+	function isVisible() {
+		var id = getId();
+		alert(webBar.isListOptionVisible(id[0], id[1]));
+	}
+	function updateList() {
+		sel2.options.length = 0;
+		webBar.forEachItem(function(itemId){
+			if (webBar.getType(itemId) == "buttonSelect") {
+				webBar.forEachListOption(itemId, function(listId){
+					sel2.options.add(new Option(itemId+" - "+listId, itemId+";"+listId));
+				});
+			}
+		});
+	}
+</script>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>

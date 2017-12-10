@@ -1,0 +1,25 @@
+
+
+
+
+
+        
+        .pagetitle { color: #003366; }
+        .formtitle { color: #003366; }
+        .bluetext { color: #003366; }
+
+        /* top nav bar */
+        .navItemOver {color: #ffffff; background-color: #003366; }
+        .navItemOver a { color: #ffffff;  }
+        .navItem { color: #ffffff; }
+        .navItem a { color: #ffffff; }
+
+        #filterFormHeader, .leftFormHeader
+        {
+        border-bottom: 1px solid #3c78b5;
+        }
+
+        #filterForm .tableUnderline
+        {
+        border-bottom: 1px solid #3c78b5;
+        }

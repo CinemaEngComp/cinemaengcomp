@@ -1,0 +1,678 @@
+/* 
+
+*/
+.main-header{
+	padding:20px 0;
+	position:relative;
+	z-index:99995;
+}
+.modal{z-index:99999 }
+
+.big-icon {
+  font-size: 160px !important;
+  color: #e5e6e7;
+}
+
+/*--------------------------------------------------------------
+	Hero 1
+------------------------------------------------------------- */
+
+.hero-1{
+	position:relative;
+	background:url(/images/home-banner-01.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height:686px
+}
+
+.hero-1:after{
+	content: "";
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background: rgba(217,30,24,.9);
+	background: -moz-linear-gradient(-45deg,  rgba(217,30,24,.9) 0%, rgba(255,102,0,.9) 100%); 
+	background: -webkit-linear-gradient(-45deg,  rgba(217,30,24,.9) 0%,rgba(255,102,0,.9) 100%);
+	background: linear-gradient(135deg,  rgba(217,30,24,.9) 0%,rgba(255,102,0,.9) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d91e18', endColorstr='#ff6600',GradientType=1 ); 
+}
+
+.hero-1 .hero-content {
+    height: auto;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 40%;
+    width: 60%;
+    z-index: 900;
+}
+
+.hero-1 .hero-content .hero-title{
+	font-size:36px;
+	color:#fff;
+	font-family: "Montserrat-Regular";
+	margin:0 0 20px
+}
+
+.hero-1 .hero-content .hero-caption{
+	font-size:26px;
+	color:#fff;
+	font-family: "Montserrat-Light";
+	margin:0 0 45px;
+}
+
+.hero-1 .hero-content .hero-search{
+	margin:0 0 45px;
+}
+
+.hero-1 .hero-content .hero-search input[type="text"]{
+	border:2px solid #fff;
+	padding: 25px 80px 25px 45px;
+	color:#fff;
+	font-size:22px;
+	font-family: "Montserrat-Light";
+	width:710px;
+	background:rgba(240,243,243, 0.2) url(/images/search.png)no-repeat 93% center;
+	border-radius:50px;
+	margin:0 auto;
+}
+
+.hero-1 .hero-content .hero-search input[type="text"]::-webkit-input-placeholder{
+	color: #fff;
+}
+.hero-1 .hero-content .hero-search input[type="text"]::-moz-placeholder{
+	color: #fff;
+}
+
+.hero-1 .hero-content .hero-search input[type="text"]:-ms-input-placeholder{
+	color: #fff;
+}
+
+.hero-1 .hero-content .hero-search input[type="text"]:-moz-placeholder{ 
+	color: #fff;
+}
+
+.hero-1 .hero-location p{
+	color:#fff;
+	font-size:15px;
+}
+
+.hero-1 .hero-location p i{
+	margin:0 5px;
+}
+
+.hero-1 .hero-location p a{
+	font-size:12px;
+	opacity:.6;
+	text-decoration:underline;
+	color:#fff;
+	margin:0 5px;
+}
+
+
+/*--------------------------------------------------------------
+	Hero 3
+------------------------------------------------------------- */
+
+.hero-3{
+	position:relative;
+	background:url(/images/home-banner-01.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height:686px
+}
+
+.hero-3:after{
+	content: "";
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background: rgba(17,90,0,.9);
+	background: -moz-linear-gradient(-60deg,  rgba(17,90,0,.9) 0%, rgba(0,0,0,.9) 100%); 
+	background: -webkit-linear-gradient(-60deg,  rgba(17,90,0,.9) 0%,rgba(0,0,0,.9) 100%);
+	background: linear-gradient(135deg,  rgba(17,90,0,.9) 0%,rgba(0,0,0,.9) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#115a00', endColorstr='#000000',GradientType=1 ); 
+}
+
+.hero-3 .hero-content {
+    height: auto;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 30%;
+    width: 60%;
+    z-index: 900;
+}
+
+.hero-3 .hero-content .hero-date{
+	width:95px;
+	height:95px;
+	border-radius:50px;
+	margin:0 auto 50px;
+	background:#66a061;
+	text-align:center;
+	padding:20px 0;
+	position:relative;
+}
+
+.hero-3 .hero-content .hero-date:before{
+	background:rgba(155, 208, 62, 0.7);
+	width:52px;
+	height:52px;
+	content: "";
+	border-radius:50px;
+	position:absolute;
+	left:-7px;
+	bottom:-8px;
+
+}
+
+.hero-3 .hero-content .hero-date .day{
+	font-size:33px;
+	color:#fff;
+	font-family: "Montserrat-Regular";
+	display:block;
+}
+
+.hero-3 .hero-content .hero-date .month{
+	font-size:19px;
+	color:#fff;
+	font-family: "Montserrat-Light";
+	display:block;
+	text-transform:uppercase
+}
+
+.hero-3 .hero-content .hero-title{
+	font-size:47px;
+	line-height:47px;
+	color:#fff;
+	font-family: "Montserrat-Bold";
+	text-transform:uppercase;
+	margin:0 0 20px
+}
+
+.hero-3 .hero-content .hero-caption{
+	font-size:36px;
+	line-height:36px;
+	text-transform:uppercase;
+	color:#fff;
+	font-family: "Montserrat-Regular";
+	margin:0 0 20px;
+}
+
+.hero-3 .hero-location p{
+	color:#fff;
+	font-size:15px;
+	margin:0 0 30px;
+}
+
+.hero-3 .hero-location p i{
+	margin:0 5px;
+}
+
+.hero-3 .hero-location p a{
+	font-size:12px;
+	opacity:.6;
+	text-decoration:underline;
+	color:#fff;
+	margin:0 5px;
+}
+
+.hero-3 .hero-purchase-ticket span{
+	display:block;
+	color:#00A183;
+	font-size:22px;
+	text-transform:uppercase;
+	font-family: "Montserrat-Regular";
+	margin:0 0 20px;
+}
+
+.hero-3 .hero-purchase-ticket a{
+	display:inline-block;
+	background:#00A183;
+	color:#fff;
+	font-size:18px;
+	text-transform:uppercase;
+	font-family: "Montserrat-Regular";
+	padding:20px 50px;
+	border-radius:50px;
+}
+
+.hero-3 .hero-purchase-ticket a:hover{
+	background:#fff;
+	color:#00A183;
+}
+
+/*--------------------------------------------------------------
+	Section Today's Schedule
+------------------------------------------------------------- */
+
+.section-todays-schedule{
+	background:#DCDCDC;
+	padding:70px 0;
+}
+
+.section-todays-schedule .section-header{
+	margin:0 0 35px;
+}
+
+.section-todays-schedule .section-header h2{
+	font-size:22px;
+	line-height:22px;
+	color:#00A183;
+	text-transform:uppercase;
+	font-family: font-family: 'Open Sans', sans-serif;
+	position:relative;
+	padding:0 0 0 25px;
+	display:inline-block;
+	font-weight:700
+}
+
+.section-todays-schedule .section-header h2:before{
+	display:block;
+	width:5px;
+	height:16px;
+	content: "";
+	position:absolute;
+	left:0;
+	top:4px;
+	background:#00A183;
+}
+
+.section-todays-schedule .section-header .todays-date{
+	display:inline-block;
+	font-size:14px;
+	line-height:22px;
+	color:#00A183;
+	float:right;
+}
+
+.section-todays-schedule .section-header .todays-date strong{
+	color:#000
+}
+
+.section-todays-schedule .section-header .todays-date i{
+	margin:0 15px 0 0;
+	font-size:18px;
+}
+
+.section-todays-schedule .section-content{
+	position:relative
+}
+
+.section-todays-schedule .section-content ul li{
+	float:left;
+	padding:0 25px 20px;
+	border-bottom:1px solid #005950;
+	position:relative;
+	height:93px;
+}
+
+.section-todays-schedule .section-content ul li.event-1{
+	padding:0 25px 20px 0;
+	margin:0 0 0 30px;
+}
+
+.section-todays-schedule .section-content ul li:after{
+	content: "";
+	width:6px;
+	height:10px;
+	background:url(/images/events-arrow.png);
+	display:block;
+	position:absolute;
+	top:10px;
+	right:0;
+}
+
+.section-todays-schedule .section-content ul li.event-4:after{
+	display:none;
+}
+
+.section-todays-schedule .section-content ul li.event-1:before{
+	content: "";
+	width:20px;
+	height:19px;
+	background:url(/images/events-clock2.png);
+	display:block;
+	position:absolute;
+	bottom:-10px;
+	left:0;
+}
+
+.section-todays-schedule .section-content ul li.event-2:before,
+.section-todays-schedule .section-content ul li.event-3:before,
+.section-todays-schedule .section-content ul li.event-4:before{
+	content: "";
+	width:7px;
+	height:8px;
+	background:url(/images/events-dot.png);
+	display:block;
+	position:absolute;
+	bottom:-4px;
+	left:35px;
+}
+
+.section-todays-schedule .section-content .event-time{
+	font-size:24px;
+	display:block;
+	color:#005950;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+.section-todays-schedule .section-content .event-time strong{
+	font-size:12px;
+	color:#005950;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.section-todays-schedule .section-content .event-name{
+	font-size:12px;
+	color:#005950;
+	display:block;
+	margin:0 0 10px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.section-todays-schedule .section-content .get-ticket{
+	font-size: 10px;
+	color:#fff;
+	padding:5px 15px;
+	background:#00A183;
+	text-transform:uppercase;
+	font-family: 'Open Sans', sans-serif;
+	border:none;
+	border-radius:20px;
+	font-weight:700;
+	display:inline-block;
+}
+
+.section-todays-schedule .section-content .get-ticket:hover{
+	color:#FFF;
+	background:#9BD03E;
+}
+
+.section-todays-schedule .section-content .sold-ticket{
+	font-size: 10px;
+	color:#00A183;
+	padding:5px 15px;
+	background:none;
+	text-transform:uppercase;
+	font-family: 'Open Sans', sans-serif;
+	border:1px solid #00A183;
+	border-radius:20px;
+	font-weight:700;
+	display:inline-block;
+	pointer-events: none;
+	cursor: default;
+}
+
+.section-todays-schedule .section-content .event-list-label{
+	color:#005950;
+	font-size:12px;
+	font-family: 'Open Sans', sans-serif;
+	position:absolute;
+	bottom:-4px;
+	right:0;
+}
+
+.section-todays-schedule .section-content .event-list-label span{
+	font-weight:300;
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+/*--------------------------------------------------------------
+	Section Call To Action
+------------------------------------------------------------- */
+
+.section-call-to-action .section-content{
+	padding:50px;
+	background:url(/images/share-action.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position:relative
+}
+
+.section-call-to-action .section-content:before{
+	content: "";
+	background:rgba(155, 208, 62, .85);
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+
+.section-call-to-action .section-content h3{
+	font-family: "Champagne-Limousines-Bold";
+	font-size:35px;
+	margin:0 0 5px;
+	color:#fff
+}
+
+.section-call-to-action .section-content p{
+	font-family: "Montserrat-Light";
+	font-size:17px;
+	margin:0;
+	color:#fff
+}
+
+.section-call-to-action .section-content .action-btn{
+	display:block;
+	background:#fff;
+	border-radius:5px;
+	color:#005950;
+	font-size:19px;
+	font-family: "Montserrat-Regular";
+	padding:20px;
+	text-align:center;
+	text-transform:uppercase;
+}
+
+.section-call-to-action .section-content .action-btn:hover{
+	color:#FFF;
+	background:#005950;
+}
+
+
+
+/*--------------------------------------------------------------
+	Section Newsletter
+------------------------------------------------------------- */
+
+.section-newsletter{
+	padding:90px 0;
+	background:url(/images/newsletter.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position:relative
+}
+
+.section-newsletter:before{
+	content: "";
+	background:rgba(155, 208, 62, .9);
+	position:absolute;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+}
+
+.section-newsletter .section-content{
+	text-align:center;
+	position:relative;
+	width:70%;
+	margin:0 auto;
+}
+
+.section-newsletter .section-content h2{
+	font-size:25px;
+	font-weight:700;
+	color:#fff;
+	margin:0 0 20px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.section-newsletter .section-content p{
+	font-size:12px;
+	line-height:18px;
+	color:#fff;
+	margin:0 0 30px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.section-newsletter .section-content .newsletter-form input[type="email"]{
+	background:none;
+	color:#fff;
+	font-size:15px;
+	font-family: 'Open Sans', sans-serif;
+	border:2px solid #fff;
+	padding:12px 30px;
+	border-radius:50px;
+	margin:0 5px 0 0;
+	width:50%;
+	height:53px;
+}
+
+.section-newsletter .section-content .newsletter-form input[type="submit"]{
+	background:#fff;
+	color:#005950;
+	font-weight:700;
+	font-size:18px;
+	line-height:18px;
+	font-family: 'Open Sans', sans-serif;
+	border:none;
+	padding:12px 50px;
+	border-radius:50px;
+	text-align:center;
+	display:inline-block;
+	text-transform:uppercase;
+	height:53px;
+}
+
+.section-newsletter .section-content .newsletter-form input[type="submit"]:hover{
+	background:#005950;
+	color:#fff;
+}
+
+.section-newsletter .section-content .newsletter-form input[type="email"]::-webkit-input-placeholder{
+	color: #fff;
+}
+.section-newsletter .section-content .newsletter-form input[type="email"]::-moz-placeholder{
+	color: #fff;
+}
+
+.section-newsletter .section-content .newsletter-form input[type="email"]:-ms-input-placeholder{
+	color: #fff;
+}
+
+.section-newsletter .section-content .newsletter-form input[type="email"]:-moz-placeholder{ 
+	color: #fff;
+}
+
+
+/*
+
+*/
+.btn-primary {
+  color: #000;
+  background-color: #00A183;
+  border-color: #00A183;
+}
+.btn-primary:focus,
+.btn-primary.focus {
+  color: #000;
+  background-color: #00A183;
+  border-color: #00A183;
+}
+.btn-primary:hover {
+  color: #000;
+  background-color: #00A183;
+  border-color: #00A183;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  color: #000;
+  background-color: #00A183;
+  border-color: #00A183;
+}
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.open > .dropdown-toggle.btn-primary:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.open > .dropdown-toggle.btn-primary:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary.focus {
+  color: #000;
+  background-color: #00A183;
+  border-color: #00A183;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.btn-primary .badge {
+  color: #337ab7;
+  background-color: #fff;
+}
+
+
+
+
+
+
+.section-choose-how-many-tickets .ticket-nav li a span {
+    font-size: 30px;
+    line-height: 50px;
+    display: block;
+    margin: 0 0 2px;
+}
+
+.section-choose-how-many-tickets .ticket-nav li a {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #b3b3b3;
+    background: #f8f8f8;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    position: relative;
+    color: #b3b3b3;
+}
+
+
+

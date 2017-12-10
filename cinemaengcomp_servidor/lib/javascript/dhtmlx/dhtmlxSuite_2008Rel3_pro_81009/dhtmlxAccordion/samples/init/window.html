@@ -1,0 +1,68 @@
+<!--conf
+<sample in_favorites="false">
+              <product version="2.0" edition="std"/>
+                     <modifications>
+                            <modified date="080715"/>
+                     </modifications>
+               </sample>
+ -->
+<html>
+<head>
+	<title>Attach Accordion to Window</title>
+	<script src="../../codebase/dhtmlxcommon.js"></script>
+	<script src="../../codebase/dhtmlxaccordion.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../codebase/skins/dhtmlxaccordion_dhx_blue.css">
+	<script src="../../../dhtmlxWindows/codebase/dhtmlxwindows.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../dhtmlxWindows/codebase/dhtmlxwindows.css">
+	<link rel="stylesheet" type="text/css" href="../../../dhtmlxWindows/codebase/skins/dhtmlxwindows_dhx_blue.css">
+</head>
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxaccordion_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxAccordion</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Attach Accordion to Window</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxAccordion/index.shtml">dhtmlxAccordion main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+<div id="vp" style="width:400px;height:400px"></div>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-comment">//</span><span class="hl-comment"> initing windows</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">dhxWins</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXWindows</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+    ...
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">w1</span><span class="hl-code"> = </span><span class="hl-identifier">dhxWins</span><span class="hl-code">.</span><span class="hl-identifier">createWindow</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">w1</span><span class="hl-quotes">&quot;</span><span class="hl-code">, ...</span><span class="hl-brackets">)</span><span class="hl-code">;
+    
+    </span><span class="hl-comment">//</span><span class="hl-comment"> attaching accordion</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">dhxAccord</span><span class="hl-code"> = </span><span class="hl-identifier">w1</span><span class="hl-code">.</span><span class="hl-identifier">attachAccordion</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">dhxAccord</span><span class="hl-code">.</span><span class="hl-identifier">addItem</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">a1</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-quotes">&quot;</span><span class="hl-string">a</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    ...</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+<script>
+	var dhxWins = new dhtmlXWindows();
+	dhxWins.enableAutoViewport(false);
+	dhxWins.attachViewportTo("vp");
+	dhxWins.vp.style.border = "#909090 1px solid";
+	dhxWins.setImagePath("../../../dhtmlxWindows/codebase/imgs/");
+	var w1 = dhxWins.createWindow("w1", 10, 10, 320, 360);
+	//
+	
+	var dhxAccord = w1.attachAccordion();
+	dhxAccord.addItem("a1", "a");
+	dhxAccord.addItem("a2", "b");
+	dhxAccord.addItem("a3", "c");
+	dhxAccord.openItem("a1");
+	// dhxAccord._enableOpenEffect = true;
+</script>
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

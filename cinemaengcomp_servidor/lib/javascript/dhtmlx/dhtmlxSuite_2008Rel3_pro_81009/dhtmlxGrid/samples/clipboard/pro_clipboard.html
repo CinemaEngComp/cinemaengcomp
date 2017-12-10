@@ -1,0 +1,124 @@
+<!--conf
+<sample>
+              <product version="1.4" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               </sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Operations with clipboard</title>
+	
+</head>
+
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxgrid_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxGrid</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Operations with clipboard</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxGrid/index.shtml">dhtmlxGrid main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid.css">
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxgrid.js"></script>
+	<script  src="../../codebase/ext/dhtmlxgrid_splt.js"></script>
+	<script  src="../../codebase/ext/dhtmlxgrid_nxml.js"></script>
+	<script  src="../../codebase/dhtmlxgridcell.js"></script>
+	<script>
+		function copyData(type,delim){
+			mygrid.setCSVDelimiter(delim)
+			if(type=="all"){//copy entire grid
+				mygrid.gridToClipboard();
+			}else if(type=="srows"){//selected row
+				mygrid.rowToClipboard();
+			}else if(type=="cell"){//single cell
+				mygrid.cellToClipboard();
+			}
+		}
+		function serilaizeToCSVWithDelim(delim){
+			mygrid.setCSVDelimiter(delim)
+			document.getElementById('ser_1').value=mygrid.serializeToCSV();
+		}
+	</script>
+<div id="gridbox" width="600px" height="200px" style="background-color:white;overflow:hidden"></div>
+
+
+	<div>
+	Use as delimiter:<br>
+	<li hrei><a href="javascript:void(0)" onclick="serilaizeToCSVWithDelim('\t')">Tab</a> - \t</li>
+	<li><a href="javascript:void(0)" onclick="serilaizeToCSVWithDelim(',')">Comma</a> - ,</li>
+	<li><a href="javascript:void(0)" onclick="serilaizeToCSVWithDelim(document.getElementById('serdelim').value)">Other</a> <input id="serdelim" size="1" maxlength="1"></li>
+	</div><br>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">setCSVDelimiter</span><span class="hl-brackets">(</span><span class="hl-identifier">delim</span><span class="hl-brackets">)</span><span class="hl-code">;</span><span class="hl-comment">//</span><span class="hl-comment">set delimiter to use. Comma by default</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">csv</span><span class="hl-code"> = </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">serializeToCSV</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></div>
+<div class="h3">Copy</div>
+	<div>
+	<li><a href="javascript:void(0)" onclick="copyData('all','\t')">Copy entire grid (with tab as delimiter) to clipboard</a></li>
+	<li><a href="javascript:void(0)" onclick="copyData('srows','\t')">Copy selected row(s) to clipboard</a></li>
+	<li><a href="javascript:void(0)" onclick="copyData('cell','\t')">Copy selected cell to clipboard</a></li>
+	</div><br>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">gridToClipboard</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;</span><span class="hl-comment">//</span><span class="hl-comment">copy entire grid to clipboard in csv format</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">rowToClipboard</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;</span><span class="hl-comment">//</span><span class="hl-comment">copy selected rows to clipboard in csv format</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">cellToClipboard</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;</span><span class="hl-comment">//</span><span class="hl-comment">copy selected cell value to clipboard</span><span class="hl-comment"></span></pre></div></div>
+<div class="h3">Paste CSV content to Grid</div>
+	<div>
+	<li><a href="javascript:void(0)" onclick="mygrid.clearAll(); mygrid.gridFromClipboard();">Load grid from clipboard</a></li>
+	<li><a href="javascript:void(0)" onclick="mygrid.updateRowFromClipboard();">Update selected row from clipboard</a></li>
+	<li><a href="javascript:void(0)" onclick="mygrid.addRowFromClipboard();">Add row(s) from clipboard</li>
+	<li><a href="#" onclick="mygrid.updateCellFromClipboard();">Update selected cell from clipboard</a></li>
+	</div><br>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-comment">//</span><span class="hl-comment">update entire grid from clipboard</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">clearAll</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;</span><span class="hl-comment">//</span><span class="hl-comment">clears grid</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">gridFromClipboard</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;</span><span class="hl-comment">//</span><span class="hl-comment">set grid content from clipboard (uses active delimiter)</span><span class="hl-comment"></span><span class="hl-code">
+    
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">updateRowFromClipboard</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;</span><span class="hl-comment">//</span><span class="hl-comment">updates selected row from clipboard (valid row content whould be in clipboard)</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">addRowFromClipboard</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;</span><span class="hl-comment">//</span><span class="hl-comment">adds rows from clipboard to grid</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">updateCellFromClipboard</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">; </span><span class="hl-comment">//</span><span class="hl-comment">sets clipboard content as selected cell value</span><span class="hl-comment"></span></pre></div></div>
+<br>
+<textarea style="font-size:8pt; font-family:Arial; width:800px; height:150px;" id="ser_1"></textarea>
+	
+	
+<br>
+Note: FireFox doesn't allow clipboard activity by default
+
+<script>
+
+   mygrid = new dhtmlXGridObject('gridbox');
+   mygrid.setImagePath("../../codebase/imgs/");
+   mygrid.setHeader("Sales,Book Title,Author,Price,In Store,Shipping,Bestseller,Date of Publication");
+   mygrid.setInitWidths("50,150,100,80,80,80,80,200")
+   mygrid.setColAlign("right,left,left,right,center,left,center,center")
+   mygrid.setColTypes("dyn,ed,ed,price,ch,co,ra,ro");
+   mygrid.getCombo(5).put(2,2);
+   mygrid.enableMultiselect(true)
+   mygrid.setSkin("modern")
+   mygrid.init();
+    mygrid.splitAt(1);
+   mygrid.loadXML("grid.xml");
+
+	
+</script>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

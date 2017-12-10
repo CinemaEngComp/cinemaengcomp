@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+		<tree id="0">
+			
+			<item id="dhtmlxwindows" text="dhtmlxWindows" im0="dhtmlxwindows_icon.gif" im1="dhtmlxwindows_icon.gif" im2="dhtmlxwindows_icon.gif">
+				<userdata name="url">
+					../dhtmlxWindows/doc
+				</userdata>
+				<userdata name="thisurl">
+					../dhtmlxWindows/doc/guide.html
+				</userdata>
+				<item text="Main Features" id="win_mf">
+					<userdata name="url">guide.html</userdata>
+				</item>
+				<item text="Supported Browsers" id="win_browsers">
+					<userdata name="url">guide.html</userdata>
+				</item>
+				<item text="Guide" id="win_guide">
+					<userdata name="url">guide.html</userdata>
+					<item text="Initializing dhtmlxWindows" id="win_init"></item>
+					<item text="Attach object" id="win_atobj"></item>
+					<item text="Attach url" id="win_aturl"></item>
+					<item text="Viewport (working area)" id="win_viewport"></item>
+					<item text="Skins" id="win_skins"></item> 
+					<item text="Accessing single window" id="win_singwin"></item>
+					<item text="Window iterator" id="win_interator"></item>
+					<item text="Changing window dimension" id="win_chdim"></item>
+					<item text="Changing window position" id="win_pos"></item>
+					<item text="Window parking" id="win_park"></item>
+					<item text="Window minimizing/maximizing" id="win_mnmax"></item>
+					<item text="Bringing window to top/bottom" id="win_topbtm"></item>
+					<item text="Window sticking/unsticking" id="win_stic"></item>
+					<item text="Modal/modeless window" id="win_modal"></item>
+					<item text="Topmost/Bottommost Window" id="win_tmbm"></item>
+					<item text="Buttons settings manipulating" id="win_btns"></item>
+					<item text="Creating user buttons" id="win_userbutton"></item>
+					<item text="Event handling" id="win_eventhand"></item>
+				</item>
+				<item text="API Functions" id="win_api">
+					<userdata name="url">alpha.html</userdata>
+	        	 	<item text="Object constructor" id="win_api_obj">
+	    	       		<userdata name="url">objects.html</userdata>
+		         	</item>
+	        	 	<item text="Alphabeticaly sorted" id="win_api_a">
+						<userdata name="url">alpha.html</userdata>
+					</item>
+					<item text="Grouped by Type" id="win_api_t">
+						<userdata name="url">tgroup.html</userdata>
+					</item>
+					<item text="Grouped by Object" id="win_api_o">
+						<userdata name="url">ogroup.html</userdata>
+					</item>
+					<item text="Events" id="win_api_events">
+						<userdata name="url">events.html</userdata>
+					</item>
+				</item>
+			</item>
+			
+		</tree>

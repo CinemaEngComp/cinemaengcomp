@@ -1,0 +1,93 @@
+<!--conf
+<sample in_favorites="false">
+              <product version="1.4" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               </sample>
+ --> 
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Insert/Delete column</title>
+	
+
+
+
+</head>
+
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxgrid_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxGrid</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Insert/Delete column</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxGrid/index.shtml">dhtmlxGrid main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid.css">
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxgrid.js"></script>
+	<script  src="../../codebase/ext/dhtmlxgrid_mcol.js"></script>
+	<script  src="../../codebase/dhtmlxgridcell.js"></script>
+	<div id="gridbox" width="600px" height="200px" style="background-color:white;"></div>
+	<br>
+	Add Column<br><br>
+	Index <br>
+	<input type="text" id="ind" maxlength="1" size="1" value="0"><br>
+	Label<br>
+	<input type="text" id="lbl" maxlength="50" size="20" value="New Column"><br>
+	Type (code)<br>
+	<input type="text" id="typ" maxlength="3" size="3" value="ed"><br>
+	Width (px)<br>
+	<input type="text" id="wdt" maxlength="3" size="3" value="100"><br>
+	
+	<button onclick="mygrid.insertColumn(document.getElementById('ind').value,document.getElementById('lbl').value,document.getElementById('typ').value,document.getElementById('wdt').value);">Add Column</button>
+	
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">insertColumn</span><span class="hl-brackets">(</span><span class="hl-identifier">index</span><span class="hl-code">,</span><span class="hl-reserved">label</span><span class="hl-code">,</span><span class="hl-identifier">typeCode</span><span class="hl-code">,</span><span class="hl-identifier">width</span><span class="hl-brackets">)</span></pre></div></div>
+	
+	<p>Drop Column</p>
+	<a href="javascript:void(0)" onclick="mygrid.deleteColumn(document.getElementById('indDrop').value);">Drop</a> column by index: <input type="text" id="indDrop" maxlength="1" size="1" value="0"><br>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">deleteColumn</span><span class="hl-brackets">(</span><span class="hl-identifier">index</span><span class="hl-brackets">)</span></pre></div></div>
+
+<br>
+<script>
+
+
+	mygrid = new dhtmlXGridObject('gridbox');
+	mygrid.setImagePath("../../codebase/imgs/");
+    mygrid.setHeader("Sales,Info,a-,Price,In Store,Shipping,info2,a-");
+	mygrid.setInitWidths("50,150,120,80,80,80,80,200")
+	mygrid.setColAlign("right,left,left,right,center,left,center,center")
+	mygrid.setColTypes("ed,ed,ed,price,ch,co,ra,ro");
+    mygrid.getCombo(5).put(2,2);
+	mygrid.setColSorting("int,str,str,int,str,str,str,str")
+	mygrid.setColumnColor("white,#d5f1ff,#d5f1ff")
+    mygrid.enableMultiselect(true);
+    mygrid.setColumnMinWidth(50,0);
+	mygrid.enableColumnMove(true);
+	mygrid.setSkin("xp")
+	mygrid.init();
+	mygrid.loadXML("grid.xml");
+
+</script>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

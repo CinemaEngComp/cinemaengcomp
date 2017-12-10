@@ -1,0 +1,6 @@
+<root fields="service|city" >
+	<e a="storage" b="Vancouver" xk="2" />
+	<e a="catering" b="Toronto" xk="1" />
+	<e a="security" b="Calgery" xk="5" />
+	<e a="transport" b="Montreal" xk="4" />
+</root>

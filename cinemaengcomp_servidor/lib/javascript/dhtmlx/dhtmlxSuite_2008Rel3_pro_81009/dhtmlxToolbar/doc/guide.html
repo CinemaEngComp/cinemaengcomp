@@ -1,0 +1,1296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>dhtmlxToolabr 2.0 Guide</title>
+	<link rel="STYLESHEET" type="text/css" href="common/styles.css">
+</head>
+   
+<body>
+                                                                                    
+<div id="nuoe">                                          
+
+                                                                                    
+<div id="nuoe">                                          
+
+    
+    
+<h1 id="f660">dhtmlxToolbar 2.0 Guide and Code Samples <br id="n8ls">
+</h1>
+<h2><a name='toolbar_rjpy'>1. Introduction
+</a></h2>
+<h3><a name='toolbar_rjpy0'>1.1 Scope of the Document</a></h3>
+This document describes <b id="s0c4">dhtmlxToolbar </b>component of v.2.x, defines its methods and global parameters. This documentation is created to give users full understanding of every feature of this component, and also to enable users to implement this component quickly and easily.<br id="xure">
+<h3><a name='toolbar_cofp'>1.2 Target Readers</a></h3>
+
+<p class="MsoNormal" id="h:xr">Target readers are users (developers).<br id="qspa0">
+</p>
+<h3><a name='toolbar_cofp0'>1.3 Note for users of dhtmlxToolbar 1.0</a></h3>
+<p id="h8:h3">dhtmlxToolbar v.2.0 is a brand new product which has no
+backward compatibility with dhtmlxToolbar v.1.0 either in API or in XML format. <br id="w03.0">
+ </p>
+<h2><a name='toolbar_jqzv'>2. What is dhtmlxToolbar</a></h2>
+<b id="w_m_">dhtmlxToolbar 2.0 </b>is a second version of dhtmlxToolbar component, which provides an easy way to add a professional toolbar to user's projects. <font id="eu.2" size="-1">A toolbar contains buttons/items for the most commonly-used commands in an application. </font>This component is highly customizable and supports a wide range of features. <br id="otrp0">
+<br id="ymrf">
+<b id="dqx.0">dhtmlxToolbar 2.0 </b>component provides means for users to activate commands and tools contained in an application/website. To make the application/website user-friendly, a toolbar should be designed to expose the key functionality. This component will work well at any page and in any browser that supports JavaScript.<br id="qcba">
+<br id="wglk">
+The component provides users with the possibility to:<br id="w_v3">
+<br id="v4lm">
+<ul id="l7:s">
+<li id="c2wf">Create unlimited number of toolbar items; 
+</li>
+<li id="rx55">Add icons to toolbar items; 
+</li>
+<li id="dn1o">Manipulate with items settings; 
+</li>
+<li id="jhp.">Attach user-defined handlers for events;<br id="jhp.0">
+</li>
+<li id="ge7g">Use one of <span id="l.61" style="background-color: rgb(255, 255, 255);">t</span><span id="j27x" style="background-color: rgb(255, 255, 255);">h</span><span id="w_v30" style="background-color: rgb(255, 255, 255);">e </span><span id="g0um" style="background-color: rgb(255, 255, 255);">predefined skins</span><span id="ucak" style="background-color: rgb(255, 255, 255);">.</span> <br id="el2n">
+</li>
+</ul>
+<h3><a name='toolbar_cfnd'>2.1 Main Features</a></h3>
+<ul id="uxdx0">
+<li id="uxdx1">Multibrowser/Multiplatform support;</li>
+<li id="cfnd0">Full control with JavaScript API;</li>
+<li id="cfnd1">Highly customizable;</li>
+<li id="cfnd2">Different types of buttons included;</li>
+<li id="cfnd3">Different ways of data loading (XML file or string, JS Object).<br id="cfnd4">
+</li>
+</ul>
+<h3><a name='toolbar_cfnd5'>2.2 Supported browsers</a></h3>
+<ul id="cfnd6">
+<li id="cfnd7">IE;</li>
+<li id="cfnd8">Mac OS X Safari/Conqueror;</li>
+<li id="cfnd9">Mozilla/Mozilla Firefox;</li>
+<li>Google Chrome;<br>
+</li>
+<li id="yso20">
+      Opera 8.5+.</li>
+</ul>
+<h2><a name='toolbar_jqzv0'>3. Types of Items in dhtmlxToolbar
+</a></h2>
+<b id="ky5u">dhtmlxToolbar </b>can operate the following types of items:<br id="wjxz">
+<br id="fcat">
+<ul id="k2-z">
+<li id="m1ag"><b id="wjxz0">Button </b>- a simple button; 
+</li>
+<li id="py.d"><b id="wjxz1">Text </b>- an item that contains some text displayed in the item display area; 
+</li>
+<li id="xyff"><b id="wjxz2">Select Button</b> - a button that can list several options;</li>
+<li id="jbzz"><b id="wjxz7"><span id="bz5y" style="font-family: Verdana;">Listed Option</span></b> - an option of the Select Button;</li>
+<li id="evis"><b id="wjxz3">Two-State Button</b> - a button that can remain in one of its two states until its current state is changed by user (either from script or from page); 
+</li>
+<li id="gwa2"><b id="wjxz4">Separator </b>- <font id="tb_m" style="font-family: Verdana;" face="Arial" size="2">a horizontal/vertical line separating groups of items from each other</font>; 
+</li>
+<li id="mioz"><b id="wjxz5">Slider </b>- an item having a slider in it that allows the user to change item's value within the available limits (the user can drag the slider's thumb in one of two directions); 
+</li>
+<li id="d:v30"><b id="wjxz6">Input </b>- an area where the user can type some text in.<br id="fz6k">
+</li>
+</ul>
+<h2><a name='toolbar_jqzv1'>4. Initializing dhtmlxToolbar </a></h2>
+
+<h3><a name='toolbar_jqzv2'>4.1 New Toolbar Object Creation 
+</a></h3>
+<a id="s0b6" name="_Toc193605132"></a>
+<a id="s3e95" name="_Toc193605132"></a><a id="fbxy" name="_Toc193605132"></a>
+<p id="jcck5">The first steps that need to be taken for <b id="s3e98">dhtmlx</b><b id="l35y0">Toolbar'</b>s initialization are the following: </p>
+<p id="jcck6"><br id="l35y1">
+</p>
+<ul id="tour">
+<li id="p5-m">Download dhtmlxToolbar 2.0 package from the server and place it in a folder; 
+</li>
+<li id="jcck7">Create an index.html file; 
+</li>
+<li id="jcck8">Place a full path to the CSS file into the &lt;head&gt; tag of html file. This file determines toolbar's appearance according to the chosen skin (in this example we use <i id="pg22">dhx_blue </i>skin). <span id="h58j" style="background-color: rgb(255, 255, 255);">That's why we recommend our users to make up their mind on which skin they are going to apply on this very step</span><span id="qgav" style="background-color: rgb(255, 255, 255);">;</span> 
+</li>
+<li id="jcck10">Place the full paths to JS files into the &lt;head&gt; tag of html file.</li>
+</ul>
+<blockquote id="i52h">&lt;head&gt;<br id="i52h0">
+&nbsp;&nbsp;&nbsp; &lt;script src="<span id="jcck11" style="font-family: Verdana;"><font id="jcck12" size="2">[full path to this file]</font></span>/dhtmlxcommon.js"&gt;&lt;/script&gt;<br id="i52h1">
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="<span id="jcck13" style="font-family: Verdana;"><font id="jcck14" size="2">[full path to this file]</font></span>/dhtmlxtoolbar.js"&gt;&lt;/script&gt;<br id="i52h2">
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" type="text/css" href="<span id="x_e0" style="font-family: Verdana;"><font id="ekf7" size="2">[full path to this file]</font></span>/dhtmlxtoolbar_dhx_blue.css"&gt;<br id="i52h3">
+&lt;/head&gt;<br id="tcwc4">
+</blockquote>
+</div>
+<div id="i52h4"><a id="bb-h" name="_Toc193605132"><span id="xapr" style="font-family: Verdana;"><font id="rehr" size="2">The user needs to create </font></span>an object where <span id="jcck15" style="background-color: rgb(255, 255, 255);"><b id="on2r">dhtmlXToolbar</b></span><span id="jcck16" style="background-color: rgb(255, 255, 255);"> will</span><span id="nv3o" style="background-color: rgb(255, 255, 255);"> be placed later. In this example the object is a &lt;div&gt; element on page, which is placed in the &lt;body&gt; tag.</span></a><a id="tcwc0" name="_Toc193605132"><br id="ytz0">
+</a>
+<blockquote id="vx5g"><a id="vx5g0" name="_Toc193605132"></a> &lt;<span class="start-tag" id="toms0">div</span><span class="attribute-name" id="toms1"> id</span>=<span class="attribute-value" id="toms2">"toolbar"</span>&gt;&lt;/<span class="end-tag" id="toms5">div</span>&gt;<br id="ytz00">
+</blockquote>
+<a id="jcck65" name="_Toc193605132">The next step is to create </a><a id="jcck66" name="_Toc193605132">a new </a><b id="qtx8"><a id="jcck67" name="_Toc193605132"><span id="jcck68" style="font-family: Verdana;"><font id="jcck69" size="2">dhtmlXToolbarObject</font></span></a></b><a id="jcck70" name="_Toc193605132"> and </a><span id="d3gs" style="font-family: Verdana;"><font id="an7g" size="2">place it after the &lt;div&gt; element (object) that we've just created</font></span><span id="jcck71" style="font-family: Verdana;"><font id="jcck72" size="2">:</font></span><a id="co6j1" name="_Toc193605132"></a> 
+<blockquote id="oyw4"><a id="gxuo" name="_Toc193605132"><span id="rvyz" style="font-family: Verdana;"><font id="zpkf" size="2">&lt;script&gt;<br id="vx5g3">
+&nbsp;&nbsp;&nbsp;&nbsp;var toolbar = new dhtmlXToolbarObjec<span id="b1bt" style="background-color: rgb(255, 255, 255);">t(</span></font></span></a><span id="mx9i" style="font-family: Verdana; background-color: rgb(255, 255, 255);"><font id="w58a" size="2">baseId</font></span><a id="t9ek" style="background-color: rgb(255, 255, 255);" name="_Toc193605132"><span id="x3y7" style="font-family: Verdana;"><font id="r2r3" size="2">, skin);<br id="vx5g4">
+&lt;/script&gt;</font></span></a><a id="ag:y" name="DDE_LINK"></a><a id="byh_" style="background-color: rgb(255, 255, 255);" name="DDE_LINK"></a><a id="bvfb" style="background-color: rgb(255, 255, 255);" name="DDE_LINK"><br id="m:uu">
+</a></blockquote>
+<a id="bcyo" style="background-color: rgb(255, 255, 255);" name="_Toc193605132"></a><a id="a.-m" style="background-color: rgb(255, 255, 255);" name="_Toc193605132"></a><a id="dj6d" style="background-color: rgb(255, 255, 255);" name="_Toc193605132"></a><span id="m_dl" style="font-family: Verdana; background-color: rgb(255, 255, 255);"><font id="m_dl0" size="2"><b id="bm84">baseId </b>defines </font></span><span id="xbn:" style="font-family: Verdana;"><font id="xqry" size="2"><span id="b1bt0" style="background-color: rgb(255, 255, 255);">an</span> HTML object on page to which the toolbar is attached</font></span><span id="f4:w" style="font-family: Verdana;"><font id="bwed" size="2"> <span id="rzmx" style="color: rgb(0, 0, 0);">(the main toolbar container in the code mentioned above)</span>.<br id="lgm9">
+<b id="n.1l">skin </b>is the optional parameter which defines the skin, that will be applied to the toolbar. </font></span><span id="r2651" style="font-family: Verdana;"><font id="r2652" size="2">If this argument is not set, the component will be created with the default skin (<i id="ochd">dhx_blue</i>).</font></span><br id="jf55">
+So, in our case the code will look like this:<br id="m_dl1">
+<blockquote id="ecej"><a id="m_dl2" name="_Toc193605132"><span id="m_dl3" style="font-family: Verdana;"><font id="m_dl4" size="2">&lt;script&gt;</font></span></a><br id="ecej0">
+<a id="ecej1" name="_Toc193605132"></a><a id="m_dl8" name="_Toc193605132"></a>&nbsp;&nbsp;&nbsp;&nbsp;var toolbar = new dhtmlXToolbarObject("toolbar");<a id="ecej3" name="_Toc193605132"> </a><br id="ecej5">
+<a id="ecej6" name="_Toc193605132"><span id="ecej7" style="font-family: Verdana;"><font id="ecej8" size="2">&lt;/script&gt;</font></span></a><a id="a_5g" style="background-color: rgb(255, 153, 0);" name="_Toc193605132"></a><br id="ah-u">
+</blockquote>
+<h3><a name='toolbar_hwh0'>4.2 Setting Image Path</a></h3>
+<p id="hq92"><span id="lm96" style="font-family: Verdana;"><font id="dhit" size="2">Method&nbsp;</font></span><b id="v86x0"><span id="v86x1" style="font-family: Tahoma;">setIconsPath() </span></b><span id="xh:e" style="font-family: Verdana;"><font id="x:nm" size="2">should be used to </font></span><span id="jx3b" style="font-family: Verdana;"><font id="om81" size="2">set
+the full path to the directory, where toolbar image files are located. </font></span><font id="hq920" size="2">B</font>y means of this method the user is able to set path to the directory, where <b id="kxj-0">icons</b> images are stored.</p>
+<p id="ubaw"><br id="nuoe0">
+</p>
+      </div>
+<span id="nuoe1" style="font-family: Verdana;"><font id="nuoe2" size="2">The following code string should be placed before any of data loading
+methods</font></span><a id="jcck98" name="_Toc193605132"></a><span id="nuoe3" style="font-family: Verdana;"><font id="nuoe4" size="2">:</font></span><br id="nuoe5">
+<p id="wc8x"></p>
+<blockquote id="z6t2"><a id="r3.i" style="background-color: rgb(255, 255, 255);" name="_Toc193605132"><span id="nm92" style="font-family: Verdana;"><font id="hpdv" size="2">&lt;script&gt;&nbsp;&nbsp;&nbsp; </font></span></a><a id="mdnc0" style="background-color: rgb(255, 255, 255);" name="_Toc193605132"></a><br id="uq2i">
+<a id="z6t20" style="background-color: rgb(255, 255, 255);" name="_Toc193605132">
+    <span id="ruv0" style="font-family: Verdana;"><font id="ruv00" size="2">&nbsp;&nbsp;&nbsp; </font></span>toolbar<span id="xhrv" style="font-family: Verdana;"><font id="xhrv0" size="2">.</font></span><span id="ul.3" style="font-family: Verdana;"><font id="k3m1" size="2">setIconsPath("[</font></span><span id="jcck101" style="font-family: Verdana;"><font id="jcck102" size="2">full path to icons image files directory]</font></span><span id="xhrv1" style="font-family: Verdana;"><font id="xhrv2" size="2">");</font></span></a><br id="o0-o0">
+<span id="z6t21" style="font-family: Verdana; background-color: rgb(255, 255, 255);"><font id="a9-v0" size="2">&lt;/script&gt;</font></span><br id="z6t26">
+</blockquote>
+<h3><a name='toolbar_dugz'>4.3 Available Skins</a></h3>
+<p id="lstg0"><span id="g._f" style="background-color: rgb(255, 255, 255);"><span id="g._f0" style="background-color: rgb(255, 255, 255);">The following predefined skins are available for <b id="h:f0">dhtmlxToolbar</b> users:</span></span></p>
+<p id="dugz0"><br id="dugz3">
+</p>
+<ul id="lstg1">
+<li id="lstg2"><span id="lstg3" style="background-color: rgb(255, 255, 255);"><span id="lstg4" style="background-color: rgb(255, 255, 255);">dhx_blue (the default one);</span></span></li>
+</ul>
+<img id="bzhg1" style="width: 267px; height: 24px;" src="common/dgr5rjkf_184gfx8s7fb_b.png"><br id="vrji">
+<br id="vrji0">
+<ul id="efb43">
+<li id="lstg5"><span id="lstg6" style="background-color: rgb(255, 255, 255);"><span id="lstg7" style="background-color: rgb(255, 255, 255);">dhx_black.</span></span></li>
+</ul>
+<img id="efb41" style="width: 267px; height: 24px;" src="common/dgr5rjkf_183hbm97chq_b.png"><br id="efb46">
+<br id="efb47">
+<div id="efb48"><span id="gn10" style="font-family: Verdana;"><b>Note</b>: other skins that were available in older versions of Toolbar are currently being updated. </span><br id="ttta21">
+<h2><a name='toolbar_dugz4'>5. Data Loading 
+</a></h2>
+The next step of <b id="hhp:">dhtmlxToolbar </b>component initialization is Data Loading.<br id="jit40">
+<br id="feor">
+The user can choose one of 3 data loading possibilities:<br id="jit41">
+<br id="iy_z">
+<ul id="y6uh">
+<li id="p9vc"><b id="npi4"><a id="xztq" title="From external XML file" href="#Data_Loading_from_XML_File">From External XML File</a></b> (with Ajax); 
+</li>
+<li id="y8si"><b id="npi40"><a id="f8lj" title="From XML string" href="#Data_Loading_from_XML_String">From XML String</a></b>; 
+</li>
+<li id="ieqm"><span id="ieqm0" style="background-color: rgb(255, 255, 255);"><b id="npi41"><a id="pdb2" title="From script" href="#Data_Loading_from_Script">From Script</a></b>.</span><br id="zbsn">
+</li>
+</ul>
+
+<h3><a name='toolbar_wa5o'>5.1 Data Loading from XML File
+</a></h3>
+<a id="bwxn" name="_Toc193605132"></a><b id="n:fh">loadXML()</b> method loads we bar data from an XML file. When the data is loaded into the object, <b id="f_ee">a user-defined </b>handler is called (<a title="onLoadFunction" href="#onLoadFunction" id="rwpw">onLoadFunction</a>), if it was indicated by user. All the data is loaded at once: 
+<blockquote id="qe17"><a id="h8ln" name="_Toc193605132">&lt;script&gt;<br id="thvt">
+&nbsp;&nbsp;&nbsp; </a><a id="w9ac0" name="_Toc193605132"><span id="s8nn" style="font-family: Verdana;"><font id="xaz." size="2">toolbar</font></span></a>.loadXML("<span id="jcck187" style="font-family: Verdana;"><font id="jcck188" size="2">[path to this file</font></span>]/file.xml", <span id="z-e7" style="color: rgb(0, 0, 0);">onLoadFunction</span><span id="rrhg" style="color: rgb(0, 0, 0);">);</span><br id="uvak" style="color: rgb(0, 0, 0);">
+<span id="z-e70" style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp; onLoadFunction = function(){</span><br id="uvak0" style="color: rgb(0, 0, 0);">
+<span id="z-e71" style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // will be called if specified</span><br id="uvak1" style="color: rgb(0, 0, 0);">
+<span id="z-e72" style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;}</span><br id="thvt0" style="color: rgb(255, 0, 0);">
+&lt;/script&gt;<br id="peea">
+</blockquote>
+<a id="a0rw" name="_Toc193605132"></a>
+<p id="vdlk">The first parameter of loadXML() method is the path to the XML file, while the second parameter is an optional user-defined handler. <br id="h5.k">
+</p>
+<p id="h5.k0">See <b id="y9y_"><a id="spfg" title="here" href="#XML_Format_Template">here</a></b> for <b id="h5.k1">XML Format Template</b>.<br id="vjhm">
+</p>
+<p id="s1rz"><a id="vdlk1" name="_Toc193605132"><br id="s1rz0">
+</a></p>
+<h3><a name='toolbar_s1rz1'>5.2 Data Loading from XML String</a></h3>
+ <b id="r9pt">loadXMLString()</b> method loads toolbar data from XML string. When the data is loaded into the object, <b id="vxkc">a&nbsp; user-defined </b>handler is called (<a title="onLoadFunction" href="RawDocContents?docID=dgr5rjkf_24chb7xhfq&amp;justBody=false&amp;revision=_latest&amp;timestamp=1217494110378&amp;editMode=true&amp;strip=true#onLoadFunction" id="fcdb">onLoadFunction</a>).<br id="i.9e">
+All the data is loaded at once: 
+<blockquote id="hg-9"><a id="a_x6" name="_Toc193605132">&lt;script&gt;<br id="thvt1">
+&nbsp;&nbsp;&nbsp; </a><a id="f_2.0" name="_Toc193605132"></a><a id="f_2.2" name="_Toc193605132"><span id="f_2.3" style="font-family: Verdana;"><font id="f_2.4" size="2">toolbar</font></span></a>.loadXMLString("<span id="n:sh" style="background-color: rgb(255, 255, 255);">&lt;bar&gt;&lt;item....&gt;</span><span id="z50z" style="background-color: rgb(255, 255, 255);">", </span><a id="w5y1" style="color: rgb(0, 0, 0);" name="_Toc193605132"><span id="w5y10" style="font-family: Verdana;">onLoadFunction</span></a><span id="bupx" style="color: rgb(0, 0, 0);">);</span><br id="thvt2" style="color: rgb(0, 0, 0);">
+<span id="xk4f" style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp; onLoadFunction = function(){</span><br id="xk4f0" style="color: rgb(0, 0, 0);">
+<span id="xk4f1" style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // will be called if specified</span><br id="xk4f2" style="color: rgb(0, 0, 0);">
+<span id="xk4f3" style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;}<br id="xk4f4">
+</span><span id="bupx0" style="color: rgb(0, 0, 0);">&nbsp;&lt;/script&gt;</span></blockquote>
+<a id="jciy" name="_Toc193605132"></a>
+<a id="t__u" name="_Toc193605132"></a>
+<p id="h5.k2">See <b id="y9y_0"><a id="h5.k3" title="here" href="RawDocContents?docID=dgr5rjkf_24chb7xhfq&amp;justBody=false&amp;revision=_latest&amp;timestamp=1216885235681&amp;editMode=true&amp;strip=true#XML_Format_Template">here</a></b> for <b id="h5.k4">XML Format Template</b>.<br id="h5.k5">
+</p>
+<p id="h5.k6"></p>
+<h3><a name='toolbar_k9fw'>5.3 Data Loading from Script
+</a></h3>
+
+
+The user can load dat<span id="z431" style="background-color: rgb(255, 255, 255);">a to the toolbar by adding various types of items from script. </span>Loading data from script means that the user should write a code line for adding every toolbar item. <font id="i8w3" size="2">In our example to add a new button and set its tooltip, add one more button with its tooltip, and add a separator we should write the following:<br id="z_d_">
+</font>
+<blockquote id="z_d_0">
+<p id="h_bv">&lt;script&gt;<br id="h_bv0">
+</p>
+<p id="h_bv1"><a id="d:v314" name="_Toc193605132"><span id="d:v315" style="font-family: Verdana;"><font id="d:v316" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a><span id="d:v317" style="font-family: Verdana;">.</span><span id="w5.3" style="font-family: Verdana;"><font id="vzjv" size="2">addButton(id,text,imgEnabled,imgDisabled);</font></span>&nbsp;&nbsp;&nbsp;<br id="ekyb">
+</p>
+<p id="ekyb0"><a id="clib" name="_Toc193605132"><span id="myva" style="font-family: Verdana;"><font id="ytj:" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a>.setTooltip(id,tip);</p>
+<p id="h_bv2"><a id="w1:i" name="_Toc193605132"><span id="w1:i0" style="font-family: Verdana;"><font id="w1:i1" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a><span id="w1:i2" style="font-family: Verdana;">.</span><span id="w1:i3" style="font-family: Verdana;"><font id="w1:i4" size="2">addButton(id,text,imgEnabled,imgDisabled);</font></span>&nbsp; <br id="w1:i5">
+</p>
+<p id="w1:i6"><a id="w1:i7" name="_Toc193605132"><span id="w1:i8" style="font-family: Verdana;"><font id="w1:i9" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a>.setTooltip(id,tip); </p>
+<p id="h_bv3"><a id="c2608" name="_Toc193605132"><span id="c2609" style="font-family: Verdana;"><font id="c26010" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a><span id="d:v345" style="font-family: Verdana;">.</span>addSeparator(id,pos);&nbsp; </p>
+&lt;/script&gt;<br id="nedl">
+</blockquote>
+<span id="d5t9" style="background-color: rgb(255, 255, 255);">See <b id="s1tf"><a id="co54" title="Items Adding and Removing" href="RawDocContents?docID=dgr5rjkf_24chb7xhfq&amp;justBody=false&amp;revision=_latest&amp;timestamp=1216800674045&amp;editMode=true&amp;strip=true#6._Items_Adding_and_Removing">Items Adding and Removing</a></b> section for more information. </span>
+<h3><a name='toolbar_k9fw9'>5.4 onLoadFunction
+</a></h3>
+<a id="go7q1" name="_Toc193605132"></a><a id="utor" name="_Toc193605132"></a>
+<p id="bt_b"><a id="bt_b0" name="_Toc193605132"><b id="bt_b1"><span id="bt_b2" style="font-family: Verdana;"><font id="bt_b4" size="2">On Load Function</font></span></b> </a><a id="wj7j" name="_Toc193605132"><span id="fs2j" style="font-family: Verdana;">is a user-defined handler that is called after the data was loaded into the object</span></a><a id="tn.u" name="_Toc193605132"><span id="wi_h" style="font-family: Verdana;">:</span></a> </p>
+<p id="wro9"></p>
+<blockquote id="j87t">
+<p id="qglu"><a id="rd73" name="_Toc193605132"><span id="i2_d" style="font-family: Verdana;">&lt;script&gt;<br id="y3-40">
+</span></a></p>
+<p id="y3-41"><a id="y3-42" name="_Toc193605132"><span id="y3-43" style="font-family: Verdana;">&nbsp;&nbsp;&nbsp; </span></a><a id="xvsp" name="_Toc193605132"><span id="wtit" style="font-family: Verdana;"><font id="vc9d" size="2">toolbar</font></span></a><a id="j87t0" name="_Toc193605132"><span id="j87t1" style="font-family: Verdana;">.loadXML("file.xml", function(){</span></a> </p>
+<p id="jcck198"><a id="jcck199" name="_Toc193605132"><span id="jcck200" style="font-family: Verdana;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;alert("the data is loaded"); // will be invoked after XML file loading (after onXLE if specified)<br id="jnp0">
+</span></a></p>
+<p id="jcck201"><a id="jcck202" name="_Toc193605132"><span id="jcck203" style="font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp;});</span></a> </p>
+<a id="y3-45" name="_Toc193605132"><span id="y3-46" style="font-family: Verdana;">&lt;/script&gt;</span></a><br id="exu5">
+</blockquote>
+<h2><a name='toolbar_km48'>6. Adding and Removing Items
+</a></h2>
+<h3><a name='toolbar_cai20'>6.1 Button Adding</a></h3>
+<span id="cai22" style="font-family: Verdana;"><font id="cai23" size="2">A Button item can be easily added to the toolbar with the help of the following method:<br id="rij0">
+</font></span>
+<blockquote id="gn4p"><a id="ekyb1" name="_Toc193605132"><span id="ekyb2" style="font-family: Verdana;"><font id="ekyb3" size="2">&lt;script&gt;<br id="kjrh">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a><span id="ekyb4" style="font-family: Verdana;">.</span><span id="ekyb5" style="font-family: Verdana;"><font id="ekyb6" size="2">addButton(id,pos,text,imgEnabled,imgDisabled);<br id="kjrh0">
+&lt;/script&gt;<br id="cpqu">
+</font></span></blockquote>
+<span id="i6w_" style="font-family: Verdana;"><font id="rbku" size="2">Parameters that should be passed are:<br id="ih7a">
+<br id="srvj">
+</font></span>
+<ul id="k1e6">
+<li id="cq27"><b id="m9j1">id </b>- id of a new button; 
+</li>
+<li id="svr9"><b id="svr90">pos </b>- position of the button;<br id="svr91">
+</li>
+<li id="xzbb"><b id="z9.8">text </b>- button's label; 
+</li>
+<li id="tujk"><b id="bdg0">imgEnabled </b>- path to image for the enabled state of the button; 
+</li>
+<li id="vtai"><b id="m0wk">imgDisabled </b>- path to image for the disabled state of the button.<br id="d73.">
+</li>
+</ul>
+<h3><a name='toolbar_gzry'>6.2 Text Item Adding
+</a></h3>
+<p id="gzry9"><span id="fkos" style="font-family: Verdana;"><font id="fp:5" size="2">A Text Item can be added to </font></span><span id="d:v318" style="font-family: Verdana;"><font id="d:v319" size="2">the </font></span>toolbar by calling <b id="v59m">addText() </b>method:<br id="n_as">
+</p>
+<blockquote id="p8uz"><a id="d:v322" name="_Toc193605132"><span id="d:v323" style="font-family: Verdana;"><font id="d:v324" size="2">&lt;script&gt;<br id="bg.s">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a><span id="d:v325" style="font-family: Verdana;">.</span><span id="gvkb" style="font-family: Verdana;"><font id="xbdy" size="2">addText(id,pos,text);<br id="bg.s0">
+&lt;/scrip&gt;<br id="knz:">
+</font></span></blockquote>
+<span id="i-72" style="font-family: Verdana;"><font id="vq95" size="2">The following parameters should be passed to this method:<br id="ih7a0">
+<br id="c697">
+</font></span>
+<ul id="t_to">
+<li id="qbji"><b id="s28j">id </b>- id of the new item; 
+</li>
+<li id="mlc2"><b id="wuu_">pos</b> - position of the text item;<br id="ojn0">
+</li>
+<li id="otn4"><b id="nsvr">text </b>- label of the text item.<br id="tt1m">
+</li>
+</ul>
+<h3><a name='toolbar_dh1b'>6.3 Select Button Adding
+</a></h3>
+<span id="op59" style="font-family: Verdana;"><font id="z1u8" size="2">There is one simple method </font></span><span id="d:v326" style="font-family: Verdana;"><font id="d:v327" size="2">that adds a Select Button to </font></span><span id="d:v328" style="font-family: Verdana;"><font id="d:v329" size="2">the </font></span><span id="d:v330" style="font-family: Verdana;"><font id="d:v331" size="2">toolbar</font></span><span id="d:v332" style="font-family: Verdana;"><font id="d:v333" size="2">:<br id="x4hb">
+</font></span>
+<div id="y..3" style="text-align: justify;">
+<blockquote id="dtpk"><a id="d:v334" name="_Toc193605132"><span id="d:v335" style="font-family: Verdana;"><font id="d:v336" size="2">&lt;script&gt;<br id="tyav1">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a><span id="d:v337" style="font-family: Verdana;">.</span><span id="pd11" style="font-family: Verdana;"><font id="moue" size="2">addButtonSelect(id,pos,text,opts,imgEnabled,imgDisabled);<br id="tyav2">
+&lt;/script&gt;<br id="akme">
+</font></span></blockquote>
+</div>
+<span id="ylxp" style="font-family: Verdana;"><font id="jabg" size="2">The following parameters should be passed to this method:<br id="b:ea">
+<br id="z:l_">
+</font></span>
+<ul id="ps0y">
+<li id="qwhi"><b id="l1ua">id </b>- id of the new select button; 
+</li>
+<li id="vng9"><b id="qf0g">pos </b>- item's position; 
+</li>
+<li id="hc06"><b id="b:-h">text </b>- label of the item; 
+</li>
+<li id="eavs"><b id="egim">opts </b>- options that will be listed; 
+</li>
+<li id="res1"><b id="uhmw">imgEnabled </b>- path to image for the enabled state of the select button; 
+</li>
+<li id="sxfx"><b id="kk7n">imgDisabled </b>- path to image for the disabled state of the select button.<br id="b:ea0">
+</li>
+</ul>
+<span id="ojni" style="font-family: Verdana;"><font id="tla." size="2"><span id="kp33" style="background-color: rgb(255, 255, 0);"><br id="b:ea1">
+<span id="txbn" style="background-color: rgb(255, 255, 255);">The </span></span><b id="q60t" style="background-color: rgb(255, 255, 255);">opts </b><span id="kp330" style="background-color: rgb(255, 255, 255);">parameter requires m</span><span id="txbn0" style="background-color: rgb(255, 255, 255);">or</span>e detailed description as the user should specify the following for each listed option:<br id="gl:q">
+<br id="h7.l">
+</font></span>
+<ul id="zorl">
+<li id="a0v1"><b id="fye:">id </b>- id of the option; 
+</li>
+<li id="dwen"><span id="vmcw" style="font-family: Verdana;"><font id="s4vx" size="2"><b id="g_sm">type </b>-&nbsp; obj|sep, whether this option is an object or a separator;</font></span> 
+</li>
+<li id="phqu"><span id="t1yr" style="font-family: Verdana;"><font id="ol3u" size="2"><b id="ybul">text</b> - </font></span>label of the option (only for objects); 
+</li>
+<li id="jyk6"><b id="wz1_">img</b> - path to the option image (only for objects).</li>
+</ul>
+<br id="gl:q0">
+Several options can be set at once as <b id="su-g">opts </b>variable:<br id="g3gn">
+<blockquote id="ntoe">
+<p id="ntoe0">&lt;script&gt;<br id="nrfu">
+</p>
+<p id="nrfu0">&nbsp;&nbsp;&nbsp;&nbsp;var opts = Array(Array('id1', 'obj', 'option1', 'img1'), Array('sep01', 'sep', '', ''), Array('id2', 'obj', 'option2', 'img2'));</p>
+<p id="nrfu1"><font id="jr1u" size="2"><span id="y:1o" style="font-family: Verdana;">&lt;/script&gt;<br id="v8r2">
+</span></font></p>
+</blockquote>
+<span id="p842" style="font-family: Verdana;"><font id="y957" size="2">This line of code should be written before we invoke </font></span><span id="tupi" style="font-family: Verdana;"><font id="tupi0" size="2"><b id="tupi1">addButtonSelect()</b> method. This code is very useful, as instead of writing all the arrays for the <b id="pdla">opts </b>parameter in </font></span><span id="iu_n" style="font-family: Verdana;"><font id="iu_n0" size="2"><b id="iu_n1">addButtonSelect()</b> method</font></span><span id="iu_n2" style="font-family: Verdana;"><font id="iu_n3" size="2">, we can use <b id="pdla0">opts </b>variable, declared before. </font></span><br id="i9qw">
+<h3><a name='toolbar_dh1b16'>6.4 Two-State Button Adding
+</a></h3>
+The following method should be used to add a new Two-State Button:
+<blockquote id="vho0">
+<p class="MsoNormal" id="etg5"><a id="d:v338" name="_Toc193605132"><span id="d:v339" style="font-family: Verdana;"><font id="d:v340" size="2">&lt;script&gt;<br id="c260">
+</font></span></a></p>
+<p class="MsoNormal" id="c2600"><a id="c2601" name="_Toc193605132"><span id="c2602" style="font-family: Verdana;"><font id="c2603" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a><span id="d:v341" style="font-family: Verdana;">.</span>addButtonTwoState(id,pos,text,imgEnabled,imgDisabled);</p>
+<p class="MsoNormal" id="c2604">&lt;/script&gt;<br id="c2605">
+</p>
+</blockquote>
+<p class="MsoNormal" id="pk5q">The user should pass a number of parameters to this method:</p>
+<p class="MsoNormal" id="ptx."><br id="ptx.0">
+</p>
+<ul id="id2q">
+<li id="xl0s"><b id="mx0u">id </b>- id of the new button; 
+</li>
+<li id="t9d5"><b id="ey.v">pos </b>- position of the new button; 
+</li>
+<li id="kvmi"><b id="tm_-">text </b>- button's label;<br id="zj7m">
+</li>
+<li id="vhn3"><b id="vd4r">imgEnabled </b>- path to image for the enabled state of a new button; 
+</li>
+<li id="hcp1"><b id="ol:t">imgDisabled </b>- path to image for the disabled state of a new button. </li>
+</ul>
+<p id="dmpy"><br id="dmpy0">
+</p>
+
+<p class="MsoNormal" id="lb762"><b id="epoz">Note</b><i id="ihi1">:</i> if the user wants the Two-State Button to be created text-free, it's necessary to write an empty string as <b id="wa75">text </b>parameter.<br id="lb763">
+</p>
+<h3><a name='toolbar_jg7s0'>6.5 Separator Adding 
+</a></h3>
+A new Separator can be created by calling the following method:
+<blockquote id="mbl0">
+<p class="MsoNormal" id="nz4w"><a id="d:v342" name="_Toc193605132"><span id="d:v343" style="font-family: Verdana;"><font id="d:v344" size="2">&lt;script&gt;<br id="c2606">
+</font></span></a></p>
+<p class="MsoNormal" id="c2607"><a id="zpma" name="_Toc193605132"><span id="zpma0" style="font-family: Verdana;"><font id="zpma1" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a><span id="zpma2" style="font-family: Verdana;">.</span>addSeparator(id,pos);</p>
+<p class="MsoNormal" id="c26011">&lt;/script&gt;<br id="c26012">
+</p>
+</blockquote>
+<p class="MsoNormal" id="sxp0">This method has two input parameters:</p>
+<p class="MsoNormal" id="xef1">&nbsp;</p>
+<ul id="ifcr">
+<li id="m7vt"><b id="ln9z">id </b>- id of the item; 
+</li>
+<li id="a.l1"><b id="n5ya">pos </b>- position of the new separator.<br id="wbvf">
+</li>
+</ul>
+<h3><a name='toolbar_jg7s18'>6.6 Slider Adding
+</a></h3>
+<b id="iwjn">addSlider()</b> method should be used to create a new Slider:<br id="w04c">
+<blockquote id="rug:"><a id="d:v346" name="_Toc193605132"><span id="d:v347" style="font-family: Verdana;"><font id="d:v348" size="2">&lt;script&gt;<br id="iu9j">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a><span id="d:v349" style="font-family: Verdana;">.</span>addSlider(id,pos,len,valueMin,valueMax,valueNow,textMin,textMax,tip);<br id="iu9j0">
+&lt;/script&gt;<br id="j1kf">
+</blockquote>
+<p class="MsoNormal" id="p_6s" style="background-color: rgb(255, 255, 255);">As for input parameters the user should set, they are as follows:</p>
+<p class="MsoNormal" id="n54-0" style="background-color: rgb(255, 255, 255);"><br id="n54-1">
+</p>
+<ul id="vipn">
+<li id="sntc"><b id="t6nf">id </b>- id of the new slider item; 
+</li>
+<li id="f469"><b id="xkca">pos </b>- position of the new slider; 
+</li>
+<li id="bi1a"><b id="inhp">len</b> - slider's le<font id="mjpx" color="#000000">ngth </font><font id="b_r2" color="#000000">(or width/height, it is set in pixels)</font><font id="bfei" color="#000000">;</font> 
+</li>
+<li id="eici"><b id="pz62">valueMin </b>- minimum possible value; 
+</li>
+<li id="jquu"><b id="p7c1">valueMax </b>- maximum possible value; 
+</li>
+<li id="wl:s"><b id="dc:a">valueNow </b>- the value slider is set to for the moment it is created; 
+</li>
+<li id="tp_d"><b id="ckjk">textMin </b>- the text displayed to the left of the slider (in case of horizontal slider display) or below the slider (in case of vertical slider display); 
+</li>
+<li id="t:qm"><b id="f7:i0">textMax </b>- the text displayed to the right of the slider (in case of horizontal slider display) or above the slider (in case of vertical slider display); 
+</li>
+<li id="gllp"><b id="d_4p">tip </b>- <span id="r-ji" style="font-family: Verdana;"><font id="v167" size="2">this parameter sets the </font></span><span id="fyx_" style="font-family: Verdana;"><font id="g9db" size="2">tooltip text</font></span><span id="d:v350" style="font-family: Verdana;"><font id="d:v351" size="2">.</font></span></li>
+</ul>
+<br id="k3hi0">
+<b id="epoz0">Note</b><i id="epoz1">:</i> if the user wants the Slider to be
+created tooltip text-free, it's necessary to write an empty string as <b id="k3hi1">tip </b>parameter.<span id="yhww1" style="font-family: Verdana;"><font id="yhww2" size="2"><b id="yhww3">&nbsp;</b></font></span>
+<h3><a name='toolbar_jg7s36'>6.7 Input Item Adding
+</a></h3>
+The following syntax shows the user how an Input item can be easily added: <br id="ompg">
+<blockquote id="v_.q"><a id="d:v356" name="_Toc193605132"><span id="d:v357" style="font-family: Verdana;"><font id="d:v358" size="2">&lt;script&gt;<br id="mn71">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a><span id="d:v359" style="font-family: Verdana;">.</span>addInput(id,pos,value,width);<br id="mn710">
+&lt;/script&gt;<br id="xtuj">
+</blockquote>
+<span id="d:v362" style="font-family: Verdana;">This method has the following input parameters:<br id="ompg0">
+<br id="ompg1">
+</span>
+<ul id="jyy_">
+<li id="s:.-"><b id="d:v363">id </b>- id of the new item; 
+</li>
+<li id="xp2r"><b id="ks0b">pos </b>- position of the new item; 
+</li>
+<li id="d:v364"><b id="yzol">value</b> - the text that will be displayed in the input item when it is created; 
+</li>
+<li id="d:v365"><b id="g336">width</b> - width of the new item.<br id="ceqn">
+</li>
+</ul>
+<p class="MsoNormal" id="d:v366"><br id="b1.h">
+</p>
+<p class="MsoNormal" id="b1.h0"><b id="a03_">Note</b><i id="lb764">:</i> if the user wants the Input item to be created text-free, it's necessary to write an empty string as <b id="z7o:">value </b>parameter. For example:</p>
+<blockquote id="kzgs">
+<p class="MsoNormal" id="kzgs0">&lt;script&gt;<br id="kzgs1">
+</p>
+<p class="MsoNormal" id="kzgs2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar.addInput("input_new",3,"",100);</p>
+<p class="MsoNormal" id="kzgs3">&lt;/script&gt;<br id="u8js">
+</p>
+</blockquote>
+<h3><a name='toolbar_q9jz'>6.8 Item's Removal
+</a></h3>
+A simple tool for item's removal from the toolbar is <b id="v1_0">removeItem()</b> method:<br id="n11t">
+<blockquote id="vcu."><font id="zctl" color="#000000">&lt;script&gt;<br id="m::x">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar.</font><font id="e:ic" color="#000000">rem</font>oveItem(itemId);<br id="m::x0">
+&lt;/script&gt;&nbsp;</blockquote>
+<h2><a name='toolbar_w7k2'>7. Items Settings Manipulations</a></h2>
+<h3><a name='toolbar_l7dz'>7.1 Iterator
+</a></h3>
+<p class="western" id="si1." style="margin-bottom: 0.04in;">Method <b id="cpci">forEachItem()</b> calls a user-defined function for <b id="dgpn">every existing item </b>in the toolbar passing <b id="v.se">item's id </b>into it. Using iterator can be very useful in case the user wants all the items to be subjects for the same changes.<br id="fvtf0">
+</p>
+<blockquote id="om1-">&lt;script&gt;<br id="megf">
+&nbsp;<span id="fvtf1" style="background-color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp;</span><span id="w.9k" style="background-color: rgb(255, 255, 255);">toolbar.forEachItem(function(itemId){})</span><span id="fvtf2" style="background-color: rgb(255, 255, 255);">; </span><br id="megf0">
+&lt;/script&gt;<br id="trjx">
+</blockquote>
+<a id="u.8k" name="7.2_Button"></a>
+<p id="dn28">For example, let's write the code that will be responsible for disabling all toolbar items:</p>
+<blockquote id="vt5t">
+<p id="vt5t0" style="background-color: rgb(255, 255, 255);">&lt;script&gt;<br id="tyav3">
+</p>
+<p id="tyav4" style="background-color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp;&nbsp;function dis() {</p>
+<p id="frhg" style="background-color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toolbar.forEachItem(function(id){<br id="vt5t2">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;toolbar.disableItem(id);<br id="vt5t3">
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br id="vt5t4">
+&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p id="xj2h" style="background-color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp;&nbsp;dis();</p>
+<p id="zmj6"><span id="tyav6" style="background-color: rgb(255, 255, 255);">&lt;/script&gt;</span><br id="dn280">
+</p>
+</blockquote>
+
+
+<p id="a6vo">Method <b id="bk0r">forEachListOption()</b> calls a user-defined function for <b id="fx9p">every listed option </b>of a certain Select Button in the toolbar passing <b id="jdb2">listed option's id</b> into it. <br id="n55a">
+</p>
+<blockquote id="oeg8">
+<p id="dfxg0">&lt;script&gt;<span id="ul7a1" style="background-color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="dfxg1" style="background-color: rgb(255, 255, 255);"><br id="fn4y">
+&nbsp;&nbsp;&nbsp; toolbar.forEachListOption(itemId, function doSmth(listOptionId){});</span><br id="ul7a4">
+&lt;/script&gt;<br id="w5xs1">
+</p>
+</blockquote>
+<h3><a name='toolbar_w5xs2'>7.2 Applied to Any Item</a></h3>
+The following methods can be applied to <b id="uz:j">any </b>item in the toolbar:<br id="wisg">
+<br id="p2cs">
+<ul id="t25s">
+<li id="fh5c"><b id="r_gu">setPosition()</b> - sets item's new position; 
+</li>
+<li id="e8lk"><b id="i1h3">getPosition()</b> - gets current item's position;</li>
+<li id="nw.o"><b id="nw.o0">getType()</b> - gets item's type by item's id.<br id="d:v3525">
+</li>
+</ul>
+<blockquote id="nw.o1"><a id="d:v3526" name="_Toc193605132"><span id="d:v3527" style="font-family: Verdana;"><font id="d:v3528" size="2">&lt;script&gt;</font></span></a><br id="z:6_">
+<a id="nw.o2" name="_Toc193605132"><span id="nw.o3" style="font-family: Verdana;"><font id="nw.o4" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar.</font></span></a>setPosition(itemId, pos);<br id="vmhf">
+<a id="d:v3529" name="_Toc193605132"><span id="d:v3530" style="font-family: Verdana;"><font id="d:v3531" size="2">&nbsp;&nbsp;&nbsp; var position = toolbar.</font></span></a>getPosition(itemId); // returns current item's position<br id="nw.o5">
+&nbsp;&nbsp;&nbsp; var itemType = toolbar.getType(itemId); // returns item's type<br id="z:6_0">
+&lt;/scriptA<br id="nw.o6">
+</blockquote>
+<h3><a name='toolbar_yk:28'>7.3 Button
+</a></h3>
+<p id="qhd-"><span id="d:v373" style="font-family: Verdana;"><font id="d:v374" size="2"><b id="d:v375">7.3.1&nbsp; Showing/Hiding Button</b></font></span></p>
+<br id="iglm">
+<p id="abts">To hide/show any button the user should pass button's <b id="srcz">id </b>to the following methods:<br id="ty:s">
+</p>
+<blockquote id="d3m5"><a id="v2zc" name="_Toc193605132"><span id="y.vh" style="font-family: Verdana;"><font id="l2h4" size="2">&lt;script&gt;<br id="t:qh1">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a>.showItem(id);<br id="jhvm">
+<a id="cbkn" name="_Toc193605132"><span id="vwqc" style="font-family: Verdana;"><font id="fb_t" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a>.hideItem(id);<br id="t:qh2">
+&lt;/script&gt;<br id="d9vz">
+</blockquote>
+The user has the possibility to check whether any button is visible. The method returns <b id="t:qh3">true </b>if the button is visible:<br id="l:i_">
+<blockquote id="k9cp"><a id="q7nx" name="_Toc193605132"><span id="kg9m" style="font-family: Verdana;"><font id="bc4n" size="2"><font id="ig3z" color="#000000">&lt;script&gt;<br id="t:qh4">
+&nbsp;&nbsp;&nbsp;&nbsp;var isVisible =&nbsp;</font><font id="h.xm" color="#000000"></font>toolbar</font></span></a>.isVisible(id); // returns true|false<br id="t:qh5">
+&lt;/script&gt;<br id="t:qh6">
+</blockquote>
+<p id="sboz"><span id="ne1v" style="font-family: Verdana;"><font id="t3tv" size="2"><b id="pz0c">7.3.2&nbsp; Enabling/Disabling Button</b></font></span></p>
+<p id="l9l2"><br id="rmec">
+</p>
+<p id="ew_n">Any button in the toolbar can be enabled/disabled by user:<br id="n.y3">
+</p>
+<blockquote id="zi36"><a id="uzt8" name="_Toc193605132"><span id="c8_s" style="font-family: Verdana;"><font id="e4:6" size="2">&lt;script&gt;<br id="g5um">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a>.enableItem(id);<br id="oda4">
+<a id="g14m" name="_Toc193605132"><span id="xdi3" style="font-family: Verdana;"><font id="p0os" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a>.disableItem(id);<br id="g5um0">
+&lt;/script&gt;<br id="w3nn">
+</blockquote>
+Also the user has the possibility to check whether any button is enabled. This can be done by calling the following method:<br id="t-7y">
+<blockquote id="ftaa"><font id="atop" color="#000000">&lt;script&gt;<br id="zcj3">
+&nbsp;&nbsp;&nbsp;&nbsp;var isEnabled = </font><a id="rmhs" name="_Toc193605132"><span id="a1r6" style="font-family: Verdana;"><font id="vt6i" size="2">toolbar</font></span></a>.isEnabled(id); // returns true|false<br id="zcj30">
+&lt;/scrip&gt;<br id="zcj31">
+</blockquote>
+The user should pass <b id="v3n8">id</b> of the button that will be checked. The method returns <b id="zcj32">true </b>if the button is enabled, and <b id="xa6x">false </b>if it's disabled.<br id="l6ma">
+<br id="z-yf">
+<p id="l6ma0"><span id="k7ux" style="font-family: Verdana;"><font id="zc0v" size="2"><b id="l6ma1">7.3.3 Setting Button's Text</b></font></span></p>
+<p id="l6ma2"><br id="l0rm">
+</p>
+<p class="MsoNormal" id="svyl" style="margin-left: 70.9pt;"><a id="gbwo" name="DDE_LINK33"></a></p>
+The user can set any button's text/label. This button's <b id="dqf_">id </b>and <b id="gn9.">text </b>of button's label are passed as parameters to the following method:<br id="znx1">
+<blockquote id="smyg"><a id="xssr" name="_Toc193605132"><span id="miaa" style="font-family: Verdana;"><font id="ams." size="2">&lt;script&gt;<br id="yb.2">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a>.setItemText(id, text);<br id="elzw">
+&lt;/script&gt;<br id="tcw8">
+</blockquote>
+The user can get button's text using <b id="dct1">getItemText()</b> method. The method returns the current title text of the button:<br id="lk2r">
+<blockquote id="nw_z"><font id="qwk2" color="#000000">&lt;script&gt;<br id="lstv">
+&nbsp;&nbsp;&nbsp;&nbsp;var text = </font><a id="hsfw" name="_Toc193605132"><span id="z3ri" style="font-family: Verdana;"><font id="hcbj" size="2">toolbar</font></span></a>.getItemText(id); // returns current item's text<br id="lstv0">
+&lt;/script&gt;<br id="dzye">
+</blockquote>
+<p id="l6ma5"><b id="l6ma6"><span id="cac2" style="font-family: Verdana;"><font id="sk68" size="2">7.3.4 Setting Button's Image</font></span></b></p>
+<br id="l6ma7">
+Any button in the toolbar can have its own image displayed in the button display area. <b id="vq_q">setItemImage()</b> and <b id="nq64">setItemImageDis()</b> methods allow user to set image to a button by passing the following parameters:<br id="mdtj">
+<br id="qj2a">
+<ul id="p5jk">
+<li id="qadz"><b id="oshv">id </b><span id="zps2" style="background-color: rgb(255, 255, 255);">- id of the button;</span> 
+</li>
+<li id="xgoi"><b id="r4hn">url</b> - path to the image for the enabled/disabled state of the button. </li>
+</ul>
+<blockquote id="lvyf"><a id="p9dx" name="_Toc193605132"><span id="v1t2" style="font-family: Verdana;"><font id="emmm" size="2">&lt;script&gt;<br id="b0ym">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a>.setItemImage(id,url);<br id="r3e3">
+<a id="z50r" name="_Toc193605132"><span id="dii7" style="font-family: Verdana;"><font id="w48q" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a>.setItemImageDis(id,url);<br id="b0ym0">
+&lt;/scrip&gt;<br id="zk:z">
+</blockquote>
+Button's image whether for the enabled or the disabled state can be easily removed/cleared by means of <b id="mqz.">clearItemImage()</b> and <b id="j9i1">clearItemImageDis() </b>methods to which the user should pass button's <b id="v9sm">id</b>:<br id="vdzg">
+<blockquote id="ajwz"><a id="m70e" name="_Toc193605132"><span id="dyre" style="font-family: Verdana;"><font id="yr0t" size="2">&lt;script&gt;<br id="hjuu">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a>.clearItemImage(id);<br id="jqw5">
+<a id="h3rs" name="_Toc193605132"><span id="dk-b" style="font-family: Verdana;"><font id="r8is" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a>.clearItemImageDis(id);<br id="fzq4">
+&lt;/script&gt;<br id="uad9">
+</blockquote>
+<p id="rr_v"><span id="zdmr" style="font-family: Verdana;"><b id="jfwn">7.3.5&nbsp; Setting Buttons's Tooltip</b><br id="gp_q">
+</span></p>
+<p id="g7.0">&nbsp;</p>
+<p id="q16a">The user can specify the supplementary information regarding any button in the toolbar. <b id="oq17">setItemToolTip()</b> method takes the following parameters:</p>
+<p id="o1f6"><br id="o1f60">
+</p>
+<ul id="auri">
+<li id="p40p"><b id="vwaq">id </b>- button id; 
+</li>
+<li id="g..0"><b id="qwm2">tip </b>- <span id="zlxa" style="font-family: Verdana;"><font id="t::j" size="2">this parameter sets the title that appears when user hovers the mouse over the button.</font></span> </li>
+</ul>
+<blockquote id="f5ep"><a id="s1_l0" name="_Toc193605132"><span id="s1_l1" style="font-family: Verdana;"><font id="s1_l2" size="2">&lt;script&gt;<br id="k5rt">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a>.setItemToolTip(id,tip);<br id="k5rt0">
+&lt;/script&gt;<br id="ew3m">
+</blockquote>
+The following method can return the current button's tooltip text:<br id="fyq0">
+<blockquote id="i9fk"><font id="tmv2" color="#000000">&lt;script&gt;<br id="k5rt1">
+&nbsp;&nbsp;&nbsp;&nbsp;var tip =&nbsp;</font><a id="lryu" name="_Toc193605132"><span id="rsmj" style="font-family: Verdana;"><font id="y5qm" size="2"><font id="dqhl" color="#000000"></font>toolbar</font></span></a>.getItemToolTip(id); // returns current button's tooltip text<br id="tk7t">
+&lt;/script&gt;<br id="mnid">
+</blockquote>
+<h3><a name='toolbar_vqfr'>7.4. Select Button 
+</a></h3>
+The following methods that are available for the <b id="rsu1">Button </b>item, can be applied to the <b id="du0h">Select Button</b> item as well:<br id="meaq">
+<br id="meaq0">
+<ul id="sr1k">
+<li id="ljvk"><a id="d:v377" name="_Toc193605132"><span id="d:v378" style="font-family: Verdana;"><font id="d:v379" size="2">toolbar</font></span></a>.showItem(id);<a id="d:v380" name="_Toc193605132"></a> 
+</li>
+<li id="k_3f"><a id="d:v381" name="_Toc193605132"><span id="d:v382" style="font-family: Verdana;"><font id="d:v383" size="2">toolbar</font></span></a>.hideItem(id); 
+</li>
+<li id="od:5"><a id="d:v384" name="_Toc193605132"><span id="d:v385" style="font-family: Verdana;"><font id="d:v386" size="2">toolbar</font></span></a>.isVisible(id);</li>
+</ul>
+<ul id="z-ik">
+<li id="n33u"><a id="d:v387" name="_Toc193605132"></a>
+</li>
+<li id="d:v388"><a id="d:v389" name="_Toc193605132"></a>
+</li>
+<li id="d:v390"><a id="d:v391" name="_Toc193605132"></a>
+</li>
+<li id="d:v392"><a id="d:v393" name="_Toc193605132"><span id="d:v394" style="font-family: Verdana;"><font id="d:v395" size="2">toolbar</font></span></a>.enableItem(id);<a id="d:v396" name="_Toc193605132"></a> 
+</li>
+<li id="d:v397"><a id="d:v398" name="_Toc193605132"><span id="d:v399" style="font-family: Verdana;"><font id="d:v3100" size="2">toolbar</font></span></a>.disableItem(id); 
+</li>
+<li id="d:v3101"><a id="d:v3102" name="_Toc193605132"><span id="d:v3103" style="font-family: Verdana;"><font id="d:v3104" size="2">toolbar</font></span></a>.isEnabled(id); 
+</li>
+<li id="d:v3105"><a id="d:v3106" name="_Toc193605132"><span id="d:v3107" style="font-family: Verdana;"><font id="d:v3108" size="2">toolbar</font></span></a>.setItemText(id, text); 
+</li>
+<li id="d:v3109"><a id="d:v3110" name="_Toc193605132"><span id="d:v3111" style="font-family: Verdana;"><font id="d:v3112" size="2">toolbar</font></span></a>.getItemText(id); 
+</li>
+<li id="d:v3113"><a id="d:v3114" name="_Toc193605132"><span id="d:v3115" style="font-family: Verdana;"><font id="d:v3116" size="2">toolbar</font></span></a>.setItemImage(id,url);<a id="d:v3117" name="_Toc193605132"></a> 
+</li>
+<li id="d:v3118"><a id="d:v3119" name="_Toc193605132"><span id="d:v3120" style="font-family: Verdana;"><font id="d:v3121" size="2">toolbar</font></span></a>.setItemImageDis(id,url); 
+</li>
+<li id="d:v3122"><a id="d:v3123" name="_Toc193605132"><span id="d:v3124" style="font-family: Verdana;"><font id="d:v3125" size="2">toolbar</font></span></a>.clearItemImage(id);<a id="d:v3126" name="_Toc193605132"></a> 
+</li>
+<li id="d:v3127"><a id="d:v3128" name="_Toc193605132"><span id="d:v3129" style="font-family: Verdana;"><font id="d:v3130" size="2">toolbar</font></span></a>.clearItemImageDis(id); 
+</li>
+<li id="hjw4"><a id="hjw40" name="_Toc193605132"><span id="hjw41" style="font-family: Verdana;"><font id="hjw42" size="2">toolbar</font></span></a>.setItemToolTip(id,tip); 
+</li>
+<li id="hjw43"><a id="hjw44" name="_Toc193605132"><span id="hjw45" style="font-family: Verdana;"><font id="hjw46" size="2"><font id="hjw47" color="#000000"></font>toolbar</font></span></a>.getItemToolTip(id);</li>
+</ul>
+<p id="limk"><br id="se2k">
+All the parameters of the above mentioned methods are the same to those described in <a id="ezm8" title="Button Settings Manipulating" href="#7._Button_Settings_Manipulating">Button Settings Manipulations</a> section.<br id="mnx2">
+</p>
+<br id="ytuy">
+<p id="zvmi"><span id="d:v3131" style="font-family: Verdana;"><b id="d:v3132">7.4.1&nbsp; <a id="r54o" name="Setting_Select_Button_Width"></a>Setting Select Button Width</b></span></p>
+<p id="zvmi0"></p>
+<br id="g2vz0">
+<span id="zvmi2" style="font-family: Verdana;">A simple method is used to set this item's width:<br id="g2vz1">
+</span>
+<blockquote id="g2vz2"><span id="g2vz3" style="font-family: Verdana;">&lt;script&gt;</span><br id="g2vz4">
+<p id="g2vz6">toolbar.setWidth(id, width); <br id="axe80">
+</p>
+<p id="g2vz7">&lt;/script&gt;</p>
+</blockquote>
+<p id="g2vz8">The parameters are:</p>
+<p id="g2vz9"><br id="g2vz10">
+</p>
+<ul id="g2vz11">
+<li id="g2vz12"><b id="c-bn">id </b>- item's id; 
+</li>
+<li id="g2vz13"><b id="c-bn0">width </b>- the value of item's new width.<br id="g2vz17">
+</li>
+</ul>
+<br id="g2vz18">
+<p id="zvmi4"><span id="zvmi5" style="font-family: Verdana;"><b id="zvmi6">7.4.2 Adding/Removing </b></span><span id="i9sw0" style="font-family: Verdana;"><b id="i9sw1">Listed Option </b></span></p>
+<br id="jfsj">
+A new Listed Option can be added using <b id="df:1">addListOption()</b> method that accepts the following parameters:<br id="fnyb">
+<br id="o2zu">
+<ul id="n1za">
+<li id="i0-y"><b id="jtm.">parentId </b>- id of the parent item; 
+</li>
+<li id="a26d"><b id="oxpy">id </b>- id of the new item that will be added; 
+</li>
+<li id="t0ic"><b id="wg20">pos </b>- position of the new item; 
+</li>
+<li id="sv40"><b id="zv1e">type </b>- item's type can be "button" or "separator"; 
+</li>
+<li id="d:v3135"><b id="i7gp">text </b>- item's label; 
+</li>
+<li id="d:v3136"><b id="u6la">img </b>- path to item's image.</li>
+</ul>
+<blockquote id="f_:s">&lt;script&gt;<br id="maa8">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar.addListOption(parentId, id, pos, type, text, img); <br id="maa80">
+&lt;/script&gt;<br id="gald">
+</blockquote>
+Any Listed Option can be easily removed by calling the following method:<br id="g.7n">
+<blockquote id="ovd.">&lt;script&gt;<br id="maa81">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar.removeListOption(parentId,id);<br id="maa82">
+&lt;/script&gt;<br id="vyt9">
+</blockquote>
+<p id="zvmi7"><span id="d:v3137" style="font-family: Verdana;"><font id="d:v3138" size="2"><b id="d:v3139">7.4.3&nbsp; Showing/Hiding Listed Option</b></font></span></p>
+<br id="fru1">
+Any of the Listed Options can be shown/hidden if one of the following methods is applied to it:<br id="ast3">
+<blockquote id="wfff">&lt;script&gt;<br id="gpuw">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar.showListOption(parentId, id);<br id="eqq6">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar.hideListOption(parentId, id);<br id="i9sw4">
+&lt;/script&gt;<br id="o53z">
+</blockquote>
+The user has the possibility to check whether any Listed Option is visible. The method returns <b id="i48d">true </b>if the item is visible:<br id="d:v3140">
+<blockquote id="d:v3141"><a id="d:v3142" name="_Toc193605132"><span id="d:v3143" style="font-family: Verdana;"><font id="d:v3144" size="2"><font id="cv9a" color="#000000">&lt;script&gt;<br id="i48d0">
+&nbsp;&nbsp;&nbsp;&nbsp;var isVisible =&nbsp;</font><font id="i:da" color="#000000"></font>toolbar</font></span></a>.isListOptionVisible(parentId,id); // returns true|false<br id="i48d1">
+&lt;/script&gt;<br id="fxb5">
+</blockquote>
+<p id="d:v3145"><span id="d:v3146" style="font-family: Verdana;"><font id="d:v3147" size="2"><b id="d:v3148">7.4.4&nbsp; Enabling/Disabling </b></font></span><span id="d:v3149" style="font-family: Verdana;"><font id="d:v3150" size="2"><b id="d:v3151">Listed Option</b></font></span></p>
+<p id="d:v3152"><br id="d:v3153">
+</p>
+<p id="d:v3154">Any Listed Option in the toolbar can be enabled/disabled by user:<br id="d:v3155">
+</p>
+<blockquote id="d:v3156"><a id="d:v3157" name="_Toc193605132">&lt;script&gt;<br id="i48d3">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar.enableListOption(parentId, id);<br id="oud4">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar.disableListOption(parentId, id);<br id="i48d4">
+&lt;/script&gt;<br id="i48d5">
+</a></blockquote>
+Also the user has the possibility to check whether any Listed Option is enabled. This can be done by calling the following method:<br id="d:v3158">
+<blockquote id="d:v3159"><font id="b3sa" color="#000000">&lt;script&gt;<br id="ghpj">
+&nbsp;&nbsp;&nbsp;&nbsp;var isEnabled = </font><a id="d:v3160" name="_Toc193605132"><span id="d:v3161" style="font-family: Verdana;"><font id="d:v3162" size="2">toolbar</font></span></a>.isListOptionEnabled(parentId, id); // returns true|false<br id="ghpj0">
+&lt;/script&gt;<br id="ghpj1">
+</blockquote>
+The user should pass <b id="bks.">parentId</b> and <b id="d:v3163">id</b> of the Listed Option that will be checked. The method returns <b id="ghpj2">true </b>if the Listed Option is enabled.<br id="ygi7">
+<br id="wpv-">
+<p id="d:v3164"><span id="d:v3165" style="font-family: Verdana;"><font id="d:v3166" size="2"><b id="d:v3167">7.4.5&nbsp; Setting </b></font></span><span id="d:v3168" style="font-family: Verdana;"><font id="d:v3169" size="2"><b id="d:v3170">Listed Option's Position (moving)<br id="tkmc">
+</b></font></span></p>
+<br id="gh82">
+The following methods can be used to set new position for a Listed Option and to get the current position of it: <br id="sg9x">
+<blockquote id="olx8">&lt;script&gt;<br id="v6ak">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar.setListOptionPosition(parentId, id, pos);<br id="lt.t">
+<font id="irgh" color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;var pos = </font>toolbar.getListOptionPosition(parentId, id); <br id="v6ak0">
+&lt;/script&gt;<br id="n2ly">
+</blockquote>
+<p id="zvmi8"><span id="d:v3173" style="font-family: Verdana;"><font id="d:v3174" size="2"><b id="zvmi9">7.4.6&nbsp; Setting Listed Option's Text</b><br id="d:v3175">
+</font></span></p>
+<p class="MsoNormal" id="d:v3176" style="margin-left: 70.9pt;"><a id="d:v3177" name="DDE_LINK33"></a></p>
+<br id="zvmi10">
+The user can set any Listed Option's title. This item's <b id="rlzt">parentId</b>, <b id="d:v3178">id </b>and title's<b id="d:v3179"> text </b>are passed as parameters to the following method:<br id="d:v3180">
+<blockquote id="d:v3181"><a id="d:v3182" name="_Toc193605132"><span id="d:v3183" style="font-family: Verdana;"><font id="d:v3184" size="2">&lt;script&gt;<br id="j-ao">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a>.setListOptionText(parentId, id, text);<br id="j-ao0">
+&lt;/script&gt;<br id="j-ao1">
+</blockquote>
+The user can get Listed Option's title using <b id="o4vo">getListOptionText</b><b id="d:v3185">()</b> method. The method returns the current title text of the item:<br id="d:v3186">
+<blockquote id="d:v3187"><font id="n4r8" color="#000000">&lt;script&gt;<br id="j-ao2">
+var text =&nbsp;</font><a id="d:v3188" name="_Toc193605132"><span id="d:v3189" style="font-family: Verdana;"><font id="d:v3190" size="2"><font id="ea_y" color="#000000"></font>toolbar</font></span></a>.getListOptionText(parentId, id); // returns current listed option's title text<br id="j-ao3">
+&lt;/script&gt;<br id="j-ao4">
+</blockquote>
+<p id="ihhf"><b id="tvs7"><span id="d:v3193" style="font-family: Verdana;"><font id="d:v3194" size="2">7.4.7&nbsp; Setting Listed Option's Image</font></span></b></p>
+<br id="tvs70">
+A Listed Option in the toolbar can have its own image displayed in the left part of item's display area. <b id="z:k3">setListOptionImage</b><b id="d:v3195">()</b> method allows the user to set image to a Listed Option by passing the following parameters:<br id="iumh">
+<br id="d:v3196">
+<ul id="d:v3197">
+<li id="d:v3198"><b id="ki63">parentId </b>- id of the parent item;<br id="xjbe">
+</li>
+<li id="d:v3199"><b id="d:v3200">id </b><span id="d:v3201" style="background-color: rgb(255, 255, 255);">- id of the listed option;</span> 
+</li>
+<li id="d:v3202"><b id="d:v3203">url</b> - path to the image for the listed option. </li>
+</ul>
+<blockquote id="d:v3204"><a id="d:v3205" name="_Toc193605132"><span id="d:v3206" style="font-family: Verdana;"><font id="d:v3207" size="2">&lt;script&gt;<br id="wfnj">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a>.setListOptionImage(parentId, id, img);<br id="wfnj0">
+&lt;/script&gt;<a id="d:v3209" name="_Toc193605132"></a><br id="d:v3210">
+</blockquote>
+Path to current listed option image can be got like this:<br id="c8:3">
+<blockquote id="tp:o"><a id="tp:o0" name="_Toc193605132"><span id="tp:o1" style="font-family: Verdana;"><font id="tp:o2" size="2">&lt;script&gt;</font></span></a><br id="tp:o3">
+<a id="tp:o4" name="_Toc193605132"><span id="tp:o5" style="font-family: Verdana;"><font id="tp:o6" size="2">&nbsp;&nbsp;&nbsp; var listOptionImage = toolbar</font></span></a>.getListOptionImage(parentId, id); // returns path to the current listed option image<br id="tp:o8">
+&lt;/script&gt;<br id="c8:31">
+</blockquote>
+Listed Option's image can be easily removed/cleared by means of <b id="yt9l">clearListOptionImage</b><b id="d:v3213">()</b> method to which the user should pass item's <b id="g::.">parentId</b> and <b id="d:v3214">id </b>as parameters:<br id="d:v3215">
+<blockquote id="d:v3216"><a id="d:v3217" name="_Toc193605132"><span id="d:v3218" style="font-family: Verdana;"><font id="d:v3219" size="2">&lt;script&gt;<br id="wfnj1">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a>.clearListOptionImage(parentId, id);<br id="wfnj2">
+&lt;/script&gt;<br id="d:v3222">
+</blockquote>
+<p id="tvs71"><span id="d:v3224" style="font-family: Verdana;"><b id="d:v3225">7.4.8&nbsp; Setting Listed Option's Tooltip</b></span></p>
+<p id="d:v3223"> </p>
+<p id="d:v3229">&nbsp;</p>
+<p id="d:v3230">The user can specify the supplementary information regarding any Listed Option in the toolbar. <b id="hok.">setListOptionToolTip</b><b id="d:v3231">()</b> method takes the following parameters:</p>
+<p id="i:0-"><br id="i:0-0">
+</p>
+<ul id="d:v3232">
+<li id="d:v3233"><b id="sj:n">parentId </b>- listed option's parent id;<br id="wa_q">
+</li>
+<li id="d:v3234"><b id="d:v3235">id </b>- id of the listed option; 
+</li>
+<li id="d:v3236"><b id="d:v3237">tip </b>- <span id="d:v3238" style="font-family: Verdana;"><font id="d:v3239" size="2">this parameter sets the title that appears when the user hovers the mouse over the listed option.</font></span> </li>
+</ul>
+<blockquote id="d:v3240"><a id="d:v3241" name="_Toc193605132"><span id="d:v3242" style="font-family: Verdana;"><font id="d:v3243" size="2">&lt;script&gt;<br id="q7ua">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a>.setListOptionToolTip(parentId, id, tip);<br id="q7ua0">
+&lt;/scri&gt;<br id="q7ua1">
+</blockquote>
+The following method can return the current Listed Option's tooltip text:<br id="d:v3246">
+<blockquote id="tesf"><font id="m8be" color="#000000">&lt;script&gt;</font><br id="a.00">
+<font id="tesf0" color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;var tip =&nbsp;</font><a id="d:v3248" name="_Toc193605132"><span id="d:v3249" style="font-family: Verdana;"><font id="d:v3250" size="2"><font id="lsrg" color="#000000"></font>toolbar</font></span></a>.getListOptionToolTip(parentId, id); // returns current listed option's tooltip text <br id="a.000">
+&lt;/scri&gt;<br id="tesf2">
+</blockquote>
+<p id="tvs72"><b id="tesf5">7.4.9 Selecting Listed Option</b></p>
+<br id="tesf7">
+The user can make any listed option selected by default from script. On startup, when the user first opens the list of options, this chosen listed option will be highlighted (selected). The method <b id="ckzx0">setListOptionSelected()</b> takes the following parameters:<br id="a0f2">
+<br id="ckzx2">
+<ul id="ckzx3">
+<li id="ckzx4"><b id="mn6w">parentId </b>- listed option's parent id;</li>
+<li id="syo2"><b id="mn6w0">id </b>- id of the listed option.<br id="syo22">
+</li>
+</ul>
+<blockquote id="mn6w1">&lt;script&gt;<br id="ckzx8">
+<a id="ckzx9" name="_Toc193605132"><span id="ckzx10" style="font-family: Verdana;"><font id="ckzx11" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar</font></span></a>.setListOptionSelected(parentId, id);<br id="ckzx13">
+&lt;/script&gt;<br id="l40y">
+</blockquote>
+This method doesn't make the listed option selected forever. Another listed option can be easily selected by user from page.<br id="tkxf">
+<br id="otqs1">
+There is also the possibility to get the id of the current selected listed option by method <b id="tkxf0">getListOptionSelected()</b>:<br id="otqs2">
+<blockquote id="tkxf2">&lt;script&gt;<br id="otqs3">
+&nbsp;&nbsp;&nbsp;&nbsp;var listOptionId = <a id="in4b" name="_Toc193605132"><span id="in4b0" style="font-family: Verdana;"><font id="in4b1" size="2">toolbar</font></span></a>.getListOptionSelected(parentId); //returns id of the selected listed option<br id="in4b4">
+&lt;/script&gt;<br id="l40y1">
+</blockquote>
+The parameter the user should pass to this method is <b id="txuz">id </b>of the Select Button, which listed option's id the user wants to get.<br id="tkxf10">
+<br id="sdbk">
+<p id="tvs73"><b id="sdbk0">7.4.10 Get All Listed Options</b></p>
+<br id="mcfm">
+Method <b id="yy5b">getAllListOptions()</b> allows the user to get all listed options ids of a certain Select Button. The only one parameter that the user should pass is the <b id="a-o9">id </b>of the chosen Select Button:<br id="yy5b0">
+<blockquote id="uq:_">&lt;script&gt;<br id="yy5b1">
+<a id="yy5b2" name="_Toc193605132"><span id="yy5b3" style="font-family: Verdana;"><font id="yy5b4" size="2">&nbsp;&nbsp;&nbsp; var allListOptions = toolbar</font></span></a>.getAllListOptions(parentId); // returns array of all listed options ids<br id="yy5b6">
+&lt;script&gt;<br id="maif">
+</blockquote>
+<h3><a name='toolbar_s9m1'>7.5 Two-State Button 
+</a></h3>
+<p id="d:v3251">The following methods that are available for the <b id="sm9p">Button </b>item, can be applied to the <b id="e0kn">Two-State </b><b id="elj2">Button</b> item as well:</p>
+<p id="i:0-1"><br id="i:0-2">
+</p>
+<ul id="d:v3254">
+<li id="d:v3255"><a id="d:v3256" name="_Toc193605132"><span id="d:v3257" style="font-family: Verdana;"><font id="d:v3258" size="2">toolbar</font></span></a>.showItem(id);<a id="d:v3259" name="_Toc193605132"></a> 
+</li>
+<li id="d:v3260"><a id="d:v3261" name="_Toc193605132"><span id="d:v3262" style="font-family: Verdana;"><font id="d:v3263" size="2">toolbar</font></span></a>.hideItem(id); 
+</li>
+<li id="d:v3264"><a id="d:v3265" name="_Toc193605132"><span id="d:v3266" style="font-family: Verdana;"><font id="d:v3267" size="2">toolbar</font></span></a>.isVisible(id);</li>
+</ul>
+<ul id="d:v3268">
+<li id="d:v3269"><a id="d:v3270" name="_Toc193605132"></a>
+</li>
+<li id="d:v3271"><a id="d:v3272" name="_Toc193605132"></a>
+</li>
+<li id="d:v3273"><a id="d:v3274" name="_Toc193605132"></a>
+</li>
+<li id="d:v3275"><a id="d:v3276" name="_Toc193605132"><span id="d:v3277" style="font-family: Verdana;"><font id="d:v3278" size="2">toolbar</font></span></a>.enableItem(id);<a id="d:v3279" name="_Toc193605132"></a> 
+</li>
+<li id="d:v3280"><a id="d:v3281" name="_Toc193605132"><span id="d:v3282" style="font-family: Verdana;"><font id="d:v3283" size="2">toolbar</font></span></a>.disableItem(id); 
+</li>
+<li id="d:v3284"><a id="d:v3285" name="_Toc193605132"><span id="d:v3286" style="font-family: Verdana;"><font id="d:v3287" size="2">toolbar</font></span></a>.isEnabled(id); 
+</li>
+<li id="d:v3288"><a id="d:v3289" name="_Toc193605132"><span id="d:v3290" style="font-family: Verdana;"><font id="d:v3291" size="2">toolbar</font></span></a>.setItemText(id, text); 
+</li>
+<li id="d:v3292"><a id="d:v3293" name="_Toc193605132"><span id="d:v3294" style="font-family: Verdana;"><font id="d:v3295" size="2">toolbar</font></span></a>.getItemText(id); 
+</li>
+<li id="d:v3296"><a id="d:v3297" name="_Toc193605132"><span id="d:v3298" style="font-family: Verdana;"><font id="d:v3299" size="2">toolbar</font></span></a>.setItemImage(id,url);<a id="d:v3300" name="_Toc193605132"></a> 
+</li>
+<li id="d:v3301"><a id="d:v3302" name="_Toc193605132"><span id="d:v3303" style="font-family: Verdana;"><font id="d:v3304" size="2">toolbar</font></span></a>.setItemImageDis(id,url); 
+</li>
+<li id="d:v3305"><a id="d:v3306" name="_Toc193605132"><span id="d:v3307" style="font-family: Verdana;"><font id="d:v3308" size="2">toolbar</font></span></a>.clearItemImage(id);<a id="d:v3309" name="_Toc193605132"></a> 
+</li>
+<li id="d:v3310"><a id="d:v3311" name="_Toc193605132"><span id="d:v3312" style="font-family: Verdana;"><font id="d:v3313" size="2">toolbar</font></span></a>.clearItemImageDis(id); 
+</li>
+<li id="d:v3314"><a id="d:v3315" name="_Toc193605132"><span id="d:v3316" style="font-family: Verdana;"><font id="d:v3317" size="2">toolbar</font></span></a>.setTooltip(id,tip); 
+</li>
+<li id="d:v3318"><a id="d:v3319" name="_Toc193605132"><span id="d:v3320" style="font-family: Verdana;"><font id="d:v3321" size="2">toolbar</font></span></a>.getItemToolTip(id).</li>
+</ul>
+<br id="fni8">
+<p id="bh77">All the parameters of the above mentioned methods are the same to those described in <a id="d:v3322" title="Button Settings Manipulating" href="RawDocContents?docID=dgr5rjkf_24chb7xhfq&amp;justBody=false&amp;revision=_latest&amp;timestamp=1206522236789&amp;editMode=true&amp;strip=true#7._Button_Settings_Manipulating">Button Settings Manipulations</a> section.</p>
+<br id="vw16">
+<p id="ypjz"><span id="km7j" style="font-family: Verdana;"><b id="f91g">7.5.1&nbsp; Setting Two-State Button State</b></span></p>
+<p id="d:v3323"><br id="q8d4">
+</p>
+<p id="d:v3326">The user can set one of two states for the Two-State Button with the help of the following method:<br id="g45.">
+</p>
+<blockquote id="v5b."><a id="bzts" name="_Toc193605132"><span id="w463" style="font-family: Verdana;"><font id="erri" size="2">&lt;script&gt;<br id="lgil">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar.</font></span></a>setItemState(id,state,callEvent);<br id="s3b1">
+<p id="kk67">&lt;/script&gt;<br id="h6d6">
+</p>
+</blockquote>
+The parameters for this method are the following:<br id="ysrm">
+<br id="ael9">
+<ul id="ael90">
+<li id="ael91"><b id="xka.">id </b>- id of the two-state button; 
+</li>
+<li id="ael92"><b id="xka.0">state </b>- true|false, <b id="xka.1">true </b>stands for the Pressed state of the button, <b id="xka.2">false </b>stadns for the Released state of the button; 
+</li>
+<li id="xka.3"><b id="xka.4">callEvent </b>- if set to <b id="ryj8">true</b>, calls user defined handler for <a id="qf3e" title="onStateChange event" href="#onStateChange_event">onStateChange event</a> (if there is any).<br id="jl7:1">
+</li>
+</ul>
+<br id="jl7:2">
+There is also the possibility to get current item's state by calling <b id="mi4w">getItemState()</b> method:<br id="xwe7">
+<blockquote id="qqw_"><a id="d:v3331" name="_Toc193605132"><span id="d:v3332" style="font-family: Verdana;"><font id="d:v3333" size="2"><font id="jqoq" color="#ff0000"><font id="vdwz" color="#000000">&lt;script&gt;<br id="esr.">
+&nbsp;&nbsp;&nbsp;&nbsp;var isPressed =</font> </font>toolbar.</font></span></a>getItemState(id); // <span id="esr.0" style="background-color: rgb(255, 255, 255);">returns</span> true|false<br id="esr.1">
+&lt;/script&gt;<br id="id0k">
+</blockquote>
+<p id="d:v3334">The method returns <b id="rr9o0">true </b>in case the button is pressed, and <b id="rr9o1">false </b>in case the button is released.<br id="g_bf">
+</p>
+<h3><a name='toolbar_zp_w'>7.6 Text Item
+</a></h3>
+The following methods that are available for the <b id="v:11">Button </b>item, can be applied to the <b id="p:ra">Text Item</b> as well:<br id="a9tk">
+<br id="t3vr">
+<ul id="d:v3337">
+<li id="d:v3338"><a id="d:v3339" name="_Toc193605132"><span id="d:v3340" style="font-family: Verdana;"><font id="d:v3341" size="2">toolbar</font></span></a>.showItem(id);<a id="d:v3342" name="_Toc193605132"></a> 
+</li>
+<li id="d:v3343"><a id="d:v3344" name="_Toc193605132"><span id="d:v3345" style="font-family: Verdana;"><font id="d:v3346" size="2">toolbar</font></span></a>.hideItem(id); 
+</li>
+<li id="d:v3347"><a id="d:v3348" name="_Toc193605132"><span id="d:v3349" style="font-family: Verdana;"><font id="d:v3350" size="2">toolbar</font></span></a>.isVisible(id);<br id="zo7a">
+</li>
+</ul>
+<ul id="d:v3351">
+<li id="d:v3352"><a id="d:v3353" name="_Toc193605132"><span id="d:v3354" style="font-family: Verdana;"><font id="d:v3355" size="2">toolbar</font></span></a>.setItemText(id, text); 
+</li>
+<li id="d:v3356"><a id="d:v3357" name="_Toc193605132"><span id="d:v3358" style="font-family: Verdana;"><font id="d:v3359" size="2">toolbar</font></span></a>.getItemText(id).</li>
+</ul>
+<br id="f3wq">
+All the parameters of the above mentioned methods are the same to those described in <a id="d:v3360" title="Button Settings Manipulating" href="RawDocContents?docID=dgr5rjkf_24chb7xhfq&amp;justBody=false&amp;revision=_latest&amp;timestamp=1206522236789&amp;editMode=true&amp;strip=true#7._Button_Settings_Manipulating">Button Settings Manipulations</a> section.<br id="kzl:">
+<h3><a name='toolbar_d:v3363'>7.7 Separator
+</a></h3>
+The following methods that are available for the <b id="ztc6">Button </b>item, can be applied to the <b id="d0wc">Separator</b> as well:<br id="a9tk0">
+<br id="s9-p">
+<ul id="d:v3366">
+<li id="d:v3367"><a id="d:v3368" name="_Toc193605132"><span id="d:v3369" style="font-family: Verdana;"><font id="d:v3370" size="2">toolbar</font></span></a>.showItem(id);<a id="d:v3371" name="_Toc193605132"></a> 
+</li>
+<li id="d:v3372"><a id="d:v3373" name="_Toc193605132"><span id="d:v3374" style="font-family: Verdana;"><font id="d:v3375" size="2">toolbar</font></span></a>.hideItem(id); 
+</li>
+<li id="d:v3376"><a id="d:v3377" name="_Toc193605132"><span id="d:v3378" style="font-family: Verdana;"><font id="d:v3379" size="2">toolbar</font></span></a>.isVisible(id).</li>
+</ul>
+<br id="oz6n">
+All the parameters of the above mentioned methods are the same to those described in <a id="d:v3380" title="Button Settings Manipulating" href="RawDocContents?docID=dgr5rjkf_24chb7xhfq&amp;justBody=false&amp;revision=_latest&amp;timestamp=1206522236789&amp;editMode=true&amp;strip=true#7._Button_Settings_Manipulating">Button Settings Manipulations</a> section.<br id="px91">
+<h3><a name='toolbar_d:v3381'>7.8 Slider</a></h3>
+The following methods that are available for the <b id="p_ad">Button </b>item, can be applied to the <b id="he3g">Slider</b> as well:<br id="o:d5">
+<br id="d:v3383">
+<ul id="d:v3384">
+<li id="d:v3385"><a id="d:v3386" name="_Toc193605132"><span id="d:v3387" style="font-family: Verdana;"><font id="d:v3388" size="2">toolbar</font></span></a>.showItem(id);<a id="d:v3389" name="_Toc193605132"></a> 
+</li>
+<li id="d:v3390"><a id="d:v3391" name="_Toc193605132"><span id="d:v3392" style="font-family: Verdana;"><font id="d:v3393" size="2">toolbar</font></span></a>.hideItem(id); 
+</li>
+<li id="d:v3394"><a id="d:v3395" name="_Toc193605132"><span id="d:v3396" style="font-family: Verdana;"><font id="d:v3397" size="2">toolbar</font></span></a>.isVisible(id); 
+</li>
+<li id="d:v3398"><a id="d:v3399" name="_Toc193605132"><span id="d:v3400" style="font-family: Verdana;"><font id="d:v3401" size="2">toolbar</font></span></a>.enableItem(id);<a id="d:v3402" name="_Toc193605132"></a> 
+</li>
+<li id="d:v3403"><a id="d:v3404" name="_Toc193605132"><span id="d:v3405" style="font-family: Verdana;"><font id="d:v3406" size="2">toolbar</font></span></a>.disableItem(id); 
+</li>
+<li id="d:v3407"><a id="d:v3408" name="_Toc193605132"><span id="d:v3409" style="font-family: Verdana;"><font id="d:v3410" size="2">toolbar</font></span></a>.isEnabled(id).</li>
+</ul>
+<br id="pppj">
+All the parameters of the above mentioned methods are the same to those described in <a id="d:v3411" title="Button Settings Manipulating" href="RawDocContents?docID=dgr5rjkf_24chb7xhfq&amp;justBody=false&amp;revision=_latest&amp;timestamp=1206522236789&amp;editMode=true&amp;strip=true#7._Button_Settings_Manipulating">Button Settings Manipulations</a> section.<br id="g.e9">
+&nbsp;<br id="ifuq">
+<p id="z:55"><span id="d:v3413" style="font-family: Verdana;"><b id="d:v3414">7.8.1&nbsp; Setting Slider's Tooltip Template</b></span></p>
+<p id="nowb"> </p>
+<p id="kxjp"><br id="jddu">
+</p>
+<p id="i8qo">Toltip template is applied only to <font id="i8qo0" size="2">Slider. The tooltip template can be represented in three ways:</font></p>
+<p id="shbl"><br id="i8qo1">
+</p>
+<ul id="wpns">
+<li id="obvp"><font id="hmnu" size="2">Like a static text, for example, "Hello";</font> 
+</li>
+<li id="wskw"><font id="l3lz" size="2">Like a changeable text </font><font id="ixvb" size="2">when the user moves the slider </font>thumb<font id="lg0n" size="2">. "</font><font id="iafa" size="2">%v</font><font id="ecfn" size="2">" part should be added to the tooltip template </font><font id="c9lh" size="2">to make the template changeable</font><font id="c9lh0" size="2">;</font> 
+</li>
+<li id="xmsg"><font id="x3lg" size="2">Like both the above mentioned ways.<br id="vgbl">
+</font></li>
+</ul>
+<p id="m_df"><br id="sbi8">
+</p>
+<p id="sbi80"><font id="sbi81" size="2"><b id="sbi82">setItemToolTipTemplate()</b> method is used to set the tooltip template:</font></p>
+<blockquote id="f6bt">
+<p id="ols0"><a id="xqos" name="_Toc193605132"><span id="tsnf" style="font-family: Verdana;"><font id="c38v" size="2">&lt;script&gt;<br id="sbi83">
+</font></span></a></p>
+<p id="sbi84"><a id="sbi85" name="_Toc193605132"><span id="sbi86" style="font-family: Verdana;"><font id="sbi87" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar.</font></span></a><font id="l3z_" size="2">setItemToolTipTemplate(id,template);</font></p>
+<p id="sbi88"><font id="sbi89" size="2">&lt;/script&gt;<br id="sbi810">
+</font></p>
+</blockquote>
+<p id="qhbh"><font id="wh77" size="2">This method takes </font>the following parameters: <br id="sbsc">
+</p>
+<p id="sbsc0"><br id="is1q">
+</p>
+<ul id="anx-">
+<li id="jeda"><b id="a0_:">id </b>- item id; 
+</li>
+<li id="k8.g"><b id="xif5">template </b>- <span id="d:v3415" style="font-family: Verdana;"><font id="d:v3416" size="2">tooltip template text itself.</font></span> <br id="sbi811">
+</li>
+</ul>
+<p class="MsoNormal" id="xhge" style="background-color: rgb(255, 255, 255);"><br id="ohy8">
+</p>
+<p class="MsoNormal" id="hoyp" style="background-color: rgb(255, 255, 255);">For example, if the user wants his tooltip to show the text like this: "<i id="sbsc1">Current Value is:</i>" plus the changeable text showing slider's values when the thumb is moved, the code must be the following:</p>
+<p class="MsoNormal" id="jjyr" style="background-color: rgb(255, 255, 255);"></p>
+<blockquote id="jjyr0">
+<p id="jjyr1"><a id="jjyr2" name="_Toc193605132"><span id="jjyr3" style="font-family: Verdana;"><font id="jjyr4" size="2">&lt;script&gt;<br id="jjyr5">
+</font></span></a></p>
+<p id="jjyr6"><a id="jjyr7" name="_Toc193605132"><span id="jjyr8" style="font-family: Verdana;"><font id="jjyr9" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar.</font></span></a><font id="jjyr10" size="2">setItemToolTipTemplate("slider","Current Value is:+%v");</font></p>
+<font id="jjyr11" size="2">&lt;/script&gt;</font><br id="bfai1">
+</blockquote>
+<p class="MsoNormal" id="bfai2" style="background-color: rgb(255, 255, 255);">The following method can return current slider's tooltip template:</p>
+<blockquote id="jig7">
+<p class="MsoNormal" id="uumu" style="background-color: rgb(255, 255, 255);"><a id="io1e" name="_Toc193605132"><span id="jcy:" style="font-family: Verdana;"><font id="popa" size="2"><font id="vjuw" color="#000000">&lt;script&gt;<br id="oewr">
+</font></font></span></a></p>
+<p class="MsoNormal" id="oewr0" style="background-color: rgb(255, 255, 255);"><a id="oewr1" name="_Toc193605132"><span id="oewr2" style="font-family: Verdana;"><font id="oewr3" size="2"><font id="oewr4" color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;var template =&nbsp;</font><font id="mjxk" color="#000000"></font>toolbar.</font></span></a><font id="rn19" size="2">getItemToolTipTemplate(id); // returns current slider's tooltip text<br id="cwk4">
+</font></p>
+<p class="MsoNormal" id="oewr5" style="background-color: rgb(255, 255, 255);"><font id="oewr6" size="2">&lt;/script&gt;<br id="sbi812">
+</font></p>
+</blockquote>
+<br id="tdlo">
+<p id="ncve"><span id="x5rm" style="font-family: Verdana;"><b id="w9y6">7.8.2&nbsp; Setting Slider's Value</b></span></p>
+<br id="un4l">
+The user can set the Slider to a certain value within the range of available values with the help of the following method:<br id="nobs">
+<blockquote id="n793"><a id="d:v3417" name="_Toc193605132"><span id="d:v3418" style="font-family: Verdana;"><font id="d:v3419" size="2">&lt;script&gt;<br id="kryk">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar.</font></span></a>setValue(id,value,callEvent);<br id="kryk0">
+&lt;/script&gt;<br id="rffs">
+</blockquote>
+The parameters<b id="a03_0"> </b>are as follows:<br>
+<br>
+<ul>
+<li><b>id </b>- id of the item;</li>
+<li><b>value </b>- the new value;</li>
+<li><b>callEvent </b>- true|false, if set to true, calls <b>onValueChange </b>event.<br>
+</li>
+</ul>
+<b id="a03_0"><br>
+Note</b>: If the user has indicated the value that is not within the range of available values, the slider's thumb will be set either to the minimum or to the maximum value.<br id="niwo0">
+<br id="w3vu">
+Slider's current value can be easily got by the following method:<br id="ec7_">
+<blockquote id="f97."><a id="d:v3420" name="_Toc193605132"><span id="d:v3421" style="font-family: Verdana;"><font id="d:v3422" size="2"><font id="ee61" color="#000000">&lt;script&gt;<br id="me82">
+&nbsp;&nbsp;&nbsp;&nbsp;var value = </font>toolbar.</font></span></a>getValue(id); // returns slider's current value<br id="me820">
+&lt;/script&gt;<br id="oxas">
+</blockquote>
+<p id="ncve0"><span id="d:v3423" style="font-family: Verdana;"><b id="d:v3424">7.8.3 Setting Slider's Minimum Value</b></span></p>
+<br id="r.oo">
+There is a method to set slider's minimum value:<br id="mmal">
+<blockquote id="m.ax"><a id="d:v3425" name="_Toc193605132"><span id="d:v3426" style="font-family: Verdana;"><font id="d:v3427" size="2">&lt;script&gt;<br id="uo8o">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar.</font></span></a>setMinValue(id,value,label); <br id="zrp6">
+&lt;/script&gt;<br id="rvh-">
+</blockquote>
+The following parameters should be passed to this method:<br id="cfma">
+<br id="mrn7">
+<ul id="uya2">
+<li id="u5th"><b id="d:v3428">id </b>- item id; 
+</li>
+<li id="wl9d"><b id="w2ei">value </b>- minimum value; 
+</li>
+<li id="v4c5"><b id="b9bs">label </b>- text displayed to the left of the slider (in case of horizontal slider display) or below the slider (in case of vertical slider display). <br id="qgg:">
+</li>
+</ul>
+<br id="qnsj">
+<b id="a03_1">Note</b><i id="qb8q">:</i> if the user wants the slider's minimum value to be created text-free, it's necessary to write an empty string as <b id="dsbv">label </b>parameter. For example:<br id="g:8z">
+<blockquote id="hw8x"><a id="hw8x0" name="_Toc193605132"><span id="hw8x1" style="font-family: Verdana;"><font id="hw8x2" size="2">&lt;script&gt;</font></span></a><br id="hw8x3">
+<a id="hw8x4" name="_Toc193605132"><span id="hw8x5" style="font-family: Verdana;"><font id="hw8x6" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar.</font></span></a>setMinValue("slider",25,"");<br id="hw8x7">
+&lt;/script&gt;<br id="qb8q1">
+</blockquote>
+Slider's current minimum value can be got using <b id="zd-j">getMinValue()</b> method:<br id="h:12">
+<blockquote id="gero"><a id="d:v3429" name="_Toc193605132"><span id="d:v3430" style="font-family: Verdana;"><font id="d:v3431" size="2"><font id="z3:f" color="#000000">&lt;script&gt;<br id="xtzo">
+&nbsp;&nbsp;&nbsp;&nbsp;var data =&nbsp;</font><font id="j0:8" color="#000000"></font>toolbar.</font></span></a>getMinValue(id); // <span id="qf_a" style="background-color: rgb(255, 255, 255);">returns </span><span id="j9_2" style="background-color: rgb(255, 255, 255);">slider's </span><span id="gn5y" style="background-color: rgb(255, 255, 255);">current minimum value </span><br id="ljcj">
+&lt;/script&gt;<br id="ljcj0">
+</blockquote>
+<font id="amc1" color="#000000">This method returns the following Array: <span id="qf_a0" style="background-color: rgb(255, 255, 255);">value, label</span><span id="aqfk1" style="background-color: rgb(255, 255, 255);">.</span></font><br id="tddg">
+<br id="ztn_">
+<p id="ncve1"><span id="d:v3432" style="font-family: Verdana;"><b id="d:v3433">7.8.4&nbsp; Setting Slider's Maximum Value</b></span></p>
+<br id="pfkw">
+There is a method to set slider's maximum value:<br id="d:v3434">
+<blockquote id="d:v3435"><a id="d:v3436" name="_Toc193605132"><span id="d:v3437" style="font-family: Verdana;"><font id="d:v3438" size="2">&lt;script&gt;<br id="qf_a1">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar.</font></span></a>setMaxValue(id,value,label); <br id="qf_a2">
+&lt;/script&gt;<br id="d:v3439">
+</blockquote>
+The following parameters should be passed to this method:<br id="aqfk2">
+<br id="d:v3440">
+<ul id="d:v3441">
+<li id="d:v3442"><b id="d:v3443">id </b>- item id; 
+</li>
+<li id="d:v3444"><b id="ckop">value </b>- maximum value;; 
+</li>
+<li id="d:v3446"><b id="x2hu">label </b>- text displayed to the right of the slider (in case of horizontal slider display) or above the slider (in case of vertical slider display).<br id="d:v3448">
+</li>
+</ul>
+<br id="aqfk4">
+<b id="pfdo">Note:</b> if the user wants the slider's maximum value to be created text-free, it's necessary to write an empty string as <b id="t.wr">label </b>parameter. For example:<br id="aqfk5">
+<blockquote id="aqfk6"><a id="aqfk7" name="_Toc193605132"><span id="aqfk8" style="font-family: Verdana;"><font id="aqfk9" size="2">&lt;script&gt;</font></span></a><br id="aqfk10">
+<a id="aqfk11" name="_Toc193605132"><span id="aqfk12" style="font-family: Verdana;"><font id="aqfk13" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar.</font></span></a>setMaxValue("slider",25,"");<br id="aqfk14">
+&lt;/script&gt;<br id="d:v3449">
+</blockquote>
+Slider's current maximum value can be got using <b id="xvfg">getMaxValue()</b> method:<br id="d:v3451">
+<blockquote id="d:v3452"><a id="d:v3453" name="_Toc193605132"><span id="d:v3454" style="font-family: Verdana;"><font id="d:v3455" size="2"><font id="xfq3" color="#000000">&lt;script&gt;<br id="arah">
+&nbsp;&nbsp;&nbsp;&nbsp;var data = </font>toolbar.</font></span></a>getMaxValue(id); // <span id="arah0" style="background-color: rgb(255, 255, 255);">returns current </span><span id="qva9" style="background-color: rgb(255, 255, 255);">maximum </span><span id="arah1" style="background-color: rgb(255, 255, 255);">value </span><br id="arah2">
+&lt;/script&gt;<br id="arah3">
+</blockquote>
+<font id="d:v3456" color="#000000">This method returns the following <span id="gn5y5" style="background-color: rgb(255, 255, 255);">Array</span><span id="xen4" style="background-color: rgb(255, 255, 255);">:</span></font><font id="xgft" style="background-color: rgb(255, 255, 255);" color="#ff0000"> <font id="bs3m" color="#000000">value, label.</font></font><br id="f75y">
+<h3><a name='toolbar_d:v3457'>7.9 Input Item</a></h3>
+The following methods that are available for the <b id="d:v3459">Button </b>item, can be applied to the <b id="d:v3461">Input Item</b> as well:<br id="gzgu">
+<br id="d:v3462">
+<ul id="d:v3463">
+<li id="d:v3464"><a id="d:v3465" name="_Toc193605132"><span id="d:v3466" style="font-family: Verdana;"><font id="d:v3467" size="2">toolbar</font></span></a>.showItem(id);<a id="d:v3468" name="_Toc193605132"></a> 
+</li>
+<li id="d:v3469"><a id="d:v3470" name="_Toc193605132"><span id="d:v3471" style="font-family: Verdana;"><font id="d:v3472" size="2">toolbar</font></span></a>.hideItem(id); 
+</li>
+<li id="d:v3473"><a id="d:v3474" name="_Toc193605132"><span id="d:v3475" style="font-family: Verdana;"><font id="d:v3476" size="2">toolbar</font></span></a>.isVisible(id); 
+</li>
+<li id="d:v3477"><a id="d:v3478" name="_Toc193605132"><span id="d:v3479" style="font-family: Verdana;"><font id="d:v3480" size="2">toolbar</font></span></a>.enableItem(id);<a id="d:v3481" name="_Toc193605132"></a> 
+</li>
+<li id="d:v3482"><a id="d:v3483" name="_Toc193605132"><span id="d:v3484" style="font-family: Verdana;"><font id="d:v3485" size="2">toolbar</font></span></a>.disableItem(id); 
+</li>
+<li id="d:v3486"><a id="d:v3487" name="_Toc193605132"><span id="d:v3488" style="font-family: Verdana;"><font id="d:v3489" size="2">toolbar</font></span></a>.isEnabled(id); 
+</li>
+<li id="d:v3490"><font id="k6k_" color="#000000"><a id="d:v3491" name="_Toc193605132"><span id="d:v3492" style="font-family: Verdana;"><font id="d:v3493" size="2">toolbar</font></span></a>.setItemToolTip(id, tip);</font> 
+</li>
+<li id="d:v3494"><font id="d:v3495" color="#000000"><a id="d:v3496" name="_Toc193605132"><span id="d:v3497" style="font-family: Verdana;"><font id="d:v3498" size="2">toolbar</font></span></a>.getItemToolTip(id).</font></li>
+</ul>
+<br id="gzgu0">
+All the parameters of the above mentioned methods are the same to those described in <a id="x8kk" title="Button Settings Manipulating" href="RawDocContents?docID=dgr5rjkf_24chb7xhfq&amp;justBody=false&amp;revision=_latest&amp;timestamp=1206522236789&amp;editMode=true&amp;strip=true#7._Button_Settings_Manipulating">Button Settings Manipulations</a> section.<br id="d:v3502">
+The following methods that are available for the <b id="u3jm">Slider</b> item, can be applied to the <b id="d:v3504">Input Item</b> as well:<br id="gzgu1">
+<br id="gxlh">
+<ul id="t2r:">
+<li id="xgo2"><a id="d:v3505" name="_Toc193605132"><span id="d:v3506" style="font-family: Verdana;"><font id="d:v3507" size="2">toolbar.</font></span></a>setValue(id,value); // the value parameter is the default text displayed in the Input item&nbsp; 
+</li>
+<li id="d:v3508"><a id="d:v3509" name="_Toc193605132"><span id="d:v3510" style="font-family: Verdana;"><font id="d:v3511" size="2">toolbar.</font></span></a>getValue(id).</li>
+</ul>
+<br id="gzgu2">
+All the parameters of the above mentioned methods are the same to those described in <a id="d:v3512" title="Button Settings Manipulating" href="#7.7._Slider">Slider Settings Manipulations</a> section.<br id="mit40">
+There's one more method applied to <b id="a0vz">Select Button</b> that can be applied to the<b id="a0vz0"> Input Item</b> as well:<br id="gzgu3">
+<br id="hgsq">
+<ul id="hgsq0">
+<li id="hgsq1"><a id="d:v3518" name="_Toc193605132"><span id="d:v3519" style="font-family: Verdana;"><font id="d:v3520" size="2">toolbar.</font></span></a>setWidth(id,width);</li>
+</ul>
+<br id="e_x2">
+All the parameters of the above mentioned method are the same to those described in <a id="ingl1" name="Setting_Select_Button_Width"></a><span id="ingl" style="font-family: Verdana;"><a id="y-8s" title="Setting Select Button Width" href="#Setting_Select_Button_Width">Setting Select Button Width</a> section.</span><br id="hgsq2">
+<br id="z73c">
+<p id="ncve2"><span id="d:v3516" style="font-family: Verdana;"><b id="d:v3517">7.9.1&nbsp; <span id="fjb0" style="background-color: rgb(255, 255, 255);">Getting Input's Width</span></b></span></p>
+<br id="z_8l">
+The current input's width can be got with the help of <b id="bawh">getWidth()</b> method:<br id="vup2">
+<blockquote id="syl9"><a id="d:v3521" name="_Toc193605132"><span id="d:v3522" style="font-family: Verdana;"><font id="d:v3523" size="2"><font id="ohkr" color="#000000">&lt;script&gt;<br id="xen42">
+&nbsp;&nbsp;&nbsp;&nbsp;var width = </font>toolbar.</font></span></a>getWidth(id); // returns current input's width<br id="xen43">
+&lt;/script&gt;<br id="nw.o7">
+</blockquote>
+<h2><a name='toolbar_cbs0'>8. Event Handling</a></h2>
+<h3><a name='toolbar_d:v3532'>8.1 Available events
+</a></h3>
+<a id="zkto" name="_Toc193605132"></a>
+The following events are available in <b id="ttrc">dhtmlxToolbar</b>:<br id="xxjz">
+<br id="g5yw">
+<ul id="x35m">
+<li id="lu-3"><b id="y6no"><a id="nk.s" title="onClick" href="#onClick_event">onClick</a></b> - occurs when the user clicks the left mouse button on <b id="a-m6">Button </b>or <b id="wh1i">Select Button </b>items. 
+</li>
+<li id="q4bf"><span id="xhxm" style="background-color: rgb(255, 255, 255);"><b id="xryz"><a id="pc2g" title="onStateChange" href="#onStateChange_event">onStateChange</a> </b>- </span>occurs when the user changes state of <b id="aatb">Two State </b><b id="sms.">Button </b>item; 
+</li>
+<li id="g0dv"><b id="jk.3"><a id="ur8s" title="onValueChange" href="#onValueChange_event">onValueChange</a> </b>- occurs when the user changes value of <b id="o.sb">Slider </b>item; 
+</li>
+<li id="t8en"><b id="y5c_"><a id="x1y3" title="onXLS" href="RawDocContents?docID=dgr5rjkf_24chb7xhfq&amp;justBody=false&amp;revision=_latest&amp;timestamp=1216800674045&amp;editMode=true&amp;strip=true#onXLS_event">onXLS</a> </b>(<b id="sn252">X</b>ml <b id="sn253">L</b>oading <b id="sn254">S</b>tart) - occurs when XML data loading has not started yet; this method is called before <b id="y5c_1">onLoadHandler </b>(which is set in <b id="y5c_2">loadXML()</b> method); 
+</li>
+<li class="MsoNormal" id="sn25"><b id="mrq4"><a id="lpqa" title="onXLE" href="#onXLE_event">onXLE</a> </b>(<b id="i385">X</b>ml <b id="k823">L</b>oading <b id="oi4t">E</b>nd) – occurs when XML data was completely loaded into the object; this method is called before <b id="bd-b">onLoadHandler </b>(which is set in <b id="wld-">loadXML()</b> method);<a id="t8en2" title="onXLS" href="#onXLS_event"><br id="t8en3">
+</a>
+</li>
+<li class="MsoNormal" id="d:v3536"><b id="kci6"><a id="xd8x" title="onEnter" href="#onEnter_event">onEnter</a> </b>- occurs when the user presses "<b id="bjbq">Enter</b>" button<font id="lnpx" color="#000000"> in the <b id="wh7j">Input</b> item</font><font id="t:uy" color="#000000">.</font><br id="u6el">
+</li>
+</ul>
+<h3><a name='toolbar_nj_n'>8.2 Attaching event handler</a></h3>
+The user can add any user-defined handler to available events.&nbsp; 
+<p class="MsoNormal" id="s15b">To do this he can use <b id="th5p">attachEvent()</b> method with the following parameters: <br id="llki">
+</p>
+<p class="MsoNormal" id="llki0"><br id="llki2">
+</p>
+<ul id="p13y">
+<li id="h1m9"><b id="nwz-">evName </b>- name of the event; 
+</li>
+<li id="q05i"><b id="jg3k">evHandler </b>- user-defined event handler.<br id="b2zd">
+</li>
+</ul>
+<blockquote id="h19d">&lt;script&gt;<br id="el4i">
+&nbsp;&nbsp;&nbsp; <a id="d:v3543" name="_Toc193605132"><span id="iqoa" style="font-family: Verdana;"><font id="mm46" size="2">toolbar.</font></span></a>attachEvent(evName, evHandler);<br id="d0gn">
+&lt;/script&gt;<br id="h19d2">
+</blockquote>
+<a id="cpww" name="_Toc193605132"><span id="sij3" style="font-family: Verdana;"><font id="g0lq" size="2"><b id="q.lw">Note: </b>the names of the events are <b id="bmi:">case-insensitive</b>. </font></span></a><br id="x6br">
+<h3><a name='toolbar_d:v3538'>8.3 onClick event</a></h3>
+<b id="h4c8">onClick </b>event can be applied to <b id="g61j">Button </b>or <b id="tt1t">Select Button </b>items only.<br id="fgn6">
+This event calls user-defined handlers <a id="h19d6" name="_Toc193605132"><span id="h19d7" style="font-family: Verdana;"><font id="h19d8" size="2">(if there are any) and passes item's <b id="es56">id</b> parameter:<br id="of-x">
+</font></span></a>
+<blockquote id="vv1f"><a id="d:v3543" name="_Toc193605132">&lt;script&gt;<br id="d0gn1">
+<span id="iqoa" style="font-family: Verdana;"><font id="mm46" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar.attachEvent("onClick", function(id){});<br id="d0gn2">
+</font></span>&lt;/script&gt;<br id="bnw0">
+</a></blockquote>
+<p id="lexf"><a id="pnu5" name="_Toc193605132"><span id="pnu50" style="font-family: Verdana;"><font id="djk." size="2">Now </font></span>let's attach an event handler for "onClick" event:</a></p>
+<blockquote id="x5kh">
+<p id="lexf0"><a id="lexf1" name="_Toc193605132">&lt;script&gt;</a></p>
+<p id="lexf2"><a id="lexf3" name="_Toc193605132"></a><a id="cbdx0" name="_Toc193605132"><span id="cbdx1" style="font-family: Verdana;"><font id="cbdx2" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar.attachEvent("onClick", function(id){</font></span></a></p>
+<p id="cbdx3"><a id="cbdx4" name="_Toc193605132"></a><a id="cbdx6" name="_Toc193605132"><span id="cbdx7" style="font-family: Verdana;"><font id="cbdx8" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Button "+id+" was clicked");<br id="cbdx9">
+</font></span></a></p>
+<p id="cbdx10"><a id="cbdx11" name="_Toc193605132"></a><a id="cbdx13" name="_Toc193605132"><span id="cbdx14" style="font-family: Verdana;"><font id="cbdx15" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</font></span></a></p>
+<p id="x5kh6"><a id="x5kh7" name="_Toc193605132"></a><a id="x5kh9" name="_Toc193605132"><span id="x5kh10" style="font-family: Verdana;"><font id="x5kh11" size="2">&lt;/script&gt;<br id="cuys">
+<br id="x5kh12">
+</font></span></a></p>
+</blockquote>
+<h3><a name='toolbar_d:v3548'>8.3 onStateChange event</a></h3>
+<b id="lh8g">onStateChange </b>event can be applied to <b id="nlal">Two State </b><b id="pvz2">Button </b>item only.<br id="j62b">
+This event calls user-defined handlers <a id="d:v3557" name="_Toc193605132"><span id="d:v3558" style="font-family: Verdana;"><font id="d:v3559" size="2">(if there are any) and passes the following parameters:<br id="ux4l">
+<br id="wq:.">
+</font></span></a>
+<ul id="h7yo">
+<li id="qqea"><a id="d:v3561" name="_Toc193605132"><span id="d:v3562" style="font-family: Verdana;"><font id="d:v3563" size="2"><b id="tr.o">id - </b>id of the item; </font></span></a>
+</li>
+<li id="u:iu"><a id="d:v3567" name="_Toc193605132"><span id="d:v3568" style="font-family: Verdana;"><font id="d:v3569" size="2"><b id="kqzx">state</b> - new state of the item.</font></span></a><br id="d:v3570">
+</li>
+</ul>
+<a id="d:v3572" name="_Toc193605132"></a>
+<blockquote id="d:v3573"><a id="d:v3574" name="_Toc193605132">&lt;script&gt;<br id="th980">
+<span id="d:v3575" style="font-family: Verdana;"><font id="d:v3576" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar.attachEvent("onStateChange", function(id, state){});<br id="th981">
+</font></span>&lt;/script&gt;</a><a id="nq0r" name="_Toc193605132"></a><br id="lkak">
+</blockquote>
+<h3><a name='toolbar_d:v3577'>8.4 onValueChange event
+</a></h3>
+<b id="ux4l0">onValueChange</b> event can be applied to <b id="q3z5">Slider </b>item only.<br id="d0dx">
+This event calls user-defined handlers <a id="d:v3581" name="_Toc193605132"><span id="d:v3582" style="font-family: Verdana;"><font id="d:v3583" size="2">(if there are any) and passes the following parameters:<br id="ux4l1">
+<br id="d:v3584">
+</font></span></a>
+<ul id="d:v3585">
+<li id="d:v3586"><a id="d:v3589" name="_Toc193605132"><span id="d:v3590" style="font-family: Verdana;"><font id="d:v3591" size="2"><b id="jn7t">id - </b>id of the item; </font></span></a>
+</li>
+<li id="d:v3594"><a id="d:v3597" name="_Toc193605132"><span id="d:v3598" style="font-family: Verdana;"><font id="d:v3599" size="2"><b id="k4f:">value</b> - new value of the item.</font></span></a><br id="d:v3601">
+</li>
+</ul>
+<a id="d:v3603" name="_Toc193605132"></a>
+<blockquote id="d:v3604"><a id="d:v3605" name="_Toc193605132">&lt;script&gt;<br id="th987">
+<span id="d:v3606" style="font-family: Verdana;"><font id="d:v3607" size="2">&nbsp;&nbsp;&nbsp;&nbsp;toolbar.attachEvent("onStateChange", function(id, value){});<br id="th988">
+</font></span>&lt;/script&gt;</a><br id="gq8f">
+</blockquote>
+<h3><a name='toolbar_d:v3613'>8.5&nbsp;onXLS event
+</a></h3>
+<p id="hv1:"><a id="hv1:1" name="_Toc193605132"><span id="hv1:2" style="font-family: Verdana;"><font id="hv1:3" size="2">This event occurs </font></span></a><a id="hv1:4" name="_Toc193605132">before data loading from XML has started</a><a id="hv1:6" name="_Toc193605132"></a><a id="hv1:10" name="_Toc193605132"> </a><a id="hv1:11" name="_Toc193605132"><span id="hv1:12" style="font-family: Verdana;"><font id="hv1:13" size="2">and just before </font></span></a><a id="hv1:14" name="_Toc193605132"></a><b id="hv1:15"><a id="hv1:16" name="_Toc193605132"><span id="hv1:17" style="font-family: Verdana;"><b id="hv1:18">onLoadFunction.<br id="hv1:19">
+</b></span></a></b><a id="hv1:20" name="_Toc193605132"><span id="hv1:21" style="font-family: Verdana;"><font id="hv1:22" size="2"><b id="hv1:23">onXLS</b> event can call user-defined handlers (if there are any): <br id="nr30">
+</font></span></a></p>
+<blockquote id="eof8">
+<p id="nr300"><a id="nr301" name="_Toc193605132">&lt;script&gt;<br id="nr303">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar.attachEvent("onXLS", function(){});<br id="nr304">
+&lt;/script&gt;</a><br id="t8en5">
+</p>
+</blockquote>
+
+<h3><a name='toolbar_t8en6'>8.6 onXLE event
+</a></h3>
+<a id="jcck225" name="_Toc193605132"></a><a id="a_0q" name="_Toc193605132"></a><a id="zfse36" name="_Toc193605132"><span id="zfse37" style="font-family: Verdana;"><font id="zfse38" size="2">This event occurs when </font></span></a><a id="xyli" name="_Toc193605132">data loading from XML</a><a id="xyli0" name="_Toc193605132"><span id="xyli1" style="font-family: Verdana;"><font id="xyli2" size="2"> has already been ended</font></span></a><a id="zfse42" name="_Toc193605132"> </a><a id="zfse43" name="_Toc193605132"><span id="zfse44" style="font-family: Verdana;"><font id="zfse45" size="2">and just before </font></span></a><a id="zfse46" name="_Toc193605132"></a><b id="zfse47"><a id="zfse48" name="_Toc193605132"><span id="zfse49" style="font-family: Verdana;"><b id="zfse50">onLoadFunction.<br id="l3bi">
+</b></span></a></b><a id="l3bi0" name="_Toc193605132"></a><a id="l3bi2" name="_Toc193605132"><span id="l3bi3" style="font-family: Verdana;"><font id="l3bi4" size="2"><b id="l3bi5">onXLE</b> event can call user-defined handlers (if there are any):</font></span></a><a id="l3bi7" name="_Toc193605132"></a><a id="a_0q1" name="_Toc193605132"></a><a id="a2080" name="_Toc193605132"></a><a id="d:v3610" name="_Toc193605132"></a> 
+<blockquote id="uq_:">&lt;script&gt;<br id="th9812">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar.attachEvent("onXLE", function(){});<br id="th9813">
+&lt;/script&gt;<br id="t8en7">
+</blockquote>
+<h3><a name='toolbar_w2b53'>8.8 onEnter event
+</a></h3>
+<font id="ujpc" color="#000000"><b id="v_7j">onEnter </b>event can be applied to the <b id="bu6m">Input</b> item only.</font><br id="a:z0">
+This event calls user-defined handlers <a id="d:v3616" name="_Toc193605132"><span id="d:v3617" style="font-family: Verdana;"><font id="d:v3618" size="2">(if there are any) and passes the following parameters:<br id="xsei">
+<br id="hcnz">
+</font></span></a>
+<ul id="v9-e">
+<li id="hdap"><b id="g78s">id</b> - id of the item;<a id="d:v3620" name="_Toc193605132"></a> 
+</li>
+<li id="nn61"><b id="krfn">value</b> - the text that the user typed in the input item.<a id="d:v3622" name="_Toc193605132"></a></li>
+</ul>
+<blockquote id="an_x"><a id="d:v3624" name="_Toc193605132"></a>&lt;script&gt;<br id="an_x0">
+&nbsp;&nbsp;&nbsp;&nbsp;toolbar.attachEvent("onEnter", function(id, value){});<br id="eysd">
+<span id="fqv4" style="background-color: rgb(255, 255, 255);">&lt;/script&gt;</span><br id="xd9.">
+</blockquote>
+<h2><a name='toolbar_qwju'>9. XML Format Template</a></h2>
+
+<p id="s_nn0">This section is created in order to give the user the idea of <b id="ebl7">XML Format Template</b>. It aims at helping users in creating XML files for <b id="ebl70">dhtmlxToolbar </b>initialization.<br id="s_nn1">
+</p>
+<blockquote id="ebl71">
+<p id="s_nn2">&lt;?xml version="1.0"?&gt;<br id="tmf7">
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;toolbar&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="wter">a top xml tag, mandatory</i><br id="tmf70">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="new" type="button" img="new.gif" imgdis="new_dis.gif"/&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="wter0">a button item with images for enabled/disabled states only;</i></p>
+<p id="g:rw"><i id="g:rw0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; each item must have a unique ID</i><br id="tmf71">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="save" type="button" text="Save" img="save.gif" imgdis="save_dis.gif"/&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="wter1"> a button item with text, images for enabled/disabled states</i><br id="tmf72">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="open" type="button" text="Open"/&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i id="wter2">a button item with text only</i><br id="tmf73">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="sep01" type="separator"/&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="wter3">a separator item</i><br id="tmf74">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="undo" type="button" img="undo.gif" imgdis="undo_dis.gif" title="Undo"/&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="wter4">a button item with tooltip</i><br id="tmf75">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="redo" type="button" img="redo.gif" imgdis="redo_dis.gif" title="Redo"/&gt;<br id="tmf76">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="cut" type="button" img="cut.gif" imgdis="cut_dis.gif" title="Cut" enabled="false"/&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i id="j8iq">a disabled button</i><br id="tmf77">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="copy" type="button" img="copy.gif" imgdis="copy_dis.gif" title="Copy"/&gt;<br id="tmf78">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="paste" type="button" img="paste.gif" imgdis="paste_dis.gif" title="Paste"/&gt;<br id="tmf79">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="sep02" type="separator"/&gt;<br id="tmf710">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="form" type="buttonTwoState" img="form.gif" imgdis="form_dis.gif" title="Form"/&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="dynu">a two-state button with images for enabled/disabled states, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tooltip</i><br id="tmf711">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="filter" type="buttonTwoState" img="filter.gif" imgdis="filter_dis.gif" text="Filter" title="Filter"/&gt; <i id="dynu0">a two-state button with images for enabled/disabled states, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text, tooltip</i><br id="tmf712">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="any_word" type="buttonTwoState" text="Any Word" selected="true"/&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="dynu1">a pressed two-state button with text only</i><br id="tmf713">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;item id="txt_1" type="buttonInput"/&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="dynu2">an input button</i><br id="tmf714">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="txt_2" type="buttonInput" value="Filter Text" width="60" title="type the text here"/&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i id="dynu3">an input button with predifined initial value, width, and tooltip</i><br id="tmf715">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="sep1" type="separator"/&gt;<br id="tmf716">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="history" type="buttonSelect" text="History"&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="dynu4"> a select button with text only</i><br id="tmf717">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item type="button" id="8_1" text="Today"/&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i id="dynu5">a listed option with text only</i><br id="tmf718">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item type="button" id="8_2" text="Yesturday" selected="true"/&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i id="dynu6">a preselected listed option</i><br id="tmf719">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item type="button" id="8_3" text="Last Week"/&gt;<br id="tmf720">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item type="button" id="8_4" text="Last Month"/&gt;<br id="tmf721">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="8_sep0" type="separator"/&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i id="dynu7">a listed option - separator</i><br id="tmf722">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item type="button" id="8_5" img="icon_more.gif" text="More..."/&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i id="dynu8">a listed option with image for the enabled state, text</i><br id="tmf723">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/item&gt;<br id="tmf724">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="sep2" type="separator"/&gt;<br id="tmf725">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;item id="page_setup" type="buttonSelect" img="page_setup.gif" imgdis="page_setup_dis.gif" text="Page"&gt; <i id="sc-y">a select button with text, images for enabled/disabled &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;states</i><br id="tmf726">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item type="button" id="9_11" text="Layout"/&gt;<br id="tmf727">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item type="button" id="9_12" text="Management"/&gt;<br id="tmf728">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;<br id="tmf729">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="print" type="buttonSelect" img="print.gif" imgdis="print_dis.gif" title="Print"&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="sc-y0">a select button with images for enabled/disabled states, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tooltip</i><br id="tmf730">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item type="button" id="9_1" text="Page"/&gt;<br id="tmf731">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item type="button" id="9_2" text="Selection"/&gt;<br id="tmf732">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="9_sep0" type="separator"/&gt;<br id="tmf733">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item type="button" id="9_3" text="Custom..."/&gt;&nbsp;&nbsp;&nbsp; <br id="tmf734">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;<br id="tmf735">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;item id="sep3" type="separator"/&gt;<br id="tmf736">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="slider" type="slider" length="70" valueMin="10" valueMax="100" valueNow="70" textMin="10 MBit" textMax="100 MBit" toolTip="%v MBit"/&gt; <i id="sc-y1">a slider item</i></p>
+<p id="g3r6"> <br id="tmf737">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="j2ql">mandatory slider's parameters: length - length in px, minValue (int), maxValue (int), valueNow - current value (set by the default, int)<br id="s_nn57">
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;optional slider's parameters: textMin - label for minValue, textMax - lavel for
+maxValue, toolTip - tolltip template (%v will be replaced with &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the cureent
+value)</i></p>
+<p id="g3r61"><i id="g3r62">&nbsp;</i>&nbsp;&nbsp; &nbsp;&nbsp; <br id="mppi">
+ </p>
+<p id="tmf747">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="sep4" type="separator"/&gt;<br id="tmf738">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&lt;item id="text" type="text" text="dhtmlxToolbar Demo"/&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="j2ql0">a text item</i><br id="tmf739">
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/toolbar&gt;<br id="edbx">
+</p>
+</blockquote>
+<br id="p_2x">
+</div>
+<br id="o9kp">
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!--conf
+<sample>
+              <product version="1.5" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               </sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title> Refreshing Items</title>
+	
+</head>
+<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxtree.css">
+	
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxtree.js"></script>
+<body onload="doOnLoad()">
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxtree_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxTree</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b> Refreshing Items</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxTree/index.shtml">dhtmlxTree main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+
+	
+	
+	<script>
+		var tree;
+		function doOnLoad(){
+			tree=new dhtmlXTreeObject("treeboxbox_tree","100%","100%",0);
+			tree.setImagePath("../../codebase/imgs/csh_winstyle/");
+            tree.enableDragAndDrop(true);
+            tree.setXMLAutoLoadingBehaviour("id");
+            tree.setChildCalcMode("child");
+			
+            tree.setXMLAutoLoading("xml.php");
+		    tree.enableSmartXMLParsing(true);
+			tree.loadXML("xml.php");
+		}
+	</script>
+<div style="position:absolute;top:50px;left:300px;">
+	<a href="javascript:void(0)" onclick="tree.deleteItem(tree.getSelectedItemId(),true)">Delete</a> Selected Node<br>
+	<a href="javascript:void(0)" onclick="tree.setItemText(tree.getSelectedItemId(),document.getElementById('newlabel').value)">Set</a> selected Node Lable to <input id="newlabel">
+</div>
+<div id="treeboxbox_tree" style="width:260;height:200"></div>
+
+
+<p>Refresh Item and whole tree from server</p>
+
+	These operations get tree structure (of the whole tree or starting from the specified level)
+	from server to syncronize client and server nodes.
+	<br>
+	<a  href="javascript:void(0)" onclick="tree.refreshItem(tree.getSelectedItemId())">Refresh selected Item</a>
+	<br>
+	<a  href="javascript:void(0)" onclick="tree.refreshItem(0)">Refresh root (Whole tree)</a></div>
+</div>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">refreshItem</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></div>
+
+<p>Refresh Item in smart mode</p>
+
+	Refreshing items in smart mode keeps opened and selected items state when possible.
+<br>
+	<a  href="javascript:void(0)" onclick="tree.smartRefreshItem(tree.getSelectedItemId())">Refresh selected Item (smart mode)</a>
+
+
+
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">smartRefreshItem</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></div>
+
+
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

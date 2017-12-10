@@ -1,0 +1,8 @@
+<root fields="name|desc|price" >
+	<e a="Hammer" b="Wooden handle with cast-iron implement for driving nails." c="9.95" xk="1" />
+	<e a="Nail" b="Cylindrical iron spike for binding together pieces of wood." c="0.03" xk="2" />
+	<e a="Microwave" b="Electrical device that emits high-frequency waves exciting water particle contained in food." c="149.00" xk="3" />
+	<e a="iPod" b="Totally cool mobile MP3 player in the $400 price range." c="412.00" xk="4" />
+	<e a="Grid Control" b="Powerful browser-based spread control based in DHTML." c="399.00" xk="5" />
+	<e a="Bose Stereo" b="Sound Amplification and speaker module." c="899.00" xk="6" />
+</root>

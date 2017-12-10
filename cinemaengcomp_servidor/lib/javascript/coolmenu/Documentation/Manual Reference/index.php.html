@@ -1,0 +1,1720 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>COOLjsMenu: Introduction and Manual Reference</title>
+		<style type="text/css">
+body, html {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	background-color: white;
+}
+
+h2 {
+	margin: 19px 0;
+	font: italic bold 11pt arial;
+	color: #1B7389;
+}
+
+h3 {
+	margin: 19px 0;
+	font: bold 10pt arial;
+	color: #1B7389;
+}
+
+h4 {
+	margin: 19px 0;
+	font: bold 9pt arial;
+	color: #1B7389;
+}
+
+h5 {
+	margin: 19px 0;
+	font: bold 9pt arial;
+	color: #1B7389;
+}
+
+table#footer {
+	height: 43px;
+}
+
+table#footer td {
+	padding-left: 217px;
+	padding-right: 0;
+	text-align: center;
+	vertical-align: middle;
+	font: 8pt tahoma;
+	color: black;
+}
+
+table#footer a, table#footer a:link, table#footer a:visited {
+	color: black;
+	text-decoration: underline;
+}
+
+table#footer a:hover, table#footer a:active {
+	color: #359595;
+	text-decoration: underline;
+}
+
+td { font-size: 8pt; }
+
+a img {
+	border: none;
+}
+
+.table {
+	width: 100%;
+	background-color: #96B3BF;
+}
+
+.table td, .table th {
+	padding: 3px 6px;
+	font: 9pt tahoma;
+}
+
+.table td {
+	border: 2px solid white;
+	background-color: white;
+}
+
+.table th {
+	font-weight: bold;
+	border: 1px solid white;
+	background-color: #D0DFDE;
+}
+
+.table .even td {
+	background-color: #F0F0F0;
+}
+
+.cntDblLeft, .cntDblRight {
+	background-repeat: no-repeat;
+}
+
+.cntDblLeft {
+	background-position: 12px 0;
+	background-image: url(../../Misc%20files/images/cnt-dbl-bg-left.jpg);
+}
+
+.cntDblRight {
+	background-position: 5px 0;
+	background-image: url(../../Misc%20files/images/cnt-dbl-bg-right.jpg);
+}
+
+.cntDblLeft div, .cntDblRight div {
+	padding-top: 0;
+	padding-bottom: 10px;
+}
+
+.cntDblLeft div {
+	padding-left: 45px;
+	padding-right: 42px;
+}
+
+.cntDblRight div {
+	padding-left: 38px;
+	padding-right: 43px;
+}
+
+.cntDblLeft div p, .cntDblRight div p {
+	margin: 11px 0;
+	/*text-align: justify;*/
+	font: 9pt arial;
+	color: black;
+}
+
+.cntDblLeft .header {
+	background: #96B3BF;
+	margin-left: 11px;
+	margin-right: 7px;
+	margin-bottom: 11px;
+}
+
+.cntDblHdrLeft {
+	background-image: url(../../Misc%20files/images/cnt-dbl-ttl-bg-left.gif);
+}
+
+.cntDblHdrLeft h2 {
+	left: 0;
+	margin: 0;
+	padding-left: 45px;
+	font: bold 9pt tahoma;
+	color: #065467;
+	background-image: url(../../Misc%20files/images/ico1.gif);
+	background-position: 19px -1px;
+	background-repeat: no-repeat;
+}
+
+.cntDblHdrRight {
+	background-image: url(../../Misc%20files/images/cnt-dbl-ttl-bg-right.gif);
+}
+
+.cntDblHdrRight h2 {
+	left: 0;
+	margin: 0;
+	padding-left: 38px;
+	font: bold 9pt tahoma;
+	color: #065467;
+	background-image: url(../../Misc%20files/images/ico1.gif);
+	background-position: 12px -1px;
+	background-repeat: no-repeat;
+}
+
+.cntFirst {
+	background-image: url(../../Misc%20files/images/cnt-first-bg.gif);
+}
+
+.cntFirst2 {
+	background: left top no-repeat url(../../Misc%20files/images/cnt-first-hdr-bg.jpg);
+}
+
+.cntFirst3 {
+	background: left bottom no-repeat url(../../Misc%20files/images/cnt-first-ftr-bg.gif);
+	padding: 15px 42px 8px 44px;
+}
+
+h1 {
+	margin: 19px 0;
+	font: bold 12pt arial;
+	color: #1B7389;
+}
+
+p, ul, ol, dl, dt {
+	font-size: small;
+	font-family: arial;
+	color: black;
+}
+
+p {
+	margin: 19px 0;
+	/*text-align: justify;*/
+}
+
+p.centered {
+	text-align: center;
+}
+
+ul, ol {
+	margin-top: 19px;
+	margin-bottom: 19px;
+}
+
+ul ul {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 19px;
+}
+
+a { color: #2B6F7F; }
+a.plain:visited { color: navy; }
+a.plain:hover { color: #2B6F7F; }
+
+.cntSingle {
+	border: 1px solid #1B7389;
+	margin: 0 5px 10px 9px;
+}
+
+.cntSingleInner {
+	padding: 0 37px 0 36px;
+}
+
+.cntSingle h2 {
+	left: 0;
+	margin: 1px;
+	background-color: #96B3BF;
+	font: bold 9pt tahoma;
+	color: #065467;
+	padding: 2px 0 4px 35px;
+	background-image: url(../../Misc%20files/images/ico1.gif);
+	background-position: 8px 1px;
+	background-repeat: no-repeat;
+}
+
+.subnavigation a {
+	color: white;
+	text-decoration: none;
+}
+
+.subnavigation a:hover, .subnavigation a:active {
+	text-decoration: underline;
+}
+
+.subnavigation a.current {
+	color: #B0EDEF;
+}
+
+.subnavigation td {
+	font: bold 7pt tahoma;
+	padding-left: 27px;
+	padding-right: 7px;
+	background-image: url(../../Misc%20files/images/ico1.gif);
+	background-position: 5px 2px;
+	background-repeat: no-repeat;
+}
+
+.subnavigation td.div {
+	background-image: url(../../Misc%20files/images/subnav-div.gif);
+	background-repeat: no-repeat;
+	background-position: 5px 0;
+	padding-left: 0;
+}
+
+#navigation div {
+	text-align: center;
+	background: url(../../Misc%20files/images/nav-btn-middle.gif);
+	font: bold 9pt tahoma;
+}
+
+#navigation div div {
+	background: no-repeat left top url(../../Misc%20files/images/nav-btn-left.gif);
+}
+
+#navigation div div div {
+	background: no-repeat right top url(../../Misc%20files/images/nav-btn-right.gif);
+}
+
+#navigation a {
+	color: black;
+	text-decoration: none;
+	display: block;
+	padding: 16px 12px 0 12px;
+	height: 23px;
+}
+
+#navigation div.current {
+	background-image: url(../../Misc%20files/images/nav-btn-middle-selected.gif);
+}
+
+#navigation div.current div {
+	background-image: url(../../Misc%20files/images/nav-btn-left-selected.gif);
+}
+
+#navigation div.current div div {
+	background-image: url(../../Misc%20files/images/nav-btn-right-selected.gif);
+}
+
+.code {
+	font: 9pt courier new;
+	padding: 10px;
+	background-color: #F0F0F0;
+	border: 1px solid #E8E8E8;
+	margin: 19px 0;
+}
+
+.code .field { color: #008000; }
+.code .string { color: #A000A0; }
+.code .comment { color: #808080; }
+.code .tag { color: #000080; }
+
+.highlighedProduct td { background-color: #E0F0F0; }
+.eula { font: 8pt tahoma; }
+div.button {
+	text-align: center;
+}
+
+.form {
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+}
+
+.form .label {
+	background-color: #F0F0F0;
+}
+
+.form .textField {
+	background-color: #F8F8F8;
+}
+
+.form .textField input {
+	border: 1px solid silver;
+}
+
+.form .buttons {
+	text-align: center;
+}
+
+.error {
+	color: red;
+	text-align: center;
+}
+
+.testimonials p {
+	font-style: italic;
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+.testimonials .sign {
+	margin-top: 0;
+	margin-bottom: 29px;
+	text-align: right;
+	font-size: 70%;
+	font-style: normal;
+}
+
+p.more {
+	padding-right: 20px;
+	font-size: 70%;
+	font-style: normal;
+	text-align: right;
+}
+
+.more a { text-decoration: none; }
+.more a:hover { text-decoration: underline; }
+
+.tip {
+	width: 300px;
+}
+
+a.hidden {
+	color: black;
+	text-decoration: none;
+	cursor: default;
+}
+
+.tip {
+	border: 1px solid #1B7389;
+	width: 300px;
+	padding: 10px;
+	background-color: #F0F0F0;
+	text-align: left;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='gray', Direction=135, Strength=3);
+}
+
+.tipShot {
+	text-align: center;
+	margin: 10px 0;
+}
+
+.purchase {
+	width: 100%;
+}
+
+.purchase td {
+	font: 9pt tahoma;
+	border-style: solid none solid none;
+	border-width: 1px 0 1px 0;
+	border-color: red;
+}
+
+.purchase td a {
+	display: block;
+	width: 100%;
+	text-decoration: none;
+}
+
+/* news */
+
+dl.news .date {
+	color: #1B7389;
+	font-size: 8pt;
+	line-height: 11pt;
+}
+
+dl.news .subject {
+	float: left;
+	color: #1B7389;
+}
+
+dl.news {
+}
+
+dl.news dt {
+	text-align: right;
+	font-weight: bold;
+	font-size: 10pt;
+	border-bottom: 1px solid #1B7389;
+	margin: 0;
+}
+
+dl.news dd {
+	margin: 0;
+}
+
+dl.news p {
+}
+
+dl.news ul {
+}
+
+.shortNews {
+	padding: 10px 15px 0 20px;
+	text-align: left;
+	font: 8pt tahoma;
+}
+
+.shortNews .date {
+	font-weight: bold;
+}
+
+.shortNews div {
+	padding: 3px 3px 12px 3px;
+	font: 8pt tahoma;
+}
+
+.navTip {
+	font: 8pt tahoma;
+	position: absolute;
+	visibility: hidden;
+	width: 440px;
+	padding: 5px 20px 0 20px;
+	text-align: center;
+	color: black;
+}
+
+.imgfix {
+	font-size: 1px;
+}
+
+.imgfix img {
+	vertical-align: bottom;
+}
+
+.copy {
+	font: 8pt tahoma;
+	color: black;
+}
+
+.copy a, .copy a:link, .copy a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+.copy a:hover, .copy a:active {
+	text-decoration: underline;
+}
+		</style>
+	</head>
+	<body marginwidth="0" marginheight="0">
+		<table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%" style="height: 100%;">
+			<tr valign="top">
+				<td class="imgfix" width="18" background="../../Misc&#32;files/images/left-bg-liquid.gif"><img src="../../Misc&#32;files/images/header-left-bg-popup.gif" width="18" height="46" /></td>
+				<td>
+					<div style="height: 7px; background: white repeat-x left top url(../../Misc%20files/images/header-bg-popup.gif);" class="imgfix"><img src="../../Misc&#32;files/images/b.gif" width="1" height="7" /></div>
+					<script type="text/javascript">if (document.layers) document.write('<img src="../../Misc&#32;files/images/b.gif" width="' + (window.innerWidth - 57) + '" height="1" />');</script>
+					<div style="padding: 8px 31px 10px 35px;"><div>
+					<h1>COOLjsMenu: Introduction and Manual Reference</h1>
+<h2>Foreword</h2>
+<p>This document covers most of the creation and initialization process for <a href="http://javascript.cooldev.com/scripts/coolmenu/">COOLjsMenu</a> and <a href="http://javascript.cooldev.com/scripts/coolmenupro/">COOLjsMenu Professional</a> from <a href="http://javascript.cooldev.com/">CoolDev.Com</a>. While this document describes data structures needed by these scripts and the way all these things can be glued together to fit in your pages, you will not find wide variety of complete samples here: you can find them in your COOLjsMenu or COOLjsMenu Professional package in the "demos" or "samples" subdirectories. Also, this document does not cover license, support and purchase issues - answers to these questions you can find in the <a href="http://javascript.cooldev.com/doc/faq/menu.php">FAQ</a>.</p>
+<p>COOLjsMenu Professional has all the functions that are included in COOLjsMenu, and offers many additional, but generally scripts are compatible. Input data and format specifications for both these scripts are very alike, and  all farther references to "menu" will mean both COOLjsMenu and COOLjsMenu Professional if not specified otherwise.</p>
+
+<h2>Authors</h2>
+<p>Author of this document is Alex Kunin, representative of CoolDev.com technical support team. If you have comments, questions, brilliant ideas, more brilliant ideas, or you want to criticize something then don't hesitate contacting me at <a href="mailto:javascript@cooldev.com">javascript@cooldev.com</a>.</p>
+
+<h2>Contents</h2>
+<ol type="I" class="last">
+	<li><a href="index.php.html#s1">General information</a></li>
+	<li><a href="index.php.html#s2">Required components and installation process</a></li>
+	<li><a href="index.php.html#s3">Complete samples</a></li>
+	<li><a href="index.php.html#s4">Menu definition file format</a></li>
+</ol>
+
+<h2 id="s1">General information</h2>
+
+<p>Scripts covered in this document allow you to create and use menu-like visual representation of hierarchical data - most close analogies are menu bar and popup menu which can be found in almost every visual application. The most natural way to use these scripts is to build site navigation system, but there are some other variants how menus can be used: context menus, rollover-enabled buttons, compact document outline, etc. Galleries of samples for the <a href="http://javascript.cooldev.com/scripts/coolmenu/demos/">COOLjsMenu</a> and <a href="http://javascript.cooldev.com/scripts/coolmenupro/demos/">COOLjsMenu Professional</a> are available online - they will help you to get general idea of the possibilities that menu provides.</p>
+<p>Basically menu is a program written in JavaScript - programming language commonly used in web development. No JavaScript knowledge is required to use the menu - this is not too hard to modify existing sample (e.g. complete sample which is explained in this document) to get working menu which will suit your needs. But for advanced menu usage it is strongly recommended to have basic JavaScript skills.</p>
+<p class="last">To create and test menu you need some text editor and some browser. Menu runs on most of the available browsers that provide JavaScript and CSS support. These browsers are: Internet Explorer 4 and above, Netscape Navigator 4.x, Netscape Navigator 6 and above, Mozilla 0.9.4 and above, Opera 5 and above. To create and/or modify menu definition you need some text editor (Notepad for Windows' users is a good one to start). More complex systems for site management such as FrontPage, InterDev, and Dreamweaver also can be used.</p>
+
+<h2 id="s2">Required components and installation process</h2>
+
+<p>To get the menu working you need following components:</p>
+<ul>
+	<li>menu script itself (coolmenu.js or coolmenupro.js; these files are can be found in the &quot;js&quot; subdirectory in the corresponding packages);</li>
+	<li>menu structure definition - captions and URLs for every item, styles, position, offsets, sizes, etc.;</li>
+	<li>HTML page which will include the menu.</li>
+</ul>
+<p>You can place these components into separate files (next section tells how to do this) or put them into a single HTML document. No matter what way you will choose initialization sequence must be in the HTML code. This sequence is different for COOLjsMenu and COOLjsMenu Professional.</p>
+<p>COOLjsMenu's initialization sequence presented below.</p>
+<div class="code"><span class="tag">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br />
+var myMenu = new COOLjsMenu(<span class="string">&quot;menu1&quot;</span>, MENU_ITEMS);<br />
+<span class="tag">&lt;/script&gt;</span></div>
+<p>This code snippet must be placed somewhere in the HTML code, but not inside any containers other than &lt;BODY&gt; - this is very important. By not following this rule you'll get displaced submenus. The best place for this code is immediately before the closing &lt;/BODY&gt; tag - it is safe to place initialization there. (Technical details: COOLjsMenu's constructor will generate HTML code - set of DIVs, and then this code will be written to the document flow using &quot;document.write()&quot; method. So, putting the constructor call in a wrong place will lead to undesirable side effects.)</p>
+<p>Initialization sequence for COOLjsMenu Professional looks like the this:</p>
+<div class="code">var myMenu = new COOLjsMenuPRO(<span class="string">&quot;menu1&quot;</span>, MENU_ITEMS);<br />
+<span class="tag">&lt;/script&gt;</span><br />
+...<br />
+<span class="tag">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br />
+myMenu.initTop();<br />
+<span class="tag">&lt;/script&gt;</span><br />
+...<br />
+<span class="tag">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br />
+CLoadNotify();<br />
+<span class="tag">&lt;/script&gt;</span><br />
+<span class="tag">&lt;/body&gt;</span><br />
+<span class="tag">&lt;/html&gt;</span></div>
+<p>As you can see code contains three custom elements (this applies to both COOLjsMenu and COOLjsMenu Professional):</p>
+<ul>
+	<li><em>myMenu</em> - name of the variable that will hold reference to the newly created menu; this variable can be used to access menu at runtime, e.g. to hide or show submenus or to set up event handlers;</li>
+	<li><em>&quot;menu1&quot;</em> - name of the menu; if you have several menus on the page then you have to name them differently, e.g. &quot;menu1&quot;, &quot;menu2&quot; and so on; it is recommended to compose these names using alphanumeric characters because there are many places where names will be used: CSS class names, images' and layers' identifiers - some browsers do not allow to have fancy symbols here (e.g. Opera 5 does not understand CSS class names with underscores); it's Ok if menu name and menu variable name will match;</li>
+	<li><em>MENU_ITEMS</em> - JavaScript array with items (you can find sample farther in this section, reference is in the corresponding section); because this is a JavaScript construct it's definition must be placed into &lt;SCRIPT&gt; tag or into the separate .js file.</li>
+</ul>
+<p>COOLjsMenu Professional has couple of additional initialization statements (see Fig. 2). If your menu is positioned absolutely (see &quot;Menu definition file format&quot; reference for details) then you can place all these code pieces into single &lt;SCRIPT&gt; statement just before the &lt;/BODY&gt; - outside of any containers. For relative positioning mode following rules must be honored: &quot;new COOLjsMenuPRO(...)&quot; part can be placed anywhere before the &quot;initTop()&quot;; at the place where you want to see your menu (e.g. inside a TD cell) &quot;initTop()&quot; part must be placed; &quot;init()&quot; and &quot;draw()&quot; should be at the very end of file before the closing &lt;/BODY&gt; tag.</p>
+<p>Here is minimum HTML document with COOLjsTree inside:</p>
+<div class="code"><span class="tag">&lt;html&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;head&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;coolmenu.js&quot;</span>&gt;</span><span class="tag">&lt;/script&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/head&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;body&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br />
+// Part 1 - Styles<br />
+var STYLE = {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">border</span>:1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// item's border width, pixels; zero means <span class="string">&quot;none&quot;</span>;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">shadow</span>:2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// item's shadow size, pixels; zero means <span class="string">&quot;none&quot;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">color</span>:{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">border</span>:<span class="string">&quot;#666666&quot;</span>,&nbsp;&nbsp;// color of the item border, if any;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">shadow</span>:<span class="string">&quot;#DBD8D1&quot;</span>,&nbsp;&nbsp;// color of the item shadow, if any;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">bgON</span>:<span class="string">&quot;white&quot;</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// background color for the items;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">bgOVER</span>:<span class="string">&quot;#B6BDD2&quot;</span>&nbsp;&nbsp;&nbsp;// background color for the item<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// which is under mouse right now;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">css</span>:{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">ON</span>:null,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// CSS class for items;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">OVER</span>:null&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// CSS class&nbsp;&nbsp;for item which is under mouse;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+};<br />
+<br />
+// Part 2 - Menu structure<br />
+var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">pos</span>:[10,10], <span class="field">itemoff</span>:[0,99], <span class="field">leveloff</span>:[21,0], <span class="field">style</span>:STYLE, <span class="field">size</span>:[22,100]},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">&quot;Item 1&quot;</span>, <span class="field">url</span>:<span class="string">&quot;item1.html&quot;</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">sub</span>:[<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="string">&quot;itemoff&quot;</span>:[21,0]},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">&quot;SubItem 1&quot;</span>, <span class="string">&quot;url&quot;</span>:<span class="string">&quot;subitem1_1.html&quot;</span>},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">&quot;SubItem 2&quot;</span>, <span class="string">&quot;url&quot;</span>:<span class="string">&quot;subitem1_2.html&quot;</span>},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">&quot;SubItem 3&quot;</span>, <span class="string">&quot;url&quot;</span>:<span class="string">&quot;subitem1_3.html&quot;</span>},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">&quot;SubItem 4&quot;</span>, <span class="string">&quot;url&quot;</span>:<span class="string">&quot;subitem1_4.html&quot;</span>}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">&quot;Item 2&quot;</span>, <span class="field">url</span>:<span class="string">&quot;item2.html&quot;</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">sub</span>:[<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">itemoff</span>:[21,0]},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">&quot;SubItem 1&quot;</span>, <span class="string">&quot;url&quot;</span>:<span class="string">&quot;subitem2_1.html&quot;</span>},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">&quot;SubItem 2&quot;</span>, <span class="string">&quot;url&quot;</span>:<span class="string">&quot;subitem2_2.html&quot;</span>},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">&quot;SubItem 3&quot;</span>, <span class="string">&quot;url&quot;</span>:<span class="string">&quot;subitem2_3.html&quot;</span>},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">&quot;SubItem 4&quot;</span>, <span class="string">&quot;url&quot;</span>:<span class="string">&quot;subitem2_4.html&quot;</span>}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+];<br />
+<br />
+// Part 3 - Initialization code<br />
+var m1 = new COOLjsMenu(<span class="string">&quot;menu1&quot;</span>, MENU_ITEMS);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/script&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/body&gt;</span><br />
+<span class="tag">&lt;/html&gt;</span></div>
+
+<p>Initialization sequence is denoted by blue background. Menu
+definition has been split into two parts - style definition (red border)
+and structure definition (green border). That was done only for
+convenience, and piece of code which references style definition can be
+solid:</p>
+
+<div class="code">var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">pos</span>:[10,10],<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">itemoff</span>:[0,99],<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">leveloff</span>:[21,0],<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">style</span>:{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">border</span>:1,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">shadow</span>:2,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">color</span>:{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">border</span>:<span class="string">&quot;#666666&quot;</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">shadow</span>:<span class="string">&quot;#DBD8D1&quot;</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">bgON</span>:<span class="string">&quot;white&quot;</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">bgOVER</span>:<span class="string">&quot;#B6BDD2&quot;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">css</span>:{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">ON</span>:<span class="string">&quot;clsCMOn&quot;</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">OVER</span>:<span class="string">&quot;clsCMOver&quot;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">size</span>:[22,100]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">&quot;Item 1&quot;</span>, <span class="field">url</span>:<span class="string">&quot;item1.html&quot;</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...<br />
+];</div>
+<p>But average menu usually contains more than one style, and there can be more then one reference to the same style. So, to have clean, non-garbled code we recommend you to split styles and structure.</p>
+<p>COOLjsMenu Professional has same inclusion scheme, but with some additional statements in the initialization sequence:</p>
+<div class="code">var m1 = new COOLjsMenuPRO(<span class="string">&quot;menu1&quot;</span>, MENU_ITEMS);<br />
+m1.initTop();<br />
+CLoadNotify();</div>
+<p>Style definitions and structure definitions are basically the same. Detailed information about style and structure definitions are given in the "<a href="index.php.html#s4">Reference</a>" section.</p>
+<p class="last">Note about CLoadNotify: it is needed to activate the menu, to show it the very first time. This call is optional, you can safely skip it because menu will be activated when the page will be loaded. But if your page contains lots of graphics (especially things like banners which are hosted on other domains and generate several HTTP requests), then there might be a significant delay between two events: “HTML loaded” and “page loaded”. Menu can be activated when HTML is fully loaded, but there is no standard way to catch this moment. This is why we need to call some custom function (CLoadNotify) which will notify all menu scripts that it is time to appear.</p>
+
+<h2 id="s3">Complete samples</h2>
+<p>If you plan to include same menu into many pages from your site then it is good idea to split samples from previous section into several files. Here is typical set of files:</p>
+<ul>
+	<li><em>menuitems.js</em> - contains MENU_ITEMS variable - menu's styles and structure;</li>
+	<li><em>style.css</em> - CSS classes for the menu;</li>
+	<li><em>coolmenu.js</em> or <em>coolmenupro.js</em> - the menu itself;</li>
+	<li><em>images</em> - your menu will contain at least blank 1x1 image (it is used internally by the script), and also there can be additional images like icons and arrows.</li>
+</ul>
+<p>Some HTML code is also needed, of course.</p>
+<p class="last">Here are two complete samples which contain all the files listed above: <a href="samples/cooljsmenu.zip.html">COOLjsMenu</a> and <a href="samples/cooljsmenupro.zip.html">COOLjsMenu Professional</a>. These are good points to start from: .js files are commented, and you will not get lost.  So, download these .zip files, unpack them somewhere, add coolmenu.js and coolmenupro.js, and then run the samples.</p>
+
+<h2 id="s4">Menu definition file format</h2>
+
+<p>Menu definition file format consists of two parts: styles and structure.</p>
+<div class="code">// styles<br />
+var STYLE1 = {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">border</span>:1,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...<br />
+};<br />
+<br />
+var STYLE2 = {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">border</span>:1,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...<br />
+};<br />
+<br />
+// structure<br />
+var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">pos</span>:<span class="string">'relative'</span>, <span class="field">style</span>:STYLE1, ...},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">'Item 1'</span>, ...},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...<br />
+];</div>
+
+<p>"MENU_ITEMS" is the name of the variable which holds full menu definition - that name will be used during menu initialization. Style names "STYLE1", "STYLE2" will be used only within menu definition file. Styles' definition are separated from the structure only for convenience - "MENU_ITEMS" actually holds united array of styles and structure.</p>
+
+<h2>Style definition</h2>
+<div style="text-align: center;"><img src="img/style.gif" alt="" /></div>
+<p>Menu style defines colors for item background (1), shadow (2), border (3), icon background (4). Also, it defines colors for item and icon backgrounds in rollovered state, size of the shadow and border, and CSS classes for the item's text in rollovered state.</p>
+<p>Here is typical style definition:</p>
+<div class="code">var STYLE1 = {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">border</span>:1,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">borders</span>:[1,1,2,1],<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">shadow</span>:2,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">color</span>:{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">border</span>:<span class="string">&quot;#666666&quot;</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">shadow</span>:<span class="string">&quot;#DBD8D1&quot;</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">bgON</span>:<span class="string">&quot;white&quot;</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">bgOVER</span>:<span class="string">&quot;#B6BDD2&quot;</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">imagebg</span>:<span class="string">'silver'</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">oimagebg</span>:<span class="string">'black'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">css</span>:{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">ON</span>:<span class="string">&quot;clsCMOn&quot;</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">OVER</span>:<span class="string">&quot;clsCMOver&quot;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+};</div>
+
+<p>Style definition's fields have following meanings:</p>
+
+<table class="table">
+	<tr>
+		<th>Name</th>
+        <th>State aware?&nbsp;*</th>
+		<th>Description</th>
+	</tr>
+
+    <tr>
+        <td>leveloff</td>
+        <td>&nbsp;</td>
+        <td>
+			<p>Specifies distance between top-left corner of the item and it's submenu. Following code will make submenu appear under the item:</p>
+			<table align="center"><tr><td>
+			<div class="code"><span class="field">leveloff</span>:[20,0]</div>
+			</td></tr></table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>size</td>
+        <td>&nbsp;</td>
+        <td>
+			<p>Defines item's size, e.g. item size 100x20 pixels will look like this:</p>
+			<table align="center"><tr><td>
+			<div class="code"><span class="field">size</span>:[20,100]</div>
+			</td></tr></table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>itemoff</td>
+        <td>&nbsp;</td>
+        <td>
+			<p>Specifies distance between top-left corners of the neighbor items. Horizontal offset - 10 pixels, vertical offset - 5 pixels:</p>
+			<table align="center"><tr><td>
+			<div class="code"><span class="field">itemoff</span>:[5,10]</div>
+			</td></tr></table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>backgroundColor</td>
+        <td>Yes</td>
+        <td>
+			<p>Specifies background color for the item:</p>
+			<table align="center"><tr><td>
+			<div class="code"><span class="field">backgroundColor</span>:<span class="string">'silver'</span></div>
+			</td></tr></table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>color.bgON, color.bgOVER</td>
+        <td>&nbsp;</td>
+        <td>
+            Obsolete way to use "backgroundColor".
+        </td>
+    </tr>
+
+    <tr>
+        <td>backgroundStyle</td>
+        <td>Yes</td>
+        <td>
+			<p>Specifies CSS style for the item's background layer:</p>
+			<table align="center"><tr><td>
+			<div class="code"><span class="field">backgroundStyle</span>:<span class="string">'<span class="field">background</span>: url(pic.gif);'</span></div>
+			</td></tr></table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>textClass</td>
+        <td>Yes</td>
+        <td>
+			<p>Specifies CSS class for the item's text layer:</p>
+			<table align="center"><tr><td>
+			<div class="code"><span class="field">textClass</span>:<span class="string">'menuTextClass'</span></div>
+			</td></tr></table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>css.ON, css.OVER</td>
+        <td>&nbsp;</td>
+        <td>
+            Obsolete way to use "textClass".
+        </td>
+    </tr>
+
+    <tr>
+        <td>borderColor</td>
+        <td>&nbsp;</td>
+        <td>
+			<p>Specifies color for the item's border:</p>
+			<table align="center"><tr><td>
+			<div class="code"><span class="field">borderColor</span>:<span class="string">'#F0F0F0'</span></div>
+			</td></tr></table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>borderWidth</td>
+        <td>&nbsp;</td>
+        <td>
+			<p>Specifies width in pixels for the item's border:</p>
+			<table align="center"><tr><td>
+			<div class="code"><span class="field">borderWidth</span>:3</div>
+			</td></tr></table>
+            Professional edition also can accept array of the following format: [ left, top, right, bottom ].
+			<table align="center"><tr><td>
+			<div class="code"><span class="field">borderWidth</span>:[4,5,6,7]</div>
+			</td></tr></table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>border, borders</td>
+        <td>&nbsp;</td>
+        <td>
+            Obsolete way to use "borderWidth".
+        </td>
+    </tr>
+
+    <tr>
+        <td>shadowColor</td>
+        <td>&nbsp;</td>
+        <td>
+            <p>Defines shadow's color.</p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>shadow</td>
+        <td>&nbsp;</td>
+        <td>
+            <p>Specifies shadow size, in pixels. May accept one (vertical and horizontal sizes are equal) or two (vertical and horizontal are not equal) numbers. Numbers can be positive (right or down direction) or negative (left or up direction)</p>
+			<table align="center"><tr><td>
+			<div class="code"><span class="field">shadow</span>:3</div>
+			</td></tr></table>
+			<table align="center"><tr><td>
+			<div class="code"><span class="field">shadow</span>:[1,2]</div>
+			</td></tr></table>
+			<table align="center"><tr><td>
+			<div class="code"><span class="field">shadow</span>:[-2,2]</div>
+			</td></tr></table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>valign</td>
+        <td>Yes</td>
+        <td>
+            <p>Same as TD's "valign" attribute. Affects item's contents: text, icon, arrow.</p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>backgroundClass</td>
+        <td>Yes</td>
+        <td>
+			<p>Specifies CSS class for the item's background layer:</p>
+			<table align="center"><tr><td>
+			<div class="code"><span class="field">backgroundClass</span>:<span class="string">'menuBackgroundClass'</span></div>
+			</td></tr></table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>textStyle</td>
+        <td>Yes</td>
+        <td>
+			<p>Specifies CSS style for the item's text layer:</p>
+			<table align="center"><tr><td>
+			<div class="code"><span class="field">textStyle</span>:<span class="string">'<span class="field">font</span>: 11px Verdana; <span class="field">color</span>: blue;'</span></div>
+			</td></tr></table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>itemFilters</td>
+        <td>&nbsp;</td>
+        <td>
+            <p>Adds 'filter' style definitions to item**. Has not effect in browsers other than Internet Explorer.</p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>levelFilters</td>
+        <td>&nbsp;</td>
+        <td>
+            <p>Adds 'filter' style definitions to level**. Has not effect in browsers other than Internet Explorer.</p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>transparentBorder</td>
+        <td>&nbsp;</td>
+        <td>
+            <p>Setting this field to "true" will make real borders. This is useful only if transparency is used.</p>
+            <p>Note: this option increases number of layers, and menu can run a bit slower.</p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>measureRollover</td>
+        <td>&nbsp;</td>
+        <td>
+            <p>When autosize is in use, item's dimensions depend on text layer size. This is OK for most cases, but if rollover state's text layer is larger (e.g. font in rollovered state is bold), it will go out of bounds. To overcome this problem, set measureRollover to true.</p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>image</td>
+        <td>Yes</td>
+        <td>
+			<p>Professional edition only. Defines icon image; imgsize:[height, width] is mandatory, it specifies size of the icon.</p>
+			<table align="center"><tr><td>
+			<div class="code"><span class="field">image</span>:[ <span class="string">'icon1_normal.gif'</span>, <span class="string">'icon1_rollover.gif'</span> ], <span class="field">imgsize</span>:[10,15]</div>
+			</td></tr></table>
+			<p>To stop inheritance, you can specify "null" value:</p>
+			<table align="center"><tr><td>
+            <div class="code"><span class="field">image</span>:null</div>
+			</td></tr></table>
+			<p class="last">Image will be aligned to the left side of the item. If you want to have item with no text, but with image, then you can use item's "code" field with &lt;img src="..."&gt; tag inside.</p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>oimage</td>
+        <td>&nbsp;</td>
+        <td>
+            Obsolete way to use "image".
+        </td>
+    </tr>
+
+    <tr>
+        <td>imgsize</td>
+        <td>&nbsp;</td>
+        <td>
+            See "image" above.
+        </td>
+    </tr>
+
+    <tr>
+        <td>arrow</td>
+        <td>Yes</td>
+        <td>
+            Same as "image", but defines arrow image which is visible only if item has submenu. Arrow will be right-aligned.
+        </td>
+    </tr>
+
+    <tr>
+        <td>oarrow</td>
+        <td>&nbsp;</td>
+        <td>
+            Obsolete way to use "arrow".
+        </td>
+    </tr>
+
+    <tr>
+        <td>arrsize</td>
+        <td>&nbsp;</td>
+        <td>
+            See "image" and "arrow" above.
+        </td>
+    </tr>
+
+    <tr>
+        <td>ifFirst</td>
+        <td>&nbsp;</td>
+        <td>
+            <p>This field can contain any other style fields, but they will apply to the first item only. Other "if*" fields are not allowed here.</p>
+			<table align="center"><tr><td>
+<div class="code"><span class="field">textStyle</span>:<span class="string">'<span class="field">color</span>:red;'</span>,<br />
+<span class="field">backgroundColor</span>:<span class="string">'silver'</span>,<br />
+<span class="field">ifFirst</span>:{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">textStyle</span>:<span class="string">'<span class="field">color</span>:blue'</span><br />
+}</div>
+			</td></tr></table>
+            <p>Applyting sample style above will assign "silver" as background color for every item, "blue" as foreground color for the first item, and "red" as foreground color for other items. Note that background color will be used in both cases, and only foreground color will be overriden for the first item.</p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>ifLast</td>
+        <td>&nbsp;</td>
+        <td>
+            Same as "ifFirst" above, but sub-style will be applied to the last item only.
+        </td>
+    </tr>
+
+    <tr>
+        <td>ifOnly</td>
+        <td>&nbsp;</td>
+        <td>
+            Same as "ifFirst" above, but sub-style will be applied to the item if it is the only one, i.e. it's parent has no other items.
+        </td>
+    </tr>
+
+    <tr>
+        <td>ifSeparator</td>
+        <td>&nbsp;</td>
+        <td>
+            Same as "ifFirst" above, but sub-style will be applied to the item if it has no "code" field defined, i.e. if it is separator item.
+        </td>
+    </tr>
+</table>
+
+<p>* "State aware" property set to "Yes" indicates that field can accept scalar or array value. E.g. textClass:'cssClass' means that text will have class="cssClass" attribute in both states, and textClass['cssClass1','cssClass2'] means that text will have class="cssClass1" in normal state and class="cssClass2" in rollovered state.</p>
+<p>** For more information on filters and transitions, please read this article at MSDN: <a href="http://msdn.microsoft.com/workshop/author/filter/filters.asp">Introduction to Filters and Transitions</a>.</p>
+
+<!--table class="table">
+	<tr>
+		<th>Section</th>
+		<th>Name</th>
+		<th>Description</th>
+	</tr>
+
+	<col align="center" /><col align="center" />
+
+	<tr>
+		<td>&nbsp;</td>
+		<td>border</td>
+		<td>Specifies size of the border, in pixels. Zero means "no border".
+		</td>
+	</tr>
+
+	<tr>
+		<td>&nbsp;</td>
+		<td>borders</td>
+		<td><p>Professional only: specifies individual sizes for border sides, e.g.:</p>
+			<table align="center"><tr><td>
+			<div class="code"><span class="field">borders</span>:[4,5,6,7],</div>
+			</td></tr></table>
+			<p class="last">This means: left border will be 4 pixels, top - 5 pixels, right - 6 pixels, and bottom - 7 pixels. Zero value of "border" fields overrides "borders", i.e. there will be no border.</p>
+		</td>
+	</tr>
+
+
+
+	<tr>
+		<td>&nbsp;</td>
+		<td>shadow</td>
+		<td>Specifies shadow size, in pixels. Shadow always goes to the right-bottom.</td>
+	</tr>
+
+
+
+	<tr>
+		<td rowspan="6">color</td>
+		<td>border</td>
+		<td>Defines border's color.</td>
+	</tr>
+
+
+
+	<tr>
+		<td>shadow</td>
+		<td>Defines shadow's color.</td>
+	</tr>
+
+
+
+	<tr>
+		<td>bgON</td>
+		<td rowspan="2">Defines item's background color for normal (bgON) and rollovered (bgOVER) states. If color is blank string (''), then menu item will be transparent.</td>
+	</tr>
+
+	<tr>
+		<td>bgOVER</td>
+	</tr>
+
+
+
+	<tr>
+		<td>imagebg</td>
+		<td rowspan="2">Professional only: defines icon's background color for normal (imagebg) and rollovered (oimagebg) states.</td>
+	</tr>
+
+	<tr>
+		<td>oimagebg</td>
+	</tr>
+
+
+
+	<tr>
+		<td rowspan="2">css</td>
+		<td>ON</td>
+		<td rowspan="2">Defines item's CSS class for normal (ON) and rollovered (OVER) states.</td>
+	</tr>
+
+	<tr>
+		<td>OVER</td>
+	</tr>
+
+
+
+	<tr>
+		<td rowspan="2">transition</td>
+		<td>fadeIn</td>
+		<td rowspan="2">Defines transitions to use for item's background. This feature is available under Internet Explorer only. Empty string means "no transition", and "progid:..." specifies some filter to be used.<br />
+			For more information on filters and transitions, please read this article at MSDN: <a href="http://msdn.microsoft.com/workshop/author/filter/filters.asp">Introduction to Filters and Transitions</a>.
+		</td>
+	</tr>
+
+	<tr>
+		<td>fadeOut</td>
+	</tr>
+</table-->
+
+<p><br />All colors can be specified as #XXXXXX (where X is hexadecimal digit) or as color name (red, green, blue, etc.).</p>
+
+<h2>Structure definition</h2>
+
+<div style="text-align: center;"><img src="img/form.gif" alt="" /></div>
+
+<p>Generally, menu structure definition looks like the following:</p>
+
+<div class="code">var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="field">pos</span>:<span class="string">'relative'</span>, <span class="field">leveloff</span>:[b,a], <span class="field">itemoff</span>:[d,c], <span class="field">size</span>:[e,f], ... },<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{ ...Item 1... },<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{ ...Item 2... ,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">sub</span>:[<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ ...level format... },<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ ...Item 1... },<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ ...Item 2... },<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ ...Item 3... ,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">sub</span>:[<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ ...level format... },<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ ...Item 1... },<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ ...Item 2... },<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ ...Item 3... },<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ ...Item 4... }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ ...Item 4... },<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{ ...Item 3... }<br />
+];</div>
+
+<p>Instead of "...level format..." style definition fields can be used (with exception of "if*" fields). Also, "style" field is available:</p>
+
+<table class="table">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+	</tr>
+
+    <tr>
+        <td>style</td>
+        <td>
+            Assigns style to item and all subitems. Also, array of styles can be used, e.g. instead of this:
+<table align="center"><tr><td>
+<div class="code">var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{..., <span class="field">style</span>:STYLE1, ...}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">'Item'</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">sub</span>:[<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">style</span>:STYLE2},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">'Sub-item'</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">sub</span>:[<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">style</span>:STYLE3},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">'Sub-sub-item'</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+];</div>
+</td></tr></table>
+            One can write this:
+<table align="center"><tr><td>
+<div class="code">var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{..., <span class="field">style</span>:[STYLE1, STYLE2, STYLE3], ...}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">'Item'</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">sub</span>:[<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">'Sub-item'</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">sub</span>:[<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">'Sub-sub-item'</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+];</div>
+</td></tr></table>
+
+        </td>
+    </tr>
+</table>
+
+<p>Root level also can have these additional fields:</p>
+
+<table class="table">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+	</tr>
+
+    <tr>
+        <td>dynamic</td>
+        <td>
+            If set to false, all needed HTML will be pre-created during menu initialization. Because of this initialization can take more time (much more if the menu is large), but there will be less delays when sublevels are being shown for the very first time. Defaults to true.
+        </td>
+    </tr>
+
+    <tr>
+        <td>zIndex</td>
+        <td>
+            Least z-index value to be used by menu. Helps to combine menus with other scripts. Defaults to 1000.
+        </td>
+    </tr>
+
+    <tr>
+        <td>exclusive</td>
+        <td>
+            When one rollovers the menu, all other menus (if any) on the page will be collapsed. Defaults to true.
+        </td>
+    </tr>
+
+    <tr>
+        <td>delay</td>
+        <td>
+            Sets rollover and rollout delays delays. Defaults to [0, 800]. To assign equal delays for both rollover and rollout, one can use single number:
+<table align="center"><tr><td>
+<div class="code">var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{..., <span class="field">delay</span>:400, ...}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...</div>
+</td></tr></table>
+            For more comfortable feel, we'd recommend following values:
+<table align="center"><tr><td>
+<div class="code">var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{..., <span class="field">delay</span>:[100,800], ...}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...</div>
+</td></tr></table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>pos</td>
+        <td>
+            Specifies coordinates (x, y) where the menu will be created:
+<table align="center"><tr><td>
+<div class="code">var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">pos</span>:[10,20], ...}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...</div>
+</td></tr></table>
+            Professional edition also supports special value 'relative', i.e. menu will be placed into position where the initialization was done (initTop call):
+<table align="center"><tr><td>
+<div class="code">var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">pos</span>:<span class="string">'relative'</span>, ...}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...</div>
+</td></tr></table>
+            Defaults to [0, 0] for Standard edition and to 'relative' for Professional edition.
+        </td>
+    </tr>
+
+    <tr>
+        <td>popup</td>
+        <td>
+            Professional only: popup menus must have "popup" field set to "1" or "true". Working sample with additional information is <a href="http://javascript.cooldev.com/scripts/coolmenupro/demos/popup/">here</a>.
+        </td>
+    </tr>
+
+    <tr>
+        <td>frames</td>
+        <td>
+            Professional edition only. If presents, menu will work in cross-frame mode.
+<table align="center"><tr><td>
+<div class="code">var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{..., <span class="field">frames</span>:[<span class="string">'topFrameName'</span>,<span class="string">'bottomFrameName'</span>], ...}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...</div>
+</td></tr></table>
+            Working sample with additional information can be found in the Professional package.
+        </td>
+    </tr>
+
+    <tr>
+        <td>imagePrefix</td>
+        <td>
+            All images (i.e. defined by "image", "arrow", "blankImage" fields) will have this prefix. So, if menu definition is like the following:
+<table align="center"><tr><td>
+<div class="code">var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{..., <span class="field">imagePrefix</span>:<span class="string">'/special/images/'</span>, ...}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">'Item 1'</span>, <span class="field">image</span>:<span class="string">'ico1.gif'</span>, ...}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...</div>
+</td></tr></table>
+            then actual image will be equivalent to the following:
+<table align="center"><tr><td>
+<div class="code"><span class="tag">&lt;img src=<span class="string">&quot;/special/images/ico1.gif&quot;</span> ... /&gt;</span></div>
+</td></tr></table>
+            Defaults to empty string.
+        </td>
+    </tr>
+
+    <tr>
+        <td>urlPrefix</td>
+        <td>
+            All URLs (i.e. defined by "url" field) will have this prefix. So, if menu definition is like the following:
+<table align="center"><tr><td>
+<div class="code">var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{..., <span class="field">urlPrefix</span>:<span class="string">'<span class="field">http</span>://www.otherdomain.com/subdir/'</span>, ...}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">'Item 1'</span>, <span class="field">url</span>:<span class="string">'file.html'</span>, ...}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...</div>
+</td></tr></table>
+            then actual link will be equivalent to the following:
+<table align="center"><tr><td>
+<div class="code"><span class="tag">&lt;a href=<span class="string">&quot;<span class="field">http</span>://www.otherdomain.com/subdir/file.hrml&quot;</span> ...&gt;</span>...<span class="tag">&lt;/a&gt;</span></div>
+</td></tr></table>
+            Defaults to empty string.
+        </td>
+    </tr>
+
+    <tr>
+        <td>blankImage</td>
+        <td>
+            Menu needs blank 1x1 GIF image for internal purposes, and this field contains path to this image. For compatibility purposes default value is BLANK_IMAGE global variable's value - 'img/b.gif'. Note: this field is not defined (i.e. if BLANK_IMAGE value is used), then imagePrefix <strong>does not</strong> apply to it's value.
+        </td>
+    </tr>
+
+    <tr>
+        <td>clickToActivate</td>
+        <td>
+            If set to true, menu will not show any sublevels until the first click. This behavior is similar to what one can observe in applications' menus. Defaults to false.
+        </td>
+    </tr>
+</table>
+
+<!--table class="table" style="width: 100%;">
+	<tr>
+		<th rowspan="2">Name</th>
+		<th colspan="3">Where can be specified?</th>
+		<th rowspan="2">Description</th>
+	</tr>
+	<tr>
+		<th>Top-level</th>
+		<th>Sublevels</th>
+		<th>Individual<br />items</th>
+	</tr>
+
+	<col /><col align="center" /><col align="center" /><col align="center" />
+
+	<tr>
+		<td>position</td>
+		<td><img src="/images/mandatory.gif" width="25" height="25" alt="Mandatory" /></td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>
+			<p>Specifies positioning mode of the menu. To place menu at absolute coordinates x=100, y=200 following code can be used:</p>
+			<table align="center"><tr><td>
+			<div class="code">var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="field">pos</span>:[100,200], ... },<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...<br />
+];</div>
+			</td></tr></table>
+			<p>Professional also can be positioned relatively, i.e. it will be inserted instead of "initTop()" call:</p>
+			<table align="center"><tr><td>
+			<div class="code">var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="field">pos</span>:<span class="string">'relative'</span>, ... },<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...<br />
+];</div>
+			</td></tr></table>
+		</td>
+	</tr>
+
+
+
+	<tr>
+		<td>size</td>
+		<td><img src="/images/mandatory.gif" width="25" height="25" alt="Mandatory" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td>
+			<p>Defines item's size, e.g. item size 100x20 pixels will look like this:</p>
+			<table align="center"><tr><td>
+			<div class="code">{..., <span class="field">size</span>:[20,100], ...</div>
+			</td></tr></table>
+		</td>
+	</tr>
+
+
+
+	<tr>
+		<td>itemoff</td>
+		<td><img src="/images/mandatory.gif" width="25" height="25" alt="Mandatory" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td>
+			<p>Specifies distance between top-left corners of the neighbor items. Horizontal offset - 10 pixels, vertical offset - 5 pixels:</p>
+			<table align="center"><tr><td>
+			<div class="code">{..., <span class="field">itemoff</span>:[5,10], ...</div>
+			</td></tr></table>
+		</td>
+	</tr>
+
+
+
+	<tr>
+		<td>leveloff</td>
+		<td><img src="/images/mandatory.gif" width="25" height="25" alt="Mandatory" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td>&nbsp;</td>
+		<td>
+			<p>Specifies distance between top-left corner of the item and it's submenu. Following code will make submenu appear under the item:</p>
+			<table align="center"><tr><td>
+			<div class="code">{..., <span class="field">leveloff</span>:[20,0], ...</div>
+			</td></tr></table>
+		</td>
+	</tr>
+
+
+
+	<tr>
+		<td>delay</td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>Specifies timeout in milliseconds before menu will reset after last roll out event. Default is 600 ms.</td>
+	</tr>
+
+
+
+	<tr>
+		<td>style</td>
+		<td><img src="/images/mandatory.gif" width="25" height="25" alt="Mandatory" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td>
+			<p>Associates style with submenu or item, e.g.:</p>
+			<table align="center"><tr><td>
+			<div class="code">var STYLE1 = {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">border</span>:1,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">shadow</span>:2,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...<br />
+};<br />
+<br />
+...<br />
+<br />
+var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{ ..., <span class="field">style</span>:STYLE1, ... },<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">'Item 1'</span>, ...<br />
+];</div>
+			</td></tr></table>
+		</td>
+	</tr>
+
+
+
+	<tr>
+		<td>image</td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td rowspan="3">
+			<p>Professional only: defines icon image ("image" - path to "normal" image, "oimage" - path to optional "rollovered" image") and it's size (which is mandatory), e.g:</p>
+			<table align="center"><tr><td>
+			<div class="code">{...,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">image</span>:<span class="string">'icon1_normal.gif'</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">oimage</span>:<span class="string">'icon1_rollover.gif'</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">imgsize</span>:[10,15], ...</div>
+			</td></tr></table>
+			<p>To stop inheritance, you can specify "null" value:</p>
+			<table align="center"><tr><td>
+			<div class="code">{..., <span class="field">image</span>:null, ...</div>
+			</td></tr></table>
+			<p class="last">Image will be aligned to the left side of the item. If you want to have item with no text, but with image, then you can use item's "code" fields (and optionall "ocode" for rollover effect) with &lt;img src="..."&gt; tag inside.</p>
+		</td>
+	</tr>
+
+	<tr>
+		<td>oimage</td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+	</tr>
+
+	<tr>
+		<td>imgsize</td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+	</tr>
+
+
+
+	<tr>
+		<td>arrow</td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td rowspan="3">Professional only. Mostly same as "image", "oimage", and "imgsize", but icon will be aligned to the ritght side, and it will present only when item has associated submenu.</td>
+	</tr>
+
+	<tr>
+		<td>oarrow</td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+	</tr>
+
+	<tr>
+		<td>arrsize</td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+	</tr>
+
+
+
+	<tr>
+		<td>https_fix_blank_doc</td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>
+			<p>Professional only: built-in form elements issue fix for Microsoft&reg; Internet Explorer needs to create &lt;iframe&gt; elements with some blank document inside. Default value "about:blank" in HTTPS environment will result in annoyng messages about insecure elements on the page. To get rid of these messages menu definition file must include this field, and value must be path to empty HTML file on the same server where page is. E.g.:</p>
+			<table align="center"><tr><td>
+			<div class="code">var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{..., <span class="field">https_fix_blank_doc</span>:<span class="string">'/blank.html'</span>, ...},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...<br />
+];</div>
+			</td></tr></table>
+			<p class="last">This code expects that secure server will contain empty file blank.html in the root directory.</p>
+		</td>
+	</tr>
+
+
+
+	<tr>
+		<td>forms_to_hide</td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>
+			<p>Professional only. Built-in form elements issue fix works only with Microsoft&reg; Internet Explorer, and other browsers like old Opera should work this around. One of the possible ways is to hide form elements when submenu gets shown, and to show them again when submenu becames hidden again - this can be done by adding IDs of these elements to this field, e.g:</p>
+			<div class="code">var MENU_ITEMS = [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{..., <span class="field">forms_to_hide</span>:[<span class="string">'combo1'</span>, <span class="string">'combo2'</span>], ...},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...<br />
+];</div>
+
+			<p>And HTML code with form elements:</p>
+			<div class="code"><span class="tag">&lt;html&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;head&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;...<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/head&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;body&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- menu initialization;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other HTML code --&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;form name=<span class="string">&quot;...&quot;</span> action=<span class="string">&quot;...&quot;</span>&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;select name=<span class="string">&quot;combo1&quot;</span> id=<span class="string">&quot;combo1&quot;</span>&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;option&gt;</span>Option 1<span class="tag">&lt;/option&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;option&gt;</span>Option 2<span class="tag">&lt;/option&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;option&gt;</span>Option 3<span class="tag">&lt;/option&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/select&gt;</span>	<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;select name=<span class="string">&quot;combo2&quot;</span> id=<span class="string">&quot;combo2&quot;</span>&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;option&gt;</span>Option 1<span class="tag">&lt;/option&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;option&gt;</span>Option 2<span class="tag">&lt;/option&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;option&gt;</span>Option 3<span class="tag">&lt;/option&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/select&gt;</span>	<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/form&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/body&gt;</span><br />
+<span class="tag">&lt;/html&gt;</span></div>
+			<p class="last">To see working demo, click <a href="/scripts/coolmenupro/demos/relative/">here</a>.</p>
+		</td>
+	</tr>
+
+	<tr>
+		<td>popup</td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td rowspan="2">Professional only: popup menus must have "popup" field set to "1" or "true". Working sample with additional information is <a href="/scripts/coolmenupro/demos/popup/">here</a>.</td>
+	</tr>
+
+	<tr>
+		<td>popupoff</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+
+	<tr>
+		<td>hidden_top</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>Professional only: this parameter is used only when menu is in special "cross-frame" mode, and it must be equal to "1" or "true". Working sample is <a href="/scripts/coolmenupro/demos/frames/">here</a>.</td>
+	</tr>
+
+	<tr>
+		<td>fadeIn, fadeOut</td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td>&nbsp;</td>
+		<td>This parameter allows to specify a transition(s) for the whole level. Transitions are available only under Internet Explorer. More information can be found here: <a href="http://msdn.microsoft.com/workshop/author/filter/filters.asp">Introduction to Filters and Transitions</a>.</td>
+	</tr>
+
+	<tr>
+		<td>filters</td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td><img src="/images/optional.gif" width="25" height="25" alt="Optional" /></td>
+		<td>&nbsp;</td>
+		<td>Every level can have one or more filters assigned. Multiple filters must be separated with spaces. This feature are available only under Internet Explorer. More information can be found here: <a href="http://msdn.microsoft.com/workshop/author/filter/filters.asp">Introduction to Filters and Transitions</a>.</td>
+	</tr>
+</table-->
+
+<p>All these values are inherited "in depth", i.e. if submenu defines style and size of it's items, then all submenus recursively will have items with same style and size, unless specified otherwise.</p>
+
+<p>Every item can contain any style definition field (with exception of "if*" fields). Also, following fields are allowed:</p>
+
+<table class="table" style="width: 100%;">
+	<tr>
+		<th>Name</th>
+        <th>State aware?</th>
+		<th>Description</th>
+	</tr>
+
+	<tr>
+		<td>code</td>
+        <td>Yes</td>
+		<td>"code" contains item's caption for normal state, and "ocode" - for rollovered state. Almost any HTML code can be used here, but only simple formatting instructions (DIV and SPAN with "class" or "style" attributes, B, I, U, etc.) and images will be useful enough. If "ocode" is ommited, "code" will be used for rollovered state.</td>
+	</tr>
+
+	<tr>
+		<td>ocode</td>
+        <td>&nbsp;</td>
+        <td>
+            Obsolete way to use "code".
+        </td>
+	</tr>
+
+	<tr>
+		<td>url</td>
+        <td>&nbsp;</td>
+		<td>Associates URL with item. Fully compatible with &lt;a href="..."&gt; (including "javascript:" protocol).</td>
+	</tr>
+
+	<tr>
+		<td>target</td>
+        <td>&nbsp;</td>
+		<td>Specifies optional target frame, same as &lt;a target="..."&gt;.</td>
+	</tr>
+
+	<tr>
+		<td>format</td>
+        <td>&nbsp;</td>
+		<td>
+            Obsolete. Now older definition like in the following sample
+			<table align="center"><tr><td>
+			<div class="code">{<span class="field">code</span>:<span class="string">'Item 1'</span>, <span class="field">format</span>:{<span class="field">image</span>:<span class="string">'images/icon.gif'</span>, <span class="field">imgsize</span>:[15,15]}, ...</div>
+			</td></tr></table>
+            can be written like this:
+			<table align="center"><tr><td>
+			<div class="code">{<span class="field">code</span>:<span class="string">'Item 1'</span>, <span class="field">image</span>:<span class="string">'images/icon.gif'</span>, <span class="field">imgsize</span>:[15,15], ...</div>
+			</td></tr></table>
+		</td>
+	</tr>
+
+	<tr>
+		<td>sub</td>
+        <td>&nbsp;</td>
+		<td>
+			<p>Defines submenu, e.g.:</p>
+			<table align="center"><tr><td>
+			<div class="code">{<span class="field">code</span>:<span class="string">'Item with submenu'</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">sub</span>:[<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">style</span>:SOME_STYLE},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">'Item 1'</span>},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="field">code</span>:<span class="string">'Item 2'</span>}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;]<br />
+},</div>
+			</td></tr></table>
+		</td>
+	</tr>
+
+	<tr>
+		<td>hasControls</td>
+        <td>&nbsp;</td>
+		<td>
+			<p>Professional only: allows to use form controls as content for the item, e.g.:</p>
+			<table align="center"><tr><td>
+			<div class="code">{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">code</span>:<span class="string">'Some <span class="field">memo</span>:<span class="tag">&lt;br /&gt;</span><span class="tag">&lt;textarea&gt;</span><span class="tag">&lt;/textarea&gt;</span>'</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">hasControls</span>:true,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="field">format</span>:{<span class="field">size</span>:[78,170]}<br />
+},</div>
+			</td></tr></table>
+			<p>When this attribute presents, menu behaves differently: it will allow you to focus control without hiding itself. Also, "ocode" attribute will not work for items with "hasControls" set to "true".</p>
+		</td>
+	</tr>
+</table>					</div></div>
+				</td>
+				<td class="imgfix" width="18" background="../../Misc&#32;files/images/right-bg-liquid.gif"><img src="../../Misc&#32;files/images/header-right-bg-popup.gif" width="18" height="46" /></td>
+			</tr>
+			<tr valign="bottom">
+				<td class="imgfix" width="18" background="../../Misc&#32;files/images/left-bg-liquid.gif"><img src="../../Misc&#32;files/images/footer-left-bg-liquid.gif" width="18" height="75" /></td>
+				<td>
+					<table border="0" cellspacing="0" cellpadding="0" width="100%" height="75">
+						<tr>
+							<td class="imgfix" width="204"><img src="../../Misc&#32;files/images/footer-corner.gif" width="204" height="75" /></td>
+							<td valign="bottom">
+								<script type="text/javascript">if (document.layers) document.write('<img src="../../Misc&#32;files/images/b.gif" width="' + (window.innerWidth - 261) + '" height="1" />');</script>
+								<table border="0" cellspacing="0" cellpadding="0" width="100%" height="43">
+									<tr>
+									<td align="center" background="../../Misc&#32;files/images/footer-bg-liquid.gif" class="copy">Copyright &copy; <a href="http://javascript.cooldev.com/">CoolDev.Com</a> 1997-2007.</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td class="imgfix" width="18" background="../../Misc&#32;files/images/right-bg-liquid.gif"><img src="../../Misc&#32;files/images/footer-right-bg-liquid.gif" width="18" height="75" /></td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,103 @@
+<HTML xmlns:eba>
+<!-- Note the namespace defined in the HTML tag. -->
+<!-- This page is the main page in the sample. It places the grid on the webpage and sets up its datasource and save handler. -->
+
+<head>
+<title>EBA: Grid Control V2.7 Static Demo</title>
+
+<!-- Include the code and stylesheet for the grid control. -->
+<script language="JScript.Encode" src="ebagrid.js"></script>
+<link type="text/css" rel="stylesheet" href="styles\xp\eba.css">
+
+
+<script language="Javascript">
+// Definition of the errorhandler for the Grid. In case of an error the function would print out the error message to the errorSpan.
+function errorHandler() {
+	alert('The grid encountered a problem. \n\nClick next to see what it was.');
+	alert(myGrid.object.lastError);
+}
+</script>
+</head>
+
+<!-- This defines a XML dataisland in EBA compressed XML format.
+	 This dataisland is used as datasource for the LOOKUP control in the columndefinition of type LOOKUP. -->
+<xml id="lookupdata">
+	<root fields="service|city" keys="service|city">
+		<e a="storage" b="Vancouver" xk="2" />
+		<e a="catering" b="Toronto" xk="1" />
+		<e a="security" b="Calgery" xk="5" />
+		<e a="transport" b="Montreal" xk="4" />
+	</root>
+</xml>
+
+<!-- This defines a XML dataisland in EBA compressed XML format.
+	 This dataisland is used as datasource for the grid control. -->
+<xml id="griddata">
+	<root fields="client|service|quantity|charge|memo|date|inet|image" keys="client|service|quantity|charge|memo|date|inet|image">
+		<e xk="_1" a="3" b="security" c="5299.22" d="0" e="" f="2004-01-09 22:20:3" g="http://www.ebusiness-apps.com" h="resources/test2.gif" fld="" />
+		<e xk="_2" a="2" b="catering" c="30.00" d="1" e="" f="2005-04-25 0:0:0" g="http://www.ebusiness-apps.com" h="resources/test3.gif" fld="" />
+		<e xk="_3" a="2" b="security" c="889.00" d="1" e="" f="2005-05-05 0:0:0" g="http://www.ebusiness-apps.com" h="resources/test1.gif" fld="" />
+		<e xk="_4" a="2" b="storage" c="999.00" d="1" e="" f="2004-05-10 0:0:0" g="http://www.ebusiness-apps.com" h="resources/test2.gif" fld="" />
+		<e xk="_5" a="1" b="storage" c="20.00" d="1" e="" f="2004-02-01 0:0:0" g="http://www.ebusiness-apps.com" h="resources/test3.gif" fld="" />
+		<e xk="_6" a="2" b="security" c="600.00" d="1" e="" f="2005-06-13 0:0:0" g="http://www.ebusiness-apps.com" h="resources/test4.gif" fld="" />
+		<e xk="_7" a="3" b="storage" c="5550.00" d="0" e="" f="2005-06-19 0:0:0" g="http://www.ebusiness-apps.com" h="resources/test1.gif" fld="" />
+		<e xk="_8" a="2" b="security" c="8080.00" d="1" e="" f="2005-10-20 0:0:0" g="http://www.ebusiness-apps.com" h="resources/test5.gif" fld="" />
+		<e xk="_9" a="1" b="transport" c="500.00" d="0" e="" f="2005-10-29 0:0:0" g="http://www.ebusiness-apps.com" h="resources/test1.gif" fld="" />
+		<e xk="_10" a="2" b="transport" c="0" d="1" e="" f="2005-08-09 0:0:0" g="http://www.ebusiness-apps.com" h="resources/test6.gif" fld="" />
+	</root>
+</xml>
+
+<!-- The body of the webpage. Note the call to 'InitEBAGrids()' that initialises any grids on the page when it loads. -->
+<body onload="InitEBAGrids()">
+	<table align=center width="680">
+		<tr>
+			<td align=left>
+				<font face=arial size=3><b>EBA: Grid Control V2.7 Static Grid Demo</b><br>
+			  <br></font>
+			  <font size=2 face=verdana>This is an example of a <i>static</i> grid, or a grid without a remote datasource. In this case, the data is contained in XML embedded directly in the HTML.<br><br>In this instance, the resulting XML could be deposited into a hidden form field and posted with a regular form, but saving and loading has not been enabled here.<br><br>
+			  This demo could be used as a grid template, as each input type is demonstrated here. Notice the use of comboboxes, listboxes, checkboxes, textboxes, image cells, number fields, date boxes, and hyperlink fields.</font><br>
+				<br><br>
+		  </td>
+		</tr>
+	</table>
+<table align=center ID="Table1">
+	<tr>
+		<td> <!-- Insert the grid. Note the id of the grid 'myGrid' which is used to reference the control. -->
+			<eba:gridlist id="myGrid" getHandler="griddata" height="250" width="740" cellHeight="16" onError="errorHandler()">
+				<eba:ColumnDefinition type="LISTBOX"  label="Client"    width="60"  xdatafld="client"    values="1:Aceme,2:Henry,3:Intra,4:West" show="value" />
+				<eba:ColumnDefinition type="IMAGE"    label="Image"     width="50"   xdatafld="image"     initial="resources/test1.gif" />
+				<eba:columndefinition type="NUMBER"   label="Quantity"  width="100"  xdatafld="quantity"  mask="###,##0.00" />
+				<eba:columndefinition type="CHECKBOX" label="Charge"    width="80"   xdatafld="charge"    values="1:charge,0:notcharge" initial="1" />
+				<eba:columndefinition type="LOOKUP"   label="Service"   width="80"   xdatafld="service"   getHandler="lookupdata" />
+				<eba:ColumnDefinition type="TEXTAREA"     label="Memo"      width="80"  xdatafld="memo"      />
+				<eba:ColumnDefinition type="DATE"     label="Date"      width="160"  xdatafld="date"      mask="dddd, mm-dd-yyyy h:n:s" />
+				<eba:ColumnDefinition type="LINK"     label="Inet"      width="128"   xdatafld="inet"      linkurl=field(inet) />
+			</eba:gridlist>
+		</td>
+	</tr>
+</table>
+
+<center>
+	<br>
+	<i>Press the INSERT key to create rows. <br>Press the DELETE key to delete rows.</i><br><br>
+</center>
+
+  		<table align=center width="680">
+  			<tr>
+  				<td align=left>
+  				  <p><br>
+			        <br>
+  				      <font face=arial size=3><b>Related Tutorials</b><br>
+  				      </font>
+		            <br>
+  				      <font face=verdana size=2><a href="http://developer.ebusiness-apps.com/ebakb/ebakb.asp?artid=84&catid=7">What can I do with Image cells?</a></font><br>
+			        <br>
+  				      <font face=verdana size=2><a href="http://developer.ebusiness-apps.com/ebakb/ebakb.asp?artid=96&catid=7">Using Date fields</a></font><br>
+  				      <br>
+  				      <font face=verdana size=2><a href="http://developer.ebusiness-apps.com/ebakb/ebakb.asp?artid=185&catid=7">Using a datepicker with the grid</a></font></p>
+			  </td></tr>
+
+		</table>
+
+</body>
+</html>

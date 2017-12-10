@@ -1,0 +1,156 @@
+<!--conf
+<sample>
+              <product version="1.4" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               </sample>
+ --> 
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Per-cell eXcell</title>
+	
+
+
+    	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid.css">
+    <script>_css_prefix="../../codebase/"; _js_prefix="../../codebase/"; </script>
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxgrid.js"></script>
+	<script  src="../../codebase/dhtmlxgridcell.js"></script>
+</head>
+
+<script>
+	function loadGridFromString(){
+		mygrid = new dhtmlXGridObject('gridbox');
+		mygrid.setImagePath("../../codebase/imgs/");
+		mygrid.setSkin("gray");
+		mygrid.enableMultiline(true)
+		mygrid.loadXMLString(document.getElementById("tcont1").value);
+	}
+	function loadGrid2(){
+		mygrid2 = new dhtmlXGridObject('gridbox2');
+		mygrid2.setImagePath("../../codebase/imgs/");
+		mygrid2.setSkin("xp");
+		mygrid2.loadXML("gridH.xml");
+	}
+</script>
+<body onload="loadGridFromString();loadGrid2()">
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxgrid_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxGrid</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Per-cell eXcell</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxGrid/index.shtml">dhtmlxGrid main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+
+<p>You can set different cell editors for cells in column<p> 
+<div id="gridbox" width="600px" height="160px"></div>
+
+<br>Setting cell types in xml
+
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    &lt;</span><span class="hl-identifier">row</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">cell</span><span class="hl-code"> </span><span class="hl-identifier">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">ed</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">Simple</span><span class="hl-code"> </span><span class="hl-identifier">text</span><span class="hl-code"> </span><span class="hl-identifier">editor</span><span class="hl-code">&lt;/</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">cell</span><span class="hl-code"> </span><span class="hl-identifier">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">txt</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">Multiline</span><span class="hl-code"> </span><span class="hl-identifier">Text</span><span class="hl-code"> </span><span class="hl-identifier">Editor</span><span class="hl-code">&lt;/</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;</span><span class="hl-identifier">Default</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-identifier">as</span><span class="hl-code"> </span><span class="hl-identifier">was</span><span class="hl-code"> </span><span class="hl-identifier">set</span><span class="hl-code"> </span><span class="hl-reserved">for</span><span class="hl-code"> </span><span class="hl-identifier">column</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-identifier">eXcell</span><span class="hl-code"> </span><span class="hl-identifier">type</span><span class="hl-code">&lt;/</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;
+        ...
+    &lt;</span><span class="hl-identifier">row</span><span class="hl-code">&gt;</span></pre></div></div>
+
+<textarea id="tcont1" style="width:600px;height:100px;"><?xml version="1.0" encoding="UTF-8"?>
+<rows>
+    <head>
+        <column width="200" type="ro" align="left" color="#D4D0C8" sort="na">Form Fields</column>
+        <column width="*" type="coro" align="left" sort="na">Field Values
+			<option value="1">Worker</option>
+			<option value="2">Office Manager</option>
+			<option value="3">Car Driver</option>
+			<option value="4">Programmer</option>
+		</column>
+    </head>
+ 	<row id="1">
+		<cell>First, Last Name</cell>
+		<cell type="ed">John, Bossom</cell>
+	</row>
+	<row id="2">
+		<cell>Profession</cell>
+		<cell>1</cell>
+	</row>
+	<row id="3">
+		<cell>Salary</cell>
+		<cell type="price" style="text-align:right">1500</cell>
+	</row>
+	<row id="4">
+		<cell>High Education</cell>
+		<cell type="ch">1</cell>
+	</row>
+	<row id="6">
+		<cell>Age</cell>
+		<cell type="ed">29</cell>
+	</row>
+	<row id="7">
+		<cell>Comments</cell>
+		<cell type="txt">
+			Some
+			Multiline content	
+		</cell>
+	</row>
+	<row id="5">
+		<cell>Color of blood</cell>
+		<cell type="cp">red</cell>
+	</row>
+	
+</rows>
+
+</textarea>
+
+<br><br>Setting cell types with script methods<br><br>
+<div id="gridbox2" width="600px" height="160px"></div>
+<div>
+	<li><a href="javascript:void(0)" onclick="mygrid2.setRowExcellType(mygrid2.getSelectedId(),document.getElementById('editorsLst').value)">Set Selected Row cells Type to</a>
+		<select id="editorsLst">
+			<option value="ed">[ed] Simple Editor
+			<option value="txt">[txt] Multiline Editor
+			<option value="ch">[ch] Checkbox
+			<option value="dyn">[dyn] Dynamix
+		</select>
+	</li>
+	<li><a href="javascript:void(0)" onclick="mygrid2.setCellExcellType(mygrid2.getSelectedId(),mygrid2.getSelectedCellIndex(),document.getElementById('editorsLst2').value)">Set Selected Cell Type to</a>
+		<select id="editorsLst2">
+			<option value="ed">[ed] Simple Editor
+			<option value="txt">[txt] Multiline Editor
+			<option value="ch">[ch] Checkbox
+			<option value="dyn">[dyn] Dynamix
+		</select>
+	</li>
+	<li><a href="javascript:void(0)" onclick="mygrid2.setColumnExcellType(mygrid2.getSelectedCellIndex(),document.getElementById('editorsLst3').value)">Set Column (by selected cell) Type to</a>
+		<select id="editorsLst3">
+			<option value="ed">[ed] Simple Editor
+			<option value="txt">[txt] Multiline Editor
+			<option value="ch">[ch] Checkbox
+			<option value="dyn">[dyn] Dynamix
+		</select>
+	</li>
+</div><br>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">setRowExcellType</span><span class="hl-brackets">(</span><span class="hl-identifier">rowId</span><span class="hl-code">,</span><span class="hl-identifier">type</span><span class="hl-brackets">)</span><span class="hl-code">;</span><span class="hl-comment">//</span><span class="hl-comment">sets all cells in row to specified type</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">setCellExcellType</span><span class="hl-brackets">(</span><span class="hl-identifier">rowId</span><span class="hl-code">,</span><span class="hl-identifier">cellIndex</span><span class="hl-code">,</span><span class="hl-identifier">type</span><span class="hl-brackets">)</span><span class="hl-code">;</span><span class="hl-comment">//</span><span class="hl-comment">sets particular cell type</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">setColumnExcellType</span><span class="hl-brackets">(</span><span class="hl-identifier">colIndex</span><span class="hl-code">,</span><span class="hl-identifier">type</span><span class="hl-brackets">)</span><span class="hl-code">;</span><span class="hl-comment">//</span><span class="hl-comment">changes column type</span><span class="hl-comment"></span></pre></div></div>
+
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

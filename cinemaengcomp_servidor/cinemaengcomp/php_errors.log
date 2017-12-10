@@ -1,0 +1,368 @@
+[13-Jul-2017 17:51:55 UTC] PHP Warning:  mysqli::mysqli(): (HY000/2002): Connection refused in /home/ubuntu/workspace/PHP/conexao.php on line 14
+[13-Jul-2017 17:51:55 UTC] PHP Stack trace:
+[13-Jul-2017 17:51:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/conexao.php:0
+[13-Jul-2017 17:51:55 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/PHP/conexao.php:14
+[13-Jul-2017 17:51:55 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ubuntu/workspace/PHP/conexao.php on line 21
+[13-Jul-2017 17:51:55 UTC] PHP Stack trace:
+[13-Jul-2017 17:51:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/conexao.php:0
+[13-Jul-2017 17:51:55 UTC] PHP   2. mysqli_query() /home/ubuntu/workspace/PHP/conexao.php:21
+[13-Jul-2017 17:58:57 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1049): Unknown database 'c9, 3306' in /home/ubuntu/workspace/PHP/conexao.php on line 16
+[13-Jul-2017 17:58:57 UTC] PHP Stack trace:
+[13-Jul-2017 17:58:57 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/conexao.php:0
+[13-Jul-2017 17:58:57 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/PHP/conexao.php:16
+[13-Jul-2017 17:58:57 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ubuntu/workspace/PHP/conexao.php on line 25
+[13-Jul-2017 17:58:57 UTC] PHP Stack trace:
+[13-Jul-2017 17:58:57 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/conexao.php:0
+[13-Jul-2017 17:58:57 UTC] PHP   2. mysqli_query() /home/ubuntu/workspace/PHP/conexao.php:25
+[15-Jul-2017 15:53:38 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/PHP/busca_filmes.php on line 18
+[17-Jul-2017 16:57:56 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, object given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 20
+[17-Jul-2017 16:57:56 UTC] PHP Stack trace:
+[17-Jul-2017 16:57:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 16:57:56 UTC] PHP   2. mysql_fetch_assoc() /home/ubuntu/workspace/PHP/busca_filmes.php:20
+[17-Jul-2017 16:58:24 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, object given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 20
+[17-Jul-2017 16:58:24 UTC] PHP Stack trace:
+[17-Jul-2017 16:58:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 16:58:24 UTC] PHP   2. mysql_fetch_assoc() /home/ubuntu/workspace/PHP/busca_filmes.php:20
+[17-Jul-2017 17:00:08 UTC] PHP Warning:  mysql_query() expects parameter 1 to be string, object given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 15
+[17-Jul-2017 17:00:08 UTC] PHP Stack trace:
+[17-Jul-2017 17:00:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 17:00:08 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/PHP/busca_filmes.php:15
+[17-Jul-2017 17:00:08 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, null given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 21
+[17-Jul-2017 17:00:08 UTC] PHP Stack trace:
+[17-Jul-2017 17:00:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 17:00:08 UTC] PHP   2. mysql_fetch_assoc() /home/ubuntu/workspace/PHP/busca_filmes.php:21
+[17-Jul-2017 17:02:03 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/PHP/busca_filmes.php on line 12
+[17-Jul-2017 17:02:03 UTC] PHP Stack trace:
+[17-Jul-2017 17:02:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 17:02:03 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/PHP/busca_filmes.php:12
+[17-Jul-2017 17:02:03 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/PHP/busca_filmes.php on line 12
+[17-Jul-2017 17:02:03 UTC] PHP Stack trace:
+[17-Jul-2017 17:02:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 17:02:03 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/PHP/busca_filmes.php:12
+[17-Jul-2017 17:05:20 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/PHP/busca_filmes.php on line 12
+[17-Jul-2017 17:05:20 UTC] PHP Stack trace:
+[17-Jul-2017 17:05:20 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 17:05:20 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/PHP/busca_filmes.php:12
+[17-Jul-2017 17:05:20 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/PHP/busca_filmes.php on line 12
+[17-Jul-2017 17:05:20 UTC] PHP Stack trace:
+[17-Jul-2017 17:05:20 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 17:05:20 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/PHP/busca_filmes.php:12
+[17-Jul-2017 17:09:19 UTC] PHP Warning:  mysql_query() expects parameter 1 to be string, object given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 14
+[17-Jul-2017 17:09:19 UTC] PHP Stack trace:
+[17-Jul-2017 17:09:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 17:09:19 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/PHP/busca_filmes.php:14
+[17-Jul-2017 17:09:19 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, null given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 20
+[17-Jul-2017 17:09:19 UTC] PHP Stack trace:
+[17-Jul-2017 17:09:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 17:09:19 UTC] PHP   2. mysql_fetch_assoc() /home/ubuntu/workspace/PHP/busca_filmes.php:20
+[17-Jul-2017 17:10:59 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, object given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 20
+[17-Jul-2017 17:10:59 UTC] PHP Stack trace:
+[17-Jul-2017 17:10:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 17:10:59 UTC] PHP   2. mysql_fetch_assoc() /home/ubuntu/workspace/PHP/busca_filmes.php:20
+[17-Jul-2017 17:12:21 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, string given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 20
+[17-Jul-2017 17:12:21 UTC] PHP Stack trace:
+[17-Jul-2017 17:12:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 17:12:21 UTC] PHP   2. mysql_fetch_assoc() /home/ubuntu/workspace/PHP/busca_filmes.php:20
+[17-Jul-2017 17:13:06 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/ubuntu/workspace/PHP/busca_filmes.php on line 20
+[17-Jul-2017 17:13:06 UTC] PHP Stack trace:
+[17-Jul-2017 17:13:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 17:19:25 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, object given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 19
+[17-Jul-2017 17:19:25 UTC] PHP Stack trace:
+[17-Jul-2017 17:19:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 17:19:25 UTC] PHP   2. mysql_fetch_array() /home/ubuntu/workspace/PHP/busca_filmes.php:19
+[17-Jul-2017 17:19:47 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, object given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 19
+[17-Jul-2017 17:19:47 UTC] PHP Stack trace:
+[17-Jul-2017 17:19:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 17:19:47 UTC] PHP   2. mysql_fetch_array() /home/ubuntu/workspace/PHP/busca_filmes.php:19
+[17-Jul-2017 17:44:59 UTC] PHP Fatal error:  Cannot use [] for reading in /home/ubuntu/workspace/PHP/busca_filmes.php on line 25
+[17-Jul-2017 17:51:22 UTC] PHP Parse error:  syntax error, unexpected '"cartaz \n"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ubuntu/workspace/PHP/busca_filmes.php on line 17
+[17-Jul-2017 17:51:48 UTC] PHP Parse error:  syntax error, unexpected 'each' (T_STRING), expecting '(' in /home/ubuntu/workspace/PHP/busca_filmes.php on line 24
+[17-Jul-2017 17:52:44 UTC] PHP Parse error:  syntax error, unexpected '\' (T_NS_SEPARATOR), expecting ',' or ';' in /home/ubuntu/workspace/PHP/busca_filmes.php on line 26
+[17-Jul-2017 18:12:17 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 13
+[17-Jul-2017 18:12:17 UTC] PHP Stack trace:
+[17-Jul-2017 18:12:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 18:12:17 UTC] PHP   2. mysqli_fetch_array() /home/ubuntu/workspace/PHP/busca_filmes.php:13
+[17-Jul-2017 18:12:37 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 13
+[17-Jul-2017 18:12:37 UTC] PHP Stack trace:
+[17-Jul-2017 18:12:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 18:12:37 UTC] PHP   2. mysqli_fetch_array() /home/ubuntu/workspace/PHP/busca_filmes.php:13
+[17-Jul-2017 18:13:16 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 13
+[17-Jul-2017 18:13:16 UTC] PHP Stack trace:
+[17-Jul-2017 18:13:16 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 18:13:16 UTC] PHP   2. mysqli_fetch_assoc() /home/ubuntu/workspace/PHP/busca_filmes.php:13
+[17-Jul-2017 18:14:15 UTC] PHP Fatal error:  Call to undefined function mysqli_result() in /home/ubuntu/workspace/PHP/busca_filmes.php on line 13
+[17-Jul-2017 18:14:15 UTC] PHP Stack trace:
+[17-Jul-2017 18:14:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 18:14:31 UTC] PHP Fatal error:  Can't use function return value in write context in /home/ubuntu/workspace/PHP/busca_filmes.php on line 13
+[17-Jul-2017 18:16:55 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 15
+[17-Jul-2017 18:16:55 UTC] PHP Stack trace:
+[17-Jul-2017 18:16:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 18:16:55 UTC] PHP   2. mysqli_fetch_assoc() /home/ubuntu/workspace/PHP/busca_filmes.php:15
+[17-Jul-2017 18:16:55 UTC] PHP Fatal error:  Call to undefined function mysqli_result() in /home/ubuntu/workspace/PHP/busca_filmes.php on line 19
+[17-Jul-2017 18:16:55 UTC] PHP Stack trace:
+[17-Jul-2017 18:16:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 18:17:14 UTC] PHP Fatal error:  Call to undefined function mysqli_result() in /home/ubuntu/workspace/PHP/busca_filmes.php on line 19
+[17-Jul-2017 18:17:14 UTC] PHP Stack trace:
+[17-Jul-2017 18:17:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 18:21:58 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/PHP/busca_filmes.php on line 13
+[17-Jul-2017 18:32:29 UTC] PHP Parse error:  syntax error, unexpected 'i' (T_STRING), expecting ';' in /home/ubuntu/workspace/PHP/busca_filmes.php on line 19
+[17-Jul-2017 18:32:56 UTC] PHP Parse error:  syntax error, unexpected 'i' (T_STRING), expecting ';' in /home/ubuntu/workspace/PHP/busca_filmes.php on line 19
+[17-Jul-2017 18:40:50 UTC] PHP Fatal error:  Cannot use [] for reading in /home/ubuntu/workspace/PHP/busca_filmes.php on line 25
+[17-Jul-2017 18:41:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 25
+[17-Jul-2017 18:41:08 UTC] PHP Stack trace:
+[17-Jul-2017 18:41:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 18:41:08 UTC] PHP   2. in_array() /home/ubuntu/workspace/PHP/busca_filmes.php:25
+[17-Jul-2017 18:41:17 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 25
+[17-Jul-2017 18:41:17 UTC] PHP Stack trace:
+[17-Jul-2017 18:41:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 18:41:17 UTC] PHP   2. in_array() /home/ubuntu/workspace/PHP/busca_filmes.php:25
+[17-Jul-2017 18:41:33 UTC] PHP Warning:  in_array() expects parameter 2 to be array, string given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 25
+[17-Jul-2017 18:41:33 UTC] PHP Stack trace:
+[17-Jul-2017 18:41:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 18:41:33 UTC] PHP   2. in_array() /home/ubuntu/workspace/PHP/busca_filmes.php:25
+[17-Jul-2017 19:04:52 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 14
+[17-Jul-2017 19:04:52 UTC] PHP Stack trace:
+[17-Jul-2017 19:04:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 19:04:52 UTC] PHP   2. mysqli_fetch_assoc() /home/ubuntu/workspace/PHP/busca_filmes.php:14
+[17-Jul-2017 19:13:23 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/PHP/busca_filmes.php on line 27
+[17-Jul-2017 19:21:31 UTC] PHP Parse error:  syntax error, unexpected '","' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ubuntu/workspace/PHP/busca_filmes.php on line 27
+[17-Jul-2017 19:22:03 UTC] PHP Parse error:  syntax error, unexpected '\' (T_NS_SEPARATOR), expecting ',' or ';' in /home/ubuntu/workspace/PHP/busca_filmes.php on line 27
+[17-Jul-2017 19:40:04 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/PHP/busca_filmes.php on line 30
+[17-Jul-2017 19:40:04 UTC] PHP Stack trace:
+[17-Jul-2017 19:40:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 19:40:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/PHP/busca_filmes.php on line 30
+[17-Jul-2017 19:40:38 UTC] PHP Stack trace:
+[17-Jul-2017 19:40:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 19:41:34 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/PHP/busca_filmes.php on line 30
+[17-Jul-2017 19:41:34 UTC] PHP Stack trace:
+[17-Jul-2017 19:41:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 19:44:25 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/PHP/busca_filmes.php on line 30
+[17-Jul-2017 19:44:25 UTC] PHP Stack trace:
+[17-Jul-2017 19:44:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[17-Jul-2017 19:54:38 UTC] PHP Parse error:  syntax error, unexpected 'while' (T_WHILE), expecting ',' or ';' in /home/ubuntu/workspace/PHP/busca_filmes.php on line 37
+[18-Jul-2017 20:08:56 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/ubuntu/workspace/PHP/busca_filmes.php on line 21
+[18-Jul-2017 20:08:56 UTC] PHP Stack trace:
+[18-Jul-2017 20:08:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[18-Jul-2017 20:09:02 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/ubuntu/workspace/PHP/busca_filmes.php on line 21
+[18-Jul-2017 20:09:02 UTC] PHP Stack trace:
+[18-Jul-2017 20:09:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[19-Jul-2017 19:33:27 UTC] PHP Parse error:  syntax error, unexpected '"<br>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ubuntu/workspace/PHP/busca_filmes.php on line 55
+[19-Jul-2017 19:37:32 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/ubuntu/workspace/PHP/busca_filmes.php on line 20
+[19-Jul-2017 19:37:32 UTC] PHP Stack trace:
+[19-Jul-2017 19:37:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[19-Jul-2017 19:38:11 UTC] PHP Fatal error:  Call to undefined function mysqli_result() in /home/ubuntu/workspace/PHP/busca_filmes.php on line 20
+[19-Jul-2017 19:38:11 UTC] PHP Stack trace:
+[19-Jul-2017 19:38:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[19-Jul-2017 19:44:07 UTC] PHP Fatal error:  Call to undefined function mysqli_result() in /home/ubuntu/workspace/PHP/busca_filmes.php on line 20
+[19-Jul-2017 19:44:07 UTC] PHP Stack trace:
+[19-Jul-2017 19:44:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[25-Jul-2017 18:01:42 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/ubuntu/workspace/PHP/login.php on line 16
+[25-Jul-2017 18:01:42 UTC] PHP Stack trace:
+[25-Jul-2017 18:01:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/login.php:0
+[25-Jul-2017 18:02:10 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/ubuntu/workspace/PHP/login.php on line 16
+[25-Jul-2017 18:02:10 UTC] PHP Stack trace:
+[25-Jul-2017 18:02:10 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/login.php:0
+[25-Jul-2017 18:02:12 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/ubuntu/workspace/PHP/login.php on line 16
+[25-Jul-2017 18:02:12 UTC] PHP Stack trace:
+[25-Jul-2017 18:02:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/login.php:0
+[25-Jul-2017 18:05:50 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/ubuntu/workspace/PHP/login.php on line 18
+[25-Jul-2017 18:05:50 UTC] PHP Stack trace:
+[25-Jul-2017 18:05:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/login.php:0
+[25-Jul-2017 18:05:50 UTC] PHP   2. mysqli_query() /home/ubuntu/workspace/PHP/login.php:18
+[25-Jul-2017 18:06:13 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/ubuntu/workspace/PHP/login.php on line 18
+[25-Jul-2017 18:06:13 UTC] PHP Stack trace:
+[25-Jul-2017 18:06:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/login.php:0
+[25-Jul-2017 18:06:13 UTC] PHP   2. mysqli_query() /home/ubuntu/workspace/PHP/login.php:18
+[25-Jul-2017 18:12:33 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/ubuntu/workspace/PHP/login.php on line 19
+[25-Jul-2017 18:12:33 UTC] PHP Stack trace:
+[25-Jul-2017 18:12:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/login.php:0
+[25-Jul-2017 18:12:33 UTC] PHP   2. mysqli_query() /home/ubuntu/workspace/PHP/login.php:19
+[25-Jul-2017 18:13:46 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/ubuntu/workspace/PHP/login.php on line 19
+[25-Jul-2017 18:13:46 UTC] PHP Stack trace:
+[25-Jul-2017 18:13:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/login.php:0
+[25-Jul-2017 18:13:46 UTC] PHP   2. mysqli_query() /home/ubuntu/workspace/PHP/login.php:19
+[25-Jul-2017 18:14:13 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/ubuntu/workspace/PHP/login.php on line 19
+[25-Jul-2017 18:14:13 UTC] PHP Stack trace:
+[25-Jul-2017 18:14:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/login.php:0
+[25-Jul-2017 18:14:13 UTC] PHP   2. mysqli_query() /home/ubuntu/workspace/PHP/login.php:19
+[25-Jul-2017 20:05:56 UTC] PHP Fatal error:  Call to undefined function uf8_decode() in /home/ubuntu/workspace/PHP/informacao_filmes.php on line 16
+[25-Jul-2017 20:05:56 UTC] PHP Stack trace:
+[25-Jul-2017 20:05:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/informacao_filmes.php:0
+[25-Jul-2017 20:10:38 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/ubuntu/workspace/PHP/informacao_filmes.php on line 15
+[18-Aug-2017 02:31:10 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, object given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 40
+[18-Aug-2017 02:31:10 UTC] PHP Stack trace:
+[18-Aug-2017 02:31:10 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[18-Aug-2017 02:31:10 UTC] PHP   2. mysql_fetch_array() /home/ubuntu/workspace/PHP/busca_filmes.php:40
+[18-Aug-2017 02:31:10 UTC] PHP Warning:  json_decode() expects parameter 1 to be string, array given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 53
+[18-Aug-2017 02:31:10 UTC] PHP Stack trace:
+[18-Aug-2017 02:31:10 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[18-Aug-2017 02:31:10 UTC] PHP   2. json_decode() /home/ubuntu/workspace/PHP/busca_filmes.php:53
+[18-Aug-2017 02:34:53 UTC] PHP Warning:  json_decode() expects parameter 1 to be string, array given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 53
+[18-Aug-2017 02:34:53 UTC] PHP Stack trace:
+[18-Aug-2017 02:34:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[18-Aug-2017 02:34:53 UTC] PHP   2. json_decode() /home/ubuntu/workspace/PHP/busca_filmes.php:53
+[18-Aug-2017 02:48:41 UTC] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/ubuntu/workspace/PHP/busca_filmes.php on line 46
+[18-Aug-2017 02:48:41 UTC] PHP Stack trace:
+[18-Aug-2017 02:48:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[18-Aug-2017 02:49:48 UTC] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/ubuntu/workspace/PHP/busca_filmes.php on line 47
+[18-Aug-2017 02:49:48 UTC] PHP Stack trace:
+[18-Aug-2017 02:49:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[18-Aug-2017 03:04:27 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 39
+[18-Aug-2017 03:04:27 UTC] PHP Stack trace:
+[18-Aug-2017 03:04:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[18-Aug-2017 03:04:27 UTC] PHP   2. array_push() /home/ubuntu/workspace/PHP/busca_filmes.php:39
+[18-Aug-2017 03:04:27 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/PHP/busca_filmes.php on line 39
+[18-Aug-2017 03:04:27 UTC] PHP Stack trace:
+[18-Aug-2017 03:04:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_filmes.php:0
+[18-Aug-2017 03:04:27 UTC] PHP   2. array_push() /home/ubuntu/workspace/PHP/busca_filmes.php:39
+[18-Aug-2017 03:18:21 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/ubuntu/workspace/PHP/busca_filmes.php on line 105
+[23-Sep-2017 18:58:14 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/PHP/login.php on line 24
+[23-Sep-2017 19:02:47 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/ubuntu/workspace/PHP/login.php on line 24
+[23-Sep-2017 19:07:01 UTC] PHP Fatal error:  Call to undefined method mysqli_result::fetchColumn() in /home/ubuntu/workspace/PHP/login.php on line 24
+[23-Sep-2017 19:07:01 UTC] PHP Stack trace:
+[23-Sep-2017 19:07:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/login.php:0
+[23-Sep-2017 19:07:58 UTC] PHP Fatal error:  Call to a member function fetchColumn() on a non-object in /home/ubuntu/workspace/PHP/login.php on line 24
+[23-Sep-2017 19:07:58 UTC] PHP Stack trace:
+[23-Sep-2017 19:07:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/login.php:0
+[23-Sep-2017 19:15:35 UTC] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/ubuntu/workspace/PHP/login.php on line 24
+[23-Sep-2017 19:15:35 UTC] PHP Stack trace:
+[23-Sep-2017 19:15:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/login.php:0
+[24-Sep-2017 21:02:12 UTC] PHP Fatal error:  Call to undefined function TIME_FORMAT() in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 27
+[24-Sep-2017 21:02:12 UTC] PHP Stack trace:
+[24-Sep-2017 21:02:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_sessoes.php:0
+[24-Sep-2017 21:02:39 UTC] PHP Fatal error:  Call to undefined function TIME_FORMAT() in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 27
+[24-Sep-2017 21:02:39 UTC] PHP Stack trace:
+[24-Sep-2017 21:02:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_sessoes.php:0
+[24-Sep-2017 21:07:42 UTC] PHP Warning:  date_format() expects parameter 1 to be DateTimeInterface, string given in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 37
+[24-Sep-2017 21:07:42 UTC] PHP Stack trace:
+[24-Sep-2017 21:07:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_sessoes.php:0
+[24-Sep-2017 21:07:42 UTC] PHP   2. date_format() /home/ubuntu/workspace/PHP/busca_sessoes.php:37
+[24-Sep-2017 21:08:40 UTC] PHP Warning:  date_format() expects parameter 1 to be DateTimeInterface, string given in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 37
+[24-Sep-2017 21:08:40 UTC] PHP Stack trace:
+[24-Sep-2017 21:08:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_sessoes.php:0
+[24-Sep-2017 21:08:40 UTC] PHP   2. date_format() /home/ubuntu/workspace/PHP/busca_sessoes.php:37
+[24-Sep-2017 21:09:21 UTC] PHP Warning:  date_format() expects parameter 1 to be DateTimeInterface, string given in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 35
+[24-Sep-2017 21:09:21 UTC] PHP Stack trace:
+[24-Sep-2017 21:09:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_sessoes.php:0
+[24-Sep-2017 21:09:21 UTC] PHP   2. date_format() /home/ubuntu/workspace/PHP/busca_sessoes.php:35
+[24-Sep-2017 21:11:02 UTC] PHP Fatal error:  Call to undefined function TIME_FORMAT() in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 35
+[24-Sep-2017 21:11:02 UTC] PHP Stack trace:
+[24-Sep-2017 21:11:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_sessoes.php:0
+[24-Sep-2017 21:12:33 UTC] PHP Fatal error:  Call to undefined function TIME_FORMAT() in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 35
+[24-Sep-2017 21:12:33 UTC] PHP Stack trace:
+[24-Sep-2017 21:12:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_sessoes.php:0
+[24-Sep-2017 21:15:48 UTC] PHP Fatal error:  Call to undefined function TIME_FORMAT() in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 35
+[24-Sep-2017 21:15:48 UTC] PHP Stack trace:
+[24-Sep-2017 21:15:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_sessoes.php:0
+[24-Sep-2017 22:49:12 UTC] PHP Fatal error:  Call to undefined function TIME_FORMAT() in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 35
+[24-Sep-2017 22:49:12 UTC] PHP Stack trace:
+[24-Sep-2017 22:49:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_sessoes.php:0
+[24-Sep-2017 22:53:56 UTC] PHP Fatal error:  Call to undefined function TIME_FORMAT() in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 35
+[24-Sep-2017 22:53:56 UTC] PHP Stack trace:
+[24-Sep-2017 22:53:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_sessoes.php:0
+[24-Sep-2017 22:56:09 UTC] PHP Fatal error:  Call to undefined function TIME_FORMAT() in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 35
+[24-Sep-2017 22:56:09 UTC] PHP Stack trace:
+[24-Sep-2017 22:56:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_sessoes.php:0
+[24-Sep-2017 22:59:31 UTC] PHP Fatal error:  Call to undefined function TIME_FORMAT() in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 35
+[24-Sep-2017 22:59:31 UTC] PHP Stack trace:
+[24-Sep-2017 22:59:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_sessoes.php:0
+[24-Sep-2017 23:00:23 UTC] PHP Fatal error:  Call to undefined function TIME_FORMAT() in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 35
+[24-Sep-2017 23:00:23 UTC] PHP Stack trace:
+[24-Sep-2017 23:00:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_sessoes.php:0
+[24-Sep-2017 23:01:35 UTC] PHP Fatal error:  Call to undefined function TIME_FORMAT() in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 35
+[24-Sep-2017 23:01:35 UTC] PHP Stack trace:
+[24-Sep-2017 23:01:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_sessoes.php:0
+[24-Sep-2017 23:02:43 UTC] PHP Fatal error:  Call to undefined function TIME_FORMAT() in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 35
+[24-Sep-2017 23:02:43 UTC] PHP Stack trace:
+[24-Sep-2017 23:02:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_sessoes.php:0
+[24-Sep-2017 23:02:52 UTC] PHP Fatal error:  Call to undefined function TIME_FORMAT() in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 35
+[24-Sep-2017 23:02:52 UTC] PHP Stack trace:
+[24-Sep-2017 23:02:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_sessoes.php:0
+[01-Oct-2017 22:41:09 UTC] PHP Parse error:  syntax error, unexpected '$sessoes' (T_VARIABLE) in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 37
+[01-Oct-2017 22:41:13 UTC] PHP Parse error:  syntax error, unexpected '$sessoes' (T_VARIABLE) in /home/ubuntu/workspace/PHP/busca_sessoes.php on line 37
+[02-Oct-2017 02:49:02 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/PHP/gera_ingresso_qrcode.php on line 45
+[02-Oct-2017 02:49:03 UTC] PHP Stack trace:
+[02-Oct-2017 02:49:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/gera_ingresso_qrcode.php:0
+[02-Oct-2017 02:49:03 UTC] PHP   2. array_push() /home/ubuntu/workspace/PHP/gera_ingresso_qrcode.php:45
+[09-Oct-2017 00:26:45 UTC] PHP Parse error:  syntax error, unexpected '';' (T_ENCAPSED_AND_WHITESPACE) in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 35
+[09-Oct-2017 00:32:35 UTC] PHP Parse error:  syntax error, unexpected '$numero' (T_VARIABLE), expecting '(' in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 35
+[09-Oct-2017 00:33:17 UTC] PHP Parse error:  syntax error, unexpected '$numero' (T_VARIABLE), expecting '(' in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 35
+[09-Oct-2017 00:33:18 UTC] PHP Parse error:  syntax error, unexpected '$numero' (T_VARIABLE), expecting '(' in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 35
+[09-Oct-2017 00:33:20 UTC] PHP Parse error:  syntax error, unexpected '$numero' (T_VARIABLE), expecting '(' in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 35
+[09-Oct-2017 00:33:48 UTC] PHP Parse error:  syntax error, unexpected '$cadeiras' (T_VARIABLE), expecting '(' in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 36
+[09-Oct-2017 00:41:03 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 40
+[09-Oct-2017 00:41:03 UTC] PHP Stack trace:
+[09-Oct-2017 00:41:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:0
+[09-Oct-2017 00:41:03 UTC] PHP   2. mysqli_query() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:40
+[09-Oct-2017 00:41:03 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 41
+[09-Oct-2017 00:41:03 UTC] PHP Stack trace:
+[09-Oct-2017 00:41:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:0
+[09-Oct-2017 00:41:03 UTC] PHP   2. mysqli_fetch_assoc() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:41
+[09-Oct-2017 01:45:52 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 32
+[09-Oct-2017 01:45:52 UTC] PHP Stack trace:
+[09-Oct-2017 01:45:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:0
+[09-Oct-2017 01:48:39 UTC] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, object given in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 31
+[09-Oct-2017 01:48:39 UTC] PHP Stack trace:
+[09-Oct-2017 01:48:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:0
+[09-Oct-2017 01:48:39 UTC] PHP   2. mysql_num_rows() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:31
+[09-Oct-2017 02:23:42 UTC] PHP Warning:  mysql_result() expects parameter 1 to be resource, object given in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 31
+[09-Oct-2017 02:23:42 UTC] PHP Stack trace:
+[09-Oct-2017 02:23:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:0
+[09-Oct-2017 02:23:42 UTC] PHP   2. mysql_result() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:31
+[09-Oct-2017 02:26:50 UTC] PHP Warning:  mysql_result() expects parameter 1 to be resource, object given in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 31
+[09-Oct-2017 02:26:50 UTC] PHP Stack trace:
+[09-Oct-2017 02:26:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:0
+[09-Oct-2017 02:26:50 UTC] PHP   2. mysql_result() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:31
+[09-Oct-2017 02:31:03 UTC] PHP Fatal error:  Call to undefined function mysqli_result() in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 31
+[09-Oct-2017 02:31:03 UTC] PHP Stack trace:
+[09-Oct-2017 02:31:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:0
+[09-Oct-2017 02:32:38 UTC] PHP Fatal error:  Call to undefined function mysqli_result() in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 31
+[09-Oct-2017 02:32:38 UTC] PHP Stack trace:
+[09-Oct-2017 02:32:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:0
+[09-Oct-2017 02:32:54 UTC] PHP Fatal error:  Call to undefined function mysqli_result() in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 31
+[09-Oct-2017 02:32:54 UTC] PHP Stack trace:
+[09-Oct-2017 02:32:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:0
+[09-Oct-2017 02:33:19 UTC] PHP Fatal error:  Call to undefined function mysqli_result() in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 31
+[09-Oct-2017 02:33:19 UTC] PHP Stack trace:
+[09-Oct-2017 02:33:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:0
+[09-Oct-2017 02:33:22 UTC] PHP Fatal error:  Call to undefined function mysqli_result() in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 31
+[09-Oct-2017 02:33:22 UTC] PHP Stack trace:
+[09-Oct-2017 02:33:22 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:0
+[09-Oct-2017 02:35:43 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 31
+[09-Oct-2017 02:35:43 UTC] PHP Stack trace:
+[09-Oct-2017 02:35:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:0
+[09-Oct-2017 02:36:29 UTC] PHP Fatal error:  Call to undefined function query() in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 31
+[09-Oct-2017 02:36:29 UTC] PHP Stack trace:
+[09-Oct-2017 02:36:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:0
+[09-Oct-2017 02:36:54 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/ubuntu/workspace/PHP/busca_cadeira_sala.php on line 31
+[09-Oct-2017 02:36:54 UTC] PHP Stack trace:
+[09-Oct-2017 02:36:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/busca_cadeira_sala.php:0
+[09-Oct-2017 03:39:27 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/ubuntu/workspace/PHP/natalia_teste.php on line 32
+[09-Oct-2017 03:39:27 UTC] PHP Stack trace:
+[09-Oct-2017 03:39:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/natalia_teste.php:0
+[09-Oct-2017 03:44:24 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, object given in /home/ubuntu/workspace/PHP/natalia_teste.php on line 31
+[09-Oct-2017 03:44:24 UTC] PHP Stack trace:
+[09-Oct-2017 03:44:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/natalia_teste.php:0
+[09-Oct-2017 03:44:24 UTC] PHP   2. mysql_fetch_array() /home/ubuntu/workspace/PHP/natalia_teste.php:31
+[09-Oct-2017 03:45:14 UTC] PHP Fatal error:  Cannot use [] for reading in /home/ubuntu/workspace/PHP/natalia_teste.php on line 33
+[09-Oct-2017 03:45:46 UTC] PHP Fatal error:  Call to undefined function mysqli_result() in /home/ubuntu/workspace/PHP/natalia_teste.php on line 31
+[09-Oct-2017 03:45:46 UTC] PHP Stack trace:
+[09-Oct-2017 03:45:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/natalia_teste.php:0
+[09-Oct-2017 03:47:10 UTC] PHP Fatal error:  Call to undefined function mysqli_result() in /home/ubuntu/workspace/PHP/natalia_teste.php on line 31
+[09-Oct-2017 03:47:10 UTC] PHP Stack trace:
+[09-Oct-2017 03:47:10 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/natalia_teste.php:0
+[09-Oct-2017 03:47:27 UTC] PHP Fatal error:  Call to undefined function mysqli_result() in /home/ubuntu/workspace/PHP/natalia_teste.php on line 31
+[09-Oct-2017 03:47:27 UTC] PHP Stack trace:
+[09-Oct-2017 03:47:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/natalia_teste.php:0
+[09-Oct-2017 03:48:03 UTC] PHP Fatal error:  Call to undefined function mysqli_result() in /home/ubuntu/workspace/PHP/natalia_teste.php on line 31
+[09-Oct-2017 03:48:03 UTC] PHP Stack trace:
+[09-Oct-2017 03:48:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/natalia_teste.php:0
+[09-Oct-2017 03:50:20 UTC] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, object given in /home/ubuntu/workspace/PHP/natalia_teste.php on line 31
+[09-Oct-2017 03:50:20 UTC] PHP Stack trace:
+[09-Oct-2017 03:50:20 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/natalia_teste.php:0
+[09-Oct-2017 03:50:20 UTC] PHP   2. mysql_num_rows() /home/ubuntu/workspace/PHP/natalia_teste.php:31
+[09-Oct-2017 03:51:15 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/ubuntu/workspace/PHP/natalia_teste.php on line 34
+[09-Oct-2017 03:51:15 UTC] PHP Stack trace:
+[09-Oct-2017 03:51:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/PHP/natalia_teste.php:0
+[09-Oct-2017 03:51:40 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/PHP/natalia_teste.php on line 34
+[10-Oct-2017 20:21:11 UTC] PHP Parse error:  syntax error, unexpected '$sql2' (T_VARIABLE) in /home/ubuntu/workspace/PHP/busca_cadeiras_ingressos.php on line 40

@@ -1,0 +1,88 @@
+<!--conf
+<sample>
+              <product version="1.6" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               </sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+   <title>Loading from CSV</title>
+</head>
+<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxtree.css">
+   
+   <script  src="../../codebase/dhtmlxcommon.js"></script>
+   <script  src="../../codebase/dhtmlxtree.js"></script>
+   <script  src="../../codebase/ext/dhtmlxtree_json.js"></script>   
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxtree_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxTree</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Loading from CSV</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxTree/index.shtml">dhtmlxTree main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+   
+   <p>Loading from CSV sring or CSV file is available </p>
+   <table>
+      <tr>
+         <td>
+            <div id="treeboxbox_tree" style="width:250; height:218;background-color:#f5f5f5;border :1px solid Silver;; overflow:auto;"/>
+         </td>
+         <td rowspan="2" style="padding-left:25" valign="top">
+<textarea id="a12" rows="8" cols="40">1,0,1111
+2,0,2222
+3,0,3333
+4,2,child</textarea>
+</br>
+   <a href="javascript:void(0)" onclick="tree.deleteChildItems(0);  tree.loadCSVString(document.getElementById('a12').value);">
+reload from CSV string(textarea. Make sure items are separated with CRs)
+</a>         <br/>
+<a href="javascript:void(0)" onclick="tree.deleteChildItems(0); tree.loadCSV('data.csv');">
+load from external CSV file
+</a>
+         </td>
+      </tr>
+   </table>
+       
+
+
+
+	<script>
+var tree = new dhtmlXTreeObject('treeboxbox_tree', '100%', '100%', 0); 
+tree.setImagePath("../../codebase/imgs/csh_bluebooks/");
+tree.enableDragAndDrop(true);
+tree.loadCSVString("1,0,1111\n2,0,2222\n3,0,3333\n4,2,child")
+	</script>
+	
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+        </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">tree</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXTreeObject</span><span class="hl-brackets">(</span><span class="hl-quotes">'</span><span class="hl-string">treeboxbox_tree</span><span class="hl-quotes">'</span><span class="hl-code">, </span><span class="hl-quotes">'</span><span class="hl-string">100%</span><span class="hl-quotes">'</span><span class="hl-code">, </span><span class="hl-quotes">'</span><span class="hl-string">100%</span><span class="hl-quotes">'</span><span class="hl-code">, </span><span class="hl-number">0</span><span class="hl-brackets">)</span><span class="hl-code">; 
+        </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">setImagePath</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">../../codebase/imgs/csh_bluebooks/</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">enableDragAndDrop</span><span class="hl-brackets">(</span><span class="hl-reserved">true</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">loadCSVString</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">1,0,1111</span><span class="hl-special">\n</span><span class="hl-string">2,0,2222</span><span class="hl-special">\n</span><span class="hl-string">3,0,3333</span><span class="hl-special">\n</span><span class="hl-string">4,2,child</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">
+        ....
+        </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">loadCSV</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">data.csv</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+    
+    Format of CSV 
+        ID,parentID,text
+    order or rows in CSV doesn't matter</span></pre></div></div>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>
+

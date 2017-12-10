@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--conf
+<sample in_favorites="false">
+              <product version="1.0" edition="std"/>
+                     <modifications>
+                            <modified date="080606"/>
+                     </modifications>
+               </sample>
+ --> 
+<html>
+<head>
+	<title>Stting Cells AutoSize</title>
+	<link rel="stylesheet" type="text/css" href="../../codebase/dhtmlxlayout.css">
+	<link rel="stylesheet" type="text/css" href="../../codebase/skins/dhtmlxlayout_dhx_blue.css">
+	<link rel="stylesheet" type="text/css" href="../../../dhtmlxWindows/codebase/dhtmlxwindows.css">
+	<link rel="stylesheet" type="text/css" href="../../../dhtmlxWindows/codebase/skins/dhtmlxwindows_dhx_blue.css">
+	<script src="../../codebase/dhtmlxcommon.js"></script>
+	<script src="../../codebase/dhtmlxlayout.js"></script>
+	<script src="../../../dhtmlxWindows/codebase/dhtmlxwindows.js"></script>
+</head>
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxlayout_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxLayout</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Stting Cells AutoSize</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxLayout/index.shtml">dhtmlxLayout main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	<div id="parentId" style="position: relative; height: 300px;"></div>
+	<div id="srcDiv" style="position: relative; margin-top: 130px; left: 20px; width: 600px;"></div>
+	<div style="position: relative; margin-top: 20px; left: 20px; width: 600px;">Please, select the cells which will be autosized in the process of resizing</div>
+	<div id="viewDiv" style="position: relative; margin-top: 20px; left: 20px; width: 600px;">
+		Autosize: HOR <select id="sel1"></select> VER <select id="sel2"></select> <input type="button" value="Apply" onclick="setAutoSize();">
+	</div>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-comment">//</span><span class="hl-comment"> initialization of the layout</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">dhxLayout</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXLayoutObject</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">parentId</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-quotes">&quot;</span><span class="hl-string">3L</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment"> setting autosize</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">dhxLayout</span><span class="hl-code">.</span><span class="hl-identifier">setAutoSize</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">b;c</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-quotes">&quot;</span><span class="hl-string">a;c</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+<script>
+	var layout = "3L";
+	var link = String(document.location).split("?");
+	if (link[1] != null) {
+		var params = (link[1]).split("&");
+		for (var q=0; q<params.length; q++) {
+			var pair = (params[q]).split("=");
+			if (pair[0] == "view") { layout = pair[1]; }
+		}
+	}
+	//
+	var dhxWins = new dhtmlXWindows();
+	dhxWins.setImagePath("../../../dhtmlxWindows/codebase/imgs/");
+	var layoutWin = dhxWins.createWindow("w1", 40, 40, 600, 400);
+	//
+	var dhxLayout = new dhtmlXLayoutObject(layoutWin, layout);
+	var views = dhxLayout.listViews();
+	//
+	var table = document.createElement("TABLE");
+	document.getElementById("srcDiv").appendChild(table);
+	var tbody = document.createElement("TBODY");
+	table.appendChild(tbody);
+	var tr1 = document.createElement("TR");
+	tbody.appendChild(tr1);
+	var tr2 = document.createElement("TR");
+	tbody.appendChild(tr2);
+	for (var q=0; q<views.length; q++) {
+		var td1 = document.createElement("TD");
+		var td2 = document.createElement("TD");
+		td1.innerHTML = views[q];
+		td2.innerHTML = "<img src='../common/imgs/"+String(views[q]).toLowerCase()+".bmp' style='height: 49px; width: 49px; cursor: pointer;' onclick='loadView(\""+views[q]+"\");'>";
+		tr1.appendChild(td1);
+		tr2.appendChild(td2);
+	}
+	function loadView(view) {
+		document.location = "autosize.html?view="+view;
+	}
+	//
+	var asData = dhxLayout.listAutoSizes();
+	
+	var sel1 = document.getElementById("sel1");
+	sel1.options.length = 0;
+	var selected = 0;
+	for (var q=0; q<asData[2].length; q++) {
+		if (asData[2][q] == asData[0]) { selected = q; }
+		sel1.options.add(new Option(asData[2][q].replace(/;/g," "), asData[2][q]));
+	}
+	sel1.selectedIndex = selected;
+	//
+	var sel2 = document.getElementById("sel2");
+	sel2.options.length = 0;
+	var selected = 0;
+	for (var q=0; q<asData[3].length; q++) {
+		if (asData[3][q] == asData[1]) { selected = q; }
+		sel2.options.add(new Option(asData[3][q].replace(/;/g," "), asData[3][q]));
+	}
+	sel2.selectedIndex = selected;
+	
+	function setAutoSize() {
+		var sel1 = document.getElementById("sel1");
+		var as1 = sel1.options[sel1.selectedIndex].value;
+		var sel2 = document.getElementById("sel2");
+		var as2 = sel2.options[sel2.selectedIndex].value;
+		//
+		dhxLayout.setAutoSize(as1, as2);
+	}
+	
+</script>
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

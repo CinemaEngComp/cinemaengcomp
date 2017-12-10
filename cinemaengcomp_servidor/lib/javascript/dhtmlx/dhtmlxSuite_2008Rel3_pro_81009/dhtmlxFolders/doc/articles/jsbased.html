@@ -1,0 +1,109 @@
+<html>
+
+<head>
+
+
+<link rel="STYLESHEET" type="text/css" href="../common/styles.css">
+</head>
+<body>
+	<table border="0" cellpadding="0" cellspacing="0" class="sample_header" zid="71">
+		<tbody zid="3">
+			<tr valign="center" zid="4">
+				<td align="center" width="10" zid="5">&nbsp;</td>
+				<td align="left" zid="6">
+					<p zid="224">
+						<a href="http://www.dhtmlx.com/" zid="7">DHTMLX</a> Documentation
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<!--- CONTENT. Starts --->
+	 
+<h1 id="z.b_">Create your own Javascript based item types for dhtmlxFolders</h1>
+First – some details about how it works from inside. dhtmlxFolders provides the 
+possibility to display any number of elements with same structure. So, all we 
+need to define is the structure of single element – other elements will have 
+same structure with their own data. Data structure (JSON object structure as we talk 
+about Javascript based items. Even if you load data in XML format it will be transformed to JSON before parsing) depends on your needs. For example:<br id="fezi">
+<br id="fezi0">
+<blockquote id="jc:h"> [{id:1,<br id="l:7c">
+&nbsp;&nbsp;&nbsp;&nbsp; name:"John Petrich",<br id="l:7c2">
+&nbsp;&nbsp;&nbsp;&nbsp; age:23},<br id="rx7u">
+{id:2,<br id="rx7u0">
+&nbsp;&nbsp;&nbsp;&nbsp; name:"Peter Johnson",<br id="rx7u1">
+&nbsp;&nbsp;&nbsp;&nbsp; age:27},<br id="r6e4">
+{id:3,<br id="r6e40">
+&nbsp;&nbsp;&nbsp;&nbsp; name:"Kate Bronson",<br id="r6e41">
+&nbsp;&nbsp;&nbsp;&nbsp; age:31}<br id="rx7u2">
+]<br id="fezi1">
+</blockquote>
+
+    
+    
+Depending on the type the data should look the way you need and contain necessary data elements. From example below you can display just name or name and age. This should be done with parser function, which gets JSON object as incoming argument and returns HTML string which represents item in dhtmlxFolders. For example the following parser function will show name and age in different formating:<br id="joym">
+<br id="joym0">
+<blockquote id="ssyo">function personParserFunc(obj,editMode,selected,active){<br id="joym1">
+&nbsp;&nbsp;&nbsp; return "&lt;div style='color:navy;'&gt;"+.obj.name[0]+"&lt;/div&gt;&lt;small&gt;"+obj.age[0]+" years old&lt;/small&gt;";<br id="joym2">
+}<br id="gvc.">
+</blockquote>
+Again about incoming arguments:<br id="lnv-">
+<ul id="cjze">
+<li id="cjze0"><b id="cjze1">obj </b>- json object which contains data</li>
+<li id="cjze2"><b id="cjze3">editMode </b>- true if item should be displayed in edit mode </li>
+<li id="s4a4"><b id="s4a40">selected </b>- true if item is selected</li>
+<li id="i-5k"><b id="i-5k0">active </b>- true for item which was clicked or selected last<br id="i-5k1">
+</li>
+</ul>
+<br id="u153">
+Having parser function you need to tell dhtmlxFolders that it should
+use this parser to create items. This should be done in the following
+way:<br id="l81j">
+<blockquote id="mm95">
+<p id="bgpo" class="Code">myFolders.setItemType("js<span id="bgpo1" style="color: rgb(0, 0, 0);">_generic</span>",personParserFunc);</p>
+</blockquote>
+<br id="u1530">
+Resulting HTML which dhtmlxFolders outputs for the first item will be:<br id="ynav">
+<blockquote id="ae5n">
+<p id="sb50" class="Code">&lt;div class=”dhx_folders_GENERIC_item”&gt;&lt;div 
+style=”color:navy”&gt;John Petrich&lt;/div&gt;&lt;small&gt;23 years old&lt;/small&gt;&lt;div&gt;</p>
+<p id="laf4" class="Code"><br id="laf40">
+</p>
+<p id="laf42" class="Code">or (for selected item)<br id="bqjk">
+</p>
+<p id="laf44" class="Code"><br id="laf45">
+</p>
+<p id="laf47" class="Code">&lt;div class=”dhx_folders_GENERIC_item_selected”&gt;&lt;div 
+style=”color:navy”&gt;John Petrich&lt;/div&gt;&lt;small&gt;23 years old&lt;/small&gt;&lt;div&gt;</p>
+</blockquote>
+You see – new DIV appears. This is top 
+element for each item, which will be created by dhtmlxFolders automatically to 
+be a container for the content you have created with Javascript. Top element css class also 
+can be reset to different value using setCSSBaseName method. For example using 
+the following script command before loading myFolders content:
+<blockquote id="seju">
+<p id="seju0" class="Code">myFolders.setCSSBaseName(“test”);</p>
+</blockquote>
+<p id="seju2" class="MsoNormal">will result in the following HTML:</p>
+<blockquote id="a3vp">&lt;div class=”dhx_folders_<span id="ikfs" style="color: rgb(255, 0, 0);">TEST_</span>item”&gt;&lt;div style=”color:navy”&gt;John Petrich&lt;/div&gt;&lt;small&gt;23 years old&lt;/small&gt;&lt;div&gt;<br id="dred">
+<br id="dred0">
+or (for selected item)<br id="dred2">
+<br id="dred3">
+<p id="dred4" class="Code">&lt;div class=”dhx_folders_item_<span id="lj:7" style="color: rgb(255, 0, 0);">TEST_</span>selected”&gt;&lt;div 
+style=”color:navy”&gt;John Petrich&lt;/div&gt;&lt;small&gt;23 years old&lt;/small&gt;&lt;div&gt;</p>
+</blockquote>
+If you compare it to previous one you’ll see 
+where “test” goes. Now you can define css for dhx_folders_TEST_item and dhx_folders_TEST_item_selected&nbsp; classes to 
+have your own style for top item element and included elements.<br id="ynav1">
+<br id="gvc.0">
+First argument tells dhtmlxFolders that items will be created based on generic Javascript parser (not based on XML-XSL), second - is parser function to use. As I mentioned above, using script way of parsing forses dhtmlxFolders to divide incoming XML (if you've loaded data in XML format)&nbsp; into json objects based on the tag name (default is "item", but this name can be changed with <i id="lm4a">setItemTagName</i> mathod). In this case nested tags will be saved as property of the object (parent node) as an array of objects (tag value will be available as _nodevalue property) and attributes to&nbsp; properties as simple values.<br id="o:jn">
+<br id="o:jn0">
+<h3 id="wu9p2">Here are also some other things you need to know about creating 
+your own parser function for items:</h3>
+Inside parser function there are some objects accessible:<br id="grwi">
+<b id="kc6q">this </b>- refers to dhtmlxFolders object. Thus you can access any necessary value from it, like <b id="z:-p">this._userdataCol</b> - array of global userdata name-value pairs, which populated automatically from &lt;userdata&gt; tags located on first level of xml file (if original datasource loaded from server was in XML format)<br id="s2b2">
+
+	<!--- CONTENT. Ends --->
+	<div class="copyright" zid="223">&copy; DHTMLX, 2008</div>
+</body>
+</html>

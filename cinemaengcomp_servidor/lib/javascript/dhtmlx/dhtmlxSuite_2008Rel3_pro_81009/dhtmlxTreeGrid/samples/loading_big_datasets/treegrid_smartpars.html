@@ -1,0 +1,75 @@
+<!--conf
+<sample in_favorites="true">
+              <product version="1.4" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               <sampledescription><![CDATA[Next to dhtmlxTree, dhtmxTreeGrid supports Smart XML Parsing for showing big structures. This technic increases overal performance for big trees without the necessity to split data into levels on server side. Just load data like you did before, dhtmlxTreeGrid will do everything else.]]></sampledescription></sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Smart Parsing</title>
+	
+	<link rel="STYLESHEET" type="text/css" href="../../../dhtmlxGrid/codebase/dhtmlxgrid.css">
+	<link rel="STYLESHEET" type="text/css" href="../../../dhtmlxGrid/codebase/dhtmlxgrid_skins.css">
+	<script  src="../../../dhtmlxGrid/codebase/dhtmlxcommon.js"></script>
+	<script  src="../../../dhtmlxGrid/codebase/dhtmlxgrid.js"></script>
+	<script  src="../../../dhtmlxGrid/codebase/dhtmlxgridcell.js"></script>
+	<script  src="../../codebase/dhtmlxtreegrid.js"></script>
+</head>
+
+<script>
+var mygrid;
+	function doOnLoad(){
+		mygrid = new dhtmlXGridObject('gridbox');
+		mygrid.selMultiRows = true;
+		mygrid.imgURL = "../../../dhtmlxGrid/codebase/imgs/icons_greenfolders/";
+		mygrid.setHeader("Car,Mileage,Volume,State A,State B");
+		mygrid.setInitWidths("*,100,80,60,60")
+		mygrid.setColAlign("left,left,left,center,center")
+		mygrid.setColTypes("tree,ed,txt,ch,ch");
+		mygrid.setColSorting("str,str,str,na,str")
+		mygrid.enableCollSpan(true);
+		mygrid.enableSmartXMLParsing(true);		
+		mygrid.setSkin("modern");
+		mygrid.init();
+	   	mygrid.loadXML("tree_grid.php");
+	}
+</script>
+<body onload="doOnLoad();">
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxtreegrid_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxTreeGrid</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Smart Parsing</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxTreeGrid/index.shtml">dhtmlxTreeGrid main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	
+	<p>
+            Smart parsing can increase performance of the TreeGrid control when you have a lot of nodes and levels in it. <br>
+			Current sample demonstrates loading of 1700 nodes on 4 levels. There is no need to change anything on server side.
+	</p>
+	<div id="gridbox" width="600px" height="200px"></div>
+	<br>
+	Enabling Smart XML Parsing with script
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">enableSmartXMLParsing</span><span class="hl-brackets">(</span><span class="hl-reserved">true</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></div>
+
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

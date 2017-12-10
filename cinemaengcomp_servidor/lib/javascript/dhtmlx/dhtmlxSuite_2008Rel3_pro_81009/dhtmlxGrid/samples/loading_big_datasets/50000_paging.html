@@ -1,0 +1,170 @@
+<!--conf
+<sample in_favorites="true">
+              <product version="1.3" edition="pro"/>
+                     <modifications>
+                            <modified date="071111"/>
+                     </modifications>
+               <sampledescription><![CDATA[Try ne paging with non-linear buffering (since v.1.6) with 50,000 records and assess performance and new visual appearence of paging.]]></sampledescription></sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+
+<html>
+<head>
+	<title>50,000 records in grid with paging</title>
+	
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid.css">
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid_skins.css">
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/ext/dhtmlxgrid_pgn_bricks.css">
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxgrid.js"></script>
+	<script  src="../../codebase/ext/dhtmlxgrid_pgn.js"></script>	
+	<script  src="../../codebase/dhtmlxgridcell.js"></script>
+	<script>
+		var mygrid;
+		var timeoutHnd;
+		var flAuto = false;
+		function doOnLoad(){
+			mygrid = new dhtmlXGridObject('gridbox');
+			mygrid.setImagePath("../../codebase/imgs/");
+
+			mygrid.setHeader("Name,Index,Code");
+			mygrid.setInitWidths("150,150,*")
+			mygrid.setColAlign("left,left,right")
+			mygrid.setColSorting("server,na,server");
+			mygrid.setColTypes("ro,ro,ro");
+
+			//available in pro version only
+			if (mygrid.setColspan)
+			    mygrid.attachEvent("onBeforeSorting",customColumnSort)
+
+		    mygrid.setSkin("light");
+		    mygrid.init();
+		    mygrid.attachEvent("onBeforePageChanged",function(){
+		    	if (!this.getRowsNum())
+		    		return false;
+		    	return true;
+	    	})
+			mygrid.enablePaging(true,50,10,"pagingArea",true,"infoArea");
+			mygrid.setPagingSkin("bricks");
+			mygrid.attachEvent("onXLE",showLoading);
+			
+		    //mygrid.enableSmartRendering(true);
+
+				//code below written to support standard edtiton
+                //it written especially for current sample and may not work
+				//in other cases, DON'T USE it if you have pro version
+				mygrid.sortField_old=mygrid.sortField;
+				mygrid.sortField=function(){
+					mygrid.setColSorting("str,str,str");
+                	if (customColumnSort(arguments[0]))
+						mygrid.sortField_old.apply(this,arguments);
+				}
+				mygrid.sortRows=function(col,type,order){
+				}
+
+
+			//mygrid.setOnLoadingStart(showLoading)
+		    mygrid.loadXML("50000_load_grid.php?un="+Date.parse(new Date()));
+			showLoading(true)
+		}
+
+		function showLoading(fl){
+			var span = document.getElementById("recfound")
+			if (!span) return;
+
+			if(!mygrid._serialise){
+				span.innerHTML = "<i>Loading... available in Professional Edition of dhtmlxGrid</i>"
+				return;
+			}
+			span.style.color = "red";
+			if(fl)
+				span.innerHTML = "loading...";
+			else
+				span.innerHTML = "";
+		}
+		function doSearch(ev){
+			if(!flAuto)
+				return;
+			var elem = ev.target||ev.srcElement;
+			if(timeoutHnd)
+				clearTimeout(timeoutHnd)
+			timeoutHnd = setTimeout(reloadGrid,500)
+		}
+		function reloadGrid(){
+			var nm_mask = document.getElementById("search_nm").value
+			var cd_mask = document.getElementById("search_cd").value
+			showLoading(true)
+			mygrid.clearAndLoad("50000_load_grid.php?nm_mask="+nm_mask+"&cd_mask="+cd_mask+"&orderBy="+window.s_col+"&direction="+window.a_direction);
+			if (window.a_direction)
+				mygrid.setSortImgState(true,window.s_col,window.a_direction);
+		}
+		function enableAutosubmit(state){
+			flAuto = state;
+			document.getElementById("submitButton").disabled = state
+		}
+		function customColumnSort(ind){
+			if (ind==1) {
+				alert("Table can't be sorted by this column.");
+				if (window.s_col)
+					mygrid.setSortImgState(true,window.s_col,window.a_direction);
+				return false;
+			}
+			var a_state = mygrid.getSortingState();
+			window.s_col=ind;
+			window.a_direction = ((a_state[1] == "des")?"asc":"des");
+            reloadGrid();
+			return true;
+		}
+		
+	</script>
+</head>
+
+<body onload="doOnLoad()">
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxgrid_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxGrid</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>50,000 records in grid with paging</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxGrid/index.shtml">dhtmlxGrid main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+
+
+<p style="font-size:14px;">
+This sample demonstrates how dhtmlxGrid works with rather big amount of data (50,000 records).<br>
+We have put 50,000 records into a table in a Mysql database filled with random words. dhtmlxGrid, using Ajax, loads only those records, that are visible.<br>
+When user is scrolling, dhtmlxGrid automatically loads new records from database and displays them. When user is scrolling back, those records that have been already loaded, are taken from cache.<br>
+If user wants to make a search (just enter some word into input fields), grid sends search criteria to server and loads only data that correspond to entered criteria.<br>
+<div style="color:red;text-decoration:underline;margin-top:5px;">Important: sample is working with real data - <b>50.000</b> records, but this is not the limit! Enjoy it's performance and imagine how it could be used in your product.</div>
+</p>
+
+<h3>Search By:</h3>
+<div>
+	Name<br>
+	<input type="text" id="search_nm" onkeydown="doSearch(arguments[0]||event)">
+</div>
+<div>
+	Code<br>
+	<input type="text" id="search_cd" onkeydown="doSearch(arguments[0]||event)">
+	<button onclick="reloadGrid()" id="submitButton" style="margin-left:30px;">Search</button>
+	<input type="checkbox" id="autosearch" onclick="enableAutosubmit(this.checked)"> Enable Autosearch
+</div>
+
+<div id="gridbox" style="width:100%;height:300px;margin-top:20px;margin-bottom:10px;"></div>
+<div><span id="pagingArea"></span>&nbsp;<span id="infoArea"></span></div>
+<span id="recfound"></span>
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

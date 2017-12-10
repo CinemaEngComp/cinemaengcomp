@@ -1,0 +1,75 @@
+<!--conf
+<sample>
+              <product version="1.2" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               </sample>
+ --> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Add/Remove content to TabBar</title>
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxtabbar.css">
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxtabbar.js"></script>
+</head>
+
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxtabbar_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxTabbar</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Add/Remove content to TabBar</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxTabbar/index.shtml">dhtmlxTabbar main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	
+	
+	<p>Proffesional version allows to add tabs to different rows. Standart doesn't support multiline mode</p>
+    
+	<table>
+		<tr>
+			<td>
+				<div id="a_tabbar" style="width:390px; height:390px;"/>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                <div><a href="#" onclick="tabbar.addTab(ind,ind,'100px',document.getElementById('pos_1').value,document.getElementById('row_1').value); ind++;">Add tab</a>&nbsp;&nbsp;Row<input id='row_1' value='0'/>&nbsp;&nbsp;Position<input id='pos_1' value='0'/></div>
+                <div><a href="#" onclick="tabbar.removeTab(tabbar.getActiveTab(),true)" >Remove current tab</a></div>
+            </td>
+        </tr>
+	</table>
+<br>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">a_tabbar</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">width:400;height:100</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+            </span><span class="hl-identifier">tabbar</span><span class="hl-code">=</span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXTabBar</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">a_tabbar</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">top</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+            </span><span class="hl-identifier">tabbar</span><span class="hl-code">.</span><span class="hl-identifier">setImagePath</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">imgs/</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+            </span><span class="hl-identifier">tabbar</span><span class="hl-code">.</span><span class="hl-identifier">setSkinColors</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">#FCFBFC</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">#F4F3EE</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+            ...
+            </span><span class="hl-identifier">tabbar</span><span class="hl-code">.</span><span class="hl-identifier">addTab</span><span class="hl-brackets">(</span><span class="hl-identifier">id</span><span class="hl-code">,</span><span class="hl-identifier">text</span><span class="hl-code">,</span><span class="hl-identifier">size</span><span class="hl-code">,</span><span class="hl-identifier">pos</span><span class="hl-code">,</span><span class="hl-identifier">row</span><span class="hl-brackets">)</span><span class="hl-code">;
+            </span><span class="hl-identifier">tabbar</span><span class="hl-code">.</span><span class="hl-identifier">removeTab</span><span class="hl-brackets">(</span><span class="hl-identifier">id</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+	<script>
+            var ind=0;
+			tabbar=new dhtmlXTabBar("a_tabbar","top");
+            tabbar.setImagePath("../../codebase/imgs/");
+            tabbar.setSkinColors("#FCFBFC","#F4F3EE","#FCFBFC");
+	</script>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!--conf
+<sample in_favorites="true">
+              <product version="1.4" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               </sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Dynamic loading of sub items </title>
+	
+    <link rel="STYLESHEET" type="text/css" href="../../../dhtmlxGrid/codebase/dhtmlxgrid.css">
+	<link rel="STYLESHEET" type="text/css" href="../../../dhtmlxGrid/codebase/dhtmlxgrid_skins.css">
+	<script  src="../../../dhtmlxGrid/codebase/dhtmlxcommon.js"></script>
+	<script  src="../../../dhtmlxGrid/codebase/dhtmlxgrid.js"></script>
+	<script  src="../../../dhtmlxGrid/codebase/dhtmlxgridcell.js"></script>
+	<script  src="../../codebase/dhtmlxtreegrid.js"></script>
+</head>
+
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxtreegrid_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxTreeGrid</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Dynamic loading of sub items </b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxTreeGrid/index.shtml">dhtmlxTreeGrid main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	
+	<p>
+            You can set functions called before and after opening node
+	</p>
+	
+
+	<table width="680">
+		<tr>
+			<td>
+				<div id="gridbox" width="100%" height="248px" style="background-color:white;"></div>
+			</td>
+            <td width="100px"><div id='a111'></div></td>
+		</tr>
+		<tr>
+			<td>
+
+            </td>
+		</tr>
+	</table>
+
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">gridbox</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">width</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">100%</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">height</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">250px</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">background-color:white;overflow:hidden</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXGridObject</span><span class="hl-brackets">(</span><span class="hl-quotes">'</span><span class="hl-string">gridbox</span><span class="hl-quotes">'</span><span class="hl-brackets">)</span><span class="hl-code">;
+    ...
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">kidsXmlFile</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">pro_treeGrid_dynamic.php</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">loadXML</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">pro_treeGrid_dynamic.php</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">attachEvent</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">onOpenStart</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-reserved">function</span><span class="hl-brackets">(</span><span class="hl-identifier">id</span><span class="hl-code">,</span><span class="hl-identifier">m</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code"> </span><span class="hl-reserved">return</span><span class="hl-code"> </span><span class="hl-identifier">confirm</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">Row </span><span class="hl-quotes">&quot;</span><span class="hl-code">+</span><span class="hl-identifier">id</span><span class="hl-code">+</span><span class="hl-quotes">&quot;</span><span class="hl-string">will be </span><span class="hl-quotes">&quot;</span><span class="hl-code">+</span><span class="hl-brackets">(</span><span class="hl-identifier">m</span><span class="hl-code">==</span><span class="hl-number">1</span><span class="hl-code">?</span><span class="hl-quotes">&quot;</span><span class="hl-string">closed</span><span class="hl-quotes">&quot;</span><span class="hl-code">:</span><span class="hl-quotes">&quot;</span><span class="hl-string">opened</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-brackets">)</span><span class="hl-code">; </span><span class="hl-brackets">}</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">attachEvent</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">onOpenEnd</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-reserved">function</span><span class="hl-brackets">(</span><span class="hl-identifier">id</span><span class="hl-code">,</span><span class="hl-identifier">m</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code"> </span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">getElementById</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">a111</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">.</span><span class="hl-identifier">innerHTML</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">&lt;br/&gt;Row </span><span class="hl-quotes">&quot;</span><span class="hl-code">+</span><span class="hl-identifier">id</span><span class="hl-code">+</span><span class="hl-quotes">&quot;</span><span class="hl-string">was </span><span class="hl-quotes">&quot;</span><span class="hl-code">+</span><span class="hl-brackets">(</span><span class="hl-identifier">m</span><span class="hl-code">==-</span><span class="hl-number">1</span><span class="hl-code">?</span><span class="hl-quotes">&quot;</span><span class="hl-string">closed</span><span class="hl-quotes">&quot;</span><span class="hl-code">:</span><span class="hl-quotes">&quot;</span><span class="hl-string">opened</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">; </span><span class="hl-brackets">}</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+
+<script>
+		mygrid = new dhtmlXGridObject('gridbox');
+
+		mygrid.selMultiRows = true;
+		mygrid.imgURL = "../../../dhtmlxGrid/codebase/imgs/icons_greenfolders/";
+		mygrid.setHeader("Tree,Plain Text,Long Text,Color,Checkbox");
+		mygrid.setInitWidths("150,100,100,100,100")
+		mygrid.setColAlign("left,left,left,left,center")
+		mygrid.setColTypes("tree,ed,txt,ch,ch");
+		mygrid.setColSorting("str,str,str,na,str")
+        mygrid.attachEvent("onOpenStart",function(id,m){ return confirm("Row "+id+"will be "+(m==1?"closed":"opened")); });
+        mygrid.attachEvent("onOpenEnd",function(id,m){ document.getElementById("a111").innerHTML="<br/>Row "+id+"was "+(m==-1?"closed":"opened"); });
+
+		mygrid.init();
+		mygrid.setSkin("xp")
+        mygrid.kidsXmlFile="treeGrid_dynamic.php";
+	   	mygrid.loadXML("treeGrid_dynamic.php");
+</script>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>
+
+

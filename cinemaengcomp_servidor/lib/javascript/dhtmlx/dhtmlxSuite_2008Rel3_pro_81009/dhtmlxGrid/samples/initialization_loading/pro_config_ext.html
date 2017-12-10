@@ -1,0 +1,191 @@
+<!--conf
+<sample>
+              <product version="1.4" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               </sample>
+ --> 
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Run commands from XML</title>
+	
+
+
+
+</head>
+
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxgrid_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxGrid</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Run commands from XML</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxGrid/index.shtml">dhtmlxGrid main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid.css">
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxgrid.js"></script>
+	<script  src="../../codebase/dhtmlxgridcell.js"></script>
+	<script>
+		function loadGridFromString(){
+			mygrid = new dhtmlXGridObject('gridbox');
+			mygrid.setImagePath("../../codebase/imgs/");
+			mygrid.loadXMLString(document.getElementById("gridcont1").value);
+		}
+		function loadGridFromString2(){
+			mygrid2 = new dhtmlXGridObject('gridbox2');
+			mygrid2.setImagePath("../../codebase/imgs/");
+			mygrid2.loadXMLString(document.getElementById("gridcont2").value);
+		}
+	</script>
+	<p>Run methods before grid intialization</p>
+	<div>
+		<li>Example:  <a href="javascript:void(0)" onclick="loadGridFromString()">Load grid with xp skin</a> set from XML by calling setSkin method before grid initialization</li>
+	</div><br>
+<div id="gridbox" width="600px" height="100px" style="background-color:white;"></div>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+&lt;</span><span class="hl-identifier">rows</span><span class="hl-code">&gt;
+    &lt;</span><span class="hl-identifier">head</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">beforeInit</span><span class="hl-code">&gt;
+            &lt;</span><span class="hl-identifier">call</span><span class="hl-code"> </span><span class="hl-identifier">command</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">setSkin</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;&lt;</span><span class="hl-identifier">param</span><span class="hl-code">&gt;</span><span class="hl-identifier">xp</span><span class="hl-code">&lt;/</span><span class="hl-identifier">param</span><span class="hl-code">&gt;&lt;/</span><span class="hl-identifier">call</span><span class="hl-code">&gt;
+        &lt;/</span><span class="hl-identifier">beforeInit</span><span class="hl-code">&gt;
+        ...
+    &lt;/</span><span class="hl-identifier">head</span><span class="hl-code">&gt;</span></pre></div></div>
+Same as with script:
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXGridObject</span><span class="hl-brackets">(</span><span class="hl-quotes">'</span><span class="hl-string">gridbox2</span><span class="hl-quotes">'</span><span class="hl-brackets">)</span><span class="hl-code">;
+    ...
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">setSkin</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">xp</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">init</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></div>
+<textarea id="gridcont1" style="width:600px;height:100px;"><?xml version="1.0" encoding="UTF-8"?>
+<rows>
+    <head>
+        <beforeInit>
+			<call command="setSkin"><param>xp</param></call>
+		</beforeInit>
+		<column width="50" type="dyn" align="right" color="white" sort="str">Sales</column>
+        <column width="150" type="ed" align="left" color="#d5f1ff" sort="str">Book Title</column>
+        <column width="100" type="ed" align="left" color="#d5f1ff" sort="str">Author</column>
+        <column width="80" type="price" align="right" sort="str">Price</column>
+        <column width="80" type="ch" align="center" sort="str">In Store</column>
+        <column width="80" type="co" align="left" sort="str">Shipping
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">10</option>
+            <option value="5">20</option>
+            <option value="6">30</option>
+        </column>
+        <column width="80" type="ra" align="center" sort="str">Bestseller</column>
+        <column width="200" type="ro" align="center" sort="str">Date of Publication</column>
+        <settings>
+            <colwidth>px</colwidth>
+        </settings>
+    </head>
+ 	<row id="1">
+		<cell>-1500</cell>
+		<cell>A Time to Kill</cell>
+		<cell>John Grisham</cell>
+		<cell>12.99</cell>
+		<cell>1</cell>
+		<cell>24</cell>
+		<cell>0</cell>
+		<cell>05/01/1998</cell>
+	</row>
+	<row id="2">
+		<cell>1000</cell>
+		<cell>Blood and Smoke</cell>
+		<cell>Stephen King</cell>
+		<cell>0</cell>
+		<cell>1</cell>
+		<cell>24</cell>
+		<cell>0</cell>
+		<cell>01/01/2000</cell>
+	</row>
+</rows>
+</textarea>
+
+<p>Run methods after grid intialization</p>
+	<div>
+		<li>Example:  <a href="javascript:void(0)" onclick="loadGridFromString2()">Load grid and set 2nd column hidden</a> by calling setColumnHidden method from xml after grid initialization</li>
+	</div><br>
+<div id="gridbox2" width="600px" height="100px" style="background-color:white;"></div>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+&lt;</span><span class="hl-identifier">rows</span><span class="hl-code">&gt;
+    &lt;</span><span class="hl-identifier">head</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">afterInit</span><span class="hl-code">&gt;
+            &lt;</span><span class="hl-identifier">call</span><span class="hl-code"> </span><span class="hl-identifier">command</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">setColumnHidden</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;&lt;</span><span class="hl-identifier">param</span><span class="hl-code">&gt;</span><span class="hl-number">1</span><span class="hl-code">&lt;/</span><span class="hl-identifier">param</span><span class="hl-code">&gt;&lt;</span><span class="hl-identifier">param</span><span class="hl-code">&gt;</span><span class="hl-reserved">true</span><span class="hl-code">&lt;/</span><span class="hl-identifier">param</span><span class="hl-code">&gt;&lt;/</span><span class="hl-identifier">call</span><span class="hl-code">&gt;
+        &lt;/</span><span class="hl-identifier">afterInit</span><span class="hl-code">&gt;
+        ...
+    &lt;/</span><span class="hl-identifier">head</span><span class="hl-code">&gt;</span></pre></div></div>
+Same as with script:
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">setColumnHidden</span><span class="hl-brackets">(</span><span class="hl-number">1</span><span class="hl-code">,</span><span class="hl-reserved">true</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></div>
+<textarea id="gridcont2" style="width:600px;height:100px;"><?xml version="1.0" encoding="UTF-8"?>
+<rows>
+    <head>
+        <afterInit>
+			<call command="setColumnHidden"><param>1</param><param>true</param></call>
+		</afterInit>
+		<column width="50" type="dyn" align="right" color="white" sort="str">Sales</column>
+        <column width="150" type="ed" align="left" color="#d5f1ff" sort="str">Book Title</column>
+        <column width="100" type="ed" align="left" color="#d5f1ff" sort="str">Author</column>
+        <column width="80" type="price" align="right" sort="str">Price</column>
+        <column width="80" type="ch" align="center" sort="str">In Store</column>
+        <column width="80" type="co" align="left" sort="str">Shipping
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">10</option>
+            <option value="5">20</option>
+            <option value="6">30</option>
+        </column>
+        <column width="80" type="ra" align="center" sort="str">Bestseller</column>
+        <column width="200" type="ro" align="center" sort="str">Date of Publication</column>
+        <settings>
+            <colwidth>px</colwidth>
+        </settings>
+    </head>
+ 	<row id="1">
+		<cell>-1500</cell>
+		<cell>A Time to Kill</cell>
+		<cell>John Grisham</cell>
+		<cell>12.99</cell>
+		<cell>1</cell>
+		<cell>24</cell>
+		<cell>0</cell>
+		<cell>05/01/1998</cell>
+	</row>
+	<row id="2">
+		<cell>1000</cell>
+		<cell>Blood and Smoke</cell>
+		<cell>Stephen King</cell>
+		<cell>0</cell>
+		<cell>1</cell>
+		<cell>24</cell>
+		<cell>0</cell>
+		<cell>01/01/2000</cell>
+	</row>
+</rows>
+</textarea>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

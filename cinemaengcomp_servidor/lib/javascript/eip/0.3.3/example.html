@@ -1,0 +1,109 @@
+<html>
+<head>
+	<title>AJAX Edit In Place (EIP) With Prototype</title>
+	<style type="text/css">
+		/* Define the basic CSS used by EditInPlace */
+		.eip_mouseover { background-color: #ff9; padding: 3px; }
+		.eip_savebutton { background-color: #36f; color: #fff; }
+		.eip_cancelbutton { background-color: #000; color: #fff; }
+		.eip_saving { background-color: #903; color: #fff; padding: 3px; }
+		.eip_empty { color: #afafaf; }
+	</style>
+	<script type="text/javascript" src="prototype.js"></script>
+	<script type="text/javascript" src="EditInPlace.js"></script>
+	<script type="text/javascript">
+		Event.observe(window, 'load', init, false);
+		function init() {
+			// Over ride some of the default options.
+			EditInPlace.defaults['type'] = 'text';
+			EditInPlace.defaults['save_url'] = 'edit.php';
+
+			// Basic example.
+			EditInPlace.makeEditable({ id: 'simplestring' });
+
+			// Double click and selected text example.
+			EditInPlace.makeEditable({
+				id: 'twoclicks',
+				click: 'dblclick',
+				select_text: true,
+				ajax_data: {
+					db_id: 12345,
+					username: 'devnull'
+				}
+			});
+
+			// Example that starts out as an empty string and will cancel
+			// the form when clicked away from.
+			EditInPlace.makeEditable({ id: 'emptytext', on_blur: 'cancel' });
+
+			// Select / Option list example.
+			EditInPlace.makeEditable({
+				id: 'favcolor',
+				type: 'select',
+				save_url: 'optionedit.php',
+				options: {
+					white: 'White',
+					black: 'Black',
+					green: 'Green',
+					darkgreen: 'Dark Green',
+					lightgreen: 'Light Green',
+					pink: 'Pink'
+				}
+			});
+
+			// Textarea example.
+			EditInPlace.makeEditable({ id: 'bigedit', type: 'textarea' });
+		}
+	</script>
+</head>
+<body>
+
+<h1><a href="http://josephscott.org/code/js/eip/">AJAX Edit In Place (EIP) With Prototype</a></h1>
+
+<hr />
+<h2>Edit In Place
+<a href="http://joseph.randomnetworks.com/tag/editinplace">blog entries</a>
+</h2>
+
+<p>
+Current release:
+<a href="http://josephscott.org/code/js/eip/releases/eip-0.3.3.tar.gz">eip-0.3.3.tar.gz</a>
+</p>
+
+<p>
+Source for <a href="edit.phps">edit.php</a>,
+<a href="optionedit.phps">optionedit.php</a> and
+the plain Javascript source for <a href="EditInPlace.js">EditInPlace.js</a>. 
+<hr />
+
+<h3>Examples</h3>
+
+<p>
+<span id="simplestring">You can edit this line with a single click.</span>
+</p>
+
+<p>
+<span id="twoclicks">Double click to edit this line.  It also has the select text option turned on.</span>
+</p>
+
+<p>
+Sometimes your starting text is empty, but you still want to make it editable.
+<br />
+This example also supports the cancel action on blurring (click somewhere 
+else on the page when the form is displayed)<br />
+<span id="emptytext"></span>
+</p>
+
+<p>
+This example makes use of the select type.<br />
+Pick your favorite color: <span id="favcolor">Dark Green</span>
+</p>
+
+<p>
+<span id="bigedit">
+For those times that when you want to edit more than just one line there is the textarea edit.
+</span>
+</p>
+
+</body>
+</html>

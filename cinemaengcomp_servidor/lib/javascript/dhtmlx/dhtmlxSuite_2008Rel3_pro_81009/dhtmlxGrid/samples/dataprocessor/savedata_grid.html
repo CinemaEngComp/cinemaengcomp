@@ -1,0 +1,245 @@
+<!--conf
+<sample in_favorites="true">
+              <product version="1.4" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               <sampledescription><![CDATA[Online sample demonstrating grid connection to server side datasource. You can add/delete/update records - all changes will be saved to database (your changes are available for you within php session time frame)]]></sampledescription></sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Save Data dynamicaly</title>
+	
+</head>
+
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxgrid_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxGrid</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Save Data dynamicaly</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxGrid/index.shtml">dhtmlxGrid main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	
+	<p>
+	Editable Grid means also the ability to save updated values to some server data storage.
+	With dhtmlxDataProcessor you can:<br>
+	<li>connect grid with server side built on any language</li>
+	<li>save inserted rows, updated values and deleted rows</li>
+	<li>set validators on cells</li>
+	<li>define mandatory columns</li>
+	<li>define moment to send data to server (after each cell update, row selection change or manualy with Save button)</li>
+	
+	</p>
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid.css">
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid_skins.css">
+	<script>_js_prefix = "../../codebase/";</script>
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxgrid.js"></script>		
+	<script  src="../../codebase/dhtmlxgridcell.js"></script>
+	<script  src="../../codebase/excells/dhtmlxgrid_excell_calendar.js"></script>
+	<script  src="../../../dhtmlxDataProcessor/codebase/dhtmlxdataprocessor.js"></script>
+	<table width="600">
+		<tr>
+			<td>
+				<div id="gridbox" width="100%" height="250px" style="background-color:white;overflow:hidden"></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			* - fields which shouldn't have empty value marked with <font color="#FF0000">red border</font>.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div id="messanger">&nbsp;</div>
+				<a href="javascript:void(0)" onclick="mygrid.addRow((new Date()).valueOf(),[0,'','','',false,'na',false,''],mygrid.getRowIndex(mygrid.getSelectedId()))">Add row</a><br>
+				<a href="javascript:void(0)" onclick="mygrid.deleteSelectedItem()">Remove Selected Row</a>
+				<br><br>
+				<input type="Checkbox" onclick="doOnAutoupdateChecked(this.checked)"> Enable Auto Update	
+				<div id="updatemodes" style="display:none;">
+					<input type="radio" name="updm" id="updmdflt" value="cell" style="margin-left:20px;" onclick="myDataProcessor.setUpdateMode(this.value)" checked>Cell based<br>
+					<input type="radio" name="updm"  value="row" style="margin-left:20px;" onclick="myDataProcessor.setUpdateMode(this.value)">Row based
+				</div>
+				<input type="Button" onclick="myDataProcessor.sendData()" id="updatebutton" value="Update" style="display:inline;">
+			</td>
+		</tr>
+	</table>
+	
+<br>
+<script>
+	//init grid and set its parameters (this part as always)
+	mygrid = new dhtmlXGridObject('gridbox');
+	mygrid.setImagePath("../../codebase/imgs/");
+	var flds = "Sales,Book Title,Author,Price";
+		flds += ",In Store,Shipping,Bestseller,Date of Publication";
+		mygrid.setHeader(flds);
+		mygrid.setInitWidths("50,150,120,80,80,80,80,200")
+		mygrid.setColAlign("right,left,left,right,center,left,center,center")
+		mygrid.setColTypes("dyn,ed,ed,price,ch,coro,ch,calendar");
+		mygrid.setColumnIds("sales,title,author,price,instore,shipping,bestseller,pubdate")
+		mygrid.setSkin("light");
+		mygrid.setColSorting("int,str,str,int,str,str,str,date")
+		var combobox = mygrid.getCombo(5);
+		combobox.put("1","1 Hour")
+		combobox.put("12","12 Hours")
+		combobox.put("24","24 Hours")
+		combobox.put("48","2 days")
+		combobox.put("168","1 week")
+		combobox.put("pick","pick up")
+		combobox.put("na","na")
+    	mygrid.init();
+
+//============================================================================================
+	mygrid.loadXML("php/get.php");
+	myDataProcessor = new dataProcessor("php/update.php");
+	//myDataProcessor.enableDebug(true);
+	myDataProcessor.enableDataNames(true);
+	myDataProcessor.setVerificator(1)
+	myDataProcessor.setVerificator(3,checkIfNotZero)
+	myDataProcessor.setUpdateMode("off");//available values: cell (default), row, off
+	myDataProcessor.defineAction("error",myErrorHandler);
+	myDataProcessor.setTransactionMode("GET");
+	myDataProcessor.init(mygrid);
+//============================================================================================
+	//Example of error handler. It gets <action> tag object as incomming argument.
+	function myErrorHandler(obj){
+		alert("Error occured.\n"+obj.firstChild.nodeValue);
+		myDataProcessor.stopOnError = true;
+		return false;
+	}
+	
+	//Example of verification function. It verifies that value is not 0 (zero).
+	//If verification failed it should return false otherwise true.
+	//Verification fucntion specified in setVerificator method will always get two argumentrs: value to verify and column name (use it for message)
+	function checkIfNotZero(value,colName){
+		if(value.toString()._dhx_trim()=="0"){
+			showMessage(colName+ " should not be 0")
+			return false
+		}else
+			return true;
+	}
+	
+	
+	
+	
+	
+	
+	//we use this function instead of alert to show messages on page (it is used in checkIfNotZero verification function).
+	function showMessage(msg){
+		var msger = document.getElementById("messanger");
+		msger.innerHTML = msg;
+		clearTimeout(toRef) 
+		toRef = setTimeout("showMessage('&nbsp;')",5000)
+	}
+	
+	
+	
+	
+	
+	
+	
+	//these functions doesn't have direct relation to data processor. It related to this example interface only.
+	function doOnAutoupdateChecked(state){
+		if(state){
+			document.getElementById("updmdflt").click()
+			//myDataProcessor.setUpdateMode('cell')
+		}else
+			myDataProcessor.setUpdateMode('off')
+		document.getElementById('updatebutton').style.display=state?'none':'inline';
+		document.getElementById('updatemodes').style.display=state?'':'none'
+	}
+	var toRef;
+	
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code">  </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../js/dhtmlXDataProcessor.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">gridbox</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">width</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">100%</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">height</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">250px</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">background-color:white;overflow:hidden</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXGridObject</span><span class="hl-brackets">(</span><span class="hl-quotes">'</span><span class="hl-string">gridbox</span><span class="hl-quotes">'</span><span class="hl-brackets">)</span><span class="hl-code">;
+    ...
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">init</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+ 
+</span><span class="hl-comment">//</span><span class="hl-comment">============================================================================================</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">To use our automated methods you should always point your grid to same file - member of dhtmlxGridDataProcessor library (just check the path)</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">loadXML</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">php/get.php</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    
+    </span><span class="hl-comment">//</span><span class="hl-comment">init dataprocessor and assign verification function</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">specify server update processor - member of dhtmlxGridDataProcessor library (just check the path) or your own</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">myDataProcessor</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dataProcessor</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">php/update.php</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment">use column IDs instead of column indexes naming request parameters</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">myDataProcessor</span><span class="hl-code">.</span><span class="hl-identifier">enableDataNames</span><span class="hl-brackets">(</span><span class="hl-reserved">true</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment">verify if the value of 2nd column (zero-based numbering is 1) is not empty</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">myDataProcessor</span><span class="hl-code">.</span><span class="hl-identifier">setVerificator</span><span class="hl-brackets">(</span><span class="hl-number">1</span><span class="hl-brackets">)</span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">verify value of 4th column (zero-based numbering is 3) against checkIfNotZero verification function (see it below)</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">myDataProcessor</span><span class="hl-code">.</span><span class="hl-identifier">setVerificator</span><span class="hl-brackets">(</span><span class="hl-number">3</span><span class="hl-code">,</span><span class="hl-identifier">checkIfNotZero</span><span class="hl-brackets">)</span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">you can also specify update mode. Availabel modes are: update automaticaly (cell based, row based) and manual update</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">cell (&quot;cell&quot;) based mode means that grid will attempt to update data on server after each editing of cell (on editor closed). </span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">row (&quot;row&quot;) based mode means that grid will attempt to update data on server when row selection changed or Enter key pressed</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">manual (&quot;off&quot;) means that you need to run myDataProcessor.sendData() to begin update process (automatic update off).</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">myDataProcessor</span><span class="hl-code">.</span><span class="hl-identifier">setUpdateMode</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">off</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;</span><span class="hl-comment">//</span><span class="hl-comment">available values: cell (default), row, off</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">set error handler (handler for action with type &quot;error&quot;)</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">myDataProcessor</span><span class="hl-code">.</span><span class="hl-identifier">defineAction</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">error</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-identifier">myErrorHandler</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment">specify transaction method - POST or GET (default is GET)</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">myDataProcessor</span><span class="hl-code">.</span><span class="hl-identifier">setTransactionMode</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">GET</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment">initialize data processor for the grid object (in our case - mygrid)</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">myDataProcessor</span><span class="hl-code">.</span><span class="hl-identifier">init</span><span class="hl-brackets">(</span><span class="hl-identifier">mygrid</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-comment">//</span><span class="hl-comment">============================================================================================</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">Example of error handler. It gets &lt;action&gt; tag object as incomming argument.</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">function</span><span class="hl-code"> </span><span class="hl-identifier">myErrorHandler</span><span class="hl-brackets">(</span><span class="hl-identifier">obj</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-identifier">alert</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">Error occured.</span><span class="hl-special">\n</span><span class="hl-quotes">&quot;</span><span class="hl-code">+</span><span class="hl-identifier">obj</span><span class="hl-code">.</span><span class="hl-identifier">firstChild</span><span class="hl-code">.</span><span class="hl-identifier">nodeValue</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">myDataProcessor</span><span class="hl-code">.</span><span class="hl-identifier">stopOnError</span><span class="hl-code"> = </span><span class="hl-reserved">true</span><span class="hl-code">;
+        </span><span class="hl-reserved">return</span><span class="hl-code"> </span><span class="hl-reserved">false</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span><span class="hl-code">
+    
+    </span><span class="hl-comment">//</span><span class="hl-comment">Example of verification function. It verifies that value is not 0 (zero).</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">If verification failed it should return false otherwise true.</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">Verification fucntion specified in setVerificator method will always get two argumentrs: value to verify and column name (use it for message)</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">function</span><span class="hl-code"> </span><span class="hl-identifier">checkIfNotZero</span><span class="hl-brackets">(</span><span class="hl-identifier">value</span><span class="hl-code">,</span><span class="hl-identifier">colName</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-reserved">if</span><span class="hl-brackets">(</span><span class="hl-identifier">value</span><span class="hl-code">.</span><span class="hl-identifier">toString</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">.</span><span class="hl-identifier">_dhx_trim</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">==</span><span class="hl-quotes">&quot;</span><span class="hl-string">0</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+            </span><span class="hl-identifier">showMessage</span><span class="hl-brackets">(</span><span class="hl-identifier">colName</span><span class="hl-code">+ </span><span class="hl-quotes">&quot;</span><span class="hl-string"> should not be 0</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">
+            </span><span class="hl-reserved">return</span><span class="hl-code"> </span><span class="hl-reserved">false</span><span class="hl-code">
+        </span><span class="hl-brackets">}</span><span class="hl-reserved">else</span><span class="hl-code">
+            </span><span class="hl-reserved">return</span><span class="hl-code"> </span><span class="hl-reserved">true</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+		
+
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>
+
+

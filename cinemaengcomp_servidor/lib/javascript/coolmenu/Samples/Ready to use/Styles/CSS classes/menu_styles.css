@@ -1,0 +1,44 @@
+div {
+	font-family: Tahoma, Helvetica;
+}
+
+.clsCMOn, .clsCMOver {
+	font-size: 12px;
+        padding: 3px 4px;
+	color: black;
+}
+
+.clsCMOnRed, .clsCMOverRed {
+	font-size: 12px;
+        padding: 3px 4px;
+	color: red;
+}
+
+.clsCMOnGreen, .clsCMOverGreen {
+	font-size: 12px;
+        padding: 3px 4px;
+	color: green;
+}
+
+.clsCMOnBlue, .clsCMOverBlue {
+	font-size: 12px;
+        padding: 3px 4px;
+	color: blue;
+}
+
+.clsCMOnCentered, .clsCMOverCentered {
+	font-size: 12px;
+        padding: 3px 4px;
+	color: black;
+	text-align: center;
+}
+
+.clsCMOnImaged, .clsCMOverImaged {
+	font-size: 12px;
+        padding: 3px 4px;
+	color: black;
+}
+
+.clsCMOnImaged {
+	background: url(images/tile.gif);
+}

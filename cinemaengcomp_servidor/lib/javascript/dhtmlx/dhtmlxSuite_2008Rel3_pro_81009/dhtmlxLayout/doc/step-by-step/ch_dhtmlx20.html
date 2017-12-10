@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>dhtmlxGrid. Step-by-step Guide. Basics</title>
+	<link rel="STYLESHEET" type="text/css" href="../common/styles.css">
+	
+</head>
+
+<body>
+
+<h1>
+  dhtmlxLayout. Step-by-step Guide. From Layout to Interface</h1>
+<div id="jfvx"><span id="x2lc" style="text-decoration: underline;">
+  by Ivan Petrenko</span>
+</div>
+
+
+<div id="a7.p">
+<h2 id="d.sj">Introduction</h2>
+The purpose of this tutorial is to show in step-by-step manner the easy way of building complex interface for AJAX based application with the help of DHTMLX library.&nbsp; This tutorial contains main stream - which describes the process of building Windows like file explorer and some includes ((marked with orange border) which describes more complex functionality or provides more details about some things which don't relate to File Explorer development.<br id="qe8j">
+<br id="qe8j0">
+This tutorial is actual for dhtmlxSuite 2008 Rel.3 (initial release of dhtmlx 2.0). Further versions of  dhtmlx components can contain some extra functionality which is not described here. Or some functionality can be used in some more convenient way.<br id="b0tk">
+<br id="fe7p">
+Files related to this tutorial can be downloaded <a title="here" href="./dhtmlx20_tutorial.zip" id="adxy">here</a>.<br id="b0tk0">
+<h3 id="v_sd">Step 1. Create HTML file.</h3>
+Any front end of AJAX based application is HTML page. So, let's create a simple HTML page:<br id="wvj7">
+<br id="wvj70">
+<br id="c9uc0">
+<blockquote id="tv_t">&lt;html&gt;<br id="tv_t1">
+&lt;head&gt;<br id="tv_t2">
+&nbsp;&nbsp;&nbsp; &lt;title&gt;AJAX Application&lt;/title&gt;<br id="tv_t3">
+&lt;/head&gt;<br id="tv_t4">
+<br id="tv_t5">
+&lt;body&gt;<br id="tv_t6">
+<br id="tv_t7">
+<br id="tv_t8">
+<br id="tv_t9">
+&lt;/body&gt;<br id="tv_t10">
+&lt;/html&gt;<br id="tv_t11">
+</blockquote>
+<br id="tv_t12">
+For further steps we'll use DHTMLX files concatenated with libCompiler, which is delivered within dhtmlxSuite and provides the possibility to unite all necessary components, functionality and appearance in single script file and single folder of necessary images.<br id="btjz">
+<br id="btjz0">
+<h3 id="hba0">Step 2. Insert DHTMLX library file</h3>
+If you do not have PHP on the server where you inflated dhtmlxSuite archive to, then you can just choose from the presets which already exists in the package (see directory "presets" in the root of the package). To get all available possibilities, just get preset "full".<br id="uune">
+If you have PHP and you do want to create your own set of components and functionality, then brows to libCompiler/index.html. There you'll see tree of available components with nested nodes representing available functionality and possible variants of skinning on the right side. You have two options from now:<br id="md97">
+<ol id="d0cr">
+<li id="d0cr0">choose preset from the dropdown list above the tree (after you make a selection it will check checkboxes near chosen components/functionality). You'll be able to extend selection or uncheck unnecessary points before generating resulting file. Also choose what skin you'd like to use for the application (on right side of libCompiler interface).<br id="q03q">
+</li>
+<li id="d0cr1">or just start from bland print and check just necessary points yourself</li>
+</ol>
+<br id="bgre">
+I would choose the first option. Moreover, on stage of development I would use "full" preset keeping the possibility to decrease the file size for the final stage of development. Well, either way you go, you'll get two files (js and css) and a folder with images at the end. Files are: dhtmlx.js and dhtmlx.css, folder name is imgs. Put all where you need them (css and imgs should be put togather as you got them). I put in the codebase directory in the root folder of my future app. And added js and css files to the html I have:<br id="e_6:">
+<br id="e_6:0">
+<br id="bgre0">
+<blockquote id="alpi">&lt;html&gt;<br id="e_6:4">
+&lt;head&gt;<br id="e_6:5">
+&nbsp;&nbsp;&nbsp; &lt;title&gt;AJAX Application&lt;/title&gt;<br id="e_6:6">
+&nbsp;&nbsp;&nbsp; <span id="alpi0" style="background-color: rgb(255, 255, 0);">&lt;script src="codebase/dtmlx.js"&gt;&lt;/script&gt;</span><br id="pg6w">
+&nbsp;&nbsp;&nbsp; <span id="duw1" style="background-color: rgb(255, 255, 0);">&lt;link rel="STYLESHEET" type="text/css" href="codebase/dhtmlx.css"&gt;</span><br id="e_6:7">
+&lt;/head&gt;<br id="e_6:8">
+<br id="e_6:9">
+&lt;body&gt;<br id="e_6:10">
+<br id="e_6:11">
+<br id="e_6:12">
+<br id="e_6:13">
+&lt;/body&gt;<br id="e_6:14">
+&lt;/html&gt;<br id="d.sj0">
+</blockquote>
+<h3 id="a:8d">Step 3. Prepare HTML Page</h3>
+To prepare HTML page for full-screen dhtmlxLayout, you need to set some
+parameters of body tag. This can be actual just for initial release of
+DHTMLX 2.0 and can be not necessary for newer releases:<br id="ygzk">
+<br id="ygzk0">
+<blockquote id="fps.">&lt;body style="width:100%; height:100%; margin:0px; overflow:hidden;"&gt;<br id="fps.0">
+</blockquote>
+<h3 id="nfvv">Step 4. Choose Layout for application</h3>
+There are some predefined layout structures you can choose from. All of them are shown in dhtmlxLayout documentation. Their names start with number (reflects number of panels) followed by letter. For File Explorer we need quite simple one - "2U". Left panel for navigation tree and right one for directory content. To start coding I would add onload event handler to body and place all necessary code in event handler. Also, we need to define global variables for all necessary objects (left side navigation tree, folders and grid for directory view, menu and toolbar&nbsp; for... for menu and toolbar ;). And layout itself of course.).<br id="clp9">
+<br id="ic.-">
+First we initialize full-screen layout.<br id="clp90">
+<br id="o6.o">
+<br id="o6.o0">
+<blockquote id="v7xg">&lt;script&gt;<br id="o6.o1">
+&nbsp;&nbsp;&nbsp; var myLayout, myTree, myGrid, myFolders, myMenu, myToolbar<br id="p2xr">
+&nbsp;&nbsp;&nbsp; var gl_view_type = "icons"; //icons,dlist,tiles ...<br id="fuoa">
+&nbsp;&nbsp;&nbsp; var gl_view_bg = ""; //which component is used for directory content view - grid or folders, empty from start<br id="fuoa0">
+<br id="o6.o2">
+&nbsp;&nbsp;&nbsp; function doOnLoad(){<br id="o6.o3">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myLayout = new dhtmlXLayoutObject(document.body, "2U", "dhx_blue");<br id="o6.o4">
+&nbsp;&nbsp;&nbsp;&nbsp;}<br id="o6.o5">
+&lt;/script&gt;<br id="v7xg0">
+<br id="zo7i">
+&lt;body <b id="v7xg1">onload="doOnLoad()"</b> style="width:100%; height:100%; margin:0px; overflow:hidden;"&gt;<br id="zo7i0">
+</blockquote>
+<span id="rpmk" style="background-color: rgb(182, 215, 168);"></span>
+<blockquote id="i0v9" class="inc">
+<h3 style="background-color: rgb(255, 255, 255);" id="i99x1"><span id="i99x2">WAYS OF INITIALIZATION</span></h3>
+<h3 id="i99x3"><span id="i99x4" style="background-color: rgb(182, 215, 168);"></span></h3>
+<span id="i99x5" style="background-color: rgb(182, 215, 168);"><span id="japw0" style="background-color: rgb(255, 255, 255);">Besides full screen initialization  there are some others: window based (initialize layout inside dhtmlxWindow), object based (initialize layout inside some object on page, for example DIV) and initialization inside another layout panel (Nested layouts topic is described below)</span></span><br id="japw1">
+<span id="i0v90" style="background-color: rgb(182, 215, 168);">
+</span><span id="i0v91" style="background-color: rgb(182, 215, 168);"></span>
+<h3 style="background-color: rgb(255, 255, 255);" id="qm1q"><span id="qm1q0">UNIFIED SKINS</span></h3>
+<span id="rpmk0" style="background-color: rgb(182, 215, 168);"><span id="x051" style="background-color: rgb(255, 255, 255);">Some words about skins. dhtmlx components has various predefined skins. Since version 2.0, when we provide the possibility to unite different components under the application interface, we also added some skins which can be applied to entire interface. Under dhtmlxLayout all dhtmlx components get unified skin set for the layout automatically (but we keep the possibility to set skin to each component also). These unified skins names start with "dhx_": dhx_black, dhx_light, dhx_lightblue. So, using one of them as 3rd argument in dhtmlxLayout constructor you apply this skin on all dhtmlx components also.</span></span><br id="x0510">
+<span id="i0v92" style="background-color: rgb(182, 215, 168);">
+</span><br id="lr63">
+<h3 id="lr630"><span id="rpmk1">NESTED LAYOUTS</span></h3>
+<span id="rpmk2" >If non of predefined layouts suites you absolutely, you can combine
+structures inserting one into another. For example:</span><br id="kv85">
+<blockquote id="o:yt">&nbsp;&nbsp;&nbsp; myLayoutTop = new dhtmlXLayoutObject(document.body, "2U");<br id="kv850">
+&nbsp;&nbsp;&nbsp; myLayoutIns =&nbsp; new dhtmlXLayoutObject(myLayoutTop.cells("a"), "2U"); <br id="uj7t">
+</blockquote>
+<br style="background-color: rgb(255, 255, 255);" id="uj7t0">
+<span id="rpmk5" style="background-color: rgb(255, 255, 255);">This code creates 2U layout in the left panel of myLayoutTop layout. Thus you'll have 3 panels for further wok now: myLayoutTop.cells("b"), myLayoutIns.cells("a") and myLayoutIns.cells("b").</span><br style="background-color: rgb(182, 215, 168);" id="o787">
+</blockquote>
+
+
+
+
+
+
+
+
+
+<br id="an.k">
+<br id="an.k0">
+<h3 id="an.k1">Step 5. Adjust panel sizes</h3>
+<blockquote id="w3p_">&nbsp;&nbsp;&nbsp; function doOnLoad(){<br id="rxa-">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myLayout = new dhtmlXLayoutObject(document.body, "2U", "dhx_black");<br id="rxa-0">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b id="w3p_0">myLayout.cells("a").setWidth(250);</b><br id="rxa-1">
+&nbsp;&nbsp;&nbsp;&nbsp;}<br id="k3:.">
+</blockquote>
+<br id="k3:.0">
+<blockquote id="gs.-" class="inc">
+<h3 style="background-color: rgb(255, 255, 255);" id="jjsu"><span id="on8d0">USING PANELS IN SCRIPT</span>
+</h3>
+There are two ways to apply to panel:<br id="jder">
+<ol id="unxa">
+<li id="unxa0">through the name (panels in dhtmlxLayout are named alphabetically: a,b,c,d etc.)<br id="jwm8">
+<blockquote id="jwm80">dhxLayout.cells("a")</blockquote>
+</li>
+<li id="unxa3">through index (zero based)<br id="jwm81">
+<blockquote id="d6ix">dhxLayout.items[0]<br id="jwm82">
+</blockquote>
+</li>
+</ol>
+<br id="k3:.4">
+<h3 style="background-color: rgb(255, 255, 255);" id="on8d1"><span id="on8d2">PANEL DIMENTIONS</span></h3>
+Besides width you can define panel height<br id="k3:.6">
+<blockquote id="hyr7">myLayout.cells("a").setHeight(250);<br id="k3:.7">
+</blockquote>
+</blockquote>
+
+
+
+<h3 id="wzlr">Step 6. Define Panel Headers</h3>
+I'll leave header for the panel with folders tree and hide it for the panel with folder's content. Also, I'll change default header label ("a" for the panel in question) to "Folders".&nbsp; <br id="ysmd">
+<blockquote id="h97r">function doOnLoad(){<br id="j.di">
+&nbsp;&nbsp;&nbsp;&nbsp;myLayout = new dhtmlXLayoutObject(document.body, "2U", "dhx_black");<br id="j.di0">
+&nbsp;&nbsp;&nbsp;&nbsp;<b id="j.di1">myLayout.cells("a").setText("Folders");</b><br id="atjk">
+&nbsp;&nbsp;&nbsp; <b id="atjk0">myLayout.cells("b").hideHeader();</b><br id="j.di2">
+}<br id="w3p_1">
+</blockquote>
+Current version of dhtmlxLayout (2.0 build 80829) provides the possibility to collapse/expand panel with mouse click through header only. Thus if you hide header for the panel user will not be able to collapse this panel. <br id="w3p_2">
+<h3 id="wzlr0">Step 7. Add top Menu</h3>
+I'll create top menu with items more or less similar to those you can see in your Windows Explorer. You'll be able to find ready to use <b id="jo.o2">fileExplorerMenu.xml </b>file in the package of this tutorial files (see link in the introduction). Most items are dsabled there, cause they are not the goal of this tutorial. XML structure for dhtmlxMenu 2.0 can be found in <a title="dhtmlxMenu 2.0 documentation" href="http://www.dhtmlx.com/docs/products/dhtmlxMenu/doc/guide.html" id="m:if">dhtmlxMenu 2.0 documentation</a> or in the <a title="doc article" href="http://www.dhtmlx.com/docs/products/docsExplorer/doc/dhtmlxxml/index.html#dhtmlx_xml" id="ofcw">doc article</a> which describes XML structures of all dhtmlx components. <br id="qwai">
+<br id="qwai0">
+<blockquote id="jo.o">function doOnLoad(){<br id="hllu">
+&nbsp;&nbsp;&nbsp; ...<br id="g0t7">
+&nbsp;&nbsp;&nbsp; <b id="jo.o0">myMenu = myLayout.attachMenu();</b><br id="hllu0">
+<b id="jo.o1">&nbsp;&nbsp;&nbsp;&nbsp; myMenu.setImagePath("codebase/imgs/dhx_blue");</b><br id="exc9">
+<b id="h.9y">&nbsp;&nbsp;&nbsp;&nbsp; myMenu.loadXML("xml/fileExplorerMenu.xml");</b><br id="hllu1">
+}<br id="z7os0">
+</blockquote>
+<h3 id="or83">Step 8. Add Toolbar</h3>
+Same as with the menu, toolbar items will be more or less similar to Windows File Explorer toolbar. You'll be able to find ready to use <b id="q0505">fileExplorerToolbar</b><b id="nufy">.xml </b>file
+in the package of this tutorial files (see link in the introduction).
+XML structure for dhtmlxToolbar 2.0 can be found in <a title="dhtmlxToolbar 2.0 documentation" href="http://www.dhtmlx.com/docs/products/dhtmlxToolbar/doc/guide.html" id="nufy0">dhtmlxToolbar 2.0 documentation</a> or in the <a title="doc article" href="http://www.dhtmlx.com/docs/products/docsExplorer/doc/dhtmlxxml/index.html#dhtmlx_xml" id="nufy1">doc article</a> which describes XML structures of all dhtmlx components. <br id="kj1p">
+<br id="kj1p0">
+<blockquote id="qtwd">function doOnLoad(){<br id="q050">
+&nbsp;&nbsp;&nbsp; ...<br id="q0500">
+&nbsp;&nbsp;&nbsp; <b id="q0501">myToolbar = myLayout.attachToolbar();</b><br id="i6l8">
+&nbsp;&nbsp;&nbsp; <b id="a6kf">myToolbar</b><b id="a6kf0">.setIconPath("images/toolbar/");</b><br id="q0502">
+<b id="q0503">&nbsp;&nbsp;&nbsp;&nbsp; </b><b id="eu4v">myToolbar</b><b id="nufy2">.loadXML("xml/fileExplorerToolbar.xml");</b><br id="q0506">
+}<br id="q0507">
+</blockquote>
+<br id="m67e">
+<blockquote id="d6gt" class="inc">
+<h3 style="background-color: rgb(255, 255, 255);" id="gs.-0"><span id="i:j_1">Setting Icons or Images paths for components</span>
+</h3>
+The difference in using <b id="xew8">setIconPath </b>or <b id="xew80">setImagePath</b> methods in dhtmlx components is the following: <b id="mj6b">setIconPath </b>defines the folder with graphical materials which are used in component but which are not parts of component - for example icons for buttons on toolbar, images in grid which represent some data. In most cases developer specifies the file names for these images (for example in XML) and these images are not delivered within components package (but can be in some cases).<br id="c:3.">
+<br id="c:3.0">
+On the other hand <b id="mj6b0">setImagePath </b>defines the path to folder with images which are parts of component. For example parts of component skin or&nbsp; integral part of component functionality (like radiobutton or checkbox icons in grid, tree, menu or sorting arrow in grid, plus/minus signs in treegrid and tree). In all cases such images are delivered with components and located in codebase/imgs folder (or imgs folder inside preset directory for dhtmlx presets). So, setImagePath sets path to this imgs folder related to the page you use components on.<br id="jja40">
+<br id="jja41">
+</blockquote>
+
+<br id="q0508">
+<h3 id="q0509">Step 9. Add Tree and Populate with Data</h3>
+Most dhtmlx components can be attached to the dhtmlxLayout panel with single command. You did this with Menu and Toolbar. Same with the tree. After attaching the component you can work with it - configure, populate with data. In case of tree, we need to pass one value inside <b id="p:en1">attachTree </b>method (same we do for dhtmlxTree constructor when use it) - id of tree super-root element (id attribute of "tree" node in XML with tree structure). In most case "0" is ok. <br id="h2kf">
+<br id="h2kf0">
+<blockquote id="y.g0">function doOnLoad(){<br id="p:en">
+
+&nbsp;&nbsp;&nbsp; ...<br id="p:en0">
+
+&nbsp;&nbsp;&nbsp; <b id="ou90">myTree = myLayout.cells("a").attachTree("0");</b><br id="lvef">
+&nbsp;&nbsp;&nbsp; <b id="lvef0">myTree.setImagePath("codebase/imgs/");</b><br id="nora">
+&nbsp;&nbsp;&nbsp; <b id="ho9l0">myTree.setXMLAutoLoading("xml/directoryTree.php");</b><br id="p:en2">
+<b id="p:en3">&nbsp;&nbsp;&nbsp;&nbsp; </b><b id="lvef2">myTree</b><b id="p:en5">.loadXML("xml/directoryTree.php");</b><br id="p:en6">
+
+}<br id="jfp4">
+</blockquote>
+<b id="b:mt">directoryTree.php </b>outputs directory structure in XML format required by dhtmlxTree. In our case it outputs one level at a time based on incoming directory (as directory structure can be quite big we use <a title="dynamical loading" href="http://www.dhtmlx.com/docs/products/dhtmlxTree/doc/dyn_loading.html#dyntree" id="e0t8">dynamical loading</a>, loading just one level on request). If no directory came it ouputs starting directory (starting directory is specified in config.php included in tutorial files package. Find download link in Itroduction)<br id="b:mt0">
+<h3 id="q05010">Step 10. Add Grid and load directory content</h3>
+Again, we just add grid to dhtmlxLayout panel (in this case "b") and then just work with grid&nbsp; - configuring and loading data. Tutorial of dhtmlxgrid basics is available <a title="here" href="http://www.dhtmlx.com/docs/products/dhtmlxGrid/doc/step-by-step/ch_basics.html#grid_sbs_basics" id="knz8">here</a>. <br id="nvv3">
+<br id="nvv30">
+<blockquote id="tu.6">function showDList(dir){<br id="rbqa">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;//create grid in layout<br id="y.g01">
+
+&nbsp;&nbsp;&nbsp; myGrid = myLayout.cells("b").attachGrid();<br id="rbqa0">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;//configure grid with script<br id="y.g04">
+&nbsp;&nbsp;&nbsp; myGrid.setImagePath("codebase/imgs/");<br id="z3cw">
+&nbsp;&nbsp;&nbsp; myGrid.setHeader("&amp;nbsp;,Name,Size,Type,Modified"); <br id="da:x">
+&nbsp;&nbsp;&nbsp;&nbsp;myGrid.setColTypes("img,ro,ro,ro"); <br id="da:x0">
+&nbsp;&nbsp;&nbsp;&nbsp;myGrid.setInitWidths("20,250,50,100,*");<br id="da:x1">
+&nbsp;&nbsp;&nbsp;&nbsp;myGrid.setColAlign("center,left,right,left");<br id="rbqa1">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;//load directory contnet description in XML format<br id="wfxo">
+&nbsp;&nbsp;&nbsp; myGrid.load("xml/directoryContent.php?dir="+dir)<br id="y.g013">
+
+}<br id="y.g014">
+</blockquote>
+<b id="p77y">directoryContent.php</b> outputs directory content (based on incoming directory) in dhtmlxGrid XML format with all necessary details for each item (file or directory): icon file name, item name, item type (folder, text file, word document etc.), size, last modification date.<br id="brzm">
+<br id="y.g015">
+</div>
+<div id="a7.p0">
+<h3 id="q5yl">Step 11. Add Folders and load directory content</h3>
+dhtmlxFolders is used to display data items one by one based on incoming data and some visualization template. In our case, we'll use same datasource as we do for grid - <b id="gufu">directoryContent.php </b>- and visualization templates (rendering functions) to display data items either as icons or as tiles (names are similar to Windows Explorer, so you can take a look there to see what should be the result).<br id="i9ra">
+</div>
+<div id="a7.p1"><br id="i9ra0">
+Adding dhtmlxFolders to layout is as simple as in previous steps: just one command. <br id="ml93">
+<br id="ml930">
+<blockquote id="t0jf">function showOtherViews(dir){<br id="na820">
+
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //create Folders in layout<br id="zry:">
+&nbsp;&nbsp;&nbsp;&nbsp;myFolders = myLayout.cells("b").attachFolders();<br id="zry:0">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //confugure settings<br id="na822">
+&nbsp;&nbsp;&nbsp; myFolders.enableSelection(true);<br id="jqa50">
+&nbsp;&nbsp;&nbsp; myFolders.setItemTagName("row");<br id="glsr">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //change type of items depending on required<br id="jqa5">
+&nbsp;&nbsp;&nbsp; if(gl_view_type=="icons"){<br id="j:7t0">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myFolders.setItemType("js_generic",rendFuncIcons);<br id="tqtw">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; myFolders.setCSSBaseName("ficon");<br id="jqa51">
+&nbsp;&nbsp;&nbsp; }else if(gl_view_type=="tiles"){<br id="l0_n">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; myFolders.setItemType("js_generic",rendFuncTiles);<br id="at05">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; myFolders.setCSSBaseName("ftiles");<br id="l0_n1">
+&nbsp;&nbsp;&nbsp;&nbsp;}<br id="emp4">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myFolders.loadXML("xml/directoryContent.php?dir="+dir);<br id="na827">
+
+
+}<br id="ni.2">
+</blockquote>
+<br id="yi8e">
+</div>
+<h3 id="uni7"><b id="ucg30">Step 12. Activate relations between left and right parts</b></h3>
+Attaching dhtmlxFolders to panel "b" removes grid from there (as we
+attach grid to panel "b" too) and visa versa. So, depending on
+currently selected view format (user can make a choice in toolbar) we
+should call either <b id="hk1m">showDList </b>or <b id="hk1m0">showOtherViews </b>function to switch between view formats. And we should do this in two cases: <br id="n1bu">
+<br id="uni70">
+1. when user clicks on some item in folders tree (load different content for same view format)<br id="uni71">
+2. when user changes view format through toolbar or menu (use different view format for same content)<br id="p8eg">
+<br id="p8eg0">
+In both cases we should use event handlers - of tree (onSelect) and of toolbar (onClick) and menu (onRadioClick as we used radiobuttons in menu for this purposes). Here is the code where I define event handlers and call same function in which I decide if to call <b id="i4b7">showDList </b>or <b id="i4b70">showOtherViews.</b> As far as menu and toolbar items use same IDs for view related items, I'll use same event handler for both.<br id="xjzy">
+<br id="xjzy0">
+<blockquote id="xjuf">function showDirContent(dir){<br id="k8r1">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(gl_view_type=="dlist"){<br id="k8r10">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; showDList(dir);<br id="k8r11">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }else{<br id="k8r12">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; showOtherViews(dir);<br id="k8r13">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br id="k8r14">
+}<br id="k8r16">
+<br id="dpdg">
+//this function we'll use for toolbar and menu event handlers<br id="v6bk">
+function defineTypeAndLoad(id){<br id="qcl-2">
+&nbsp;&nbsp;&nbsp; //set global variable value depending on user choice<br id="p5_e">
+&nbsp;&nbsp;&nbsp;&nbsp;if(id=="view_dlist")<br id="m1os">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gl_view_type="dlist";<br id="m1os0">
+&nbsp;&nbsp;&nbsp; else if(id=="view_icons")<br id="m1os1">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gl_view_type="icons";<br id="m1os2">
+&nbsp;&nbsp;&nbsp; else if(id=="view_tiles")<br id="p5_e0">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gl_view_type="tiles";<br id="g5qr">
+&nbsp;&nbsp;&nbsp; //call function <br id="moco">
+&nbsp;&nbsp;&nbsp; if(id.toString().indexOf("view")==0)<br id="khdb">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showDirContent(myTree.getSelectedItemId());<br id="v6bk0">
+}<br id="a-r9">
+<br id="v6bk2">
+//tree event handler onSelect passes selected item ID as argument to the function. This is what we need in showDirContent, as I used directories as items IDs&nbsp; <br id="k8r17">
+myTree.attachEvent("onSelect",showDirContent)<br id="k8r18">
+<br id="v6bk3">
+<br id="k8r19">
+myToolbar.attachEvent("onClick",defineTypeAndLoad)<b id="khdb0">;</b><br id="a-r90">
+myMenu<b id="iw_3">.</b>attachEvent("onRadioClick",defineTypeAndLoad)<b id="a-r91">;</b><br id="k8r110">
+</blockquote>
+<br id="yf5w">
+<h3 id="yf5w0">Conclusion.</h3>
+This tutorial demonstrated how easy you can create the interface of your web application based on dhtmlxLayout.&nbsp; To investigate the application code in details, please download it <a title="here" href="./dhtmlx20_tutorial.zip" id="cbdt">here</a>. You may continue coding it, extending basic functionality which was described in this tutorial and implemented in the resulting application. Final application logic was not the goal of this article, but interface built here is a good start for creating full functional File Browser.<br id="k8r111">
+<br id="xjzy1">
+<div id="a7.p2">
+<div id="a7.p3">
+<br id="p9dh1">
+<br id="ma8s">
+<br id="i3l-">
+<br id="xkeg">
+<br id="kj1p1">
+<br id="cz.-">
+<br id="y1.b">
+</div>
+</div>
+<br id="yd:l">
+<br id="t6qd">
+
+</body>
+</html>

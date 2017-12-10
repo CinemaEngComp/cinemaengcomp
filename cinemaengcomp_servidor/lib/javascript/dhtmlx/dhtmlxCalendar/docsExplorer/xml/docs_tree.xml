@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+		<tree id="0">
+			<item id="dhtmlxcalendar" text="dhtmlxCalendar" im0="dhtmlxcalendar_icon.gif" im1="dhtmlxcalendar_icon.gif" im2="dhtmlxcalendar_icon.gif">
+				<userdata name="url">
+					../dhtmlxCalendar/doc
+				</userdata>
+				<userdata name="thisurl">
+					../dhtmlxCalendar/doc/guide.html
+				</userdata>
+				<item text="Main Features" id="calendar_mf">
+					<userdata name="url">guide.html</userdata>
+				</item>
+				<item text="Supported Browsers" id="calendar_browsers">
+					<userdata name="url">guide.html</userdata>
+				</item>
+				<item text="Guide" id="calendar_guide">
+					<userdata name="url">guide.html</userdata>
+					<item text="Initialize object on page" id="calendar_init"></item>
+					<item text="Double Calendar" id="calendar_dbl"></item>
+					<item text="Formating Date" id="calendar_dateformat"></item>
+					<item text="Multilingual Calendar" id="calendar_lang"></item>
+					<item text="Event(s) in Calendar" id="calendar_event"></item>
+				</item>
+				<item text="API Functions" id="calendar_api">
+					<userdata name="url">alpha.html</userdata>
+	        	 	<item text="Object constructor" id="calendar_api_obj">
+	    	       		<userdata name="url">objects.html</userdata>
+		         	</item>
+	        	 	<item text="Alphabeticaly sorted" id="calendar_api_a">
+						<userdata name="url">alpha.html</userdata>
+					</item>
+					<item text="Grouped by Type" id="calendar_api_t">
+						<userdata name="url">tgroup.html</userdata>
+					</item>
+					<item text="Grouped by Object" id="calendar_api_o">
+						<userdata name="url">ogroup.html</userdata>
+					</item>
+					<item text="Events" id="calendar_api_events">
+						<userdata name="url">events.html</userdata>
+					</item>
+				</item>
+			</item>
+		</tree>

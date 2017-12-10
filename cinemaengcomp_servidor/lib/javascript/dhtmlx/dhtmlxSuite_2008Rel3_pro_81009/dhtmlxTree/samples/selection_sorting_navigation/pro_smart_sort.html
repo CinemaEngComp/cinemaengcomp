@@ -1,0 +1,105 @@
+<!--conf
+<sample in_favorites="true">
+              <product version="1.5" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               <sampledescription><![CDATA[Sample demonstrates the possibility to sort items in tree.]]></sampledescription></sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title> Smart XML parsing and Sorting</title>
+</head>
+<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxtree.css">
+	
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxtree.js"></script>
+	<script  src="../../codebase/ext/dhtmlxtree_sb.js"></script>
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxtree_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxTree</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b> Smart XML parsing and Sorting</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxTree/index.shtml">dhtmlxTree main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	<p>Try to sort nodes in first tree.<br/>
+    Try to drag nodes in second tree, dropped item will set its order based on ASC sorting.
+    <br>Both tree loaded in SmartXMLParsing mode, which allow to operate with huge well formed trees.</p>    
+	<table>
+		<tr>
+			<td>
+				<div id="treeboxbox_tree" style="width:250; height:218;background-color:#f5f5f5;border :1px solid Silver;; overflow:auto;"></div><br>
+				<div id="treeboxbox_tree2" style="width:250; height:218;background-color:#f5f5f5;border :1px solid Silver;; overflow:auto;"></div>
+			</td>
+			<td rowspan="2" style="padding-left:25" valign="top">
+				<a href="#" onclick="tree.sortTree(tree.getSelectedItemId(),'ASC',1);">Reorder selected branch (ASC)</a><br>
+				<a href="#" onclick="tree.sortTree(tree.getSelectedItemId(),'DES',1);">Reorder selected branch (DES)</a><br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			</td>
+		</tr>
+	</table>
+
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">treeboxbox_tree</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">width:200;height:200</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+        </span><span class="hl-identifier">tree</span><span class="hl-code">=</span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXTreeObject</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">treeboxbox_tree</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">100%</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">100%</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-number">0</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">setImagePath</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">../imgs/</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">enableSmartXMLParsing</span><span class="hl-brackets">(</span><span class="hl-reserved">true</span><span class="hl-brackets">)</span><span class="hl-code">;     </span><span class="hl-comment">//</span><span class="hl-comment">enable smart parsing</span><span class="hl-comment"></span><span class="hl-code">
+        </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">loadXML</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">tree.xml</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+        ....
+        </span><span class="hl-comment">//</span><span class="hl-comment">sorting</span><span class="hl-comment"></span><span class="hl-code">
+        </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">sortTree</span><span class="hl-brackets">(</span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">getSelectedItemId</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">,</span><span class="hl-quotes">'</span><span class="hl-string">ASC</span><span class="hl-quotes">'</span><span class="hl-code">,</span><span class="hl-number">1</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">sortTree</span><span class="hl-brackets">(</span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">getSelectedItemId</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">,</span><span class="hl-quotes">'</span><span class="hl-string">DES</span><span class="hl-quotes">'</span><span class="hl-code">,</span><span class="hl-number">1</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+	<script>
+function treeDrop(id, target, target_before, tree_source, tree_dest) {
+	tree_dest.sortTree(target,'ASC',0);
+}
+
+			tree=new dhtmlXTreeObject("treeboxbox_tree","100%","100%",0);
+			tree.setImagePath("../../codebase/imgs/csh_bluebooks/");
+			tree.enableSmartXMLParsing(true);
+			tree.enableCheckBoxes(true);
+            tree.enableDragAndDrop(true);
+			tree.enableThreeStateCheckboxes(true);
+			tree.loadXML("tree3.xml")
+			
+			tree.setDropHandler(treeDrop);
+
+
+			tree2=new dhtmlXTreeObject("treeboxbox_tree2","100%","100%",0);
+			tree2.setImagePath("../../codebase/imgs/csh_bluebooks/");
+			tree2.enableSmartXMLParsing(true);
+			tree2.enableCheckBoxes(true);
+            tree2.enableDragAndDrop(true);
+			tree2.enableThreeStateCheckboxes(true);
+		    tree2.loadXML("tree3.xml")
+			
+			tree2.setDropHandler(treeDrop);
+
+
+
+
+	</script>
+
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

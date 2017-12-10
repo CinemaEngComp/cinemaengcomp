@@ -1,0 +1,435 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>DHTML dhtmlxColorPicker guide</title><link rel="STYLESHEET" type="text/css" href="common/styles.css">
+</head>
+   
+<body>
+<h1>dhtmlxColorPicker Guide and Code Samples</h1>
+<h2><a name='cp_mn4c'>
+  1. Introduction
+</a></h2>
+<h3><a name='cp_mejf'>
+  1.1 Scope of the Document
+</a></h3>
+This document describes <b id="s0c4">dhtmlxColorPicker </b>component,
+defines its features and global parameters. This documentation is
+created to give users full understanding of every feature of this
+component, and also to enable users to implement this component quickly
+and easily.<br id="xure">
+<h3><a name='cp_ph-x'>
+  1.2 Target Readers
+</a></h3>
+<p class="MsoNormal" id="h:xr">
+  Target readers are users (developers).
+</p>
+<h2><a name='cp_ol1w'>
+  2. What is dhtmlxColorPicker</a></h2>
+<b>dhtmlxColorPicker </b>component is a smart color picker that can be easily used either an inline control or a popup dialog box. Its intuitive interface, flexibility, and simplicity of usage - make this component a good aid for different projects and applications. The color picker gives users the possibility to specify colors in RGB, HSL, and hex formats. <font size="2"><a name="calendar_mf"><span style="font-weight: normal;">Complete JavaScript API is provided to</span></a></font><a name="calendar_mf"> <font style="font-weight: normal;" size="2">help users to save time on configuring.<br>
+</font></a><a name="calendar_mf"></a><br>
+With <b>dhtmlxColorPicker</b>, the users gain the following possibilities:
+<ul>
+<li>Colors in RGB, HSL, and hex formats;</li>
+<li>Link the color picker to objects on page;</li>
+<li>Set one of the predefined skins;</li>
+<li>Specify custom colors,</li>
+<li>Attach user-defined handlers to events.<span style="background-color: rgb(255, 255, 0);"></span><br>
+</li>
+</ul>
+<h3><a name='cp_0zv892c2'>2.1 Main Features</a></h3>
+<a name="calendar_mf">
+	</a><a name="cp_mf"></a><a name="cp_mf">
+	</a>
+<div class="block">
+			</div>
+<ul>
+<li>Multibrowser/Multiplatform support; </li>
+<li>Usual visual appearance;</li>
+<li>Flexible control with JavaScript API;</li>
+<li>Complete Colors Palette;</li>
+<li>RGB/HSL;</li>
+<li>Custom colors support.</li>
+</ul>
+<div class="block">
+			
+			
+			
+			
+			
+	</div>
+	
+	<a name="cp_browser"></a>
+<h3><a name='cp__0x3j'>2.2 Supported Browsers</a></h3>
+<div class="block">
+		</div>
+<ul>
+<li>IE 5.5 and above;</li>
+<li>Mac OS X Safari;</li>
+<li>Mozilla 1.4 and above;</li>
+<li>FireFox 0.9 and above;</li>
+<li>Google Chrome;<br>
+</li>
+<li id="yso20">
+      Opera 8.5+.</li>
+</ul>
+<div class="block">
+		
+		
+		
+		
+	</div>
+<h2><a name='cp_9y50zi53'>
+3. Initialization of dhtmlxColorPicker
+</a></h2>
+<b>dhtmlxColorPicker </b>can be initialized on page either based on DIV
+element (in this case, its position is defined by position of this DIV),
+or attached to some text input (in this case, the position of the Color Picker
+will be assigned to the position of the INPUT element taking its visibility on
+page into account). <br>
+So,the following ways of initialization are available for users of <b id="bmqe">dhtmlxColorPicker:<br>
+<br>
+</b>
+<ul>
+<li><b id="bmqe"><a title="DIV-based initialization" href="#DIV-Based_Initialization" id="xkp2">DIV-based initialization</a>;</b></li>
+<li><b id="bmqe"><a title="Input-based initialization" href="#Input-Based_Initialization" id="bteu">Input-based initialization</a>.</b></li>
+</ul>
+<br>
+The first things that need to be done for any type of <b id="bmqe">dhtmlxColorPicker</b>'s initialization are the following:<br id="pbf6">
+<br id="gnrw">
+<ul id="tour">
+<li id="p5-m">
+    Download the dhtmlxColorPicker package from the server and place it in a folder;
+  </li>
+<li id="m9:08">
+    Create an html file;<br id="tjec">
+  </li>
+<li id="m9:09">
+    Place the full paths to <b id="bmqe">dhtmlxColorPicker</b>'s CSS and JS files into the header of the created html file;</li>
+</ul>
+<blockquote><span id="hhnh" style="font-family: Verdana;"><font id="ssfs" size="2">&lt;head&gt;&nbsp; &nbsp;</font></span><br id="f2uy">
+  
+  &nbsp;&nbsp; &nbsp;<span id="rzoh" style="font-family: Verdana;"><font id="zowx" size="2">&lt;link rel="stylesheet" type="text/css" href="</font></span><span id="x_e0" style="font-family: Verdana;"><font id="ekf7" size="2">[full path to this file]</font></span><span id="m9:019" style="font-family: Verdana;"><font id="m9:020" size="2">/dhtmlxcolorpicker.css"&gt;</font></span>
+<p class="MsoNormal" id="jiuw">
+  </p>
+<p class="MsoNormal" id="h9lh"><span id="hhnh" style="font-family: Verdana;"><font id="ssfs" size="2">&nbsp;&nbsp;&nbsp; </font></span><span id="bztm" style="font-family: Verdana;"><font id="stat" size="2">&lt;script src="</font></span><span id="m9:021" style="font-family: Verdana;"><font id="m9:022" size="2">[full path to this file]</font></span><span id="pv3c" style="font-family: Verdana;"><font id="x9:2" size="2">/dhtmlxcolorpicker.js"&gt;&lt;/script&gt;</font>&nbsp;&nbsp; &nbsp;</span><br>
+</p>
+<span id="pv3c" style="font-family: Verdana;"><font id="x9:2" size="2">&lt;/script&gt;</font> </span><br>
+</blockquote>
+  
+  
+  
+    
+<h3><a name='cp_wwru'>3.1 Setting Image Path</a></h3>
+<p><a id="r893" name="Minimal_initialization"></a>There are two ways to set image path in <b>dhtmlxColorPicker</b>:<br>
+</p>
+<br>
+	
+<ul style="font-family: Verdana;">
+<li>Through <b>setImagePath()</b> <i>- </i>this method <font id="x:nm" size="2">should be used to </font><font id="om81" size="2">set
+the full path to the directory, where color picker image files are located:</font></li>
+</ul>
+<blockquote>&lt;script&gt;<br>
+&nbsp;&nbsp; &nbsp;myCP.setImagePath("<span id="m9:021" style="font-family: Verdana;"><font id="m9:022" size="2">[full path to this category]/</font></span>codeabse/imgs/");
+	// should be used <b>after </b>creation of color picker's object<br>
+&lt;/script&gt;<br>
+</blockquote>
+<ul>
+<li>As global JS variable<b> window.dhx_globalImagePath</b>:</li>
+</ul>
+<blockquote><span id="hhnh" style="font-family: Verdana;"><font id="ssfs" size="2">&lt;head&gt;<br>
+&nbsp;&nbsp;&nbsp; ...<br>
+&nbsp;&nbsp;&nbsp; </font></span><span id="bztm" style="font-family: Verdana;"><font id="stat" size="2">&lt;script src="</font></span><span id="m9:021" style="font-family: Verdana;"><font id="m9:022" size="2">[full path to this file]</font></span><span id="pv3c" style="font-family: Verdana;"><font id="x9:2" size="2">/dhtmlxcolorpicker.js"&gt;&lt;/script&gt;</font> </span><br>
+&nbsp;&nbsp; &nbsp;&lt;script&gt;window.dhx_globalImgPath="<span id="m9:021" style="font-family: Verdana;"><font id="m9:022" size="2">[full path to this category]</font></span>/codebase/imgs/";&lt;/script&gt; // sets image path<br>
+&lt;/head&gt;<br>
+</blockquote>
+<h3><a name='cp_wwru'>3.2 DIV-Based Initialization</a></h3>
+The user needs to create an <a id="abk9" name="object"></a>object where <b>dhtmlxColorPicker </b><span id="m9:051" style="background-color: rgb(255, 255, 255);">will</span><span id="nv3o" style="background-color: rgb(255, 255, 255);"> be placed later. In this example the object is a &lt;div&gt; element on page which is placed in the &lt;body&gt; tag:<br>
+</span>
+<blockquote>&lt;div id="colorPicker" style="position:absolute;top:150px;left:200px;"&gt;&lt;/div&gt;
+</blockquote>
+The next step is to create a new <b>dhtmlXColorPicker </b><span id="d3gs" style="font-family: Verdana;"><font id="an7g" size="2">and place it after the &lt;div&gt; element (object) that we've just created:</font></span><br>
+<blockquote>&lt;script&gt;<br>
+&nbsp;&nbsp;&nbsp;var myCP = new dhtmlXColorPicker(container, isClickOnly, customColors, hide, fullview);
+<br>
+&lt;/script&gt;
+<br>
+</blockquote>
+The parameters the user should indicate are as follows:<br>
+<br>
+<ul>
+<li><b>container(id) </b>- id of the object inside which the Color Picker will be created;</li>
+<li><b>isClickOnly(false|true) </b>- this parameter is optional, it's set to <b>false </b>by default. If set to <b>true</b>, the color can be changed only by a left mouse click in the color selection box. <b>False </b>means that the color changes interactively while the user presses the left mouse button and drags the mouse pointer over the  color selection box;</li>
+<li><b><a id="kqoi" name="customColors(true|false)"></a>customColors(true|false) </b>- this parameter is optional, it's set to <b>false </b>by default. If set to <b>true</b>, the user can add often used colors as custom ones that the color picker will remember and display every time the component is called;</li>
+<li><b>hide(true|fasle)</b> - this parameter is optional, it's set to <b>false </b>by default. It hides the component if set to <b>true</b>;</li>
+<li><b>fullview (true/false)</b> - this parameter is optional, it's set to <b>false </b>by default. Setting it to <b>true</b> means that the color picker will be displayed in its full view.</li>
+</ul>
+<br>
+And the last command that should be called in order to initialize the component is:<br>
+<blockquote>
+  &lt;script&gt;<br>
+  <span class="hl-identifier">&nbsp;&nbsp;&nbsp; </span>myCP<span class="hl-code" style="background-color: rgb(255, 255, 255);">.</span><span class="hl-identifier" style="background-color: rgb(255, 255, 255);">init</span><span class="hl-brackets" style="background-color: rgb(255, 255, 255);">()</span><span class="hl-code" style="background-color: rgb(255, 255, 255);">;</span><br>
+  <span class="hl-code">&lt;/script&gt;</span><br>
+</blockquote>
+When the page is loaded, a color picker will be displayed on page with the current color selected in it.<br>
+<h3><a name='cp_wwru'>3.3 Input-Based Initialization</a></h3>
+There is also the possibility to create a Color Picker linked to an input
+on page. First, the user should create the input itself, for example:<br>
+<blockquote>&lt;input type="text" id="colorPicker" colorbox="true" <span class="hl-var">customcolors</span><span class="hl-code">=</span><span class="hl-quotes">"</span><span class="hl-string">true</span><span class="hl-quotes">"&nbsp;</span><span class="hl-var">selectonclick</span><span class="hl-code">=</span><span class="hl-quotes">"</span><span class="hl-string">true</span><span class="hl-quotes">" fullview="true"</span> selectedcolor="#00ff00"&gt;<br>
+</blockquote>
+The parameters of the input are:<br>
+<br>
+<ul>
+<li><b>id </b>- id of the input;</li>
+<li><b>colorbox(true|false)</b> - a small square with the chosen color as a background appears in front of the input if set to <b>true</b> (optional parameter, set to <b>false </b>by default);</li>
+<li><b>customcolors</b><b>(true|false)</b> - set to <b>false </b>by default. If set to <b>true</b>, the user can add most often used colors as
+custom ones that the color picker will remember and display every
+time the component is called (optional parameter);</li>
+<li><b>selectonclick(true|false)</b> - set to <b>false </b>by default. If set to <b>true</b>, the color in the color picker can be changed only by a left mouse click in the color selection box. <b>False </b>means
+that the color changes interactively while the user presses left mouse
+button and drags the mouse pointer over the color selection box (optional parameter);</li>
+<li><b>fullview (true/false)</b> - set to <b>false </b>by default. Setting it to <b>true</b> means that the color picker will be displayed in its full view (optional parameter);</li>
+<li><b>selectedcolor(rgb(0,255,0)|#00ff00)</b> - allows to set the default color that will be selected on startup. <br>
+</li>
+</ul>
+<br>
+And then, the following code creates the Color Picker and links in to the newly created input:<br>
+<blockquote>
+<p>&lt;script&gt;</p>
+<p>&nbsp;&nbsp; &nbsp;myCP = dhtmlXColorPickerInput("nolorPicker");
+</p>
+<p>&nbsp;&nbsp; &nbsp;myCP.init();</p>
+<p>&lt;/script&gt;</p>
+</blockquote>
+The color picker will be activated when the user clicks somewhere in the input. When the necessary color is chosen, and button "Select" pressed, the color picker closes. The code of the chosen color is displayed in the input (for example, <b>77e5cd</b>). Also, the chosen color itself can be displayed in the colorbox (in case the input has <b>colorbox="true"</b>).<br>
+<h2><a name='cp_m9:0210'>4. dhtmlxColorPicker Configuration
+</a></h2>
+<h3><a name='cp_trsxj6h3'>4.1 Setting Skin</a></h3>
+<p id="cbs0">
+  The user can set one of the predefined skins for <b>dhtmlxColorPicker </b>in the following way:
+</p>
+
+  
+<blockquote>
+<p id="cbs0">
+    <span class="hl-identifier">&lt;script&gt;<br>
+    </span>
+  </p>
+<p id="cbs0">
+    <span class="hl-identifier">&nbsp;&nbsp;&nbsp; </span>myCP<span class="hl-code">.</span><span class="hl-identifier">setSkin</span><span class="hl-brackets">(</span><span class="hl-quotes"></span><span class="hl-string">skin</span><span class="hl-quotes"></span><span class="hl-brackets">);</span>
+  </p>
+<span class="hl-brackets">&lt;/script&gt;</span><br>
+<span class="hl-brackets"></span></blockquote>
+<b>Note</b>: to set the <b>default skin</b>, the user should write an <b>empty string</b> as the parameter for <b>setSkin()</b> method.<br>
+<br>
+  
+  
+    
+<p id="cbs0">
+  <b>4.1.1 Available Skins</b>
+</p>
+<p id="cbs0">
+  <br>
+</p>
+<p id="cbs0">
+  The following skins are available for this component:</p>
+<p id="cbs0"><br>
+</p>
+<ul>
+<li>the default one<br>
+</li>
+</ul>
+<p id="cbs0"></p>
+<div id="xdlx" style="padding: 1em 0pt; text-align: left;"><img style="width: 252px; height: 300px;" src="common/dgr5rjkf_207f5zspmcs_b.png"><br>
+</div>
+<ul>
+<li>dhx_blue</li>
+</ul>
+<div id="lhpq" style="padding: 1em 0pt; text-align: left;"><img style="width: 253px; height: 301px;" src="common/dgr5rjkf_205dxdnz2g6_b.png"></div>
+<ul>
+<li>dhx_black</li>
+</ul>
+<div id="ahof" style="padding: 1em 0pt; text-align: left;"><img style="width: 252px; height: 300px;" src="common/dgr5rjkf_206d93dnqw4_b.png"><span style="background-color: rgb(255, 255, 0);"></span><br>
+</div>
+<h3><a name='cp_42n79u:'>4.2 Setting Color Picker's Position</a></h3>
+There is a method in <b>dhtmlxColorPicker </b>that allows to change its position on the fly: <br>
+<blockquote>&lt;script&gt;<br>
+&nbsp;&nbsp; &nbsp;myCP.setPosition(x,y);
+	<br>
+&lt;/script&gt;<br>
+</blockquote>
+This method sets new <b>left (x) top (y)</b> position of the component.<br>
+<h3><a name='cp_7_577'>4.3 Setting/Getting Color</a></h3>
+The user can set the initial color for the Color Picker using <b>setColor()</b> method:<br>
+<blockquote>&lt;script&gt;<br>
+&nbsp;&nbsp; &nbsp;myCP.setColor(color);
+	<br>
+&lt;/script&gt;<br>
+</blockquote>
+The parameter color can be set like:<br>
+<br>
+<ul>
+<li>A string with hex color format;</li>
+<li>An array of decimal values of Red, Green, and Blue;</li>
+<li>A sting with decimal values of Red, Green, and Blue.</li>
+</ul>
+<blockquote>&lt;script&gt;<br>
+&nbsp;&nbsp; &nbsp;myCP.setColor("<span class="hl-string">#123456</span><span class="hl-quotes">"</span>);
+	<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; //or<br>
+&nbsp;&nbsp; &nbsp;myCP.setColor(<span class="hl-brackets">[</span><span class="hl-number">56</span><span class="hl-code">,</span><span class="hl-number">34</span><span class="hl-code">,</span><span class="hl-number">12</span><span class="hl-brackets">]</span>);
+	<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; //or<br>
+&nbsp;&nbsp; &nbsp;myCP.setColor("rgb(10,27,99)");
+	<br>
+
+&lt;/script&gt;<br>
+</blockquote>
+<p>The color currently selected in the Color Picker can be easily got by method <b>getSelectedColor()</b>:</p>
+<blockquote>
+<p>&lt;script&gt;<br>
+&nbsp;&nbsp;&nbsp; var colorSelected = myCP.getSelectedColor();</p>
+<p>&lt;/script&gt;<br>
+</p>
+</blockquote>
+<h3><a name='cp_i83wv'>4.4 Hiding/Showing Color Picker</a></h3>
+The Color Picker can be easily shown/hidden in the following way:<br>
+  
+<blockquote>
+    &lt;script&gt;<br>
+    <span class="hl-identifier">&nbsp;&nbsp;&nbsp; </span>myCP<span class="hl-code">.</span><span class="hl-identifier">show</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;</span><span class="hl-identifier">&nbsp;&nbsp;<br>
+    &nbsp;&nbsp;&nbsp; </span>myCP<span class="hl-code">.</span><span class="hl-identifier">hide</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; </span><br>
+    <span class="hl-code">&lt;/script&gt;</span><br>
+</blockquote>
+<h3><a name='cp_nhuw6oy'>4.5 Removing Color Picker</a></h3>
+The following method removes the color picker:<br>
+<blockquote><span class="hl-code">&lt;script&gt;</span><br>
+&nbsp;&nbsp; &nbsp;myCP<span style="background-color: rgb(255, 255, 255);" class="hl-code">.</span><span style="background-color: rgb(255, 255, 255);" class="hl-identifier">close</span><span style="background-color: rgb(255, 255, 255);" class="hl-brackets">()</span><span style="background-color: rgb(255, 255, 255);" class="hl-code">;</span><br>
+<span style="background-color: rgb(255, 255, 255);" class="hl-code">&lt;/script&gt;</span><br>
+</blockquote>
+<h3><a name='cp_cj49h18'>4.6 Linking Color Picker to Object</a></h3>
+The color picker can be linked to some objects on page. In this case, <b>linkTo()</b> method is used. The first parameter of this method indicates the object which color will be changed, the second one - indicates the object that will call the color picker, and the third (optional) parameter will contain the hex code of the chosen color.<br>
+<br>
+For example, the code below shows the color picker linked to inputs and a button. The color picker is called by pressing the button. The chosen color will be set as background for one input, and another input will contain this color's value in hex format:<br>
+<blockquote><span class="hl-brackets">&lt;</span><span class="hl-reserved">input</span> <span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">"</span><span class="hl-string">a1</span><span class="hl-quotes">"</span><span class="hl-brackets">&gt; // create an input<br>
+&lt;input id="a3"&gt; //create one more input</span><br>
+<span class="hl-brackets">&lt;</span><span class="hl-reserved">input</span> <span class="hl-var">type</span><span class="hl-code">=</span><span class="hl-quotes">"</span><span class="hl-string">button</span><span class="hl-quotes">"</span><span class="hl-code"> value="Select color" </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">"</span><span class="hl-string">a2</span><span class="hl-quotes">"</span><span class="hl-brackets">&gt; // create a button<br>
+<br>
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span>&gt;<br>
+<span class="hl-reserved">&nbsp;&nbsp; &nbsp;var </span>myCP <span class="hl-code">= </span><span class="hl-reserved">new</span> <span class="hl-identifier">dhtmlXColorPicker</span><span class="hl-brackets">(</span><span class="hl-reserved">false</span><span class="hl-code">,</span><span class="hl-reserved">false</span><span class="hl-code">,</span><span class="hl-reserved">false</span><span class="hl-code">,</span><span class="hl-reserved">true</span><span class="hl-brackets">)</span>;<br>
+&nbsp;&nbsp; &nbsp;myCP<span class="hl-code">.</span><span class="hl-identifier">setImagePath</span><span class="hl-brackets">(</span><span class="hl-quotes">"</span><span class="hl-string">[full path to this category]/codebase/imgs/</span><span class="hl-quotes">"</span><span class="hl-brackets">)</span>;<br>
+&nbsp;&nbsp; &nbsp;myCP<span class="hl-code">.</span><span class="hl-identifier">init</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span>;<br>
+&nbsp;&nbsp; &nbsp;myCP<span class="hl-code">.</span><span class="hl-identifier">linkTo</span><span class="hl-brackets">(</span><span class="hl-quotes">"</span><span class="hl-string">a1</span><span class="hl-quotes">"</span><span class="hl-code">,</span><span class="hl-quotes">"</span><span class="hl-string">a2</span><span class="hl-quotes">","a3"</span><span class="hl-brackets">)</span><span class="hl-code">;    </span><span class="hl-comment">//</span><span class="hl-comment">link to the button and the inputs</span><br>
+<span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><br>
+</blockquote>
+<h3><a name='cp_8_w377i4'>4.7 Setting Custom Colors</a></h3>
+Custom Colors palette can be shown by setting <b><a title="customcolors" id="b88s">customcolors</a>&nbsp;</b>parameter to <b>true</b>. This palette can be used to keep colors that are most used
+or popular with the user. The colors can be added there by the end-users in the following way:<br>
+<ul>
+<li>Selecting
+the necessary color;</li>
+<li>Pressing "Add To Custom Colors"
+button.<br>
+</li>
+</ul>
+<br>
+The chosen value will be saved in cookies, thus, it
+will be available for the user next time he visits the page.<br>
+<div><br>
+Custom colors can be also set by script through method <b>setCustomColors()</b>:<br>
+<blockquote>&lt;script&gt;<br>
+&nbsp;&nbsp; &nbsp;
+myCP<span class="hl-code">.</span><span class="hl-identifier">setCustomColors(colors);</span><br>
+<span class="hl-identifier">
+&lt;/script&gt;</span><br>
+</blockquote>
+The parameter <b>colors </b>is the array of predefined colors written in hex color format:<br>
+<blockquote>&lt;script&gt;<br>
+&nbsp;&nbsp; &nbsp;myCP<span class="hl-code">.</span><span class="hl-identifier">setCustomColors("#aabbcc,#00ff00");</span><br>
+<span class="hl-identifier">&lt;/script&gt;</span><br>
+<span class="hl-identifier"></span></blockquote>
+<h3><a name='cp_768p'>4.8 Making Color Picker Multilingual</a></h3>
+<b>dhtmlxColorPicker </b>allows its users to add and use different
+languages with the ability to switch between them dynamically. First,
+the user needs to define necessary language settings with script (if no
+language pack is provided with the color picker package). This can be done
+in the following way:<br>
+<blockquote><span class="hl-identifier">&lt;script&gt;</span><br>
+<span class="hl-identifier">&nbsp;&nbsp;&nbsp; &nbsp;dhtmlxColorPickerLangModules = {}; </span><br>
+<span class="hl-identifier"></span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;dhtmlxColorPickerLangModules['en-us'] = {</span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;langname: 'en-us',</span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;labelHue : "Hue",</span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;labelSat : "Sat", </span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;labelLum : "Lum",</span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;labelRed : "Red", </span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;labelGreen : "Green",</span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;labelBlue : "Blue",</span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;btnAddColor : "Add to Custom Colors",</span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;btnSelect : "Select",</span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;btnCancel : "Cancel"</span><span class="hl-identifier"><br>
+&nbsp;&nbsp; &nbsp;}</span><br>
+<span class="hl-identifier"></span><span class="hl-identifier"><br>
+&nbsp;&nbsp; &nbsp;dhtmlxColorPickerLangModules['ru'] = {</span><span class="hl-identifier"><br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;langname: 'ru',</span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;labelHue : "Ioo",</span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;labelSat : "Ian",</span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;labelLum : "??e",</span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;labelRed : "E?an",</span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;labelGreen : "Cae",</span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;labelBlue : "Nei",</span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;btnAddColor : "Aiaaaeou e aua?aiiui",</span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;btnSelect : "Aua?aou",</span><br>
+<span class="hl-identifier">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;btnCancel : "Ioiaia"</span><span class="hl-identifier"><br>
+&nbsp;&nbsp; &nbsp;}</span><br>
+<span class="hl-identifier">&lt;/script&gt;</span><br>
+<span class="hl-identifier"></span></blockquote>
+  When you have necessary language settings, you can switch between them using <b>loadUserLanguage()</b> method indicating the id of the language you used for its definition:<br>
+  
+<blockquote>
+    &lt;script&gt;<br>
+    &nbsp;&nbsp;&nbsp; myCP.loadUserLanguage("ru");<br>
+    &lt;/script&gt;<br>
+</blockquote>
+<h3><a name='cp_pv_rsp'>4.9 Hiding Color Picker on Color Select</a></h3>
+By default, the Color Picker's configuration presupposes that the component will be hidden/closed after the end-user chooses the color in the palette and presses the button "Select". <br>
+<br>
+Method <b>hideOnSelect()</b> is responsible for this behavior of the color picker. If this method is set to <b>true</b>, <b>dhtmlxColorPicker </b>will behave the way that was described above. Setting this method to <b>false </b>means that the component will stay on page even after&nbsp; pressing the button "Select". <br>
+<blockquote>&lt;script&gt;<br>
+&nbsp;&nbsp; &nbsp;myCP.hideOnSelect(true|false); // <b>true</b> by default<br>
+&lt;/script&gt;<br>
+</blockquote>
+<h2><a name='cp_6:4415rs4'>5. Event Handling</a></h2>
+  The following events are available in <b>dhtmlxColorPicker</b>:<br>
+<br>
+  
+<ul>
+<li><b>setOnSelectHandler</b>(func) - occurs when the end-user selects some color or presses the button "Select";</li>
+</ul>
+<ul>
+<li><b>setOnCancelHandler</b>(func) - occurs when the end-user presses the button "Cancel".</li>
+</ul>
+<br>
+<h3><a name='cp_z7l9:7'>5.1 setOnSelectHandler</a></h3>
+<b>setOnSelectHandler </b>event calls user-defined handlers (if there are any) and passes the following parameter:<br>
+<ul>
+<li>color - the selected color written in hex color format (<span class="hl-identifier">"#aabbcc"</span>).</li>
+</ul>
+<blockquote>&lt;script&gt;<br>
+&nbsp;&nbsp; &nbsp;myCP.setOnCancelHandler(function (color) {<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//some code<br>
+&nbsp;&nbsp; &nbsp;})<br>
+&lt;/script&gt;<br>
+</blockquote>
+<h3 id="4p55">5.2 setOnCancelHandler</h3>
+<b>setOnCancelHandler </b>event calls user-defined handlers (if there are any):<br>
+<blockquote>&lt;script&gt;<br>
+&nbsp;&nbsp; &nbsp;myCP.setOnCancelHandler(function () {<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//some code<br>
+&nbsp;&nbsp; &nbsp;})<br>
+&lt;/script&gt;<br>
+</blockquote>
+<br>
+</div>
+<br>
+</body>

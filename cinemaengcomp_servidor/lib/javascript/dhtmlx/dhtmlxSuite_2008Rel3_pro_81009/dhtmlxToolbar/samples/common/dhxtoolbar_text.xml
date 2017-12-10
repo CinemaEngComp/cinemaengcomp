@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<toolbar>
+	<item id="text1" type="text" text="Text 1"/>
+	<item id="text2" type="text" text="Text 2"/>
+	<item id="text3" type="text" text="Text 3"/>
+</toolbar>

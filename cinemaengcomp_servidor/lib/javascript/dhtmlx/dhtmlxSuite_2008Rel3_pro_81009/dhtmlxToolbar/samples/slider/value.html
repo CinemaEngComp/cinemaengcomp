@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<!--conf
+<sample>
+              <product version="1.0" edition="std"/>
+                     <modifications>
+                            <modified date="080403"/>
+                     </modifications>
+               </sample>
+ -->
+<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html>
+<head>
+	<title>Slider Value</title>
+	<script type="text/javascript" src="../../codebase/dhtmlxcommon.js"></script>
+	<script type="text/javascript" src="../../codebase/dhtmlxtoolbar.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../codebase/skins/dhtmlxtoolbar_dhx_blue.css"></link>
+</head>
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxtoolbar_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxToolbar</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Slider Value</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxToolbar/index.shtml">dhtmlxToolbar main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+<div id="toolbarObj"></div>
+<div style="margin-top: 20px;">
+	<table cellspacing="0" cellpadding="2" border="0">
+		<tr>
+			<td rowspan="3"><select id="sel"></select></td>
+			<td style="padding-left: 5px; padding-right: 5px;">Current Value:</td>
+			<td>
+				<input type="button" value="Get Value" onclick="getValue();">
+				<input type="button" value="Set Value" onclick="setValue();">
+				Value:
+				<input id="txt" type="text" value="50" style="width: 30px;">
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-left: 5px; padding-right: 5px;">Minimal Value:</td>
+			<td>
+				<input type="button" value="Get Value" onclick="getMinValue();">
+				<input type="button" value="Set Value" onclick="setMinValue();">
+				Value:
+				<input id="txtmin1" type="text" value="10" style="width: 30px;">
+				Label:
+				<input id="txtmin2" type="text" value="Min" style="width: 60px;">
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-left: 5px; padding-right: 5px;">Maximal Value:</td>
+			<td>
+				<input type="button" value="Get Value" onclick="getMaxValue();">
+				<input type="button" value="Set Value" onclick="setMaxValue();">
+				Value:
+				<input id="txtmax1" type="text" value="100" style="width: 30px;">
+				Label:
+				<input id="txtmax2" type="text" value="Max" style="width: 60px;">
+			</td>
+		</tr>
+	</table>
+</div>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">webBar</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXToolbarObject</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">toolbarObj</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    ...
+    </span><span class="hl-comment">//</span><span class="hl-comment"> setting value for a slider</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">webBar</span><span class="hl-code">.</span><span class="hl-identifier">setValue</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-code">, </span><span class="hl-identifier">value</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment"> getting value of a slider</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">value</span><span class="hl-code"> = </span><span class="hl-identifier">webBar</span><span class="hl-code">.</span><span class="hl-identifier">getValue</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment"> setting minimal value for a slider</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">webBar</span><span class="hl-code">.</span><span class="hl-identifier">setMinValue</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-code">, </span><span class="hl-identifier">value</span><span class="hl-code">, </span><span class="hl-reserved">label</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment"> getting minimal value of a slider</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">data</span><span class="hl-code"> = </span><span class="hl-identifier">webBar</span><span class="hl-code">.</span><span class="hl-identifier">getMinValue</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-brackets">)</span><span class="hl-code">; </span><span class="hl-comment">//</span><span class="hl-comment"> data = Array(value, label)</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment"> setting maximal value for a slider</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">webBar</span><span class="hl-code">.</span><span class="hl-identifier">setValue</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-code">, </span><span class="hl-identifier">value</span><span class="hl-code">, </span><span class="hl-reserved">label</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment"> getting maximal value of a slider</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">data</span><span class="hl-code"> = </span><span class="hl-identifier">webBar</span><span class="hl-code">.</span><span class="hl-identifier">getValue</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-brackets">)</span><span class="hl-code">; </span><span class="hl-comment">//</span><span class="hl-comment"> data = Array(value, label)</span><span class="hl-comment"></span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+<script>
+	var sel = document.getElementById("sel");
+	var webBar = new dhtmlXToolbarObject("toolbarObj");
+	webBar.setIconsPath("../images/");
+	webBar.loadXML("../common/dhxtoolbar_slider.xml?etc="+new Date().getTime(), updateList);
+	function getId() {
+		var id = sel.options[sel.selectedIndex].value;
+		return id;
+	}
+	function setValue() {
+		webBar.setValue(getId(), Number(document.getElementById("txt").value));
+	}
+	function getValue() {
+		alert(webBar.getValue(getId()));
+	}
+	function setMinValue() {
+		var t = String(document.getElementById("txtmin2").value);
+		var v = Number(document.getElementById("txtmin1").value);
+		webBar.setMinValue(getId(), v, t);
+	}
+	function getMinValue() {
+		alert(webBar.getMinValue(getId()));
+	}
+	function setMaxValue() {
+		var t = String(document.getElementById("txtmax2").value);
+		var v = Number(document.getElementById("txtmax1").value);
+		webBar.setMaxValue(getId(), v, t);
+	}
+	function getMaxValue() {
+		alert(webBar.getMaxValue(getId()));
+	}
+	function updateList() {
+		sel.options.length = 0;
+		webBar.forEachItem(function(itemId){
+			if (webBar.getType(itemId) == "slider") {
+				sel.options.add(new Option(itemId, itemId));
+			}
+		});
+	}
+</script>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>

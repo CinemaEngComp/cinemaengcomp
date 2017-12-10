@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+		<tree id="0">
+			<item id="dhtmlxfolders" text="dhtmlxFolders" im0="dhtmlxfolders_icon.gif" im1="dhtmlxfolders_icon.gif" im2="dhtmlxfolders_icon.gif">
+				<userdata name="url">
+					../dhtmlxFolders/doc
+				</userdata>
+				<userdata name="thisurl">
+					../dhtmlxFolders/doc/guide.html
+				</userdata>
+				<item text="Main Features" id="folders_mf">
+					<userdata name="url">guide.html</userdata>
+				</item>
+				<item text="Supported Browsers" id="folders_browsers">
+					<userdata name="url">guide.html</userdata>
+				</item>
+				<item text="Guide" id="folders_guide">
+					<userdata name="url">guide.html</userdata>
+					<item text="Initialize object on page" id="folders_init"></item>
+					<item text="XML format" id="folders_xml"></item>
+					<item text="Item Types" id="folders_itemtypes"></item>
+					<item text="Define items type using built-in types" id="folders_builtintypes"></item>
+					<item text="Define your own type" id="folders_udtypes"></item>
+					<item text="Changing type dynamically (keeping data)" id="folders_dyntypech"></item>
+					<item text="Selection in dhtmlxFolders" id="folders_select"></item>
+					<item text="Sorting" id="folders_sort"></item>
+					<item text="Filtering" id="folders_filtering"></item>
+					<item text="Paginal Output and Dynamical Loading" id="folders_paging"></item>
+					<item text="Drag-n-drop" id="folders_dnd"></item>
+					<item text="Events" id="folders_events"></item>
+					<item text="Delete Items with script" id="folders_del"></item>
+				</item>
+				<item text="Step by step instructions" id="folders_stepbystep">
+					<userdata name="url">step-by-step/index.html</userdata>
+				</item>
+				<item text="Create own Types" id="folders_owntypes">
+					<userdata name="url">ud_types/index.html</userdata>
+				</item>
+				<item text="Predefined Types" id="folders_pretypes">
+					<userdata name="url">item_types.html</userdata>
+				</item>
+				<item text="API Functions" id="folders_api">
+					<userdata name="url">alpha.html</userdata>
+	        	 	<item text="Object constructor" id="folders_api_obj">
+	    	       		<userdata name="url">objects.html</userdata>
+		         	</item>
+	        	 	<item text="Alphabeticaly sorted" id="foders_api_a">
+						<userdata name="url">alpha.html</userdata>
+					</item>
+					<item text="Grouped by Object" id="folders_api_o">
+						<userdata name="url">ogroup.html</userdata>
+					</item>
+					<item text="Events" id="folders_api_ev">
+	    	        	<userdata name="url">events.html</userdata>
+		         	</item>
+				</item>
+			</item>
+
+		</tree>

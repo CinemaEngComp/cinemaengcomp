@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>DHTML Vault v.1.1 guide and samples</title>
+</head>
+
+<body>
+<style>
+	body {font-size:14px;line-height:18px;}
+	.{font-family:arial;}
+	h2 {cursor:pointer;font-size:20px;margin:30px 0px 40px 5px;line-height:10px}
+	h3 {cursor:pointer;font-weight:normal;color:black;text-decoration:underline;line-height:10px}
+	h4 {cursor:pointer;font-weight:normal;color:black;text-decoration:underline;line-height:10px}
+	h5{
+		font-weight:bold;color:green;
+		margin:5px;
+	}
+	h6{
+		font-weight:bold;color:gray;
+		margin:0px;
+	}
+	a h4{
+		color:blue;
+		font-weight:bold;
+	}
+	.op {cursor:pointer;}
+	div.block {margin-left:5px;}
+	xmp {color:green;font-size:12px;margin:0px;font-family:courier;background-color:#e6e6fa;padding:2px}
+	li {margin-top:2px;}
+	span.important {font-weight:bold;color:maroon;}
+</style>
+<h2><a href="http://www.scbr.com/docs/products/dhtmlxVault/index.shtml" target="_top" title="Visit javascript tree home page">dhtmlXVault</a> Guide and Samples</h2>
+<div class="block">
+<!---  --->
+	<a name="mf"><h3 >Main features</h3
+	></a><div style="display:show" class="block">
+		<li>Multibrowser/Multiplatform support </li>
+		<li>Progress bar indicator for each file </li>
+		<li>Full controll with JavaScript</li>
+		<li>ASP.NET support</li>
+		<li>JSP support</li>
+		<li>PHP/Perl support</li>
+	</div>
+	
+	<a name="browsers"><h3 >Supported browsers</h3
+	></a><div style="display:show" class="block">
+		<li>IE 5.x and above</li>
+		<li>Mozilla 1.4 and above</li>
+		<li>FireFox 0.9 and above</li>
+	</div>
+
+	<a name="contact"><h3 >Contact information</h3
+	></a><div style="display:show" class="block">
+	Please post your comments and questions to <a href="mailto:dhtmlx@scand.com?subject=dhtmlXVault">dhtmlx@scand.com</a>
+	</div>
+
+	<h3 >Working with dhtmlXVault</h3
+	><div style="display:show" class="block">
+<!--- Initialize object on page --->
+		<a name="init"><h4 >Initialize object on page</h4
+		></a><div class="block">
+<XMP>
+<div id="vaultDiv"></div>
+<script>
+	vault=new dhtmlXVaultObject();
+            vault.setServerHandlers("aspx/UploadHandler.ashx",
+                                    "aspx/GetInfoHandler.ashx",
+                                    "aspx/GetIdHandler.ashx");
+            vault.create("vaultDiv");
+</script>
+</XMP>
+		As you may see, it is pretty easy to initialize the object on your page.<br>
+		You only pass your object (it should be loaded before call) identifier in "create()" method, and that will build the control for you.
+
+
+		</div>
+
+		<a name="ServerHandlers"><h4>Server Handlers description</h4
+		></a><div class="block">
+		<li>Upload handler - it is the main upload handler. It should parse the request (multipart-form data) and store file on server.
+			<br>Also, it is gathering progress information and stores it in Application or Session context, so the next handler can read it.
+		<li>GetInfo handler - this handler aimed to return progress information (as percent uploaded).
+			<br>It receives "sessionId" parameter as a unique File Transfer identifier, so concurrent uploading is possible.
+		<li>GetId handler - this handler is called once per upload, to get a unique File Transfer Id.
+			<br>This value is used later to read the upload progress information.
+		</div>
+
+</div>
+
+	<h3>Running dhtmlXVault on different Servers</h3
+	><div style="display:show" class="block">
+
+		<a name="runASP"><h4>ASP.Net</h4
+		></a><div class="block">
+		To run this sample, create a new virtual directory in your IIS, call it "vault" and point to our "/samples/aspx/" folder.
+		Check that it uses ASP.Net version 2.0 framework (use "Properties" menu, then the "ASP.Net" tab).
+		<br />
+		You can specify upload folder in the "UploadHandler.ashx",
+		by default it is:
+<XMP>
+    FileProcessor fp = new FileProcessor(@"c:\upload\");
+</XMP>
+        Check that this folder has write (or Full) permissions.<br />
+        </div>	
+	
+		<a name="runJSP"><h4>JSP/Java</h4
+		></a><div class="block">
+		To run this sample, copy our "/samples/jsp" folder to your Tomcat webapp root.<br />
+		You can specify upload folder in the "UploadHandler.jsp",
+		by default it is:
+<XMP>
+    String uploadFolder = "c:\\upload\\";
+</XMP>
+        Check that this folder has write (or Full) permissions.<br />
+        We use in this sample Apache's "commons-fileupload" library extended with our own "ProgressMonitorFileItemFactory".
+        Those libraries reside on "WEB-INF\lib" and should go to your application's WEB-INF folder respectively.
+        </div>	
+
+		<a name="runPHP"><h4>PHP</h4
+		></a><div class="block">
+		To run this sample, copy our "/samples/php" folder to your Apache htdocs.<br />
+		You can specify upload folder in the "UploadHandler.php",
+		by default it is:
+<XMP>
+    $target_path = 'c:\\upload\\';
+</XMP>
+        Check that this folder has write (or Full) permissions.<br />
+        You may also need to modify your "php.ini" file with the following settings:
+<XMP>
+upload_tmp_dir = "c:\\upload\\uploadtemp"
+upload_max_filesize = 500M
+post_max_size = 508M
+max_execution_time = 900
+max_input_time = 900
+</XMP>
+        </div>	
+
+		<a name="runPerl"><h4>Perl</h4
+		></a><div class="block">
+		To run this sample, copy our "/samples/perl" folder to your Apache htdocs/cgi-bin folder.<br />
+		Do not forget to modify the top line in each perl file, set your own path to perl executable:
+<XMP>
+#!D:/Perl/bin/perl.exe -w
+</XMP>
+        "upload_settings.inc" file contains path information for temporary and upload folders. You may modify them on your need.
+        Check that those folders have write (or Full) permissions.
+
+        </div>	
+
+    </div>
+
+</div>
+
+<p>
+<h6>Version/Edition: v1.1/Professional/Standard</h6>
+<h6>Required js file:dhtmlXVault.js</h6>
+
+</body>
+</html>

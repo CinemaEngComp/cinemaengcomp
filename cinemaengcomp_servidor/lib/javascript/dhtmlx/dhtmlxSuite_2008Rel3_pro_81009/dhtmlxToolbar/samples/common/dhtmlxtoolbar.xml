@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<toolbar>
+	<item id="new" type="button" img="new.gif" imgdis="new_dis.gif"/>
+	<item id="sep01" type="separator"/>
+	
+	<item id="undo" type="button" img="undo.gif" imgdis="undo_dis.gif" title="Undo"/>
+	<item id="redo" type="button" img="redo.gif" imgdis="redo_dis.gif" title="Redo"/>
+	
+	<item id="sep02" type="separator"/>
+	<item id="form" type="buttonTwoState" img="iconForm.gif" imgdis="iconForm_dis.gif" title="Form"/>
+	<item id="filter" type="buttonTwoState" img="iconFilter.gif" imgdis="iconFilter_dis.gif" text="Filter" selected="true"/>
+	<item id="any_word" type="buttonTwoState" text="Any Word"/>
+	
+	<item id="filter_text" type="buttonInput" value="Filter Text" width="60" title="input text here"/>
+	
+	<item id="sep1" type="separator"/>
+	<item id="history" type="buttonSelect" text="History">
+		<item type="button" id="8_1" text="Today"/>
+		<item type="button" id="8_2" text="Yesturday" selected="true"/>
+		<item type="button" id="8_3" text="Last Week"/>
+		<item type="button" id="8_4" text="Last Month"/>
+		<item id="8_sep0" type="separator"/>
+		<item type="button" id="8_5" img="icon_more.gif" text="More..."/>
+	</item>
+	<item id="sep2" type="separator"/>
+	<item id="slider" type="slider" length="70" valueMin="10" valueMax="100" valueNow="70" textMin="10 MBit" textMax="100 MBit" toolTip="%v MBit"/>
+	
+	<item id="sep4" type="separator"/>
+	
+	<item id="text" type="text" text="dhtmlxToolbar Demo"/>
+</toolbar>

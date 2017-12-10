@@ -1,0 +1,177 @@
+/* CSS Document */
+.overlay_bubble {
+	background-color:#FFF;
+	filter:alpha(opacity=60);
+	-moz-opacity:0.6;
+	opacity:0.6;
+}
+
+.bubble_nw {
+	background:transparent url(bubble/top-left.png) no-repeat 0 0;			
+	width:27px;
+	height:46px;
+}
+
+.bubble_n {
+	background:transparent url(bubble/top-middle.png) repeat-x 0 0;			
+	height:46px;
+}
+
+.bubble_ne {
+	background:transparent url(bubble/top-right.png) no-repeat 0 0;			
+	width:78px;	  
+	height:46px;
+}
+
+.bubble_w {
+	background:transparent url(bubble/left.png) repeat-y top left;			
+	width:8px;
+}
+
+.bubble_e {
+	background:transparent url(bubble/right.png) repeat-y top right;			
+	width:12px;	  
+}
+
+.bubble_sw {
+	background:transparent url(bubble/bottom-left.png) no-repeat 0 0;			
+	width:27px;
+	height:31px;
+}
+
+.bubble_s {
+	background:transparent url(bubble/bottom-middle.png) repeat-x 0 0;			
+	height:31px;
+}
+
+.bubble_se, .bubble_sizer  {
+	background:transparent url(bubble/bottom-right.png) no-repeat 0 0;			
+	width:30px;
+	height:31px;
+}
+
+.bubble_sizer {
+	cursor:se-resize;	
+}
+
+.bubble_close {
+	width:14px;
+	height:13px;
+	background:transparent url(bubble/button-close.png) no-repeat 0 0;			
+	position:absolute;
+	bottom:18px;
+	right:24px;
+	cursor:pointer;
+	z-index:1000;
+}
+
+.bubble_title {
+	width:100%;
+	float:left;
+}
+
+.bubble_content {
+	overflow:auto;
+	color:#000;
+	font-family:Verdana, Arial, sans-serif;
+	font-size:12px;
+	background:#FFF;
+}
+
+/* For alert/confirm dialog */
+.bubble_window {
+	border:1px solid #F00;	
+	background:#FFF;
+	padding:20px;
+	margin-left:auto;
+	margin-right:auto;
+	width:400px;
+}
+
+.bubble_message {
+  	font-size:12px;
+	text-align:center;
+	width:100%;
+	padding-bottom:10px;
+}
+
+.bubble_buttons {
+	text-align:center;
+	width:100%;
+}
+
+.bubble_buttons input {
+	width:20%;
+	margin:10px;
+}
+
+.bubble_progress {
+	float:left;
+	margin:auto;
+	text-align:center;
+	width:100%;
+	height:16px;
+	background:transparent url('bubble/spinner.gif') no-repeat center center
+}
+
+.bubble_wired_frame {
+	background:#FFF;
+	filter:alpha(opacity=60);
+	-moz-opacity:0.6;
+	opacity:0.6;	
+}
+
+/* FOR IE */
+* html .bubble_nw {
+	background-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="windows/themes/bubble/top-left.png", sizingMethod="crop");
+}
+
+* html .bubble_n {
+	background-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="windows/themes/bubble/top-middle.png", sizingMethod="scale");
+}
+
+* html .bubble_ne {
+	background-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="windows/themes/bubble/top-right.png", sizingMethod="crop");
+}
+
+* html .bubble_w {
+	background-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="windows/themes/bubble/left.png", sizingMethod="scale");
+}
+
+* html .bubble_e {
+	background-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="windows/themes/bubble/right.png", sizingMethod="scale");
+}
+
+* html .bubble_sw {
+	background-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="windows/themes/bubble/bottom-left.png", sizingMethod="crop");
+}
+
+* html .bubble_s {
+	background-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="windows/themes/bubble/bottom-middle.png", sizingMethod="scale");
+}
+
+* html bubble_se, * html .bubble_sizer {
+	background-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="windows/themes/bubble/bottom-right.png", sizingMethod="crop");
+}
+
+* html .bubble_close {
+	background-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="windows/themes/bubble/button-close.png", sizingMethod="crop");
+}

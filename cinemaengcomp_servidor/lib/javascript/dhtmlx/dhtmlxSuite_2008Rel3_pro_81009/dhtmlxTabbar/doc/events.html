@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+	<DIV style="position:absolute;right:20"><A href="javascript:void(0)" onClick="expandAll(true)">expand</A><A href="javascript:void(0)" onClick="expandAll(false)">collaps</A>
+	</DIV>
+<SCRIPT><!--
+		
+			function openFull(el){
+				el.nextSibling.style.display!='block'?el.nextSibling.style.display='block':el.nextSibling.style.display='none'
+			}
+			function expandAll(fl){ 
+				var elAr = document.getElementsByTagName("DIV");
+				for(var i=2;i<elAr.length;i++){
+					if(elAr[i].style.display!='block' || elAr[i].block_fl){
+						elAr[i].block_fl = true;
+						if(fl)
+							elAr[i].style.display = "block";
+						else
+							elAr[i].style.display = "none";
+					}
+				}
+			}
+		
+		-->
+</SCRIPT><STYLE>.{font-family:arial;}
+			h2 {cursor:pointer;font-size:16px;margin-left:10px;line-height:10px}
+			h3 {cursor:pointer;font-weight:normal;color:gray;text-decoration:underline;line-height:10px}
+			div.block {margin-left:30px;}</STYLE><LINK rel="STYLESHEET" type="text/css" href="common/styles.css"/>
+	<DIV class="div_method" onClick="openFull(this)">	onXMLLoadingEnd
+						[<SPAN class="professional">Professional</SPAN>]<BR/><STRONG class="div_strong_method">event fired simultaneously with ending XML parsing, new items already available in tabbar</STRONG><BR/><SPAN/>
+	</DIV>
+	<DIV class="div_drop">
+		<LI type="circle">tabbar object</LI><SPAN/>
+	</DIV>
+	<DIV class="div_method" onClick="openFull(this)">	onTabLoaded
+						[<SPAN class="professional">Professional</SPAN>]<BR/><STRONG class="div_strong_method">event fired imideatly after tab content loaded and can be accessed through DOM</STRONG><BR/><SPAN/>
+	</DIV>
+	<DIV class="div_drop">
+		<LI type="circle">id of tab for which content loaded</LI><SPAN/>
+	</DIV>
+	<DIV class="div_method" onClick="openFull(this)">	onTabClose<BR/><STRONG class="div_strong_method">event fired imideatly before tab closed by pressing close button, returning false block closing</STRONG><BR/><SPAN/>
+	</DIV>
+	<DIV class="div_drop">
+		<LI type="circle">id of tab for which content loaded</LI><SPAN/>
+	</DIV>
+	<DIV class="div_method" onClick="openFull(this)">	onClick<BR/><STRONG class="div_strong_method">event called when any tab selected</STRONG><BR/><SPAN/>
+	</DIV>
+	<DIV class="div_drop">
+		<LI type="circle">id - id of tab</LI><BR/><FONT class="exem">Returns:</FONT>if false returned the selection aborted<SPAN/>
+	</DIV>
+	

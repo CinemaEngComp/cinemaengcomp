@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<!--conf
+<sample>
+              <product version="1.0" edition="std"/>
+                     <modifications>
+                            <modified date="080403"/>
+                     </modifications>
+               </sample>
+ -->
+<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html>
+<head>
+	<title>Button Select Image</title>
+	<script type="text/javascript" src="../../codebase/dhtmlxcommon.js"></script>
+	<script type="text/javascript" src="../../codebase/dhtmlxtoolbar.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../codebase/skins/dhtmlxtoolbar_dhx_blue.css"></link>
+</head>
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxtoolbar_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxToolbar</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Button Select Image</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxToolbar/index.shtml">dhtmlxToolbar main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+<div id="toolbarObj"></div>
+<div style="margin-top: 20px;">
+	<table cellspacing="0" cellpadding="2" border="0">
+		<tr>
+			<td><select id="sel"></select></td>
+			<td><input type="button" value="Clear Image" onclick="clearImage();"></td>
+			<td><input type="button" value="Set Image" onclick="setImage();"></td>
+			<td><table cellspacing="0" cellpadding="2" border="0"><tr>
+				<td><img id="new" onclick="changeImage(this);" src="../images/new.gif" style="border: #707070 1px solid; width: 18px; height: 18px; cursor: pointer;"></td>
+				<td><img id="save" onclick="changeImage(this);" src="../images/save.gif" style="border: #E0E0E0 1px solid; width: 18px; height: 18px; cursor: pointer;"></td>
+				<td><img id="undo" onclick="changeImage(this);" src="../images/undo.gif" style="border: #E0E0E0 1px solid; width: 18px; height: 18px; cursor: pointer;"></td>
+				<td><img id="redo" onclick="changeImage(this);" src="../images/redo.gif" style="border: #E0E0E0 1px solid; width: 18px; height: 18px; cursor: pointer;"></td>
+				<td><img id="cut" onclick="changeImage(this);" src="../images/cut.gif" style="border: #E0E0E0 1px solid; width: 18px; height: 18px; cursor: pointer;"></td>
+				<td><img id="copy" onclick="changeImage(this);" src="../images/copy.gif" style="border: #E0E0E0 1px solid; width: 18px; height: 18px; cursor: pointer;"></td>
+				<td><img id="paste" onclick="changeImage(this);" src="../images/paste.gif" style="border: #E0E0E0 1px solid; width: 18px; height: 18px; cursor: pointer;"></td>
+				<td><img id="page_setup" onclick="changeImage(this);" src="../images/page_setup.gif" style="border: #E0E0E0 1px solid; width: 18px; height: 18px; cursor: pointer;"></td>
+				<td><img id="print" onclick="changeImage(this);" src="../images/print.gif" style="border: #E0E0E0 1px solid; width: 18px; height: 18px; cursor: pointer;"></td>
+			</tr></table></td>
+		</tr>
+	</table>
+</div>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">webBar</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXToolbarObject</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">toolbarObj</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    ...
+    </span><span class="hl-comment">//</span><span class="hl-comment"> setting an image for a select button</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">webBar</span><span class="hl-code">.</span><span class="hl-identifier">setItemImage</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-code">, </span><span class="hl-identifier">image</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment"> clearing an image from a select button</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">webBar</span><span class="hl-code">.</span><span class="hl-identifier">clearItemImage</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+<script>
+	var sel = document.getElementById("sel");
+	var webBar = new dhtmlXToolbarObject("toolbarObj");
+	webBar.setIconsPath("../images/");
+	webBar.loadXML("../common/dhxtoolbar_buttonselect.xml?etc="+new Date().getTime(), updateList);
+	function getId() {
+		var id = sel.options[sel.selectedIndex].value;
+		return id;
+	}
+	var img = "new";
+	var lastImg = document.getElementById("new");
+	function changeImage(imgObj) {
+		img = imgObj.id;
+		imgObj.style.border = "#707070 1px solid";
+		lastImg.style.border = "#E0E0E0 1px solid";
+		lastImg = imgObj;
+	}
+	function clearImage(text) {
+		webBar.clearItemImage(getId());
+	}
+	function setImage() {
+		webBar.setItemImage(getId(), "../../samples/images/"+img+".gif");
+	}
+	function updateList() {
+		sel.options.length = 0;
+		webBar.forEachItem(function(itemId){
+			if (webBar.getType(itemId) == "buttonSelect") {
+				sel.options.add(new Option(itemId, itemId));
+			}
+		});
+	}
+</script>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>

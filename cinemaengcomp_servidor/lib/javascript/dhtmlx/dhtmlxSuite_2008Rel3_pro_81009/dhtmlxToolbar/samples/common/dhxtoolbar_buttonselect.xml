@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<toolbar>
+	<item id="history" type="buttonSelect" text="History">
+		<item type="button" id="today" text="Today"/>
+		<item type="button" id="yesturday" text="Yesturday" selected="true"/>
+		<item type="button" id="lastweek" text="Last Week"/>
+		<item type="button" id="lastmonth" text="Last Month"/>
+		<item id="sep1" type="separator"/>
+		<item type="button" id="more" img="list/red.gif" text="More..."/>
+	</item>
+	<item id="page_setup" type="buttonSelect" img="page_setup.gif" imgdis="page_setup_dis.gif" text="Page">
+		<item type="button" id="layout" text="Layout"/>
+		<item type="button" id="management" text="Management"/>
+	</item>
+	<item id="print" type="buttonSelect" img="print.gif" imgdis="print_dis.gif" title="Print">
+		<item type="button" id="page" text="Page"/>
+		<item type="button" id="selection" text="Selection"/>
+		<item id="sep2" type="separator"/>
+		<item type="button" id="custom" img="list/blue.gif" text="Custom..."/>
+	</item>
+</toolbar>

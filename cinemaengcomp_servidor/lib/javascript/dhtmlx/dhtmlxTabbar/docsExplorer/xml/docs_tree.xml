@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+		<tree id="0">
+			<item id="dhtmlxtabbar" text="dhtmlxTabbar" im0="dhtmlxtabbar_icon.gif" im1="dhtmlxtabbar_icon.gif" im2="dhtmlxtabbar_icon.gif">
+				<userdata name="url">
+					../dhtmlxTabbar/doc
+				</userdata>
+				<userdata name="thisurl">
+					../dhtmlxTabbar/doc/guide.html
+				</userdata>
+				<item text="Main Features" id="tabbar_mf">
+					<userdata name="url">guide.html</userdata>
+				</item>
+				<item text="New in v.1.2" im0="leaf_new.gif" id="tabbar_newinversion">
+					<userdata name="url">new_list.html</userdata>
+				</item>
+				<item text="Supported Browsers" id="tabbar_browsers">
+					<userdata name="url">guide.html</userdata>
+				</item>
+				<item text="Guide" id="tabbar_guide">
+					<userdata name="url">guide.html</userdata>
+					<item text="Initialize TabBar object from javascript constructor" id="tabbar_init"/>
+					<item text="Initialize TabBar object from HTML structure" id="tabbar_inithtml"/>
+					<item text="Building tabbar with Javascript" id="tabbar_scriptinit"/>
+					<item text="Building tabbar from XML" id="tabbar_xmlinit"/>
+					<item text="Assigning content to tabs with Javscript" id="tabbar_contentjs"/>
+					<item text="Assigning content to tabs in XML" id="tabbar_contentxml"/>
+					<item text="Loading content in IFrames" id="tabbar_ifrmode"/>
+					<item text="Loading content with AJAX" id="tabbar_ajaxmode"/>
+		            <item text="Mixed loading mode" im0="leaf_new.gif" id="tabbar_ajaxmodemixed"/>  
+					<item text="Settings: position, align, offset, marging" id="tabbar_settings"/>
+		            <item text="Skining: colors,predefined skins" im0="leaf_upd.gif"  id="tabbar_skins"/> 
+					<item text="Manage tabbar and tab content area size" id="tabbar_sizes"/>  
+					<item text="Manage each tab with script API" id="tabbar_tabmanag"/>
+					<item text="Normalization" im0="leaf_new.gif" id="tabbar_normalz"/>           
+				</item>
+				<item text="API Functions" id="tabbar_api">
+					<userdata name="url">alpha.html</userdata>
+					<item text="Alphabeticaly sorted" id="tabbar_api_a">
+						<userdata name="url">alpha.html</userdata>
+					</item>
+					<item text="Grouped by Type" id="tabbar_api_t">
+						<userdata name="url">tgroup.html</userdata>
+					</item>
+					<item text="Grouped by Object" id="tabbar_api_o">
+						<userdata name="url">ogroup.html</userdata>
+					</item>
+					<item text="Events" id="tabbar_api_events">
+						<userdata name="url">events.html</userdata>
+					</item>
+					<!--item text="*Event handlers arguments" id="tabbar_events_args">
+						<userdata name="url">events.html</userdata>
+					</item-->
+				</item>
+			</item>
+			
+		</tree>

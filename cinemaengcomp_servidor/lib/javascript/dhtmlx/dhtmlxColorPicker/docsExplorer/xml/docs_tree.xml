@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+		<tree id="0">
+			
+			<item id="dhtmlxcolorpicker" text="dhtmlxColorPicker" im0="dhtmlxcolorpicker_icon.gif" im1="dhtmlxcolorpicker_icon.gif" im2="dhtmlxcolorpicker_icon.gif">
+				<userdata name="url">
+					../dhtmlxColorPicker/doc
+				</userdata>
+				<userdata name="thisurl">
+					../dhtmlxColorPicker/doc/guide.html
+				</userdata>
+				<item text="Main Features" id="cp_mf">
+					<userdata name="url">guide.html</userdata>
+				</item>
+				<item text="Supported Browsers" id="cp_browsers">
+					<userdata name="url">guide.html</userdata>
+				</item>
+				<item text="Guide" id="cp_guide">
+					<userdata name="url">guide.html</userdata>
+					<item text="Initializing dhtmlxColorPicker" id="cp_init"></item>
+					<item text="Changing properties" id="cp_props"></item>
+					<item text="Using Custom Colors" id="cp_cust_colors"></item>
+					<item text="Events system" id="cp_events"></item>
+				</item>
+				<item text="API Functions" id="cp_api">
+					<userdata name="url">alpha.html</userdata>
+	        	 	<item text="Object constructor" id="cp_api_obj">
+	    	       		<userdata name="url">objects.html</userdata>
+		         	</item>
+	        	 	<item text="Alphabeticaly sorted" id="cp_api_a">
+						<userdata name="url">alpha.html</userdata>
+					</item>
+					<item text="Events" id="cp_api_events">
+						<userdata name="url">events.html</userdata>
+					</item>
+				</item>
+			</item>
+			
+
+		</tree>

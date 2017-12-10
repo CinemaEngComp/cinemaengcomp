@@ -1,0 +1,110 @@
+<!--conf
+<sample>
+              <product version="1.5" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               </sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Saving\restoring columns' states</title>
+	
+
+
+
+</head>
+
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxgrid_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxGrid</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Saving\restoring columns' states</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxGrid/index.shtml">dhtmlxGrid main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	
+	<p>Try to sort, move columns or change their width and then reload page. Grid's API allows to restore these states automatically or on demand *</p>
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid.css">
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxgrid.js"></script>
+	<script  src="../../codebase/ext/dhtmlxgrid_ssc.js"></script>
+	<script  src="../../codebase/ext/dhtmlxgrid_mcol.js"></script>
+	<script  src="../../codebase/dhtmlxgridcell.js"></script>
+	<table width="600" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				
+				<div id="gridbox" width="100%" height="150px" style="background-color:white;"></div>
+				<div align="center">
+				<table cellspacing="3" cellpadding="0" border="0">
+				<tr><td align="right"> <input type="button" name="a1" value="save columns width" onclick="mygrid.saveSizeToCookie()"></td><td width="5" rowspan="3"></td><td bgcolor="black" rowspan="3" width="1"></td><td width="5" rowspan="3"></td><td><input type="button" name="a1" value="restore columns width" onclick="mygrid.loadSizeFromCookie()"></td></tr>
+				<tr><td align="right"><input type="button" name="a1" value="save sorting" onclick="mygrid.saveSortingToCookie()"></td><td><input type="button" name="a1" value="restore sorting" onclick="mygrid.loadSortingFromCookie()"></td></tr>
+				<tr><td align="right"><input type="button" name="a1" value="save order" onclick="mygrid.saveOrderToCookie()"></td><td><input type="button" name="a1" value="restore order" onclick="mygrid.loadOrderFromCookie()"></td></tr>
+				</table>
+					</div>
+				
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">saveSizeToCookie</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;     </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">loadSizeFromCookie</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">saveSortingToCookie</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;  </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">loadSortingFromCookie</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">saveOrderToCookie</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">loadOrderFromCookie</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></div>
+				
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>Automatically Save\Restore columns' states</p>
+				<div id="gridbox2" width="100%" height="150px" style="background-color:white;"></div>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">mygrid2</span><span class="hl-code">.</span><span class="hl-identifier">enableAutoSizeSaving</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">mygrid2</span><span class="hl-code">.</span><span class="hl-identifier">enableSortingSaving</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">mygrid2</span><span class="hl-code">.</span><span class="hl-identifier">enableOrderSaving</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-identifier">mygrid2</span><span class="hl-code">.</span><span class="hl-identifier">loadXML</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">gridH.xml</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-reserved">function</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-identifier">mygrid2</span><span class="hl-code">.</span><span class="hl-identifier">loadSizeFromCookie</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">mygrid2</span><span class="hl-code">.</span><span class="hl-identifier">loadSortingFromCookie</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">mygrid2</span><span class="hl-code">.</span><span class="hl-identifier">loadOrderFromCookie</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">; 
+    </span><span class="hl-brackets">}</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></div>
+			</td>
+		</tr>
+		
+</table>
+<br>
+* - cookies must be enabled
+
+<script>
+    mygrid = new dhtmlXGridObject('gridbox');
+	mygrid.setImagePath("../../codebase/imgs/");
+	mygrid.enableColumnMove(true)
+	mygrid.loadXML("gridH.xml");
+
+    mygrid2 = new dhtmlXGridObject('gridbox2');
+	mygrid2.setImagePath("../../codebase/imgs/");
+	mygrid2.enableAutoSizeSaving();
+	mygrid2.enableSortingSaving();
+	mygrid2.enableColumnMove(true)
+	mygrid2.enableOrderSaving();
+	mygrid2.loadXML("gridH.xml",function(){
+		mygrid2.loadOrderFromCookie(); 
+		mygrid2.loadSizeFromCookie();
+		mygrid2.loadSortingFromCookie();
+	});
+</script>
+
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

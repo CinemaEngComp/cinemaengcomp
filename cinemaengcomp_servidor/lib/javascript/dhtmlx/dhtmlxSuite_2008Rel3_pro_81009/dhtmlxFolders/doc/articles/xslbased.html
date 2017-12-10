@@ -1,0 +1,155 @@
+<html>
+
+<head>
+
+
+<link rel="STYLESHEET" type="text/css" href="../common/styles.css">
+</head>
+<body>
+	<table border="0" cellpadding="0" cellspacing="0" class="sample_header" zid="71">
+		<tbody zid="3">
+			<tr valign="center" zid="4">
+				<td align="center" width="10" zid="5">&nbsp;</td>
+				<td align="left" zid="6">
+					<p zid="224">
+						<a href="http://www.dhtmlx.com/" zid="7">DHTMLX</a> Documentation
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<!--- CONTENT. Starts --->
+	<h1 id="z.b_">Create your own XML-XSL based item types for dhtmlxFolders</h1>
+<br id="qe1y">
+<p id="qe1y0" class="MsoNormal">What is really nice with dhtmlxFolders is 
+that you can create your own view for item. There two ways to do 
+this:</p>
+<ol id="qe1y2">
+<li id="qe1y3"><span id="qe1y5" style="font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-size-adjust: none; font-stretch: normal;"><font id="c4vj" size="1">&nbsp;</font></span>Javascript</li>
+<li id="qe1y7"> XSL</li>
+</ol>
+
+<p id="qe1y11" class="MsoNormal">Here I’ll explain XSL way. Javascript way is described <a title="here" href="http://./jsbased.html" id="nwyg">here</a>.&nbsp; <br id="rclk">
+</p>
+<p id="rclk0" class="MsoNormal"><br id="rclk2">
+</p>
+<p id="rclk3" class="MsoNormal">First – some details about how it works from inside. 
+dhtmlxFolders provides the possibility to display any number of elements with 
+same structure. So, all we need to define is the structure of single element – 
+other elements will have same structure with their own data. Data structure (XML 
+structure as we talk about XML based items) depends on your needs. The only 
+requirement - the name of nodes which represent items should be “item” (this 
+also can be changed with <i id="qrj_">setItemTagName</i>, but let’s leave it for another story).&nbsp; So here is possible 
+xml:</p>
+<p id="j.4z" class="MsoNormal"><br id="j.4z0">
+</p>
+<blockquote id="j.4z2">&lt;data&gt; <br id="j.4z3">
+&nbsp;&nbsp;&nbsp;&nbsp;    &lt;item id=”1”&gt; <br id="j.4z4">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           &lt;title&gt;Some text&lt;/title&gt; <br id="j.4z5">
+&nbsp;&nbsp;&nbsp;&nbsp;    &lt;/item&gt; <br id="j.4z6">
+&nbsp;&nbsp;&nbsp;&nbsp;    &lt;item id=”2”&gt; <br id="j.4z7">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           &lt;title&gt;Another text&lt;/title&gt;       <br id="j.4z8">
+&nbsp;&nbsp;&nbsp;&nbsp;       &lt;/item&gt; <br id="j.4z9">
+&lt;/data&gt;<br id="j.4z10">
+</blockquote>
+<p id="j.4z11" class="MsoNormal"></p>
+And another one:<br id="dszr">
+<blockquote id="y74a">&lt;data&gt; <br id="y74a0">
+&nbsp;&nbsp;&nbsp;&nbsp;    &lt;item id=”ER009723A” price=”9.99” rate=”7”&gt; <br id="y74a1">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           &lt;title&gt;Some text&lt;/title&gt; <br id="y74a2">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           &lt;author&gt;Bill Krowler&lt;/author&gt; <br id="y74a3">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;date&gt;2008-01-29&lt;/date&gt; <br id="y74a4">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;description&gt;Some long text inside&lt;/description&gt; <br id="y74a5">
+&nbsp;&nbsp;&nbsp; &lt;/item&gt; <br id="y74a6">
+&nbsp;&nbsp;&nbsp; &lt;item id=”EB006533A” price=”9.99” rate=”8”&gt; <br id="y74a7">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;title&gt;Some text&lt;/title&gt; <br id="y74a8">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;author&gt;Bill Krowler&lt;/author&gt; <br id="y74a9">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;date&gt;2007-12-21&lt;/date&gt; <br id="y74a10">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;description&gt;Some long text inside&lt;/description&gt; <br id="y74a11">
+&nbsp;&nbsp;&nbsp; &lt;/item&gt; <br id="y74a12">
+&lt;/data&gt;</blockquote>
+ 
+
+    
+    
+<p id="tgg5" class="MsoNormal">As you see there are no other limitations. 
+All data you need you can put inside item tag. The trick is in the xsl you’ll 
+add to it. In general cases XSL structure should also be the same:</p>
+<blockquote id="tgg51">
+<p id="tgg52" class="Code">&lt;xsl:stylesheet version="1.0" 
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;</p>
+<p id="tgg54" class="Code">&nbsp;&nbsp;&nbsp; &lt;xsl:template match="item"&gt;</p>
+<p id="tgg56" class="Code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [YOUR CODE HERE]</p>
+<p id="tgg58" class="Code">&nbsp;&nbsp;&nbsp; &lt;/xsl:template&gt;</p>
+<p id="tgg510" class="Code">&lt;/xsl:stylesheet&gt;</p>
+</blockquote>
+
+
+
+<p id="tgg512" class="MsoNormal">What is specific for your needs should be put there instead of 
+[YOUR CODE HERE]. Each item will be processed using this code. And the result 
+will be used as HTML for each item top element. For example:</p>
+<blockquote id="sg::0">
+<p id="sg::1" class="Code">&lt;div style=”color:red”&gt;&lt;xsl:value-of 
+select=”./title”/&gt;&lt;div&gt;</p>
+</blockquote>
+will display each item title value as red 
+text one by one. Resulting item HTML will be:<br id="sg::4">
+<blockquote id="cjgt">
+<p id="cjgt0" class="Code">&lt;div class=”dhx_folders_item”&gt;&lt;div 
+style=”color:red”&gt;value of title tag&lt;/div&gt;&lt;div&gt;</p>
+</blockquote>
+You see – new DIV appears. This is top 
+element for each item, which will be created by dhtmlxFolders automatically to 
+be a container for the content you have created with XSL. 
+<p id="cjgt3" class="MsoNormal"><br id="cjgt5">
+</p>
+<p id="cjgt6" class="MsoNormal">This is just simple sample. You can use the 
+code as complex as you need – there are no limits.&nbsp; Top element css class also 
+can be reset to different value using setCSSBaseName method. For example using 
+the following script command before loading myFolders content:</p>
+<blockquote id="seju">
+<p id="seju0" class="Code">myFolders.setCSSBaseName(“test”);</p>
+</blockquote>
+<p id="seju2" class="MsoNormal">will result in the following HTML:</p>
+<blockquote id="seju4">
+<p id="seju5" class="Code">&lt;div class=”dhx_folders_<span id="seju7" style="color: red;">TEST_</span>item”&gt;&lt;div 
+style=”color:red”&gt;value of title tag&lt;/div&gt;&lt;div&gt;</p>
+</blockquote>
+<p id="wu9p" class="MsoNormal">If you compare it to previous one you’ll see 
+where “test” goes. Now you can define css for dhx_folders_TEST_item class to 
+have your own style for top item element and included elements.</p>
+<p id="seju12" class="MsoNormal"><br id="wu9p1">
+</p>
+<h3 id="wu9p2">Here are also some other things you need to know about creating 
+your own templates for items:</h3>
+<p id="ahq6" class="MsoListParagraph">1.<span id="ahq61" style="font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-size-adjust: none; font-stretch: normal;"><font id="c4vj0" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span>Any 
+data from xml which was put into &lt;userdata&gt; tag can be used inside xsl 
+file as global variable with same name. For example:</p>
+<blockquote id="ahq63">&lt;data&gt; <br id="ahq64">
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;userata name=”images_dir”&gt;./myimages&lt;/userdata&gt; <br id="ahq65">
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&gt;…&lt;/item&gt; <br id="ahq66">
+&lt;/data&gt;   </blockquote>
+<p id="ahq67" class="MsoNormal">if you include xsl:variable tag defining 
+“images_dir” global variable with any default value&nbsp; into your xsl file, then it 
+will be replaced with “./myimages” value before processing. Here is sample of 
+variable definition in xsl file which will work:</p>
+<blockquote id="f-0e">&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt; <br id="f-0e0">
+&nbsp;&nbsp;&nbsp;&nbsp;    &lt;xsl:variable name="images_dir"&gt;.&lt;/xsl:variable&gt; <br id="f-0e1">
+&nbsp;&nbsp;&nbsp;&nbsp;    &lt;xsl:template match="item"&gt; <br id="f-0e2">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           [YOUR CODE HERE] <br id="f-0e3">
+&nbsp;&nbsp;&nbsp;&nbsp;    &lt;/xsl:template&gt; <br id="f-0e4">
+&lt;/xsl:stylesheet&gt;</blockquote>
+<p id="ahq622" class="MsoNormal">This way you can pass necessary global value 
+to each item.</p>
+<p id="ahq624" class="MsoListParagraph">2.<span id="ahq626" style="font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-size-adjust: none; font-stretch: normal;"><font id="c4vj1" size="1">&nbsp;&nbsp;&nbsp;&nbsp; <br id="dn:v">
+</font></span></p>
+<br id="dn:v0">
+<p id="seju21" class="MsoNormal"><br id="seju23">
+</p>
+<br id="c4vj2">
+
+	<!--- CONTENT. Ends --->
+	<div class="copyright" zid="223">&copy; DHTMLX, 2008</div>
+</body>
+</html>

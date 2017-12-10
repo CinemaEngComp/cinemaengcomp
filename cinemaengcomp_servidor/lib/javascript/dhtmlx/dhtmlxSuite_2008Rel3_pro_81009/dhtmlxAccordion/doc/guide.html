@@ -1,0 +1,679 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>dhtmlxAccordion Guide</title>
+	<link rel="STYLESHEET" type="text/css" href="common/styles.css">
+</head>
+   
+<body>
+      
+<h1 id="di2j">dhtmlxAccordion Guide and Code Samples</h1>
+<h2><a name='accordion_sqq.'>
+  1. Introduction</a></h2>
+<h3><a name='accordion_f9g4'>1.1 Scope of the Document</a></h3>
+This document describes <b id="wziw">dhtmlxAccordion </b>component,
+defines its methods and global parameters. This documentation is
+created to give users full understanding of every feature of
+this component and also to enable users to implement this component
+quickly and easily.<br id="x-0e">
+
+<h3><a name='accordion_m_ti'>
+  1.2 Target Readers</a></h3>
+<p id="rl6g" class="MsoNormal">
+  Target readers are users (developers).
+</p>
+<br id="j83c0">
+<h2><a name='accordion_kevt'>
+  2. What is dhtmlxAccordion
+</a></h2>
+<b style="background-color: rgb(255, 255, 255);" id="m7qr">dhtmlxAccordion</b> <span id="t4-h0" style="background-color: rgb(255, 255, 255);">is a component that</span> provides an easy and effective way of placing different types of content on a single page.
+The component is a very flexible and easy to use content manager.  It is compatible with other dhtmlx components that can be attached to <span id="z5u." style="background-color: rgb(255, 255, 255);">dhtmlxAccordion</span>  without any difficulties. <br id="v-9w1">
+<b style="background-color: rgb(255, 255, 255);" id="m7qr1">dhtmlxAccordion</b> supports only vertical layout. As other dhtmlx components, Accordion is intended to save users' time on coding and
+configuring.<br id="b8gu">
+<h3><a name='accordion_v.oj'>2.1 Main Features</a></h3>
+<ul id="pulz">
+<li id="pulz0">Cross-browser compatibility;<br id="n::q">
+</li>
+<li id="pulz1">Space-saving way of content organization;</li>
+<li id="pulz2">Auto-resizing capabilities;</li>
+<li id="pulz3">Easy integration with other dhtmlx components;</li>
+<li id="pulz4">Different skins available;</li>
+<li id="pulz5">Undockable items.<br id="pulz6">
+</li>
+</ul>
+<h3><a name='accordion_r.e2'>2.2 Supported browsers</a></h3>
+<ul id="i1c-">
+<li id="i1c-0">IE;</li>
+<li id="i1c-1">Mac OS X Safari/Conqueror;</li>
+<li id="hf.0">Mozilla/Mozilla Firefox;</li>
+<li>Google Chrome;<br>
+</li>
+<li id="yso20">
+      Opera 8.5+.</li>
+</ul>
+<h2><a name='accordion_m7qr2'>
+  3. Initializing dhtmlxAccordion</a></h2>
+
+
+
+
+
+  <a id="nzn2" name="3.1.Minimal_Initialization"></a><a id="bb-h" name="_Toc193605132"></a>
+<p id="jcck5">
+    The first steps that need to be taken for <b id="bmqe">dhtmlx</b><b id="l35y0">Accordion'</b>s initialization are the following:
+  </p>
+  
+<p id="jcck6">
+    <br id="l35y1">
+  </p>
+  
+<ul id="tour">
+<li id="p5-m">
+      Download dhtmlxAccorion and dhtmlxWindows packages from the server and place them in a folder;
+    </li>
+<li id="jcck7">
+      Create an html file;
+    </li>
+<li id="m9:09">Place the full paths to <b id="zdv_">dhtmlxAccordion</b>'s CSS and JS files into the header of html file; 
+</li>
+<li id="m9:012">Place the full paths to <span id="vd5j" style="font-family: Verdana;"><b id="cicd">dhtmlxWindows</b><font id="h9jm" size="2">'s CSS and JS files into the header of </font></span>html file<span id="m9:013" style="font-family: Verdana;"><font id="m9:014" size="2">.</font></span></li>
+</ul>
+<blockquote id="txym"><a id="d253" name="_Toc193605132"><span id="xapr" style="font-family: Verdana;"><font id="rehr" size="2">&lt;head&gt;<br id="fv6b">
+&nbsp;&nbsp;&nbsp; </font></span><span id="m9:017" style="font-family: Verdana;"><font id="m9:018" size="2">&lt;!-- dhtmlxAccordion --&gt;</font></span><br id="crku">
+</a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span id="crku0" class="start-tag">script</span><span id="crku1" class="attribute-name"> src</span>=<span id="crku2" class="attribute-value">"</span><span id="x_e0" style="font-family: Verdana;"><font id="ekf7" size="2">[full path to this file]</font></span><span id="fv6b2" class="attribute-value">/dhtmlxcommon.js"</span>&gt;&lt;/<span id="crku3" class="end-tag">script</span>&gt;<br id="crku4">
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span id="crku5" class="start-tag">script</span><span id="crku6" class="attribute-name"> src</span>=<span id="crku7" class="attribute-value">"</span><span id="fv6b3" style="font-family: Verdana;"><font id="fv6b4" size="2">[full path to this file]</font></span><span id="fv6b5" class="attribute-value">/dhtmlxaccordion.js"</span>&gt;&lt;/<span id="crku8" class="end-tag">script</span>&gt;<br id="crku9">
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span id="crku10" class="start-tag">link</span><span id="crku11" class="attribute-name"> rel</span>=<span id="crku12" class="attribute-value">"stylesheet" </span><span id="crku13" class="attribute-name">type</span>=<span id="crku14" class="attribute-value">"text/css" </span><span id="crku15" class="attribute-name">href</span>=<span id="crku16" class="attribute-value">"</span><span id="fv6b6" style="font-family: Verdana;"><font id="fv6b7" size="2">[full path to this file]</font></span><span id="fv6b8" class="attribute-value">/dhtmlxaccordion_dhx_blue.css"</span>&gt;<br id="kqfu">
+<br id="fv6b9">
+&nbsp;&nbsp;&nbsp; <span id="m9:025" style="font-family: Verdana;"><font id="nppu" size="2">&lt;!-- dhtmlxWindows --&gt;</font></span><br id="kqfu2">
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span id="kqfu3" class="start-tag">script</span><span id="kqfu4" class="attribute-name"> src</span>=<span id="kqfu5" class="attribute-value">"</span><span id="nse7" style="font-family: Verdana;"><font id="nse70" size="2">[full path to this file]</font></span><span id="nse71" class="attribute-value">/dhtmlxwindows.js"</span>&gt;&lt;/<span id="kqfu6" class="end-tag">script</span>&gt;<br id="kqfu7">
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span id="kqfu8" class="start-tag">link</span><span id="kqfu9" class="attribute-name"> rel</span>=<span id="kqfu10" class="attribute-value">"stylesheet" </span><span id="kqfu11" class="attribute-name">type</span>=<span id="kqfu12" class="attribute-value">"text/css" </span><span id="kqfu13" class="attribute-name">href</span>=<span id="kqfu14" class="attribute-value">"</span><span id="nse72" style="font-family: Verdana;"><font id="nse73" size="2">[full path to this file]</font></span><span id="nse74" class="attribute-value">/dhtmlxwindows.css"</span>&gt;<br id="kqfu15">
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span id="kqfu16" class="start-tag">link</span><span id="kqfu17" class="attribute-name"> rel</span>=<span id="kqfu18" class="attribute-value">"stylesheet" </span><span id="kqfu19" class="attribute-name">type</span>=<span id="kqfu20" class="attribute-value">"text/css" </span><span id="kqfu21" class="attribute-name">href</span>=<span id="kqfu22" class="attribute-value">"</span><span id="nse75" style="font-family: Verdana;"><font id="nse76" size="2">[full path to this file]</font></span><span id="nse77" class="attribute-value">/dhtmlxwindows_dhx_blue.css"</span>&gt;<font id="txym6" size="2"><br id="kqfu23">
+&lt;/head&gt;</font><br id="n:fd21">
+</blockquote>
+<a id="c4y0" name="_Toc193605132"><span id="m9:040" style="font-family: Verdana; background-color: rgb(255, 255, 255);"><font id="crjd" size="2"><b id="m4.w">Note</b>: dhx_blue is the default skin. If the user chooses to apply some other skin, he should indicate path to the appropriate </font></span><span id="n:3g" style="font-family: Verdana;"><font id="n:3g0" size="2"><i id="n:3g1">dhtmlx</i></font></span><i id="g.xl"><span id="g.xl0" class="attribute-value">accordion</span></i><span id="g.xl1" style="font-family: Verdana;"><font id="g.xl2" size="2"><i id="g.xl3">_[name_of_the_skin].css</i> file from dhtmlxAccordion package and to </font></span></a><a id="e5hd" name="_Toc193605132"><span id="e5hd0" style="font-family: Verdana; background-color: rgb(255, 255, 255);"><font id="e5hd1" size="2">the appropriate </font></span><span id="e5hd2" style="font-family: Verdana;"><font id="e5hd3" size="2"><i id="e5hd4">dhtmlx</i></font></span><i id="e5hd5"><span id="e5hd6" class="attribute-value">windows</span></i><span id="e5hd7" style="font-family: Verdana;"><font id="e5hd8" size="2"><i id="e5hd9">_[name_of_the_skin].css</i> file from dhtmlxWindows package</font></span></a><a id="e5hd10" name="_Toc193605132"><span id="e5hd11" style="font-family: Verdana;"><font id="e5hd12" size="2">.<br id="cv6f">
+</font></span></a>
+<h3><a name='accordion_cv6f0'>3.1 New Accordion Object Creation</a></h3>
+<a id="cv6f2" name="_Toc193605132"><span id="c4y00" style="font-family: Verdana;"><font id="c4y01" size="2">The user needs to create </font></span>an object where <span id="jcck15" style="background-color: rgb(255, 255, 255);"><b id="on2r">dhtmlxAccordion</b></span><span id="jcck16" style="background-color: rgb(255, 255, 255);"> will</span><span id="nv3o" style="background-color: rgb(255, 255, 255);"> be placed later. In this example the object is a &lt;div&gt; element on page, which is placed in the &lt;body&gt; tag:</span></a><a id="n:fd20" name="_Toc193605132"><br id="n:fd24">
+</a>
+<blockquote id="t2o7">&lt;<span id="t2o70" class="start-tag">div</span><span id="t2o71" class="attribute-name"> id</span>=<span id="t2o72" class="attribute-value">"</span>accordObj<span id="t2o74" class="attribute-value">"</span>&gt;&lt;/<span id="t2o75" class="end-tag">div</span>&gt;<a id="t2o76" name="_Toc193605132"></a><br id="n:fd26">
+<a id="t2o77" name="_Toc193605132"></a></blockquote>
+<a id="t2o78" name="_Toc193605132"><span id="t2o79" style="font-family: Verdana;"><font id="t2o710" size="2">A new Accordion object can be created in the following way:<br id="t:-n0">
+</font></span></a>
+<blockquote id="t:-n1"><a id="m7qr3" name="_Toc193605132"><span id="s1::7" style="font-family: Verdana;"><font id="elgr0" size="2">&lt;script&gt;<br id="t7gn">
+&nbsp;&nbsp;&nbsp;&nbsp;var
+dhxAccord = new dhtmlXAccordion(parentId, skin);<br id="t7gn0">
+&lt;/script&gt;<br id="t:-n2">
+</font></span></a><a id="m7qr4" name="_Toc193605132"></a></blockquote>
+<a id="m7qr5" name="_Toc193605132"></a><a id="dj6d" name="_Toc193605132" style="background-color: rgb(255, 255, 255);"></a><a id="jcck88" name="_Toc193605132"></a><span id="mx9i" style="font-family: Verdana;"><font id="w58a" size="2"> <b id="bm84">parentId </b>defines </font></span><span id="xbn:" style="font-family: Verdana;"><font id="xqry" size="2">an HTML object on page to which the accordion is attached</font></span><span id="f4:w" style="font-family: Verdana;"><font id="bwed" size="2"> <span id="rzmx" style="color: rgb(0, 0, 0);">(the main accordion container in the code mentioned above)</span>.<br id="mamd">
+</font></span><span id="r2651" style="font-family: Verdana; background-color: rgb(255, 255, 255);"><font id="r2652" size="2">The second argument is optional, and it indicates the name of the skin  chosen for the Accordion. If this argument is not indicated, the component will be created with the default skin (<i id="kdxa">dhx_blue</i>).</font></span><br id="etnf">
+<br id="vo820">
+So, in our case the code will look like this:<a id="dogi" name="_Toc193605132"></a><a id="m7qr6" name="_Toc193605132"><br id="bjhj">
+</a>
+<blockquote id="a1-1"><a id="a1-10" name="_Toc193605132"></a><a id="dogi1" name="_Toc193605132"><span id="dogi2" style="font-family: Verdana;"><font id="dogi3" size="2">&lt;script&gt;<br id="t7gn1">
+&nbsp;&nbsp;&nbsp;&nbsp;var
+dhxAccord = new dhtmlXAccordion("</font></span></a><a id="a1-11" name="_Toc193605132">accordObj<span id="a1-12" class="attribute-value">"</span></a><a id="a1-14" name="_Toc193605132"><span id="a1-15" style="font-family: Verdana;"><font id="a1-16" size="2">);<br id="t7gn2">
+&lt;/script&gt;<br id="a7ye0">
+</font></span></a><a id="a1-17" name="_Toc193605132"></a></blockquote>
+<h3><a name='accordion_iek:0'>3.2 Attaching dhtmlxAccordion (Object) to Window</a></h3>
+<a id="m7qr10" name="_Toc193605132"></a><a id="m7qr11" name="_Toc193605132"></a><a id="m7qr12" name="_Toc193605132"></a><a id="m7qr13" name="_Toc193605132"><span id="m7qr14" style="font-family: Verdana;"><font id="m7qr15" size="2">An Accordion object can be attached to any created window on page. </font></span></a><a id="m7qr16" name="_Toc193605132">First, the user needs to create a new base for a set of new windows, a new dhtmlxWindow object for it, and set paths for window's image files. <br id="k5l62">
+</a><a id="m7qr17" name="_Toc193605132"></a><a id="m7qr18" name="_Toc193605132"></a><a id="m7qr19" name="_Toc193605132"></a>
+<blockquote id="uccf1"><a id="m7qr20" name="_Toc193605132"><span id="qjkt6" style="font-family: Verdana;"><font id="elgr3" size="2">&lt;script&gt;<br id="rd25">
+&nbsp;&nbsp;&nbsp; var
+dhxWins = new dhtmlXWindows();<br id="hw4:">
+</font></span></a>&nbsp;&nbsp;&nbsp;&nbsp;dhxWins.setImagePath("<span id="e0.n" style="font-family: Verdana;"><font id="e0.n0" size="2">[full path to this directory]</font></span>/codebase/imgs/");<br id="hw4:0">
+&nbsp;&nbsp;&nbsp; var w1 = dhxWins.createWindow("w1", 10, 10, 320, 360);<br id="rd250">
+&lt;/script&gt;<a id="hw4:1" name="_Toc193605132"></a><br id="rd251">
+</blockquote>
+
+
+
+<a id="m7qr21" name="_Toc193605132"></a><a id="m7qr22" name="_Toc193605132"></a><font id="xi010" color="#000000"><a id="m7qr23" name="_Toc193605132"></a></font>
+<div id="rqlj0"><font id="xi010" color="#000000"><a id="m7qr23" name="_Toc193605132"><font id="m7qr25" size="2"><font class="Apple-style-span" id="o3900">The parameters of the <b id="e1.0">createWindow()</b> method are as follows:<br id="w4n2">
+</font></font></a></font>
+<ul id="cg7a"><font id="xi010" color="#000000">
+<li style="font-family: Verdana;" id="ddn.">
+<p id="j-v1" class="western" style="margin-bottom: 0.04in;"><a id="m7qr23" name="_Toc193605132"><font id="nkwd0" size="2"><b id="sj:n">w1</b> - Window Id; </font></a></p>
+</li>
+<li style="font-family: Verdana;" id="t14-">
+<p id="vhbo" class="western" style="margin-bottom: 0.04in;"><a id="m7qr23" name="_Toc193605132"><font id="nkwd1" size="2"><b id="sj:n0">10,10</b> - Window position (x &amp; y); </font></a></p>
+</li>
+<li id="t5ry">
+<p id="okkn" class="western" style="margin-bottom: 0.04in;"><a id="m7qr23" name="_Toc193605132"><font id="nkwd2" style="font-family: Verdana;" size="2"><b id="e1.00">320,360</b> - Window's width &amp; height.</font></a></p>
+</li>
+</font></ul>
+<font id="xi010" color="#000000"><a id="m7qr23" name="_Toc193605132"><br id="utra">
+<font id="w4n20" size="2"><font class="Apple-style-span" id="w4n21">Then the window will invoke the base for <b id="wo0b0">dhtmlxAccordion</b> and will return the handler for the Accordion object itself. The user should write only the following line of code:<br id="wzee0">
+</font></font></a></font></div>
+<div id="m7qr26">
+<blockquote id="uyzo2" style="border: 1px dashed rgb(221, 221, 221); padding: 10px;"><a id="m7qr27" name="_Toc193605132"></a><a id="m7qr29" name="_Toc193605132"></a>&lt;script&gt;<br id="lm4q">
+&nbsp;&nbsp;&nbsp;&nbsp;var dhxAccord = w1.attachAccordion();<br id="lm4q0">
+&lt;/script&gt;<a id="lm4q1" name="_Toc193605132"></a><a id="lm4q3" name="_Toc193605132"></a></blockquote>
+</div>
+<div id="fgmo2">
+<h3><a name='accordion_dn4l'>3.3 Attaching dhtmlxAccordion (Object) to Layout</a></h3>
+<p id="y-qx7"><a id="chp6" name="_Toc193605132"></a></p>
+<p id="rvss"><a id="rvss0" name="_Toc193605132">
+First, the user should download <b id="on68">dhtmlxLayout </b>package from the server into the same folder where previously downloaded packages were put. Then, the full path to the following files is to be indicated <span id="m9:0112" style="font-family: Verdana;"><font id="m9:0113" size="2">in the &lt;head&gt; tag of </font></span>html file:</a></p>
+<p id="fzmk"><a id="fzmk0" name="_Toc193605132"><br id="fzmk1">
+</a></p>
+<ul id="iidf">
+<li id="iidf0"><a id="gwr10" name="_Toc193605132"></a><span id="gwr11" class="attribute-value">dhtmlxlayout.js</span></li>
+<li id="iidf1"><span id="k6d5" class="attribute-value">dhtmlxlayout.css</span></li>
+<li id="iidf3"><span id="iidf5" class="attribute-value">dhtmlxlayout_dhx_blue.css</span></li>
+</ul>
+<p id="gwr1"></p>
+<p id="gwr12"><a id="gwr15" name="_Toc193605132"></a></p>
+<p id="rvss3"><a id="rvss4" name="_Toc193605132"></a></p>
+<blockquote id="al1x">
+<p id="al1x0"><a id="al1x1" name="_Toc193605132"><span id="al1x2" style="font-family: Verdana;"><font id="al1x3" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- dhtmlxLayout --&gt;</font></span></a></p>
+<p id="al1x4"><a id="al1x5" name="_Toc193605132"><span id="bztm" style="font-family: Verdana;"><font id="stat" size="2">&lt;script src="</font></span><span id="m9:021" style="font-family: Verdana;"><font id="m9:022" size="2">[full path to this file]</font></span><span id="m9:023" style="font-family: Verdana;"><font id="m9:024" size="2">/dhtmlxlayout.js"&gt;&lt;/script&gt;</font></span>
+  
+  </a></p>
+<p class="MsoNormal" id="jiuw">
+    <span id="rzoh" style="font-family: Verdana;"><font id="zowx" size="2">&lt;link rel="stylesheet" type="text/css" href="</font></span><span id="al1x8" style="font-family: Verdana;"><font id="al1x9" size="2">[full path to this file]</font></span><span id="m9:019" style="font-family: Verdana;"><font id="m9:020" size="2">/dhtmlxlayout.css"&gt;</font></span>
+  </p>
+<p class="MsoNormal" id="h9lh">
+    <span id="h9lh0" style="font-family: Verdana;"><font id="h9lh1" size="2">&lt;link rel="stylesheet" type="text/css" href="</font></span><span id="h9lh2" style="font-family: Verdana;"><font id="h9lh3" size="2">[full path to this file]</font></span><span id="h9lh5" style="font-family: Verdana;"><font id="h9lh6" size="2">/dhtmlxlayout_dhx_blue.css"&gt;</font></span><br id="al1x12">
+</p>
+</blockquote>
+  
+  
+<p class="MsoNormal" id="ztsa">
+    </p>
+<p class="MsoNormal" id="al1x15">
+  </p>
+<p id="al1x16"><a id="al1x17" name="_Toc193605132"></a></p>
+<p id="iidf8"><a id="iidf9" name="_Toc193605132">
+
+We need to create an object where <span id="m9:050" style="background-color: rgb(255, 255, 255);"><b id="ga85">dhtmlxLayout</b></span><span id="m9:051" style="background-color: rgb(255, 255, 255);"> will</span><span id="ga850" style="background-color: rgb(255, 255, 255);"> be placed later. In this example the object is a &lt;div&gt; element on page which is placed in the &lt;body&gt; tag:</span><br id="f_ef" style="background-color: rgb(255, 255, 255);">
+</a></p>
+<blockquote id="hlfk">
+  
+<p class="MsoNormal" id="pi261">
+    <span id="nv3o0" style="background-color: rgb(255, 255, 255);">&lt;div id="parentId" style="position:absolute; width:600px; height:400px;"&gt;&lt;/div&gt;</span><br id="db_d">
+  </p>
+</blockquote>
+The next step is to create a new <span id="d3gs" style="font-family: Verdana;"><font id="an7g" size="2"><b id="nd2m0">dhtmlXLayoutObject</b> and place it after the &lt;div&gt; element (object) that we've just created:</font></span><br id="bhtp2">
+<blockquote id="jiea">
+  
+<p class="MsoNormal" id="grwm" style="background-color: rgb(255, 255, 255);">
+    <span id="k2zj" style="font-family: Verdana;"><font id="ddq9" size="2"><span id="c_8s" style="background-color: rgb(255, 255, 255);">&lt;script&gt; &nbsp;&nbsp;&nbsp;&nbsp;<br id="s65n">
+    </span></font></span>
+  </p>
+  
+<p class="MsoNormal" id="m9:052" style="background-color: rgb(255, 255, 255);">
+    <span id="m9:053" style="font-family: Verdana;"><font id="m9:054" size="2"><span id="m9:055" style="background-color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp;&nbsp;var dhxLay</span>out = new dhtmlXLayoutObject("parentId", "3L", "dhx_black");</font></span>
+  </p>
+  
+<p class="MsoNormal" id="m9:056" style="background-color: rgb(255, 255, 255);">
+    <span id="m9:057" style="font-family: Verdana;">&lt;/script&gt;</span><br id="qdk10">
+  </p>
+</blockquote>
+<span id="o5qf9" style="font-family: Verdana;"><font id="o5qf10" size="2">The second </font></span><span id="m9:073" style="font-family: Verdana;"><font id="m9:074" size="2">argument </font></span><span id="m9:075" style="font-family: Verdana;"><font id="m9:076" size="2">in </font></span><span id="m9:077" style="font-family: Verdana;"><font id="m9:078" size="2"><b id="hgaz">dhtmlXLayoutObject()</b> is the <span id="nycy" style="background-color: rgb(255, 255, 255);">code </span>of the Layout's pattern.<br id="r265">
+  </font></span>
+<p id="o5qf8">
+</p>
+
+
+  <span id="m9:079" style="font-family: Verdana;"><font id="m9:080" size="2">The third argument is optional, and it indicates the name of the skin chosen for the Layout. If this argument is not indicated, the component will be created with the default skin (<i id="ga851">dhx_blue</i>).</font></span>
+<p id="ga852"><a id="ga853" name="_Toc193605132"></a></p>
+<p id="ga854"><a id="ga855" name="_Toc193605132"><br id="ga858">
+</a></p>
+<a id="y-qx23" name="_Toc193605132"></a>
+<p id="y-qx25"><a id="y-qx26" name="_Toc193605132"></a></p>
+<p id="n8l03"><a id="n8l04" name="_Toc193605132"><span id="n8l05" style="font-family: Verdana;"><font id="n8l06" size="2">And only then the user should write the following line of code in order to attach an Accordion to the chosen layout's cell (let it be the first cell "a"):</font></span></a></p>
+<blockquote id="n8l07">
+<p id="n8l08"><a id="n8l09" name="_Toc193605132"></a>&lt;script&gt;<br id="p284">
+</p>
+<p id="p2840">&nbsp;&nbsp;&nbsp;&nbsp;var dhxAccord = dhxLayout.cells("a").attachAccordion();</p>
+<p id="p2841">&lt;/script&gt;</p>
+</blockquote>
+<p id="n8l011"><a id="n8l012" name="_Toc193605132"></a></p>
+<h3><a name='accordion_sbnp'>3.4 Available Skins</a></h3>
+<p id="hr_w"><span id="g._f" style="background-color: rgb(255, 255, 255);"><span id="g._f0" style="background-color: rgb(255, 255, 255);">The following predefined skins are available for <b id="h:f0">dhtmlxAccordion</b> users:</span></span></p>
+<ul id="ohte">
+<li id="ohte0"><span id="ohte1" style="background-color: rgb(255, 255, 255);"><span id="ohte2" style="background-color: rgb(255, 255, 255);">dhx_blue (the default on)</span></span></li>
+</ul>
+<div id="t72s" style="padding: 1em 0pt; text-align: left;"><img id="z88o" style="width: 120px; height: 200px;" src="common/dgr5rjkf_182ffzsd2cw_b.png"><br id="ohte3">
+</div>
+<ul id="ohte4">
+<li id="ohte5"><span id="ohte6" style="background-color: rgb(255, 255, 255);"><span id="ohte7" style="background-color: rgb(255, 255, 255);">dhx_black<br id="ohte8">
+</span></span></li>
+</ul>
+<img id="q.xj" style="width: 120px; height: 200px;" src="common/dgr5rjkf_181gxfw3hgb_b.png">
+<h2><a name='accordion_pm1h'>4. dhtmlxAccordion Configuration
+</a></h2>
+
+  <a id="sfb0" name="_Toc193605132"></a>
+<h3><a name='accordion_pm1h0'>4.1 Setting Image Path</a></h3>
+<a id="m7qr32" name="_Toc193605132"></a><a id="m7qr33" name="_Toc193605132">
+  </a>
+
+<span id="lm96" style="font-family: Verdana;"><font id="dhit" size="2">Method</font></span> <b style="font-family: Verdana;" id="v86x0">setIconsPath() </b><span id="xh:e" style="font-family: Verdana;"><font id="x:nm" size="2">should be used to </font></span><span id="jx3b" style="font-family: Verdana;"><font id="om81" size="2">set
+the full paths to the directory where Accordion image files are located. </font></span><span id="vw3:1" style="font-family: Verdana;"><font id="vw3:2" size="2">In this method the user should </font></span>set path to the directory, where accordion <b id="kxj-0">icons</b> images are stored.
+<br id="fgmo5">
+</div>
+<div id="l5kd4">
+
+
+  
+<blockquote id="ucpa0"><font id="x6fw2" color="#000000"><span id="wxym" style="font-family: Verdana;">&lt;script&gt;<br id="jz31">
+&nbsp;&nbsp;&nbsp;&nbsp;dhxAccrod</span></font><span id="k2ta" style="font-family: Verdana;"><font id="d_7o" size="2">.</font></span><span id="ul.3" style="font-family: Verdana;"><font id="k3m1" size="2">setIconsPath(</font></span>"<span id="j1cl0" style="font-family: Verdana;"><font id="j1cl1" size="2">[</font></span><span id="jcck101" style="font-family: Verdana;"><font id="jcck102" size="2">full path to icons image files directory]</font></span>"<span id="eb6o1" style="font-family: Verdana;"><font id="eb6o2" size="2">);<br id="jz310">
+&lt;/script&gt;<br id="jz311">
+</font></span></blockquote>
+<a id="m7qr36" name="_Toc193605132"></a>
+<h3><a name='accordion_al63'>4.2 Setting Sizes</a></h3>
+<a id="m7qr39" name="_Toc193605132"></a>
+<p id="qjkt2" class="MsoNormal"><span id="qjkt32" style="font-family: Verdana;">As it was stated above, the accordion object can be attached to a window. </span><span id="m7qr40" style="font-family: Verdana;">Initially the accordion occupies all the window's space.</span><span id="m7qr41" style="font-family: Verdana;"> In the case of window's resizing, it becomes responsible for accordion's resizing as well.  <br id="i0s10">
+</span></p>
+<p id="m7qr42" class="MsoNormal"><span id="m7qr43" style="font-family: Verdana;">If the user intends to attach </span><b id="m7qr44">dhtmlxAccordion </b><span id="m7qr45" style="font-family: Verdana;">to some other place on page, the </span><font style="background-color: rgb(255, 255, 255);" id="hccd0" color="#000000"><span id="m7qr46" style="font-family: Verdana;">adjustment of Accordion object's size to the outer dimension of the container is done by means of </span></font><br id="czyb0">
+</p>
+<p id="m7qr47" class="MsoNormal"><span id="m7qr48" style="font-family: Verdana;"><b id="elgr6">setSizes()</b> method:<br id="v95w2">
+</span></p>
+<blockquote id="mv7k1"><span id="m7qr49" style="font-family: Verdana;"><font id="elgr7" size="2">&lt;script&gt;<br id="jz312">
+&nbsp;&nbsp;&nbsp;&nbsp;dhxAccord.setSizes(); <br id="jz313">
+&lt;/script&gt;<br id="ilxf1">
+</font></span></blockquote>
+<span id="qjkt18" style="font-family: Verdana;">This method doesn't take any input parameters as <span id="mmaa0" style="background-color: rgb(255, 255, 255);">the size of the object is adjusted </span></span> <span id="m7qr50" style="font-family: Verdana;">automatically with the help of it.<br id="ue1-1">
+</span>
+<h3><a name='accordion_al630'>4.3 Setting Effect</a></h3>
+<span id="qjkt25" style="font-family: Verdana;">
+<div id="m7qr66">The effect in <b id="m7qr67">dhtmlxAccordion</b> lies in noticeable smoothness of Accordion items <span id="m7qr68" style="font-family: Verdana;">expanding/collapsing.</span> If it is set, this smoothness is clearly visible when the component's items are being expanded/collapsed. It can be defined by means of <b id="sb9-0">setEffect()</b> method: <br id="ssgg1">
+<blockquote id="sb9-1">&lt;script&gt;<br id="jz316">
+&nbsp;&nbsp;&nbsp;&nbsp;dhxAccord.setEffect(true|false);<br id="jz317">
+&lt;/script&gt;<br id="yyg40">
+</blockquote>
+</div>
+</span>
+<p id="yu3v3" class="MsoNormal">This method is set to <b id="wmci">false</b> by default. This means that initially there is no any noticeable effect in the process of items&nbsp;<span id="pwu1" style="font-family: Verdana;"><span id="pwu10" style="font-family: Verdana;">expanding/collapsing</span></span><span id="m7qr70" style="font-family: Verdana;"><span id="m7qr71" style="font-family: Verdana;">. This method's parameter should be set to <b id="wmci0">true</b> if the user wants to switch this effect </span></span><span id="m7qr72" style="font-family: Verdana;"><span id="m7qr73" style="font-family: Verdana;">on</span></span><span id="m7qr74" style="font-family: Verdana;"><span id="m7qr75" style="font-family: Verdana;">.</span></span><br id="mx4c">
+</p>
+<h2><a name='accordion_np9e0'>5. Items Settings Manipulations</a></h2>
+<h3><a name='accordion_al632'>5.1 Adding Item</a></h3>
+<p style="background-color: rgb(255, 255, 255);" id="yu3v12">
+</p>
+A new item can be added to <b id="m7qr87">dhtmlxAccordion </b>in the following way:<br id="tyr00">
+<blockquote id="tyr01"><span id="dqep11" style="font-family: Verdana;"><font id="elgr17" size="2">&lt;script&gt;<br id="jz318">
+&nbsp;&nbsp;&nbsp;&nbsp;var
+item = dhxAccord.addItem(itemId, itemText);<br id="jz319">
+&lt;/script&gt;<br id="h-mi2">
+</font></span></blockquote>
+The parameters of this method are:<br id="tyr02">
+<ul id="tyr03">
+<li id="tyr04"><b id="elgr18">itemId </b>- id of the added item;</li>
+<li id="tyr06"><b id="elgr19">itemText </b>- title text of the added item. <br id="z0gp0">
+</li>
+</ul>
+<br id="yvuo">
+It should be noted that a new item added to the accordion is <b id="xo0h">always placed under</b> already existing ones. The newly added item is always created expanded (collapsing the item that was expanded previously).<br id="yvuo0">
+<br id="wf55">
+Let's add a new item with <b id="xo0h0">id </b>"a1", and <b id="xo0h1">title text </b>"a" to the Accordion:<br id="tyr08">
+<blockquote id="wf550">&lt;script&gt;<br id="wf551">
+&nbsp;&nbsp;&nbsp;&nbsp;dhxAccord.addItem("a1", "a");<br id="wf552">
+&lt;/script&gt;<br id="gg:u">
+</blockquote>
+<h3><a name='accordion_ndli'>5.2 Item's Accessing</a></h3>
+<span id="xohx3" style="background-color: rgb(255, 255, 255);">The following way of items accessing is used working with dhtmlxAccordion: through Accordion items' ids. All the items in the
+Accordion have ids that go in alphabetical succession starting with "a". Items are referred to as </span><b style="background-color: rgb(255, 255, 255);" id="i2:b">cells</b><span id="xohx4" style="background-color: rgb(255, 255, 255);">.</span><br style="background-color: rgb(255, 255, 255);" id="l8y.0">
+<span id="xohx5" style="background-color: rgb(255, 255, 255);">
+Thus, we can access any Accordion's item in the following way:</span><br style="background-color: rgb(255, 255, 255);" id="i_34">
+<blockquote style="background-color: rgb(255, 255, 255);" id="ztfu">
+  &lt;script&gt;<br id="qyg2">
+  &nbsp;&nbsp;&nbsp;&nbsp;var item = dhxAccord.cells(itemId);&nbsp;&nbsp;&nbsp; <br id="qyg20">
+  &lt;/script&gt;<br id="ru852">
+</blockquote>
+<span id="ivrr1" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">The method will return </span><span id="ko530" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">item's object</span><span id="ko531" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">.</span><span id="xohx6" style="background-color: rgb(255, 255, 255);"> So, if the user wants to access the "a" item, the following code string should be written:<br id="tzfl">
+</span>
+<blockquote id="f3jp">
+  &lt;script&gt;<br id="tzfl1">
+  &nbsp;&nbsp;&nbsp;&nbsp;var item = dhxAccord.cells("a");&nbsp;&nbsp;&nbsp; <br id="tzfl2">
+  &lt;/script&gt;</blockquote>
+<h3><a name='accordion_kh.72'>5.3 Setting/Getting Item's Text
+</a></h3>
+The header text of an Accordion item can be set/changed this way:<br id="dclb0">
+<blockquote id="gf2m0"><span id="dqep15" style="font-family: Verdana;"><font id="elgr20" size="2">&lt;script&gt;<br id="m4bv">
+&nbsp;&nbsp;&nbsp; </font></span>dhxAccord.cells(itemId).setText(text);<br id="n30j">
+<span id="cgib" style="font-family: Verdana;"><font id="cgib0" size="2">&lt;/script&gt;<br id="tyr09">
+</font></span></blockquote>
+
+
+<p id="m7qr88" class="MsoNormal"><span id="m7qr89" style="font-family: Verdana;"><b id="elgr21">setText()</b> method takes one parameter: </span><b id="elgr23">text </b>- title text of the added item.<br id="i99x">
+</p>
+<br id="an0j">
+<p id="i99x2" class="MsoNormal">Item's header text can be easily got through method <b id="i99x3">getText()</b>:</p>
+<blockquote id="phxa">
+<p id="i99x4" class="MsoNormal">&lt;script&gt;<br id="an0j0">
+&nbsp;&nbsp;&nbsp; var text = dhxAccord.cells(itemId).setText(); // returns current item's header text<br id="an0j1">
+&lt;/script&gt;<br id="vft3">
+</p>
+</blockquote>
+<h3><a name='accordion_j9v.'>5.4 Iterator</a></h3>
+<b id="j9v.9"><b id="m9:0303"><span id="qmki" style="font-weight: normal;">Method </span>forEachItem()<span id="qmki0" style="font-weight: normal;"> calls user-defined function for </span>every existing item <span id="qmki1" style="font-weight: normal;">passing </span>item</b></b>'s<b id="mvr4"><b id="mvr40"> <span id="qr01" style="color: rgb(0, 0, 0); font-weight: normal;">object</span><span id="qmki2" style="font-weight: normal;"> into it. Using iterator can be very useful, in case the user wants all the items to be subjects of the same change.</span><br style="font-weight: normal;" id="rqwe">
+<span id="qmki3" style="font-weight: normal;">
+  For example, the user can use </span><i style="font-weight: normal; background-color: rgb(255, 255, 255);" id="w6.e">setText()</i><span id="qmki4" style="font-weight: normal;"><span id="z..e" style="background-color: rgb(255, 255, 255);"> method to set the same text for headers</span> of all items in the Accordion:<br id="y8lx">
+</span></b></b>
+<blockquote id="y8lx0">&lt;script&gt;<br id="y8lx1">
+&nbsp;&nbsp;&nbsp;&nbsp;dhxAccord.forEachItem(function(item){<br id="ynjp">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<span id="g-fx3" style="color: rgb(0, 0, 0);">// actions, for example:</span><br id="ynjp0">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="q48g" style="background-color: rgb(255, 255, 255);">&nbsp;item.setText("newText");</span><br id="ynjp1">
+&nbsp;&nbsp;&nbsp;&nbsp;});<br id="q48g0">
+&lt;/script&gt;<br id="j9v.12">
+</blockquote>
+<h3><a name='accordion_btps'>5.5 Setting/Removing Item's Icon</a></h3>
+<p id="xkp55">
+</p>
+<p id="gazn11" class="MsoNormal"><span id="gazn12" style="font-family: Verdana;"><span id="gazn13" style="font-family: Verdana;">An icon can be set to any of Accordion items in the following way:</span></span></p>
+<blockquote id="yf3h">
+  
+<p id="yf3h0" class="MsoNormal">&lt;script&gt;<br id="yf3h1">
+  </p>
+  
+<p id="eexu" class="MsoNormal">&nbsp;&nbsp;&nbsp; dhxAccord.cells(itemId).setIcon(icon);&nbsp;&nbsp;&nbsp; <br id="b8x4">
+</p>
+  
+<p id="a2q.">&lt;/script&gt;<br id="a2q.2">
+</p>
+</blockquote>
+<p id="a2q.3"><span id="qur5" style="background-color: rgb(255, 255, 255);">The user should use the following method if he wants to remove any item's icon:</span></p>
+<blockquote id="ubvt">
+<p id="pd1y" class="MsoNormal">&lt;script&gt;</p>
+<p id="ubvt1" class="MsoNormal">
+  </p>
+<p id="pd1y1" class="MsoNormal">&nbsp;&nbsp;&nbsp;&nbsp;dhxAccord.cells(itemId).clearIcon();&nbsp;&nbsp;&nbsp; <br id="xj__1">
+</p>
+&lt;/script&gt;<br id="j9v.14">
+</blockquote>
+<h3><a name='accordion_al634'>5.4 Opening/Closing Items</a></h3>
+Only one item can be held open (expanded) at a time in <b id="m7qr96">dhtmlxAccordion</b>. The current active item becomes inactive/closed, when some another item is set active from the page, or from script with the help of the following method:
+<blockquote id="uwh90">
+<p id="tr-81" class="MsoNormal"><span id="tr-82" style="font-family: Verdana;"><font id="tr-83" size="2">&lt;script&gt;</font></span></p>
+<p id="c4vi" class="MsoNormal"><span id="c4vi0" style="font-family: Verdana;"><font id="c4vi1" size="2">&nbsp;&nbsp;&nbsp;&nbsp;</font></span>dhxAccord.cells(itemId).open();</p>
+<p id="v8d90" class="MsoNormal"><span id="v8d91" style="font-family: Verdana;"><font id="v8d92" size="2">&lt;/script&gt;</font></span></p>
+<p id="xiz4" class="MsoNormal"><br id="xiz42">
+</p>
+</blockquote>
+The method <b id="r9i:">close()</b> should be used to close (collapse) an Accordion's item:<br id="d._3">
+<blockquote id="d._30">&lt;script&gt;<br id="d._31">
+&nbsp;&nbsp;&nbsp;&nbsp;dhxAccord.cells(itemId).close();<br id="d._32">
+&lt;/script&gt;<br id="j9v.16">
+</blockquote>
+<h3><a name='accordion_tvmp'>5.5 Window's Docking/Item's Undocking</a></h3>
+<p id="m7qr120" class="MsoNormal">Any item in <b id="m7qr121">dhtmlxAccordion</b> can be easily <b id="s:8t">Undocked </b>- extracted from the accordion in order to be displayed separately <font style="color: rgb(0, 0, 0);" class="Apple-style-span" id="vmn10" color="#ff0000">(in a window)</font>. The <font id="nbrn" color="#000000">user</font> should use the following method to undock an item:<br id="ocnk">
+
+</p>
+<blockquote id="rt5w">
+  <span id="dqep55" style="font-family: Verdana;"><font id="elgr41" size="2">&lt;script&gt;<br id="n0.o">
+</font></span>&nbsp;&nbsp;&nbsp;&nbsp;dhxAccord.cells(itemId).undock();<span id="n0.o0" style="font-family: Verdana;"><font id="n0.o1" size="2"><br id="n0.o2">
+&lt;/script&gt;<br id="whfv0">
+</font></span></blockquote>
+<p id="m7qr123" class="MsoNormal">
+An undocked item can be <b id="vlab">Docked</b> - made a part of the accordion again - in the following way:<br id="bfvw">
+</p>
+<blockquote id="ya3z">
+  <span id="dqep51" style="font-family: Verdana;"><font id="elgr40" size="2">&lt;script&gt;<br id="ntcr">
+</font></span>&nbsp;&nbsp;&nbsp;&nbsp;dhxAccord.cells(itemId).dock();<span id="ntcr0" style="font-family: Verdana;"><font id="ntcr1" size="2"><br id="ntcr2">
+&lt;/script&gt;</font></span><br id="j9v.17">
+</blockquote>
+<h3><a name='accordion_al635'>5.6 Showing/Hiding Items</a></h3>
+<p id="m7qr105" class="MsoNormal"><span id="m7qr106" style="font-family: Verdana;">Any item in </span><b id="m7qr107">dhtmlxAccordion</b><span id="m7qr108" style="font-family: Verdana;"> can be easily shown/hidden by means of these two methods:</span></p>
+<blockquote id="doy10">
+<p id="rnlr0" class="MsoNormal"><span id="rnlr1" style="font-family: Verdana;"><font id="rnlr2" size="2">&lt;script&gt;</font></span></p>
+&nbsp;&nbsp;&nbsp;&nbsp;dhxAccord.cells(itemId).show();
+<p id="orsf0" class="MsoNormal">&nbsp;&nbsp;&nbsp;&nbsp; dhxAccord.cells(itemId).hide();</p>
+<p id="nm8n" class="MsoNormal"><span id="nm8n0" style="font-family: Verdana;"><font id="nm8n1" size="2">&lt;/script&gt;</font></span><br id="j9v.20">
+</p>
+</blockquote>
+<h3><a name='accordion_ndli8'>5.7 Attaching Objects to Items
+</a></h3>
+There is the possibility to add an object to any "objectless" accordion's item. To do this, the user should first create this object on page, and then write one line of code to attach this object to an item of the accordion.<br id="h6oi">
+<p id="m9:0371"> For example, we create a &lt;div&gt; element with <b id="kkid">id
+</b>"objId" and with some text inside it. Then we just use the following
+line of code to attach this object we've just created to an Accordion item:
+</p>
+<blockquote id="jw8l">
+<p id="m9:0372">
+    <span id="ghm_" style="font-family: Verdana;">&lt;div id="objId"&gt;</span>
+  </p>
+  
+<p id="m9:0373">
+    <span id="m9:0374" style="font-family: Verdana;">&nbsp;&nbsp;&nbsp; Some text</span>
+  </p>
+  
+<p id="m9:0375">
+    <span id="m9:0376" style="font-family: Verdana;">&lt;/div&gt;</span>
+  </p>
+  
+    <br id="b0tf1">
+<span id="m9:0380" style="font-family: Verdana;">&lt;script&gt;</span><br id="b0tf2">
+&nbsp;&nbsp;&nbsp;&nbsp;dhxAccord.cells("a1").attachObject("objId");<br id="t86u">
+&lt;/script&gt;<br id="l5kd1">
+</blockquote>
+<span id="gxl00" style="background-color: rgb(255, 255, 255);"></span><b id="fz8b">Note</b>: See <b id="uzbn"><a title="here" href="#Integration_with_Other_dhtmlx_Co" id="k9v2">here</a></b> for information on attaching other dhtmlx components to <b id="riss0">dhtmlxAccordion.<br>
+<br>
+</b><b>5.7.1 Object Size Handling</b><br>
+<p><br>
+</p>
+<p>By default, the items have <b>overflow:hidden</b> style. <br>
+</p>
+<p><br>
+</p>
+<p>In case the item is not able to display the whole object, the following style should be specified for the object:<br>
+</p>
+<blockquote>
+  
+<p>&lt;div id="objId" style="width:100%;height:100%;overflow:auto;...&gt;<br>
+  </p>
+</blockquote>
+<p>Now the item will display the scroll bar in case the object does not fit item's size.<b id="riss0"><br id="fsjx">
+</b></p>
+</div>
+<div id="he0b">
+<h3><a name='accordion_he0b0'>5.8 Attaching URLs to Items </a></h3>
+</div>
+<div id="he0b4"><font id="m9:0390" style="background-color: rgb(255, 255, 255);" color="#000000">Sometimes the user needs to display a web page in an Accordion's item. <b id="r7:-">attachURL()</b> method is used for this purpose in the following way:<br id="dlni">
+</font>
+<blockquote id="la9m">&lt;script&gt;<br id="la9m0">
+&nbsp;&nbsp;&nbsp;&nbsp;dhxAccord.cells(itemId).attachURL(url);<br id="la9m1">
+&lt;/script&gt;<br id="ui2d">
+</blockquote>
+<b>5.8.1 </b><b style="background-color: rgb(255, 255, 255);"><font size="2"><font face="Verdana">Accessing Inner Content</font></font></b>
+<p><br>
+</p>
+<p>Any object on the external page attached with <b>attachURL()</b> method can be accessed like this:</p>
+<p><br>
+</p>
+<ul>
+<li>Page <b>inner.html</b></li>
+</ul>
+<p>&nbsp;</p>
+<blockquote>...<br>
+&lt;div id = "A"&gt;...&lt;/div&gt;<br>
+...<br>
+</blockquote>
+<p>&nbsp;</p>
+<ul>
+<li>Page <b>index.html</b></li>
+</ul>
+<p>&nbsp;</p>
+<blockquote>&nbsp;&lt;script&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a id="m7qr3" name="_Toc193605132"><span id="s1::7" style="font-family: Verdana;"><font id="elgr0" size="2">var
+dhxAccord = new dhtmlXAccordion(...);</font></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;...<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;dhxAccord.addItem("a1", "item_text");<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a id="m7qr3" name="_Toc193605132"><span id="s1::7" style="font-family: Verdana;"><font id="elgr0" size="2">dhxAccord</font></span></a>.cells("a1").attachURL("inner.html");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // accessing &lt;div id="A"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (_isIE) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dhxAccord.cells("a1").win._frame.contentWindow.document.getElementById("A")...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a id="m7qr3" name="_Toc193605132"><span id="s1::7" style="font-family: Verdana;"><font id="elgr0" size="2">dhxAccord.cells("a1").win</font></span></a>._frame.contentDocument.getElementById("A")...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&lt;/script&gt;<b><font size="2"><font face="Verdana"><br>
+</font></font></b></blockquote>
+<b><font size="2"><font face="Verdana">5.8.2 Item Accessing from Attached URL<br>
+<br>
+</font></font></b><font size="2"><font face="Verdana">I</font></font><font size="2"><font face="Verdana">f
+the user needs to do some action with an item of the Accordion from the attached URL
+(for example, close it by clicking some button on page), he should
+write the following code lines in the attached external page:<br>
+</font></font><font size="2"><font face="Verdana"></font></font>
+<blockquote><font size="2"><font face="Verdana">&nbsp;&nbsp; &nbsp;&lt;input type="button" value="hide item" onclick="hideItem();"&gt; // create a button</font></font><br>
+<br>
+<font size="2"><font face="Verdana">&nbsp;&nbsp;&nbsp; &lt;script&gt;</font></font><br>
+<font size="2"><font face="Verdana">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function hideItem() {</font></font><br>
+<font size="2"><font face="Verdana">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>parent</b>.</font></font>dhxAccord.cells(itemId).hide();<font size="2"><font face="Verdana"> // hide item in question</font></font><br>
+<font size="2"><font face="Verdana">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font></font><br>
+<font size="2"><font face="Verdana">&nbsp;&nbsp;&nbsp; &lt;/script&gt;</font></font><br>
+</blockquote>
+<p><font size="2"><font face="Verdana">It should be noted that variable </font></font>dhxAccord <font size="2"><font face="Verdana">should
+be created as a global one (in our main dhtmlxAccordion script) in order
+to be seen by the script in the attached external page.</font></font></p>
+<h2><a name='accordion_ui2d1'>6. Item's Behavior</a></h2>
+This section describes items' behavior on page, when the end-user clicks Accordion items by mouse:<br id="wp4b">
+<br id="f77:1">
+<ul id="g:00">
+<li id="g:000"><font id="f77:2" color="#000000">A click on a collapsed item - expands this item, and collapses the one that was expanded before;</font></li>
+<li id="g:001"><font id="f77:3" color="#000000">A click on an </font><font id="hnvz" color="#000000">expanded </font><font id="hnvz0" color="#000000">item - brings no effect.</font><br id="mp6n0">
+</li>
+</ul>
+<h2><a name='accordion_cbs0'>
+  7. Events Handling
+</a></h2>
+
+<p id="wsao0"><a id="zkto" name="_Toc193605132"></a>The following event is available in <b id="m7qr133">dhtmlxAccordion</b>:<br id="f5vh0">
+</p>
+<br id="f5vh1">
+
+<ul id="ttwd">
+<li id="emfw"><font id="qvek" color="#000000"><b id="u8u-">onActive</b> - occurs when the user clicks the left mouse button on item's heading;</font></li>
+<li id="emfw"><font id="qvek" color="#000000"><b>onBeforeActive </b>- occurs when the user clicks an item but before this item becomes active and opens.</font></li>
+</ul>
+<h3><a name='accordion_wsao1'>7.1 Attaching Event Handler </a></h3>
+<p class="MsoNormal" id="perk">The user can add any user-defined handler to any of the available events.
+</p>
+
+<p class="MsoNormal" id="s15b">
+  To do this the user can use <b id="th5p">attachEvent()</b> method with the following parameters:
+</p>
+
+<ul id="p13y">
+<li id="h1m9">
+    <b id="nwz-">evName </b>- name of the event;
+  </li>
+<li id="q05i">
+    <b id="jg3k">evHandler </b>- user-defined event handler.<br id="b2zd">
+    
+  </li>
+</ul>
+<blockquote id="wape0"><span id="dqep103" style="font-family: Verdana;"><font id="elgr53" size="2">&lt;script&gt;<br>
+&nbsp;&nbsp; &nbsp;dxhAccord.attachEvent(evName,
+evHandler);<br>
+&lt;/script&gt;<br>
+</font></span></blockquote>
+<p id="u75c1" class="MsoNormal"><a id="u75c3" name="_Toc193605132"><span id="sij3" style="font-family: Verdana;"><font id="g0lq" size="2"><b id="q.lw">Note: </b>the names of the events are <b id="bmi:">case-insensitive</b>.</font></span><br id="u75c6">
+</a></p>
+<p id="m7qr142" class="MsoNormal"><a id="m7qr143" name="_Toc193605166"></a></p>
+<h3><a name='accordion_yz53'>7.2 onActive Event
+</a></h3>
+<p id="m7qr150" class="MsoNormal"><a id="yz532" name="_Toc193605166"></a><a id="yz534" name="_Toc193605166"></a><a id="u75c7" name="_Toc193605132"><span id="u75c8" style="font-family: Verdana;"><font id="u75c9" size="2">This event calls user-defined handlers (if there are any) and passes the following parameter:</font></span></a></p>
+<p id="m7qr151" class="MsoNormal"><a id="m7qr152" name="_Toc193605132"><br id="eelk0">
+</a></p>
+<p id="m7qr155" class="MsoNormal"></p>
+<ul id="true">
+<li id="jz800"><font id="sr620" color="#000000"><b id="m7qr156"><font class="Apple-style-span" id="jz801">itemId&nbsp;</font></b></font><font class="Apple-style-span" id="jz802" color="#000000">- id of the activated item.</font></li>
+</ul>
+<blockquote id="nr1t"><font id="bh-5" style="color: rgb(0, 0, 0);" color="#ff0000">&lt;script&gt;<br>
+&nbsp;&nbsp; &nbsp;d</font>hxAccord.attachEvent("onActive", function(itemId){<br id="bh-50">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;alert("Item "+itemId+" was activated.");<br id="bh-51">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<span id="m7qr177" style="font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&lt;/script&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <br id="doy14">
+</span></blockquote>
+</div>
+<div id="bh-52">
+<h3><a name='accordion_yz53'>7.3 onBeforeActive Event</a></h3>
+<p><a id="u75c7" name="_Toc193605132"><span id="u75c8" style="font-family: Verdana;"><font id="u75c9" size="2">This event calls user-defined handlers (if there are any) and passes the following parameter:</font></span></a></p>
+<p id="m7qr151" class="MsoNormal"><a id="m7qr152" name="_Toc193605132"><br id="eelk0">
+</a></p>
+<ul id="true">
+<li id="jz800"><font id="sr620" color="#000000"><b id="m7qr156"><font class="Apple-style-span" id="jz801">itemId&nbsp;</font></b></font><font class="Apple-style-span" id="jz802" color="#000000">- id of the item.</font><br>
+</li>
+</ul>
+<blockquote>
+<p><font id="bh-5" style="color: rgb(0, 0, 0);" color="#ff0000">&lt;script&gt;<br>
+&nbsp;&nbsp; &nbsp;d</font>hxAccord.attachEvent("onBeforeActive", function(itemId){<br id="bh-50">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;alert("Item "+itemId+" will be opened.");</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; return true; // item will be opened</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; return false; // item will not be opened<br>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; });<span id="m7qr177" style="font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&lt;/script&gt; </span><br>
+<span id="dqep59" style="font-family: Verdana;"></span></p>
+</blockquote>
+<h2><a name='accordion_rz1y'>8. Integration with Other dhtmlx Components
+</a></h2>
+<p id="m7qr129" class="MsoNormal"><b id="m7qr130">dhtmlxAccordion</b> is compatible with the following dhtmlx Components:</p>
+<p id="m7qr131" class="MsoNormal"><br id="q9nk0">
+</p>
+<ul id="arzh0">
+<li id="arzh1">dhtmlxGrid/TreeGrid;</li>
+<li id="arzh2">dhtmlxTree;</li>
+<li id="arzh4">dhtmlxTabbar;</li>
+<li id="m7qr132">dhtmlxFolders;</li>
+<li id="i50p">dhtmlxLayout;</li>
+<li id="r-jz">dhtmlxMenu;</li>
+<li id="r-jz0">dhtmlxToolbar;</li>
+<li id="p4ee">dhtmlxEditor.</li>
+</ul>
+<br id="ckzg">
+Also a simple Status Bar can be attached to any Accordion's item.<br id="ckzg0">
+<br id="v6fi0">
+<span id="jz360" style="background-color: rgb(255, 255, 255);">In the first place the user needs to download the necessary packages from the server and set paths to </span>necessary
+files from them into the &lt;head&gt; tag of our html. The files to which
+the paths need to be specified should be checked in the documentation
+describing work with <span id="m9:0539" style="background-color: rgb(255, 255, 255);">the corresponding component.<br id="r-y8">
+</span>
+<p id="yu3v44"><br id="m75:0">
+</p>
+Any of the above mentioned components can be easily attached to an Accordion item:<br id="q9nk1">
+<blockquote id="c6zv0"><span id="dqep87" style="font-family: Verdana;"><font id="elgr49" size="2">&lt;script&gt;</font></span><br id="mxbs">
+&nbsp;&nbsp;&nbsp;&nbsp;var grid = dhxAccord.cells("a1").attachGrid();<br id="xofr">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //OR<br id="y16d">
+&nbsp;&nbsp;&nbsp; var tree = dhxAccord.cells("a1").attachTree();<br id="y16d0">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//OR<br id="jyg2">
+&nbsp;&nbsp;&nbsp; var treeGrid = dhxAccord.cells("a1").attachGrid();<br id="rfia">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //OR<br id="jph5">
+&nbsp;&nbsp;&nbsp; var folders = dhxAccord.cells("a1").attachFolders();<br id="o8h6">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //OR<br id="rfia0">
+&nbsp;&nbsp;&nbsp; var tabbar = dhxAccord.cells("a1").attachTabbar();<br id="rfia1">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //OR<br id="i50p0">
+&nbsp;&nbsp;&nbsp; var layout = dhxAccord.cells("a1").attachLayout("3L");<br id="r-jz1">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //OR<br id="r-jz2">
+&nbsp;&nbsp;&nbsp; var menu = dhxAccord.cells("a1").attachMenu();<br id="z.jd">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //OR<br id="z.jd0">
+&nbsp;&nbsp;&nbsp; var tollbar = dhxAccord.cells("a1").attachToolbar();&nbsp;&nbsp; <br id="l3ss">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //OR<br id="p4ee0">
+&nbsp;&nbsp;&nbsp; var editor = dhxAccord.cells("a1").attachEditor();<br id="p4ee1">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //OR<br id="l3ss0">
+&nbsp;&nbsp;&nbsp; var statusBar = dhxAccord.cells("a1").attachStatusBar(); &nbsp;&nbsp;<br id="l3ss1">
+ 
+<p id="yn7g0" class="MsoNormal"><span id="yn7g1" style="font-family: Verdana;"><font id="yn7g2" size="2">&lt;/script&gt;<br id="yn7g3">
+</font></span></p>
+</blockquote>
+<b id="rzb00">attach[Component]()</b> method doesn't take any input parameters for each accordion compatible component except for <b id="neln">dhtmlxLayout </b>and <b id="fzlx0">dhtmlxTree</b>. <br id="vzup0">
+<br id="neln0">
+Only one input parameter should be indicated for <b id="neln1">attachLayout()</b> method, which is Layout's <b id="m162">pattern type</b>.<br id="neln2">
+&nbsp;<br id="vzup1">
+<span id="n0gm" style="background-color: rgb(255, 255, 255);">There
+is only one input parameter for <b id="mp6n">attachTree()</b> method. The parameter is the id of
+a virtual super item that is a parent to all the top level tree nodes
+of the added dhtmlxTree (see dhtmlxTree constructor description for
+details). If super root element id is 0, this parameter can be omitted.</span><br id="qjkt39">
+
+<p id="s1::6" class="MsoNormal"><span id="m7qr183" style="font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+
+<br id="wnao3">
+      
+</div>
+<br id="mg:d">
+</body>
+</html>

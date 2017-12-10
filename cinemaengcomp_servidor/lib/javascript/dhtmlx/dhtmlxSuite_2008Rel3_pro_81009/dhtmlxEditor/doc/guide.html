@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>dhtmlxEditor Guide</title>
+	<link rel="STYLESHEET" type="text/css" href="common/styles.css">
+</head>
+   
+<body>
+<h1 id="pnjd">dhtmlxEditor Guide and Code Samples</h1>
+<h2><a name='editor_mn4c'>1. Introduction
+</a></h2>
+<h3><a name='editor_mejf'>1.1 Scope of the Document </a></h3>
+<font id="m67x0" style="color: rgb(0, 0, 0);" color="#ff0000"><b id="lyt80">T</b><b id="lyt81">his document describes</b></font> <b id="s0c4">dhtmlxEditor</b> component and defines its key features. This documentation is created to give users full understanding of every feature of this component and also to enable them to use it quickly and easily.<br id="xrat">
+<h3><a name='editor_xrat0'>1.2 Target Readers </a></h3>
+<p class="MsoNormal" id="ndgv">Target readers are users (developers).<br id="i9y0">
+</p>
+<h2><a name='editor_ol1w'>2. What is dhtmlxEditor </a></h2>
+<p id="nutw">This component is a simple text editor that can be used in web pages.<br id="nabn">
+It contains functionality that is often used in desktop editors. So if you've ever used MS Word or Open Office, you wouldn't have any trouble using <b id="mq3s">dhtmlxEditor</b> for writing texts and formatting them in the Web. <br id="mvc8">
+</p>
+<h3><a name='editor_w7op'>2.1 Main Features</a></h3>
+<ul id="vsph">
+<li id="vsph0">Crossbrowser compatibility; 
+</li>
+<li id="iy6v">Javascript API; 
+</li>
+<li id="iy6v0">Easy initialization; 
+</li>
+<li id="vxet">Simple usage; 
+</li>
+<li id="g7xh">Loading content from a string or an URL.<br id="g7xh0">
+</li>
+</ul>
+<h3><a name='editor_w7op0'>2.2 Supported Browsers</a></h3>
+<ul id="bnnn">
+<li id="bnnn0">IE; 
+</li>
+<li id="bnnn1">Mac OS X Safari/Conqueror; 
+</li>
+<li id="q4ge">Mozilla/Mozilla Firefox; 
+</li>
+<li>Google Chrome;<br>
+</li>
+<li id="cx2-">
+      Opera 8.5+.<br id="cx2-0">
+</li>
+</ul>
+<h2><a name='editor_i0ww'>3. Interface </a></h2>
+<b id="vm:n">dhtmlxEditor'</b>s interface is simple and clear. This text editor consists of:<br id="ocik">
+<br id="nohx">
+<ul id="h:2b">
+<li id="qzt1"><b id="dira">Toolbar </b>- is situated at the top of the editor. It contains buttons that activate different component's functions; 
+</li>
+<li id="gg3g"><b id="khph">Editing Area</b>- the area below the toolbar. This is the place where you type your text in.<br id="a2e4">
+</li>
+</ul>
+<h3><a name='editor_m.v8'>3.1 Toolbar </a></h3>
+The <b id="hvti">Toolbar</b> is the area in <b id="m6la">dhtmlxEditor</b>, where all the editor features are located, and where the user can activate them. Each toolbar button is responsible for a certain function.<br id="fmpr">
+Among editor's basic functions, there are ones dealing with simple text formatting.<br id="r-om">
+<br id="jq.j">
+<p id="q8os">By clicking any <b id="ggxy">button </b>the user executes the function this button is responsible for. When the user <span id="t:l2" style="font-family: Verdana;"><font id="qq1e" size="2">hovers the mouse over the button, it becomes highlighted and the button's tooltip appears providing the information about the </font></span>button function. </p>
+<h3><a name='editor_ndgv1'>3.2 Editing Area </a></h3>
+<b id="xdgu">Editing Area</b> is the area where the typed in text can be formatted.<br id="me-1">
+To format the text the user should select it and then click the corresponding formatting button in the toolbar. If there is more text than the editing area allows to display, the scroll bar will appear.<br id="ximy">
+<h2><a name='editor_ndgv2'>4. Working with dhtmlxEditor </a></h2>
+<b id="uk1z">dhtmlxEditor</b> is used to create texts that are going to be published on the Internet, and to be read using web browsers.<br id="fgxj">
+<h3><a name='editor_gxfi'>4.1 Text Formatting </a></h3>
+Text formatting sets the way the text will look like. <b id="a72y">dhtmlxEditor</b>'s formatting tools are a very easy way of making the text look nice and readable.<br id="raxh0">
+<br id="raxh1">
+Making the font <b id="c.qp">bold, italic, underlined</b> or <b id="eh7q">stroked through</b> contributes to adding expressiveness:&nbsp;<br id="fb5-">
+<blockquote id="uo4h"><img id="x5qt" style="width: 21px; height: 21px;" src="common/dgr5rjkf_37g65t27c2_b.png"><img id="v75l" style="width: 21px; height: 21px;" src="common/dgr5rjkf_38df736zdn_b.png"><img id="n1-m" style="width: 21px; height: 21px;" src="common/dgr5rjkf_36hkk67jgz_b.png"><img id="evrq" style="width: 21px; height: 21px;" src="common/dgr5rjkf_397q87z5vp_b.png"> - <b id="u84z">bold</b>, <i id="rj:t">italic</i>, <u id="b6oi">underlined</u> or <strike id="ve:z">strikethrough</strike> formatting is applied to the text.<br id="yvu6">
+</blockquote>
+<p id="ahuv"><b id="j6ii">Note: </b>If the user applies any of these options to the selected text, the toolbar button will be highlighted. In case the formatting needs to be removed, the user should press the highlighted button again. Any of the options can be applied to the text individually or in any combination with other options. </p>
+<p id="eu0h">&nbsp; </p>
+<p id="z8-q">The user can set the <b id="tpkk">text </b>relative to the editing area which is called <b id="vh0p">text alignment</b>.There are four types of alignment available in <b id="wavo">dhtmlxEditor</b>: </p>
+<p id="y2o3"><br id="y2o30">
+</p>
+<ul id="gygo">
+<li id="g:bg"><b id="h65m">left</b>葉he text is aligned along the left margin; 
+</li>
+<li id="zegg"><b id="v4zf">right</b>葉he text is aligned along the right margin; 
+</li>
+<li id="j0vx"><b id="cu89">justified</b>葉he text takes the entire space available; 
+</li>
+<li id="kmd-"><b id="ypx0">centered</b>葉he text is centered. </li>
+</ul>
+<blockquote id="mze0">Buttons <img id="uq3r" style="width: 21px; height: 21px;" src="common/dgr5rjkf_53scshdshc_b.png"><img id="se-c" style="width: 21px; height: 21px;" src="common/dgr5rjkf_54ztbpk8cq_b.png"><img id="igjz" style="width: 21px; height: 21px;" src="common/dgr5rjkf_55mwsk3tf9_b.png"><img id="en3l" src="common/dgr5rjkf_56fxfsj5dc_b.png"> are used to set the text alignment (left, centered, right, or justified)<br id="kbnk">
+</blockquote>
+The selected text can be arranged in the following types of lists:<br id="wiuw">
+<ul id="feyw">
+<li id="wlui">A numbered list; 
+</li>
+<li id="ndgv8">A bulleted list.<br id="ko9w">
+</li>
+</ul>
+<blockquote id="a8z0"><img id="xdto" style="width: 18px; height: 18px;" src="common/dgr5rjkf_164fm8b9xcp_b.png"> <img id="xdto0" style="width: 18px; height: 18px;" src="common/dgr5rjkf_165g2h64tc7_b.png"> - these buttons create numbered or bulleted lists<br id="a8z00">
+</blockquote>
+The user can easily increase or decrease the text indent:<br id="d5eq">
+<blockquote id="wxo:">
+<div id="xms9" style="padding: 1em 0pt; text-align: left;"><img id="gxfv" style="width: 18px; height: 18px;" src="common/dgr5rjkf_162drbkc9d7_b.png"> <img id="gxfv0" style="width: 18px; height: 18px;" src="common/dgr5rjkf_163gvr682cd_b.png">&nbsp; - these buttons increase or decrease the text indent<br id="wxo:0">
+</div>
+</blockquote>
+<b id="h2_p">dhtmlxEditor </b>provides a number of functions that allow users to manipulate the following font settings in the editing area:<br id="vxtz">
+<br id="nvf8">
+<ul id="czsz">
+<li id="czsz0">Subscript and superscript. </li>
+</ul>
+<ul id="ndgv6">
+<li id="vg92"><font id="y-l4" style="background-color: rgb(255, 255, 0);"><span id="orh7" style="background-color: rgb(255, 255, 255);">Headings H1-H4</span></font><br id="vy_j">
+</li>
+</ul>
+<blockquote id="z_ki"><img id="nni1" style="width: 21px; height: 21px;" src="common/dgr5rjkf_62cf3znnc5_b.png"><img id="d5.x" style="width: 21px; height: 21px;" src="common/dgr5rjkf_63hs4zm3cj_b.png"> - these buttons superscript or subscript the text<br id="u78k">
+<img id="l48d0" style="width: 18px; height: 18px;" src="common/dgr5rjkf_168cb7fh4d4_b.png"> <img id="vrvu" style="width: 18px; height: 18px;" src="common/dgr5rjkf_169sfrjrbhh_b.png"> <img id="iaw9" style="width: 18px; height: 18px;" src="common/dgr5rjkf_170d795gqdz_b.png"> <img id="iaw90" style="width: 18px; height: 18px;" src="common/dgr5rjkf_171gs754hcz_b.png"> - these buttons set the text as headings of different levels (h1 is the highest-level one)<br id="a0-n">
+</blockquote>
+<h2><a name='editor_zfk8'>5. Initializing dhtmlxEditor </a></h2>
+The first steps that need to be taken for <b id="bmqe">dhtmlx</b><b id="l35y0">Editor'</b>s initialization are the following: 
+<p id="jcck6"><br id="l35y1">
+</p>
+<ul id="tour">
+<li id="p5-m">Download dhtmlxEditor and dhtmlxToolbar 2.0 packages from the server and place them in a folder; 
+</li>
+<li id="jcck7">Create an html file; 
+</li>
+<li id="m9:09">Place the full paths to <b id="zdv_">dhtmlxEditor</b>'s CSS and JS files into the header of html file; 
+</li>
+<li id="m9:012">Place the full paths to <span id="vd5j" style="font-family: Verdana;"><b id="cicd">dhtmlxToolbar</b><font id="h9jm" size="2">'s CSS and JS files into the header of </font></span>html file<span id="m9:013" style="font-family: Verdana;"><font id="m9:014" size="2">.</font></span> </li>
+</ul>
+<blockquote id="g9:6">&lt;link rel="stylesheet" type="text/css" href="<span id="jcck11" style="font-family: Verdana;"><font id="jcck12" size="2">[full path to this file]</font></span>/dhtmlxeditor_dhx_blue.css"&gt;<br id="d23o">
+&lt;link rel="stylesheet" type="text/css" href="<span id="x_e0" style="font-family: Verdana;"><font id="ekf7" size="2">[full path to this file]</font></span>/dhtmlxtoolbar_dhx_blue.css"&gt;<br id="d23o0">
+&lt;script src="<span id="q_na" style="font-family: Verdana;"><font id="q_na0" size="2">[full path to this file]</font></span>/dhtmlxeditor.js"&gt;&lt;/script&gt;<br id="d23o2">
+&lt;script src="<span id="r0pp" style="font-family: Verdana;"><font id="r0pp0" size="2">[full path to this file]</font></span>/dhtmlxcommon.js"&gt;&lt;/script&gt;<br id="i52h1">
+&lt;script src="<span id="jcck13" style="font-family: Verdana;"><font id="jcck14" size="2">[full path to this file]</font></span>/dhtmlxtoolbar.js"&gt;&lt;/script&gt;<br id="i52h2">
+</blockquote>
+<a id="bb-h" name="_Toc193605132"><span id="xapr" style="font-family: Verdana;"><font id="rehr" size="2">The user needs to create </font></span>an object where&nbsp;<span id="jcck16" style="background-color: rgb(255, 255, 255);"><b id="djn2">dhtmlxEditor</b> will</span><span id="nv3o" style="background-color: rgb(255, 255, 255);"> be placed later. In this example the object is a &lt;div&gt; element on page, which is placed in the &lt;body&gt; tag.</span></a>&nbsp;&nbsp;&nbsp;<br id="z_ki4">
+<blockquote id="arzy">&lt;<span class="start-tag" id="toms0">div</span><span class="attribute-name" id="toms1"> id</span>=<span class="attribute-value" id="toms2">"editorObj"</span> style="width: 100%; height: 300px; border: #909090 1px solid;"&gt;&lt;/<span class="end-tag" id="toms5">div</span>&gt;<br id="arzy0">
+</blockquote>
+<a id="jcck65" name="_Toc193605132">The next step is to create </a><a id="jcck66" name="_Toc193605132">a new </a><b id="qtx8"><a id="jcck67" name="_Toc193605132"><span id="jcck68" style="font-family: Verdana;"><font id="jcck69" size="2">dhtmlXEditor</font></span></a></b><a id="jcck70" name="_Toc193605132"> object and </a><span id="d3gs" style="font-family: Verdana;"><font id="an7g" size="2">place it after the &lt;div&gt; element (object) that we've just created</font></span><span id="jcck71" style="font-family: Verdana;"><font id="jcck72" size="2">:<br id="z0rf">
+</font></span>
+<blockquote id="q-1w"><span id="q-1w0" style="font-family: Verdana;"><font id="q-1w1" size="2">var editor = new dhtmlXEditor(objId, skin); </font></span><br id="q-1w2">
+</blockquote>
+<span id="m_dl" style="font-family: Verdana; background-color: rgb(255, 255, 255);"><font id="m_dl0" size="2"><b id="bm84">objId </b>defines </font></span><span id="xbn:" style="font-family: Verdana;"><font id="xqry" size="2"><span id="b1bt0" style="background-color: rgb(255, 255, 255);">an</span> HTML object on page ,to which the editor is attached</font></span><span id="f4:w" style="font-family: Verdana;"><font id="bwed" size="2"> <span id="rzmx" style="color: rgb(0, 0, 0);">(the main editor container in the code mentioned above)</span>.<br id="lgm9">
+<b id="n.1l">skin </b>is the optional parameter which defines the skin, that will be applied to the editor. </font></span><span id="r2651" style="font-family: Verdana;"><font id="r2652" size="2">If this argument is not set, the component will be created with the default skin (<i id="ochd">dhx_blue</i>). </font></span><br id="q-1w4">
+<span id="q-1w5" style="font-family: Verdana;"><font id="q-1w6" size="2"><br id="ocow">
+Then the </font></span><span id="lm96" style="font-family: Verdana;"><font id="dhit" size="2">method&nbsp;</font></span><b id="v86x0"><span id="v86x1" style="font-family: Tahoma;">setIconsPath() </span></b><span id="xh:e" style="font-family: Verdana;"><font id="x:nm" size="2">should be used to </font></span><span id="jx3b" style="font-family: Verdana;"><font id="om81" size="2">set the full path to the directory, where editor image files are located. </font></span><font id="hq920" size="2">B</font>y means of this method the user is able to set path to the directory, where <b id="kxj-0">icons</b> images are stored.<br id="q-1w7">
+<blockquote id="eupf"><span id="eupf0" style="font-family: Verdana;"><font id="eupf1" size="2">editor.setIconsPath(</font></span><span id="x78u" style="font-family: Verdana;"><font id="x78u0" size="2">"[full path to this directory]</font></span><span id="x78u1" style="font-family: Verdana;"><font id="x78u2" size="2">/codebase/imgs/");</font></span><br id="dl_v">
+</blockquote>
+Icon images are grouped by skin name in the directories inside this <b id="x16s">imgs</b> one. The user shouldn't indicate the directory for icons images for a certain skin inside <b id="j6._">imgs</b> one in setIconsPath() method, as the system will do it itself.<br id="dl_v0">
+<span id="eupf3" style="font-family: Verdana;"><font id="eupf4" size="2"><br id="dl_v1">
+And the last line of code for initialization is the following:<br id="z0rf2">
+</font></span>
+<blockquote id="naga"><span id="naga0" style="font-family: Verdana;"><font id="naga1" size="2">editor.init();</font></span><br id="z0rf3">
+</blockquote>
+So, in our case the initialization code for dhtmlxEditor will look like this:<br id="arzy1">
+<blockquote id="kn2n">var editor = new dhtmlXEditor("editorObj");<br id="puel">
+editor.setIconsPath("<a id="z6t20" style="background-color: rgb(255, 255, 255);" name="_Toc193605132"><span id="wnes" style="font-family: Verdana;"><font id="wnes0" size="2">[full path to this directory]</font></span><span id="wnes1" style="font-family: Verdana;"><font id="wnes2" size="2">/codebase/imgs/</font></span></a>");<br id="puel0">
+<span id="q-ih" style="background-color: rgb(255, 255, 255);">editor.init();</span><br id="kn2n1">
+</blockquote>
+<h2><a name='editor_guw4'>6. Available Skins </a></h2>
+<p id="lstg0"><span id="g._f" style="background-color: rgb(255, 255, 255);"><span id="g._f0" style="background-color: rgb(255, 255, 255);">The following predefined skins are available for <b id="h:f0">dhtmlxEditor</b> users:</span></span> </p>
+<p id="dugz0"><br id="dugz3">
+</p>
+<ul id="lstg1">
+<li id="lstg2"><span id="lstg3" style="background-color: rgb(255, 255, 255);"><span id="lstg4" style="background-color: rgb(255, 255, 255);">dhx_blue (the default one);</span></span></li>
+</ul>
+<div id="q-5x" style="padding: 1em 0pt; text-align: left;"><img id="syly" style="width: 328px; height: 102px;" src="common/dgr5rjkf_1857255v5d9_b.png"><br id="evnm1">
+</div>
+<ul id="evnm2">
+<li id="lstg5"><span id="lstg6" style="background-color: rgb(255, 255, 255);"><span id="lstg7" style="background-color: rgb(255, 255, 255);">dhx_black.</span></span> </li>
+</ul>
+<div id="od:3" style="padding: 1em 0pt; text-align: left;">
+<div id="k4er" style="padding: 1em 0pt; text-align: left;"><img id="mv60" style="width: 328px; height: 102px;" src="common/dgr5rjkf_186x3r465fd_b.png"></div>
+<span id="gn10" style="font-family: Verdana;">It should be noted that some other skins can be available as <b id="yjpd">addons</b>, and they are not included into the package. But they can be downloaded from the site.</span><br id="nuoe0">
+</div>
+<h2><a name='editor_erzm'>7. API Functions </a></h2>
+Most of the functions do not have any incoming arguments and work with selected text.<br id="h4v0">
+<br id="a0-n1">
+The following functions are responsible for applying the <b id="rax0">bold, italic, underlined</b> or <b id="rax00">stroked through </b>styles to the selected text<b id="pqun">:<br id="mngb">
+</b>
+<blockquote id="j74v">applyBold();<br id="mngb0">
+applyItalic();<br id="mngb1">
+applyUnderscore();<br id="mngb2">
+applyStrikethrough();<br id="mngb3">
+</blockquote>
+To set selected <b id="n87p">text alignment</b>, the following functions are used:<br id="h:al1">
+<blockquote id="rp2k">alignLeft();<br id="d3e9">
+alignRight();<br id="h:al2">
+alignCenter();<br id="h:al3">
+alignJustify();<br id="y6xl0">
+</blockquote>
+<p id="izbb0">Use these two methods to <b id="wxz8">superscript </b>or <b id="wxz80">subscript </b>the selected text:<br id="y6xl1">
+</p>
+<blockquote id="w221">applySub();<br id="t5.n3">
+applySuper();<br id="tyah0">
+</blockquote>
+<p id="w2210">The <b id="yx3c">lists </b>can be created and the <b id="yx3c0">text indent</b> can be increased or decreased like this:<br id="tyah1">
+</p>
+<blockquote id="nl-q">createNumList();<br id="tyah2">
+createBulList();<br id="v7510">
+increaseIndent();<br id="v7511">
+decreaseIndent(); </blockquote>
+<p id="lfaa">The following methods are used with the selected text block to <b id="yx3c1">set the heading</b>:<br id="lfaa0">
+</p>
+<blockquote id="t60r">
+<p id="xfjf2">applyH1(); </p>
+<p id="xfjf3" style="background-color: rgb(255, 255, 255);">applyH2(); </p>
+<p id="xfjf4" style="background-color: rgb(255, 255, 255);">applyH3(); </p>
+<font id="lfaa2" style="background-color: rgb(255, 255, 0);"><span id="adnu" style="background-color: rgb(255, 255, 255);">applyH4</span></font>();<br id="i_37">
+</blockquote>
+There is the method that gets html content of the editor document:<br id="sd1.0">
+<blockquote id="hsrd">getContent();<br id="i_371">
+</blockquote>
+The following method sets the content to the editor document, passing the parameter <b id="akcb">htmlString </b>- a html string that should be set as the editor content:<br id="hnfv">
+<blockquote id="hens">&nbsp;setContent(htmlString)<br id="i_374">
+</blockquote>
+There is also the possibility to set the content from an html document to the editor document, passing the parameter <b id="ky6x">url </b>- the path to the html page:<br id="i_375">
+<blockquote id="j5ra">setContentHTML(url);<br id="i_3719">
+</blockquote>
+<br>
+
+</body>
+</html>

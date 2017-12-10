@@ -1,0 +1,297 @@
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>JIRA - Administrators</title>
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" media="print" href="/issues/styles/combined-printable.css">
+<link type="text/css" rel="StyleSheet" media="all" href="/issues/styles/combined.css" />
+<link type="text/css" rel="StyleSheet" media="all" href="/issues/styles/global.css" />
+    <script language="JavaScript" type="text/javascript" src="/issues/includes/js/combined-javascript.js"></script>
+</head>
+
+<body bgcolor="#f0f0f0" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" link="#003366" vlink="#003366" alink="#660000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+<tr valign="middle"><td>
+<table cellpadding=0 cellspacing="0" class="centred borderedBoxBlack" width=400>
+    <tr cellpadding=0 cellspacing=0 border=0 width=400 bgcolor=#ffffff>
+        <td><table>
+            <td valign="bottom" width=200><a href="/issues/secure/"><img src="http://simile.mit.edu/images/logo.png" width="123" height="72" border=0 alt="Issue Tracker"></a></td>
+            <td valign="bottom" width=200 align="right">
+                
+
+
+
+
+
+
+
+    
+    
+            <a href="http://www.atlassian.com/software/jira/docs/v3.6.1/index.html?clicked=jirahelp" target="_jirahelp">
+    
+            <img src="/issues/images/icons/help_blue.gif" width="16" height="16"
+            
+            
+                
+                    
+                        align=middle
+                    
+                    
+                
+            
+            border="0" alt="Get help!"
+            title="Get online help about Using and setting up JIRA"></a>
+
+
+                &nbsp;
+            </td>
+        </table></td>
+    </tr>
+    <tr cellpadding=0 cellspacing=0 border=0 width=400 height=5 bgcolor=#3c78b5>
+      	<td><img src="/issues/images/border/spacer.gif" width=5 height=5 border=0></td>
+    </tr>
+
+    <tr><td>
+       	<table cellpadding=6 cellspacing=0 border=0 width=400>
+	<tr><td bgcolor=dddddd>
+		<font color="000000" size=3><b>Administrators</b></font>
+	</td></tr>
+	<tr><td bgcolor=ffffff>
+		<p>
+		Here is the list of administrators for this installation of JIRA.
+		</p>
+
+		<p>
+		If you're having problems, or have suggestions they are the best people to contact first.
+		</p>
+
+        <ul>
+		
+			<li>
+                
+                    <a href="mailto:dfhuynh@mit.edu">David F. Huynh</a></li>
+                
+                
+        
+			<li>
+                
+                    <a href="mailto:em@w3.org">eric miller</a></li>
+                
+                
+        
+			<li>
+                
+                    <a href="mailto:kenzie@mit.edu">MacKenzie Smith</a></li>
+                
+                
+        
+			<li>
+                
+                    <a href="mailto:ryanlee@w3.org">Ryan Lee</a></li>
+                
+                
+        
+			<li>
+                
+                    <a href="mailto:stefanom@mit.edu">Stefano Mazzocchi</a></li>
+                
+                
+        
+			<li>
+                
+                    <a href="mailto:garland@csail.mit.edu">Steve Garland</a></li>
+                
+                
+        
+		</ul>
+	</td></tr>
+	</table>
+    </td></tr>
+</table>
+
+<div class="fullyCentered">
+    <span class="small">
+	    
+            This site is running on Atlassian
+            <b><a href="
+
+
+
+
+
+    
+         
+             
+http://www.atlassian.com/jira-bug-tracking/?edition=Enterprise
+             
+             
+         
+         
+    
+    
+
+">JIRA</a></b>
+            with a free <b>Open Source Project / Non-profit License</b> (<a href="
+
+
+
+
+
+    
+         
+             
+http://www.atlassian.com/c/jira/10153
+             
+             
+         
+         
+    
+    
+
+">license details</a>).<br>
+            <a href="
+
+
+
+
+
+    
+         
+             
+http://www.atlassian.com/jira-bug-tracking/?edition=Enterprise
+             
+             
+         
+         
+    
+    
+
+">JIRA</a>
+            is an <a href="
+
+
+
+
+
+    
+         
+             
+http://www.atlassian.com/jira-bug-tracking/?edition=Enterprise
+             
+             
+         
+         
+    
+    
+
+">issue tracking</a>
+            and <a href="
+
+
+
+
+
+    
+         
+             
+http://www.atlassian.com/jira-bug-tracking/?edition=Enterprise
+             
+             
+         
+         
+    
+    
+
+">bug tracking</a>
+            application. <a href="
+
+
+
+
+
+    
+         
+             
+http://www.atlassian.com/jira-bug-tracking/?edition=Enterprise
+             
+             
+         
+         
+    
+    
+
+">Evaluate JIRA for your organisation</a>.<br>
+	 
+
+	<p>
+	<span class="smallfooter">
+		Powered by <a href="
+
+
+
+
+
+    
+         
+             
+http://www.atlassian.com/jira-bug-tracking/?edition=Enterprise
+             
+             
+         
+         
+    
+    
+
+">Atlassian JIRA&trade;</a>
+        the <a href="
+
+
+
+
+
+    
+         
+             
+http://www.atlassian.com/jira-bug-tracking/?edition=Enterprise
+             
+             
+         
+         
+    
+    
+
+">Professional Issue Tracker</a>.
+        <span class="smallgreyfooter">(Enterprise Edition, Version: 3.6.1-#154)</span> - <a href="
+
+
+
+
+
+    
+         
+             
+http://jira.atlassian.com/default.jsp?clicked=footer
+             
+             
+         
+         
+    
+    
+
+">Bug/feature request</a><br>
+		<a href="/issues/secure/Administrators.jspa">Contact Administrators</a>
+	</span>
+	</p>
+</div>
+
+</td></tr>
+
+</table>
+</body>
+</html>

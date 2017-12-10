@@ -1,0 +1,495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Prototype Javascript Windows</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blogus.xilinus.com/xml/rsd/feed.xml" />
+  <link href="http://blogus.xilinus.com/xml/rss/feed.xml" rel="alternate" title="RSS" type="application/rss+xml" />
+  <link href="./stylesheets/theme/wired.css" media="screen" rel="Stylesheet" type="text/css" />
+  <script src="./javascripts/cookies.js" type="text/javascript"></script>
+  <script src="./javascripts/prototype.js" type="text/javascript"></script>
+  <script src="./javascripts/effects.js" type="text/javascript"></script>
+  <script src="./javascripts/typo.js" type="text/javascript"></script>
+  <script src="./javascript/theme/wired.js" type="text/javascript"></script>
+  <script type="text/javascript"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="rt">                               
+            <div class="lt">
+                <div id="search"><form action="/articles/search" id="sform" method="get">
+<img alt="Header-search-lt" border="0" id="search-lt" src="/images/../../images/theme/header-search-lt.gif" />
+<input type="text" id="q" name="q" value="Live search" size="15" onclick="if(this.value=='Live search')this.value='';" />
+<img alt="Header-search-rt" border="0" id="search-rt" src="/images/../../images/theme/header-search-rt.gif" />
+</form>
+<script type="text/javascript">
+//<![CDATA[
+new Form.Element.Observer('q', 1, function(element, value) {new Ajax.Updater('search-results', '/live/search', {asynchronous:true, evalScripts:true, onComplete:function(request){Wired.complete('search-rt')}, onLoading:function(request){Wired.loading('search-rt')}, parameters:'q=' + escape($F('q'))})})
+//]]>
+</script></div>
+                
+                <div id="title">
+                    <h1 id="sitename">xilinus</h1>
+                    <h2 id="subtitle"><div class="logo"></div></h2> 
+                </div>     
+            </div>
+        </div>
+    </div>
+    
+    <div id="content">
+        <div class="rt">
+            <div class="lt">
+                <div class="wrapper">
+                    <div id="main">
+                        <div id="viewpage" >
+  <p><link href="./stylesheets/windows/default.css" rel="stylesheet" type="text/css" />
+<link href="./stylesheets/windows/theme1.css" rel="stylesheet" type="text/css" />
+<link href="./stylesheets/windows/alert.css" rel="stylesheet" type="text/css" /></p>
+
+<script type="text/javascript" src="./javascripts/window.js"> </script>
+<script type="text/javascript" src="./javascripts/debug.js"> </script>
+
+<script>
+window.onload = checkVisit;
+
+function checkVisit() {
+
+// Check last viewed version
+cookie = getCookie("javawin");
+
+if (cookie == null || parseFloat(cookie) < 0.80) {
+Dialog.alert("<h2>Welcome</h2><br>Check out the latest version (0.80) <br>\
+<ul>- Add setTitle. <br>- Add setStatusBar. <br>- Store minimize/maximize in the cookie.\
+<br>- Add button class for dialog. \
+<br>- Add onload constructor parameter</ul>\
+<h4>If it's not your first visit, and if you have any troubles with samples, clear your cache.</h4>\
+<h4>PS: If you have some window designs, please send them to me, I will do a theme page.</h4>", 
+                {windowParameters: {width:500, height:300}, okLabel: "Close"});
+
+date=new Date;
+date.setMonth(date.getMonth()+3);
+setCookie("javawin", "0.80", date);
+}
+}
+</script>
+
+<h2> Overview</h2>
+
+<p>This javascript class allows you to add window in an HTML page</p>
+
+<p>This class is based on <a href="http://prototype.conio.net/">Prototype 1.5</a>. 
+The code is inspired of the powerful <a href="http://script.aculo.us/">script.aculo.us</a> library. You can even use all script.aculo.us effects to show and hide windows if you include <i>effects.js</i> file.</p>
+
+<p>It has been tested on Safari, Camino, Firefox and IE6.</p>
+
+<h2> How to Use</h2>
+
+<p>It's easy to use, one javascript and one css to include (or more if you want different skins).</p>
+
+<p>To create a window, you just have to instanciate a Window object with some optional parameters, set innerHTML of the window main content and call show() or showCenter() function.</p>
+
+<p>Here is a sample code:
+<typo:code lang="javascript"></p>
+
+<pre><code>&lt;script type="text/javascript" src="/javascripts/prototype.js"&gt; &lt;/script&gt;
+&lt;script type="text/javascript" src="/javascripts/window.js"&gt;&lt;/script&gt;
+
+&lt;link href="/stylesheets/themes/default.css" rel="stylesheet" type="text/css" /&gt;    
+
+win = new Window('dialog2', {top:100, left:350, zIndex:150, resizable: true})
+win.getContent().innerHTML = "Hello world !!";
+win.show();
+
+Dialog.confirm("&lt;center&gt;Are you sure to remove this entry?", 
+               { windowParameters: {width:300, height:120}, okLabel: "Yes", cancelLabel: "No",  
+                 ok:function(win) { 
+                   // Remove it here !
+                  }
+               });
+</code></pre>
+
+<p></typo:code> </p>
+
+<p><!-- Sample part  --></p>
+
+<script type="text/javascript">
+var index = 0;
+var mouseTracker = null;
+function openWindow() {
+    var win = new Window('sample'+index, {className: "dialog", title:"Sample window", zIndex:150, resizable: true, width:200, height:200, hideEffect: Effect.Puff})
+    win.getContent().innerHTML = "<div style='padding:10px' text-align='center'><h1><font  color='#FDFCA9'> Hello World!</font></h1>";
+  win.showCenter()
+  index++;
+}
+
+function openWindow2() {
+    var win2 = new Window('sample2'+index, {className: "theme1", title:"Sample window", zIndex:150, top:300, left:100, resizable: true, hideEffect: Effect.SwitchOff, minWidth:200})
+    win2.getContent().innerHTML = "<H2>Hello World again but with a different skin</H2>";
+    win2.setStatusBar("status bar message")
+  win2.show()
+  index++;
+}
+
+function openWindow3() {
+    win2 = new Window('sample3', {className: "theme1", title: "Ruby on Rails", top:0, left:0, width:500, height:300, top:200, left: 200, zIndex:150, opacity:1, resizable: true, url: "http://www.rubyonrails.org/"})
+    win2.setDestroyOnClose();
+    win2.setCookie();
+    win2.show();
+}
+
+function openDialog() {
+    Dialog.confirm("<center>Cool this modal window!!</center>", 
+                    {windowParameters: {width:400, height:100}, okLabel: "Yes", cancelLabel: "No",  
+                        ok:function(win) {  } });
+}
+
+var timeout;
+function openInfoDialog() {
+    Dialog.info("Test of info panel, it will close <br>in 3s ...",
+                    {windowParameters: {width:250, height:100}, showProgress: true});
+
+    timeout=3;
+    setTimeout("infoTimeout()", 1000)
+}
+
+function infoTimeout() {
+  timeout--;
+  if (timeout >0) {
+    Dialog.setInfoMessage("Test of info panel, it will close <br>in " + timeout + "s ...")
+        setTimeout("infoTimeout()", 1000)
+ }
+  else
+    Dialog.closeInfo()
+}
+
+
+var MouseTracker = Class.create();
+MouseTracker.prototype = {
+    initialize: function() {    
+        this.eventMouseMove = this.mouseMoved.bindAsEventListener(this);
+        Event.observe(document, "mousemove", this.eventMouseMove);
+    },
+    mouseMoved: function(event) {
+        clearDebug();
+        var pointer = [Event.pointerX(event), Event.pointerY(event)];
+
+        debug("Mouse  : " + pointer[0] + "," + + pointer[1]);
+    }
+}
+
+function showDebugWindow() {
+    if (mouseTracker == null)
+        mouseTracker = new MouseTracker();
+    showDebug();
+}
+
+</script>
+
+<p><!-- End sample part  --></p>
+
+<h2> Example</h2>
+
+<p>Click on the links below to pop-up windows <br></p>
+
+<ul>
+<a href="javascript:openWindow()"/>Open a window</a><br>
+<a href="javascript:openWindow2()"/>Open another window</a><br>
+<a href="javascript:openWindow3()"/>Open a window with an url</a> (this window saves its position/size in a cookie so it will always pop-up where you close it.)<br>
+<a href="javascript:openDialog()"/>Open a modal window</a><br>
+<a href="javascript:openInfoDialog()">info dialog</a> <br>
+</ul>
+
+<p>I have also written a small javascript I used for debugging javascript :).
+It opens a window and you can write messages in this window with the <i>debug(message)</i> function.</p>
+
+<p>You can view and/or download it here : <a href="/download/debug.js">debug.js</a> or <a href="javascript:showDebugWindow()"/>view</a> it in live</p>
+
+<h2> Customizing </h2>
+
+<p>It's also easy to change window skin. I have done an example but I am not a designer as you can see :)!! </p>
+
+<p>If you use this library and do some nice designs, please, send them to me, I will create a theme page. Thanks.</p>
+
+<p>Check out theme1.css to see how to do. In fact you just need to specify images for the 4 corners, the four borders and the close and sizer buttons.</p>
+
+<h2> Download</h2>
+
+<p>Current version (v0.80) <a href="/download/windows_js_0.80.zip">get it now!</a>
+<br/>
+Support my work :)</p>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but04.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+<img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+</form>
+
+<p><br></p>
+
+<h2> Mailing list</h2>
+
+<p>To subscribe to the mailing-list clik <a href="http://fates.multisite.site5.com/mailman/listinfo/javawin_xilinus.com">here</a></p>
+
+<h2> Documentation</h2>
+
+<p>Constructor parameters:</p>
+
+<ul>
+  - className: class (theme) name
+  - title: Window title
+  - top, left ,bottom or right  : current location<br>
+  - width, height : current size<br>
+  - minWidh, minHeight : minimal size<br>
+  - maxWidth, maxHeight: maximal size<br>
+  - showEffect: effect used to show the window (do showEffect:Element.show to suppress script.aculo.us effect)<br>
+  - hideEffect: effect used to hide the window (do showEffect:Element.hide to suppress script.aculo.us effect)<br>
+  - showEffectOptions/hideEffectOptions/effectOptions : effect options<br>
+  - resizable (true/false)<br>
+  - draggable (true/false)<br>
+  - closable/minimizable/maximizable (true/false)<br>
+  - zIndex<br>
+  - opacity, can only be used if showEffect is not specified<br>
+  - url: url used for the window content<br>
+  - parent: parent element of the window (default: body)
+  - onload: onload function called by the window main div
+</ul>
+
+<p>Instance functions:</p>
+
+<ul>
+  - getContent() : returns the content div of the window<br>
+  - getID (): returns the window ID <br>
+  - setContent(id, autoresize): Set window content giving an id Element.
+  - setLocation(top, left)<br>
+  - setSize(width, height)<br>
+  - show(modal)<br>
+  - showCenter(modal): shows the window in the center of the page<br>
+  - hide()<br>
+  - setOpacity(float): changes window opcaity<br>
+</ul>
+
+<h2> Versions</h2>
+
+<p><br></p>
+
+<ul>
+<li>05/23/06  V 0.80</li>
+</ul>
+
+<ul>
+  - Add setTitle<br>
+  - Add setStatusBar<br>
+  - Add onload constructor parameter<br>
+  - Store minimize/maximize in the cookie (Thanks to Ifran)<br>
+  - Add button class for dialog (Thanks to Felix Shnir)<br>
+</ul>
+
+<p><br></p>
+
+<ul>
+<li>05/08/2006 v0.75</li>
+</ul>
+
+<ul>
+  - Update with Script.aculo.us 1.6.1 and Prototype 1.5.0_rc1<br>
+  - Remove PNG for dialog overlay, use opacity as done in lightbox V2<br>
+  - Add Windows.focusedWindow <br>
+  - Add name to iframe in case of url window<br>
+  - Clean up code, use _ for private function (just name convention)<br>
+  - Add Dialog.info function, usefull for for submit or notice info (in Rails)<br>
+  - Add minimize and maximize buttons<br>
+  - Add alert_lite.css without any images<br>
+  - Debug
+</ul>
+
+<p><br></p>
+
+<ul>
+<li>04/15/2006 v0.70</li>
+</ul>
+
+<ul>
+      - Add autoposition in setContent. The window will at the element location<br>
+      - Add draggable/closable parameter if you need to specify is the window is draggable/closable or not<br>
+      - Add parent parameter if you need a specific parent instead of body<br>
+      - Better resize<br>
+      - Add setCookie to store window location/size in a cookie<br>
+      - Add parent.html sample<br>
+</ul>
+
+<p><br></p>
+
+<ul>
+<li>03/29/2006 v0.65</li>
+</ul>
+
+<ul>
+  - Update to Prototype 1.5.0_pre1, script.aculo.us 1.6.0<br>
+  - Add setDestoyOnClose<br>
+  - Add Windows Observer with onStartResize(), onEndResize(), onStartMove(), onEndMove(), onClose(), onDestroy() events<br>
+  - Add setContent(id, autoresize)<br>
+</ul>
+
+<p><br></p>
+
+<ul>
+<li>04/05/2006 v0.6 </li>
+</ul>
+
+<ul>
+  - Add Window delegate to manage close action.<br>
+  - Add modal mode and Dialog class with common panels: alert, confirm.<br>
+  - Clean up HTML code and change caracters to lowercase to be XHTML compliant (thanks to nuxygen and Joseph).<br>
+  - Add showEffectOptions, hideEffectOptions, effectOptions to Window constructor (thanks to Jon).<br>
+  - Fix checkbox IE bug (big thanks to JCA).<br>
+  - Fix other little bugs (thanks to nuxygen, Dennis, and all who sent me emails).<br>
+  - Update samples/index.html.<br>
+  - Add new sample usng frame (samples/inset.html and samples/inframe.html but use only samples/inset.html).<br>
+</ul>
+
+<p><br></p>
+
+<ul>
+<li>03/27/2006 v0.51 </li>
+</ul>
+
+<ul>
+  - New CSS theme structure .<br>
+  - Add url: constructor parameter to have a window with an URL content.<br>
+  - Add bottom/right constructor parameters .<br>
+  - Update sample files.
+</ul>
+
+<p><br></p>
+
+<ul>
+<li>03/24/2006 v0.5 : Initial revision</li>
+</ul>
+
+<h2> Next </h2>
+
+<ul>
+<li> Better resize/scroll handling in modal mode (may use fixed position)
+<li> Minimize/Maximize,
+<li> A settings panel,
+<li> Autoscroll,
+<li> And more ... :), If you have any idea, send me an email at: seb [at] xilinus [dot] com.
+</ul>
+
+<h2> License </h2>
+
+<script type="text/javascript">
+    license = new Window('license', {title: "License", width:500, height:300, opacity:0.75, resizable: true, showEffect: Element.show, hideEffect: Effect.Fade, zIndex:1000})
+license.getContent().innerHTML = "<div padding='3px'>\
+Copyright (c) 2006 Sébastien Gruhier (http://xilinus.com, http://itseb.com)\
+      <br><br>\
+      Permission is hereby granted, free of charge, to any person obtaining\
+      a copy of this software and associated documentation files (the\
+      \"Software\"), to deal in the Software without restriction, including\
+      without limitation the rights to use, copy, modify, merge, publish,\
+      distribute, sublicense, and/or sell copies of the Software, and to\
+      permit persons to whom the Software is furnished to do so, subject to\
+      the following conditions:\
+      <br><br>\
+      The above copyright notice and this permission notice shall be\
+      included in all copies or substantial portions of the Software.\
+      <br><br>\
+      THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\
+      EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\
+      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\
+      NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\
+      LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\
+      OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\
+      WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\
+</div>"
+</script>
+
+<p>This library is licensed under a <a href="javascript:license.showCenter()">MIT-style license</a>, so you can use it for anything you like, as long as you include the copyright notice.</p>
+</div>
+
+                        <script type="text/javascript">
+//<![CDATA[
+show_dates_as_local_time()
+//]]>
+</script>            
+                    </div> 
+                </div>
+                
+                <div id="sidebar">
+                    <div id="results"><div id="search-results"></div></div>
+                    <div id="plugins">  <div class="sidebar-node">  
+    <h3>Menu</h3>
+<ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/pages/about">About</a></li>
+  <li><a href="http://my.xilinus.com/help/contact">Contact</a></li>
+  <li><a href="/pages/javawin">Prototype Window Class</a></li>
+ <li><a href="http://blog.xilinus.com">French version</a></li>
+
+ </ul>
+ 
+
+  </div>
+  <div class="sidebar-node">  
+    <h3>Categories</h3>
+<ul id="categories">
+  
+  <li><a href="/articles/category/java">Java</a> <em>(1)</em></li>
+  
+  
+  <li><a href="/articles/category/javascipt">Javascript</a> <em>(1)</em></li>
+  
+  
+  <li><a href="/articles/category/web">Web/Rails</a> <em>(1)</em></li>
+  
+</ul>
+
+
+  </div>
+  <div class="sidebar-node">  
+    <h3>Links</h3>
+<ul>
+  <li><a href="http://my.xilinus.com" target="blank">Xilinus bookmarks</a> </li>
+  <li><a href="www.rubyonrails.org/ " title="Rails"  target="blank">Rails</a></li>
+  <li><a href="http://www.typosphere.org/" title="Typo"  target="blank">Typo</a></li>
+
+</ul>
+
+
+
+  </div>
+  <div class="sidebar-node">  
+    <h3>Syndicate</h3>
+<ul>
+    <li><a href="/xml/rss/feed.xml" title="RSS 2.0 feed">Articles</a></li>
+  
+    <li><a href="/xml/commentrss/feed.xml" title="Comments RSS 2.0 feed">Comments</a></li>
+  
+  
+</ul>
+
+  </div>
+
+</div>
+                </div>                                                  
+            </div>              
+        </div>   
+     </div>
+    
+    <div id="footer">
+        <div class="rt">       
+            <div class="lt">                
+                <ul>
+                    <li>Valid <a href="http://validator.w3.org/check?uri=referer">XHTML 1.0</a> | <a href="http://jigsaw.w3.org/css-validator/validator?uri=http://blogus.xilinus.com/">CSS</a></li>
+                    <li><a href="http://www.travelatlas.org/wired.zip">Wired</a> Theme</li>
+                </ul>
+
+                <a class="typo" href="http://typo.leetsoft.com/trac/"><img alt="Typo Powered" border="0" src="/images/../../images/theme/footer-typo.gif" /></a>               
+            </div>
+        </div>
+    </div>
+</body>
+</html>

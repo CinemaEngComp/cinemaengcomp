@@ -1,0 +1,307 @@
+eba\:gridlist {
+	BORDER-TOP: #CCCCCC 1px solid; 
+	BORDER-RIGHT: #CCCCCC 1px solid;
+	BORDER-BOTTOM: #CCCCCC 1px solid; 
+	BORDER-LEFT: #CCCCCC 1px solid; 
+	CURSOR: default; 
+	DISPLAY: block; 
+	FONT: 11px Tahoma,Verdana,Arial; 
+	HEIGHT: 100%;
+	OVERFLOW: hidden; 
+	WIDTH: 100%
+}
+
+.gridlistsummary {
+	background-color: #C6DBFF;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 21px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 1px; 
+	PADDING-LEFT: 0px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+.gridlistsummarycell {
+	COLOR:#999999;
+	BORDER: 0px solid black;
+	PADDING-TOP: 2px;
+	TEXT-ALIGN: right;
+	font-weight: bold;
+}
+
+.gridlistsummarydeadspace {
+	background-color: #C6DBFF;
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 21px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 2px; 
+	PADDING-LEFT: 4px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+.gridlistchk {
+	DISPLAY: none; 
+	POSITION: absolute; 
+	TOP: 0px; 
+	Z-INDEX: 10; 
+}
+.gridlistinput {
+	BORDER-TOP: 1pt solid;
+	BORDER-RIGHT: 1pt solid; 
+	BORDER-BOTTOM: 1pt solid; 
+	BORDER-LEFT: 1pt solid; 
+	DISPLAY: none; 
+	FONT: 11px Tahoma,Verdana,Arial; 
+	HEIGHT: 16px;
+	OVERFLOW: hidden; 
+	PADDING-TOP: 0px; 
+	POSITION: absolute; 
+	TOP: -1px;
+	WIDTH: 100%; 
+	Z-INDEX: 10; 
+}
+.lookupdropdown
+{
+	font: 11px Verdana,Tahoma,Arial;
+	color: black;
+}
+
+.checkboxchecked 
+{
+	background-image: url(checked.gif);
+	background-repeat: no-repeat;
+	width: 17px;	
+	height: 15px;	
+
+}
+.checkboxunchecked 
+{
+	background-image: url(unchecked.gif);
+	background-repeat: no-repeat;
+	width: 17px;
+	height: 15px;	
+}
+
+.gridlistselect {
+	BORDER-TOP: 1pt solid; 
+	BORDER-RIGHT: 1pt solid; 
+	BORDER-BOTTOM: 1pt solid; 
+	BORDER-LEFT: 1pt solid; 
+	DISPLAY: none; 
+	FONT: 11px Tahoma,Verdana,Arial; 
+	HEIGHT: 16px;
+	OVERFLOW: hidden; 
+	PADDING-TOP: 0px;
+	POSITION: absolute; 
+	TOP: -1px;  
+	Z-INDEX: 10; 
+}
+.gridlistheading {
+	background:url(bb.gif);
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 4px; 
+	PADDING-LEFT: 5px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+.gridlistheadingascending {
+	background:url(bb_up.gif);
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 4px; 
+	PADDING-LEFT: 5px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+.gridlistheadingdescending {
+	background:url(bb_down.gif);
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 4px; 
+	PADDING-LEFT: 5px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+
+
+
+
+.gridlistheading_over {
+	background:url(ob.gif);
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 4px; 
+	PADDING-LEFT: 5px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+.gridlistheadingascending_over {
+	background:url(bb_upover.gif);
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 4px; 
+	PADDING-LEFT: 5px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+.gridlistheadingdescending_over {
+	background:url(bb_downover.gif);
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 4px; 
+	PADDING-LEFT: 5px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+.gridlistheading_pressed {
+	background:url(bb_pressed.gif);
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 6px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+	BORDER-BOTTOM: 1px solid #3B619C; 
+}
+
+.gridlistheadingascending_pressed {
+	background:url(bb_pressed.gif);
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 6px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+	BORDER-BOTTOM: 1px solid #3B619C; 
+}
+
+.gridlistheadingdescending_pressed {
+	background:url(bb_pressed.gif);
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 6px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+	BORDER-BOTTOM: 1px solid #3B619C; 
+}
+
+.gridlistheadingdeadspace {
+	background:url(bar_deadspace.gif);
+	background-position: left bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 25px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 2px; 
+	PADDING-LEFT: 4px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+
+
+
+.toolbar 
+{
+	height: 21px;
+	background-color: #c3daf9;	
+	padding-top:3px;
+	padding-bottom:1px;
+}
+.toolbar A:hover
+{
+	border-right: #999999 1px solid;
+	border-top: #999999 1px solid;
+	border-left: #999999 1px solid;
+	cursor: hand;
+	border-bottom: #999999 1px solid;
+
+}
+.toolbar SPAN 
+{
+	width:23;
+	height:21;
+}
+.gridlistnavbar
+{
+	background-position: left top;
+	background-image: url(toolbaroxp.gif);
+	background-repeat: no-repeat;
+	
+	overflow: hidden;
+}
+.gridlistpagingnavbar { 
+	background-position:top right;
+	BACKGROUND-IMAGE: url(toolbar_pagingoxp.gif); 
+	background-repeat:no-repeat ;
+	overflow: hidden;
+	
+}
+.gridlistlookup
+{
+	FONT: 11px Tahoma,Verdana,Arial;
+}

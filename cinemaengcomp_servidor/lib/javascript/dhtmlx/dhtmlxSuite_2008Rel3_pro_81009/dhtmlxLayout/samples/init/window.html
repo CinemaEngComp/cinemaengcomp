@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--conf
+<sample in_favorites="false">
+              <product version="1.0" edition="std"/>
+                     <modifications>
+                            <modified date="080606"/>
+                     </modifications>
+               </sample>
+ --> 
+<html>
+<head>
+	<title>Windows-Based Init</title>
+	<link rel="stylesheet" type="text/css" href="../../codebase/dhtmlxlayout.css">
+	<link rel="stylesheet" type="text/css" href="../../codebase/skins/dhtmlxlayout_dhx_blue.css">
+	<link rel="stylesheet" type="text/css" href="../../../dhtmlxWindows/codebase/dhtmlxwindows.css">
+	<link rel="stylesheet" type="text/css" href="../../../dhtmlxWindows/codebase/skins/dhtmlxwindows_dhx_blue.css">
+	<script src="../../codebase/dhtmlxcommon.js"></script>
+	<script src="../../codebase/dhtmlxlayout.js"></script>
+	<script src="../../../dhtmlxWindows/codebase/dhtmlxwindows.js"></script>
+</head>
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxlayout_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxLayout</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Windows-Based Init</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxLayout/index.shtml">dhtmlxLayout main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+<div style="position: relative; height: 500px;"></div>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-comment">//</span><span class="hl-comment"> create a window for the layout</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">dhxWins</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXWindows</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">layoutWin</span><span class="hl-code"> = </span><span class="hl-identifier">dhxWins</span><span class="hl-code">.</span><span class="hl-identifier">createWindow</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">w1</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-number">20</span><span class="hl-code">, </span><span class="hl-number">20</span><span class="hl-code">, </span><span class="hl-number">600</span><span class="hl-code">, </span><span class="hl-number">400</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment"> adding a window-based layout</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">dhxLayout</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXLayoutObject</span><span class="hl-brackets">(</span><span class="hl-identifier">layoutWin</span><span class="hl-code">, </span><span class="hl-quotes">&quot;</span><span class="hl-string">3L</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+
+<script>
+	var dhxWins = new dhtmlXWindows();
+	dhxWins.setImagePath("../../../dhtmlxWindows/codebase/imgs/");
+	var layoutWin = dhxWins.createWindow("w1", 70, 70, 600, 400);
+	//
+	var dhxLayout = new dhtmlXLayoutObject(layoutWin, "3L");
+</script>
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

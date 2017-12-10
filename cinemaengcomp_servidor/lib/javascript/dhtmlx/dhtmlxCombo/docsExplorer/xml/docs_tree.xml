@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+		<tree id="0">
+			
+			<item id="dhtmlxcombo" text="dhtmlxCombo" im0="dhtmlxcombo_icon.gif" im1="dhtmlxcombo_icon.gif" im2="dhtmlxcombo_icon.gif">
+				<userdata name="url">
+					../dhtmlxCombo/doc
+				</userdata>
+				<userdata name="thisurl">
+					../dhtmlxCombo/doc/guide.html
+				</userdata>
+				<item text="Main Features" id="combo_mf">
+					<userdata name="url">guide.html</userdata>
+				</item>
+				<item text="Supported Browsers" id="combo_browsers">
+					<userdata name="url">guide.html</userdata>
+				</item>
+				<item text="Guide" id="combo_guide">
+					<userdata name="url">guide.html</userdata>
+					<item text="Initializing object" id="combo_init">
+					</item>
+					<item text="Adding options" id="combo_adding_options">
+					</item>
+					<item text="Integration with FORM" id="combo_form">
+					</item>
+					<item text="Filtering" id="combo_filtering">
+					</item>
+					<item text="Operations with comobobox" id="combo_operation1">
+					</item>
+					<item text="Operations with comobobox's options" id="combo_operation2">
+					</item>
+
+				</item>
+				<item text="API Functions" id="combo_api">
+					<userdata name="url">alpha.html</userdata>
+	        	 	<item text="Alphabeticaly sorted" id="combo_api_a">
+						<userdata name="url">alpha.html</userdata>
+					</item>
+					<item text="Grouped by Type" id="combo_api_t">
+						<userdata name="url">tgroup.html</userdata>
+					</item>
+					<item text="Grouped by Object" id="combo_api_o">
+						<userdata name="url">ogroup.html</userdata>
+					</item>
+					<item text="Events" id="combo_api_events"  im0="leaf_new.gif">
+						<userdata name="url">events.html</userdata>
+					</item>
+				</item>
+			</item>
+			
+		</tree>

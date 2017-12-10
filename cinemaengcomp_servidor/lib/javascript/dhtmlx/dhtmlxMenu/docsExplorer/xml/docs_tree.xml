@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+		<tree id="0">
+			
+			<item id="dhtmlxmenu" text="dhtmlxMenu" im0="dhtmlxmenu_icon.gif" im1="dhtmlxmenu_icon.gif" im2="dhtmlxmenu_icon.gif">
+				<userdata name="url">
+					../dhtmlxMenu/doc
+				</userdata>
+				<userdata name="thisurl">
+					../dhtmlxMenu/doc/guide.html
+				</userdata>
+				<item text="Main Features" id="menu_mf">
+					<userdata name="url">guide.html</userdata>
+				</item>
+				<item text="Supported Browsers" id="menu_browsers">
+					<userdata name="url">guide.html</userdata>
+				</item>
+				<item text="Guide" id="menu_guide">
+					<userdata name="url">guide.html</userdata>
+					<item text="Initialize object on page" id="menu_init"></item>
+					<item text="Set Event Handlers" id="menu_events"></item>
+					<item text="Adding Items with Script" id="menu_additem"></item>
+					<item text="Configuring with XML" id="menu_xml"></item>
+					<item text="Menu items manipulation" id="menu_itemman"></item>
+					<item text="Link navigation menu" id="menu_links"></item>
+					<item text="Context menu" id="menu_context"></item>
+					
+				</item>
+				<item text="API Functions" id="menu_api">
+					<userdata name="url">alpha.html</userdata>
+	        	 	<item text="Object constructor" id="menu_api_obj">
+	    	       		<userdata name="url">objects.html</userdata>
+		         	</item>
+	        	 	<item text="Alphabeticaly sorted" id="menu_api_a">
+						<userdata name="url">alpha.html</userdata>
+					</item>
+					<item text="Grouped by Type" id="menu_api_t">
+						<userdata name="url">tgroup.html</userdata>
+					</item>
+					<item text="Grouped by Object" id="menu_api_o">
+						<userdata name="url">ogroup.html</userdata>
+					</item>
+				</item>
+			</item>
+			
+
+		</tree>

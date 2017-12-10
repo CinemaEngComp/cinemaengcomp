@@ -1,0 +1,120 @@
+<!--conf
+<sample>
+              <product version="1.5" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               </sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title> Moving items</title>
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxtree.css">
+	
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxtree.js"></script>
+</head>
+
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxtree_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxTree</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b> Moving items</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxTree/index.shtml">dhtmlxTree main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	
+	<table>
+		<tr>
+			<td>
+				<div id="treeboxbox_tree" style="width:250; height:218;background-color:#f5f5f5;border :1px solid Silver;; overflow:auto;"/>
+			</td>
+            <td>
+				<div id="treeboxbox_tree2" style="width:250; height:218;background-color:#f5f5f5;border :1px solid Silver;; overflow:auto;"/>
+			</td>
+			<td rowspan="2" style="padding-left:25" valign="top">
+            <div>Move from left tree to right tree</div>
+            </div>
+            Move selected<a href="javascript:void(0)" onclick="tree.moveItem(tree.getSelectedItemId(),'item_child',tree2.getSelectedItemId(),tree2)"> to child </a></select>
+            </div>
+            <div>
+            Move selected <a href="javascript:void(0)" onclick="tree.moveItem(tree.getSelectedItemId(),'item_sibling',tree2.getSelectedItemId(),tree2)"> to sibling </a></select>
+            </div>
+            <br/>
+            <div>Move from right tree to left tree</div>
+            </div>
+            Move selected<a href="javascript:void(0)" onclick="tree2.moveItem(tree2.getSelectedItemId(),'item_child',tree.getSelectedItemId(),tree)"> to child </a></select>
+            </div>
+            <div>
+            Move selected <a href="javascript:void(0)" onclick="tree2.moveItem(tree2.getSelectedItemId(),'item_sibling',tree.getSelectedItemId(),tree)"> to sibling </a></select>
+            </div>
+
+            <br/>
+            <div>Move inside left tree</div>
+             <div>
+			Move selected <a href="javascript:void(0)" onclick="tree.moveItem(tree.getSelectedItemId(),'up')"> Up </a> | <a href="javascript:void(0)" onclick="tree.moveItem(tree.getSelectedItemId(),'down')">Down</a> | <a href="javascript:void(0)" onclick="tree.moveItem(tree.getSelectedItemId(),'left')"> Left</a>
+            <div>
+             <div>
+			Move selected <a href="javascript:void(0)" onclick="tree.moveItem(tree.getSelectedItemId(),'up_strict')"> Up on level </a> | <a href="javascript:void(0)" onclick="tree.moveItem(tree.getSelectedItemId(),'down_strict')">Down on level</a>
+            <div>
+            </div>
+            Move selected <a href="javascript:void(0)" onclick="tree.moveItem(tree.getSelectedItemId(),'item_child',this.nextSibling.value)"> to child of </a><select><option value="books">Books</option><option value="sport">Sport</option><option value="magazines">Magazines</option></select>
+            </div>
+            <div>
+            Move selected <a href="javascript:void(0)" onclick="tree.moveItem(tree.getSelectedItemId(),'item_sibling',this.nextSibling.value)"> to sibling of </a><select><option value="books">Books</option><option value="sport">Sport</option><option value="magazines">Magazines</option></select>
+            </div>
+            </td>
+		</tr>
+		
+	</table>
+<br>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">treeboxbox_tree</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">width:200;height:200</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">tree</span><span class="hl-code">=</span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXTreeObject</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">treeboxbox_tree</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">100%</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">100%</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-number">0</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">setImagePath</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">../imgs/</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">loadXML</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">tree.xml</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">
+        
+        ...
+        </span><span class="hl-comment">//</span><span class="hl-comment">moving item inside tree</span><span class="hl-comment"></span><span class="hl-code">
+        </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">moveItem</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">up</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">moveItem</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">down</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">moveItem</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">left</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">moveItem</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">item_child</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-identifier">targetId</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">moveItem</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">item_sibling</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-identifier">targetId</span><span class="hl-brackets">)</span><span class="hl-code">;
+        ...
+        </span><span class="hl-comment">//</span><span class="hl-comment">moving items between trees</span><span class="hl-comment"></span><span class="hl-code">
+        </span><span class="hl-identifier">sourceTree</span><span class="hl-code">.</span><span class="hl-identifier">moveItem</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">item_child</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-identifier">targetId</span><span class="hl-code">,</span><span class="hl-identifier">targetTree</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">sourceTree</span><span class="hl-code">.</span><span class="hl-identifier">moveItem</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">item_sibling</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-identifier">targetId</span><span class="hl-code">,</span><span class="hl-identifier">targetTree</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+	<script>
+			tree=new dhtmlXTreeObject("treeboxbox_tree","100%","100%",0);
+			tree.setImagePath("../../codebase/imgs/csh_bluefolders/");
+			tree.enableSmartXMLParsing(true);
+			tree.loadXML("tree_a.xml")
+
+
+			tree2=new dhtmlXTreeObject("treeboxbox_tree2","100%","100%",0);
+			tree2.setImagePath("../../codebase/imgs/csh_bluefolders/");
+			tree2.enableSmartXMLParsing(true);
+			tree2.loadXML("tree_a.xml")
+
+	</script>
+<br><br>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

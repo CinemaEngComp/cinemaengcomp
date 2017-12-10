@@ -1,0 +1,90 @@
+<!--conf
+<sample in_favorites="true">
+              <product version="1.5" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               <sampledescription><![CDATA[dhtmlxTree can work either with Left-to-Right text or with Right-to-Left text. Moreover, modes can be switched on the fly. This can be useful if you want to switch betwenn rtl and ltr languages without reloading complete page.]]></sampledescription></sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Text direction (LTR & RTL)</title>
+</head>
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxtree.css">
+	
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxtree.js"></script>
+	<script  src="../../codebase/ext/dhtmlxtree_rl.js"></script>
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxtree_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxTree</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Text direction (LTR & RTL)</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxTree/index.shtml">dhtmlxTree main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	
+	<table>
+		<tr>
+			<td>
+				<div id="treeboxbox_tree" style="width:250; height:218;background-color:#f5f5f5;border :1px solid Silver;overflow:hidden;"/>
+			</td>
+			<td style="padding-left:25" valign="top">
+				<div id="treeboxbox_tree2" style=" width:250; height:218;background-color:#f5f5f5;border :1px solid Silver;overflow:hidden;"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+	<div><a href="#" onclick="tree.enableRTL(false)">Tree 1 - LTR</a></div>
+	<div><a href="#" onclick="tree.enableRTL(true)">Tree 1 - RTL</a></div>
+</td>
+<td style="padding-left:25">
+	<div><a href="#" onclick="tree2.enableRTL(false)">Tree 2 - LTR</a></div>
+	<div><a href="#" onclick="tree2.enableRTL(true)">Tree 2 - RTL</a></div>
+</td>
+		</tr>
+	</table>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+...
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-code">  </span><span class="hl-var">src</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">../js/dhtmlXTree_rl.js</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code">        
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">tree</span><span class="hl-code">=</span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXTreeObject</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">treeboxbox_tree</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">100%</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">100%</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-number">0</span><span class="hl-brackets">)</span><span class="hl-code">;
+    ...
+    </span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">enableRTL</span><span class="hl-brackets">(</span><span class="hl-reserved">true</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+
+
+<script>
+		tree=new dhtmlXTreeObject("treeboxbox_tree","100%","100%",0);
+		tree.setImagePath("../../codebase/imgs/csh_bluebooks/");
+		tree.enableDragAndDrop(true);			
+		tree.enableSmartXMLParsing(true);
+		tree.loadXML("tree3.xml")
+		
+		tree2=new dhtmlXTreeObject("treeboxbox_tree2","100%","100%",0);
+		tree2.setImagePath("../../codebase/imgs/csh_bluebooks/");
+		tree2.enableSmartXMLParsing(true);
+		tree2.enableDragAndDrop(true);
+		tree2.setDragBehavior("sibling");
+        tree2.enableRTL(true);
+		tree2.loadXML("tree3.xml")
+		
+</script>
+<br><br>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

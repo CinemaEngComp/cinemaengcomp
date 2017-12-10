@@ -1,0 +1,1431 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>dhtmlxLayout Guide</title>
+	<link rel="STYLESHEET" type="text/css" href="common/styles.css">
+</head>
+   
+<body>
+<h1 id="di2j">
+  dhtmlxLayout Guide and Code Samples<br id="q8vr">
+</h1>
+<h2><a name='layout_mn4c'>
+  1. Introduction
+</a></h2>
+<h3><a name='layout_mejf'>
+  1.1 Scope of the Document
+</a></h3>
+This document describes <b id="s0c4">dhtmlxLayout </b>component, defines its methods and global parameters. This documentation is created to give users full understanding of every feature of this component, and also to enable users to implement this component quickly and easily.<br id="xure">
+<h3><a name='layout_ph-x'>
+  1.2 Target Readers
+</a></h3>
+<p class="MsoNormal" id="h:xr">
+  Target readers are users (developers).
+</p>
+<h2><a name='layout_ol1w'>
+  2. What is dhtmlxLayout
+</a></h2>
+<b id="m9:0">dhtmlxLayout </b>is a component that provides an easy way to compose several items into a single desktop layout. This is a very effective way of placing different types of content on one page. The component is flexible and easy to use. Different types of <a href="#5.1_Views_Configuration" id="zvl1" title="Different types of predefined layout views">predefined layout patterns</a> are designed to help users to save time on configuring.<br id="b1vm0">
+<br id="b1vm1">
+<span id="k9or" style="color: rgb(0, 0, 0);">This component operates such notion as "Items". Items are parts of the Layout (in other words, cells of layout table)&nbsp;that can contain different types of content. </span><b id="m9:00">dhtmlxLayout&nbsp; </b>provides users with the possibilities to:<br id="xphy">
+<br id="v4lm">
+<ul id="l7:s">
+  
+<li id="rx55">
+    View the content of all the expanded items in the Layout;
+  </li>
+  
+<li id="c2wf">
+    Collapse or expand any item in the Layout;
+  </li>
+  
+<li id="m9:01">
+    Resize any expanded item in the Layout;
+  </li>
+  
+<li id="ge7g">
+    Manipulate with item's settings: dock, undock;
+  </li>
+  
+<li id="m9:02">
+    Attach other dhtmlx components to any item in the Layout;
+  </li>
+  
+<li id="m9:03">
+    Add global items to the <span id="f0t:" style="font-family: Verdana;">Layout</span><span id="v674" style="font-family: Verdana;">;</span>
+  </li>
+  
+<li id="g5wh">
+    <span id="g5wh0" style="font-family: Verdana;">Add effects to the Layout.</span></li>
+</ul>
+<h3><a name='layout_b2qa'>2.1 Main Features</a></h3>
+<ul id="ljpx0">
+<li id="ljpx1">Crossbrowser compatibility;</li>
+<li id="l08a">Single command integration with dhtmlx components;</li>
+<li id="l08a0">Full Screen/Window modes;</li>
+<li id="v-tx">Resizable items;</li>
+<li id="medr">Collapsable items;</li>
+<li id="medr0">Wide range of predefined layouts;</li>
+<li id="opk9">Predefined skins, inherited by included components;</li>
+<li id="qvpi">Script API.<br id="qvpi0">
+</li>
+</ul>
+<h3><a name='layout_b2qa0'>2.2 Supported Browsers</a></h3>
+<ul id="gf2g">
+<li id="gf2g0">IE;</li>
+<li id="ka8r">Mac OS X Safari/Conqueror;</li>
+<li id="yso2">Mozilla/Mozilla Firefox;</li>
+<li>Google Chrome;<br>
+</li>
+<li id="yso20">
+      Opera 8.5+.<br id="yso21">
+</li>
+</ul>
+<h2><a name='layout_m9:04'>
+  3. Initializing dhtmlxLayout
+</a></h2>
+There are three ways of initializing <b id="bmqe">dhtmlxLayout:<br id="ep:z">
+<br id="g4ic">
+</b>
+<ul id="g4ic0">
+  
+<li id="g4ic1">
+    <b id="qx20"><a href="#3.1._Object-based_initialization" id="pz3:" title="Object-based initialization">Object-based initialization</a> </b>- in this case an object on page acts as Layout's container (parent);
+  </li>
+  
+<li id="g4ic2">
+    <b id="qx200"><a href="#3.2._Window-based_initialization" id="m85g" title="Window-based initialization">Window-based initialization</a> </b>- initialization of this kind means that a window (member of dhtmlxWindows system)&nbsp;is made Layout's parent;
+  </li>
+  
+<li id="m9:05">
+    <b id="qx201"><a href="#3.3._Fullscreen_initialization" id="p1o3" title="Fullscreen initialization">Fullscreen initialization</a> </b>- this third type of initialization presupposes that&nbsp;<span id="aebj" style="color: rgb(0, 0, 0);">Layout's parent is "document.body" itself</span><span id="d50l" style="color: rgb(0, 0, 0);">. In this case the Layout takes up the entire page;</span>
+  </li>
+  
+<li id="jo7n">
+    <span id="jo7n0" style="color: rgb(0, 0, 0);"><b id="g1et"><a href="#Layout%27s_Cell-Based_Initializati" id="eo2c" title="Layout's cell-based">Layout's cell-based initialization</a></b> - this one more type of initialization creates a Layout, which parent is some cell of another dhtmlxLayout. This newly created Layout will be placed in another layout's cell. </span><br id="aebj0">
+  </li>
+</ul>
+<br id="g4j1">
+The first things that need to be done for any type of <b id="m9:07">dhtmlxLayout</b>'s initialization are the following:<br id="pbf6">
+<br id="gnrw">
+<ul id="tour">
+  
+<li id="p5-m">
+    Download the dhtmlxLayout and dhtmlxWindows packages from the server and place them in a folder;
+  </li>
+  
+<li id="m9:08">
+    Create an index.html file;<br id="tjec">
+  </li>
+  
+<li id="m9:09">
+    Place the full paths to <b id="zdv_">dhtmlxLayout</b>'s CSS and JS files into the header of html file;
+  </li>
+  
+<li id="m9:012">
+    Place the full paths to <span id="vd5j" style="font-family: Verdana;"><b id="cicd">dhtmlxWindows</b><font id="h9jm" size="2">'s CSS and JS files into the header of </font></span>html file<span id="m9:013" style="font-family: Verdana;"><font id="m9:014" size="2">.<br id="hqcl">
+    </font></span>
+  </li>
+</ul>
+<br id="j41l">
+<blockquote id="cq-z">
+  
+<p class="MsoNormal" id="g2jx">
+    <span id="ris8" style="font-family: Verdana;"><font id="vovi" size="2">&lt;head&gt;</font><br id="p7qy">
+    </span>
+  </p>
+  <br id="bxq.">
+  
+<p class="MsoNormal" id="mww1">
+    <span id="hhnh" style="font-family: Verdana;"><font id="ssfs" size="2">&lt;script src="</font></span><span id="x_e0" style="font-family: Verdana;"><font id="ekf7" size="2">[full path to this file]</font></span><span id="hhnh" style="font-family: Verdana;"><font id="ssfs" size="2">/dhtmlxcommon.js"&gt;&lt;/script&gt;</font></span><br id="f2uy">
+  </p>
+  
+<p class="MsoNormal" id="m9:015">
+    <br id="p7qy1">
+  </p>
+  
+<p class="MsoNormal" id="m9:016">
+    <span id="m9:017" style="font-family: Verdana;"><font id="m9:018" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- dhtmlxLayout --&gt;</font></span>
+  </p>
+  
+<p class="MsoNormal" id="jiuw">
+    <span id="rzoh" style="font-family: Verdana;"><font id="zowx" size="2">&lt;link rel="stylesheet" type="text/css" href="</font></span><span id="x_e0" style="font-family: Verdana;"><font id="ekf7" size="2">[full path to this file]</font></span><span id="m9:019" style="font-family: Verdana;"><font id="m9:020" size="2">/dhtmlxlayout.css"&gt;</font></span>
+  </p>
+  
+<p class="MsoNormal" id="h9lh">
+    <span id="h9lh0" style="font-family: Verdana;"><font id="h9lh1" size="2">&lt;link rel="stylesheet" type="text/css" href="</font></span><span id="h9lh2" style="font-family: Verdana;"><font id="h9lh3" size="2">[full path to this file]</font></span><span id="h9lh5" style="font-family: Verdana;"><font id="h9lh6" size="2">/dhtmlxlayout_dhx_blue.css"&gt;<br id="h9lh7">
+    </font></span>
+  </p>
+  
+<p class="MsoNormal" id="ztsa">
+    <span id="bztm" style="font-family: Verdana;"><font id="stat" size="2">&lt;script src="</font></span><span id="m9:021" style="font-family: Verdana;"><font id="m9:022" size="2">[full path to this file]</font></span><span id="m9:023" style="font-family: Verdana;"><font id="m9:024" size="2">/dhtmlxlayout.js"&gt;&lt;/script&gt;</font></span>
+  </p>
+  
+<p class="MsoNormal" id="p338">
+    <span id="tbbl" style="font-family: Verdana;"><font id="x9:2" size="2">&nbsp;</font></span>
+  </p>
+  
+<p class="MsoNormal" id="dbl7">
+    <span id="m9:025" style="font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp;<font id="nppu" size="2">&lt;!-- dhtmlxWindows --&gt;</font></span>
+  </p>
+  
+<p class="MsoNormal" id="xpow">
+    <span id="fg.2" style="font-family: Verdana;"><font id="x1yc" size="2">&lt;link rel="stylesheet" type="text/css" href="</font></span><span id="m9:026" style="font-family: Verdana;"><font id="m9:027" size="2">[full path to this file]</font></span><span id="m9:028" style="font-family: Verdana;"><font id="m9:029" size="2">/dhtmlxwindows.css"&gt;</font></span>
+  </p>
+  
+<p class="MsoNormal" id="ozld">
+    <span id="pc8h" style="font-family: Verdana;"><font id="zskz" size="2">&lt;link rel="stylesheet" type="text/css" href="</font></span><span id="m9:030" style="font-family: Verdana;"><font id="m9:031" size="2">[full path to this file]</font></span><span id="fsru" style="font-family: Verdana;"><font id="m9:033" size="2">/dhtmlxwindows_dhx_blue.css"&gt; </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><br id="qmqn">
+  </p>
+  
+<p class="MsoNormal" id="omhz">
+    <span id="pv3c" style="font-family: Verdana;"><font id="gf0q" size="2">&lt;script src="codebase/dhtmlxwindows.js"&gt;&lt;/script&gt;<br id="pj:3">
+    </font></span>&nbsp;
+  </p>
+  
+<p class="MsoNormal" id="dqc9">
+    <span id="m9:038" style="font-family: Verdana;"><font id="m9:039" size="2">&lt;/head&gt;</font></span>
+  </p>
+</blockquote>
+<span id="m9:040" style="font-family: Verdana; background-color: rgb(255, 255, 255);"><font id="crjd" size="2"><b id="m4.w">Note</b>: <i id="ol28">dhx_blue</i> is the default skin. If the user chooses to apply some other skin, he should indicate path to the appropriate </font></span><span id="n:3g" style="font-family: Verdana;"><font id="n:3g0" size="2"><i id="n:3g1">dhtmlxlayout_[name_of_the_skin].css</i></font></span><span id="qsx9" style="font-family: Verdana; background-color: rgb(255, 255, 255);"><font id="qsx90" size="2"> and </font></span><span id="qsx91" style="font-family: Verdana;"><font id="qsx92" size="2"><i id="qsx93">dhtmlxwindows_[name_of_the_skin].css</i> files from dhtmlxLayout and dhtmlxWindows packages.</font></span><br id="m4.w0">
+<span id="n:3g2" style="font-family: Verdana; background-color: rgb(255, 255, 255);"><font id="n:3g3" size="2"><br id="m4.w1">
+If the user works with all available visible space, we recommend him to specify the following style for the &lt;body&gt; tag </font></span><span id="m9:041" style="font-family: Verdana; background-color: rgb(255, 255, 255);"><font id="m9:042" size="2">to make dhtmlxLayout and dhtmlxWindows</font></span><span id="m9:044" style="font-family: Verdana;"><font id="m9:045" size="2"><span id="gl.n" style="background-color: rgb(255, 255, 255);"> work correctly:<br id="zv.n">
+<br id="emqy">
+</span></font></span>
+<ul id="emqy0">
+  
+<li id="emqy1">
+    <b id="a6vf">width:100%; height:100%</b> - to obtain correct work of window's viewport and fullscreen layout;
+  </li>
+  
+<li id="m9:046">
+    <b id="a6vf0">margin:0px</b> - to hide default body space;
+  </li>
+  
+<li id="m9:047">
+    <b id="a6vf1">overflow:hidden</b> - to hide body scrolls.<br id="eldc">
+  </li>
+</ul>
+<blockquote id="os3c">
+  &lt;body style="width:100%; height:100%; margin:0px; overflow:hidden;"&gt;&lt;/body&gt;&nbsp;<br id="jj26">
+</blockquote>
+<span id="m9:048" style="font-family: Verdana;"><font id="m9:049" size="2">From this point further steps the user should take are different for every kind of initialization.<br id="jd9.2">
+</font></span>
+
+  <a id="aoba" name="3.1._Object-based_initialization"></a>
+<h3><a name='layout_wwru'>
+  3.1 Object-based initialization</a></h3>
+
+We need to create an object where <span id="m9:050" style="background-color: rgb(255, 255, 255);"><b id="on2r">dhtmlxLayout</b></span><span id="m9:051" style="background-color: rgb(255, 255, 255);"> will</span><span id="nv3o" style="background-color: rgb(255, 255, 255);"> be placed later. In this example the object is a &lt;div&gt; element on page which is placed in the &lt;body&gt; tag:</span><br id="f_ef" style="background-color: rgb(255, 255, 255);">
+<blockquote id="hlfk">
+  
+<p class="MsoNormal" id="pi261">
+    <span id="nv3o0" style="background-color: rgb(255, 255, 255);">&lt;div id="parentId" style="position:absolute; width:600px; height:400px;"&gt;&lt;/div&gt;</span><br id="db_d">
+  </p>
+</blockquote>
+The next step is to create a new <span id="d3gs" style="font-family: Verdana;"><font id="an7g" size="2"><b id="nd2m0">dhtmlXLayoutObject</b> and place it after the &lt;div&gt; element (object) that we've just created. The initialization can be done either through <b id="ju_3">objectId </b>(as the first argument):</font></span><br id="bhtp2">
+<blockquote id="jiea">
+  
+<p class="MsoNormal" id="grwm" style="background-color: rgb(255, 255, 255);">
+    <span id="k2zj" style="font-family: Verdana;"><font id="ddq9" size="2"><span id="c_8s" style="background-color: rgb(255, 255, 255);">&lt;script&gt; &nbsp;&nbsp;&nbsp;&nbsp;<br id="s65n">
+    </span></font></span>
+  </p>
+  
+<p class="MsoNormal" id="m9:052" style="background-color: rgb(255, 255, 255);">
+    <span id="m9:053" style="font-family: Verdana;"><font id="m9:054" size="2"><span id="m9:055" style="background-color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp;&nbsp;var dhxLay</span>out = new dhtmlXLayoutObject("parentId", "3L", "dhx_black");</font></span>
+  </p>
+  
+<p class="MsoNormal" id="m9:056" style="background-color: rgb(255, 255, 255);">
+    <span id="m9:057" style="font-family: Verdana;">&lt;/script&gt;</span><br id="qdk10">
+  </p>
+</blockquote>
+or through <b id="ju_30">object</b> (as the first <span id="m9:058" style="font-family: Verdana;"><font id="m9:059" size="2">argument</font></span>):<br id="k26.0">
+<blockquote id="k26.1">
+  <span id="m9:060" style="font-family: Verdana;"><font id="m9:061" size="2"><span id="m9:062" style="background-color: rgb(255, 255, 255);">&lt;script&gt; </span></font></span><span id="m9:063" style="font-family: Verdana;"><font id="m9:064" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br id="ask1">
+  &nbsp;&nbsp;&nbsp;&nbsp;var obj = document.getElementById("parentId");<br id="icno4">
+  </font></span>
+  
+<p class="MsoNormal" id="m9:065" style="background-color: rgb(255, 255, 255);">
+    <span id="m9:066" style="font-family: Verdana;"><font id="m9:067" size="2">&nbsp;&nbsp;&nbsp;&nbsp;var dhxLayout = new dhtmlXLayoutObject(obj, "3L"</font></span><span id="m9:053" style="font-family: Verdana;"><font id="m9:054" size="2">, "dhx_black"</font></span><span id="m9:066" style="font-family: Verdana;"><font id="m9:067" size="2">);</font></span>
+  </p>
+  
+<p class="MsoNormal" id="m9:068" style="background-color: rgb(255, 255, 255);">
+    <span id="m9:069" style="font-family: Verdana;">&lt;/script&gt;</span><br id="m9:070">
+  </p>
+</blockquote>
+<p id="o5qf8">
+  <span id="o5qf9" style="font-family: Verdana;"><font id="o5qf10" size="2">The second </font></span><span id="m9:073" style="font-family: Verdana;"><font id="m9:074" size="2">argument </font></span><span id="m9:075" style="font-family: Verdana;"><font id="m9:076" size="2">in </font></span><span id="m9:077" style="font-family: Verdana;"><font id="m9:078" size="2"><b id="hgaz">dhtmlXLayoutObject()</b> is the <span id="nycy" style="background-color: rgb(255, 255, 255);">code </span>of the <a href="#5.1_Views_Configuration" id="lf24" title="Layout's view">Layout's pattern</a>.<br id="r265">
+  </font></span>
+</p>
+
+<p id="hl0o2">
+  <span id="m9:079" style="font-family: Verdana;"><font id="m9:080" size="2">The third argument is optional, and it indicates the name of the <a href="#Available_Skins" id="dr73" title="skin">skin</a> chosen for the Layout. If this argument is not indicated, the component will be created with the default skin (<i id="kdxa">dhx_blue</i>).<br id="isrh1">
+  </font></span></p>
+<a id="c5md" name="3.2._Window-based_initialization"></a>
+<h3><a name='layout_nh7q3'>
+  3.2 Window-based initialization
+</a></h3>
+<p id="nh7q4">
+  For this type of initialization, the user needs to create a dhtmlxWindows object:<br id="xmpz">
+</p>
+<blockquote id="wxeo">
+  &nbsp;&nbsp;&nbsp; &lt;script&gt; &nbsp;<br id="kpms">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var dhxWins = new dhtmlXWindows();<br id="wxeo1">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var layoutWin = dhxWins.createWindow("w1", 20, 20, 600, 400);<br id="k:7o0">
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br id="i:k_0">
+</blockquote>
+The following parameters should be passed to <b id="vv9_">dhxWins.createWindow()</b>:<br id="vv9_0">
+<ul id="vv9_1">
+  
+<li id="vv9_2">
+    <b id="tedr">"w1"</b> - id of the window;
+  </li>
+  
+<li id="vv9_3">
+    <b id="tedr0">20, 20</b> - the left and the top positions of the window;
+  </li>
+  
+<li id="m9:083">
+    <b id="tedr1">600, 400 </b>- the width and the height of the window.
+  </li>
+</ul>
+<span id="m9:084" style="font-family: Verdana;"><font id="c3jg" size="2"><br id="c3jg0" style="color: rgb(56, 118, 29);">
+<span id="c3jg1" style="color: rgb(255, 0, 0);"><span id="ljj6" style="color: rgb(0, 0, 0);">Then </span></span></font></span><span id="m9:085" style="font-family: Verdana;"><font id="m9:086" size="2"><span id="m9:087" style="color: rgb(255, 0, 0);"><span id="m9:088" style="color: rgb(0, 0, 0);">we get window-based layout by </span></span></font></span><span id="m9:089" style="font-family: Verdana;"><font id="m9:090" size="2"><span id="m9:091" style="color: rgb(255, 0, 0);"><span id="m9:092" style="color: rgb(0, 0, 0);">passing a window object into the Layout's constructor. The following line of code should be added to the above mentioned snippet:</span></span></font></span>&nbsp;
+<blockquote id="m9:093" style="background-color: rgb(255, 255, 255);">
+  
+<p class="MsoNormal" id="m9:094">
+    <span id="m9:095" style="font-family: Verdana;"><font id="m9:096" size="2">var dhxLayout = new dhtmlXLayoutObject(layoutWin, "3L"</font></span><span id="m9:053" style="font-family: Verdana;"><font id="m9:054" size="2">, "dhx_black"</font></span><span id="m9:095" style="font-family: Verdana;"><font id="m9:096" size="2">);</font></span> &nbsp;&nbsp; &nbsp;&nbsp;<br id="m9:097">
+  </p>
+</blockquote>
+<a id="bvzg" name="3.3._Fullscreen_initialization"></a>The second argument is the <font id="nnfb1" size="2">code </font><span id="m9:0102" style="font-family: Verdana;"><font id="m9:0103" size="2">of the </font></span><font id="apu_0" size="2"><a href="RawDocContents?docID=dgr5rjkf_71g66zq3g5&amp;justBody=false&amp;revision=_latest&amp;timestamp=1219225503140&amp;editMode=true&amp;strip=true#5.1_Views_Configuration" id="apu_1" title="Layout's view">Layout's pattern</a></font><a href="RawDocContents?docID=dgr5rjkf_71g66zq3g5&amp;justBody=false&amp;revision=_latest&amp;timestamp=1214552551466&amp;editMode=true&amp;strip=true#5.1_Views_Configuration" id="m9:0106" title="Layout's view"></a><span id="m9:0107" style="font-family: Verdana;"><font id="m9:0108" size="2">.<br id="a0na0">
+The third one is </font></span><span id="a0na1" style="font-family: Verdana;"><font id="a0na2" size="2">optional, and it indicates the name of </font></span><span id="tyb4" style="font-family: Verdana;"><font id="tyb40" size="2">the <a href="RawDocContents?docID=dgr5rjkf_71g66zq3g5&amp;justBody=false&amp;revision=_latest&amp;timestamp=1217241095411&amp;editMode=true&amp;strip=true#Available_Skins" id="tyb41" title="skin">skin</a></font></span><span id="tyb42" style="font-family: Verdana;"><font id="tyb43" size="2"> chosen for the Layout. If this argument is not indicated, the component will be created with the default skin (<i id="ttqs">dhx_blue</i>).</font></span><br id="m-na0">
+<h3><a name='layout_apdz'>
+  3.3
+Fullscreen initialization
+</a></h3>
+The Layout initialized this way will occupy the whole visible screen area in the browser:<br id="bsf50">
+<blockquote id="f9q0">
+  &lt;script&gt;&nbsp;<br id="nnfb">
+  &nbsp;&nbsp;&nbsp;&nbsp;var dhxLayout = new dhtmlXLayoutObject(document.body, "3L"<span id="m9:053" style="font-family: Verdana;"><font id="m9:054" size="2">, "dhx_black"</font></span>);<br id="nnfb0">
+  &lt;/script&gt;&nbsp;<br id="tedr4">
+</blockquote>
+The first <span id="xajs" style="color: rgb(0, 0, 0);">argument</span> for <b id="ck28">dhtmlXLayoutObject</b><b id="iabr">()</b> in this case should be "document.body".<br id="a0na">
+The second one - the <font id="keug1" size="2">code </font><span id="keug2" style="font-family: Verdana;"><font id="keug3" size="2">of the </font></span><a href="RawDocContents?docID=dgr5rjkf_71g66zq3g5&amp;justBody=false&amp;revision=_latest&amp;timestamp=1214552551466&amp;editMode=true&amp;strip=true#5.1_Views_Configuration" id="keug6" title="Layout's view"></a><font id="tzre" size="2"><a href="RawDocContents?docID=dgr5rjkf_71g66zq3g5&amp;justBody=false&amp;revision=_latest&amp;timestamp=1219225503140&amp;editMode=true&amp;strip=true#5.1_Views_Configuration" id="apu_4" title="Layout's view">Layout's pattern</a></font><span id="keug7" style="font-family: Verdana;"><font id="keug8" size="2">.<br id="keug9">
+The third argument is </font></span><span id="keug10" style="font-family: Verdana;"><font id="keug11" size="2">optional, and it indicates the name of </font></span><span id="tyb44" style="font-family: Verdana;"><font id="tyb45" size="2">the <a href="RawDocContents?docID=dgr5rjkf_71g66zq3g5&amp;justBody=false&amp;revision=_latest&amp;timestamp=1217241095411&amp;editMode=true&amp;strip=true#Available_Skins" id="tyb46" title="skin">skin</a></font></span><span id="tyb47" style="font-family: Verdana;"><font id="tyb48" size="2"> chosen for the Layout. If this argument is not indicated, the component will be created with the default skin (<i id="vb-y">dhx_blue</i>).</font></span><br id="fpzh">
+<h3><a name='layout_kdp2'>
+  3.4
+Layout's Cell-Based Initialization
+</a></h3>
+This type of initialization means that some Layout's cell will be made parent for the newly created Layout. First, the user needs to create a new <span id="p1_8" style="font-family: Verdana;"><font id="p1_80" size="2"><b id="p1_81">dhtmlXLayoutObject</b>, indicate its </font></span><font id="j6sm0" size="2">pattern </font><span id="j6sm2" style="font-family: Verdana;"><font id="j6sm3" size="2">type and </font></span><span id="j6sm4" style="font-family: Verdana;"><font id="j6sm5" size="2"><a href="RawDocContents?docID=dgr5rjkf_71g66zq3g5&amp;justBody=false&amp;revision=_latest&amp;timestamp=1217241095411&amp;editMode=true&amp;strip=true#Available_Skins" id="j6sm6" title="skin">skin</a></font></span> <span id="j6sm8" style="font-family: Verdana;"><font id="j6sm9" size="2">(optional):</font></span>
+<blockquote id="dtn1">
+  &lt;script&gt;<br id="huez0">
+  &nbsp;&nbsp;&nbsp;&nbsp;var dhxLayout = new dhtmlXLayoutObject("parentId", "3L"<span id="m9:053" style="font-family: Verdana;"></span>);&nbsp;&nbsp;&nbsp;<br id="aecq1">
+  &lt;/script&gt;<br id="smc0">
+</blockquote>
+<span id="r6do" style="font-family: Verdana;"><font id="r6do0" size="2">&nbsp;Then another </font></span><span id="r7q1" style="font-family: Verdana;"><font id="r7q10" size="2"><b id="r7q11">dhtmlXLayoutObject </b>will be created, and it's parent should be indicated either through <b id="hdou">cells </b>or through <b id="hdou0">items</b>:<br id="hdou1">
+</font></span>
+<blockquote id="t34g">
+  &lt;script&gt;<br id="t34g0">
+  &nbsp;&nbsp;&nbsp; var Layout1 = new dhtmlXLayoutObject(dhxLayout.cells("a"), "2U");<br id="jfpe">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // OR<br id="aecq0">
+  &nbsp;&nbsp;&nbsp;&nbsp;var Layout1 = new dhtmlXLayoutObject(dhxLayout.items[1], "2U");<br id="t34g1">
+  &lt;/script&gt;<br id="pkwk">
+</blockquote>
+<p id="l568">
+  Refer to <b id="i7o2"><a href="RawDocContents?docID=dgr5rjkf_71g66zq3g5&amp;justBody=false&amp;revision=_latest&amp;timestamp=1217423496402&amp;editMode=true&amp;strip=true#Items_Accessing" id="ueyg" title="Items Accessing;">Items Accessing</a></b> section for more information on <b id="l9gs">cells </b>and <b id="l9gs0">items</b>.<br id="hv3o">
+</p>
+<h2><a name='layout_hv3o0'>
+  4. Global Items
+</a></h2>
+<span id="xtwg" style="color: rgb(0, 0, 0);">Global items are those components that are attached to the whole Layout. When they are attached to some of Layout's items - they are not referred to as "global". </span><span id="m9:0110" style="font-family: Verdana;">Global items are not related to any Layout's item, but to the whole Layout in general. Like menu or toolbar on the top of an application window.</span><br id="dd6t">
+<span id="m9:0111" style="color: rgb(0, 0, 0);">Among dhtmlx components that can be added to the Layout as a whole, the following ones can be named:<br id="sybz">
+<br id="io_v0" style="color: rgb(0, 0, 0);">
+</span>
+<ul id="jlf3" style="color: rgb(0, 0, 0);">
+  
+<li id="jlf30">
+    dhtmlxMenu 2.0;
+  </li>
+  
+<li id="jlf31">
+    dhtmlxToolbar 2.0.
+  </li>
+</ul>
+<br id="sybz0">
+Also the Layout can have a Status Bar attached to it.<br id="xf0q">
+<br id="d4lx">
+All the above mentioned components and items can be attached to the Layout separately or altogether. It should be noted that they can be added only to already initialized Layout.<br id="o5v40">
+<h3><a name='layout_yd7:'>
+  4.1
+Adding Menu
+</a></h3>
+First, the user should download <b id="on68">dhtmlxMenu 2.0 </b>package from the server into the same folder where previously downloaded packages were put.<br id="y1ww">
+Then, the full path to the following files is to be indicated <span id="m9:0112" style="font-family: Verdana;"><font id="m9:0113" size="2">in the &lt;head&gt; tag of </font></span>html file:<br id="kvj_">
+<br id="vfyr">
+<ul id="vfyr0">
+  
+<li id="vfyr1">
+    <span id="m9:0114" style="font-family: Verdana;"><font id="m9:0115" size="2">"<span id="ey5w" style="background-color: rgb(255, 255, 255);">dhtmlxwindows_wmn.js" </span></font></span><span id="m9:0116" style="font-family: Verdana; background-color: rgb(255, 255, 255);"><font id="m9:0117" size="2">file from "dhtmlxWindows" folder</font></span><span id="ey5w0" style="background-color: rgb(255, 255, 255);">; </span>
+  </li>
+  
+<li id="vfyr2" style="background-color: rgb(255, 255, 255);">
+    <span id="m9:0118" style="font-family: Verdana;"><font id="m9:0119" size="2">"dhtmlxmenu.js" </font></span><span id="m9:0120" style="font-family: Verdana;"><font id="m9:0121" size="2">file</font></span><font id="kosu" size="2"> from "dhtmlxMenu" folder;</font>
+  </li>
+  
+<li id="nzoh" style="background-color: rgb(255, 255, 255);">
+    "dhtmlxmenu_dhx_blue.css" file from <font id="np58" size="2">"dhtmlxMenu" folder</font><font id="nzoh0" size="2">.</font>
+  </li>
+</ul>
+<blockquote id="m9:0122">
+  
+<p class="MsoNormal" id="m9:0123">
+    <span id="m9:0124" style="font-family: Verdana;"><font id="m9:0125" size="2">&lt;head&gt;</font></span>
+  </p>
+  
+<p class="MsoNormal" id="m9:0126">
+    <span id="m9:0127" style="font-family: Verdana;"><font id="m9:0128" size="2">&nbsp;&nbsp;&nbsp; &lt;script src="[full path to this file]/dhtmlxwindows_wmn.js"&gt;&lt;/script&gt;</font></span><br id="cm:b">
+  </p>
+  
+<p class="MsoNormal" id="l2t-">
+    <span id="m9:0130" style="font-family: Verdana;"><font id="m9:0131" size="2">&nbsp;&nbsp;&nbsp; &lt;script src="[</font></span><span id="m9:0132" style="font-family: Verdana;"><font id="m9:0133" size="2">full path to this file</font></span><span id="m9:0134" style="font-family: Verdana;"><font id="m9:0135" size="2">]/dhtmlxmenu.js"&gt;&lt;/script&gt;</font></span>
+  </p>
+  
+<p class="MsoNormal" id="cm:b0">
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" type="text/css" href="<span id="cm:b1" style="font-family: Verdana;"><font id="cm:b2" size="2">[full path to this file]</font></span>/dhtmlxmenu_dhx_blue.css"&gt;<br id="cm:b3">
+  </p>
+  
+<p class="MsoNormal" id="m9:0136">
+    <span id="m9:0137" style="font-family: Verdana;"><font id="m9:0138" size="2">&lt;/head&gt;</font></span>
+  </p>
+</blockquote>
+And now one line of code will be enough to attach a <b id="s1cc"><span id="ip0z" style="background-color: rgb(255, 255, 255);">dhtmlxMenu </span></b>to the whole Layout:<br id="nzpw">
+<blockquote id="eifi">
+  &lt;script&gt;<br id="pbca">
+  &nbsp;&nbsp;&nbsp;&nbsp;var menu = dhxLayout.attachMenu();&nbsp;&nbsp;&nbsp;&nbsp;<br id="pbca0">
+  &lt;/script&gt;<br id="vmy_1">
+</blockquote>
+When the page is reloaded, the menu panel will be displayed at the top part of the Layout above the toolbar panel and below the header (if they are there). If the user wants to add menu items to it, he should refer to the "dhtmlxMenu guide and code samples" documentation.<br id="sxwl1">
+
+<p id="m9:0139">
+</p>
+<h3><a name='layout_dqwz'>
+  4.2 Adding Toolbar
+</a></h3>
+<p id="dqwz0">
+</p>
+
+<p id="jlf36">
+  When <b id="de5j">dhtmlxToolbar 2.0 </b>package is downloaded from the server into the same folder where previously downloaded packages were put, the user should indicate the full path for the following files <span id="m9:0141" style="font-family: Verdana;"><font id="m9:0142" size="2">in the &lt;head&gt; tag of </font></span>html file:<br id="m9:0143">
+  <br id="m9:0144">
+</p>
+<ul id="m9:0145" style="background-color: rgb(255, 255, 255);">
+  
+<li id="m9:0146">
+    <span id="m9:0147" style="font-family: Verdana;"><font id="m9:0148" size="2">"dhtmlxwindows_wtb.js"</font></span><span id="m9:0149" style="font-family: Verdana;"><font id="m9:0150" size="2"> file from "dhtmlxWindows" folder</font></span>;
+  </li>
+  
+<li id="m9:0151">
+    <span id="m9:0152" style="font-family: Verdana;"><font id="m9:0153" size="2">"dhtmlxtoolbar.js" </font></span><span id="m9:0154" style="font-family: Verdana;"><font id="m9:0155" size="2">file</font></span><font id="m9:0156" size="2"> from "dhtmlxToolbar" folder;</font>
+  </li>
+  
+<li id="a5fj">
+    <font id="a5fj0" size="2">"</font>dhtmlxtoolbar_dhx_blue.css<font id="e6xy" size="2">" from </font><font id="j9dx" size="2">"dhtmlxToolbar" folder</font><font id="j9dx0" size="2">.</font>
+  </li>
+</ul>
+<br id="ihls">
+<blockquote id="m9:0157">
+  
+<p class="MsoNormal" id="m9:0158">
+    <span id="m9:0159" style="font-family: Verdana;"><font id="m9:0160" size="2">&lt;head&gt;</font></span>
+  </p>
+  
+<p class="MsoNormal" id="m9:0161">
+    <span id="m9:0162" style="font-family: Verdana;"><font id="m9:0163" size="2">&nbsp;&nbsp;&nbsp; &lt;script src="</font></span><span id="m9:0164" style="font-family: Verdana;"><font id="m9:0165" size="2">[full path to this file]</font></span><span id="m9:0166" style="font-family: Verdana;"><font id="m9:0167" size="2">/dhtmlxwindows_wtb.js"&gt;&lt;/script&gt;</font></span>
+  </p>
+  
+<p class="MsoNormal" id="m9:0168">
+    <span id="m9:0169" style="font-family: Verdana;"><font id="m9:0170" size="2">&nbsp;&nbsp;&nbsp; &lt;script src="</font></span><span id="m9:0171" style="font-family: Verdana;"><font id="m9:0172" size="2">[full path to this file]</font></span><span id="m9:0173" style="font-family: Verdana;"><font id="m9:0174" size="2">/dhtmlxtoolbar.js"&gt;&lt;/script&gt;<br id="m9:0175">
+    </font></span>
+  </p>
+  &nbsp;&nbsp;&nbsp; &lt;link rel="stylesheet" type="text/css" href="<span id="n3wo" style="font-family: Verdana;"><font id="n3wo0" size="2">[full path to this file]</font></span>/dhtmlxtoolbar_dhx_blue.css"&gt;<br id="n3wo3">
+  
+<p class="MsoNormal" id="m9:0176">
+    <span id="m9:0177" style="font-family: Verdana;"><font id="m9:0178" size="2">&lt;/head&gt;</font></span>
+  </p>
+</blockquote>
+<p id="m9:0179">
+  A <b id="vkj1"><span id="fua4" style="background-color: rgb(255, 255, 255);">dhtmlxToolbar 2.0 </span></b><span id="ihls1" style="background-color: rgb(255, 255, 255);">can be</span> attached to the Layout very easily:
+</p>
+<blockquote id="n6y3">
+  
+<p id="m9:0180">
+    &lt;script&gt;
+  </p>
+  
+<p id="m9:0181">
+    &nbsp;&nbsp;&nbsp;&nbsp;var bar = dhxLayout.attachToolbar();
+  </p>
+  
+<p id="m9:0182">
+    &lt;/script&gt;
+  </p>
+</blockquote>
+
+<p id="m9:0183">
+  As in case of adding a menu, when the page is reloaded, the toolbar panel will be displayed at the top part of the Layout below the header and below the menu panel (in case they are there). If the user wants to add toolbar items to it, he should refer to the "dhtmlxToolbar guide and code samples" documentation.<br id="l.ta">
+</p>
+<p id="m9:0184">
+  </p>
+<h3><a name='layout_qcdi'>
+  4.3 Adding Status Bar
+  </a></h3>
+<p id="qcdi0">
+</p>
+In order to add a status bar to the Layout, the user should first indicate the full path to the following file <span id="m9:0186" style="font-family: Verdana;"><font id="m9:0187" size="2">in the &lt;head&gt; tag of </font></span>html file:
+
+<p id="m9:0188">
+  <br id="xv67">
+</p>
+<ul id="lrv1" style="background-color: rgb(255, 255, 255);">
+  
+<li id="lrv10">
+    "dhtmlxwindows_sb.js" <span id="m9:0189" style="font-family: Verdana;"><font id="m9:0190" size="2">file from "dhtmlxWindows" folder</font></span>.<br id="b6p5">
+  </li>
+</ul>
+<blockquote id="m9:0191">
+  
+<p class="MsoNormal" id="m9:0192">
+    <span id="m9:0193" style="font-family: Verdana;"><font id="m9:0194" size="2">&lt;head&gt;&nbsp;&nbsp;&nbsp; </font></span><span id="m9:0195" style="font-family: Verdana;"><font id="m9:0196" size="2"><br id="qkdx">
+    &nbsp;&nbsp;&nbsp; &lt;script src="</font></span><span id="m9:0197" style="font-family: Verdana;"><font id="m9:0198" size="2">[full path to this file]</font></span><span id="m9:0199" style="font-family: Verdana;"><font id="m9:0200" size="2">/</font></span>dhtmlxwindows_sb.js<span id="m9:0202" style="font-family: Verdana;"><font id="m9:0203" size="2">"&gt;&lt;/script&gt;<br id="m9:0204">
+    </font></span>
+  </p>
+  
+<p id="m9:0205">
+    <span id="m9:0206" style="font-family: Verdana;"><font id="m9:0207" size="2">&lt;/head&gt;</font></span><br id="fgab0">
+  </p>
+</blockquote>
+<p id="m9:0208">
+  After that a simple <span id="rspk" style="background-color: rgb(255, 255, 255);">Status Bar</span><span id="mi_f" style="background-color: rgb(255, 255, 255);"> will </span>be easily attached to the bottom area of the Layout in the following way: &nbsp;
+</p>
+<blockquote id="mq8a">
+  &lt;script&gt;<br id="wwz8">
+  &nbsp;&nbsp;&nbsp;&nbsp;var status = dhxLayout.attachStatusBar();<br id="wwz80">
+  &lt;/script&gt;<br id="n6y34">
+</blockquote>
+<p id="b_3w">
+  Its job is mainly to display information about the current state of the item it is attached to, which is the Layout in our case.<br id="qrp:">
+</p>
+<p id="m9:0209">
+  For example, we can set text for Layout's Status Bar in the following way:
+</p>
+<blockquote id="ea:7">
+  &lt;script&gt;<br id="hk65">
+  &nbsp;&nbsp;&nbsp;&nbsp;status.setText("Status Bar");<br id="hk650">
+  &lt;/script&gt;<br id="wifm0">
+</blockquote>
+<h2><a name='layout_m9:0210'>
+  5. dhtmlxLayout Configuration
+</a></h2>
+The following ways of configuring <b id="rrrj">dhtmlxLayout</b> are available for users:<br id="jo_3">
+<br id="rcic">
+<ul id="w3fy">
+  
+<li id="fmhr">
+    <b id="fdxz"><a href="#Available_Skins" id="ei9v" title="Available Skins">Available Skins</a>;<br id="t1tu">
+    </b>
+  </li>
+  
+<li id="t1tu0">
+    <b id="fdxz0"><a href="#5.1_Views_Configuration" id="wtb5" title="Views configuration">Patterns configuration</a>;<br id="w5yl">
+    </b>
+  </li>
+  
+<li id="m9:0211">
+    <b id="fdxz1"><a href="#5.2_Autosize_Configuration" id="tqd4" title="Autosize configuration">Autosize configuration;</a></b>
+  </li>
+  
+<li id="m9:0212">
+    <b id="fdxz2"><a href="#Enable/Disable_Effects" id="y16." title="Enable/Disable Effects">Enable/Disable Effects</a>.</b><br id="gav-" style="background-color: rgb(255, 255, 255);">
+</li>
+</ul>
+<a id="w3dn" name="5.1_Views_Configuration"></a>
+<h3><a name='layout_k06g'>
+  5.1 Available Skins
+</a></h3>
+<span id="g._f" style="background-color: rgb(255, 255, 255);"><span id="g._f0" style="background-color: rgb(255, 255, 255);">The following predefined skins are available for <b id="h:f0">dhtmlxLayout</b> users:<br id="xxhg">
+<br id="xxhg0">
+</span></span>
+<ul id="xxhg1">
+  
+<li id="xxhg2">
+    <span id="xxhg3" style="background-color: rgb(255, 255, 255);"><span id="xxhg4" style="background-color: rgb(255, 255, 255);">dhx_blue (the default one)<br id="xxhg5">
+    </span></span>
+  </li>
+</ul>
+<div id="e7ot" style="padding: 1em 0pt; text-align: left;"><img id="jsa-" style="width: 300px; height: 200px;" src="common/dgr5rjkf_179f9f2cbgd_b.png"><br id="xxhg6">
+</div>
+<ul id="xxhg7">
+  
+<li id="xxhg8">
+    dhx_black</li>
+</ul>
+<div id="tt.6" style="padding: 1em 0pt; text-align: left;"><img id="jsa-0" style="width: 300px; height: 200px;" src="common/dgr5rjkf_180g2b4cxgq_b.png"><br>
+<br>
+The skin for the Layout can be set in the following way:<br>
+<blockquote>&lt;script&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; // setting dhx_blue skin (the default one)&nbsp;  <br>
+&nbsp;&nbsp; &nbsp;var dhxLayout = new dhtmlXLayoutObject("parentId", "3L"<b><span style="background-color: rgb(255, 255, 255);"></span></b>);<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; // or<br>
+&nbsp;&nbsp;&nbsp; var dhxLayout = new dhtmlXLayoutObject("parentId", "3L", <b><span style="background-color: rgb(255, 255, 255);">"dhx_blue"</span></b>);<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; // setting dhx_black skin<br>
+&nbsp;&nbsp;&nbsp; var dhxLayout = new dhtmlXLayoutObject("parentId", "3L", <b><span style="background-color: rgb(255, 255, 255);">"dhx_black"</span></b>);<br>
+&lt;/script&gt;<br id="jsa-1">
+</blockquote>
+</div>
+<h3><a name='layout_ox10'>
+  5.2
+Patterns Configuration
+</a></h3>
+<span id="m9:0213" style="background-color: rgb(255, 255, 255);">The user can determine the way how the Layout will be displayed. This can be done by indicating the code of the chosen Layout's pattern as the second argument for </span>any of the initializing methods, <span id="m9:0216" style="background-color: rgb(255, 255, 255);">while the Layout is being initialized:</span><br id="l6rw0">
+<blockquote id="qjhx1">
+  &lt;script&gt;<br>
+&nbsp;&nbsp;&nbsp; var dhxLayout = new dhtmlXLayoutObject("parentId", "3L"<span style="background-color: rgb(255, 255, 0);"></span>);<br id="xqm20">
+  &lt;/script&gt;<br id="l6rw1">
+</blockquote>
+The user has two ways to use a certain pattern:<br id="qit1">
+<br id="qit10">
+<ul id="qit11">
+  
+<li id="qit12">
+    Use one of the predefined types of Layout patterns available;
+  </li>
+  
+<li id="qit13">
+    Create his own new Layout pattern (<span id="qit14" style="background-color: rgb(255, 255, 255);">the separate document</span> describing this option is under construction) and use it.<br id="qit15">
+  </li>
+</ul>
+<br id="re-i">
+The following predefined Layout patterns are available in <b id="lr8t">dhtmlxLayout:</b><br id="l8734">
+<br id="l8735">
+<b id="m9:0221">1C<br id="ccoh">
+</b>
+<div id="m9nm" style="padding: 1em 0pt; text-align: left;">
+  <img id="nj13" src="common/dgr5rjkf_98cftfq7d4_b.png" height="83" width="83">
+</div>
+<b id="m9:0223">2E<br id="ox2c">
+</b>
+<div id="xv.f" style="padding: 1em 0pt; text-align: left;">
+  <img id="u2_q" src="common/dgr5rjkf_99c4vxnhcv_b.png" height="86" width="86">
+</div>
+<b id="m9:0225">2U<br id="e700">
+</b>
+<div id="znjr" style="padding: 1em 0pt; text-align: left;">
+  <img id="e7000" src="common/dgr5rjkf_100pmqr7qfk_b.png" height="86" width="86">
+</div>
+<b id="m9:0227">3E<br id="viab">
+</b>
+<div id="vimr" style="padding: 1em 0pt; text-align: left;">
+  <img id="viab0" src="common/dgr5rjkf_101cp3pvsd2_b.png" height="86" width="86">
+</div>
+<b id="m9:0229">3J<br id="viab1">
+</b>
+<div id="nc7-" style="padding: 1em 0pt; text-align: left;">
+  <img id="tvfg" src="common/dgr5rjkf_102jb2px2dz_b.png" height="85" width="85">
+</div>
+<b id="m9:0231">3L<br id="tvfg0">
+</b>
+<div id="lsgf" style="padding: 1em 0pt; text-align: left;">
+  <img id="rlei" src="common/dgr5rjkf_103dhjgj5f8_b.png" height="86" width="86">
+</div>
+<b id="m9:0233">3T<br id="rlei0">
+</b>
+<div id="rzhf" style="padding: 1em 0pt; text-align: left;">
+  <img id="h3_i" src="common/dgr5rjkf_104s9rkcthc_b.png" height="86" width="86">
+</div>
+<b id="m9:0235">3U<br id="x2nu">
+</b>
+<div id="t8l6" style="padding: 1em 0pt; text-align: left;">
+  <img id="x2nu0" src="common/dgr5rjkf_105dc3dcsjg_b.png" height="87" width="87">
+</div>
+<b id="m9:0237">3W<br id="et6u">
+</b>
+<div id="pbsq" style="padding: 1em 0pt; text-align: left;">
+  <img id="et6u0" src="common/dgr5rjkf_106d5jzs4d6_b.png" height="87" width="87">
+</div>
+<b id="m9:0239">4H<br id="xgfe">
+</b>
+<div id="hpck" style="padding: 1em 0pt; text-align: left;">
+  <img id="xgfe0" src="common/dgr5rjkf_107d3fxz7gm_b.png" height="86" width="86">
+</div>
+<b id="m9:0241">4I </b>
+<div id="sx3l" style="padding: 1em 0pt; text-align: left;">
+  <img id="paun" src="common/dgr5rjkf_1085czh9cs_b.png" height="86" width="86">
+</div>
+<b id="m9:0243">4T<br id="paun0">
+</b>
+<div id="csry" style="padding: 1em 0pt; text-align: left;">
+  <img id="vih9" src="common/dgr5rjkf_109rcq3pvdp_b.png" height="88" width="88">
+</div>
+<b id="m9:0245">4U<br id="s59g">
+</b>
+<div id="mjxy" style="padding: 1em 0pt; text-align: left;">
+  <img id="n.sf" src="common/dgr5rjkf_110qzkxb9zw_b.png" height="88" width="88">
+</div>
+<b id="m9:0247">5H<br id="n.sf0">
+</b>
+<div id="scsc" style="padding: 1em 0pt; text-align: left;">
+  <img id="n.sf1" src="common/dgr5rjkf_111cjwcct3f_b.png" height="87" width="87">
+</div>
+<b id="m9:0249">5I<br id="n.sf2">
+</b>
+<div id="qphj" style="padding: 1em 0pt; text-align: left;">
+  <b id="m9:0250"><img id="ls.:" src="common/dgr5rjkf_112d7g2ssfc_b.png" height="87" width="87"><br id="ls.:0">
+  <br id="ls.:1">
+  <b id="m9:0252">6I</b><br id="ls.:2">
+  </b>
+  
+<div id="jwl6" style="padding: 1em 0pt; text-align: left;">
+    <img id="ls.:3" src="common/dgr5rjkf_113cr76jwck_b.png" height="88" width="88"><a id="kzdq" name="5.2_Autosize_Configuration"></a></div>
+</div>
+<h3><a name='layout_lm-q'>
+  5.3 Autosize Configuration
+</a></h3>
+First, the meaning of Autosize should be explained. By Autosize we mean here the ability of Layout's items to adjust automatically to the changing dimension of the Layout.<br id="esqk">
+Autosize Configuration can be applied to Window-based and Fullscreen types of <b id="r:o4">dhtmlxLayout</b>'s initialization mainly as there is the possibility that the dimension of Layout's parent will be changed.<br id="fn4i">
+The user can indicate which items are going to be subjects to Autosize in the following way:<br id="ckp9">
+<blockquote id="jlfa">
+  &lt;script&gt;<br id="uswh">
+  &nbsp;&nbsp;&nbsp; dhxLayout.setAutoSize("b;c", "a;c");<br id="uswh0">
+  &lt;/script&gt;<br id="ckp92">
+</blockquote>
+The items' ids are taken as input parameters of the above mentioned method, and they are separated from one another by semicolons ";". The first parameter in <b id="tzhh">setAutoSize()</b> method is responsible for autosizing horizontal items, while the second one - for vertical items.<br id="i_fp">
+The indicated items will change their dimension in accordance to the new dimension of the Layout.<br id="gbs80">
+<h3><a name='layout_vdfc'>
+  5.4
+Enable/Disable Effects
+</a></h3>
+There are some default effects that can be enabled/disabled in the Layout:<br id="qu0r">
+<ul id="qu0r0">
+  
+<li id="qu0r1">
+    collapse;
+  </li>
+  
+<li id="m9:0275">
+    resize;
+  </li>
+  
+<li id="m9:0276">
+    highlight.
+  </li>
+</ul>
+<br id="t9tn">
+We recommend using effects to make your Layout more attractive. However, it should be done reasonably. The below mentioned snippets describe the way how effects can be enabled and disabled:<br id="hx3z">
+<blockquote id="o:8x">
+  &lt;script&gt;<br id="on.j">
+  &nbsp;&nbsp;&nbsp;&nbsp;dhxLayout.setEffect("resize", true);<br id="s2zo">
+  &nbsp;&nbsp;&nbsp; dhxLayout.setEffect("resize", false);<br id="on.j0">
+  &lt;/script&gt;<br id="c.io0">
+</blockquote>
+The first argument here is the name of the effect ("collapse", "resize" or "highlight"), and the second one switches the effect on (<b id="o6xr">true</b>) or off (<b id="o6xr0">false</b>).<br id="ax910">
+When the user wants to get the current state of an effect, he should use <b id="w238">getEffect()</b> method, in which the name of the event is set as an argument:<br id="w2380">
+<blockquote id="xuwl">
+  &lt;script&gt;<br id="on.j1">
+  &nbsp;&nbsp;&nbsp;&nbsp;var state = dhxLayout.getEffect("resize"); <span id="qgti" style="color: rgb(0, 0, 0);">// returns true|false;</span><br id="on.j2">
+  &lt;/script&gt;<br id="rtmc">
+</blockquote>
+The method returns <b id="oi2y">true </b>if the effect in question is enabled, and <b id="oi2y0">false </b>in case it is disabled.<br id="no2_0">
+<br id="no2_1">
+<h2><a name='layout_m9:0279'>
+  6. Items Manipulations
+</a></h2>
+The following types of items manipulations are available for dhtmlxLayout users:<br id="eidy">
+<br id="zlmo">
+<ul id="m9:0280">
+  
+<li id="m9:0281">
+    <b id="ns9a"><a href="#Items_Accessing" id="ns9a0" title="Items Accessing;">Items Accessing;</a></b>
+  </li>
+  
+<li id="m9:0282">
+    <b id="i7o20"><a href="#Id-Index_Interconnection" id="hse2" title="Id-Index Interconnection">Id-Index Interconnection</a>; </b>
+  </li>
+  
+<li id="g84y">
+    <b id="i7o21"><a href="#Iterator" id="eeg-" title="Iterator">Iterator</a>;<br id="g84y0">
+    </b>
+  </li>
+  
+<li id="m9:0283">
+    <b id="i7o22"><a href="#Header_Manipulation" id="xvmb" title="Panel manipulation">Header Manipulation</a>; </b>
+  </li>
+  
+<li id="m9:0284" style="color: rgb(0, 0, 0);">
+    <b id="i7o23"><a href="RawDocContents?docID=dgr5rjkf_71g66zq3g5&amp;justBody=false&amp;revision=_latest&amp;timestamp=1214552551466&amp;editMode=true&amp;strip=true#5.4_Item%27s_Expanding/Collapsing" id="cv_6" title="Item's Expanding/Collapsing">Item's Expanding/Collapsing</a>;<br id="ed6t">
+    </b>
+  </li>
+  
+<li id="m9:0285" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+    <b id="i7o24"><a href="RawDocContents?docID=dgr5rjkf_71g66zq3g5&amp;justBody=false&amp;revision=_latest&amp;timestamp=1214552551466&amp;editMode=true&amp;strip=true#5.5_Item%27s_Docking/Undocking" id="w3_e" title="Item's Undocking to window/Window's Docking to items">Item's Undocking to window/Window's Docking to items</a>; </b>
+  </li>
+  
+<li id="m9:0286" style="background-color: rgb(255, 255, 255);">
+    <b id="i7o25"><font id="phf9" style="background-color: rgb(255, 255, 255);" color="#000000"><span id="ojao0" style="color: rgb(0, 0, 0);"><a href="RawDocContents?docID=dgr5rjkf_71g66zq3g5&amp;justBody=false&amp;revision=_latest&amp;timestamp=1214552551466&amp;editMode=true&amp;strip=true#5.6_Item%27s_Sizing." id="tn:a" title="Item's sizing">Item's Sizing</a>;</span></font></b>
+  </li>
+  
+<li id="m9:0287" style="background-color: rgb(255, 255, 255);">
+    <b id="i7o26"><font id="m9:0288" style="background-color: rgb(255, 255, 255);" color="#000000"><span id="m9:0289" style="color: rgb(0, 0, 0);"><a href="#Attaching_Object" id="e8g7" title="Attaching Object">Attaching Object</a>;</span></font></b>
+  </li>
+  
+<li id="m9:0290" style="background-color: rgb(255, 255, 255);">
+    <b id="i7o27"><font id="m9:0291" style="background-color: rgb(255, 255, 255);" color="#000000"><span id="m9:0292" style="color: rgb(0, 0, 0);"><a href="#Attaching_URL" id="fqeh" title="Attaching URL">Attaching URL</a><u id="q:d4">;</u></span></font></b>
+  </li>
+  
+<li id="b2-8" style="background-color: rgb(255, 255, 255);">
+    <font id="b2-80" style="background-color: rgb(255, 255, 255);" color="#000000"><span id="b2-81" style="color: rgb(0, 0, 0);"><b id="i7o28"><a href="#Fixing_Cells_Sizes" id="v58z" title="Fixing Cells Sizes">Fixing Cells Sizes</a>.</b></span></font><br id="eidy2">
+</li>
+</ul>
+<a id="a13b" name="5.3_Panel_Manipulation"></a>
+<h3><a name='layout_jl2e'>
+  6.1
+Items Accessing
+</a></h3>
+Here we'd like to draw your attention to the following ways of items accessing:<br id="yx11">
+<br id="sak5">
+<ul id="sak50">
+  
+<li id="sak51">
+    Through Layout items' indexes;
+  </li>
+  
+<li id="m9:0299">
+    Through Layout items' ids.<br id="ix3q">
+  </li>
+</ul>
+<br id="g0w2">
+<b id="ea_o">Items </b>can be referred to as a <i id="jeir">collection </i>of Items, where <b id="ea_o0">[0]</b> is the zero-based index of a certain item. All the items have their own indexes starting with 0.<br id="m1bd">
+<br id="m1bd0">
+In all the below mentioned snippets, however, another variant of items accessing is used: through Layout items' ids. All the items in the Layout have ids that go in alphabetical succession starting with "a". In this case items are referred to as <b id="i2:b">cells</b>.<br id="l8y.0">
+Thus, we can access any Layout's item in two following ways:<br id="i_34">
+<blockquote id="ztfu">
+  &lt;script&gt;<br id="qyg2">
+  &nbsp;&nbsp;&nbsp;&nbsp;var item = dhxLayout.cells("a");<br id="j3a8">
+  &nbsp;&nbsp;&nbsp; // or<br id="j3a80">
+  &nbsp;&nbsp;&nbsp;&nbsp;var item = dhxLayout.items[0];<br id="qyg20">
+  &lt;/script&gt;<br id="ru852">
+</blockquote>
+In the below mentioned code samples we'll use item with the id "a" as an example.
+<div id="raz0">
+  <span id="ivrr1" style="color: rgb(0, 0, 0);">Each method will return </span><span id="ko530" style="color: rgb(0, 0, 0);">item object</span><span id="ko531" style="color: rgb(0, 0, 0);">.</span><br id="ru853">
+<h3><a name='layout_jl2e2'>
+  6.2
+Id-Index Interconnection
+</a></h3>
+  Layout item's ids and indexes are interrelated in such a way that one can be easily got with the help of another:<br id="voq3">
+</div>
+<blockquote id="lrpo">
+  &lt;script&gt;<br id="qyg21">
+  &nbsp;&nbsp;&nbsp;&nbsp;var index = dhxLayout.getIndexById("a"); <span id="v6fp" style="color: rgb(0, 0, 0);">// we'll get 0</span><br id="lrpo1" style="color: rgb(0, 0, 0);">
+  <span id="smrk" style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;var id = dhxLayout.getIdByIndex(0); </span><span id="v6fp0" style="color: rgb(0, 0, 0);">// we'll get "a"</span><br id="lrpo2">
+  &lt;/script&gt;<br id="biii3">
+</blockquote>
+<b id="m9:0303">
+<div id="ykq1">
+<h3><a name='layout_z-s_'>
+  6.3 Iterator
+</a></h3>
+<span id="qmki" style="font-weight: normal;">Method </span>forEachItem()<span id="qmki0" style="font-weight: normal;"> calls user-defined function for </span>every existing item <span id="qmki1" style="font-weight: normal;">passing </span>item <span id="qr01" style="color: rgb(0, 0, 0); font-weight: normal;">object</span><span id="qmki2" style="font-weight: normal;"> into it. Using iterator can be very useful in case the user wants all the items to be subjects of the same changes.</span><br style="font-weight: normal;" id="rqwe">
+<span id="qmki3" style="font-weight: normal;">
+  For example, the user can use </span><i style="font-weight: normal;" id="w6.e">hideHeader()</i><span id="qmki4" style="font-weight: normal;"> method to hide headers of all items in the Layout:</span><br id="fnr1">
+</div>
+</b>
+
+<blockquote id="fj3-">
+  <span id="r53t" style="color: rgb(0, 0, 0);">&lt;script&gt;</span><br id="mn6-" style="color: rgb(0, 0, 0);">
+  <span id="r53t0" style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;dhxLayout.forEachItem(function(item){</span><br id="cf9." style="color: rgb(0, 0, 0);">
+  <span id="r53t1" style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span id="g-fx3" style="color: rgb(0, 0, 0);">// actions, for example:</span><span id="r53t2" style="color: rgb(0, 0, 0);"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; </span><br id="ts:8" style="color: rgb(0, 0, 0);">
+  <span id="r53t3" style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item.hideHeader();</span><br id="cf9.0" style="color: rgb(0, 0, 0);">
+  <span id="r53t4" style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp; });</span><br id="mn6-0" style="color: rgb(0, 0, 0);">
+  <span id="r53t5" style="color: rgb(0, 0, 0);">&lt;/script&gt;</span><br id="bx_a" style="color: rgb(0, 0, 0);">
+  <br id="bx_a0" style="color: rgb(0, 0, 0);">
+  <span id="g-fx" style="color: rgb(0, 0, 0);">//or</span><br id="bx_a1" style="color: rgb(0, 0, 0);">
+  <br id="bx_a2" style="color: rgb(0, 0, 0);">
+  <span id="g-fx0" style="color: rgb(0, 0, 0);">&lt;script&gt;</span><br id="bx_a3" style="color: rgb(0, 0, 0);">
+  <span id="g-fx1" style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp; dhxLayout.forEachItem(doItemAction);</span><br id="jseo" style="color: rgb(0, 0, 0);">
+  <span id="g-fx2" style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp; function itemAction(item) {</span><br id="jseo0" style="color: rgb(0, 0, 0);">
+  <span id="m9:0304" style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // actions, for example:</span><br id="bvpw" style="color: rgb(0, 0, 0);">
+  <span id="g-fx4" style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item.hideHeader();</span><br id="jseo1" style="color: rgb(0, 0, 0);">
+  <span id="g-fx5" style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp; }</span><br id="bx_a4" style="color: rgb(0, 0, 0);">
+  <span id="g-fx6" style="color: rgb(0, 0, 0);">&lt;/script&gt;</span><br id="z:fm3">
+</blockquote>
+
+<div id="ykq10">
+<h3><a name='layout_h7rj'>
+  6.4 Header Manipulations
+</a></h3>
+<b id="xnir0">  <font id="q3pz" style="font-family: Verdana; font-weight: normal;" size="2">The header is situated at the top of the item. This header displays functional buttons that are used to manipulate items, and it also displays items' title texts.<br id="ded:" style="font-weight: normal;">
+  </font><font id="m9:0306" color="#000000"><font id="q3pz0" style="font-family: Verdana; font-weight: normal;" size="2">Header manipulations include:</font><br id="c30q">
+  <br id="ool9">
+  </font>
+</b></div>
+
+<div id="raz02">
+  
+<ul id="ool90">
+    
+<li id="ool91">
+      <font id="m9:0307" color="#000000">Hiding/showing the header</font>;
+    </li>
+    
+<li id="m9:0308">
+      Getting header's current state;
+    </li>
+    
+<li id="m9:0309">
+      Setting header's text (header).
+    </li>
+  </ul>
+</div>
+<br id="ldih">
+The header can be easily hidden with the help of <span id="hj7j" style="font-family: Verdana;"><font id="uyys" size="2"><b id="hi-v">hideHeader()</b> method</font></span><span id="si4c" style="font-family: Verdana;"><font id="rdjh" size="2">:<br id="hyfa">
+</font></span>
+<blockquote id="sx-w">
+  &lt;script&gt;<br id="uswh1">
+  &nbsp;&nbsp;&nbsp; dhxLayout.cells("a").hideHeader();<br id="uswh2">
+  &lt;/script&gt;<br id="uswh3">
+</blockquote>
+In order to show the header <span id="m9:0312" style="font-family: Verdana;"><font id="m9:0313" size="2">the following method is used:</font></span><br id="tx.72">
+<blockquote id="p6-a">
+  &lt;script&gt;<br id="uswh4">
+  &nbsp;&nbsp;&nbsp; dhxLayout.cells("a").showHeader();<br id="uswh5">
+  &lt;/script&gt;<br id="tx.73">
+</blockquote>
+When the user wants to get the current state of a certain header, he should use <b id="ce5_" style="background-color: rgb(255, 255, 255);">isHeaderVisible() </b>method. If the method returns <b id="gup62" style="background-color: rgb(255, 255, 255);">true</b><span id="l06a0" style="background-color: rgb(255, 255, 255);">, </span>the header is visible, and vice versa:<br id="gup6">
+<blockquote id="gup60">
+  &lt;script&gt;<br id="z42o">
+  &nbsp;&nbsp;&nbsp; var isVisible = dhxLayout.cells("a").isHeaderVisible(); <span id="dkwd" style="color: rgb(0, 0, 0);">// returns true|false;</span><br id="z42o0">
+  &lt;/script&gt;<br id="gup61">
+</blockquote>
+<span id="mryo0" style="color: rgb(255, 0, 0);"><span id="b6o_" style="color: rgb(0, 0, 0);">By default, the header contains text of the item id.</span> </span>To set/change text for the header, the following code should be used:<br id="f-si">
+<blockquote id="bapf">
+  &lt;script&gt;<br id="yt3p">
+  &nbsp;&nbsp;&nbsp; dhxLayout.cells("a").setText("New Text");<br id="yt3p0">
+  &lt;/script&gt;<br id="tx.79">
+</blockquote>
+<a id="edep" name="5.4_Item's_Expanding/Collapsing"></a>
+<h3><a name='layout_vqrk'>
+  6.5 Item's Expanding/Collapsing
+</a></h3>
+Let's look at some general behavior of items in the Layout:<br id="euzq">
+<br id="euzq0">
+If the last item visible in one row/column becomes collapsed, the nearest collapsed item will be expanded instead. The component expands either the nearest left item or the nearest right item (if there is no nearest left one). In other words, if there are two or more items in one row/column, at least one of them will be always held expanded.<br id="g2w10">
+<br id="g2w11">
+If the last item visible in one row/column becomes collapsed, and there is at least one Undocked item in the layout, one of the Undocked items will be docked and will stay expanded.<br id="d4ms">
+<br id="d4ms0">
+In order to expand an item from the script, the user should write the following line of code:<br id="d4ms1">
+<blockquote id="d4ms2">
+  &lt;script&gt;<br id="ic__">
+  &nbsp;&nbsp;&nbsp; dhxLayout.cells("a").expand();<br id="tec4">
+  &lt;/script&gt;<br id="cscf0">
+</blockquote>
+The is also a method that is aimed at collapsing an item:<br id="e.ai">
+<blockquote id="e.ai0">
+  &lt;script&gt;<br id="tec40">
+  &nbsp;&nbsp;&nbsp; dhxLayout.cells("a").collapse();<br id="tec41">
+  &lt;/script&gt;<br id="cscf4">
+</blockquote>
+<a id="rg2a" name="5.5_Item's_Docking/Undocking"></a>
+<h3><a name='layout_tvmp'>
+  6.6 Window's Docking/Item's Undocking
+</a></h3>
+Any item in <b id="obfm">dhtmlxLayout</b> can be easily <b id="s:8t">Undocked </b>to a window - extracted from the single layout in order to be displayed separately in a window. In v.1.0 there is no possibility to dock item content to another item - just dock back. The <font id="nbrn" color="#000000">user</font> should write the following in order to Undock an item with API method:<br id="ocnk">
+<blockquote id="rt5w">
+  &lt;script&gt;<br id="l51q">
+  &nbsp;&nbsp;&nbsp; dhxLayout.cells("a").undock();<br id="l51q0">
+  &lt;/script&gt;<br id="l51q1">
+</blockquote>
+An undocked window can be <b id="vlab">Docked</b> back - made a part of the single layout again - in the following way:<br id="bfvw">
+<blockquote id="ya3z">
+  &lt;script&gt;<br id="mxe0">
+  &nbsp;&nbsp;&nbsp; dhxLayout.cells("a").dock();<br id="mxe00">
+  &lt;/script&gt;<br id="mxe01">
+</blockquote>
+<a id="eb85" name="5.6_Item's_Sizing."></a>
+<h3><a name='layout_tvmp0'>
+  6.7 Item's Sizing
+</a></h3>
+There is the possibility to resize any item in the Layout. However, there are some limitations in item's sizing that users should know:<br id="h:__">
+<br id="vemc">
+<ul id="vemc0">
+  
+<li id="vemc1">
+    If there is only one item in a row, it is impossible to set width for this item;
+  </li>
+  
+<li id="vemc2">
+    If there is only one item in a column, it is impossible to set height for this item;
+  </li>
+  
+<li id="m9:0365">
+    The system checks all width/height values set: in case of any invalid values usage, the system will just ignore them.<br id="ulwz">
+  </li>
+</ul>
+<br id="vemc4">
+There are separate methods for setting item's width and height:<br id="h:__0">
+<blockquote id="dh.v0">
+  &lt;script&gt;<br id="ad-d">
+  &nbsp;&nbsp;&nbsp; dhxLayout.cells("a").setWidth(200);<br id="dh.v1">
+  &nbsp;&nbsp;&nbsp; dhxLayout.cells("a").setHeight(200);<br id="ad-d0">
+  &lt;/script&gt;<br id="m_en1">
+</blockquote>
+Input parameters the user should specify are item's width and height values.<br id="y6.q">
+<br id="y6.q0">
+Current item's <span id="sfq:" style="background-color: rgb(255, 255, 255);">width and height can be eas</span>ily got in the following way:<br id="oz1m">
+<blockquote id="oz1m0">
+  &lt;script&gt;<br id="sc4i">
+  &nbsp;&nbsp;&nbsp; var width = dhxLayout.cells("a").getWidth();<br id="oz1m1">
+  &nbsp;&nbsp;&nbsp; var height = dhxLayout.cells("a").getHeight();<br id="sc4i0">
+  &lt;/script&gt;<br>
+</blockquote>
+<p id="k61x0">
+  </p>
+<h3><a name='layout_b405'>
+  6.8 Attaching Object</a></h3>
+<p id="b4050">
+</p>
+
+<p id="m9:0370">
+  If the user wants to attach an object to a certain Layout's item, he should first create this object on page.<br id="cbal">
+  <br id="ml1.0">
+</p>
+<p id="m9:0371">
+  For example, we create a &lt;div&gt; element with id "objId" and with some text inside it. Then we just use the following line of code to attach this object we've just created to a Layout item:
+</p>
+<blockquote id="dyov">
+  
+<p id="m9:0372">
+    <span id="ghm_" style="font-family: Verdana;">&lt;div id="objId"&gt;</span>
+  </p>
+  
+<p id="m9:0373">
+    <span id="m9:0374" style="font-family: Verdana;">&nbsp;&nbsp;&nbsp; Some text</span>
+  </p>
+  
+<p id="m9:0375">
+    <span id="m9:0376" style="font-family: Verdana;">&lt;/div&gt;</span>
+  </p>
+  
+<p id="m9:0377">
+    <br id="afs6">
+  </p>
+  
+<p id="m9:0379">
+    <span id="m9:0380" style="font-family: Verdana;">&lt;script&gt;</span>
+  </p>
+  
+<p id="m9:0381">
+    <span id="glqm" style="font-family: Verdana;">&nbsp;&nbsp;&nbsp; </span>dhxLayout.cells("a").attachObject("objId");
+  </p>
+  &nbsp;&nbsp; &nbsp;//&nbsp;or
+  
+<p id="m9:0383">
+    <span id="glqm1" style="font-family: Verdana;">&nbsp;&nbsp;&nbsp; </span>var obj = document.getElementById("objId");<br id="me7n">
+  </p>
+  
+<p id="m9:0384">
+    &nbsp;&nbsp;&nbsp;&nbsp;dhxLayout.cells("a").attachObject(obj);
+  </p>
+  
+<p id="m9:0385">
+    <span id="ghm_1" style="font-family: Verdana;">&lt;/script&gt;</span><br id="pimn3">
+  </p>
+</blockquote>
+<p id="k61x1">
+  </p>
+<b>6.8.1 Object Size Handling</b><br>
+<p><br>
+</p>
+<p>By default, panels have <b>overflow:hidden</b> style. <br>
+</p>
+<p><br>
+</p>
+<p>In case the panel is not able to display the whole object, the following style should be specified for the object:<br>
+</p>
+<blockquote>
+<p>&lt;div id="objId" style="width:100%;height:100%;overflow:auto;...&gt;<br>
+</p>
+</blockquote>
+<p>Now the panel will display the scroll bar in case the object does not fit panel's size.<br>
+</p>
+<h3><a name='layout_la0u'>
+  6.9 Attaching URL</a></h3>
+<p id="la0u0">
+</p>
+
+<p id="m9:0389">
+  <font id="m9:0390" style="background-color: rgb(255, 255, 255);" color="#000000">Sometimes the user needs to display a web page in a Layout's item. <b id="r7:-">attachURL()</b> method is used for this purpose in the following way:</font>
+</p>
+<blockquote id="ovzu">
+  &lt;script&gt;<br id="v6s.">
+  &nbsp;&nbsp;&nbsp;&nbsp;dhxLayout.cells("a").attachURL("http://www.google.com/");<br id="v6s.0">
+  &lt;/script&gt;<br id="v6s.1">
+</blockquote>
+<p id="my83">
+  </p>
+<p><b>6.9.1 </b><b style="background-color: rgb(255, 255, 255);"><font size="2"><font face="Verdana">Accessing Inner Content</font></font></b></p>
+<br>
+<p>&nbsp;Any object on the external page attached with <b>attachURL()</b> method can be accessed like this:</p>
+<p><br>
+</p>
+<ul>
+<li>Page <b>inner.html</b></li>
+</ul>
+<p>&nbsp;</p>
+<blockquote>...<br>
+&lt;div id = "A"&gt;...&lt;/div&gt;<br>
+...<br>
+</blockquote>
+<p>&nbsp;</p>
+<ul>
+<li>Page <b>index.html</b> </li>
+</ul>
+<blockquote>
+<p> &lt;script&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id="m9:053" style="font-family: Verdana;"><font id="m9:054" size="2"><span id="m9:055" style="background-color: rgb(255, 255, 255);">var dhxLay</span>out = new dhtmlXLayoutObject(...);</font></span></p>
+<p><span id="m9:053" style="font-family: Verdana;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; ...</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dhxLayout.cells("a").attachURL("inner.html");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // accessing &lt;div id="A"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (_isIE) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dhxLayout.cells("a")._frame.contentWindow.document.getElementById("A")...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dhxLayout.cells("a")._frame.contentDocument.getElementById("A")...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&lt;/script&gt;<b><font size="2"><font face="Verdana"><br>
+</font></font></b></p>
+</blockquote>
+<p><b><font size="2"><font face="Verdana">6.9.2 Panel Accessing from Attached URL<br>
+<br>
+</font></font></b><font size="2"><font face="Verdana">I</font></font><font size="2"><font face="Verdana">f the user needs to do some action with a panel from the attached URL (for example, close it by clicking some button on page), he should write the following code lines in the attached external page:<br>
+</font></font></p>
+<blockquote><font size="2"><font face="Verdana">&nbsp;&nbsp;&nbsp; &lt;input type="button" value="collapse cell" onclick="collapseCell();"&gt; // create a button<br>
+<br>
+&nbsp;&nbsp;&nbsp; &lt;script&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function collapseCell() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; parent.dhxLayout.cells("a").collapse(); // collapse cell "a"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; &lt;/script&gt;</font></font><br>
+</blockquote>
+<p><font size="2"><font face="Verdana">It should be noted that variable </font></font><font size="2"><font face="Verdana">dhxLayout </font></font><font size="2"><font face="Verdana">should be created as a global one (in our main dhtmlxLayout script) in order to be seen by the script in the attached external page.</font></font><b><font size="2"><font face="Verdana"><br>
+</font></font></b></p>
+<p><b><font size="2"><font face="Verdana"><br>
+ </font></font></b></p>
+<h3><a name='layout_jn4u'>
+  6.10 Fixing Cells Sizes</a></h3>
+<p id="jn4u0">
+</p>
+If the user needs to fix size of a certain Layout's cell, there's a method that does the exact thing:<br id="m66f">
+
+<blockquote id="hgpa">
+  &lt;script&gt;<br id="m66f0">
+  
+<p id="m66f1">
+    &nbsp;&nbsp;&nbsp;&nbsp;dhxLayout.cells("a").fixSize(true, false);
+  </p>
+  
+<p id="m66f2">
+    &lt;/script&gt;
+  </p>
+</blockquote>
+<p id="m66f4">
+  The first parameter is responsible for resizing cell's width, and the second one - for resizing cell's height. If the user sets two parameters to <b id="evaw">true</b>, the user won't be able to resize the item horizontally and vertically.<br id="mzb:2">
+</p>
+<p id="mzb:3">
+  <br id="my830">
+</p>
+<h2><a name='layout_cbs0'>
+  7. Event Handling
+</a></h2>
+The following events are available in <b id="ttrc" style="color: rgb(0, 0, 0);">dhtmlxLayout</b><span id="mshv" style="color: rgb(0, 0, 0);">:</span><br id="ihkl" style="color: rgb(0, 0, 0);">
+<br id="r_nx" style="color: rgb(0, 0, 0);">
+<ul id="ttwd" style="color: rgb(0, 0, 0);">
+  
+<li id="emfw">
+    <b id="cgx3">onDock </b>- occurs when the user clicks the left mouse button on item's button "Dock";
+  </li>
+  
+<li id="m9:0391">
+    <b id="cgx30">onUndock </b>- occurs when the user clicks the left mouse button on item's button "Undock";
+  </li>
+  
+<li id="m9:0392">
+    <b id="cgx31">onResizeFinish </b>- <font id="m9:0394" style="color: rgb(0, 0, 0);">occurs when the user finished resizing the Layout;</font></li>
+<li id="m9:0392"><font id="m9:0394" style="color: rgb(0, 0, 0);"><b>onPanelResizeFinish</b> - </font>occurs when the user finishes resizing an item;</li>
+  
+<li id="m9:0395">
+    <font id="m9:0396" style="color: rgb(0, 0, 0);"><b id="mshv0">onExpand </b>- </font><font id="m9:0397" style="color: rgb(0, 0, 0);">occurs when an item is being expanded;</font>
+  </li>
+  
+<li id="m9:0398">
+    <font id="m9:0399" style="color: rgb(0, 0, 0);"><b id="mshv1">onCollapse </b>- </font><font id="m9:0400" style="color: rgb(0, 0, 0);">occurs when an item</font><font id="m9:0401" style="color: rgb(0, 0, 0);"> is being collapsed.</font><br id="r_qa">
+</li>
+</ul>
+<h3><a name='layout_riz1'>
+  7.1 Attaching Event Handler
+</a></h3>
+<p id="a4r2"><a id="w39j" name="_Toc193605166"></a><a id="yv3v" name="_Toc193605132"></a><a id="h.uh" name="_Toc193605132"></a>The user can add any user-defined handler to any of the available events.
+</p>
+<p class="MsoNormal" id="s15b">
+  To do this the user can use <b id="th5p">attachEvent()</b> method with the following parameters:
+</p>
+<p class="MsoNormal" id="m9:0403">
+  <br id="kp_j">
+</p>
+<ul id="p13y">
+  
+<li id="h1m9">
+    <b id="nwz-">evName </b>- name of the event;
+  </li>
+  
+<li id="q05i">
+    <b id="jg3k">evHandler </b>- user-defined event handler.<br id="b2zd">
+  </li>
+</ul>
+<blockquote id="c92g">
+  
+<p class="MsoNormal" id="hvtm">
+    <span id="m9:0405" style="font-family: Verdana;"><font id="m9:0406" size="2">&lt;script&gt;<br id="qow2">
+    </font></span>
+  </p>
+  
+<p class="MsoNormal" id="m9:0407">
+    <span id="m9:0408" style="font-family: Verdana;"><font id="m9:0409" size="2">&nbsp;&nbsp;&nbsp;&nbsp;dhxLayout.</font></span>attachEvent(evName, evHandler);
+  </p>
+  
+<p class="MsoNormal" id="m9:0410">
+    &lt;/script&gt;<br id="li1u">
+  </p>
+</blockquote>
+<a id="cpww" name="_Toc193605132"><span id="sij3" style="font-family: Verdana;"><font id="g0lq" size="2"><b id="q.lw">Note: </b>the names of the events are <b id="bmi:">case-insensitive</b>. <br id="g360">
+</font></span></a>
+<h3><a name='layout_hmao'>
+  7.2 onDock and onUndock Events
+</a></h3>
+<p id="s85m"><a id="hmao2" name="_Toc193605132"></a>These events call user-defined handlers (if there are any) and pass the following parameter:<br id="q-c0">
+</p>
+<a id="m9:0413" name="_Toc193605132"></a>
+<ul id="u6g7">
+  
+<li id="w35j">
+    <a id="twi7" name="_Toc193605132"></a>
+  </li>
+  
+<li id="kidb">
+    <b id="ku1v">itemId </b>- id of the item.<a id="zq4r" name="_Toc193605132"> </a>
+  </li>
+</ul>
+<blockquote id="rvvf">
+  <span id="m9:0416" style="font-family: Verdana;"><font id="m9:0417" size="2">&lt;script&gt;</font></span><br id="tmde">
+  <span id="m9:0418" style="font-family: Verdana;"><font id="m9:0419" size="2">&nbsp;&nbsp;&nbsp;&nbsp;dhxLayout.</font></span><font id="m9:0420" color="#ff0000"><font id="hdyr" color="#000000">attachEvent("onDock", function(itemId){});</font></font><br id="w._u">
+  <span id="m9:0421" style="font-family: Verdana;"><font id="m9:0422" size="2">&nbsp;&nbsp;&nbsp;&nbsp;dhxLayout.</font></span><font id="m9:0423" color="#ff0000"><font id="m9:0424" color="#000000">attachEvent("onUnDock", function(itemId){});<br id="so4_">
+  </font></font>&lt;/script&gt;<br id="du6h">
+</blockquote>
+For example, let's attach an event handler for "onDock" event:
+<blockquote id="qow20">
+  <span id="m9:0428" style="font-family: Verdana;"><font id="m9:0429" size="2">&lt;script&gt;</font></span><br id="yko82">
+  &nbsp;&nbsp;&nbsp;&nbsp;dhxLayout.attachEvent("onDock", function(a){<br id="g.2w">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("The item was docked");<br id="ouwx">
+  &nbsp;&nbsp;&nbsp;&nbsp;});<br id="y8_j">
+  &lt;/script&gt;<br id="ujgz2">
+</blockquote>
+<p id="b7sz">
+  Now, when we dock the Layout item "a", we'll get the specified alert.<br id="pa4f">
+</p>
+<p id="fe50"><a id="m9:0432" name="_Toc193605132"></a></p>
+<h3><a name='layout_qwi3'>
+  7.3 onResizeFinish Event
+</a></h3>
+<p id="qwi31"><a id="qwi32" name="_Toc193605132"></a><a id="qwi34" name="_Toc193605132"></a></p>
+<a id="mrs12" name="_Toc193605132"></a>
+<a id="mrs15" name="_Toc193605132"></a><a id="m9:0436" name="_Toc193605132"><span id="m9:0437" style="font-family: Verdana;"><font id="m9:0438" size="2">This event calls </font></span></a><a id="m9:0439" name="_Toc193605132"></a><a id="m9:0440" name="_Toc193605132"><span id="m9:0441" style="font-family: Verdana;"><font id="m9:0442" size="2">user-defined handlers (if there are any):</font></span></a><br>
+<blockquote id="cgkh">
+  <span id="m9:0443" style="font-family: Verdana;"><font id="m9:0444" size="2">&lt;script&gt;</font></span><br id="yko8">
+  <span id="m9:0445" style="font-family: Verdana;"><font id="m9:0446" size="2">&nbsp;&nbsp;&nbsp;&nbsp;dhxLayout.</font></span><font id="m9:0447" color="#ff0000"><font id="qvhc" color="#000000">attachEvent("onResizeFinish", function(){});<br id="so4_0">
+  </font></font>&lt;/script&gt;<br id="n.12">
+</blockquote>
+<a id="m9:0454" name="_Toc193605132"></a>
+<h3><a name='layout_qwi3'>7.3 onPanelResizeFinish Event</a></h3>
+  
+<p id="epml"><a id="m9:0436" name="_Toc193605132"><span id="m9:0437" style="font-family: Verdana;"><font id="m9:0438" size="2">This event calls </font></span></a><a id="m9:0439" name="_Toc193605132"></a><a id="m9:0440" name="_Toc193605132"><span id="m9:0441" style="font-family: Verdana;"><font id="m9:0442" size="2">user-defined handlers (if there are any):</font></span></a><br>
+</p>
+<blockquote>
+<p id="epml"><span id="m9:0443" style="font-family: Verdana;"><font id="m9:0444" size="2">&lt;script&gt;</font></span><br id="yko8">
+  <span id="m9:0445" style="font-family: Verdana;"><font id="m9:0446" size="2">&nbsp;&nbsp;&nbsp;&nbsp;dhxLayout.</font></span><font id="m9:0447" color="#ff0000"><font id="qvhc" color="#000000">attachEvent("onPanelResizeFinish", function(){});<br id="so4_0">
+  </font></font>&lt;/script&gt;</p>
+</blockquote>
+<h3><a name='layout_epml'>7.5 onExpand Event
+</a></h3>
+<a id="epml1" name="_Toc193605132"></a> <a id="epml4" name="_Toc193605132"></a><a id="m9:0459" name="_Toc193605132"></a><a id="m9:0461" name="_Toc193605132"><span id="m9:0462" style="font-family: Verdana;"><font id="m9:0463" size="2">This event calls </font></span></a><a id="m9:0464" name="_Toc193605132"></a><a id="m9:0466" name="_Toc193605132"><span id="m9:0467" style="font-family: Verdana;"><font id="m9:0468" size="2">user-defined handlers (if there are any) and passes the following parameter:<br id="jjaq0">
+</font></span></a>
+<ul id="jjaq1">
+  
+<li id="jjaq5">
+    <a id="m9:0469" name="_Toc193605132"></a>
+  </li>
+  
+<li id="m9:0470">
+    <font id="jjaq10" color="#000000"><b id="nd2m5">itemId </b>- id of the expanded item;</font><a id="m9:0475" name="_Toc193605132"></a><br id="vw4h">
+  </li>
+</ul>
+<blockquote id="p_q60">
+  <span id="m9:0476" style="font-family: Verdana;"><font id="m9:0477" size="2">&lt;script&gt;</font></span><br id="yko80">
+  <font id="m9:0478" color="#ff0000"><font id="m9:0479" color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;dhxLayout.attachEvent("onExpand", function(itemId){});</font><br id="so4_1">
+  </font>&lt;/script&gt; 
+</blockquote>
+<a id="m9:0486" name="_Toc193605132"></a>
+<h3><a name='layout_zwzy'>
+  7.6 onCollapse Event
+</a></h3>
+<a id="zwzy1" name="_Toc193605132"></a><a id="zwzy5" name="_Toc193605132"></a><a id="m9:0493" name="_Toc193605132"><span id="m9:0494" style="font-family: Verdana;"><font id="m9:0495" size="2"><span id="m9:0496" style="background-color: rgb(255, 255, 255);">This</span></font></span></a><a id="m9:0502" name="_Toc193605132"> </a><a id="m9:0505" name="_Toc193605132"><span id="m9:0506" style="font-family: Verdana;"><font id="m9:0507" size="2"><span id="m9:0508" style="background-color: rgb(255, 255, 255);">event</span></font></span></a><a id="m9:0514" name="_Toc193605132"> </a><a id="m9:0517" name="_Toc193605132"><span id="m9:0518" style="font-family: Verdana;"><font id="m9:0519" size="2"><span id="m9:0520" style="background-color: rgb(255, 255, 255);">calls user-defined handlers (if there are any) and passes the following parameter:<br id="xmrp3">
+</span></font></span></a>
+<ul id="sm:d0">
+  
+<li id="sm:d2">
+    <font id="ah2x" color="#000000"><b id="ah2x0">itemId</b></font> <font id="m9:0521" color="#ff0000"><font id="m9:0522" color="#000000">- id of the collapsed item;</font></font><br id="hzf20">
+  </li>
+</ul>
+<blockquote id="m9:0523">
+  <span id="m9:0524" style="font-family: Verdana;"><font id="m9:0525" size="2">&lt;script&gt;</font></span><br id="yko81">
+  <font id="m9:0526" color="#ff0000"><font id="m9:0527" color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;dhxLayout.attachEvent("onCollapse", function(itemId){});<br id="dzla">
+  </font></font>&lt;/script&gt;<br id="e6g0">
+</blockquote>
+<h2><a name='layout_m9:0529'>
+  8. Attaching DHTMLX Components
+</a></h2>
+<h3><a name='layout_xcn8'>
+  8.1 Attaching Components to the Whole Layout
+</a></h3>
+<a id="m9:0530" name="_Toc193605132">
+<span id="n2jr1" style="background-color: rgb(255, 255, 255);">Only two dhmtlx components can be added to the whole Layout:<br id="beou">
+<br id="ot3k">
+</span></a>
+<ul id="ot3k0">
+  
+<li id="ot3k1">
+    <span id="ot3k2" style="background-color: rgb(255, 255, 255);">dhtmlxMenu 2.0;</span>
+  </li>
+  
+<li id="ot3k3">
+    <span id="ot3k4" style="background-color: rgb(255, 255, 255);">dhtmlxToolbar 2.0.<br id="ot3k5">
+    </span>
+  </li>
+</ul>
+<br id="uuua">
+A Status Bar can be attached to the whole Layout as well.<br id="ot3k6">
+<span id="n2jr5" style="background-color: rgb(255, 255, 255);">The user should refer to <b id="god3"><a href="RawDocContents?docID=dgr5rjkf_71g66zq3g5&amp;justBody=false&amp;revision=_latest&amp;timestamp=1217317952783&amp;editMode=true&amp;strip=true#Global_Items" id="zr_." title="Global Items">Global Items</a></b> section of this document to get more information on attaching components to the whole <b id="lo9v">dhtmlxLayout</b>.</span><a id="uuua0" name="_Toc193605132"><br id="uuua2">
+</a>
+<h3 id="llps">
+  8.2 <b id="llps1">Attaching Components to Layout's items</b><br id="f8l6">
+</h3>
+<a id="llps0" name="_Toc193605132">
+The following components can be attached to <b id="ww32">dhtmlxLayout</b>'s items:<br id="e-.f">
+<br id="ww320">
+</a>
+<ul id="v_no">
+  
+<li id="v_no0">
+    dhtmlxTree;
+  </li>
+  
+<li id="m9:0531">
+    dhtmlxGrid;
+  </li>
+  
+<li id="m9:0532">
+    dhtmlxTreeGrid;
+  </li>
+  
+<li id="m9:0533">
+    dhtmlxTabbar;
+  </li>
+  
+<li id="m9:0534">
+    dhtmlxAccordion;
+  </li>
+  
+<li id="m9:0535">
+    dhtmlxFolders;
+  </li>
+  
+<li id="m9:0536">
+    dhtmlxMenu;
+  </li>
+  
+<li id="m9:0537">
+    dhtmlxToolbar;</li>
+<li id="bk7e">dhtmlxEditor;<br id="bk7e0">
+</li>
+  
+<li id="m9:0538">
+    Status Bar.
+  </li>
+</ul>
+<br id="nc87">
+<i id="gx.l">Note</i>: as far as dhtmlxLayout items are instances of dhtmlxWindows members, and dhtmlxLayout can be attached to a dhtmlxWindows member, the user can include layouts in dhtmlxLayout items as well.<br id="n2jr9">
+<h3 id="akfa">
+  8.3<span id="akfa1" style="background-color: rgb(255, 255, 255);"> Atta</span><span id="o_ny" style="background-color: rgb(255, 255, 255);">ching</span><span id="glz_" style="background-color: rgb(255, 255, 255);"> Tree</span><br id="epnk2">
+</h3>
+<span id="jz360" style="background-color: rgb(255, 255, 255);">In the first place, the user needs to download the <b id="vwhu">dhtmlxTree </b>package from the server and set path to </span>necessary files from it into the &lt;head&gt; tag of our html. The files to which the paths need to be specified should be checked in the documentation describing work with <span id="m9:0539" style="background-color: rgb(255, 255, 255);">dhtmlxTree.<br id="my-j">
+<br id="k7di">
+</span><span id="m9:0540" style="background-color: rgb(255, 255, 255);">dhtmlxTree component can be easily added to any item in the Layout with the help of </span><b id="o8in">attachTree()</b> method. This method returns dhtmlxTree object, which the user can customize.<br id="o8in0">
+<br id="paor1">
+<p id="raz04">
+  <span id="m9:0541" style="background-color: rgb(255, 255, 255);">There is only one input parameter for this method. The parameter is the id of a virtual super item that is a parent to all the top level tree nodes of the added dhtmlxTree (see dhtmlxTree constructor description for details). If the super root element's id is 0, this parameter can be omitted:</span>&nbsp;
+</p>
+<div id="af-5">
+  
+<blockquote id="d4zm">
+    &lt;script&gt;<br id="qax1">
+    &nbsp;&nbsp;&nbsp;&nbsp;var dhxTree = dhxLayout.cells("a").attachTree();<br id="qax10">
+    &lt;/script&gt;<br id="t3fh">
+  </blockquote>
+<h3 id="j106">
+  8.4<b id="joad"> Attaching Othe<span id="ntax" style="background-color: rgb(255, 255, 255);">r dhtmlx Component</span><span id="ustj" style="background-color: rgb(255, 255, 255);">s</span> &nbsp;</b><br id="glz_1">
+</h3>
+<font id="m9:0543" color="#ff0000"><font id="m9:0544" color="#000000">User's </font></font>first steps are to download packages of those components he wants to attach and to set the paths to necessary files from other dhtmlx components packages into the &lt;head&gt; tag of html. The files to which the paths need to be specified are different for different components, and should be checked in the corresponding documentation describing work with these components.<br id="k.-l">
+  <br id="h7so">
+  However, there are some additional JS files that should be added to our html file, if the user wants to attach a <b id="k.-l0">menu</b> or a <b id="k.-l1">toolbar </b>either to the whole Layout or to any of its items. These files are as follows:<br id="e2iu">
+  
+<blockquote id="i_.m">
+    <span id="e2iu0" style="font-family: Verdana;"><font id="e2iu1" size="2">&lt;head&gt;<br id="i_.m0">
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="[full path to this file]/dhtmlxwindows_wmn.js"&gt;&lt;/script&gt; // additional JS file for attaching a menu to the Layout</font></span><br id="pqan">
+    <span id="nroj" style="font-family: Verdana;"><font id="nroj0" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="</font></span><span id="nroj1" style="font-family: Verdana;"><font id="nroj2" size="2">[full path to this file]</font></span><span id="nroj3" style="font-family: Verdana;"><font id="nroj4" size="2">/dhtmlxwindows_wtb.js"&gt;&lt;/script&gt; // additional JS file for attaching a toolbar </font></span><span id="ozly" style="font-family: Verdana;"><font id="ozly0" size="2">to the Layout</font></span><br id="i_.m3">
+    <span id="ozly1" style="font-family: Verdana;"><font id="ozly2" size="2">&lt;/head&gt;</font></span><br id="p_p3">
+  </blockquote>
+  <font id="m9:0545" color="#ff0000"><font id="m9:0546" color="#000000">After that dhtmlx components listed above can be attached to any item in <b id="ygqb">dhtmlxLayout </b>in the following ways:<br id="hnxz">
+  </font></font>
+</div>
+<div id="chsd">
+  
+<blockquote id="hnxz0">
+    &lt;script&gt;<br id="iw87">
+    &nbsp;&nbsp;&nbsp;&nbsp;var dhxGrid = dhxLayout.cells("a").attachGrid();<br id="hnxz1">
+    &nbsp;&nbsp;&nbsp;&nbsp;var dhxTreeGrid = dhxLayout.cells("a").attachGrid();<br id="hnxz2">
+    &nbsp;&nbsp;&nbsp;&nbsp;var dhxTabbar = dhxLayout.cells("a").attachTabbar();<br id="hnxz3">
+    &nbsp;&nbsp;&nbsp;&nbsp;var dhxAccord = dhxLayout.cells("a").attachAccordion();<br id="hnxz4">
+    &nbsp;&nbsp;&nbsp;&nbsp;var dhxFolders = dhxLayout.cells("a").attachFolders();<br id="hnxz5">
+    &nbsp;&nbsp;&nbsp;&nbsp;var dhxMenu = dhxLayout.cells("a").attachMenu();&nbsp;&nbsp;&nbsp;<br id="hnxz6">
+    &nbsp;&nbsp;&nbsp;&nbsp;var dhxBar = dhxLayout.cells("a").attachToolbar();<br id="y21e">
+&nbsp;&nbsp;&nbsp;&nbsp;var dhxEditor = dhxLayout.cells("a").attachEditor();<br id="y21e0">
+&nbsp;&nbsp;&nbsp;&nbsp;var status = dhxLayout.cells("a").attachStatusBar();<br id="iw870">
+    &lt;/script&gt;<br id="hnxz8">
+  </blockquote>
+  
+<p id="gujx0">
+    These methods, <i id="n:s4">except attachStatusBar() one</i>, return <b id="uo1z">dhtmlx[component] </b>objects, which the user can customize according to his needs.<font id="gujx1" color="#ff0000"><br id="f3hu11">
+    &nbsp;</font>
+  </p>
+  <br id="w1wj">
+</div>
+<br id="a9o3">	
+</body>
+</html>

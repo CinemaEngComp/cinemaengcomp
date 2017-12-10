@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--conf
+<sample in_favorites="false">
+              <product version="1.0" edition="std"/>
+                     <modifications>
+                            <modified date="080606"/>
+                     </modifications>
+               </sample>
+ --> 
+<html>
+<head>
+	<title>Expand/Collapse Event Handling</title>
+	<link rel="stylesheet" type="text/css" href="../../codebase/dhtmlxlayout.css">
+	<link rel="stylesheet" type="text/css" href="../../codebase/skins/dhtmlxlayout_dhx_blue.css">
+	<link rel="stylesheet" type="text/css" href="../../../dhtmlxWindows/codebase/dhtmlxwindows.css">
+	<link rel="stylesheet" type="text/css" href="../../../dhtmlxWindows/codebase/skins/dhtmlxwindows_dhx_blue.css">
+	<script src="../../codebase/dhtmlxcommon.js"></script>
+	<script src="../../codebase/dhtmlxlayout.js"></script>
+	<script src="../../../dhtmlxWindows/codebase/dhtmlxwindows.js"></script>
+</head>
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxlayout_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxLayout</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Expand/Collapse Event Handling</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxLayout/index.shtml">dhtmlxLayout main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	<div id="parentId" style="position: relative; top: 20px; left: 20px; width: 600px; height: 400px;"></div>
+	<div id="log" style="position: relative; margin-top: 40px; margin-left: 20px; width: 600px; height: 120px; border: #909090 1px solid; overflow-y: scroll; font-family: Tahoma; font-size: 11px;">
+		
+	</div>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+ 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-comment">//</span><span class="hl-comment"> initialization of the layout</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">dhxLayout</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXLayoutObject</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">parentId</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-quotes">&quot;</span><span class="hl-string">5I</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    ...
+    </span><span class="hl-comment">//</span><span class="hl-comment"> attaching onExpand event handler</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">dhxLayout</span><span class="hl-code">.</span><span class="hl-identifier">attachEvent</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">onExpand</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-reserved">function</span><span class="hl-brackets">(</span><span class="hl-identifier">ietmId</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-identifier">alert</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">Item </span><span class="hl-quotes">&quot;</span><span class="hl-code">+</span><span class="hl-identifier">itemId</span><span class="hl-code">+</span><span class="hl-quotes">&quot;</span><span class="hl-string"> was expanded</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment"> attaching onCollapse event handler</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">dhxLayout</span><span class="hl-code">.</span><span class="hl-identifier">attachEvent</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">onCollapse</span><span class="hl-quotes">&quot;</span><span class="hl-code">, </span><span class="hl-reserved">function</span><span class="hl-brackets">(</span><span class="hl-identifier">ietmId</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-identifier">alert</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">Item </span><span class="hl-quotes">&quot;</span><span class="hl-code">+</span><span class="hl-identifier">itemId</span><span class="hl-code">+</span><span class="hl-quotes">&quot;</span><span class="hl-string"> was collapsed</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+<script>
+	var dhxLayout = new dhtmlXLayoutObject("parentId", "5I");
+	dhxLayout.attachEvent("onExpand", doOnExpand);
+	dhxLayout.attachEvent("onCollapse", doOnCollapse);
+	function doOnExpand(itemId) {
+		document.getElementById("log").innerHTML += "<b>onExpand</b> event called, item id is <b>"+itemId+"</b><br>";
+	}
+	function doOnCollapse(itemId) {
+		document.getElementById("log").innerHTML += "<b>onCollapse</b> event called, item id is <b>"+itemId+"</b><br>";
+	}
+</script>
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>d</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

@@ -1,0 +1,282 @@
+eba\:gridlist {
+	BORDER-TOP: #CCCCCC 1px solid; 
+	BORDER-RIGHT: #CCCCCC 1px solid;
+	BORDER-BOTTOM: #CCCCCC 1px solid; 
+	BORDER-LEFT: #CCCCCC 1px solid; 
+	CURSOR: default; 
+	DISPLAY: block; 
+	FONT: 11px Tahoma,Verdana,Arial; 
+	HEIGHT: 100%;
+	OVERFLOW: hidden; 
+	WIDTH: 100%
+}
+.gridlistsummary {
+	background-color: #F0F0F0;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 21px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 1px; 
+	PADDING-LEFT: 0px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+
+.gridlistsummarycell {
+	COLOR:#999999;
+	BORDER: 0px solid black;
+	PADDING-TOP: 2px;
+	TEXT-ALIGN: right;
+	font-weight: bold;
+}
+
+.gridlistsummarydeadspace {
+	background-color: #F0F0F0;
+	background-position: right bottom;
+	COLOR:#000000;
+	FONT: 11px Tahoma,Arial,Verdana,San-serif; 
+	FONT-WEIGHT:500; 
+	HEIGHT: 21px; 
+	OVERFLOW: hidden;
+	PADDING-TOP: 2px; 
+	PADDING-LEFT: 4px; 
+	TEXT-ALIGN: left; 
+	VERTICAL-ALIGN:middle;
+	WIDTH: 100%;
+}
+.gridlistchk {
+	DISPLAY: none; 
+	POSITION: absolute; 
+	TOP: 0px; 
+	Z-INDEX: 10; 
+}
+.gridlistinput {
+	BORDER-TOP: 1pt solid;
+	BORDER-RIGHT: 1pt solid; 
+	BORDER-BOTTOM: 1pt solid; 
+	BORDER-LEFT: 1pt solid; 
+	DISPLAY: none; 
+	FONT: 11px Tahoma,Verdana,Arial; 
+	HEIGHT: 16px;
+	OVERFLOW: hidden; 
+	PADDING-TOP: 0px; 
+	POSITION: absolute; 
+	TOP: -1px;
+	WIDTH: 100%; 
+	Z-INDEX: 10; 
+}
+.lookupdropdown
+{
+	font: 11px Verdana,Tahoma,Arial;
+	color: black;
+}
+
+.checkboxchecked 
+{
+	background-image: url(checked.gif);
+	background-repeat: no-repeat;
+	width: 17px;	
+	height: 15px;	
+
+}
+.checkboxunchecked 
+{
+	background-image: url(unchecked.gif);
+	background-repeat: no-repeat;
+	width: 17px;
+	height: 15px;	
+}
+
+.gridlistselect {
+	BORDER-TOP: 1pt solid; 
+	BORDER-RIGHT: 1pt solid; 
+	BORDER-BOTTOM: 1pt solid; 
+	BORDER-LEFT: 1pt solid; 
+	DISPLAY: none; 
+	FONT: 11px Tahoma,Verdana,Arial; 
+	HEIGHT: 16px;
+	OVERFLOW: hidden; 
+	PADDING-TOP: 0px;
+	POSITION: absolute; 
+	TOP: -1px;  
+	Z-INDEX: 10; 
+}
+.gridlistheading {
+	background:url(greyback.gif);
+	background-position: right bottom;
+	COLOR: #000000; 
+	FONT: 11px Tahoma, Arial,Verdana,San-serif;
+	WIDTH: 100%; 
+	HEIGHT: 28px;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 4px; 
+	
+}
+
+
+.gridlistheadingascending {
+	background:url(greyselected.gif);
+	background-position: right bottom;
+	
+	COLOR: #000000; 
+	FONT: 11px Tahoma,Arial,Verdana,San-serif;
+	WIDTH: 100%; 
+	HEIGHT: 28px;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 4px; 
+}
+
+.gridlistheadingdescending {
+	background:url(greyselecteddown.gif);
+	background-position: right bottom;
+	
+	COLOR: #000000; 
+	FONT: 11px Tahoma,Arial,Verdana,San-serif;
+	WIDTH: 100%; 
+	HEIGHT: 28px;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 4px; 
+}
+
+
+.gridlistheading_over {
+	background:url(greyhover.gif);
+	background-position: right bottom;
+	
+	COLOR: #000000; 
+	FONT: 11px Tahoma,Arial,Verdana,San-serif;
+	WIDTH: 100%; 
+	HEIGHT: 28px;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 4px; 
+}
+
+.gridlistheadingdeadspace {
+	background:url(greydeadspace.gif);
+	background-position: right bottom;
+	
+	COLOR: #000000; 
+	FONT: 11px Tahoma,Arial,Verdana,San-serif;
+	WIDTH: 100%; 
+	HEIGHT: 28px;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 4px;
+}
+
+
+.gridlistheadingascending_over {
+	background:url(greyselectedhover.gif);
+	background-position: right bottom;
+	
+	COLOR: #000000; 
+	FONT: 11px Tahoma,Arial,Verdana,San-serif;
+	WIDTH: 100%; 
+	HEIGHT: 28px;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 4px; 
+}
+
+.gridlistheadingdescending_over {
+	background:url(greyselecteddownhover.gif);
+	background-position: right bottom;
+	
+	COLOR: #000000; 
+	FONT: 11px Tahoma,Arial,Verdana,San-serif;
+	WIDTH: 100%; 
+	HEIGHT: 28px;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 4px; 
+}
+
+.gridlistheading_pressed {
+	background:url(greypressed.gif);
+	background-position: right bottom;
+	
+	COLOR: #000000; 
+	FONT: 11px Tahoma,Arial,Verdana,San-serif;
+	WIDTH: 100%; 
+	HEIGHT: 28px;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 4px; 
+}
+
+
+.gridlistheadingascending_pressed {
+	background:url(greypressed.gif);
+	background-position: right bottom;
+	
+	COLOR: #000000; 
+	FONT: 11px Tahoma,Arial,Verdana,San-serif;
+	WIDTH: 100%; 
+	HEIGHT: 28px;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 4px; 
+}
+
+.gridlistheadingdescending_pressed {
+	background:url(greypressed.gif);
+	background-position: right bottom;
+	
+	COLOR: #000000; 
+	FONT: 11px Tahoma,Arial,Verdana,San-serif;
+	WIDTH: 100%; 
+	HEIGHT: 28px;
+	PADDING-TOP: 5px; 
+	PADDING-LEFT: 4px; 
+}
+
+
+.toolbar 
+{
+	height: 26px;
+	padding-top:0px;
+	BACKGROUND-COLOR: #ECE9D8; 
+	BORDER-TOP: 1px #ACA899 solid; 
+	BORDER-RIGHT: 0px #ACA899 solid;
+	BORDER-BOTTOM: 5px #ACA899 solid;  
+	BORDER-LEFT: 0px #FFFFFF solid; 
+	
+ 		
+}
+
+.toolbar A:hover
+{
+
+	BORDER-TOP: 1px #FFFFFF solid; 
+	BORDER-RIGHT: 1px #ACA899 solid;
+	BORDER-BOTTOM: 1px #ACA899 solid;  
+	BORDER-LEFT: 1px #FFFFFF solid; 
+	
+	cursor: hand;
+
+
+}
+.toolbar SPAN 
+{
+	width:23;
+	height:21;
+
+}
+.gridlistnavbar
+{
+	background-position: left top;
+	background-image: url(toolbar.gif);
+	background-repeat: no-repeat;
+
+
+
+	overflow: hidden;
+}
+.gridlistpagingnavbar { 
+	background-position:top right;
+	BACKGROUND-IMAGE: url(toolbar_paging.gif); 
+	background-repeat:no-repeat ;
+	overflow: hidden;
+}
+
+.gridlistlookup
+{
+	FONT: 11px Tahoma,Verdana,Arial;
+}

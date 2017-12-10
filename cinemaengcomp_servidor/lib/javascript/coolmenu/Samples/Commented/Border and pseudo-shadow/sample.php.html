@@ -1,0 +1,630 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title></title>
+		<style type="text/css">
+body, html {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	background-color: white;
+}
+
+h2 {
+	margin: 19px 0;
+	font: italic bold 11pt arial;
+	color: #1B7389;
+}
+
+h3 {
+	margin: 19px 0;
+	font: bold 10pt arial;
+	color: #1B7389;
+}
+
+h4 {
+	margin: 19px 0;
+	font: bold 9pt arial;
+	color: #1B7389;
+}
+
+h5 {
+	margin: 19px 0;
+	font: bold 9pt arial;
+	color: #1B7389;
+}
+
+table#footer {
+	height: 43px;
+}
+
+table#footer td {
+	padding-left: 217px;
+	padding-right: 0;
+	text-align: center;
+	vertical-align: middle;
+	font: 8pt tahoma;
+	color: black;
+}
+
+table#footer a, table#footer a:link, table#footer a:visited {
+	color: black;
+	text-decoration: underline;
+}
+
+table#footer a:hover, table#footer a:active {
+	color: #359595;
+	text-decoration: underline;
+}
+
+td { font-size: 8pt; }
+
+a img {
+	border: none;
+}
+
+.table {
+	width: 100%;
+	background-color: #96B3BF;
+}
+
+.table td, .table th {
+	padding: 3px 6px;
+	font: 9pt tahoma;
+}
+
+.table td {
+	border: 2px solid white;
+	background-color: white;
+}
+
+.table th {
+	font-weight: bold;
+	border: 1px solid white;
+	background-color: #D0DFDE;
+}
+
+.table .even td {
+	background-color: #F0F0F0;
+}
+
+.cntDblLeft, .cntDblRight {
+	background-repeat: no-repeat;
+}
+
+.cntDblLeft {
+	background-position: 12px 0;
+	background-image: url(../../../Misc%20files/images/cnt-dbl-bg-left.jpg);
+}
+
+.cntDblRight {
+	background-position: 5px 0;
+	background-image: url(../../../Misc%20files/images/cnt-dbl-bg-right.jpg);
+}
+
+.cntDblLeft div, .cntDblRight div {
+	padding-top: 0;
+	padding-bottom: 10px;
+}
+
+.cntDblLeft div {
+	padding-left: 45px;
+	padding-right: 42px;
+}
+
+.cntDblRight div {
+	padding-left: 38px;
+	padding-right: 43px;
+}
+
+.cntDblLeft div p, .cntDblRight div p {
+	margin: 11px 0;
+	/*text-align: justify;*/
+	font: 9pt arial;
+	color: black;
+}
+
+.cntDblLeft .header {
+	background: #96B3BF;
+	margin-left: 11px;
+	margin-right: 7px;
+	margin-bottom: 11px;
+}
+
+.cntDblHdrLeft {
+	background-image: url(../../../Misc%20files/images/cnt-dbl-ttl-bg-left.gif);
+}
+
+.cntDblHdrLeft h2 {
+	left: 0;
+	margin: 0;
+	padding-left: 45px;
+	font: bold 9pt tahoma;
+	color: #065467;
+	background-image: url(../../../Misc%20files/images/ico1.gif);
+	background-position: 19px -1px;
+	background-repeat: no-repeat;
+}
+
+.cntDblHdrRight {
+	background-image: url(../../../Misc%20files/images/cnt-dbl-ttl-bg-right.gif);
+}
+
+.cntDblHdrRight h2 {
+	left: 0;
+	margin: 0;
+	padding-left: 38px;
+	font: bold 9pt tahoma;
+	color: #065467;
+	background-image: url(../../../Misc%20files/images/ico1.gif);
+	background-position: 12px -1px;
+	background-repeat: no-repeat;
+}
+
+.cntFirst {
+	background-image: url(../../../Misc%20files/images/cnt-first-bg.gif);
+}
+
+.cntFirst2 {
+	background: left top no-repeat url(../../../Misc%20files/images/cnt-first-hdr-bg.jpg);
+}
+
+.cntFirst3 {
+	background: left bottom no-repeat url(../../../Misc%20files/images/cnt-first-ftr-bg.gif);
+	padding: 15px 42px 8px 44px;
+}
+
+h1 {
+	margin: 19px 0;
+	font: bold 12pt arial;
+	color: #1B7389;
+}
+
+p, ul, ol, dl, dt {
+	font-size: small;
+	font-family: arial;
+	color: black;
+}
+
+p {
+	margin: 19px 0;
+	/*text-align: justify;*/
+}
+
+p.centered {
+	text-align: center;
+}
+
+ul, ol {
+	margin-top: 19px;
+	margin-bottom: 19px;
+}
+
+ul ul {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 19px;
+}
+
+a { color: #2B6F7F; }
+a.plain:visited { color: navy; }
+a.plain:hover { color: #2B6F7F; }
+
+.cntSingle {
+	border: 1px solid #1B7389;
+	margin: 0 5px 10px 9px;
+}
+
+.cntSingleInner {
+	padding: 0 37px 0 36px;
+}
+
+.cntSingle h2 {
+	left: 0;
+	margin: 1px;
+	background-color: #96B3BF;
+	font: bold 9pt tahoma;
+	color: #065467;
+	padding: 2px 0 4px 35px;
+	background-image: url(../../../Misc%20files/images/ico1.gif);
+	background-position: 8px 1px;
+	background-repeat: no-repeat;
+}
+
+.subnavigation a {
+	color: white;
+	text-decoration: none;
+}
+
+.subnavigation a:hover, .subnavigation a:active {
+	text-decoration: underline;
+}
+
+.subnavigation a.current {
+	color: #B0EDEF;
+}
+
+.subnavigation td {
+	font: bold 7pt tahoma;
+	padding-left: 27px;
+	padding-right: 7px;
+	background-image: url(../../../Misc%20files/images/ico1.gif);
+	background-position: 5px 2px;
+	background-repeat: no-repeat;
+}
+
+.subnavigation td.div {
+	background-image: url(../../../Misc%20files/images/subnav-div.gif);
+	background-repeat: no-repeat;
+	background-position: 5px 0;
+	padding-left: 0;
+}
+
+#navigation div {
+	text-align: center;
+	background: url(../../../Misc%20files/images/nav-btn-middle.gif);
+	font: bold 9pt tahoma;
+}
+
+#navigation div div {
+	background: no-repeat left top url(../../../Misc%20files/images/nav-btn-left.gif);
+}
+
+#navigation div div div {
+	background: no-repeat right top url(../../../Misc%20files/images/nav-btn-right.gif);
+}
+
+#navigation a {
+	color: black;
+	text-decoration: none;
+	display: block;
+	padding: 16px 12px 0 12px;
+	height: 23px;
+}
+
+#navigation div.current {
+	background-image: url(../../../Misc%20files/images/nav-btn-middle-selected.gif);
+}
+
+#navigation div.current div {
+	background-image: url(../../../Misc%20files/images/nav-btn-left-selected.gif);
+}
+
+#navigation div.current div div {
+	background-image: url(../../../Misc%20files/images/nav-btn-right-selected.gif);
+}
+
+.code {
+	font: 9pt courier new;
+	padding: 10px;
+	background-color: #F0F0F0;
+	border: 1px solid #E8E8E8;
+	margin: 19px 0;
+}
+
+.code .field { color: #008000; }
+.code .string { color: #A000A0; }
+.code .comment { color: #808080; }
+.code .tag { color: #000080; }
+
+.highlighedProduct td { background-color: #E0F0F0; }
+.eula { font: 8pt tahoma; }
+div.button {
+	text-align: center;
+}
+
+.form {
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+}
+
+.form .label {
+	background-color: #F0F0F0;
+}
+
+.form .textField {
+	background-color: #F8F8F8;
+}
+
+.form .textField input {
+	border: 1px solid silver;
+}
+
+.form .buttons {
+	text-align: center;
+}
+
+.error {
+	color: red;
+	text-align: center;
+}
+
+.testimonials p {
+	font-style: italic;
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+.testimonials .sign {
+	margin-top: 0;
+	margin-bottom: 29px;
+	text-align: right;
+	font-size: 70%;
+	font-style: normal;
+}
+
+p.more {
+	padding-right: 20px;
+	font-size: 70%;
+	font-style: normal;
+	text-align: right;
+}
+
+.more a { text-decoration: none; }
+.more a:hover { text-decoration: underline; }
+
+.tip {
+	width: 300px;
+}
+
+a.hidden {
+	color: black;
+	text-decoration: none;
+	cursor: default;
+}
+
+.tip {
+	border: 1px solid #1B7389;
+	width: 300px;
+	padding: 10px;
+	background-color: #F0F0F0;
+	text-align: left;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='gray', Direction=135, Strength=3);
+}
+
+.tipShot {
+	text-align: center;
+	margin: 10px 0;
+}
+
+.purchase {
+	width: 100%;
+}
+
+.purchase td {
+	font: 9pt tahoma;
+	border-style: solid none solid none;
+	border-width: 1px 0 1px 0;
+	border-color: red;
+}
+
+.purchase td a {
+	display: block;
+	width: 100%;
+	text-decoration: none;
+}
+
+/* news */
+
+dl.news .date {
+	color: #1B7389;
+	font-size: 8pt;
+	line-height: 11pt;
+}
+
+dl.news .subject {
+	float: left;
+	color: #1B7389;
+}
+
+dl.news {
+}
+
+dl.news dt {
+	text-align: right;
+	font-weight: bold;
+	font-size: 10pt;
+	border-bottom: 1px solid #1B7389;
+	margin: 0;
+}
+
+dl.news dd {
+	margin: 0;
+}
+
+dl.news p {
+}
+
+dl.news ul {
+}
+
+.shortNews {
+	padding: 10px 15px 0 20px;
+	text-align: left;
+	font: 8pt tahoma;
+}
+
+.shortNews .date {
+	font-weight: bold;
+}
+
+.shortNews div {
+	padding: 3px 3px 12px 3px;
+	font: 8pt tahoma;
+}
+
+.navTip {
+	font: 8pt tahoma;
+	position: absolute;
+	visibility: hidden;
+	width: 440px;
+	padding: 5px 20px 0 20px;
+	text-align: center;
+	color: black;
+}
+
+.imgfix {
+	font-size: 1px;
+}
+
+.imgfix img {
+	vertical-align: bottom;
+}
+
+.copy {
+	font: 8pt tahoma;
+	color: black;
+}
+
+.copy a, .copy a:link, .copy a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+.copy a:hover, .copy a:active {
+	text-decoration: underline;
+}
+		</style>
+	</head>
+	<body marginwidth="0" marginheight="0">
+<script type="text/javascript" src="../../../Scripts/coolmenu.js"></script>		<table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%" style="height: 100%;">
+			<tr valign="top">
+				<td class="imgfix" width="18" background="../../../Misc&#32;files/images/left-bg-liquid.gif"><img src="../../../Misc&#32;files/images/header-left-bg-popup.gif" width="18" height="46" /></td>
+				<td>
+					<div style="height: 7px; background: white repeat-x left top url(../../../Misc%20files/images/header-bg-popup.gif);" class="imgfix"><img src="../../../Misc&#32;files/images/b.gif" width="1" height="7" /></div>
+					<script type="text/javascript">if (document.layers) document.write('<img src="../../../Misc&#32;files/images/b.gif" width="' + (window.innerWidth - 57) + '" height="1" />');</script>
+					<div style="padding: 8px 31px 10px 35px;"><div>
+					<h1>Border and pseudo-shadow</h1>
+<img src="../images/b.gif" width="1" height="50" />	
+<p>COOLjsMenu and COOLjsMenu Professional allow you to specify borders and shadows for your menus. Each submenu and each item can be configured separately via styles (see <a href="http://javascript.cooldev.com/packages/COOLjsMenu%20Standard%202.9.4/Samples/Commented/styles/">"Styles"</a> example for details).</p>
+
+<div class="code">var color = { <span class="field">border</span>:<span class="string">&quot;#666666&quot;</span>, <span class="field">shadow</span>:<span class="string">&quot;#DBD8D1&quot;</span>, <span class="field">bgON</span>:<span class="string">&quot;white&quot;</span>, <span class="field">bgOVER</span>:<span class="string">&quot;#B6BDD2&quot;</span> };<br />
+var css = { <span class="field">ON</span>:<span class="string">&quot;styleOn&quot;</span>, <span class="field">OVER</span>:<span class="string">&quot;styleOver&quot;</span> };<br />
+var STYLE = { <span class="field">border</span>:1, <span class="field">shadow</span>:2, <span class="field">color</span>:color, <span class="field">css</span>:css };</div>
+
+<p>In the <var>color</var> variable field "shadow" is the color of the shadow, and field "border" is the color of the border. Size of the border is controlled by field "border" of the <var>STYLE</var> variable (0 means no border, 1 - one pixel wide, 2 - two pixels wide, etc.), and size of the shadow (i.e. displacement) is controlled by field "shadow" of the <var>STYLE</var> variable (0 means no shadow, 1 - one pixel displacement, 2 - two pixels displacement, etc.). Be sure to take in account border size when calculating item's height and width.</p>
+<p>COOLjsMenu Professional allows some additional manipulations with border (here is an <a href="http://javascript.cooldev.com/scripts/coolmenupro/demos/borderspro/">example</a>).</p>					</div></div>
+				</td>
+				<td class="imgfix" width="18" background="../../../Misc&#32;files/images/right-bg-liquid.gif"><img src="../../../Misc&#32;files/images/header-right-bg-popup.gif" width="18" height="46" /></td>
+			</tr>
+			<tr valign="bottom">
+				<td class="imgfix" width="18" background="../../../Misc&#32;files/images/left-bg-liquid.gif"><img src="../../../Misc&#32;files/images/footer-left-bg-liquid.gif" width="18" height="75" /></td>
+				<td>
+					<table border="0" cellspacing="0" cellpadding="0" width="100%" height="75">
+						<tr>
+							<td class="imgfix" width="204"><img src="../../../Misc&#32;files/images/footer-corner.gif" width="204" height="75" /></td>
+							<td valign="bottom">
+								<script type="text/javascript">if (document.layers) document.write('<img src="../../../Misc&#32;files/images/b.gif" width="' + (window.innerWidth - 261) + '" height="1" />');</script>
+								<table border="0" cellspacing="0" cellpadding="0" width="100%" height="43">
+									<tr>
+									<td align="center" background="../../../Misc&#32;files/images/footer-bg-liquid.gif" class="copy">Copyright &copy; <a href="http://javascript.cooldev.com/">CoolDev.Com</a> 1997-2007.</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td class="imgfix" width="18" background="../../../Misc&#32;files/images/right-bg-liquid.gif"><img src="../../../Misc&#32;files/images/footer-right-bg-liquid.gif" width="18" height="75" /></td>
+			</tr>
+		</table>
+<style type="text/css">
+div { font-family : Tahoma, Helvetica; }
+.clsCMOn { color: black; font-size : 12px; text-decoration : none; padding-left: 4px; color: black; text-align: left; }
+.clsCMOver { color: black; font-size : 12px; text-decoration : none; padding-left: 4px; color: black; text-align: left; }
+</style>
+<script type="text/javascript">
+var color = {"border":"#666666", "shadow":"#DBD8D1", "bgON":"white","bgOVER":"#B6BDD2"};
+var color2 = {"border":"#666666", "shadow":"#666666", "bgON":"#E0E0E0","bgOVER":"#B6BDD2"};
+var css = {"ON":"clsCMOn", "OVER":"clsCMOver"};
+var STYLE = {"border":1, "shadow":2, "color":color, "css":css};
+
+function copy(o) {
+	var r = {};
+	for (var i in o) r[i] = typeof(o[i]) == 'object' ? copy(o[i]) : o[i];
+	return r;
+}
+
+BLANK_IMAGE = '../images/b.gif';
+
+(STYLE_SHADOWSIZE1 = copy(STYLE)).shadow = 0;
+(STYLE_SHADOWSIZE2 = copy(STYLE)).shadow = 1;
+(STYLE_SHADOWSIZE3 = copy(STYLE)).shadow = 2;
+(STYLE_SHADOWSIZE4 = copy(STYLE)).shadow = 3;
+(STYLE_SHADOWSIZE5 = copy(STYLE)).shadow = 4;
+
+with (STYLE_BORDER1 = copy(STYLE)) { shadow = 0; border = 0; }
+(STYLE_BORDER2 = copy(STYLE_BORDER1)).border = 1;
+(STYLE_BORDER3 = copy(STYLE_BORDER1)).border = 2;
+(STYLE_BORDER4 = copy(STYLE_BORDER1)).border = 3;
+(STYLE_BORDER5 = copy(STYLE_BORDER1)).border = 4;
+
+with (STYLE_BORDERCOLOR1 = copy(STYLE)) { shadow = 0; border = 3; color.border = '#0000FF'; }
+(STYLE_BORDERCOLOR2 = copy(STYLE_BORDERCOLOR1)).color.border = '#00FF00';
+(STYLE_BORDERCOLOR3 = copy(STYLE_BORDERCOLOR1)).color.border = '#FF0000';
+(STYLE_BORDERCOLOR4 = copy(STYLE_BORDERCOLOR1)).color.border = '#00FFFF';
+(STYLE_BORDERCOLOR5 = copy(STYLE_BORDERCOLOR1)).color.border = '#FFFF00';
+
+with (STYLE_SHADOWCOLOR1 = copy(STYLE)) { shadow = 3; border = 1; color.shadow = '#0000FF'; }
+(STYLE_SHADOWCOLOR2 = copy(STYLE_SHADOWCOLOR1)).color.shadow = '#00FF00';
+(STYLE_SHADOWCOLOR3 = copy(STYLE_SHADOWCOLOR1)).color.shadow = '#FF0000';
+(STYLE_SHADOWCOLOR4 = copy(STYLE_SHADOWCOLOR1)).color.shadow = '#00FFFF';
+(STYLE_SHADOWCOLOR5 = copy(STYLE_SHADOWCOLOR1)).color.shadow = '#FFFF00';
+
+var MENU_ITEMS = [
+	{"pos":[55,70], "itemoff":[0,69], "leveloff":[21,0], "style":STYLE, "size":[22,70]},
+	{code:"Borders",
+		sub:[
+			{"itemoff":[21,0]},
+			{code:"Size",
+				sub:[
+					{"leveloff":[9,79], "itemoff":[30,0]},
+					{code:"None", "format":{"size":[20,70], "style":STYLE_BORDER1}},
+					{code:"Tiny", "format":{"size":[22,70], "style":STYLE_BORDER2}},
+					{code:"Small", "format":{"size":[24,70], "style":STYLE_BORDER3}},
+					{code:"Medium", "format":{"size":[26,70], "style":STYLE_BORDER4}},
+					{code:"Large", "format":{"size":[28,70], "style":STYLE_BORDER5}}
+				]
+			},
+			{code:"Color",
+				sub:[
+					{"leveloff":[9,59], "itemoff":[30,0], size:[26,70]},
+					{code:"Color 1", "format":{"style":STYLE_BORDERCOLOR1}},
+					{code:"Color 2", "format":{"style":STYLE_BORDERCOLOR2}},
+					{code:"Color 3", "format":{"style":STYLE_BORDERCOLOR3}},
+					{code:"Color 4", "format":{"style":STYLE_BORDERCOLOR4}},
+					{code:"Color 5", "format":{"style":STYLE_BORDERCOLOR5}}
+				]
+			}
+		]
+	},
+	{code:"Shadows",
+		sub:[
+			{"itemoff":[21,0]},
+			{code:"Size",
+				sub:[
+					{"leveloff":[9,59], "itemoff":[30,0]},
+					{code:"None", "format":{"style":STYLE_SHADOWSIZE1}},
+					{code:"Tiny", "format":{"style":STYLE_SHADOWSIZE2}},
+					{code:"Small", "format":{"style":STYLE_SHADOWSIZE3}},
+					{code:"Medium", "format":{"style":STYLE_SHADOWSIZE4}},
+					{code:"Large", "format":{"style":STYLE_SHADOWSIZE5}}
+				]
+			},
+			{code:"Color",
+				sub:[
+					{"leveloff":[9,59], "itemoff":[30,0]},
+					{code:"Color 1", "format":{"style":STYLE_SHADOWCOLOR1}},
+					{code:"Color 2", "format":{"style":STYLE_SHADOWCOLOR2}},
+					{code:"Color 3", "format":{"style":STYLE_SHADOWCOLOR3}},
+					{code:"Color 4", "format":{"style":STYLE_SHADOWCOLOR4}},
+					{code:"Color 5", "format":{"style":STYLE_SHADOWCOLOR5}}
+				]
+			}
+		]
+	}
+];
+
+new COOLjsMenu("menu1", MENU_ITEMS);
+</script>	</body>
+</html>

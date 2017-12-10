@@ -1,0 +1,40 @@
+//v.2.0 build 81107
+
+/*
+Copyright DHTMLX LTD. http://www.dhtmlx.com
+To use this component please contact sales@dhtmlx.com to obtain license
+*/
+dhtmlXTabBar.prototype._cells= function(wins,id,name){
+	
+	if (!this.wins[id]) {
+		var win=wins.createWindow(id,0,0,100,100);
+		win.setText((typeof name == "undefined")?id:name);
+		this.attachWindow(win);
+	}
+	return this.wins[id];
+}
+dhtmlXTabBar.prototype.wins = {};
+dhtmlXTabBar.prototype.attachWindow = function(win) {
+		this.wins[win.idd] = win;
+		//win.button("close").disable();
+		//win.addUserButton("dock", 0, "Dock", "dock");
+		this.dockWindow(win.idd);
+}
+dhtmlXTabBar.prototype.dockWindow = function(windowId) {
+		if (this.wins[windowId] == null) { return; }
+		if (this.wins[windowId]._isDocked == true) { return; }
+		//
+		var win = this.wins[windowId];
+		if (!this.tabsId[windowId]) this.addTab(win.getId(), win.getText(), "*");
+		// remove content from window
+		var data = win._content;
+		data.parentNode.removeChild(data);
+		win.hide();
+		//
+		this.setContent(win.getId(), data);
+		data.style.width = "100%";
+		data.style.height = "100%";
+	}
+dhtmlXTabBar.prototype.unDockWindow = function(windowId) {
+		
+	}

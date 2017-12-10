@@ -1,0 +1,96 @@
+<!--conf
+<sample in_favorites="true">
+              <product version="2.0" edition="std"/>
+                     <modifications>
+                            <modified date="080715"/>
+                     </modifications>
+<sampledescription><![CDATA[Sample demonstrates the possibility to send sync or async requests using GET or POST methods with dhtmlxAjax object.]]></sampledescription></sample>
+ -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Sending GET/POST request with dhtmlxAjax</title>
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script>
+		function outputResponse(loader){
+			if(loader.xmlDoc.responseXML!=null)
+				alert("We Got Response\n\n"+loader.doSerialization())
+			else
+				alert("Response contains no XML")
+		}
+		function sendRequestGet(){
+			if(!document.getElementById('sync').checked){
+				dhtmlxAjax.get("process.php?"+document.getElementById('params').value,outputResponse);
+				alert("Request Sent");
+			}else{
+				var loader = dhtmlxAjax.getSync("process.php?"+document.getElementById('params').value);
+				alert("Request Sent");
+				outputResponse(loader)
+			}
+		}
+		function sendRequestPost(){
+			if(!document.getElementById('sync').checked){
+				dhtmlxAjax.post("process.php",document.getElementById('params').value,outputResponse);
+				alert("Request Sent");
+			}else{
+				var loader = dhtmlxAjax.postSync("process.php",document.getElementById('params').value);
+				alert("Request Sent");
+				outputResponse(loader)
+			}
+				
+		}
+	</script>
+
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxajax_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxAjax</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Sending GET/POST request with dhtmlxAjax</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxAjax/index.shtml">dhtmlxAjax main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	<p>Add your own parameters and submit AJAX Request*. Output will contain xml with all parameters server got.</p>
+	
+	<h3>Parameters: <input type="Text" value="param1=value&param2=value" id="params" style="width:300px;">&nbsp;<button onclick="sendRequestGet()">GET</button>&nbsp;<button onclick="sendRequestPost()">POST</button>
+
+<input type="checkbox" id="sync"> Use Synchronous Mode</h3>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-comment">//</span><span class="hl-comment">function for processing response</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">function</span><span class="hl-code"> </span><span class="hl-identifier">outputResponse</span><span class="hl-brackets">(</span><span class="hl-identifier">loader</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-reserved">if</span><span class="hl-brackets">(</span><span class="hl-identifier">loader</span><span class="hl-code">.</span><span class="hl-identifier">xmlDoc</span><span class="hl-code">.</span><span class="hl-identifier">responseXML</span><span class="hl-code">!=</span><span class="hl-reserved">null</span><span class="hl-brackets">)</span><span class="hl-code">
+            </span><span class="hl-identifier">alert</span><span class="hl-brackets">(</span><span class="hl-identifier">loader</span><span class="hl-code">.</span><span class="hl-identifier">doSerialization</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-reserved">else</span><span class="hl-code">
+            </span><span class="hl-identifier">alert</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">Response contains no XML</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span><span class="hl-code">
+    
+    </span><span class="hl-comment">//</span><span class="hl-comment">send async GET request</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">dhtmlxAjax</span><span class="hl-code">.</span><span class="hl-identifier">get</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">process.php?param1=value&amp;param2=value</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-identifier">outputResponse</span><span class="hl-brackets">)</span><span class="hl-code">;
+    
+    </span><span class="hl-comment">//</span><span class="hl-comment">send async POST request</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">dhtmlxAjax</span><span class="hl-code">.</span><span class="hl-identifier">post</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">process.php</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">param1=value&amp;param2=value</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-identifier">outputResponse</span><span class="hl-brackets">)</span><span class="hl-code">;
+    
+    </span><span class="hl-comment">//</span><span class="hl-comment">send sync GET request</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">loader</span><span class="hl-code"> = </span><span class="hl-identifier">dhtmlxAjax</span><span class="hl-code">.</span><span class="hl-identifier">getSync</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">process.php?param1=value&amp;param2=value</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    
+    </span><span class="hl-comment">//</span><span class="hl-comment">send sync POST request</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">loader</span><span class="hl-code"> = </span><span class="hl-identifier">dhtmlxAjax</span><span class="hl-code">.</span><span class="hl-identifier">postSync</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">process.php</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">param1=value&amp;param2=value</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+* - this sample requires PHP to run correctly and show what it has to show. Unfortunately there is no possiblity to process submitted parameters and output results wthout server side programming. But syntax which was demonstrated in this sample suits for ststic XML files also.  
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>
+

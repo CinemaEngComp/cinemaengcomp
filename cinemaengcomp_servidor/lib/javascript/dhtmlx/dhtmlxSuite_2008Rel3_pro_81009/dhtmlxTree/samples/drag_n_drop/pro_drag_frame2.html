@@ -1,0 +1,28 @@
+<!--conf
+<sample>
+              <product version="1.5" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               </sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+ <title>Drag and Drop between frames</title>
+
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+
+
+<FRAMESET ROWS="70,*" onload=" new dhtmlDragAndDropObject(true);">
+  <FRAME NAME="Test Title" SRC="frames2/pro_drag_frame2_f3.html" TITLE="Test 1">
+  <FRAMESET COLS="40%,40%">
+    <FRAME NAME="Test 1" SRC="frames2/pro_drag_frame2_f1.html" TITLE="Test 1">
+    <FRAME NAME="Test 2" SRC="frames2/pro_drag_frame2_f1.html" TITLE="Test 2">
+  </FRAMESET>
+  <NOFRAMES>
+        No frames
+  </NOFRAMES>
+</FRAMESET>
+
+</html>

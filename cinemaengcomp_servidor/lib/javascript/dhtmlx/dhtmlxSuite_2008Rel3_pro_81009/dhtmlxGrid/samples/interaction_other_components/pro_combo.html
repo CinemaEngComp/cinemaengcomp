@@ -1,0 +1,104 @@
+<!--conf
+<sample>
+              <product version="1.6" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>				
+                     </modifications>
+               </sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Integration with dhtmlxCombo</title>
+	
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid.css">	
+	<link rel="STYLESHEET" type="text/css" href="../../../dhtmlxCombo/codebase/dhtmlxcombo.css">
+</head>
+
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxgrid_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxGrid</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Integration with dhtmlxCombo</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxGrid/index.shtml">dhtmlxGrid main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script src="../../../dhtmlxCombo/codebase/dhtmlxcombo.js" type="text/javascript"></script>
+	<script  src="../../codebase/dhtmlxgrid.js"></script>
+	<script  src="../../codebase/dhtmlxgridcell.js"></script>
+	
+	<script src="../../codebase/excells/dhtmlxgrid_excell_combo.js" type="text/javascript"></script>
+
+
+	<table>
+		<tr>
+			<td>
+			
+			<div id="gridbox" width="450px" height="230px" style="background-color:white;"></div>
+			
+			</td>
+			
+		</tr>
+	</table>
+	
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+&lt;?</span><span class="hl-identifier">xml</span><span class="hl-code"> </span><span class="hl-identifier">version</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">1.0</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-identifier">encoding</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">UTF-8</span><span class="hl-quotes">&quot;</span><span class="hl-code">?&gt;
+&lt;</span><span class="hl-identifier">rows</span><span class="hl-code">&gt;
+    &lt;</span><span class="hl-identifier">head</span><span class="hl-code">&gt;
+    &lt;</span><span class="hl-identifier">column</span><span class="hl-code"> </span><span class="hl-identifier">width</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">150</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-identifier">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">combo</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-identifier">align</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">left</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-identifier">filter</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">true</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-identifier">sort</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">str</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-identifier">xmlcontent</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">1</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">Filtering</span><span class="hl-code"> </span><span class="hl-identifier">Mode</span><span class="hl-code">
+        &lt;</span><span class="hl-identifier">option</span><span class="hl-code"> </span><span class="hl-identifier">value</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">1</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">one</span><span class="hl-code">&lt;/</span><span class="hl-identifier">option</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">option</span><span class="hl-code"> </span><span class="hl-identifier">value</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">2</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">two</span><span class="hl-code">&lt;/</span><span class="hl-identifier">option</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">option</span><span class="hl-code"> </span><span class="hl-identifier">value</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">3</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">three</span><span class="hl-code">&lt;/</span><span class="hl-identifier">option</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">option</span><span class="hl-code"> </span><span class="hl-identifier">value</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">4</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">four</span><span class="hl-code">&lt;/</span><span class="hl-identifier">option</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">option</span><span class="hl-code"> </span><span class="hl-identifier">value</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">5</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">five</span><span class="hl-code">&lt;/</span><span class="hl-identifier">option</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">option</span><span class="hl-code"> </span><span class="hl-identifier">value</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">6</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">six</span><span class="hl-code">&lt;/</span><span class="hl-identifier">option</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">option</span><span class="hl-code"> </span><span class="hl-identifier">value</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">7</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">seven</span><span class="hl-code">&lt;/</span><span class="hl-identifier">option</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">option</span><span class="hl-code"> </span><span class="hl-identifier">value</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">8</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">eight</span><span class="hl-code">&lt;/</span><span class="hl-identifier">option</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">option</span><span class="hl-code"> </span><span class="hl-identifier">value</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">9</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">nine</span><span class="hl-code">&lt;/</span><span class="hl-identifier">option</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">option</span><span class="hl-code"> </span><span class="hl-identifier">value</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">10</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">ten</span><span class="hl-code">&lt;/</span><span class="hl-identifier">option</span><span class="hl-code">&gt;
+    &lt;/</span><span class="hl-identifier">column</span><span class="hl-code">&gt;
+    &lt;</span><span class="hl-identifier">column</span><span class="hl-code"> </span><span class="hl-identifier">width</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">150</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-identifier">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">combo</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-identifier">editable</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">false</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-identifier">source</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">data.xml</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-identifier">align</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">left</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-identifier">sort</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">str</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">Selectbox</span><span class="hl-code"> </span><span class="hl-identifier">Mode</span><span class="hl-code">
+    &lt;/</span><span class="hl-identifier">column</span><span class="hl-code">&gt;
+    &lt;</span><span class="hl-identifier">column</span><span class="hl-code"> </span><span class="hl-identifier">width</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">150</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-identifier">type</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">combo</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-identifier">source</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">complete.php</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-identifier">auto</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">true</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-identifier">cache</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">true</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-identifier">align</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">left</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-identifier">sort</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">str</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;</span><span class="hl-identifier">Autocoplete</span><span class="hl-code"> </span><span class="hl-identifier">Mode</span><span class="hl-code">
+    &lt;/</span><span class="hl-identifier">column</span><span class="hl-code">&gt;
+    &lt;</span><span class="hl-identifier">settings</span><span class="hl-code">&gt;&lt;</span><span class="hl-identifier">colwidth</span><span class="hl-code">&gt;</span><span class="hl-identifier">px</span><span class="hl-code">&lt;/</span><span class="hl-identifier">colwidth</span><span class="hl-code">&gt;&lt;/</span><span class="hl-identifier">settings</span><span class="hl-code">&gt;
+        
+    &lt;/</span><span class="hl-identifier">head</span><span class="hl-code">&gt;
+     &lt;</span><span class="hl-identifier">row</span><span class="hl-code"> </span><span class="hl-identifier">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">1</span><span class="hl-quotes">&quot;</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;</span><span class="hl-number">1</span><span class="hl-code">&lt;/</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;</span><span class="hl-number">1</span><span class="hl-code">
+        &lt;/</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;
+        &lt;</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;</span><span class="hl-identifier">Austria</span><span class="hl-code">&lt;/</span><span class="hl-identifier">cell</span><span class="hl-code">&gt;
+        
+    &lt;/</span><span class="hl-identifier">row</span><span class="hl-code">&gt;
+    ...
+&lt;/</span><span class="hl-identifier">rows</span><span class="hl-code">&gt;</span></pre></div></div>
+<br>
+
+
+<script>
+
+mygrid = new dhtmlXGridObject('gridbox');
+mygrid.imgURL = "../../codebase/imgs/";
+mygrid.setSkin("modern")
+mygrid.loadXML("combo.xml");
+</script>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

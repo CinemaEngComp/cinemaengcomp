@@ -1,0 +1,110 @@
+<!--conf
+<sample>
+              <product version="1.5" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               </sample>
+ --> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Custom Drag Out</title>
+</head>
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxtree.css">
+	
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxtree.js"></script>
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxtree_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxTree</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Custom Drag Out</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxTree/index.shtml">dhtmlxTree main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	
+	<p>Drag node from tree to input control</p>
+	<table>
+		<tr><td>
+			<div id="treeboxbox_tree" style="width:250px; height:218px;background-color:#f5f5f5;border :1px solid Silver;; overflow:auto; float:left"></div></td>
+		<td valign="top">
+			<div style='float:left'>&nbsp;<input type="text" width="120px" id="sInput"></div>
+		</td></tr>
+	</table>
+	
+	
+	<br>
+
+	<script>
+        function maf(){
+            return false;
+        }
+
+			tree=new dhtmlXTreeObject("treeboxbox_tree","100%","100%",0);
+			tree.setImagePath("../../codebase/imgs/csh_yellowbooks/");
+			tree.enableDragAndDrop(true);
+            tree.setDragHandler(maf);
+			tree.enableSmartXMLParsing(true);
+			tree.loadXML("tree.xml")
+
+			
+			function s_control(){
+			
+				this._drag=function(sourceHtmlObject,dhtmlObject,targetHtmlObject){
+					targetHtmlObject.style.backgroundColor="";
+					targetHtmlObject.value=sourceHtmlObject.parentObject.label;
+				}
+
+				this._dragIn=function(htmlObject,shtmlObject){
+					htmlObject.style.backgroundColor="#fffacd";
+					return htmlObject;
+				}
+
+				this._dragOut=function(htmlObject){
+					htmlObject.style.backgroundColor="";
+					return this;
+				}
+			
+			}
+			var sinput=document.getElementById('sInput');
+			tree.dragger.addDragLanding(sinput, new s_control);
+			
+	</script>
+
+	<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-reserved">function</span><span class="hl-code"> </span><span class="hl-identifier">s_control</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">    
+    </span><span class="hl-reserved">this</span><span class="hl-code">.</span><span class="hl-identifier">_drag</span><span class="hl-code">=</span><span class="hl-reserved">function</span><span class="hl-brackets">(</span><span class="hl-identifier">sourceHtmlObject</span><span class="hl-code">,</span><span class="hl-identifier">dhtmlObject</span><span class="hl-code">,</span><span class="hl-identifier">targetHtmlObject</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-identifier">targetHtmlObject</span><span class="hl-code">.</span><span class="hl-identifier">style</span><span class="hl-code">.</span><span class="hl-identifier">backgroundColor</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+        </span><span class="hl-identifier">targetHtmlObject</span><span class="hl-code">.</span><span class="hl-identifier">value</span><span class="hl-code">=</span><span class="hl-identifier">sourceHtmlObject</span><span class="hl-code">.</span><span class="hl-identifier">parentObject</span><span class="hl-code">.</span><span class="hl-reserved">label</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span><span class="hl-code">
+ 
+    </span><span class="hl-reserved">this</span><span class="hl-code">.</span><span class="hl-identifier">_dragIn</span><span class="hl-code">=</span><span class="hl-reserved">function</span><span class="hl-brackets">(</span><span class="hl-identifier">htmlObject</span><span class="hl-code">,</span><span class="hl-identifier">shtmlObject</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-identifier">htmlObject</span><span class="hl-code">.</span><span class="hl-identifier">style</span><span class="hl-code">.</span><span class="hl-identifier">backgroundColor</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">#fffacd</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+        </span><span class="hl-reserved">return</span><span class="hl-code"> </span><span class="hl-identifier">htmlObject</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span><span class="hl-code">
+ 
+    </span><span class="hl-reserved">this</span><span class="hl-code">.</span><span class="hl-identifier">_dragOut</span><span class="hl-code">=</span><span class="hl-reserved">function</span><span class="hl-brackets">(</span><span class="hl-identifier">htmlObject</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-identifier">htmlObject</span><span class="hl-code">.</span><span class="hl-identifier">style</span><span class="hl-code">.</span><span class="hl-identifier">backgroundColor</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+        </span><span class="hl-reserved">return</span><span class="hl-code"> </span><span class="hl-reserved">this</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span><span class="hl-code">
+ 
+</span><span class="hl-brackets">}</span><span class="hl-code">
+</span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">sinput</span><span class="hl-code">=</span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">getElementById</span><span class="hl-brackets">(</span><span class="hl-quotes">'</span><span class="hl-string">sInput</span><span class="hl-quotes">'</span><span class="hl-brackets">)</span><span class="hl-code">;
+</span><span class="hl-identifier">tree</span><span class="hl-code">.</span><span class="hl-identifier">dragger</span><span class="hl-code">.</span><span class="hl-identifier">addDragLanding</span><span class="hl-brackets">(</span><span class="hl-identifier">sinput</span><span class="hl-code">, </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">s_control</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></div>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

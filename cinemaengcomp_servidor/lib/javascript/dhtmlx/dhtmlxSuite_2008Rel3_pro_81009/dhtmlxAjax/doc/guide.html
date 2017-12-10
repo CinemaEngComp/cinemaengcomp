@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>dhtmlxAjax library guide and samples</title><link rel="STYLESHEET" type="text/css" href="common/styles.css">
+</head>
+   
+<body>
+<a name="ajax_"><h2 onclick="openFull(this)">dhtmlxAjax Guide and Samples</h2>
+</a><div class="block">
+<!---  --->
+	
+	<a name="ajax_mf"><h3>Main features</h3>
+	</a><div class="block">
+			<li>GET/POST requests</li>
+			<li>Multibrowser support</li>
+			<li>Easy incorporation in DHTMLX based applications</li>
+			<li>Automatic new loader creations</li>
+			<li>XPath</li>
+			<li>XSLT</li>
+	</div>
+
+	<a name="ajax_browser"><h3>Supported browsers</h3
+	></a><div class="block">
+		<li>IE</li>
+		<li>Mac OS X Safari/Conqueror</li>
+		<li>Mozilla/Mozilla Firefox</li>
+		<li>Opera</li>
+	</div>
+
+	<a name="ajax_guide"><h3>Working with dhtmlxAjax</h3
+	></a><div class="block">
+	
+	<a name="ajax_request"><h4>Sending Requests with dhtmlxAjax</h4
+		></a><div class="block">
+	<p>
+	dhtmlxAjax is static object, which means you do not need to instantiate it each time you need to send AJAX request to server. Also, if you use any dhtmlx component on your page, then you do not need to add any script file to use dhtmlxAjax - it is included in all dhtmlx components. Otherwise you need to add dhtmlxcommon.js file.
+	</p>
+	<h5>Sending GET AJAX Request</h5>
+	<p>
+		To send <em>asynchronous</em> GET request and be able to process a response you need to do the following:
+	</p>
+<xmp>
+	dhtmlxAjax.get(url,callbackFunction);
+</xmp>
+	<p>
+		where <strong>callbackFunction</strong> is a function object which will be called when response from server comes. It gets one argument called <em>loader</em>. This object contains all necessary information about response and some additional capabilities. In details:<br>
+	<li>loader.xmlDoc - HTTP Response object</li>
+	<li>loader.xmlDoc.responseXML - xml object which came with reponse</li>
+	<li>loader.xmlDoc.responseText - text which came with response</li>
+	<li>loader.doXPath(xpathExp, docObj, namespace, result_type) - XPath Processor (see details in <a href="#ajax_xpath">related chapter</a>)</li>
+	<li>loader.doSerialization() - returns string representation of XML object got with response</li>
+	<li>loader.doXSLTransToObject(xslDocument) - makes XSL transformation with object result (see details in <a href="#ajax_xsl">related chapter</a>)</li>
+	<li>loader.doXSLTransToString(xslDocument) - makes XSL transformation with string result (see details in <a href="#ajax_xsl">related chapter</a>)</li>
+	</p>
+	
+	<p>To send <em>synchronous</em> GET request you need to do the following:</p>
+<xmp>
+	var loader = dhtmlxAjax.getSync(url);
+</xmp>
+<p>
+	In case of synchronous request <em>loader</em> object will be returned as a result. It has all features described above. 
+</p>
+
+<h5>Sending POST AJAX Request</h5>
+	<p>
+		The only difference in making POST request with dhtmlxAjax is additional argument next to URL - POST parameters:
+	</p>
+<xmp>
+	dhtmlxAjax.post(url,params,callbackFunction);
+	var loader = dhtmlxAjax.postSync(url,params);
+</xmp>
+<p>
+	where <em>params</em> is a string of name=value pairs united with &amp;, like "param1=somevalue&amp;param2=someothervalue"
+</p>
+	</div>
+
+	<a name="ajax_xpath"><h4>XPath with dhtmlxAjax</h4
+		></a><div class="block">
+<p>
+XPath is a language for addressing parts of an XML document. Complete W3C Specification can be found <a target="_blank" href="http://www.w3.org/TR/xpath">here</a>. 
+dhtmlxAjax supports XPath for <strong>loader</strong> object (it comes to the callback function as an incomming argument in case of async request or you get it as a result of getSync and postSync methods). Common way of usage is:
+</p>
+<xmp>
+	var loader = dhtmlxAjax.getSync(url);
+	loader.doXPath(xpathExp, docObj, namespace, result_type);
+</xmp>
+<p>
+	where:
+	<li>xpathExp - XPath expression, like "/itemsitem[@id='123']"</li>
+	<li>docObj - XML document object. In case it is <em>null</em> XPath expression will be procesed against XML document which came in response.</li>
+	<li>namespace - namespace to take into account if any. Use <em>null</em> if no namespace required</li>
+	<li>result_type - by default result will be an array of found elements, but if you set last parameter to "single", the first found element will be returned</li>
+</p>
+<p>
+	Thus in most simple cases the following syntax like this is enough. It will return array of found elememts. You can itterate through them using common way of itterating through array.
+<XMP>
+	var result = loader.doXPath("/some/expression[@arg='value']");
+	for(var i=0;i<result.length;i++){
+		alert(result[i].nodeName)
+	}
+</XMP>
+</p>
+	</div>
+	
+	<a name="ajax_xsl"><h4>XSLT with dhtmlxAjax</h4
+		></a><div class="block">
+		<p>
+XSLT - language for transforming XML documents into other XML documents (commonly used for creating HTML from XML). Complete specification of XSLT can be found <a target="_blank" href="http://www.w3.org/TR/xslt">here</a>. dhtmlxAjax provides two methods for making XSL Transformation:<br>
+			<li>loader.doXSLTransToObject(xslDocument) - makes XSL transformation of XML document which came in request with object as a result</li>
+			<li>loader.doXSLTransToString(xslDocument) - makes XSL transformation with string representation of a result</li>
+		In both cases incoming argument is xslDocument object. It can be loaded with dhtmlxAjax, as xsl is also xml document. Possible variant of usage:<br>
+<XMP>
+	dhtmlxAjax.get("xsl_file.xsl",function(xslLoader){
+		var xmlLoader = dhtmlxAjax.getSync("xml_file.xml");
+		some.innerHTML = xmlLoader.doXSLTransToString(xslLoader.xmlDoc.responseXML);
+	})
+</XMP>
+		</p>
+		
+	</div>
+	
+</div>
+	
+</div>
+
+<!--- <a name="calendar_..."><h4>...</h4
+		></a><div class="block">
+		...
+	</div> --->
+</body>
+</html>

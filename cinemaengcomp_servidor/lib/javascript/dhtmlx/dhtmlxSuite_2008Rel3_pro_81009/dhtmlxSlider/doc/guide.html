@@ -1,0 +1,787 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>DHTML Slider guide</title><link rel="STYLESHEET" type="text/css" href="common/styles.css">
+</head>
+
+<body>
+<h1>
+  dhtmlxSlider Guide and Code Samples
+</h1>
+<h2><a name='slider_mn4c'>
+  1. Introduction
+</a></h2>
+<h3><a name='slider_mejf'>
+  1.1 Scope of the Document
+</a></h3>
+This document describes <b id="s0c4">dhtmlxSlider </b>component, defines its features and global parameters. This documentation is created to give users full understanding of every feature of this component, and also to enable users to implement this component quickly and easily.<br id="xure">
+<h3><a name='slider_ph-x'>
+  1.2 Target Readers
+</a></h3>
+<p class="MsoNormal" id="h:xr">
+  Target readers are users (developers).
+</p>
+<h2><a name='slider_ol1w'>
+  2. What is dhtmlxSlider
+</a></h2>
+<br>
+<b>dhtmlxSlider </b>component allows users to implement vertical or horizontal slider bars into web pages. The component is really easy to implement and customize. There is a number of predefined skin available, but there is no limitations in creating any other custom appearance. <font size="2"><a name="calendar_mf"><span style="font-weight: normal;">Complete JavaScript API is provided to</span></a></font><a name="calendar_mf"> <font style="font-weight: normal;" size="2">help users to save time on configuring.</font></a><br>
+<a name="calendar_mf"></a><font size="2"><span style="font-weight: normal;"><br>
+With<b> dhtmlxSlider</b>, the users gain the following possibilities:<br>
+<br>
+</span></font>
+<ul>
+  
+<li>Create vertical or horizontal slider bars;</li>
+<li>Set slider's step value and tooltip;</li>
+<li>Apply different predefined skins;</li>
+<li>Indicate minimum and maximum values;</li>
+<li>Set slider's current value;</li>
+<li>Link the slider to some object on page.<span style="background-color: rgb(255, 153, 0);"></span><br>
+</li>
+</ul>
+
+<h3><a name='slider_aok8529'>
+  2.1 Main Features
+</a></h3>
+<div class="block">
+</div>
+<ul>
+  
+<li>
+    Wide client side API;<br>
+  </li>
+  
+<li>
+    Multibrowser support;
+  </li>
+  
+<li>
+    Integration with HTML Form;
+  </li>
+  
+<li>
+    Multiple skins;
+  </li>
+  
+<li>
+    Horizontal and vertical layout.
+  </li>
+</ul>
+<div class="block">
+</div>
+<h3><a name='slider_2u3984uk'>
+  
+  
+
+    2.2 Supported Browsers
+  </a></h3>
+  </a>
+</h3>
+<ul>
+  
+<li>
+    IE 5.5 and above;
+  </li>
+  
+<li>
+    Mozilla 1.4 and above;
+  </li>
+  
+<li>
+    FireFox 0.9 and above;
+  </li>
+  
+<li>
+    Safari 1.3 and above;
+  </li>
+  
+<li>Google Chrome;<br>
+</li>
+<li id="yso20">
+      Opera 8.5+.</li>
+</ul>
+<div class="block">
+</div>
+<h2><a name='slider_46988q_3'>
+  3. Initialization of dhtmlxSlider
+</a></h2>
+<b>dhtmlxSlider </b>can be initialized on page using one of the following initialization schemes:<br>
+<br>
+<ul>
+  
+<li>
+    <b><a href="#Minimal_Initialization" id="hj3l" title="Minimal Initialization">Minimal Initialization</a></b>;<br>
+  </li>
+  
+<li>
+    <b><a href="#Extended_Initialization" id="xjuz" title="Extended Initialization">Extended Initialization</a></b>;
+  </li>
+  
+<li>
+    <b><a href="#Object-Based_Initialization" id="u-k:" title="Object-Based Initialization">Initialization by Object Notation</a></b>;
+  </li>
+  
+<li>
+    <b><a href="#Inline_Initialization" id="xd90" title="Inline Initialization">Inline Initialization</a></b>;<br>
+  </li>
+  
+<li>
+    <b><a href="#Initialization_from_HTML_Input" id="tdsg" title="Initialization from HTML Input">Initialization from HTML Input</a></b>.<br>
+  </li>
+</ul>
+<br>
+The first things that need to be done for any type of <b id="bmqe">dhtmlxSlider</b>'s initialization are the following:<br id="pbf6">
+<br id="gnrw">
+<ul id="tour">
+  
+<li id="p5-m">
+    Download the dhtmlxSlider package from the server and place it in a folder;
+  </li>
+  
+<li id="m9:08">
+    Create an html file;<br id="tjec">
+  </li>
+  
+<li id="m9:09">
+    Place the full paths to <b id="bmqe">dhtmlxSlider</b>'s CSS and JS files into the header of the created html file;
+  </li>
+</ul>
+<blockquote>
+  <span id="hhnh" style="font-family: Verdana;"><font id="ssfs" size="2">&lt;head&gt;&nbsp; &nbsp;</font></span><br id="f2uy">
+  &nbsp;&nbsp; &nbsp;<span id="rzoh" style="font-family: Verdana;"><font id="zowx" size="2">&lt;link rel="stylesheet" type="text/css" href="</font></span><span id="x_e0" style="font-family: Verdana;"><font id="ekf7" size="2">[full path to this file]</font></span><span id="m9:019" style="font-family: Verdana;"><font id="m9:020" size="2">/dhtmlxslider.css"&gt;<br>
+  &nbsp;&nbsp;&nbsp; &lt;script src="</font></span><span id="m9:021" style="font-family: Verdana;"><font id="m9:022" size="2">[full path to this file</font></span><span id="m9:019" style="font-family: Verdana;"><font id="m9:020" size="2">/dhtmlxcommon.js"&gt;&lt;/script&gt;<br>
+  </font></span>
+  
+<p class="MsoNormal" id="jiuw">
+  </p>
+  
+<p class="MsoNormal" id="h9lh">
+    <span id="hhnh" style="font-family: Verdana;"><font id="ssfs" size="2">&nbsp;&nbsp;&nbsp; </font></span><span id="bztm" style="font-family: Verdana;"><font id="stat" size="2">&lt;script src="</font></span><span id="m9:021" style="font-family: Verdana;"><font id="m9:022" size="2">[full path to this file]</font></span><span id="pv3c" style="font-family: Verdana;"><font id="x9:2" size="2">/dhtmlxslider.js"&gt;&lt;/script&gt;</font>&nbsp;&nbsp; &nbsp;</span><br>
+  </p>
+  <span id="pv3c" style="font-family: Verdana;"><font id="x9:2" size="2">&lt;/script&gt;</font> </span><br>
+</blockquote>
+<h3><a name='slider_wwru'>
+  3.1 Setting Image Path
+</a></h3>
+<p>
+  The following ways of setting image path are available in <b>dhtmlxSlider</b>:<br>
+</p>
+<br>
+<ul style="font-family: Verdana;">
+  
+<li>
+    Through <b>setImagePath()</b> <i>- </i>this method <font id="x:nm" size="2">should be used to </font><font id="om81" size="2">set the full path to the directory, where slider image files are located:</font>
+  </li>
+</ul>
+<blockquote>
+  &lt;script&gt;<br>
+  &nbsp;&nbsp;&nbsp; sld.setImagePath("<span id="m9:021" style="font-family: Verdana;"><font id="m9:022" size="2">[full path to this category]/</font></span>codeabse/imgs/"); // should be used <b>after </b>creation of slider's object<br>
+  &lt;/script&gt;<br>
+</blockquote>
+<ul>
+  
+<li>
+    As global JS variable<b> window.dhx_globalImagePath</b>:
+  </li>
+</ul>
+<blockquote>
+  <span id="hhnh" style="font-family: Verdana;"><font id="ssfs" size="2">&lt;head&gt;</font></span><br>
+  <span id="hhnh" style="font-family: Verdana;"><font id="ssfs" size="2">&nbsp;&nbsp;&nbsp; ...</font></span><br>
+  <span id="hhnh" style="font-family: Verdana;"><font id="ssfs" size="2">&nbsp;&nbsp;&nbsp; </font></span><span id="bztm" style="font-family: Verdana;"><font id="stat" size="2">&lt;script src="</font></span><span id="m9:021" style="font-family: Verdana;"><font id="m9:022" size="2">[full path to this file]</font></span><span id="pv3c" style="font-family: Verdana;"><font id="x9:2" size="2">/dhtmlxslider.js"&gt;&lt;/script&gt;</font> </span><br>
+  &nbsp;&nbsp; &nbsp;&lt;script&gt;window.dhx_globalImgPath="<span id="m9:021" style="font-family: Verdana;"><font id="m9:022" size="2">[full path to this category]</font></span>/codebase/imgs/";&lt;/script&gt; // sets image path<br>
+  &lt;/head&gt;<br>
+</blockquote>
+<h3><a name='slider_wwru'>
+  3.2 Minimal Initialization
+</a></h3>
+The user needs to create an <a id="abk9" name="object"></a>object where <b>dhtmlxSlider </b><span id="m9:051" style="background-color: rgb(255, 255, 255);">will</span><span id="nv3o" style="background-color: rgb(255, 255, 255);"> be placed later. In this example the object is a &lt;div&gt; element on page which is placed in the &lt;body&gt; tag:<br>
+</span>
+<blockquote>
+  &lt;div id="slider"&gt;&lt;/div&gt;
+</blockquote>
+The next step is to create a new <b>dhtmlxSlider </b><span id="d3gs" style="font-family: Verdana;"><font id="an7g" size="2">and place it after the &lt;div&gt; element (object) that we've just created:</font></span><br>
+<blockquote>
+  &lt;script&gt;<br>
+  &nbsp;&nbsp;&nbsp;var sld = new dhtmlxSlider(container, size);<br>
+  &lt;/script&gt;<br>
+</blockquote>
+The parameters in the above mentioned code string are the following:<br>
+<br>
+<ul>
+  
+<li>
+    <b>container(</b><b>id) </b>- id of the object inside which the Slider will be created;
+  </li>
+  
+<li>
+    <b>size(px) </b>- size of the slider (in pixels).
+  </li>
+</ul>
+<br>
+The last command that should be called in order to initialize the component is:<br>
+<blockquote>
+  &lt;script&gt;<br>
+  <span class="hl-identifier">&nbsp;&nbsp;&nbsp; </span>sld<span class="hl-code" style="background-color: rgb(255, 255, 255);">.</span><span class="hl-identifier" style="background-color: rgb(255, 255, 255);">init</span><span class="hl-brackets" style="background-color: rgb(255, 255, 255);">()</span><span class="hl-code" style="background-color: rgb(255, 255, 255);">;</span><br>
+  <span class="hl-code">&lt;/script&gt;</span><br>
+  <span class="hl-code"></span>
+</blockquote>
+When the page is loaded, the slider will be displayed on page with the <b>minimum </b>value set in it.<span class="hl-code"><br>
+</span>
+<h3><a name='slider_wwru'>
+  3.3 Extended Initialization
+</a></h3>
+<font id="ockt0" size="2">Creating a Slider with extended initialization, the user should call the same commands described in </font><b id="k.sf" style="color: rgb(0, 0, 0);"><a href="#Minimal_Initialization" id="fycv" title="Minimal initialization">Minimal initialization</a></b><font id="ockt1" size="2">. </font>
+<p class="western" id="j7g5" style="margin-bottom: 0.04in; font-family: Verdana;">
+</p>
+<font id="ockt2" size="2">The code for extended initialization should be like this:<br>
+</font>
+<blockquote>
+  <font id="ockt2" size="2">&lt;script&gt;</font><br>
+  &nbsp;&nbsp; &nbsp;var sld = new dhtmlxSlider(container, size, skin, vertical,<b> </b>min, max, value, step);<br>
+  &nbsp;&nbsp; &nbsp;sld<span class="hl-code" style="background-color: rgb(255, 255, 255);">.</span><span class="hl-identifier" style="background-color: rgb(255, 255, 255);">init</span><span class="hl-brackets" style="background-color: rgb(255, 255, 255);">()</span><span class="hl-code" style="background-color: rgb(255, 255, 255);">;</span><br>
+  &lt;/script&gt;<br>
+</blockquote>
+The parameters the user should indicate are as follows:<br>
+<br>
+<ul>
+  
+<li>
+    <b>container(</b><b>id) </b>- id of the object inside which the Slider will be created;
+  </li>
+  
+<li>
+    <b>size(px) </b>- size of the slider (in pixels);
+  </li>
+  
+<li>
+    <b>skin(skin_name)</b> - name of the skin applied;
+  </li>
+  
+<li>
+    <b>vertical(true|false)</b> - <u>vertical </u>orientation flag, set to <b>false </b>by default;<b><br>
+    </b>
+  </li>
+  
+<li>
+    <b>minValue (value)</b> - minimum slider's value;<br>
+  </li>
+  
+<li>
+    <b>maxValue (value)</b> - maximum slider's value;
+  </li>
+  
+<li>
+    <b>value (value)</b> - slider's current value;<br>
+  </li>
+  
+<li>
+    <b>step(value)</b> - step of the slider.
+  </li>
+</ul>
+<br>
+When the page is loaded, the slider will be displayed on page with the <b>current </b>value set in it.<br>
+<h3><a name='slider_n6f1h5m'>
+  3.4 Initialization by Object Notation
+</a></h3>
+Initialization of this kind is similar to the above mentioned types. The only difference is that the second parameter is an object containing all the initialization parameters:<br>
+<blockquote>
+  &lt;div id="slider"&gt;&lt;/div&gt;<br>
+  <br>
+  &lt;script&gt;<br>
+  &nbsp;&nbsp; &nbsp;var sld = new dhtmlxSlider("slider", {<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<b>size:100,&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;skin: "ball",<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;vertical:false,<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;step:1,<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; min:1,<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max:100,<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value:50</b><b>&nbsp;&nbsp; </b>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;});<br>
+  &nbsp;&nbsp; &nbsp;sld.init();<br>
+  &lt;/script&gt;<br>
+</blockquote>
+<h3><a name='slider_wul13a'>
+  3.5 Inline Initialization
+</a></h3>
+This type of initialization presupposes that the Slider can be created without indicating the object for it. It should be noted that the slider will be created at the same place where the initialization script was called:<br>
+<blockquote>
+  &lt;script&gt;<br>
+  &nbsp;&nbsp; &nbsp;var sld = new dhtmlxSlider(<b>null</b>, 300);<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; //or<br>
+  &nbsp;&nbsp; &nbsp;var sld = new dhtmlxSlider(<b>null</b>, {<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;size:100,&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;skin: "ball",<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;vertical:false,<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;step:1,<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; min:1,<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; max:100,<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; value:50&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;});<br>
+  &nbsp;&nbsp; &nbsp;sld.init();<br>
+  &lt;/script&gt;<br>
+</blockquote>
+<h3><a name='slider_3m_c'>
+  3.6 Initialization from HTML Input
+</a></h3>
+The user can initialize the Slider from some existing HTML input. The thing that needs to be done for that is adding <b>dhtmlxSlider</b>'s CSS class to it. The user should do the following:<br>
+<br>
+<ul>
+  
+<li>
+    Add full path to <b>dhtmlxslider_start.js</b> file to activate auto-initialization;
+  </li>
+  
+<li>
+    Set class attribute value of the input element to "dhtmlxSlider".
+  </li>
+</ul>
+<blockquote>
+  &lt;head&gt;<br>
+  &nbsp;&nbsp; &nbsp;&lt;script src="[full path to this file]/codebase/ext/dhtmlxslider_start.js"&gt;&lt;/script&gt;<br>
+  &lt;/head&gt;<br>
+  <br>
+  &lt;input class="<b>dhtmlxSlider</b>"&nbsp;<span style="background-color: rgb(255, 255, 0);"></span>name="slider" skin="ball" style="width:200px" <span class="hl-identifier">min</span><span class="hl-code">=</span><span class="hl-quotes">"</span><span class="hl-string">1</span><span class="hl-quotes">"</span><span class="hl-code"> </span><span class="hl-identifier">max</span><span class="hl-code">=</span><span class="hl-quotes">"</span><span class="hl-string">20</span><span class="hl-quotes">0"</span><span class="hl-code"> </span><span class="hl-identifier">step</span><span class="hl-code">=</span><span class="hl-quotes">"</span><span class="hl-string">1</span><span class="hl-quotes">"</span> <span style="background-color: rgb(255, 255, 255);">value="</span>10"&gt;<br>
+</blockquote>
+The parameters of the input element the user should indicate are the following:<br>
+<br>
+<ul>
+  
+<li>
+    <b>class</b> - class attribute value;
+  </li>
+  
+<li>
+    <b>name </b>- <span style="background-color: rgb(255, 255, 255);">id of </span>the input;
+  </li>
+  
+<li>
+    <b>style </b>-<span style="background-color: rgb(255, 255, 255);"> specify the style of the input;</span>
+  </li>
+  
+<li>
+    <b>skin </b>- name of the applied skin;
+  </li>
+  
+<li>
+    <b>min </b>- slider's minimum value;
+  </li>
+  
+<li>
+    <b>max </b>- slider's maximum value;
+  </li>
+  
+<li>
+    <b>step </b>- slider's step;<br>
+  </li>
+  
+<li>
+    <b>value </b>- slider's current value<span style="background-color: rgb(255, 255, 0);"></span>.<br>
+  </li>
+</ul>
+<span style="background-color: rgb(255, 255, 0);"></span>
+<h2><a name='slider_m9:0210'>
+  4. dhtmlxSlider Configuration
+</a></h2>
+<h3><a name='slider_kwudq7v'>
+  4.1 Setting Skin
+</a></h3>
+<p id="cbs0">
+  The skin can be set for <b>dhtmlxSlider </b>in one of the following ways:
+</p>
+<p id="cbs0">
+  <br>
+</p>
+<ul>
+  
+<li>
+    Through one of initialization parameters:
+  </li>
+</ul>
+<blockquote>
+  <font id="ockt2" size="2">&lt;script&gt;</font><br>
+  &nbsp;&nbsp; &nbsp;var sld = new dhtmlxSlider("slider", 100, <b>"ball"</b>, ...);<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; //or<br>
+  &nbsp;&nbsp;&nbsp; var sld = new dhtmlxSlider("slider", { &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<b>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;skin: </b>"ball",<b><br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </b>...<b><br>
+  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</b>}); <span class="hl-code" style="background-color: rgb(255, 255, 255);"></span><br>
+  &lt;/script&gt;
+</blockquote>
+<ul>
+  
+<li>
+    Through <b>setSkin()</b> method called after slider's initialization:<br>
+  </li>
+</ul>
+<blockquote>
+  
+<p id="cbs0">
+    <span class="hl-identifier">&lt;script&gt;<br>
+    </span>
+  </p>
+  
+<p id="cbs0">
+    <span class="hl-identifier">&nbsp;&nbsp;&nbsp; </span>sld<span class="hl-code">.</span><span class="hl-identifier">setSkin</span><span class="hl-brackets">(</span><span class="hl-quotes"></span><span class="hl-string">skin</span><span class="hl-quotes"></span><span class="hl-brackets">);</span>
+  </p>
+  <span class="hl-brackets">&lt;/script&gt;</span><br>
+  <span class="hl-brackets"></span>
+</blockquote>
+<b>Note</b>: <span style="background-color: rgb(255, 255, 255);">to set the </span><b style="background-color: rgb(255, 255, 255);">default skin</b><span style="background-color: rgb(255, 255, 255);">, the user should write an </span><b style="background-color: rgb(255, 255, 255);">empty string</b><span style="background-color: rgb(255, 255, 255);"> a</span>s the parameter for <b>setSkin()</b> method.<br>
+<br>
+<p id="cbs0">
+  <b>4.1.1 Available Skins</b>
+</p>
+<p id="cbs0">
+  <br>
+</p>
+<p id="cbs0">
+  The following skins are available for this component:
+</p>
+<p id="cbs0">
+  <br>
+</p>
+<ul>
+  
+<li>
+    the default one
+  </li>
+</ul>
+<div id="dhkp" style="padding: 1em 0pt; text-align: left;">
+  <img src="common/dgr5rjkf_209d332t3f4_b.png" style="width: 208px; height: 24px;"><br>
+</div>
+<ul>
+  
+<li>
+    ball
+  </li>
+</ul>
+<img src="common/dgr5rjkf_217htqskzgr_b.png" style="width: 208px; height: 24px;"><br>
+<ul>
+  
+<li>
+    zipper
+  </li>
+</ul>
+<div id="oaa5" style="padding: 1em 0pt; text-align: left;">
+  <img src="common/dgr5rjkf_211fj4r2xfh_b.png" style="width: 208px; height: 24px;"><br>
+</div>
+<ul>
+  
+<li>
+    arrow
+  </li>
+</ul>
+<div id="cfxz" style="padding: 1em 0pt; text-align: left;">
+  <img src="common/dgr5rjkf_212fz7nwmcc_b.png" style="width: 208px; height: 24px;"><br>
+</div>
+<ul>
+  
+<li>
+    arrowgreen
+  </li>
+</ul>
+<div id="boqz" style="padding: 1em 0pt; text-align: left;">
+  <img src="common/dgr5rjkf_213cpg632dc_b.png" style="width: 208px; height: 24px;"><br>
+</div>
+<ul>
+  
+<li>
+    simplesilver
+  </li>
+</ul>
+<div id="w4-3" style="padding: 1em 0pt; text-align: left;">
+  <img src="common/dgr5rjkf_214349t32hm_b.png" style="width: 208px; height: 24px;"><br>
+</div>
+<ul>
+  
+<li>
+    simplegray
+  </li>
+</ul>
+<div id="bxbp" style="padding: 1em 0pt; text-align: left;">
+  <img src="common/dgr5rjkf_215dtkscj83_b.png" style="width: 208px; height: 24px;"><br>
+</div>
+<ul>
+  
+<li>
+    bar
+  </li>
+</ul>
+<div id="hhi9" style="padding: 1em 0pt; text-align: left;">
+  <img src="common/dgr5rjkf_216ctvq9kgh_b.png" style="width: 208px; height: 24px;"><br>
+</div>
+<h3><a name='slider_09t63c'>
+  4.3 Setting Minimum/Maximum/Current Values
+</a></h3>
+Two ways&nbsp;are responsible for setting minimum, maximum, and current values in <b>dhtmlxSlider</b>:<br>
+<br>
+<ul>
+  
+<li>
+    Through one of initialization parameters:
+  </li>
+</ul>
+<blockquote>
+  <font id="ockt2" size="2">&lt;script&gt;</font><br>
+  &nbsp;&nbsp; &nbsp;var sld = new dhtmlxSlider(container, size, skin, vertical,<b> min</b>, <b>max</b>, <b>value</b>, ...);<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; //or<br>
+  &nbsp;&nbsp;&nbsp; var sld = new dhtmlxSlider("slider", { &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<b>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; min</b>:1,<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <b>max</b>:100,<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <b>value</b>: 50,<b><br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</b> ...<b><br>
+  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</b>}); <span class="hl-code" style="background-color: rgb(255, 255, 255);"></span><br>
+  &lt;/script&gt;
+</blockquote>
+<ul>
+  
+<li>
+    Through <b>setMin()</b>,<b> </b><b>setMax()</b>,<b> </b>and <b>setValue()</b> methods called after slider's initialization:
+  </li>
+</ul>
+<blockquote>
+  &lt;script&gt;<br>
+  &nbsp;&nbsp; &nbsp; sld.setMin(10); // leftmost position<br>
+  &nbsp;&nbsp; &nbsp; sld.setMax(10); // rightmost position<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; sld.setValue(50); // current position<br>
+  &lt;/script&gt;<br>
+</blockquote>
+The current slider's value can be got with the help of method <b>getValue()</b>:<br>
+<blockquote>
+  &lt;script&gt;<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;var value = sld.getValue(); // returns current slider's position<br>
+  &lt;/script&gt;<br>
+</blockquote>
+<h3><a name='slider_937x_j3u'>
+  4.4 Setting Step
+</a></h3>
+It is possible to set minimal allowed difference between slider's values (step) in the following way:<br>
+<br>
+<ul>
+  
+<li>
+    Through one of initialization parameters:
+  </li>
+</ul>
+<blockquote>
+  <font id="ockt2" size="2">&lt;script&gt;</font><br>
+  &nbsp;&nbsp; &nbsp;var sld = new dhtmlxSlider(container, size, skin, vertical,<b> </b>min, max, value, <b>step</b>);<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; //or<br>
+  &nbsp;&nbsp;&nbsp; var sld = new dhtmlxSlider("slider", { &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<b>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; step: </b>1,<b><br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</b> ...<b><br>
+  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</b>}); <span class="hl-code" style="background-color: rgb(255, 255, 255);"></span><br>
+  &lt;/script&gt;
+</blockquote>
+<ul>
+  
+<li>
+    Through&nbsp;<b></b><b>setStep()</b> method called after slider's initialization:
+  </li>
+</ul>
+<blockquote>
+  &lt;script&gt;<br>
+  &nbsp;&nbsp; &nbsp; sld.setStep(1);<br>
+  &lt;/script&gt;<br>
+</blockquote>
+<h3><a name='slider_z29y'>
+  4.5 Setting Tooltip
+</a></h3>
+<p>
+  There is a method that enables/disables slider's tooltip easily:
+</p>
+<blockquote>
+  
+<p>
+    &lt;script&gt;
+  </p>
+  
+<p>
+    &nbsp;&nbsp; &nbsp;sld.enableTooltip(true|false); // <b>true </b>by default<br>
+  </p>
+  
+<p>
+    &lt;/script&gt;<br>
+  </p>
+</blockquote>
+<p>
+  This tooltip displays <font id="l3lz" size="2">changeable values of the slider </font><font id="ixvb" size="2">when the user moves the slider's </font>thumb.<br>
+</p>
+<h3><a name='slider_2h3x'>
+  4.6 Linking Slider to Object
+</a></h3>
+The slider can be linked to some objects on page. In this case, <b>linkTo()</b> method is used. The slider can be linked to:<br>
+<br>
+<span class="hl-comment"></span>
+<ul>
+  
+<li>
+    <span class="hl-comment">An HTML input;</span>
+  </li>
+</ul>
+<ul>
+  
+<li>
+    An HTML textarea;
+  </li>
+  
+<li>
+    An HTML select;<span class="hl-comment"></span>
+  </li>
+  
+<li>
+    <span class="hl-comment">Any HTML container tag.</span><br>
+  </li>
+</ul>
+<blockquote>
+  &lt;script&gt;<br>
+  &nbsp;&nbsp; &nbsp;sld.<span class="hl-identifier">linkTo</span>(pbjectId);<br>
+  &lt;/script&gt;<br>
+</blockquote>
+The example provided below shows the way how the slider can be linked to an HTML input:<br>
+
+  
+<blockquote><span class="hl-brackets">&lt;</span><span class="hl-reserved">input</span><span class="hl-code"> </span><span class="hl-var">type</span><span class="hl-code">=</span><span class="hl-quotes">"</span><span class="hl-string">text</span><span class="hl-quotes">"</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">"</span><span class="hl-string">input</span><span class="hl-quotes">"</span><span class="hl-brackets">&gt;</span><br>
+<span class="hl-brackets"></span><br>
+<span class="hl-brackets"></span><span class="hl-code"></span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span>&gt;<span class="hl-code"></span><br>
+<span class="hl-code"></span><span class="hl-comment"></span><span class="hl-comment"></span><span class="hl-code"></span><span class="hl-reserved">&nbsp;&nbsp; &nbsp;var</span><span class="hl-code"> </span><span class="hl-identifier">sld</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlxSlider</span><span class="hl-brackets">(</span><span class="hl-reserved">null</span><span class="hl-code">, </span><span class="hl-number">500</span><span class="hl-brackets">)</span>;<br>
+<span class="hl-code"></span><span class="hl-identifier">&nbsp;&nbsp; &nbsp;sld</span><span class="hl-code">.</span><span class="hl-identifier">linkTo</span><span class="hl-brackets">(</span><span class="hl-quotes">"</span><span class="hl-string">input</span><span class="hl-quotes">"</span><span class="hl-brackets">)</span>;<span class="hl-code"></span><br>
+<span class="hl-code"></span><span class="hl-identifier">&nbsp;&nbsp; &nbsp;sld</span><span class="hl-code">.</span><span class="hl-identifier">init</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;</span><br>
+<span class="hl-code"></span><span class="hl-code"></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><br>
+</blockquote>
+<span class="hl-brackets"></span>
+<h3><a name='slider_phqu_ua_'>
+  4.7 Setting Priority
+</a></h3>
+<b>dhtmlxSlider </b>allows to set user's input prior to slider's step if the slider is linked to an input. So, when the user types some value in the input, slider's value will be set the closest to the one indicated by user in the input. <b>setInputPriority()</b> method is responsible for it. <br>
+<blockquote>&lt;script&gt;<br>
+&nbsp;&nbsp; &nbsp;sld.setInputPriority(true|false); // <b>true</b> by default<br>
+&lt;/script&gt;<br>
+</blockquote>
+<h3><a name='slider_w0tyz04rs'>
+  4.8 Setting Stepping Mode
+</a></h3>
+<span class="hl-brackets">Method <b>setSteppingMode()</b> sets slider's stepping mode which can be described as follows: on selecting some slider's value by a mouse pointer, this mode (if switched on) moves slider's thumb one step further in the direction of the selection. <br>
+</span>
+<blockquote><span class="hl-brackets">&lt;script&gt;</span><br>
+<span class="hl-brackets"></span>&nbsp;&nbsp; &nbsp;sld.setSteppingMode(true|false); // <b>false</b> by default<br>
+&lt;/script&gt;<br>
+</blockquote>
+<span class="hl-brackets"></span>
+
+<h2><a name='slider__42a9lj7'>
+  5. Event Handling
+</a></h2>
+The following events are available in <b>dhtmlxSlider</b>:<br>
+<br>
+<ul>
+  
+<li>
+    <b style="background-color: rgb(255, 255, 255);">onChange </b>- occurs after slider's value was changed;
+  </li>
+  
+<li>
+    <b>onSlideEnd </b>- occurs when slider's movement ends.<span style="background-color: rgb(255, 255, 0);"></span><br>
+  </li>
+</ul>
+<h3><a name='slider_riz1'>
+  5.1 Attaching Event Handler
+</a></h3>
+<p id="a4r2">
+  <a id="w39j" name="_Toc193605166"></a><a id="yv3v" name="_Toc193605132"></a><a id="h.uh" name="_Toc193605132"></a>The user can add any user-defined handler to any of the available events.
+</p>
+<p class="MsoNormal" id="s15b">
+  To do this, the user can use <b id="th5p">attachEvent()</b> method <a id="cpww" name="_Toc193605132">that sets the function called when specified event occurs. </a>It has the following parameters:
+</p>
+<p class="MsoNormal" id="m9:0403">
+  <br id="kp_j">
+</p>
+<ul id="p13y">
+  
+<li id="h1m9">
+    <b id="nwz-">evName </b>- name of the event;
+  </li>
+  
+<li id="q05i">
+    <b id="jg3k">evHandler </b>- user-defined event handler.<br id="b2zd">
+  </li>
+</ul>
+<blockquote id="c92g">
+  
+<p class="MsoNormal" id="hvtm">
+    <span id="m9:0405" style="font-family: Verdana;"><font id="m9:0406" size="2">&lt;script&gt;<br id="qow2">
+    </font></span>
+  </p>
+  
+<p class="MsoNormal" id="m9:0407">
+    <span id="m9:0408" style="font-family: Verdana;"><font id="m9:0409" size="2">&nbsp;&nbsp;&nbsp; </font></span>sld<span id="m9:0408" style="font-family: Verdana;"><font id="m9:0409" size="2">.</font></span>attachEvent(evName, evHandler);
+  </p>
+  
+<p class="MsoNormal" id="m9:0410">
+    &lt;/script&gt;<br id="li1u">
+  </p>
+</blockquote>
+<a id="cpww" name="_Toc193605132"><span id="sij3" style="font-family: Verdana;"><font id="g0lq" size="2"><b id="q.lw">Note: </b><span style="background-color: rgb(255, 255, 255);">the names of the events are </span><b id="bmi:" style="background-color: rgb(255, 255, 255);">case-sensitive</b><span style="background-color: rgb(255, 255, 255);">. </span></font></span></a><br>
+<h3 id="hmao">
+  5.2 onChange Event
+</h3>
+<p>
+  This event calls user-defined handlers (if there are any) and passes the following parameters:<br>
+</p>
+<ul>
+  
+<li style="background-color: rgb(255, 255, 255);">
+    <b id="ku1v">newValue </b>- slider's new value;
+  </li>
+  
+<li>
+    <span style="background-color: rgb(255, 255, 255);"><b>sliderObj </b>- slider's object.</span><br>
+  </li>
+</ul>
+<blockquote>
+  
+<p id="s85m">
+    &lt;script&gt;<br>
+  </p>
+  
+<p id="s85m">
+    &nbsp;&nbsp;&nbsp; sld.attachEvent("onChange",function(<span style="background-color: rgb(255, 255, 255);">newValue,sliderObj</span>){
+  </p>
+  
+<p id="s85m">
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; alert("New value is "+newValue);
+  </p>
+  
+<p id="s85m">
+    &nbsp;&nbsp; &nbsp;})
+  </p>
+  &lt;/script&gt;
+</blockquote>
+<p>
+  &nbsp;
+</p>
+<h3 id="hmao">
+  5.3 onSlideEnd Event<br>
+</h3>
+<p>
+  This event calls user-defined handlers (if there are any) and passes the following parameter:<br>
+</p>
+<ul>
+  
+<li style="background-color: rgb(255, 255, 255);">
+    <b id="ku1v">sliderValue </b>- slider's current value.
+  </li>
+</ul>
+<blockquote>
+  &lt;script&gt;<br>
+  &nbsp;&nbsp; &nbsp;sld.attachEvent("onSlideEnd",function(sliderValue){<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; //some code<br>
+  &nbsp;&nbsp;&nbsp; })<br>
+  &lt;/script&gt;<br>
+</blockquote>
+<br>
+<br>
+</body>
+</html>

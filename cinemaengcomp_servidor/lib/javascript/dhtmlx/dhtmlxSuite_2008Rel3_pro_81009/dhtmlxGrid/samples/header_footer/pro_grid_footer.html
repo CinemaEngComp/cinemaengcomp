@@ -1,0 +1,149 @@
+<!--conf
+<sample in_favorites="false">
+              <product version="1.4" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               </sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Footer</title>
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid.css">
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxgrid.js"></script>
+	<script  src="../../codebase/dhtmlxgridcell.js"></script>
+	<style>
+		div.gridbox div.ftr td{
+			text-align:right;
+			background-color:#E5F2F8;
+		}
+		div.gridbox_light table.hdr td {
+			text-align:center;
+		}
+	</style>
+	
+
+
+</head>
+
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxgrid_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxGrid</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Footer</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxGrid/index.shtml">dhtmlxGrid main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	
+	
+	<div id="gridbox" width="600px" height="195px" style="xbackground-color:white;"></div>
+	
+	<p>Setting Footer</p>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">attachFooter</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">Label 1,#cspan,Label 3</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;</span><span class="hl-comment">//</span><span class="hl-comment">pass list of necessary labels</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">attachFooter</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">Label 1.1,Label 1.2,#rspan</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;</span><span class="hl-comment">//</span><span class="hl-comment">this will add second row to footer</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">#cspan - include cell in colspan</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">#rspan - include cell in rowspan</span><span class="hl-comment"></span></pre></div></div>
+
+<p>Setting style for footer</p>
+To modify  default style of footer - redefine "div.gridbox div.ftr td" after dhtmlXGrid.css was placed on page
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-comment">/*</span><span class="hl-comment">this will set default footer text align to right</span><span class="hl-comment">*/</span><span class="hl-code">
+    </span><span class="hl-identifier">div</span><span class="hl-code">.</span><span class="hl-identifier">gridbox</span><span class="hl-code"> </span><span class="hl-identifier">div</span><span class="hl-code">.</span><span class="hl-identifier">ftr</span><span class="hl-code"> </span><span class="hl-identifier">td</span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-identifier">text</span><span class="hl-code">-</span><span class="hl-identifier">align</span><span class="hl-code">:</span><span class="hl-identifier">right</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span></pre></div></div>
+To set explicit style for each cell in footer use second argument  of attachFooter method.
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-comment">//</span><span class="hl-comment">will set color of 1st and 2nd cells and align to 1st cell</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">attachFooter</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">Label 1,Label 2,Label 3</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-brackets">[</span><span class="hl-quotes">&quot;</span><span class="hl-string">color:red;textalign-left</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-quotes">&quot;</span><span class="hl-string">color:blue</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">]</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></div>
+
+<p>Set dynamic content in footer</p>
+
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-comment">//</span><span class="hl-comment">add containers to footer cells where you need to set content dynamically</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">attachFooter</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">Total quantity,#cspan,-,&lt;div id='nr_q'&gt;0&lt;/div&gt;,-,&lt;div id='sr_q'&gt;0&lt;/div&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-brackets">[</span><span class="hl-quotes">&quot;</span><span class="hl-string">text-align:left;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">]</span><span class="hl-brackets">)</span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">set content on grid loaded</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">loadXML</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">grid_numbers.xml</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-identifier">calculateFooterValues</span><span class="hl-brackets">)</span><span class="hl-code">;    
+    
+    </span><span class="hl-reserved">function</span><span class="hl-code"> </span><span class="hl-identifier">calculateFooterValues</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">nrQ</span><span class="hl-code"> = </span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">getElementById</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">nr_q</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">nrQ</span><span class="hl-code">.</span><span class="hl-identifier">innerHTML</span><span class="hl-code"> = </span><span class="hl-identifier">sumColumn</span><span class="hl-brackets">(</span><span class="hl-number">3</span><span class="hl-brackets">)</span><span class="hl-code">
+        </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">srQ</span><span class="hl-code"> = </span><span class="hl-builtin">document</span><span class="hl-code">.</span><span class="hl-identifier">getElementById</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">sr_q</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-identifier">srQ</span><span class="hl-code">.</span><span class="hl-identifier">innerHTML</span><span class="hl-code"> = </span><span class="hl-identifier">sumColumn</span><span class="hl-brackets">(</span><span class="hl-number">5</span><span class="hl-brackets">)</span><span class="hl-code">
+        ...
+    </span><span class="hl-brackets">}</span><span class="hl-code">
+    
+    </span><span class="hl-reserved">function</span><span class="hl-code"> </span><span class="hl-identifier">sumColumn</span><span class="hl-brackets">(</span><span class="hl-identifier">ind</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">out</span><span class="hl-code"> = </span><span class="hl-number">0</span><span class="hl-code">;
+        </span><span class="hl-reserved">for</span><span class="hl-brackets">(</span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">i</span><span class="hl-code">=</span><span class="hl-number">0</span><span class="hl-code">;</span><span class="hl-identifier">i</span><span class="hl-code">&lt;</span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">getRowsNum</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;</span><span class="hl-identifier">i</span><span class="hl-code">++</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+            </span><span class="hl-identifier">out</span><span class="hl-code">+= </span><span class="hl-identifier">parseFloat</span><span class="hl-brackets">(</span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">cells2</span><span class="hl-brackets">(</span><span class="hl-identifier">i</span><span class="hl-code">,</span><span class="hl-identifier">ind</span><span class="hl-brackets">)</span><span class="hl-code">.</span><span class="hl-identifier">getValue</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-brackets">)</span><span class="hl-code">
+        </span><span class="hl-brackets">}</span><span class="hl-code">
+        </span><span class="hl-reserved">return</span><span class="hl-code"> </span><span class="hl-identifier">out</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span></pre></div></div>
+<br>
+
+<script>
+	function calculateFooterValues(stage){
+		if(stage && stage!=2)
+			return true;
+		var nrQ = document.getElementById("nr_q");
+			nrQ.innerHTML = sumColumn(3)
+		var srQ = document.getElementById("sr_q");
+			srQ.innerHTML = sumColumn(5)
+		var nrS = document.getElementById("nr_s");
+			nrS.innerHTML = "$ "+sumIncome(2,3)
+		var srS = document.getElementById("sr_s");
+			srS.innerHTML = "$ "+sumIncome(4,5)
+		return true;
+	}
+	function sumColumn(ind){
+		var out = 0;
+		for(var i=0;i<mygrid.getRowsNum();i++){
+			out+= parseFloat(mygrid.cells2(i,ind).getValue())
+		}
+		return out;
+	}
+	function sumIncome(indPrice,indQuant){
+		var out = 0;
+		for(var i=0;i<mygrid.getRowsNum();i++){
+			out+= parseFloat(mygrid.cells2(i,indPrice).getValue())*parseFloat(mygrid.cells2(i,indQuant).getValue())
+		}
+		return out;
+	}
+
+	mygrid = new dhtmlXGridObject('gridbox');
+	mygrid.setImagePath("../../codebase/imgs/");
+    mygrid.setHeader("Book,#cspan,North Region,#cspan,South Region,#cspan");
+   	mygrid.attachHeader("Author,Title,Price,Sold,Price,Sold");
+	mygrid.setInitWidths("150,170,50,80,50,80")
+	mygrid.setColAlign("left,left,right,right,right,right")
+	mygrid.setColTypes("ro,ro,price,ed,price,ed");
+  	mygrid.setColSorting("str,str,int,int,int,int")
+	mygrid.setSkin("gray")
+	mygrid.attachEvent("onEditCell",calculateFooterValues)
+	mygrid.init();
+	mygrid.setSkin("light")
+   	mygrid.attachFooter("Total quantity,#cspan,-,<div id='nr_q'>0</div>,-,<div id='sr_q'>0</div>",["text-align:left;"])
+	mygrid.attachFooter("Income per Region,#cspan,<div id='nr_s'>0</div>,#cspan,<div id='sr_s'>0</div>,#cspan",["text-align:left;"])
+	mygrid.loadXML("grid_numbers.xml",calculateFooterValues);
+
+</script>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

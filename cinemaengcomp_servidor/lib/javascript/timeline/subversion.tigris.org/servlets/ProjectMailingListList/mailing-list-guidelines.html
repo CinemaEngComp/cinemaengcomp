@@ -1,0 +1,695 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+           
+ 
+ <head>
+ <style type="text/css"> /* <![CDATA[ */
+ @import "/branding/css/tigris.css";
+ @import "/branding/css/inst.css";
+ /* ]]> */</style>
+ <link rel="stylesheet" type="text/css" href="/branding/css/print.css" media="print" />
+ <script src="/branding/scripts/tigris.js" type="text/javascript"></script>
+  
+             
+ 
+  <script src="/branding/scripts/alm.js" type="text/javascript"></script>
+ <style type="text/css">
+    /* <![CDATA[ */
+    @import "/branding/css/alm.css";
+   /* ]]> */
+ </style>
+ 
+ 
+                                                 <title>
+        subversion:        Guidelines for Posting to the Subversion Mailing Lists
+    </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta http-equiv="Content-Style-Type" content="text/css" />
+ <meta name="version" content="4.1.5.99.4" />
+ <meta name="keywords" content="Defect Tracking, Issue Tracking, Version Control, Configuration Management, Software Configuration Management, SCM, CM, Revision Control, Software Engineering, Unit Testing, Outsourcing, Collaboration, Open Source, Software Development, Collaborative Software Development, Enterprise, Java, Web Services" />   
+<meta name="description" content="CollabNet, Facilitating Collaborative Software Development" /> <meta name="description" content="Open source software engineering" />
+
+ 
+<style type="text/css"> /* <![CDATA[ */
+  @import "tigris-branding/css/tigris.css";
+  @import "tigris-branding/css/inst.css";
+  /* ]]> */</style>
+<link rel="stylesheet" type="text/css" media="print"
+  href="tigris-branding/css/print.css"/>
+<script type="text/javascript" src="tigris-branding/scripts/tigris.js"></script>
+
+
+</head>
+ 
+ 
+<body  class="composite">
+ 
+ 
+ <div id="collabnet">
+ <div id="login"> 
+     <div>
+     <a href="http://www.tigris.org/servlets/TLogin">Login</a>       |    <a href="http://www.tigris.org/servlets/Join">Register</a>     </div>
+ </div>
+ <a href="http://www.collab.net/special/clickpbc0502.html" id="cnlogo">
+<span class="alt">CollabNet Enterprise Edition</span></a>
+</div>
+ 
+ 
+ 
+ 
+ <!--
+<div id="banner">
+  <div><a href="http://www.tigris.org/" title="Tigris.org:Defect Tracking,Issue Tracking,Version Control,Software Configuration Management,SCM,CM,Revision Control,Unit Testing,Software Engineering,Document Templates,Outsourcing,Collaboration,Open Source,Development,Enterprise,Java,Web Services"><img src="/branding/images/tigris_logo.gif" alt="Tigris.org" id="tigrislogo" width="303" height="31" border="0" /></a></div>
+</div>
+--> 
+ 
+ 
+ 
+ 
+<div id="banner">
+ <table width="100%" id="bannertable" cellpadding="0" cellspacing="0">
+   <tr>
+    <td rowspan="2" style="width: 50px;">
+    <a href="http://www.tigris.org/" title="Tigris.org:Defect
+Tracking,Issue Tracking,Version Control,Software Configuration
+Management,SCM,CM,Revision Control,Unit Testing,Software
+Engineering,Document Templates,Outsourcing,Collaboration,Open
+Source,Development,Enterprise,Java,Web Services">
+<img src="/branding/images/logo.gif" alt="Tigris.org" id="tigrislogo" height="48" width="48" /></a>
+    </td>
+    <td style="min-width: 300px;" id="tigrisheading">
+     <div>Tigris.org</div>
+      <div class="smaller">Open Source Software Engineering Tools</div>
+    </td>
+    <td rowspan="2" style="width: 300px;" id="collabnote">
+      <table cellpadding="0" cellspacing="0">
+       <tr>
+        <th>
+         <div class="floatleft" style="padding-left: 77px; padding-right:0px;">
+         <a href="http://www.collab.net"><img src="/branding/images/pixel.gif" width="45" height="15" alt="A message from CollabNet, the Tigris host:" title="A message from CollabNet" /></a>
+         </div>
+         <div class="right">
+         <a href="http://www.collab.net/products/subversion/services.html" style="padding-right: 0px;"><img src="/branding/images/pixel.gif" width="90" height="15" alt="Subversion services" title="Subversion services" /></a>
+         </div>
+        </th>
+       </tr>
+       <tr>
+        <td>
+        <a href="http://www.collab.net/submerged"><img src="/branding/images/whatsnew.jpg" width="300" height="45" class="collabnoteimage" alt="What's new in Subversion 1.4" title="What's new in Subversion 1.4" /></a>
+       </td>
+      </tr>
+     </table>    
+    </td>
+   </tr>
+   <tr>
+<td style="padding: 0;">
+<div id="toptabs">
+<table cellpadding="4" cellspacing="0" border="0" class="tabs"><tr>
+
+
+<td>   <a href="http://www.tigris.org/servlets/StartPage">My pages</a> </td>
+
+<th>   <a href="http://www.tigris.org/servlets/ProjectList">Projects</a> </th>
+
+  <td>   <a href="http://www.tigris.org/servlets/DomainHome">Community</a> </td>
+
+
+</tr></table>
+</div>
+</td>
+
+</tr>
+</table>
+</div>
+
+  
+ 
+ <div id="breadcrumbs">
+   <a href="http://www.tigris.org/servlets/ProjectList">Projects</a>     >
+     
+
+   <strong>   <a href="http://subversion.tigris.org/"
+     >subversion</a>
+   </strong>  </div>
+ 
+ 
+ 
+ 
+<table border="0" cellspacing="0" cellpadding="4" width="100%" id="main">
+<tr>
+<td id="navcol">
+ 
+ 
+ 
+
+
+  <dl id="projecttools" class="navgroup">
+  <dt>Project tools</dt>
+  <dd>
+   <ul>
+    <li>   <a href="http://subversion.tigris.org/servlets/ProjectHome">Project home</a> </li>
+         </ul>
+   </dd>
+   <dd>
+   <!-- Begin Left Navigation Bar Override -->
+
+<!-- This file overrides the left navigation bar on
+     subversion.tigris.org, a feature specific to the CEE branding on
+     tigris.org.  See www/overrides/ in the "look" project for
+     details. -->
+
+<div><a href="/project_packages.html">Downloads</a></div>
+<div><a href="/faq.html">FAQ</a></div>
+<div><a href="/project_license.html">License</a></div>
+
+</dd><dd>
+
+<div><a href="/servlets/ProjectMemberList">Membership</a></div>
+
+</dd><dd>
+
+<div><a href="/servlets/ProjectNewsList">Announcements</a></div>
+<div><a href="/servlets/ProjectMailingListList">Mailing lists</a></div>
+<!-- After the web site, the mailing lists are the part of the project
+     people will spend the most time in, therefore putting the
+     etiquette link somewhere prominent (like here) is probably
+     worthwhile. -->
+<div><a href="/mailing-list-guidelines.html">Mailing list etiquette</a></div>
+
+</dd><dd>
+
+<div><a href="/project_development.html">Development</a></div>
+<div><a href="/roadmap.html">Road map</a></div>
+<div><a href="/project_issues.html">Issue tracker</a></div>
+<div><a href="/project_tasks.html">Task List</a></div>
+
+</dd><dd>
+
+<div><a href="http://svnbook.org">Subversion Book</a></div>
+<div><a href="/servlets/ProjectDocumentList">Documents &amp; files</a></div>
+<div><a href="/tools_contrib.html">Tools &amp; Contrib</a></div>
+<div><a href="http://svn.collab.net/viewcvs/svn/">Version control</a></div>
+
+</dd><dd>
+
+<div><a href="/links.html">Links</a></div>
+<div><a href="/testimonials.html">Testimonials</a></div>
+<!-- Right now, everyone we know about who offers commercial support
+     is listed in the referenced URL.  If there are ever support
+     sources not included there, then we can expand this to a page. -->
+<div><a href="/commercial-support.html">Commercial support</a></div>
+
+</dd><dd>
+
+<div><a href="/security.html">Security</a></div>
+
+<!-- End Left Navigation Bar Override -->
+
+   </dd> 
+      
+ </dl>
+   
+             
+ 
+  
+ 
+                                                
+
+
+
+
+<form action="http://subversion.tigris.org/servlets/Search" method="get">
+ <dl id="searchbox" class="navgroup">
+  
+      <dt>Search</dt>
+  <dd>
+   <div>
+       <select name="scope">
+           <option value="project" selected="selected">This project</option>
+               <option value="domain" >All projects</option>
+    </select>
+      </div>
+   <div>
+    <input type="hidden" name="resultsPerPage" value="40" /> 
+    <input type="text" name="query" size="10" /> 
+    <input type="submit" name="Button" value="Go" />
+   </div>
+   <div>
+       <a href="http://subversion.tigris.org/servlets/Search?mode=advanced">Advanced search</a>    </div>
+  </dd>
+
+ </dl>
+</form>
+
+
+<div style="padding: 6px; padding-left: 20px;">
+ <a href="http://www.collab.net/special/clickpbc0502.html" onclick="return launch(this.href, 1)"><img src="/branding/images/poweredby_036.gif" alt="This site is Powered by CollabNet." id="poweredbycollabnet" width="102" height="38" /></a>
+</div>
+<dl id="helptext" class="navgroup">
+ <dt>How do I...</dt>
+ <dd>
+  <ul>
+     
+   <li> <a href="http://www.collab.net/rn/" onclick="return launch(this.href, 1)" 
+ title="Note: link may open in new window" class="helplink">
+ 
+ Get release notes for CollabNet 4.1.5?</a>
+</li>
+   <li><a href="http://subversion.tigris.org/nonav/servlets/HelpTOC" onclick="return launch(this.href, 1)" 
+title="Note: link may open in new window" class="helplink">Get help?</a></li>
+  </ul>
+ </dd>
+</dl>
+
+<div id="mainhighlights">        
+
+<table border="0" cellspacing="0" cellpadding="3"  width="100%">
+ <tr>
+  <th>Category</th>
+  <th>Featured projects</th>
+ </tr>
+ <tr>
+  <td><a href="http://scm.tigris.org/">scm</a></td>
+  <td><a href="http://subversion.tigris.org/" title="open source version control">Subversion</a>, 
+<a href="http://subclipse.tigris.org/" title="Subversion Eclipse integration">Subclipse</a>,
+<a href="http://tortoisesvn.tigris.org/" title="Subversion client">TortoiseSVN</a>,
+<a href="http://rapidsvn.tigris.org/" title="Subversion client">RapidSVN</a>
+  </td>
+ </tr>
+ <tr>
+  <td><a href="http://issuetrack.tigris.org/">issuetrack</a></td>
+  <td><a href="http://scarab.tigris.org/" title="customizable software defect tracking system">Scarab</a></td>
+ </tr>
+ <tr>
+  <td><a href="http://requirements.tigris.org/">requirements</a></td>
+  <td><a href="http://xmlbasedsrs.tigris.org/">xmlbasedsrs</a></td>
+ </tr>
+ <tr>
+  <td><a href="http://design.tigris.org/">design</a></td>
+  <td><a href="http://argouml.tigris.org/" title="Free UML tool, use cases, uml tutorials">ArgoUML</a></td>
+ </tr>
+ <tr>
+  <td><a href="http://techcomm.tigris.org/">techcomm</a></td>
+  <td><a href="http://subetha.tigris.org/" title="Mailing list manager">SubEtha</a>, 
+  <a href="http://eyebrowse.tigris.org/" title="Mailing list archive tool">eyebrowse</a>, 
+<a href="http://midgard.tigris.org/">midgard</a>,
+<a href="http://cowiki.tigris.org/">cowiki</a></td>
+ </tr>
+ <tr>
+  <td><a href="http://construction.tigris.org/">construction</a></td>
+  <td><a href="http://antelope.tigris.org/" title="Ant GUI">antelope</a>,
+  <a href="http://scons.tigris.org/" title="cross-platform build tool">scons</a>,
+  <a href="http://frameworx.tigris.org/">frameworx</a>,
+  <a href="http://build-interceptor.tigris.org/">build-interceptor</a>,
+  <a href="http://propel.tigris.org/">propel</a>,
+  <a href="http://phing.tigris.org/">phing</a>
+  </td>
+ </tr>
+ <tr>
+  <td><a href="http://testing.tigris.org/" title="tools for quality software">testing</a></td>
+  <td><a href="http://maxq.tigris.org/" title="record and playback web automated testing tool">maxq</a>, 
+<a href="http://aut.tigris.org/" title="advanced unit testing">aut</a>
+  </td>
+ </tr>
+ <tr>
+  <td><a href="http://deployment.tigris.org/">deployment</a></td>
+  <td><a href="http://current.tigris.org/">current</a></td>
+ </tr>
+ <tr>
+  <td><a href="http://process.tigris.org/" title="software development process, extreme programming">process</a></td>
+  <td><a href="http://readyset.tigris.org/" 
+title="Use case template, example test plans, software requirements specification templates, sample project plan template">ReadySET</a></td>
+ </tr>
+ <tr>
+  <td><a href="http://libraries.tigris.org/" title="software reuse, web services">libraries</a></td>
+  <td><a href="http://gef.tigris.org/" title="Graphical diagram editing">GEF</a>, 
+<a href="http://axion.tigris.org/" title="Relational database">Axion</a>, 
+<a href="http://style.tigris.org/" title="Reusable CSS stylesheets">Style</a>,
+<a href="http://sstree.tigris.org/" title="Super-simple trees in HTML, CSS, and javascript">SSTree</a>
+ </td>
+ </tr>
+ <tr>
+  <td><a href="http://profession.tigris.org/">profession</a></td>
+  <td><a href="http://readings.tigris.org/">readings</a>, 
+<a href="http://spin.tigris.org/" title="Software process improvement networks">spin</a></td>
+ </tr>
+ <tr>
+  <td><a href="http://students.tigris.org/">students</a></td>
+  <td><a href="http://elmuth.tigris.org/">elmuth</a>, <a href="http://ankhsvn.tigris.org/">ankhsvn</a></td>
+ </tr>
+ <tr>
+  <td colspan="2" style="text-align:center">Over 500 <a style="text-decoration:underline;" 
+  href="http://www.tigris.org/servlets/ProjectList">more tools...</a></td>
+ </tr>
+</table>
+
+</div>
+
+<!--
+<br/>
+<div id="subnewsletter" class="toolgroup">
+<div class="label"><strong>Tigris.org Newsletter</strong></div>
+<div class="body">
+ Get the latest news and feature articles.
+ <div><a style="color: blue;"
+ href="http://www.tigris.org/newsletter/">Newsletter info</a></div>
+ <div><a style="color: blue;" title="ArgoUML; Adoptable SPI"
+ href="http://www.tigris.org/newsletter/newsletter-2004-06.html">Jun 2004 issue</a></div>
+</div></div>
+-->
+ 
+ 
+<div class="strut">&nbsp;</div>
+</td>
+<td id="midcol">
+ 
+  <div id="bodycol">
+ 
+ 
+ 
+
+        
+                 
+           
+  
+
+ 
+ 
+
+
+<div class="app">
+
+<h1 style="text-align: center"
+>Guidelines for Posting to the Subversion Mailing Lists</h1>
+
+<p>This document is based on years of experience with the Subversion
+mailing lists, and specifically addresses the problems seen most
+frequently on those lists.  It should <i>not</i> be taken as a
+complete guide to mailing list etiquette&nbsp;&mdash;&nbsp;you can <a
+href="http://www.google.com/search?hl=en&amp;ie=UTF-8&amp;q=%22mailing+list+etiquette%22&amp;btnG=Google+Search"
+>find one of those on the Net</a> pretty easily if you want one.</p>
+
+<p>If you follow these conventions when posting to the
+users@subversion.tigris.org or dev@subversion.tigris.org mailing
+lists, your post is much more likely to be read and answered.</p>
+
+<![CDATA[-----------------------------------------------------------]]>
+
+<div class="h2" id="where" title="where">
+<h2>Where to post:</h2>
+
+<p>Post to <a href="mailto:users@subversion.tigris.org"
+>users@subversion.tigris.org</a> if you have a question about
+Subversion, or if you think you've found a bug (developers read the
+users list too, so they'll see your bug report).  If you want to
+discuss Subversion development, or post a <a href="#patches">code
+contribution</a>, then mail <a
+href="mailto:dev@subversion.tigris.org">dev@subversion.tigris.org</a>.</p>
+
+<p>When in doubt, mail users@, not dev@.</p>
+
+<p>Please do <i>not</i> post to dev@ as a last resort after failing to
+get an answer on users@.  The two lists have different charters:
+users@ is a support forum, dev@ is a development discussion list.
+When a support question goes unanswered on users@, that is
+unfortunate, but it does not necessarily make the question on-topic
+for dev@.  (Of course, if the mail is about a possible bug in
+Subversion, and got no reaction on users@, then asking on dev@ is
+fine&nbsp;&mdash;&nbsp;bugs are a development topic.)</p>
+
+</div>
+
+<![CDATA[-----------------------------------------------------------]]>
+
+<div class="h2" id="when" title="when">
+<h2>When to post:</h2>
+
+<p>Sometimes, when really impassioned about a topic, it's tempting to
+respond to every message in a mail thread.  Please don't do this.  Our
+mailing lists are already high-traffic, and following up to every
+message only adds to the noise.</p>
+
+<p>Instead, read the entire mail thread, think carefully about what
+you have to say, pick a single message to reply to, and then lay out
+your thoughts.  Occasionally it might make sense to reply to two
+separate messages in a thread, but only if the topics have started to
+diverge.</p>
+
+</div>
+
+<![CDATA[-----------------------------------------------------------]]>
+
+<div class="h2" id="formatting" title="formatting">
+<h2>Formatting:</h2>
+
+<div class="h3" id="line-length" title="line-length">
+<h3>Line Length</h3>
+
+<p>Please don't use lines longer than 72 columns.  Many people use
+80-column terminals to read their email.  By writing your text in 72
+columns, you leave room for quoting characters to be added in future
+replies without forcing a rewrapping of the text.  The 72-column limit
+only applies to the prose part of your message, of course.  If you're
+posting a patch, see <a href="#patches">the section on
+patches</a>.</p>
+
+<p>Some mailers do a kind of automatic line-wrapping, whereby when
+you're writing your mail, the display shows line breaks that aren't
+actually there.  When the mail reaches the list, it won't have the
+line breaks you thought it had.  If your mail editor does this, look
+for a setting you can tweak to make it show true line breaks.</p>
+
+</div>
+
+<div class="h3" id="capitalization" title="capitalization">
+<h3>Capitalization</h3>
+
+<p>Capitalize the first letter of each sentence, and use paragraphs.
+If you're showing screen output or some other sort of example, offset
+it so it's clearly separate from the prose.  If you don't do these
+things, your mail will be <i>much</i> less readable than it could be,
+and many people will not bother to read it at all.</p>
+
+</div>
+
+</div>
+
+<![CDATA[-----------------------------------------------------------]]>
+
+<div class="h2" id="replying" title="replying">
+<h2>Replying:</h2>
+
+<div class="h3" id="reply-to" title="reply-to">
+<h3>Reply-To</h3>
+
+<p>Make sure to use your mailreader's "Follow-up" or "Reply-to-all" or
+"Group reply" feature when responding to a list post.  Otherwise, your
+mail will only go to the author of the original post, not to the whole
+list.  Unless there's a reason to reply privately, it's always better
+to respond to the list, so everyone can watch and learn.  (Also, many
+people who frequently get private responses to their posts have
+indicated that they would prefer those responses to go to the list
+instead.)</p>
+
+<p>Note that the Subversion mailing lists do not modify the
+<tt>Reply-to</tt> header to redirect responses to the list.  They
+leave <tt>Reply-to</tt> set to whatever the original sender had, for
+the reasons listed in <a
+href="http://www.unicom.com/pw/reply-to-harmful.html"
+>http://www.unicom.com/pw/reply-to-harmful.html</a>, in particular the
+"Principle of Least Damage" and "Can't Find My Way Back Home"
+sections.  From time to time, someone posts asking why we don't set
+the <tt>Reply-to</tt> header.  Sometimes that person will mention <a
+href="http://www.metasystema.net/essays/reply-to.mhtml"
+>http://www.metasystema.net/essays/reply-to.mhtml</a>, which
+gives arguments in favor of modifying the <tt>Reply-to</tt> field.
+The list administrators are aware of both documents, and see that both
+sides of the argument have merits, but in the end have chosen not to
+modify the <tt>Reply-to</tt> headers.  Please don't resurrect the
+topic.</p>
+
+</div>
+
+<div class="h3" id="fresh-post" title="fresh-post">
+<h3>Making a Fresh Post</h3>
+
+<p>Don't start a new thread (subject) by replying to an existing
+post.  Instead, start a fresh mail, even if that means you have to
+write out the list address by
+hand.  If you reply to an existing post, your mailreader may include
+metadata that marks your post as a followup in that thread.  Changing
+the <tt>Subject</tt> header is not enough to prevent this!  Many
+mailreaders will still preserve enough metadata to put your post in
+the wrong thread.  If this happens, not only will some people not see
+your post (because they're ignoring that thread), but people who are
+reading the thread will waste their time with your off-topic post.
+The safest way to avoid this is to never use "reply" to start a new
+topic.</p>
+
+<p>(The root of the problem is really that some mail interfaces do
+not indicate that the message generated by the "Reply" function is
+different from a fresh message.  If you use such a program, consider
+submitting an enhancement request or a patch to its developers to make
+it show a distinction.)</p>
+
+</div>
+
+<div class="h3" id="rethreading" title="rethreading">
+<h3>Re-threading</h3>
+
+<p>If you do need to change the <tt>Subject</tt> header while
+preserving the thread (perhaps because the thread has wandered into
+some other topic), do it by making a post under the new subject with
+the old subject in parenthesis, like this:</p>
+
+<pre>
+   Blue asparagus
+     |
+     |_ Re: Blue asparagus
+         |
+         |_ Yellow elephants (was: Re: Blue asparagus)    <i>&lt;-- ### switch ###</i>
+            |
+            |_ Re: Yellow elephants
+</pre>
+
+</div>
+
+<div class="h3" id="top-posting" title="top-posting">
+<h3>Top-Posting</h3>
+
+<p>Please don't reflexively chide people for top-posting.
+"Top-posting" is the practice of putting the response text above the
+quoted text, instead of interleaved with it or below it.  Usually, the
+quoted text provides essential context for understanding the response,
+and so top-posting is a hindrance.  Sometimes, people top-post when it
+would have been better to inter-post or bottom-post, and others chide
+them for this.  If you must chide, do it gently, and certainly don't
+bother to make an extra post just to point out a minor problem like
+this.  There are even situations where top-posting is
+preferable&nbsp;&mdash;&nbsp;for example, when the response is short
+and general, and applies to the entirety of a long passage of quoted
+text.  So top-posting is always a judgement call, and in any case it's
+not a major inconvenience even when done inappropriately.</p>
+
+<p>If you came here looking for advice on how to quote, instead of
+advice on how to not flame people for their bad quoting habits, see <a
+href="http://www.netmeister.org/news/learn2quote.html"
+>http://www.netmeister.org/news/learn2quote.html</a> (Deutsch:
+<a href="http://learn.to/quote">http://learn.to/quote</a>).</p>
+
+</div>
+
+</div>
+
+<![CDATA[-----------------------------------------------------------]]>
+
+<div class="h2" id="patches" title="patches">
+<h2>Sending patches:</h2>
+
+<p>If you're posting a patch, start the subject line with
+<tt>[PATCH]</tt>.  This helps our patch manager spot patches right
+away.  If the patch addresses a particular issue, include the issue
+number as well: "<tt>[PATCH]&nbsp;issue&nbsp;#1729: ...</tt>".
+Developers who are interested in that particular issue will know to
+read the mail.</p>
+
+<p>Generate the patch with <tt>svn&nbsp;diff</tt> from the top of a
+Subversion trunk working copy.  If the file you're diffing is not
+under revision control, you can achieve the same effect by using
+<tt>diff&nbsp;-u</tt>.</p>
+
+<p>If you can, send your patch as an attachment, using a mime-type of
+text/x-diff, text/x-patch, or text/plain.  Most people's mailreaders
+can display those inline, and having it as an attachment allows them
+to extract the patch from the message conveniently.  Never send
+patches in archived or compressed form (e.g., tar, gzip, zip, bzip2),
+because that prevents people from reviewing the patch directly in
+their mailreaders.</p>
+
+<p>If you can't attach the patch with a reasonable mime-type, or if
+the patch is very short, then it's okay to include it directly in the
+body of your message.  But watch out: some mail editors can munge
+inline patches by inserting unasked-for line breaks in the middle of
+long lines.  If you think your mail software might do this, then the
+patch must be sent as as an attachment.</p>
+
+<p>Please include a log message with your patch.  See the
+<a href="hacking.html#log-messages">Hacker's Guide to Subversion</a>
+for guidelines on writing log messages.</p>
+
+</div>
+
+<![CDATA[-----------------------------------------------------------]]>
+
+<div class="h2" id="encodings" title="encodings">
+<h2>Languages and encodings:</h2>
+
+<p>Please use ASCII or ISO-8859 text if possible.  Don't post HTML
+mails, RichText mails, or other formats that might be opaque to
+text-only mailreaders.  Regarding language: we don't have an
+English-only policy, but you will probably get the best results by
+posting in English&nbsp;&mdash;&nbsp;it is the language shared by the
+greatest number of list participants.</p> <!-- Not bothering to
+describe the exact headers we expect, but if we wanted to, it would be
+something like:
+   
+          Content-Type: text/plain; charset=iso-8859-1
+          Content-Type: text/plain; charset=iso-8859-15
+   
+        and
+   
+          Content-Transfer-Encoding: 8bit
+          Content-Transfer-Encoding: quoted-printable
+   -->
+
+</div>
+
+<![CDATA[-----------------------------------------------------------]]>
+
+<div class="h2" id="archives" title="archives">
+<h2>Look before you post:</h2>
+
+<p>Look in the FAQ, and maybe poke around in the mailing list
+archives, before asking a question.  The Subversion FAQ is here: <a
+href="http://subversion.tigris.org/faq.html"
+>http://subversion.tigris.org/faq.html</a>.  The mailing lists
+archives are here: <a
+href="http://subversion.tigris.org/servlets/SearchList?listName=users"
+>http://subversion.tigris.org/servlets/SearchList?listName=users</a>
+(for <tt>users@</tt>), and <a
+href="http://subversion.tigris.org/servlets/SearchList?listName=dev"
+>http://subversion.tigris.org/servlets/SearchList?listName=dev</a>
+(for <tt>dev@</tt>).</p>
+
+<p>A mirror of the mailing list archives, with a somewhat different
+interface, is at <a href="http://svn.haxx.se/users"
+>http://svn.haxx.se/users</a> (for <tt>users@</tt>), and
+<a href="http://svn.haxx.se/dev"
+>http://svn.haxx.se/dev</a> (for <tt>dev@</tt>).</p>
+
+</div>
+
+<![CDATA[-----------------------------------------------------------]]>
+
+</div>
+
+</div>
+</td>
+</tr>
+</table>
+ 
+ 
+ <div id="footer">
+    <a href="http://www.tigris.org/nonav/DomainFAQ"  onclick="return launch(this.href, 1)" title="Note: link may open in new window" class="helplink">Site FAQ</a> |
+<a href="http://www.tigris.org/nonav/DomainFeedback"  onclick="return launch(this.href, 1)" title="Note: link may open in new window" class="helplink">Feedback</a> |
+<a href="http://www.tigris.org/nonav/servlets/LegalNotices?type=TermsOfService" onclick="return launch(this.href, 1)" title="Note: link may open in new window" class="helplink">Terms of service</a> | 
+<a href="http://www.tigris.org/nonav/servlets/LegalNotices?type=PrivacyPolicy" onclick="return launch(this.href, 1)" title="Note: link may open in new window" class="helplink">Privacy policy</a> | 
+<a href="http://www.collab.net/developers/tools/" onclick="return launch(this.href, 1)" title="Note: link may open in new window">Developer tools</a> 
+   
+   <p>&#169; 2006 CollabNet. CollabNet is a registered trademark of CollabNet, Inc.</p>
+   
+ </div>
+ 
+ 
+</body>
+</html>

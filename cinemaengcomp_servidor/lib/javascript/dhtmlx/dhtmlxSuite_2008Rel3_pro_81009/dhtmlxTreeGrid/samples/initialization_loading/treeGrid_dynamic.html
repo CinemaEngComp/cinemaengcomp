@@ -1,0 +1,112 @@
+<!--conf
+<sample in_favorites="true">
+              <product version="1.4" edition="std"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               <sampledescription><![CDATA[Sample demonstrats dynamical loading of data into dtmlxTreeGrid. This technic helps increasing overal performance for nested structures.]]></sampledescription></sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Dynamic loading (using PHP)</title>
+	
+    	
+	<link rel="STYLESHEET" type="text/css" href="../../../dhtmlxGrid/codebase/dhtmlxgrid.css">
+	<link rel="STYLESHEET" type="text/css" href="../../../dhtmlxGrid/codebase/dhtmlxgrid_skins.css">
+	<script  src="../../../dhtmlxGrid/codebase/dhtmlxcommon.js"></script>
+	<script  src="../../../dhtmlxGrid/codebase/dhtmlxgrid.js"></script>
+	<script  src="../../../dhtmlxGrid/codebase/dhtmlxgridcell.js"></script>
+	<script  src="../../codebase/dhtmlxtreegrid.js"></script>
+</head>
+
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxtreegrid_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxTreeGrid</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Dynamic loading (using PHP)</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxTreeGrid/index.shtml">dhtmlxTreeGrid main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	
+	<p>
+            Decrease loading time using dynamical loading of children elements
+	</p>
+
+
+	
+				<div id="gridbox" width="553px" height="227px" style="background-color:white;"></div>
+		
+<br>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">div</span><span class="hl-code"> </span><span class="hl-var">id</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">gridbox</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">width</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">500px</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">height</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">250px</span><span class="hl-quotes">&quot;</span><span class="hl-code"> </span><span class="hl-var">style</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">background-color:white;overflow:hidden</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">&gt;</span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">div</span><span class="hl-brackets">&gt;</span><span class="hl-code">
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+        </span><span class="hl-identifier">mygrid</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXGridObject</span><span class="hl-brackets">(</span><span class="hl-quotes">'</span><span class="hl-string">gridbox</span><span class="hl-quotes">'</span><span class="hl-brackets">)</span><span class="hl-code">;
+        ...
+        </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">kidsXmlFile</span><span class="hl-code">=</span><span class="hl-quotes">&quot;</span><span class="hl-string">pro_treeGrid_dynamic.php</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+        </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">loadXML</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">treeGrid_dynamic.php</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+        
+    ==================  </span><span class="hl-identifier">pro_treeGrid_dynamic</span><span class="hl-code">.</span><span class="hl-identifier">php</span><span class="hl-code"> ========================
+    &lt;?</span><span class="hl-identifier">php</span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">the php file must be recognized as XML document so necessary header sent</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">header</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">Content-type:text/xml</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment">default xml file header (UTF-8 is a common value, but in some cases another encoding must be used)</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">print</span><span class="hl-brackets">(</span><span class="hl-quotes">'</span><span class="hl-string">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><span class="hl-quotes">'</span><span class="hl-brackets">)</span><span class="hl-code">;
+ 
+    </span><span class="hl-comment">//</span><span class="hl-comment">the script receive a parent item id from GET scope as my_script.php?id=PARENT_ID</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">if parent id not sent - top level in related sample - then  set it equal to 0</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">if</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-code">!</span><span class="hl-identifier">isset</span><span class="hl-brackets">(</span><span class="hl-code">$</span><span class="hl-identifier">_GET</span><span class="hl-brackets">[</span><span class="hl-quotes">'</span><span class="hl-string">id</span><span class="hl-quotes">'</span><span class="hl-brackets">]</span><span class="hl-brackets">)</span><span class="hl-brackets">)</span><span class="hl-code">  $</span><span class="hl-identifier">_GET</span><span class="hl-brackets">[</span><span class="hl-quotes">'</span><span class="hl-string">id</span><span class="hl-quotes">'</span><span class="hl-brackets">]</span><span class="hl-code">=</span><span class="hl-number">0</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment">write top tag of xml document, the parent attribute contain id of parent row</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">print</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">&lt;rows parent='</span><span class="hl-quotes">&quot;</span><span class="hl-code">.$</span><span class="hl-identifier">_GET</span><span class="hl-brackets">[</span><span class="hl-quotes">'</span><span class="hl-string">id</span><span class="hl-quotes">'</span><span class="hl-brackets">]</span><span class="hl-code">.</span><span class="hl-quotes">&quot;</span><span class="hl-string">'&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+ 
+    </span><span class="hl-comment">//</span><span class="hl-comment">in real code here you must take records from DB</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">in sample we simple create a 20 dummy records</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">for</span><span class="hl-brackets">(</span><span class="hl-code">$</span><span class="hl-identifier">i</span><span class="hl-code"> = </span><span class="hl-number">0</span><span class="hl-code">;$</span><span class="hl-identifier">i</span><span class="hl-code">&lt;</span><span class="hl-number">20</span><span class="hl-code">;$</span><span class="hl-identifier">i</span><span class="hl-code">++</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-comment">//</span><span class="hl-comment">row tag contain a id and xmlkids attributes</span><span class="hl-comment"></span><span class="hl-code">
+        </span><span class="hl-comment">//</span><span class="hl-comment">if xmlkids attribute exists and is not empty - the row will be drawn as expandable</span><span class="hl-comment"></span><span class="hl-code">
+        </span><span class="hl-comment">//</span><span class="hl-comment">in our sample each 4th row will be expandable</span><span class="hl-comment"></span><span class="hl-code">
+        </span><span class="hl-identifier">print</span><span class="hl-code"> </span><span class="hl-quotes">&quot;</span><span class="hl-string">&lt;row id='a_{$_GET['id']}_{$i}' xmlkids='</span><span class="hl-quotes">&quot;</span><span class="hl-code">.</span><span class="hl-brackets">(</span><span class="hl-brackets">(</span><span class="hl-code">$</span><span class="hl-identifier">i</span><span class="hl-code">%</span><span class="hl-number">4</span><span class="hl-code">==</span><span class="hl-number">0</span><span class="hl-brackets">)</span><span class="hl-code">?</span><span class="hl-number">1</span><span class="hl-code">:</span><span class="hl-quotes">&quot;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">.</span><span class="hl-quotes">&quot;</span><span class="hl-string">'&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-code">;
+        </span><span class="hl-comment">//</span><span class="hl-comment">value of row</span><span class="hl-comment"></span><span class="hl-code">
+        </span><span class="hl-identifier">print</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">&lt;cell image='folder.gif'&gt;Item {$_GET['id']}:{$i}&lt;/cell&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+        </span><span class="hl-comment">//</span><span class="hl-comment">close row tag</span><span class="hl-comment"></span><span class="hl-code">
+        </span><span class="hl-identifier">print</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">&lt;/row&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-brackets">}</span><span class="hl-code">
+    </span><span class="hl-comment">//</span><span class="hl-comment">after drawing all childs of current row, the main tag must be closed</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">print</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">&lt;/rows&gt;</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+
+<script>
+		mygrid = new dhtmlXGridObject('gridbox');
+
+		mygrid.selMultiRows = true;
+		mygrid.imgURL = "../../../dhtmlxGrid/codebase/imgs/icons_greenfolders/";
+		mygrid.setHeader("Tree,Plain Text,Long Text,Color,Checkbox");
+		mygrid.setInitWidths("150,100,100,100,100")
+		mygrid.setColAlign("left,left,left,left,center")
+		mygrid.setColTypes("tree,ed,txt,ch,ch");
+		mygrid.setColSorting("str,str,str,na,str")
+
+		mygrid.init();
+		mygrid.setSkin("light")
+        mygrid.kidsXmlFile="treeGrid_dynamic2.php";
+	   	mygrid.loadXML("treeGrid_dynamic2.php");
+		
+</script>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>
+
+

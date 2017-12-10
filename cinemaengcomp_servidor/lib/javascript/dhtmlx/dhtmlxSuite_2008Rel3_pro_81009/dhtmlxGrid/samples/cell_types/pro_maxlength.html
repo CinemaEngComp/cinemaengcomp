@@ -1,0 +1,98 @@
+<!--conf
+<sample>
+              <product version="1.4" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               </sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Using Event Handlers to limit cell editor max length</title>
+	
+</head>
+
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxgrid_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxGrid</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Using Event Handlers to limit cell editor max length</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxGrid/index.shtml">dhtmlxGrid main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	
+	<p>You can set limitation for the entered text length when cell is edited.<br/> Try to edit some cell and print more then ten symbols.</p>
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid.css">
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid_skins.css">
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxgrid.js"></script>		
+	<script  src="../../codebase/dhtmlxgridcell.js"></script>
+
+	Column with index 1 (second column in grid) has limitation set on value length with the help of onEditCell event handler. 
+	In current sample maximum length of the velaue is 20 symbols. 
+	<br><br>
+	<div id="gridbox" width="600px" height="250px" style="background-color:white;"></div>
+	<div id="test" width="600px" height="100px" style="background-color:white;"></div>	
+<br>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-identifier">This</span><span class="hl-code"> </span><span class="hl-identifier">code</span><span class="hl-code"> </span><span class="hl-identifier">limits</span><span class="hl-code"> </span><span class="hl-identifier">max</span><span class="hl-code"> </span><span class="hl-identifier">length</span><span class="hl-code"> </span><span class="hl-identifier">of</span><span class="hl-code"> </span><span class="hl-identifier">second</span><span class="hl-code"> </span><span class="hl-identifier">column</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-identifier">column</span><span class="hl-code"> </span><span class="hl-reserved">with</span><span class="hl-code"> </span><span class="hl-identifier">index</span><span class="hl-code"> </span><span class="hl-number">1</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-identifier">cell</span><span class="hl-code"> </span><span class="hl-identifier">editor</span><span class="hl-code"> </span><span class="hl-identifier">value</span><span class="hl-code"> </span><span class="hl-identifier">to</span><span class="hl-code"> </span><span class="hl-number">20</span><span class="hl-code"> </span><span class="hl-identifier">symbols</span><span class="hl-code">:
+ 
+</span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">attachEvent</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">onEditCell</span><span class="hl-quotes">&quot;</span><span class="hl-code">,</span><span class="hl-reserved">function</span><span class="hl-brackets">(</span><span class="hl-identifier">stage</span><span class="hl-code">,</span><span class="hl-identifier">rowId</span><span class="hl-code">,</span><span class="hl-identifier">cInd</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+    </span><span class="hl-reserved">if</span><span class="hl-brackets">(</span><span class="hl-identifier">cInd</span><span class="hl-code">==</span><span class="hl-number">1</span><span class="hl-code"> &amp;&amp; </span><span class="hl-identifier">stage</span><span class="hl-code">==</span><span class="hl-number">1</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+        </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">editor</span><span class="hl-code">.</span><span class="hl-identifier">obj</span><span class="hl-code">.</span><span class="hl-identifier">onkeypress</span><span class="hl-code"> = </span><span class="hl-reserved">function</span><span class="hl-brackets">(</span><span class="hl-identifier">e</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+            </span><span class="hl-reserved">if</span><span class="hl-brackets">(</span><span class="hl-reserved">this</span><span class="hl-code">.</span><span class="hl-identifier">value</span><span class="hl-code">.</span><span class="hl-identifier">length</span><span class="hl-code">&gt;=</span><span class="hl-number">20</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code">
+                </span><span class="hl-reserved">return</span><span class="hl-code"> </span><span class="hl-reserved">false</span><span class="hl-code">;
+            </span><span class="hl-brackets">}</span><span class="hl-code">
+        </span><span class="hl-brackets">}</span><span class="hl-code">
+    </span><span class="hl-brackets">}</span><span class="hl-code">
+    </span><span class="hl-reserved">return</span><span class="hl-code"> </span><span class="hl-reserved">true</span><span class="hl-code">;
+</span><span class="hl-brackets">}</span><span class="hl-brackets">)</span></pre></div></div>
+
+<script>
+
+    mygrid = new dhtmlXGridObject('gridbox');
+	mygrid.setImagePath("../../codebase/imgs/");
+	mygrid.setHeader("Sales,Book Title Book Title Book Title Book Title,Author,Price,In Store,Shipping,Bestseller,Date of Publication");
+	mygrid.setInitWidths("50,150,120,80,80,80,80,200")
+	mygrid.setColAlign("right,left,left,right,center,left,center,center")
+	mygrid.setColTypes("dyn,txt,txt,price,ch,co,ra,ro");
+   	mygrid.getCombo(5).put(2,2);
+	mygrid.setColSorting("int,str,str,int,str,str,str,date")
+	mygrid.init();
+	mygrid.setSkin("light")
+	mygrid.loadXML("grid.xml");
+
+	mygrid.attachEvent("onEditCell",function(stage,rowId,cInd){
+		if(cInd==1 && stage==1){
+			mygrid.editor.obj.onkeypress = function(e){
+				e = e||window.event;
+				if((e.keyCode >= 47) || (e.keyCode == 0)){
+					var text=_isFF?this.firstChild.value:this.value;
+					if(text.length>=20){
+						return false;
+					}
+				}
+			}
+		}
+		return true;
+	})
+	
+</script>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

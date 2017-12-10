@@ -1,0 +1,13 @@
+ID, client, service, quantity, charge, memo, date, inet, image
+1, 4, transport, -800123.00, 0, test9, 2005-09-09  9:20:3, http://www.google.com, resources\test1.gif
+2, 4, catering, 5000.00, 0, test22, 2005-10-09  10:20:3, http://www.cnn.com, resources\test2.gif
+3, 1, security, 78.98, 1, test1, 2005-01-09  1:20:3, http://www.microsoft.com, resources\test3.gif
+4, 4, security, 20.00, 1, test33, 2005-11-09  11:20:3, http://www.ibm.com, resources\test4.gif
+5, 1, catering, 0.00, 0, test2, 2005-02-09  2:20:3, http://www.sap.com , resources\test5.gif
+6, 3, security, 30.99, 0, test7, 2005-07-09  7:20:3, http://www.wcm.at , resources\test6.gif
+7, 4, catering, 30.00, 1, test44, 2005-12-09  22:20:3, http://www.google.ca, resources\test1.gif
+8, 2, catering, , 1, test5, 2005-05-09  5:20:3, http://www.msn.com, resources\test2.gif
+9, 1, storage, -5.00, 0, test3, 2005-03-09  3:20:3, http://www.ebusiness-apps.com, resources\test3.gif
+10, 2, transport, 123456789.00, 0, test6, 2005-06-09  6:20:3, http://www.heise.de , resources\test4.gif
+11, 1, catering, 33.00, 0, test4, 2005-04-09  4:20:3, http://developer.ebusiness-apps.com , resources\test5.gif
+12, 3, transport, 9.00, 0, test8, 2005-08-09  8:20:3, http://www.google.ca, resources\test6.gif

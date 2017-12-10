@@ -1,0 +1,7 @@
+Version 1.02 (2005-10-18)
+	Added fix to resolve issues with proxy servers, it now returns a "Vary: Accept-Encoding" header.
+	Fixed so it automaticly detects if clients or servers doesn't support gzip compression (streams uncompressed).
+Version 1.01 (2005-09-26)
+	Fixed multiple init call issues, multiple init calls can now be used aswell.
+Version 1.0 (2005-09-12)
+	First official release as a stand alone application.

@@ -1,0 +1,83 @@
+<!--conf
+<sample in_favorites="true">
+              <product version="2.0" edition="std"/>
+                     <modifications>
+                            <modified date="080715"/>
+                     </modifications>
+               <sampledescription><![CDATA[dhtmlxAccordion panel header can contain text and icon. Configure icons in headers with this live sample.]]></sampledescription></sample>
+ -->
+<html>
+<head>
+	<title>Icons Manipulation</title>
+	<script src="../../codebase/dhtmlxcommon.js"></script>
+	<script src="../../codebase/dhtmlxaccordion.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../codebase/skins/dhtmlxaccordion_dhx_blue.css">
+	<script src="../../../dhtmlxWindows/codebase/dhtmlxwindows.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../dhtmlxWindows/codebase/dhtmlxwindows.css">
+	<link rel="stylesheet" type="text/css" href="../../../dhtmlxWindows/codebase/skins/dhtmlxwindows_dhx_blue.css">
+</head>
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxaccordion_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxAccordion</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Icons Manipulation</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxAccordion/index.shtml">dhtmlxAccordion main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+<div id="accordObj" style="position: relative; width: 320px; height: 400px;"></div>
+<div style="margin: 50px 0px 20px 0px;">
+	Select Item <select id="sel1"></select>
+	Select Icon <select id="sel2"><option value="icon1.gif">icon1.gif</option><option value="icon2.gif">icon2.gif</option><option value="icon3.gif">icon3.gif</option></select>
+	<input type="button" value="Set Icon" onclick="setIcon();">
+	<input type="button" value="Clear Icon" onclick="clearIcon();">
+</div>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+</span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-comment">//</span><span class="hl-comment"> initialization</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-reserved">var</span><span class="hl-code"> </span><span class="hl-identifier">dhxAccord</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXAccordion</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">accordObj</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    ...
+    </span><span class="hl-comment">//</span><span class="hl-comment"> setting path to icons</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">dhxAccord</span><span class="hl-code">.</span><span class="hl-identifier">setIconsPath</span><span class="hl-brackets">(</span><span class="hl-quotes">&quot;</span><span class="hl-string">../common/</span><span class="hl-quotes">&quot;</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment"> adding an icon to item</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">dhxAccord</span><span class="hl-code">.</span><span class="hl-identifier">cells</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-brackets">)</span><span class="hl-code">.</span><span class="hl-identifier">setIcon</span><span class="hl-brackets">(</span><span class="hl-identifier">icon</span><span class="hl-brackets">)</span><span class="hl-code">;
+    </span><span class="hl-comment">//</span><span class="hl-comment"> removing an icon</span><span class="hl-comment"></span><span class="hl-code">
+    </span><span class="hl-identifier">dhxAccord</span><span class="hl-code">.</span><span class="hl-identifier">cells</span><span class="hl-brackets">(</span><span class="hl-identifier">itemId</span><span class="hl-brackets">)</span><span class="hl-code">.</span><span class="hl-identifier">clearIcon</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+<script>
+	var sel1 = document.getElementById("sel1");
+	var sel2 = document.getElementById("sel2");
+	var dhxAccord = new dhtmlXAccordion("accordObj");
+	dhxAccord.setIconsPath("../common/");
+	dhxAccord.addItem("a1", "a");
+	dhxAccord.addItem("a2", "b");
+	dhxAccord.addItem("a3", "c");
+	dhxAccord.openItem("a1");
+	dhxAccord.forEachItem(function(item){sel1.options.add(new Option(item.getText(),item.getId()));});
+	function getId() {
+		var id = sel1.options[sel1.selectedIndex].value;
+		return id;
+	}
+	function getIcon() {
+		var icon = sel2.options[sel2.selectedIndex].value;
+		return icon;
+	}
+	function setIcon() {
+		dhxAccord.cells(getId()).setIcon(getIcon());
+	}
+	function clearIcon() {
+		dhxAccord.cells(getId()).clearIcon();
+	}
+</script>
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>

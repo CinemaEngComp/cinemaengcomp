@@ -1,0 +1,398 @@
+============
+Build 81107
+============
+
+dhtmlxGrid
+
+- fixed issue with hiddencolumns in FF3
+- fixed incorrect d-n-d while droping multiple rows in closed branch of TreeGrid
+- fixed issue with incorrect filtering buffer clearing in case of grid reloading, while using only filterBy api
++ support for cell level attributes while loading from json data
+- fixed incompatibility between keymaps and pagin mode
+- fixed incompatibility between rowspans and paging ( slow )
+- fixed issue with adding new row in srnd+splt mode
++ added pre-rendering ability
++ added forced dyn. loading ability
+- error with autoWidth calculations for grid with default|custom skins
+- error during column resized, when grid has not unique ID for HTML container
+- incorrect position of context menu 
+- regression with missed item id in case of context menu integration 
+- selectRow in paging mode, for non-first page
+- incorrect sort state detection in case of split mode
+- incorrect math preserving during d-n-d
+- incorrect row updating after updateFromXML in case of colspans|split mode
+- incorrect keyboard navigation in first or last position
+- updateFromXML not working for grid.parse
+- missed afterSorting event in case of treegrid
++ ability to enable pre-rendering in SRND
+- fixed regression with getMathValue
+- wasChanged flag set correctly for unchecked radio button
+- fixed issue with filter filling in case of column moving
+- fixed error when tab from last position in grid
+
+
+dhtmlxTreeGrid
+
+- fixed incorrect after-filtering rendering in case of filter-by-all mode
+- fixed issue with multiple data loading in same time in case of dyn. loading
+- fixed issue with included _lines extension of treegrid, corrupting possible view
+- fixed issue with filter filling after column moving in case of treegrid
+
+
+dhtmlxTree
+
+- fixed issue with incorrect context menu position
+- regression with incorrect itemId in integrated context menu
+- fixed error message in IE in case of HTTPS mode
+- a small fix in the openAllItemsDynamic
+- incorrect tree object reference fixed
+
+
+dhtmlxTabbar
+
+- fixed issue with incorrect result of normalize in some spefic cases
+- minor fix for FF3 visual issues
+
+
+dhtmlxLayout
+
+- docking/undocking cell with attached editor fixed
+- critical layout resize bug fixed (when "resize" effect is enabled)
+- layout resize fixed in case on layout's cell-based init
+
+
+dhtmlxEditor
+
+- FF3 crash reason fixed
+
+
+dhtmlxAccordion
+
+- onBeforeActive event added (only for header click)
+- dock/undock with editor fixed
+
+
+dhtmlxWindows
+
+- window maximize fixed
+
+
+dhtmlxMenu
+
+- top-level image rendering fixed
+- IE6 combo overlap fix for standard skin added
+- context menu hiding by body click fixed in case of manual showing
+
+
+dhtmlxToolbar
+
+- changing item state for pressed two-state button fixed
+
+
+dhtmlxCalendar
+
++ added possibility to set inactive days of week.
+- changeMonth() method fixed.
++ method setInsensitiveDates() can accept week day number for inactive week days.
+- height for cells in skins simpleblue, simplegrey, vista changed.
+
+
+
+dhtmlxSlider
+
++ onSlideEnd event added
+
+
+libCompiler
+- fixed issue with incorrect file references
+
+
+
+
+
+
+
+============
+Build 81009
+============
+
+
+dhtmlxTree
++ ability to access custom attributes in XML
++ added support of webmenu as context menu
++ loadOpenStates generates onAllOpenDynamic at the end
++ onBeforeContextMenu event added
++ onBeforeDrag event added
++ onKeyPress event added
++ setIconPath method added
+- fixed issue with combination of disabled and checked attribute in third state
+- fixed issue with getItemColor funcitonality ( selected color may be missed sometimes)
+- fixed issue with incorrect checkbox size in khtml browsers
+- fixed issue with incorrect focus in case of keyboard navigation enabled
+- fixed issue with incorrect icon of top element, when root ID was not equal to 0
+- fixed issue with incorrect image align for khtml browsers
+- fixed issue with json serialzation in dhtmlxtree
+- fixed issue with non-standard json serialization
+- fixed issue with Safari ( Chrome ) and shotItemCheckbox functionality
+- fixed issue with unwanted scroll in FF in case of multiline mode enabled
+- fixed issue with using ? character as parameter of findItem command
+- issue with radiobuttons in tree after data reloading
+
+
+dhtmlxTabbbar
++ added ability to create inner layouts inside tabbar on the fly
++ auto-resize for components placed in tabs added ( only in layout mode )
+- fixed issue with close-tab button in FF3
+- fixed issue with hiding currently active tab
+- minor issue with adjustOuterHeight functionality fixed
+
+
+dhtlmxTreeGrid
++ added ability to filter data on all levels
++ added ability to filter in treegrid with preserving sibling items
++ added ability to filter only low level childs, while top level always visible
++ onDynXLS event added
++ setIconPath added
+- fixed issue with adding new rows while stat counters used
+- fixed issue with adding new rows with custom images in treegrid
+- fixed issue with custom sorting in treegrid
+- fixed issue with filtering in treegrid with preserving parent items mode 
+- fixed issue with serialization of TreeGrid to XML
+- fixed issue with sorting in date mode in treegrid, when rows has empty values
+- fixed issue with using open attribute against rows without child items
+- issue with alterCss class for selected row fixed
+- restored onCellChanged event for tree excell
+
+
+
+
+dhtmlxGrid
++ ability to process colspans while loading data from HTML table
++ ability to save hidden column states in split mode
++ ability to save openstates of treegrid in cookies added
++ ability to send serialized grid as  a part of form
++ added ability to load treegrid from xmlA and xmlB
++ added possibility to serialize into CSV with labels ( not values )
++ correct support of colspans while filtering in srnd mode
++ incremental filter added text_filter_inc
++ inner error message added for incorrect cell types during initialization
++ last column can't be hidden while using header menu
++ limited support of printView in SRND mode
++ next rows button hidden in paging, when last page of grid already loaded
++ onAfterRowDeleted event added
++ onFilterStart event receives values used in filtering process
++ onRowIdChange event added
++ onTab event added
++ ro cells ignore paste operation
++ setIconPath added
++ splitAt can be called at any moment before data loading
++ strict select filter added
++ support for dhtmlxwebmenu as context menu , added
++ support of dhtmlxwebtoolbar added
++ support of multiline mode in case of srnd added
+-  mt and xp skins in IE fixed
+- added check to prevent issue with calling adjustColumnSize while column in hidden state, cleaned setColumnHidden functionality
+- addRowFromClipboard fixed, produce unique IDs now
+- after row deleting math update forced in sync. mode
+- css classes and alter css conflict resolved
+- d-n-d in treegrid in split mode fixed
+- deleting rows in treedgrid+split mode fixed
+- fixed container size detection in Safari 2.x
+- fixed empty formulas case in math of grid
+- fixed header menu in case of Safari on MacOS
+- fixed incorrect behaviour of close method of sub_row excell
+- fixed incorrect rec info data ( from field )
+- fixed issue 
+- fixed issue in d-n-d between treegrid and tree
+- fixed issue in paging with toolbar caused by changing page size
+- fixed issue when new column added with incorrect header styling in xp and similar skins
+- fixed issue with <div> as value of txt editor
+- fixed issue with adding rows when grid in srnd + split mode
+- fixed issue with attaching headers in FF after hiding some columns
+- fixed issue with block selection and rowspans in gird
+- fixed issue with calling clearAll in split+SRND mode
+- fixed issue with checkboxes in left part of grid in split mode after sorting
+- fixed issue with cntr excell in rowspan
+- fixed issue with cntr row and row deleting immideatly after adding
+- fixed issue with column resize in FF3
+- fixed issue with column resizing in Opera in case of modern|light skins
+- fixed issue with combo excell , which may provide incorrect value to dataprocessor, while selecting value by keyboard typing.
+- fixed issue with commas in headers in left part of grid in split
+- fixed issue with cp excell in https mode
+- fixed issue with d-n-d in grid, when non-standard delimeter used in grid
+- fixed issue with d-n-d in treegrid in drop-as-sibling mode
+- fixed issue with deleting row in SRND grid, which was loaded without extra rows
+- fixed issue with destructing grids, which have had context menu
+- fixed issue with double call onload handler in case of inderect xml calls
+- fixed issue with double calling of onRightClick event on Mac-FF
+- fixed issue with double error message in case of loading incorrect XML data
+- fixed issue with double initialization from XML ( loss of column IDs
+- fixed issue with dyn column type in case of left column align
+- fixed issue with enableHeaderMenu double initialization
+- fixed issue with filtering in split in srnd mode
+- fixed issue with footer scrolling in case of XHTML doctype in IE
+- fixed issue with getAllRowIds in case of dyn. srnd. mode
+- fixed issue with getValue method of rotxt excell 
+- fixed issue with get|set colwidth in FF
+- fixed issue with gridToClipboard operation when strictText selection enabled
+- fixed issue with header menu and actions in custom content inside additional header rows
+- fixed issue with hidden columns in case of SRND mode
+- fixed issue with HTML content of cells while loading grid from table
+- fixed issue with incorrect alter css coloring in zone between static and dynamic content in SRND mode
+- fixed issue with incorrect behavior of dhxCalendar and cells with empty values
+- fixed issue with incorrect call of onRowSelect event in case of multiselection in split
+- fixed issue with incorrect changed status of dhxCalendarA excell
+- fixed issue with incorrect column order while loading data from xmlB format
+- fixed issue with incorrect data order while loading from xmlB format with order of columns ID defined
+- fixed issue with incorrect grid focusing in case of split mode and custom input controls on the page.
+- fixed issue with incorrect object reference in getCheckedRows method
+- fixed issue with incorrect position while d-n-d in complex-next mode, to the topmost position
+- fixed issue with incorrect rendering in IE, when height of footer greater than height of grid ( greater a lot )
+- fixed issue with incorrect resetCounter in case of split
+- fixed issue with incorrect results of adjustColumnSize command when it used in case of multiline headers with colspans
+- fixed issue with incorrect scroll size in case of autoheight in auto mode
+- fixed issue with incorrect selection in split mode after view reset
+- fixed issue with incorrect setting format from HTML in case of dhxCalendar column type
+- fixed issue with incorrect setting of default value in pivot grid
+- fixed issue with incorrect sorting image possition in case of split and setImgState usage
+- fixed issue with incorrect sorting in SRND mode
+- fixed issue with incorrect split rendering in case of rowspans in header in FF3
+- fixed issue with initializing combo excells while loading data from xml string
+- fixed issue with inserting column in complex col|rowspan layout
+- fixed issue with inserting new colmnw after rows with rowspan
+- fixed issue with key navigation for access map - problem with lost focus in IE
+- fixed issue with keyboard navigation in opera 9.5
+- fixed issue with loading data from MSHTTP object
+- fixed issue with loading state of hidden columns from cookies in case of reloading grid structure from XML 
+- fixed issue with lost focus after key navigation from edit mode in IE
+- fixed issue with lost prefetching in dynamical SRND mode
+- fixed issue with math in dynamically added rows
+- fixed issue with moving column where dhtmlxcombo used
+- fixed issue with multiline mode in case of dyn. srnd loading
+- fixed issue with not cleared co|coro collections , while reloading grid from XML
+- fixed issue with not enabled auto-size when * as size used 
+- fixed issue with not reinitializing filters on grid reload, if they was created by makeFilter
+- fixed issue with not used showRecInfo param while paging
+- fixed issue with not-resizable footer in some skins
+- fixed issue with overflow in footer in case of FF
+- fixed issue with overflow of dyn type cell in case of very long numbers
+- fixed issue with paging options , when enabling options from XML
+- fixed issue with paging text in case of zero records loaded
+- fixed issue with passw excell and empty values
+- fixed issue with pivot grid functionality ( not unique IDs for pivot rows )
+- fixed issue with restoring sorting state from cookie in case of treegrid
+- fixed issue with reversed items order aftre grid ungrouping|grouping
+- fixed issue with row height desync in case of multiline+split after sorting
+- fixed issue with row related API in case of dynamic not linear loading
+- fixed issue with row selecting and using events to block selection 
+- fixed issue with row selection , in case of blocking it from onRowSelect event
+- fixed issue with rowspans in split mode in left part of grid
+- fixed issue with saving hidden columns in cookie and split mode
+- fixed issue with scrolles in combination of auot-width and auto-height mode with limitation
+- fixed issue with scrolling, when paging link clicked
+- fixed issue with selection from XML in dyn. SRND mode
+- fixed issue with serialization of selected attribute ( incorrect XML as result )
+- fixed issue with setColumnHidden in FF3
+- fixed issue with setColumnLabel used agains multiline header with colspans
+- fixed issue with setRowId in SRND mode
+- fixed issue with slow row hovering functionality
+- fixed issue with smart rendering in case of Safari 2.x
+- fixed issue with sorting and paging in Safari 2.x
+- fixed issue with sorting image after column resize
+- fixed issue with sorting of grid after ungrouping
+- fixed issue with sorting of grid with enabled rowspans in split mode
+- fixed issue with sorting rowspanned rows in case of split ( total rowspan situation )
+- fixed issue with split and complex rowspan structures in header of grid
+- fixed issue with split in complex header which starts from rowspans
+- fixed issue with split initialization from XML and multiline headers in grid
+- fixed issue with SRND in case of xHTML doctype in FF
+- fixed issue with srnd rendering and row operations
+- fixed issue with stablesorting lost after first sorting attempt
+- fixed issue with tab in split mode, when last columns of grid hidden
+- fixed issue with tab navigation in case of hidden columns in split zone
+- fixed issue with tooltip processing in case of split mode ( more deep error , with lost attributes fixed )
+- fixed issue with total rowspan in split
+- fixed issue with txt and ed cells selection after moving focus from co|coro excells
+- fixed issue with ungrouping grid after collapsing all groups
+- fixed issue with unnecessary ID changing while d-n-d between treegrid and grid
+- fixed issue with unwanted context menu on dblclick in Opera
+- fixed issue with unwanted scroll in dyn. srnd mode while clickin on empty space
+- fixed issue with updateFromXML for rows in row|colspan
+- fixed issue with updating from file after initialization grid from not file resource ( string, object )
+- fixed issue with usage split mode in treegrid in srnd mode
+- fixed issue with using configuration from CSV
+- fixed issue with using serializeToCSV in case of split and SRND modes combination
+- fixed issue with using updateFromXML while loading page by file URI
+- fixed issues with adding new rows after Inserting | deleting columns
+- fixed issues with master_checkbox functionality after moving related column
+- fixed issues with srnd and page scrolling 
+- fixed not necessary calls of onXLE event in case of dystrib. parsing and sorting
+- fixed partial serialization to CSV in case of rowspans|colspans usage
+- fixed paste from Excell in IE
+- fixed problem with enableAutoWidth called from XML
+- fixed problem with grouping in case of prototype library usage
+- fixed problem with incorrect userdata parsing from XML
+- fixed regression in cell2 method ( inccorect indexes in paging mode )_
+- fixed regression in enableCellIds functionality 
+- fixed regression with not updating counter after sorting in non-split grid
+- fixed render of ron cells with empty value ( missed borders )
+- fixed row colors in srnd mode after sorting ( xp, modern skins )
+- fixed serialization to XML with colspans 
+- fixed styling for header of grid with light skin
+- fixed usage of tab key in split grid, with hidden columns next to split positions
+- fixed usage of xmlA, xmlB while loading data from XML string or XML island
+- fixed width of txt editor in IE for long content
+- fixed xml file locking for SRND mode after clearAll call
+- fixes issue with combination of auto-header and auto-id while loading data from CSV
+- incorrect page down, key down actions in srnd mode fixed
+- incorrect size of multiline headers in split mode 
+- initialization of pivot grid with predefined settings - fixed
+- issue with not preserving cell styles after sorting in split mode fixed
+- issues with adding deleting columns inside header with complex structure resolved
+- light skin fixed in IE6
+- loading in xmlA or xmlB with missed fields fixed
+- master checkbox for mixed row set fixed
+- math in co|coro excells fixed
+- math in treegrid and movable columns fixed
+- multiple colspan per row fixed
+- onPaging event restored for all paging skins
+- onXLE event in case of distributed parsing fixed
+- restored support of complex-next and sibbling-next dnd modes
+- saving size to cookies in split mode fixed
+- selectCell and srnd mode fixed
+- setHiddenRow and srnd mode fixed
+- size saving in split mode fixed
+- treegrid lines in srnd mode fixed
+- usage of deprecated event setters fixed
+
+New compoenents:
+
+	- dhtmlxAjax
+	- dhtmlxAccordion
+	- dhtmlxEditor
+	- dhtmlxLayout
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

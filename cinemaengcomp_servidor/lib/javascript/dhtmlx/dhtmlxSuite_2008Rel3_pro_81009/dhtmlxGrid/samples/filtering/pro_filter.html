@@ -1,0 +1,96 @@
+<!--conf
+<sample>
+              <product version="1.5" edition="pro"/>
+                     <modifications>
+                            <modified date="070101"/>
+                     </modifications>
+               </sample>
+ --> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Filtering</title>
+	
+
+
+
+</head>
+
+<body>
+<link rel='STYLESHEET' type='text/css' href='../common/style.css'>
+<table cellspacing="0" cellpadding="0" class="sample_header" border="0">
+	<tr valign="middle">
+		<!-- COMPONENT ICON -->
+		<td width="40" align="center"><img src="../common/dhtmlxgrid_icon.gif" border="0"></td>
+		<!-- COMPONENT NAME -->
+		<td width="150" align="left" nowrap="true">Sample: dhtmlxGrid</td>
+		<!-- SAMPLE TITLE -->
+		<td width="0" align="left" nowrap><b>Filtering</b></td>
+		<!-- LINK TO COMPONENT PAGE -->
+		<td width="0" align="right"><a href="http://www.dhtmlx.com/docs/products/dhtmlxGrid/index.shtml">dhtmlxGrid main page</a></td>
+		<!-- CLOSE BUTTON -->
+		<td width="50"><div class="sample_close"><a href="javascript:void(0);" onclick="self.close();"><img src="../common/sample_close.gif" width="14" height="14" border="0" alt="X"></a></div></td>
+	</tr>
+</table>
+	
+	
+	<p>You can set filter for different columns - occurrence of mask symbols will be searched. Filtering is case-sensitive.</p>
+   	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid.css">
+	<link rel="STYLESHEET" type="text/css" href="../../codebase/dhtmlxgrid_skins.css">
+	<script  src="../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../codebase/dhtmlxgrid.js"></script>
+	<script  src="../../codebase/ext/dhtmlxgrid_filter.js"></script>	
+	<script  src="../../codebase/dhtmlxgridcell.js"></script>
+	
+	<table width="600px;">
+		<tr>
+			<td>
+				<div id="gridbox" width="100%" height="150px" style="background-color:white;overflow:hidden"></div>
+			</td>
+		</tr>
+	
+		<tr>
+			<td>
+<fieldset style="width:600px">
+	<legend>Filter</legend>
+	Column 
+<select id='a10'>
+	<option value='0'>0</option><option value='1'>1</option><option value='2'>2</option>
+	</select>
+Mask
+<input type="text" name="a12" value="" id="a12">
+<input type="button" name="a11" value="Filter" id="a11" onclick='mygrid.filterBy(document.getElementById("a10").value,document.getElementById("a12").value);'><br/><br/>
+<input type="button" name="a11" value="Filter column[0] < 500" id="a11" onclick='mygrid.filterBy(0,function(a){ return (a<500);});'>
+</fieldset>
+			</td>
+		</tr>
+</table>
+<br>
+<div class='sample_code'><div class="hl-main"><pre><span class="hl-code"> 
+    </span><span class="hl-brackets">&lt;</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span><span class="hl-code"><div class="hl-main"><pre><span class="hl-code"> 
+        </span><span class="hl-identifier">mygrid</span><span class="hl-code"> = </span><span class="hl-reserved">new</span><span class="hl-code"> </span><span class="hl-identifier">dhtmlXGridObject</span><span class="hl-brackets">(</span><span class="hl-quotes">'</span><span class="hl-string">gridbox</span><span class="hl-quotes">'</span><span class="hl-brackets">)</span><span class="hl-code">;
+        ...
+        </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">filterBy</span><span class="hl-brackets">(</span><span class="hl-identifier">value</span><span class="hl-code">,</span><span class="hl-identifier">column</span><span class="hl-brackets">)</span><span class="hl-code">;
+        ...
+        </span><span class="hl-identifier">mygrid</span><span class="hl-code">.</span><span class="hl-identifier">filterBy</span><span class="hl-brackets">(</span><span class="hl-number">0</span><span class="hl-code">,</span><span class="hl-reserved">function</span><span class="hl-brackets">(</span><span class="hl-identifier">a</span><span class="hl-brackets">)</span><span class="hl-brackets">{</span><span class="hl-code"> </span><span class="hl-reserved">return</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-identifier">a</span><span class="hl-code">&lt;</span><span class="hl-number">500</span><span class="hl-brackets">)</span><span class="hl-code">;  </span><span class="hl-brackets">}</span><span class="hl-brackets">)</span><span class="hl-code">;</span></pre></div></span><span class="hl-brackets">&lt;/</span><span class="hl-reserved">script</span><span class="hl-brackets">&gt;</span></pre></div></div>
+
+<script>
+		mygrid = new dhtmlXGridObject('gridbox');
+		mygrid.setImagePath("../../codebase/imgs/");
+		mygrid.setHeader("Column A,Column B,Column C");
+		mygrid.setInitWidths("90,250,*")
+		mygrid.setColAlign("right,left,left")
+		mygrid.setColTypes("ro,ed,ed");
+		mygrid.setColSorting("str,str,str")
+		mygrid.init();
+		mygrid.setSkin("modern")
+		mygrid.loadXML("100.xml");
+</script>
+
+<!-- FOOTER -->
+<table callspacing="0" cellpadding="0" border="0" class="sample_footer"><tr><td style="padding-left: 8px;">&copy; <a href="http://www.dhtmlx.com">DHTMLX LTD</a>. All rights reserved</td></tr></table>
+<!-- FOOTER -->
+
+</body>
+</html>
